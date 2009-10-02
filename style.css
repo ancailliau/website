@@ -1,0 +1,136 @@
+body, html {
+	margin: 0;
+	font-family: "Myriad Pro", "Arial", sans-serif;
+	font-size: 100%;
+}
+
+body {
+	/* With this font-size, we have that 100% = 10px which is a convenient
+	 * value to use */
+	font-size: 62.5%;
+}
+
+#header,
+#main,
+#footer {
+	width: 680px;
+	margin: 0 auto;
+}
+
+#header {
+	margin: 30px auto 10px;
+
+	/* With this property, the height of the wrapper includes the height of the
+	 * floating elements */
+	overflow: auto;
+}
+
+#header h1 {
+	background: url("images/logo.png") no-repeat top left;
+	height: 40px;
+	width: 186px;
+	float: left;
+}
+
+#header h1 span {
+	display: none;
+}
+
+#header p {
+	font-size: 1.6em;
+	float: right;
+	text-align: right;
+	padding-right: 10px;
+}
+
+#main {
+	position: relative;
+	overflow: auto;
+}
+
+#main img {
+	float: left;
+	border: 1px solid #ccc;
+	padding: 1px;
+
+	/* The size results of 470 - 2 * 1 (border) - 2 * 1 (padding) */
+	width: 466px;
+}
+
+#main h2,
+#main p {
+	color: #666;
+	padding-left: 490px;
+	padding-right: 10px;
+	line-height: 120%;
+}
+
+#main h2 {
+	font-weight: normal;
+	font-size: 1.4em;
+}
+
+#main p {
+	font-size: 1.2em;
+	color: #999;
+	line-height: 120%;
+	padding-left: 490px;
+	padding-right: 10px;
+}
+
+#main .grey-box {
+	/* The size results of 200 - 2 * 1 (border) - 2 * 1 (padding) */
+	width: 196px;
+	border: 1px solid #ccc;
+	padding: 1px;
+	background: #fff;
+
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#main .grey-box form {
+	background: url("images/grey-gradient-background.png") repeat-x 0 0;
+	padding: 10px;
+	overflow: auto;
+}
+
+#main .grey-box form label {
+	font-size: 1.4em;
+	color: #666;
+	display: block;
+	margin-bottom: 10px;
+}
+
+#main .grey-box form input[type=text] {
+	width: 112px;
+	float: left;
+}
+#main .grey-box form input[type=submit] {
+	float: right;
+}
+
+#footer {
+	clear: both;
+	padding-top: 10px;
+	font-size: 1.2em;
+}
+
+#footer p {
+	margin: 0;
+	padding: 0;
+}
+
+#footer p#social-links a {
+	width: 120px;
+	display: block;
+	float: left;
+	color: #005999;
+}
+
+#footer p#internal-links a {
+	float: right;
+	color: #999;
+	width: 190px;
+}
