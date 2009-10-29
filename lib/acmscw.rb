@@ -5,7 +5,7 @@ require 'json'
 module AcmScW
   
   # Version number of ACM Student Chapter Website
-  VERSION = "0.0.2".freeze
+  VERSION = "0.0.3".freeze
   
 end
 require 'acmscw/main/main'

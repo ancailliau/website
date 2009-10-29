@@ -1,3 +1,7 @@
+== version 0.0.3
+
+- Modifies the project structure to be compatible with apache/passenger expectations.
+
 == version 0.0.2
 
 - Adds database creation script
