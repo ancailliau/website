@@ -13,3 +13,12 @@
 - The database can be created using the following command (assuming project root as current folder):
 
     psql -U acmscw template1 < state/acmscw.sql
+    
+== Deploying the application
+
+- First of all, you have to copy deploy.example ad deploy, and edit it with your personal configuration
+
+- This web application have been designed to be embedded as a Rack deployment on top of apache/passenger.
+  Have a look on passenger documentation to run it on a real apache server
+  
+- If you want to run the web application locally, execute 'config.ru -p3000'

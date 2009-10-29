@@ -1,0 +1,6 @@
+database_host     'localhost'
+database_port     5432
+database_name     'acmscw'
+database_user     'acmscw'
+database_pwd      'acmscw'
+database_encoding 'utf8'

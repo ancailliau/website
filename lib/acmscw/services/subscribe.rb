@@ -5,11 +5,11 @@ module AcmScW
       def create_db_connection
         begin
           # No connection previously created, or trying a new one
-          @connection = PGconn.open(:host => 'localhost', 
-                                    :dbname => 'acmscw', 
-                                    :user => 'acmscw', 
-                                    :password => 'acmscw')
-          @connection.set_client_encoding('utf8')
+          @connection = PGconn.open(:host => AcmScW.database_host, 
+                                    :dbname => AcmScW.database_name, 
+                                    :user => AcmScW.database_user, 
+                                    :password => AcmScW.database_pwd)
+          @connection.set_client_encoding(AcmScW.database_encoding)
           return @connection
         rescue PGError => ex
           # Fatal case, no connection can be created (is PostgreSQL running?)
@@ -27,7 +27,6 @@ module AcmScW
         sql = "INSERT INTO \"NEWS_SUBSCRIPTIONS\" (\"mail\")"\
         "  SELECT '#{mail}' as \"mail\" WHERE NOT EXISTS"\
         "    (SELECT * FROM \"NEWS_SUBSCRIPTIONS\" WHERE \"mail\"='#{mail}')"
-        puts sql
         db_connection.exec(sql)
       end
       

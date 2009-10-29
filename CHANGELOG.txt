@@ -1,3 +1,8 @@
+== version 0.0.4
+
+- Factorizes the configuration in a deploy file, rooted on the project structure.
+- Removes database host, user, ... from the service itself, and use deploy instead
+
 == version 0.0.3
 
 - Modifies the project structure to be compatible with apache/passenger expectations.
