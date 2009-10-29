@@ -11,5 +11,10 @@ require 'acmscw'
 
 # handle rack services
 use Rack::Static, :urls => ["/resources"], :root => File.join(main)
-main = AcmScW::Main.new
-run main
+map '/' do
+  run AcmScW::Main.new
+end
+map '/services/subscribe' do
+  use AcmScW::Services::JSON
+  run AcmScW::Services::Subscribe.new
+end

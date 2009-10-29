@@ -1,0 +1,8 @@
+== version 0.0.2
+
+- Adds database creation script
+- Services::Subscribe fills the database with mails
+
+== version 0.0.1
+
+- First skeleton, serving statics files using Rack

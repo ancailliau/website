@@ -1,0 +1,15 @@
+== Installing Ruby and Gems
+
+  sudo apt-get install ruby irb rake rubygems
+  sudo gem install rack json pg
+
+== Installing the postgresql database
+
+- We expect a acmscw user, allowed to create databases. Typical command for creating it is the following.
+  Please use 'acmscw' as password until stated otherwise.
+
+    createuser --no-superuser --createdb --no-createrole --login --pwprompt --encrypted acmscw
+    
+- The database can be created using the following command (assuming project root as current folder):
+
+    psql -U acmscw template1 < state/acmscw.sql
