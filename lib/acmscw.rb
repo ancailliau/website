@@ -2,6 +2,7 @@ require 'rubygems'
 require 'pg'
 require 'rack'
 require 'json'
+require 'waw'
 
 # Main module of the whole website
 module AcmScW
@@ -32,8 +33,32 @@ module AcmScW
     EOF
   end
   
+  # Creates a database connection
+  def self.create_db_connection
+    begin
+      # No connection previously created, or trying a new one
+      @connection = PGconn.open(:host => AcmScW.database_host, 
+                                :dbname => AcmScW.database_name, 
+                                :user => AcmScW.database_user, 
+                                :password => AcmScW.database_pwd)
+      @connection.set_client_encoding(AcmScW.database_encoding)
+      return @connection
+    rescue PGError => ex
+      # Fatal case, no connection can be created (is PostgreSQL running?)
+      raise ex
+    end
+  end
+  
+  # Executes the given block inside a transaction
+  def self.transaction
+    conn = create_db_connection
+    yield conn
+  ensure
+    conn.close
+  end
+      
 end
 
-require 'acmscw/main/main'
-require 'acmscw/services/json'
-require 'acmscw/services/subscribe'
+require 'acmscw/json'
+require 'acmscw/main_controller'
+require 'acmscw/services_controller'

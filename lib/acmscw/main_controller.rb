@@ -1,5 +1,5 @@
 module AcmScW
-  class Main
+  class MainController
     
     def index_contents
       File.read(File.join(File.dirname(__FILE__), "index.html"))

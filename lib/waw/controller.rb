@@ -10,10 +10,13 @@ module Waw
     
     # Handler for Rack calls to the controller
     def call(env)
-      result = execute(Rack::Request.new(env), Rack::Response.new(env))
-      [200, content_type, result]
+      req, res = Rack::Request.new(env), Rack::Response.new(env)
+      result = execute(req, res)
+      puts "Returning 200 with #{result}"
+      [200, {'Content-Type' => content_type}, result]
     rescue => ex
-      [500, content_type, [ex.message]]
+      puts "Returning 500 with #{result}"
+      [500, {'Content-Type' => content_type}, [ex.message]]
     end
     
     # Executes the controller on a Rack::Request and Rack::Response pair

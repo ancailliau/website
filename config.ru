@@ -17,9 +17,9 @@ AcmScW.load_configuration_file(deploy_file)
 # handle rack services
 use Rack::Static, :urls => ["/images", "/css"], :root => 'public'
 map '/' do
-  run AcmScW::Main.new
+  run AcmScW::MainController.new
 end
-map '/services/subscribe' do
-  use AcmScW::Services::JSON
-  run AcmScW::Services::Subscribe.new
+map '/services' do
+  use AcmScW::JSON
+  run AcmScW::ServicesController.new
 end

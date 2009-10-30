@@ -6,7 +6,7 @@ module Waw
     
     # Validation for a mandatory parameter
     MANDATORY = Kernel.lambda do |value|
-      [value, !value.nil?]
+      [value, !value.nil? && value != '']
     end
     
   end # module Validation

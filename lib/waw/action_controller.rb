@@ -61,7 +61,7 @@ module Waw
     
     # Executes the controller
     def execute(request, response)
-      action_name = request.respond_to?(:script_name) ? request.script_name : request[:action]
+      action_name = request.respond_to?(:fullpath) ? request.fullpath : request[:action]
       if action_name =~ /([a-zA-Z_]+)$/
         action = "action_#{$1}".to_sym 
         self.respond_to?(action) ? self.send(action, request, response) : :action_not_found
