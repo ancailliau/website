@@ -8,7 +8,7 @@ module Waw
       def this_is_possible
       end
       
-      validate :mail, /^[a-z]+@[a-z]+\.[a-z]/, :invalid_email
+      validate :mail, Waw::Validation::EMAIL, :invalid_email
       action_define :subscribe, [:mail] do |mail|
         this_is_possible
         :ok
