@@ -5,8 +5,12 @@ module Waw
     
     class MyMailController < Waw::ActionController
       
-      actionparam :mail, /^[a-z]+@[a-z]+\.[a-z]/, :invalid_email
-      def subscribe(mail)
+      def this_is_possible
+      end
+      
+      validate :mail, /^[a-z]+@[a-z]+\.[a-z]/, :invalid_email
+      action_define :subscribe, [:mail] do |mail|
+        this_is_possible
         :ok
       end
       
@@ -24,6 +28,12 @@ module Waw
       assert @controller.respond_to?(:action_subscribe)
       assert @controller.respond_to?(:not_an_action)
       assert_equal false, @controller.respond_to?(:action_not_an_action)
+    end
+    
+    def test_controller_subscribe
+      assert_equal :ok, @controller.subscribe("blambeau@gmail.com")
+      assert_equal :invalid_email, @controller.subscribe("blambeau_gmail.com")
+      assert_equal :invalid_email, @controller.subscribe(nil)
     end
     
     def test_controller_action_subscribe

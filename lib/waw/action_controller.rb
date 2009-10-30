@@ -8,38 +8,30 @@ module Waw
     # Provides the validation and action methods used by the Controller class.
     module ClassMethods
     
-      # Defines an action parameter for the next action to be defined.
-      def actionparam(*args, &block)
-        @action_params = [] unless @action_params
+      # Installs a validation rule for the next action to define
+      def validate(*args, &block)
+        @validations = [] unless @validations
         if block.nil?
           name, validation, ko_result = args
           block = Kernel.lambda do |value|
-            result = case validation
-              when Regexp
-                if validation =~ value.to_s
-                  [value, true]
-                else
-                  [nil, false]
-                end
-              else
-                raise "Unable to use #{validation} for validation"
-            end
-            result
+            raise "Unable to use #{validation} for action argument validation"\
+              unless validation.respond_to?(:waw_action_validate)
+            validation.waw_action_validate(value)
           end
-          @action_params << [name, block, ko_result]
+          @validations << [name, block, ko_result]
         else
           name, ko_result = args
-          @action_params << [name, block, ko_result]
+          @validations << [name, block, ko_result]
         end
       end
     
-      # Builds some action arguments
-      def build_action_args(action_params, request, response)
-        args = []
-        action_params.each do |name, validation, ko_result|
-          value, ok = validation.call(request[name])
+      # Converts and validate action arguments
+      def validate_action_arguments(arg_names, args, validations)
+        validations.each do |name, validation, ko_result|
+          index = arg_names.index(name)
+          value, ok = validation.call(args[index])
           if ok
-            args << value
+            args[index] = name
           else
             return ko_result
           end
@@ -47,20 +39,18 @@ module Waw
         [args, true]
       end
     
-      # Fired when a method is added to the controller. This method defines a new
-      # action method that performs parameter conversion and validation.
-      def method_added(name)
-        unless @action_params.nil? or @critical
-          @critical = true
-          action_params = @action_params
-    
-          # Create the validation method
-          define_method "action_#{name}" do |request, response|
-            args, ok = self.class.build_action_args(action_params, request, response)
-            ok ? self.send(name, *args) : args
-          end 
+      # Adds an action definition
+      def action_define(name, arg_names, &block)
+        validations = @validations || []
+        define_method "action_#{name}" do |request, response|
+          args = arg_names.collect{|arg_name| request[arg_name]}
+          self.send(name, *args)
         end
-        @action_params, @critical = nil, false
+        define_method name do |*args|
+          args, ok = self.class.validate_action_arguments(arg_names, args, validations)
+          ok ? self.instance_exec(*args, &block) : args
+        end
+        @validations = nil
       end
     
     end # module ActionMethods
