@@ -1,7 +1,7 @@
-module AcmScW
+module Waw
   
   #
-  # Controller of the application, designing a number of typical services.
+  # Controller of a web application, designing a number of typical services.
   #
   class Controller
     
@@ -23,4 +23,4 @@ module AcmScW
     
   end # class Controller
 
-end # module AcmScW
+end # module Waw
