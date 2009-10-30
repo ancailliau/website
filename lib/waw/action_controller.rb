@@ -13,10 +13,14 @@ module Waw
         @validations = [] unless @validations
         if block.nil?
           name, validation, ko_result = args
-          block = Kernel.lambda do |value|
-            raise "Unable to use #{validation} for action argument validation"\
-              unless validation.respond_to?(:waw_action_validate)
-            validation.waw_action_validate(value)
+          block = Kernel.lambda do |arg_value|
+            if validation.respond_to?(:waw_action_validate)
+              validation.waw_action_validate(arg_value)
+            elsif Proc===validation
+              validation.call(arg_value)
+            else
+              raise "Unable to use #{validation} for action argument validation"
+            end
           end
           @validations << [name, block, ko_result]
         else
@@ -31,7 +35,7 @@ module Waw
           index = arg_names.index(name)
           value, ok = validation.call(args[index])
           if ok
-            args[index] = name
+            args[index] = value
           else
             return ko_result
           end

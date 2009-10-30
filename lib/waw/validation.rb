@@ -4,6 +4,11 @@ module Waw
     # Validation for a parameter to be an e-mail
     EMAIL = /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/
     
+    # Validation for a mandatory parameter
+    MANDATORY = Kernel.lambda do |value|
+      [value, !value.nil?]
+    end
+    
   end # module Validation
 end # module Waw
 

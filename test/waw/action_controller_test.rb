@@ -8,6 +8,7 @@ module Waw
       def this_is_possible
       end
       
+      validate :mail, Waw::Validation::MANDATORY, :missing_email
       validate :mail, Waw::Validation::EMAIL, :invalid_email
       action_define :subscribe, [:mail] do |mail|
         this_is_possible
@@ -33,14 +34,14 @@ module Waw
     def test_controller_subscribe
       assert_equal :ok, @controller.subscribe("blambeau@gmail.com")
       assert_equal :invalid_email, @controller.subscribe("blambeau_gmail.com")
-      assert_equal :invalid_email, @controller.subscribe(nil)
+      assert_equal :missing_email, @controller.subscribe(nil)
     end
     
     def test_controller_action_subscribe
       assert (/^[a-z]+@[a-z]+\.[a-z]/ =~ "blambeau@gmail.com")
       assert_equal :ok, @controller.action_subscribe({:mail => "blambeau@gmail.com"}, nil)
       assert_equal :invalid_email, @controller.action_subscribe({:mail => "blambeau_gmail.com"}, nil)
-      assert_equal :invalid_email, @controller.action_subscribe({}, nil)
+      assert_equal :missing_email, @controller.action_subscribe({}, nil)
     end
     
     def test_controller_action_execute
