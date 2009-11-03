@@ -48,13 +48,22 @@ body {
 	overflow: auto;
 }
 
-#main img {
+#main div#img {
 	float: left;
 	border: 1px solid #ccc;
 	padding: 1px;
 
 	/* The size results of 470 - 2 * 1 (border) - 2 * 1 (padding) */
-	width: 466px;
+	/* width: 466px; */
+}
+
+#main div#img p {
+	margin: 0;
+	padding: 5px;
+}
+
+#main img {
+	float: left;
 }
 
 #main h2,
@@ -68,6 +77,7 @@ body {
 #main h2 {
 	font-weight: normal;
 	font-size: 1.4em;
+	margin-top: 0;
 }
 
 #main p {
