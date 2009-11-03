@@ -26,7 +26,7 @@ body {
 }
 
 #header h1 {
-	background: url("images/logo.png") no-repeat top left;
+	background: url("/images/logo.png") no-repeat top left;
 	height: 40px;
 	width: 186px;
 	float: left;
@@ -91,7 +91,7 @@ body {
 }
 
 #main .grey-box form {
-	background: url("images/grey-gradient-background.png") repeat-x 0 0;
+	background: url("/images/grey-gradient-background.png") repeat-x 0 0;
 	padding: 10px;
 	overflow: auto;
 }
