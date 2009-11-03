@@ -29,10 +29,11 @@
 			contests... Its activities are open to every interested people.</p>
 
 			<div class="grey-box">
-				<form action="/services/subscribe" method="post" enctype="multipart/form-data">
+				<form action="/services/subscribe" method="post" enctype="multipart/form-data" id="subscribe-form">
 					<label for="mail">Subscribe<br /> to the newsletter</label>
-					<input type="text" value="john.doe@mail.com" name="mail" />
+					<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
 					<input type="submit" value="Go »" />
+					<p id="message"></p>
 				</form>
 			</div>
 			
@@ -50,5 +51,33 @@
 			</p>
 		</div>
 	
+
+		<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				form = "form#subscribe-form";
+				$(form).submit(function() {
+					$.ajax({type: "POST", url: $(form).attr('action'), data: $(form).serialize(), dataType: "json",
+						error: function(data) {
+							if (data.status == 500) {
+								$('form#subscribe-form input').hide();
+								$('p#message').html("A server error occured, please retry later.");
+							}
+						},
+						success: function(data) {
+							if (data == "invalid_email") {
+								$('p#message').html("Your e-mail is not valid.");
+							} else if (data == "missing_email") {
+								$('p#message').html("Your e-mail is missing.");
+							} else {
+								$('form#subscribe-form input').hide();
+								$('p#message').html("You are now subscribed.");
+							}
+						}});
+					return false;
+				});
+			});
+		</script>
+
 	</body>
 </html>

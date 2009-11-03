@@ -91,7 +91,7 @@ body {
 }
 
 #main .grey-box form {
-	background: url("/images/grey-gradient-background.png") repeat-x 0 0;
+	background: #e5e5e5 url("/images/grey-gradient-background.png") repeat-x 0 0;
 	padding: 10px;
 	overflow: auto;
 }
@@ -109,6 +109,12 @@ body {
 }
 #main .grey-box form input[type=submit] {
 	float: right;
+}
+#main .grey-box form p {
+	margin: 5px 0 0 0;
+	clear: left;
+	float: left;
+	padding: 0;
 }
 
 #footer {
