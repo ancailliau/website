@@ -15,7 +15,7 @@ raise "Missing deployment file 'deploy', copy and edit deploy.example first!" un
 AcmScW.load_configuration_file(deploy_file)
 
 # handle rack services
-use Rack::Static, :urls => ["/images", "/css"], :root => 'public'
+use Rack::Static, :urls => ["/images", "/css", "/js"], :root => 'public'
 map '/' do
   run AcmScW::MainController.new
 end
