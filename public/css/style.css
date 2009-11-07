@@ -125,6 +125,11 @@ body.front #main p {
 	right: 0;
 }
 
+body.latex #main .grey-box {
+	top: 286px;
+	bottom: auto;
+}
+
 #main .grey-box form {
 	background: #e5e5e5 url("/images/grey-gradient-background.png") repeat-x 0 0;
 	padding: 10px;
@@ -156,6 +161,10 @@ body.front #main p {
 	clear: both;
 	padding-top: 10px;
 	font-size: 1.2em;
+	margin-top: 40px;
+}
+body.front #footer {
+	margin-top: 0;
 }
 
 #footer p {
