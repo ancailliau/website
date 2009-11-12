@@ -8,6 +8,8 @@ body {
 	/* With this font-size, we have that 100% = 10px which is a convenient
 	 * value to use */
 	font-size: 62.5%;
+
+	padding-bottom: 60px;
 }
 
 a:link {
