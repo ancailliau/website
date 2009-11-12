@@ -64,20 +64,18 @@ a:link {
 	float: left;
 	border: 1px solid #ccc;
 	padding: 1px;
+	width: 467px;
 }
 
 #main div#img img {
 	margin-bottom: 10px;
+	float: left;
 }
 
 #main div#img p {
 	margin: 5px;
 	padding: 5px;
 	color: #000;
-}
-
-#main img {
-	float: left;
 }
 
 #main p,
