@@ -147,15 +147,15 @@ body.latex #main .grey-box {
 	bottom: auto;
 }
 
-#main form {
+#main form#details-form {
 	font-size: 1.2em;
 	color: #666;
 	line-height: 150%;
 	padding-right: 220px;
 }
 
-#main form input,
-#main form textarea {
+#main form#details-form input,
+#main form#details-form textarea {
 	display: block;
 	margin-bottom: 10px;
 	width: 443px;
@@ -164,12 +164,12 @@ body.latex #main .grey-box {
 	padding: 5px;
 }
 
-#main form legend {
+#main form#details-form legend {
 	font-size: 1.2em;
 	padding: 0 1em;
 }
 
-#main form fieldset {
+#main form#details-form fieldset {
 	border: 1px solid #ccc;
 	font-size: 0.9em;
 	margin: 0 0 20px 0;
@@ -177,21 +177,21 @@ body.latex #main .grey-box {
 	padding: 5px;
 }
 
-#main form fieldset p {
+#main form#details-form fieldset p {
 	padding: 0;
 	margin: 0;
 }
 
-#main form textarea {
+#main form#details-form textarea {
 	height: 60px;
 }
 
-#main form input.checkbox {
+#main form#details-form input.checkbox {
 	display: inline;
 	width: auto;
 }
 
-#main form input.submit {
+#main form#details-form input.submit {
 	width: auto;
 }
 
