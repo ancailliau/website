@@ -3,6 +3,7 @@ require 'pg'
 require 'rack'
 require 'json'
 require 'waw'
+require 'wlang'
 
 # Main module of the whole website
 module AcmScW
