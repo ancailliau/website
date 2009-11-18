@@ -119,6 +119,12 @@ body.front #main p {
 	margin-top: 0;
 }
 
+#main h3 {
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-top: 40px;
+}
+
 body.front #main p {
 	font-size: 1.2em;
 	color: #999;
@@ -139,6 +145,54 @@ body.front #main p {
 body.latex #main .grey-box {
 	top: 286px;
 	bottom: auto;
+}
+
+#main form {
+	font-size: 1.2em;
+	color: #666;
+	line-height: 150%;
+	padding-right: 220px;
+}
+
+#main form input,
+#main form textarea {
+	display: block;
+	margin-bottom: 10px;
+	width: 443px;
+	border: 1px solid #ccc;
+	font-size: 1em;
+	padding: 5px;
+}
+
+#main form legend {
+	font-size: 1.2em;
+	padding: 0 1em;
+}
+
+#main form fieldset {
+	border: 1px solid #ccc;
+	font-size: 0.9em;
+	margin: 0 0 20px 0;
+	width: 443px;
+	padding: 5px;
+}
+
+#main form fieldset p {
+	padding: 0;
+	margin: 0;
+}
+
+#main form textarea {
+	height: 60px;
+}
+
+#main form input.checkbox {
+	display: inline;
+	width: auto;
+}
+
+#main form input.submit {
+	width: auto;
 }
 
 #main .grey-box form {

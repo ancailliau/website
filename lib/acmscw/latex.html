@@ -47,6 +47,45 @@
 				supervised by tutors.</li>
 			</ul>
 
+			<h3>Inscrivez-vous à la formation pratique&nbsp;!</h3>
+			<form action="/services/subscribe-latex" method="post" enctype="multipart/form-data" id="details-form">
+				<label for="firstname">Mon prénom&nbsp;:</label>
+				<input type="text" value="John" name="firstname" id="mail"/>
+				<label for="lastname">Mon nom de famille&nbsp;:</label>
+				<input type="text" value="Doe" name="lastname" id="mail"/>
+				<label for="occupation">Mon occupation&nbsp;:</label>
+				<input type="text" value="FSA13BA" name="occupation" id="mail"/>
+				<label for="mail">Mon e-mail&nbsp;:</label>
+				<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
+				<label for="formation">Les autres formations qui pourraient m'intéresser&nbsp;:</label>
+				<textarea name="formation"></textarea>
+				<fieldset>
+					<legend>Je suis disponible pour la formation pratique</legend>
+					<p>
+						<strong>Lundi 30/11</strong>
+						<input type="checkbox" name="date-301114" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
+						<input type="checkbox" name="date-301116" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
+					</p>
+					<p>
+						<strong>Mardi 01/12</strong>
+						<input type="checkbox" name="date-011210" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
+						<input type="checkbox" name="date-011214" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
+					</p>
+					<p>
+						<strong>Mercredi 02/12</strong>
+						<input type="checkbox" name="date-021210" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
+						<input type="checkbox" name="date-021214" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
+						<input type="checkbox" name="date-021216" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
+					</p>
+					<p>
+						<strong>Jeudi 03/12</strong>
+						<input type="checkbox" name="date-031216" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
+					</p>
+				</fieldset>
+				<input type="submit" value="Submit »" class="submit" />
+			</form>
+			<p id="message">&nbsp;</p>
+
 		</div>
 
 		<div id="footer">
@@ -65,23 +104,23 @@
 		<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				form = "form#subscribe-form";
+				form = "form#details-form";
 				$(form).submit(function() {
 					$.ajax({type: "POST", url: $(form).attr('action'), data: $(form).serialize(), dataType: "json",
 						error: function(data) {
 							if (data.status == 500) {
-								$('form#subscribe-form input').hide();
+								$('form#details-form').hide();
 								$('p#message').html("A server error occured, please retry later.");
 							}
 						},
 						success: function(data) {
 							if (data == "invalid_email") {
-								$('p#message').html("Your e-mail is not valid.");
+								$('p#message').html("Votre e-mail n'est pas valide.");
 							} else if (data == "missing_email") {
-								$('p#message').html("Your e-mail is missing.");
+								$('p#message').html("Veuillez entrer votre e-mail.");
 							} else {
-								$('form#subscribe-form input').hide();
-								$('p#message').html("You are now subscribed.");
+								$('form#details-form').hide();
+								$('p#message').html("Vous êtes maintenant inscrit.");
 							}
 						}});
 					return false;
