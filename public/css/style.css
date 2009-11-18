@@ -106,8 +106,8 @@ a:link {
 	float: left;
 }
 
-body.front #main h2,
-body.front #main p {
+body.index #main h2,
+body.index #main p {
 	padding-left: 490px;
 	padding-right: 10px;
 	line-height: 120%;
@@ -125,7 +125,7 @@ body.front #main p {
 	margin-top: 40px;
 }
 
-body.front #main p {
+body.index #main p {
 	font-size: 1.2em;
 	color: #999;
 }
@@ -237,7 +237,7 @@ body.latex #main .grey-box {
 	font-size: 1.2em;
 	margin-top: 40px;
 }
-body.front #footer {
+body.index #footer {
 	margin-top: 0;
 }
 

@@ -1,0 +1,53 @@
+<div id="main">
+
+	<div id="img">
+		<img src="images/Latex-6507.jpg" />
+		<p>Learn how to typeset math nicely... Find material about <a href="/latex">LaTeX course and training</a>.</p>
+	</div>
+
+	<h2>What is UCLouvain<br />ACM Student Chapter?</h2>
+
+	<p>The UCLouvain ACM Student Chapter is an affiliated association
+	to the Association for Computing Machinery (ACM). It primarily aims
+	promoting computer science among both students and professionals.
+	The association organizes events, tutorials, programming
+	contests... Its activities are open to every interested people.</p>
+	
+	<div class="grey-box">
+		<form action="/services/subscribe" method="post" enctype="multipart/form-data" id="subscribe-form">
+			<label for="mail">Subscribe<br /> to the newsletter</label>
+			<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
+			<input type="submit" value="Go »" />
+			<p id="message" ></p>
+		</form>
+	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			form = "form#subscribe-form";
+			$(form).submit(function() {
+				$.ajax({type: "POST", url: $(form).attr('action'), data: $(form).serialize(), dataType: "json",
+					error: function(data) {
+						if (data.status == 500) {
+							$('form#subscribe-form input').hide();
+							$('p#message').show();
+							$('p#message').html("A server error occured, please retry later.");
+						}
+					},
+					success: function(data) {
+						$('p#message').show();
+						if (data == "invalid_email") {
+							$('p#message').html("Your e-mail is not valid.");
+						} else if (data == "missing_email") {
+							$('p#message').html("Your e-mail is missing.");
+						} else {
+							$('form#subscribe-form input').hide();
+							$('p#message').html("You are now subscribed.");
+						}
+					}});
+				return false;
+			});
+		});
+	</script>
+
+</div>

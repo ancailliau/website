@@ -1,0 +1,108 @@
+<div id="main">
+	<div class="side"><img src="/images/Latex-6501.jpg" /></div>
+
+	<h2>Discover LaTeX &mdash; the professional typesetting system</h2>
+
+	<p>LaTeX is a markup language used to prepare documents which look
+	profesionnals. It's mostly used by mathematicians, scientists,
+	engineers and people from academic world and from industry. That
+	training, divided in two parts, allows you to discover the LaTeX
+	language.</p>
+
+	<p>The practical sessions will, as the theoretical course, be given in
+	<strong>French</strong> by mentors.</p>
+
+	<ul>
+		<li>First part consists in <strong>a &laquo; theoretical &raquo;
+		course</strong> presenting the basis of LaTeX. This
+		part introduce you to what is possible to do using LaTeX,
+		in particular we saw how to include graphics, arrays,
+		mathematics, code... You can download the slides&nbsp;<a
+		href="/slides/formation-latex.pdf">here</a>.</li>
+		
+		<li>Second part consists in <strong>practical sessions</strong>
+		on computer. In this part, you will be in front of a computer
+		and will be asked to produce documents with LaTeX.  Several
+		sessions from different levels are organised: from complete
+		beginner to more advanced. The practical sessions are
+		supervised by tutors.</li>
+	</ul>
+
+	<h3>Inscrivez-vous à la formation pratique&nbsp;!</h3>
+	<form action="/services/subscribe_latex" method="post" enctype="multipart/form-data" id="details-form">
+
+		<label for="firstname">Mon prénom&nbsp;:</label>
+		<input type="text" value="John" name="first_name" id="mail"/>
+
+		<label for="lastname">Mon nom de famille&nbsp;:</label>
+		<input type="text" value="Doe" name="last_name" id="mail"/>
+
+		<label for="occupation">Mon occupation&nbsp;:</label>
+		<input type="text" value="FSA13BA" name="occupation" id="mail"/>
+
+		<label for="mail">Mon e-mail&nbsp;:</label>
+		<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
+
+		<label for="formation">Les autres formations qui pourraient m'intéresser&nbsp;:</label>
+		<textarea name="formation"></textarea>
+
+		<fieldset>
+			<legend>Je suis disponible pour la formation pratique</legend>
+			<p>
+				<strong>Lundi 30/11</strong>
+				<input type="checkbox" value="2009/30/11 14h-16h" name="date[]" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
+				<input type="checkbox" value="2009/30/11 16h15-18h15" name="date[]" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
+			</p>
+			<p>
+				<strong>Mardi 01/12</strong>
+				<input type="checkbox" value="2009/12/01 10h45-12h45" name="date[]" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
+				<input type="checkbox" value="2009/12/01 14h-16h" name="date[]" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
+			</p>
+			<p>
+				<strong>Mercredi 02/12</strong>
+				<input type="checkbox" value="2009/12/02 10h45-12h45" name="date[]" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
+				<input type="checkbox" value="2009/12/02 14h-16h"name="date[]" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
+				<input type="checkbox" value="2009/12/02 16h15-18h15" name="date[]" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
+			</p>
+			<p>
+				<strong>Jeudi 03/12</strong>
+				<input type="checkbox" value="2009/12/03 16h15-18h15" name="date[]" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
+			</p>
+		</fieldset>
+		<input type="submit" value="Submit »" class="submit" />
+	</form>
+	<p id="message">&nbsp;</p>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			form = "form#details-form";
+			$(form).submit(function() {
+				$.ajax({type: "POST", url: $(form).attr('action'), data: $(form).serialize(), dataType: "json",
+					error: function(data) {
+						if (data.status == 500) {
+							$('form#details-form').hide();
+							$('p#message').html("Une erreur a été rencontrée sur" +
+							"notre serveur, merci de réessayer plus tard.");
+						}
+					},
+					success: function(data) {
+						if (data == "invalid_email") {
+							$('p#message').html("Votre e-mail n'est pas valide.");
+						} else if (data == "missing_first_name") {
+							$('p#message').html("Veuillez entrer votre prénom.");
+						} else if (data == "missing_last_name") {
+							$('p#message').html("Veuillez entrer votre nom de famille.");
+						} else if (data == "missing_date") {
+							$('p#message').html("Veuillez entrer au moins une date.");
+						} else {
+							$('form#details-form').hide();
+							$('p#message').html("Vous êtes maintenant inscrit.");
+						}
+					}});
+				return false;
+			});
+		});
+	</script>
+
+</div>
+
