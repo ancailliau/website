@@ -48,13 +48,13 @@
 			</ul>
 
 			<h3>Inscrivez-vous à la formation pratique&nbsp;!</h3>
-			<form action="/services/subscribe-latex" method="post" enctype="multipart/form-data" id="details-form">
+			<form action="/services/subscribe_latex" method="post" enctype="multipart/form-data" id="details-form">
 
 				<label for="firstname">Mon prénom&nbsp;:</label>
-				<input type="text" value="John" name="firstname" id="mail"/>
+				<input type="text" value="John" name="first_name" id="mail"/>
 
 				<label for="lastname">Mon nom de famille&nbsp;:</label>
-				<input type="text" value="Doe" name="lastname" id="mail"/>
+				<input type="text" value="Doe" name="last_name" id="mail"/>
 
 				<label for="occupation">Mon occupation&nbsp;:</label>
 				<input type="text" value="FSA13BA" name="occupation" id="mail"/>
@@ -69,23 +69,23 @@
 					<legend>Je suis disponible pour la formation pratique</legend>
 					<p>
 						<strong>Lundi 30/11</strong>
-						<input type="checkbox" name="date-301114" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
-						<input type="checkbox" name="date-301116" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
+						<input type="checkbox" value="2009/30/11 14h-16h" name="date[]" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
+						<input type="checkbox" value="2009/30/11 16h15-18h15" name="date[]" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
 					</p>
 					<p>
 						<strong>Mardi 01/12</strong>
-						<input type="checkbox" name="date-011210" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
-						<input type="checkbox" name="date-011214" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
+						<input type="checkbox" value="2009/12/01 10h45-12h45" name="date[]" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
+						<input type="checkbox" value="2009/12/01 14h-16h" name="date[]" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
 					</p>
 					<p>
 						<strong>Mercredi 02/12</strong>
-						<input type="checkbox" name="date-021210" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
-						<input type="checkbox" name="date-021214" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
-						<input type="checkbox" name="date-021216" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
+						<input type="checkbox" value="2009/12/02 10h45-12h45" name="date[]" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
+						<input type="checkbox" value="2009/12/02 14h-16h"name="date[]" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
+						<input type="checkbox" value="2009/12/02 16h15-18h15" name="date[]" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
 					</p>
 					<p>
 						<strong>Jeudi 03/12</strong>
-						<input type="checkbox" name="date-031216" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
+						<input type="checkbox" value="2009/12/03 16h15-18h15" name="date[]" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
 					</p>
 				</fieldset>
 				<input type="submit" value="Submit »" class="submit" />

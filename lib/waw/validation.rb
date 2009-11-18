@@ -9,6 +9,10 @@ module Waw
       [value, !value.nil? && value != '']
     end
     
+    ARRAY_AT_LEAST_ONE = Kernel.lambda do |value|
+      [value, Array===value && value.size>0]
+    end
+    
   end # module Validation
 end # module Waw
 

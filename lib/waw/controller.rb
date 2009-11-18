@@ -15,6 +15,8 @@ module Waw
       puts "Returning 200 with #{result}"
       [200, {'Content-Type' => content_type}, result]
     rescue => ex
+      puts "Fatal error #{ex.message}"
+      puts ex.backtrace.join("\n")
       puts "Returning 500 with #{result}"
       [500, {'Content-Type' => content_type}, [ex.message]]
     end

@@ -50,11 +50,8 @@ module AcmScW
   end
   
   # Executes the given block inside a transaction
-  def self.transaction
-    conn = create_db_connection
-    yield conn
-  ensure
-    conn.close
+  def self.transaction(&block)
+    Waw::Transaction.new(create_db_connection).go!(&block)
   end
       
 end

@@ -12,14 +12,32 @@ module AcmScW
     validate :mail, Waw::Validation::MANDATORY, :missing_email
     validate :mail, Waw::Validation::EMAIL, :invalid_email
     action_define :subscribe, [:mail] do |mail|
-      AcmScW.transaction do |conn|
-        mail = conn.escape_string(mail)
-        sql = "INSERT INTO \"NEWS_SUBSCRIPTIONS\" (\"mail\")"\
-        "  SELECT '#{mail}' as \"mail\" WHERE NOT EXISTS"\
-        "    (SELECT * FROM \"NEWS_SUBSCRIPTIONS\" WHERE \"mail\"='#{mail}')"
-        conn.exec(sql)
+      begin
+        AcmScW.transaction do |trans|
+          trans.NEWS_SUBSCRIPTIONS << {:mail => mail}
+        end
+        :ok
+      rescue PGError => ex
+        puts ex.message
+        puts ex.backtrace.join("\n")
+        :user_already_registered
       end
-      :ok
+    end
+    
+    validate :first_name, Waw::Validation::MANDATORY, :missing_first_name
+    validate :last_name, Waw::Validation::MANDATORY, :missing_last_name
+    validate :mail, Waw::Validation::EMAIL, :invalid_email
+    validate :date, Waw::Validation::ARRAY_AT_LEAST_ONE, :missing_date
+    action_define :"subscribe_latex", [:first_name, :last_name, :occupation, :mail, :formation, :date] do |fn, ln, o, m, f, d|
+      begin
+        AcmScW.transaction do |trans|
+          trans.LATEX_SUBSCRIPTIONS << {:mail => m, :first_name => fn, :last_name => ln, :occupation => o, :formation => f}
+          trans.LATEX_SUBSCRIPTION_DATES << d.collect{|date| {:mail => m, :date => date}}
+        end
+        :ok
+      rescue PGError => ex
+        :user_already_registered
+      end
     end
     
   end # class ServicesController
