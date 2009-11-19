@@ -137,9 +137,13 @@ body.front #main p {
 	padding: 1px;
 	background: #fff;
 
+	overflow: auto;
 	position: absolute;
 	bottom: 0;
 	right: 0;
+}
+#main .grey-box p#message {
+	display: none;
 }
 
 body.latex #main .grey-box {
@@ -189,6 +193,9 @@ body.latex #main .grey-box {
 #main form#details-form input.checkbox {
 	display: inline;
 	width: auto;
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
 #main form#details-form input.submit {
@@ -198,7 +205,9 @@ body.latex #main .grey-box {
 #main .grey-box form {
 	background: #e5e5e5 url("/images/grey-gradient-background.png") repeat-x 0 0;
 	padding: 10px;
+	float: left;
 	overflow: auto;
+	width: 176px;
 }
 
 #main .grey-box form label {

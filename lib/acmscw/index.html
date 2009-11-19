@@ -30,16 +30,16 @@
 			promoting computer science among both students and professionals.
 			The association organizes events, tutorials, programming
 			contests... Its activities are open to every interested people.</p>
-
+			
 			<div class="grey-box">
 				<form action="/services/subscribe" method="post" enctype="multipart/form-data" id="subscribe-form">
 					<label for="mail">Subscribe<br /> to the newsletter</label>
 					<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
 					<input type="submit" value="Go »" />
-					<p id="message"></p>
+					<p id="message" ></p>
 				</form>
 			</div>
-			
+
 		</div>
 
 		<div id="footer">
@@ -64,10 +64,12 @@
 						error: function(data) {
 							if (data.status == 500) {
 								$('form#subscribe-form input').hide();
+								$('p#message').show();
 								$('p#message').html("A server error occured, please retry later.");
 							}
 						},
 						success: function(data) {
+							$('p#message').show();
 							if (data == "invalid_email") {
 								$('p#message').html("Your e-mail is not valid.");
 							} else if (data == "missing_email") {
