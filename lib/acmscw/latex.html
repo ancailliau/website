@@ -116,14 +116,19 @@
 						error: function(data) {
 							if (data.status == 500) {
 								$('form#details-form').hide();
-								$('p#message').html("A server error occured, please retry later.");
+								$('p#message').html("Une erreur a été rencontrée sur" +
+								"notre serveur, merci de réessayer plus tard.");
 							}
 						},
 						success: function(data) {
 							if (data == "invalid_email") {
 								$('p#message').html("Votre e-mail n'est pas valide.");
-							} else if (data == "missing_email") {
-								$('p#message').html("Veuillez entrer votre e-mail.");
+							} else if (data == "missing_first_name") {
+								$('p#message').html("Veuillez entrer votre prénom.");
+							} else if (data == "missing_last_name") {
+								$('p#message').html("Veuillez entrer votre nom de famille.");
+							} else if (data == "missing_date") {
+								$('p#message').html("Veuillez entrer au moins une date.");
 							} else {
 								$('form#details-form').hide();
 								$('p#message').html("Vous êtes maintenant inscrit.");
