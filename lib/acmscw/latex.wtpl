@@ -43,7 +43,7 @@
 		<label for="mail">Mon e-mail&nbsp;:</label>
 		<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
 
-		<label for="formation">Les autres formations qui pourraient m'intéresser&nbsp;:</label>
+		<label for="formation">Les autres formations (en informatique) qui pourraient m'intéresser&nbsp;:</label>
 		<textarea name="formation"></textarea>
 
 		<fieldset>
