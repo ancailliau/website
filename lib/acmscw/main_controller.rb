@@ -7,7 +7,7 @@ module AcmScW
       # find the main page to compose
       page = req.fullpath
       page = "/index.html" if page == '/'
-      page = $1 if page =~ /\/([a-zA-Z0-9_-]+)\.html/
+      page = $1 if page =~ /^\/([a-zA-Z0-9_-]+)(\.html?)?\/?$/
       is404 = !File.exists?(File.join(File.dirname(__FILE__), "#{page}.wtpl"))
       page = 'index' if is404
       
