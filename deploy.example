@@ -1,3 +1,4 @@
+base_href         'http://uclouvain.acm-sc.be/index.html'
 database_host     'localhost'
 database_port     5432
 database_name     'acmscw'
