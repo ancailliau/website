@@ -28,11 +28,13 @@ module AcmScW
     validate :last_name, Waw::Validation::MANDATORY, :missing_last_name
     validate :mail, Waw::Validation::EMAIL, :invalid_email
     validate :date, Waw::Validation::ARRAY_AT_LEAST_ONE, :missing_date
-    action_define :"subscribe_latex", [:first_name, :last_name, :occupation, :mail, :formation, :date] do |fn, ln, o, m, f, d|
+    validate :how, Waw::Validation::ARRAY, :invalid_known_by
+    action_define :"subscribe_latex", [:first_name, :last_name, :occupation, :mail, :formation, :date, :how] do |fn, ln, o, m, f, d, h|
       begin
         AcmScW.transaction do |trans|
           trans.LATEX_SUBSCRIPTIONS << {:mail => m, :first_name => fn, :last_name => ln, :occupation => o, :formation => f}
           trans.LATEX_SUBSCRIPTION_DATES << d.collect{|date| {:mail => m, :date => date}}
+          trans.LATEX_SUBSCRIPTION_KNOWN_BY << h.select{|s| s && !s.strip.empty?}.collect{|s| {:mail => m, :how => s}}
         end
         :ok
       rescue PGError => ex

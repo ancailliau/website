@@ -9,9 +9,16 @@ module Waw
       [value, !value.nil? && value != '']
     end
     
+    # Validation for an array
+    ARRAY = Kernel.lambda do |value|
+      [value, Array===value]
+    end
+    
+    # Validation for a non empty array
     ARRAY_AT_LEAST_ONE = Kernel.lambda do |value|
       [value, Array===value && value.size>0]
     end
+    
     
   end # module Validation
 end # module Waw
