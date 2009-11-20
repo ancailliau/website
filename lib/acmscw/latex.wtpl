@@ -47,6 +47,17 @@
 		<textarea name="formation"></textarea>
 
 		<fieldset>
+			<legend>J'ai entendu parler de cette formation via</legend>
+			<p>
+				<input class="checkbox" type="checkbox" value="sebastien" name="how[]" /> <label>Sébastien C.</label>
+				<input class="checkbox" type="checkbox" value="affiche" name="how[]" /> <label>Affiche</label>
+				<input class="checkbox" type="checkbox" value="facebook" name="how[]" /> <label>Facebook</label>
+				<input class="checkbox" type="checkbox" value="connaissance" name="how[]" /> <label>Connaissance</label><br />
+				<input class="checkbox" type="checkbox" value="autre" name="how[]" /> <label>Autre&nbsp;:</label> <input type="text" class="small" value="" />
+			</p>
+		</fieldset>
+
+		<fieldset>
 			<legend>Je suis disponible pour la formation pratique</legend>
 			<p>
 				<strong>Lundi 30/11</strong>
