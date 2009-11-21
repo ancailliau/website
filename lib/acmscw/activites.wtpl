@@ -1,0 +1,102 @@
+<div id="main">
+
+	<div class="side">
+		<img src="/images/link.jpg" />
+		<p>Des activités pour créer des liens et informer.</p>
+	</div>
+
+	<h2>Quels sont les activités organisées&nbsp;?</h2>
+
+	<p>L'ASBL Uclouvain ACM Student Chapter organise au long de l'année
+	plusieurs activités en liens avec l'informatique. Cette page décrit les
+	différentes activités qui seront organisée. N'hésitez à nous <a
+	href="mailto:info@uclouvain.acm-sc.be">contacter</a> en cas de questions ou
+	pour avoir plus d'informations.</p>
+
+	<h3>Soirées-conférences à thème</h3>
+	
+	<p>Ces conférences à thème ont comme objectif de présenter différents
+	aspects de l'informatique au grand public. Celles-ci ont lieu à la fois en
+	semaine et en soirée afin de permettre au plus grand nombre possible d'y
+	assister. Elles comportent plusieurs présentations dont les orateurs sont
+	choisis pour leur capacité à faire partager leur passion ou métier au grand
+	public, cela afin d'assurer la qualité de la conférence.</p>
+
+	
+	<h3>Sciences Infuses</h3>
+	
+	<p>Partant du constat que les jeunes ont une vision de l'informatique
+	fondée sur des stéréotypes, le département INGI propose des activités aux
+	jeunes pour leur montrer l'envers du décor. Ces activités ne sont réalisées
+	sur ordinateur, mais bien en utilisant un crayon et du papier pour
+	comprendre son fonctionnement. La plupart de ces activités sont basées sur
+	celles proposées sur http://csunplugged.org. Elles couvrent divers aspects
+	de l'informatique : représentation de données sur la machine (binaire,
+	image, code correcteur d'erreur, etc.), l'algorithmique (tri, coloriage de
+	graphes, complexité, etc.), les réseaux, l'intelligence artificielle, la
+	sécurité, etc.</p>
+
+	<p>Ces activités sont utilisées de façon intensive durant le Printemps des
+	Sciences, festival des sciences où l'enseignement supérieur invite le
+	primaire et le secondaire à venir participer à des ateliers scientifiques.
+	Ceux proposés par le département INGI ont remporté dès le début un grand
+	succès. L'aspect ludique des activités motive les élèves et leur permet de
+	réaliser des « défis » qu'ils pensaient hors de portée. Les enseignants en
+	fin d'atelier sont unanimes, c'est très intéressant.</p>
+
+	<p>L'UCLouvain ACM Student Chapter propose de continuer cet évènement
+	durant le weekend et organise donc un évènement à destination des familles.
+	Durant cet évènement, nous proposons de faire découvrir l'informatique
+	grâce à des stands découvertes et des animations thématiques.</p>
+
+
+	<h3>Tutoriels</h3>
+	
+	<p>L'ASBL UCLouvain ACM Student Chapter a pour but est de promouvoir
+	l'informatique au niveau scientifique et pédagogique aussi bien auprès des
+	étudiants que des professionnels. Dans ce cadre, elle organise un cycle de
+	conférences régulières. Ces dernières, d'une à deux heures chacune, offrent
+	l'opportunité de se familiariser ou de se perfectionner avec les nombreuses
+	méthodes et techniques liées à l'informatique ou ses langages de
+	programmation en vogue ou en devenir.</p>
+
+
+	<p>Etudiants et professeurs sont invités à proposer une présentation
+	tutorielle (titre et court résumé). Ces propositions sont validées par les
+	organisateurs et ensuite soumises aux préférences des auditeurs. À la fin
+	de chaque conférence, les organisateurs présentent rapidement la liste des
+	propositions en cours et sélectionnent, pour le mois suivant, celle qui a
+	obtenu le plus de voix de préférences. Le présentateur dispose alors de
+	quatre semaines pour affiner ses slides, en collaboration avec les
+	organisateurs, afin de mettre l'accent tant sur l'attrait de la
+	présentation que sur son accessibilité à tous. Le choix de la langue
+	(anglais ou français) est laissé à l'appréciation du présentateur.</p>
+
+	
+	<h3>Olympiades d'informatique</h3>
+	
+	<p>L'IOI (International Olympiads in Informatics) organise des olympiades
+	internationales d'informatique à destination d'élèves qui sont en dernière
+	année de secondaire. Afin de pouvoir envoyer des équipes nationales à ces
+	olympiades, chaque pays est tenu d'organiser des olympiades nationales
+	équitables au terme desquelles des candidats sont envoyés à l'épreuve
+	internationale. L'UCLouvain ACM Student Chapter fera partie de l'équipe qui
+	organisera ces olympiades pour la communauté française de Belgique. De
+	plus, elle pourrait également proposer des stages d'entrainement aux rhétos
+	sélectionnés pour les olympiades internationales.</p>
+
+
+	<h3>Concours d'informatique</h3>
+
+	<p>Il s'agit ici d'organiser des concours de programmation pour les
+	étudiants et chercheurs de l'UCL en première ligne. Le principe est simple:
+	on propose des problèmes qu'il faut résoudre et pour ces problèmes, on
+	donne les inputs et les outputs attendus. On fixe une heure de début et de
+	fin du concours. Les participants sont libres de résoudre le problème dans
+	n'importe quel langage, ils doivent ensuite soumettre leur programme via
+	une interface web. Ensuite, on se charge d'exécuter les programmes sur les
+	exemples donnés et éventuellement d'autres exemples. On évalue les
+	programmes et on désigne les gagnants.</p>
+
+
+</div>

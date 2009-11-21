@@ -1,9 +1,8 @@
 <div id="main">
 
-	<div id="img">
-		<img src="images/Latex-6507.jpg" />
-		<p>Learn how to typeset math nicely... Find material about <a href="/latex">LaTeX course and training</a>.</p>
-	</div>
+	<div id="img"><a href="/latex"><img src="images/Latex-6507.jpg" /></a></div>
+
+<!--
 
 	<h2>What is UCLouvain<br />ACM Student Chapter?</h2>
 
@@ -22,6 +21,29 @@
 		</form>
 	</div>
 	
+-->
+
+	<div class="box box-span-2">
+		<a href="/activites">Découvrez nos activités.<span>Sciences infuses, tutoriels, olympiades d'informatique, etc.</span></a>
+	</div>
+
+	<div class="box">
+		<a href="/latex">Inscrivez-vous<span>à la formation pratique LaTeX</span></a>
+	</div>
+
+	<div class="box">
+		<a href="mailto:info@uclouvain.acm-sc.be">Contactez<br />nous</a>
+	</div>
+
+	<div class="grey-box">
+		<form action="/services/subscribe" method="post" enctype="multipart/form-data" id="subscribe-form">
+			<label for="mail">Inscrivez-vous<br /> à la newsletter</label>
+			<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
+			<input type="submit" value="Go »" />
+			<p id="message" ></p>
+		</form>
+	</div>
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			form = "form#subscribe-form";

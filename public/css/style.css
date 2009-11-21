@@ -12,8 +12,13 @@ body {
 	padding-bottom: 60px;
 }
 
-a:link {
+a {
 	color: #005c9c;
+	text-decoration: none;
+}
+
+a img {
+	border: 0px none;
 }
 
 #header,
@@ -24,7 +29,7 @@ a:link {
 }
 
 #header {
-	margin: 30px auto 10px;
+	margin: 20px auto;
 
 	/* With this property, the height of the wrapper includes the height of the
 	 * floating elements */
@@ -52,30 +57,20 @@ a:link {
 	font-size: 1.6em;
 	float: right;
 	text-align: right;
-	padding-right: 10px;
 }
 
 #main {
 	position: relative;
-	overflow: auto;
 }
 
 #main div#img {
-	float: left;
 	border: 1px solid #ccc;
 	padding: 1px;
-	width: 467px;
+	width: 676px;
 }
 
 #main div#img img {
-	margin-bottom: 10px;
-	float: left;
-}
-
-#main div#img p {
-	margin: 5px;
-	padding: 5px;
-	color: #000;
+	display: block;
 }
 
 #main p,
@@ -83,12 +78,13 @@ a:link {
 	font-size: 1.2em;
 	color: #666;
 	line-height: 150%;
-	padding-right: 220px;
+	padding-right: 240px;
+	text-align: justify;
 }
 
 #main ul {
 	margin: 0 0 0 16px;
-	padding: 0 220px 0 0;
+	padding: 0 240px 0 0;
 	list-style-type: inside;
 }
 
@@ -97,13 +93,56 @@ a:link {
 }
 
 #main .side {
+	margin-top: 2em;
+	padding: 10px 0 0 0;
 	float: right;
-	border: 1px solid #ccc;
+	width: 220px;
 }
 
 #main .side img {
-	margin: 1px;
+	border: 1px solid #ccc;
+	padding: 1px;
+	display: block;
+}
+
+#main .side p {
+	padding: 0;
+	font-size: 1em;
+	color: #999;
+	text-align: right;
+}
+
+body.index #main .box {
+	border: 1px solid #ccc;
+	margin: 20px 20px 0 0 ;
 	float: left;
+	width: 98px;
+	height: 86px;
+	line-height: 1.8em;
+}
+
+body.index #main .box-span-2 {
+	width: 198px;
+}
+
+body.index #main .box a {
+	display: block;
+	width: 78px;
+	height: 66px;
+	padding: 10px;
+	font-size: 1.2em;
+	text-decoration: none;
+	color: #666;
+}
+
+body.index #main .box-span-2 a {
+	width: 178px;
+}
+
+body.index #main .box a span {
+	color: #999;
+	font-size: 0.9em;
+	display: block;
 }
 
 body.index #main h2,
@@ -116,7 +155,7 @@ body.index #main p {
 #main h2 {
 	font-weight: normal;
 	font-size: 1.4em;
-	margin-top: 0;
+	margin: 0 0 10px 0;
 }
 
 #main h3 {
@@ -131,80 +170,17 @@ body.index #main p {
 }
 
 #main .grey-box {
-	/* The size results of 200 - 2 * 1 (border) - 2 * 1 (padding) */
-	width: 196px;
+	width: 216px;
+	height: 86px;
 	border: 1px solid #ccc;
 	padding: 1px;
 	background: #fff;
 
-	overflow: auto;
-	position: absolute;
-	bottom: 0;
-	right: 0;
+	float: left;
+	margin: 20px 0 0 0;
 }
 #main .grey-box p#message {
 	display: none;
-}
-
-body.latex #main .grey-box {
-	top: 286px;
-	bottom: auto;
-}
-
-#main form#details-form {
-	font-size: 1.2em;
-	color: #666;
-	line-height: 150%;
-	padding-right: 220px;
-}
-
-#main form#details-form input,
-#main form#details-form textarea {
-	display: block;
-	margin-bottom: 10px;
-	width: 443px;
-	border: 1px solid #ccc;
-	font-size: 1em;
-	padding: 5px;
-}
-
-#main form#details-form legend {
-	font-size: 1.2em;
-	padding: 0 1em;
-}
-
-#main form#details-form fieldset {
-	border: 1px solid #ccc;
-	font-size: 0.9em;
-	margin: 0 0 20px 0;
-	width: 443px;
-	padding: 5px;
-}
-
-#main form#details-form fieldset p {
-	padding: 0;
-	margin: 0;
-}
-
-#main form#details-form textarea {
-	height: 60px;
-}
-
-#main form#details-form input.checkbox {
-	display: inline;
-	width: auto;
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
-
-#main form#details-form input.submit {
-	width: auto;
-}
-
-#main form#details-form input.small {
-	width: 200px;
-	display: inline-block;
 }
 
 #main .grey-box form {
@@ -212,18 +188,20 @@ body.latex #main .grey-box {
 	padding: 10px;
 	float: left;
 	overflow: auto;
-	width: 176px;
+
+	width: 196px;
+	height: 66px;
 }
 
 #main .grey-box form label {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	color: #666;
 	display: block;
 	margin-bottom: 10px;
 }
 
 #main .grey-box form input[type=text] {
-	width: 112px;
+	width: 132px;
 	float: left;
 }
 #main .grey-box form input[type=submit] {
@@ -236,9 +214,93 @@ body.latex #main .grey-box {
 	padding: 0;
 }
 
+#main form#details-form {
+	font-size: 1.2em;
+	color: #666;
+	line-height: 150%;
+	padding-right: 220px;
+}
+
+#main form#details-form label {
+	display: block;
+	width: 200px;
+	float: left;
+}
+
+#main form#details-form label.with-input {
+	width: auto;
+	margin: 0 5px 0 0;
+}
+
+#main form#details-form input,
+#main form#details-form textarea {
+	display: block;
+	float: left;
+	margin-bottom: 10px;
+	width: 240px;
+	font-size: 1em;
+}
+
+#main form#details-form legend {
+	font-size: 1.2em;
+	padding: 0 1em;
+	margin-left: 1em;
+}
+
+#main form#details-form fieldset {
+	border: 1px solid #ccc;
+	border-width: 1px 0 0 0 ;
+	font-size: 0.9em;
+	margin: 0 0 20px 0;
+	width: 443px;
+	padding: 5px;
+	clear: left;
+}
+
+#main form#details-form fieldset p {
+	padding: 0;
+	margin: 0;
+}
+
+#main form#details-form textarea {
+	height: 60px;
+}
+
+#main form#details-form input.checkbox {
+	width: auto;
+	margin: 0 10px 0 0;
+	padding: 0;
+	border: 0;
+	clear: left;
+}
+
+#main form#details-form input.submit {
+	width: auto;
+}
+
+#main form#details-form input.small {
+	width: 200px;
+	display: inline-block;
+}
+
+#main form#details-form strong {
+	float: left;
+	display: block;
+	width: 200px;
+	clear: left;
+	margin: 10px 0 0 0;
+}
+
+#main form#details-form span.right {
+	float: left;
+	display: block;
+	margin: 10px 0 10px 0;
+}
+
+
 #footer {
 	clear: both;
-	padding-top: 10px;
+	padding-top: 20px;
 	font-size: 1.2em;
 	margin-top: 40px;
 }
@@ -252,14 +314,19 @@ body.index #footer {
 }
 
 #footer p#social-links a {
-	width: 120px;
+	width: 100px;
 	display: block;
 	float: left;
 	color: #005999;
+	margin: 0 10px 0 0;
+	line-height: 1.4em;
+	font-size: 0.9em;
 }
 
 #footer p#internal-links a {
 	float: right;
 	color: #999;
-	width: 190px;
+	width: 220px;
+	font-size: 0.9em;
+	text-align: right;
 }
