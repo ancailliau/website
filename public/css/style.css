@@ -245,6 +245,7 @@ body.index #main p {
 	font-size: 1.2em;
 	padding: 0 1em;
 	margin-left: 1em;
+	color: #666;
 }
 
 #main form#details-form fieldset {
@@ -253,7 +254,7 @@ body.index #main p {
 	font-size: 0.9em;
 	margin: 0 0 20px 0;
 	width: 443px;
-	padding: 5px;
+	padding: 20px 5px 5px 5px;
 	clear: left;
 }
 

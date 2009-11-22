@@ -109,7 +109,7 @@
 				</span>
 			</p>
 		</fieldset>
-		<input type="submit" value="Submit »" class="submit" />
+		<input type="submit" value="Envoyer »" class="submit" />
 	</form>
 	<p id="message">&nbsp;</p>
 
