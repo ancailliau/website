@@ -16,8 +16,8 @@
 	<h3>Soirées-conférences à thème</h3>
 	
 	<p>Ces conférences à thème ont pour objectif de présenter différents
-	aspects de l'informatique au grand public. Celles-ci ont lieu en semaine
-	comme en soirée afin de permettre au plus grand nombre possible d'y
+	aspects de l'informatique au grand public. Celles-ci ont lieu à la fois en
+	semaine et en soirée afin de permettre au plus grand nombre possible d'y
 	assister. Elles comportent plusieurs présentations dont les orateurs sont
 	choisis pour leur capacité à faire partager leur passion ou métier au grand
 	public, cela afin d'assurer la qualité de la conférence.</p>
@@ -61,7 +61,7 @@
 
 	<p>Etudiants et professeurs sont invités à proposer une présentation
 	tutorielle (titre et court résumé). Ces propositions sont validées par les
-	organisateurs et soumises ensuite aux préférences des auditeurs. À la fin
+	organisateurs et soumises ensuite aux préférences des auditeurs.  À la fin
 	de chaque conférence, les organisateurs présentent rapidement la liste des
 	propositions en cours et sélectionnent, pour le mois suivant, celle qui a
 	obtenu le plus de voix de préférences. Le présentateur dispose alors de
@@ -86,14 +86,14 @@
 
 	<h3>Concours d'informatique</h3>
 
-	<p>Il s'agit ici d'organiser des concours de programmation, avant tout pour les
-	étudiants et chercheurs de l'UCL. Le principe est simple: des problèmes à résoudre
-	sont proposés, chacun étant spécifié en termes d'outputs attendus en fonction 
-	d'inputs fournis avec la description du problème. Une heure de début et de
-	fin du concours est fixée. Les participants sont libres de résoudre le problème dans
-	n'importe quel langage, et doivent ensuite soumettre leur programme via
-	une interface web. L'exécution de ces programmes sur les exemples donnés et 
-	éventuellement d'autres exemples permet de les évaluer et de désigner les gagnants.</p>
+	<p>Il s'agit ici d'organiser des concours de programmation, avant tout pour
+	les étudiants et chercheurs de l'UCL. Le principe est simple: des problèmes
+	à résoudre sont proposés, une heure de début et de fin du concours est
+	également fixée. Les participants sont libres de résoudre le problème dans
+	n'importe quel langage, et doivent ensuite soumettre leur programme via une
+	interface web. L'exécution de ces programmes sur les exemples donnés et
+	éventuellement d'autres exemples permet de les évaluer et de désigner les
+	gagnants.</p>
 
 
 </div>
