@@ -31,123 +31,13 @@
 	sauf la scéance de lundi entre 14h et 16h qui aura lieu en salle Candix (<a
 	href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=104799927147349536591.000477cce98e89ae44699&ll=50.668083,4.622422&spn=0.002013,0.004823&t=h&z=18">plan</a>).</p>
 
-	<h3>Inscrivez-vous à la formation pratique&nbsp;!</h3>
-	<form action="/services/subscribe_latex" method="post" enctype="multipart/form-data" id="details-form">
+	<p>Les fichiers suivants sont disponibles</p>
+	<ul>
+		<li><a href="Introductory.zip">Introductory.zip</a></li>
+		<li><a href="Advanced.zip">Advanced.zip</a></li>
+		<li><a href="LaTeX-Pratique-Examples.zip">LaTeX-Pratique-Examples.zip</a></li>
+	</ul>
 
-		<label for="firstname">Mon prénom&nbsp;:</label>
-		<input type="text" value="John" name="first_name" id="mail"/>
-
-		<label for="lastname">Mon nom de famille&nbsp;:</label>
-		<input type="text" value="Doe" name="last_name" id="mail"/>
-
-		<label for="occupation">Mon occupation&nbsp;:</label>
-		<input type="text" value="FSA13BA" name="occupation" id="mail"/>
-
-		<label for="mail">Mon e-mail&nbsp;:</label>
-		<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
-
-		<label for="formation">Les autres formations (en informatique) qui pourraient m'intéresser&nbsp;:</label>
-		<textarea name="formation"></textarea>
-
-		<fieldset>
-
-			<legend>J'ai entendu parler de cette formation via</legend>
-
-			<p>
-				<input class="checkbox" type="checkbox" value="sebastien" name="how[]" />
-				<label class="checkbox">Sébastien Combéfis</label>
-			</p>
-
-			<p>
-				<input class="checkbox" type="checkbox" value="affiche" name="how[]" />
-				<label>Affiche</label>
-			</p>
-			
-			<p>
-				<input class="checkbox" type="checkbox" value="facebook" name="how[]" />
-				<label>Facebook</label>
-			</p>
-			
-			<p>
-				<input class="checkbox" type="checkbox" value="connaissance" name="how[]" />
-				<label>Connaissance</label>
-			</p>
-			
-			<p>
-				<input class="checkbox" type="checkbox" value="autre" name="other" />
-				<label class="with-input">Autre&nbsp;:</label> <input type="text" name="how[]" class="small" value="" />
-			</p>
-
-		</fieldset>
-
-		<fieldset>
-			<legend>Je suis disponible pour la formation pratique</legend>
-			<p>
-				<strong>Lundi 30/11</strong>
-				<span class="right">
-					<input type="checkbox" value="2009/30/11 14h-16h" name="date[]" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
-					<input type="checkbox" value="2009/30/11 16h15-18h15" name="date[]" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
-				<span>
-			</p>
-
-			<p>
-				<strong>Mardi 01/12</strong>
-				<span class="right">
-					<input type="checkbox" value="2009/12/01 10h45-12h45" name="date[]" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
-					<input type="checkbox" value="2009/12/01 14h-16h" name="date[]" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
-				</span>
-			</p>
-			
-			<p>
-				<strong>Mercredi 02/12</strong>
-				<span class="right">
-					<input type="checkbox" value="2009/12/02 10h45-12h45" name="date[]" class="checkbox" /> <label>10h45&nbsp;&ndash;&nbsp;12h45</label>
-					<input type="checkbox" value="2009/12/02 14h-16h"name="date[]" class="checkbox" /> <label>14h&nbsp;&ndash;&nbsp;16h</label>
-					<input type="checkbox" value="2009/12/02 16h15-18h15" name="date[]" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
-				</span>
-			</p>
-
-			<p>
-				<strong>Jeudi 03/12</strong>
-				<span class="right">
-					<input type="checkbox" value="2009/12/03 16h15-18h15" name="date[]" class="checkbox" /> <label>16h15&nbsp;&ndash;&nbsp;18h15</label>
-				</span>
-			</p>
-		</fieldset>
-		<input type="submit" value="Envoyer »" class="submit" />
-	</form>
-	<p id="message">&nbsp;</p>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			form = "form#details-form";
-			$(form).submit(function() {
-				$.ajax({type: "POST", url: $(form).attr('action'), data: $(form).serialize(), dataType: "json",
-					error: function(data) {
-						if (data.status == 500) {
-							$('form#details-form').hide();
-							$('p#message').html("Une erreur a été rencontrée sur" +
-							"notre serveur, merci de réessayer plus tard.");
-						}
-					},
-					success: function(data) {
-						if (data == "invalid_email") {
-							$('p#message').html("Votre e-mail n'est pas valide.");
-						} else if (data == "missing_first_name") {
-							$('p#message').html("Veuillez entrer votre prénom.");
-						} else if (data == "missing_last_name") {
-							$('p#message').html("Veuillez entrer votre nom de famille.");
-						} else if (data == "missing_date") {
-							$('p#message').html("Veuillez entrer au moins une date.");
-						} else {
-							$('form#details-form').hide();
-							$('p#message').html("Vous êtes maintenant inscrit.");
-						}
-					}});
-				return false;
-			});
-		});
-	</script>
 
 </div>
 
