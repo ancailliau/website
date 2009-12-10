@@ -326,6 +326,16 @@ body.index #main p {
 	left: 480px;
 }
 
+#submenu {
+	position: absolute;
+	left: 480px;
+	width: 200px;
+}
+
+#submenu ul {
+	width: 200px;
+}
+
 #footer {
 	clear: both;
 	padding-top: 20px;

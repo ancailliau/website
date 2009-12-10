@@ -1,17 +1,18 @@
+
 <div id="main">
 
-	<h2>Sécurité et vie privée</h2>
+	<h2>Conférence&nbsp;: Sécurité et vie privée</h2>
+
+	<ul id="submenu">
+		<li><a href="/securite-vie-privee/orateurs.html">Les orateurs</a></li>
+		<li><a href="/securite-vie-privee/sponsoring.html">Les sponsors</a></li>
+	</ul>
 
 	<p>La première soirée de conférences à thème de l'UCLouvain
-	ACM Student Chapter aura lieu le mardi 16 mars à Louvain-la-Neuve.
-	Cette soirée est composée de deux conférences dont le thème principal
+	ACM Student Chapter aura lieu le mardi 16 mars à Louvain-la-Neuve, dans
+	l'auditoire SUD18. Cette soirée est composée de deux conférences dont le thème principal
 	est la sécurité et la vie privée.</p>
 
-	<p>Les informations actuellement disponibles&nbsp;:</p>
-	<ul>
-		<li><a href="security-privacy-orateurs">Les orateurs</a></li>
-		<li><a href="security-privacy-sponsoring">Les sponsors</a></li>
-	</ul>
 
 	<h3>Programme</h3>
 
@@ -25,7 +26,7 @@
 			<p><strong>«&nbsp;Ces puces qui nous démangent&nbsp;»</strong>
 			(Gildas Avoine)</p>
 		
-			<p><img src="images/gildas-avoine.jpg" />Les puces électroniques sans contact s'initient
+			<p><img src="/images/gildas-avoine.jpg" />Les puces électroniques sans contact s'initient
 			un peu plus chaque jour dans notre quotidien. Que ce soit les
 			passeports biométriques, les cartes de contrôle d'accès, les
 			abonnements aux transports publics, ou les cartes de fidélité, tous ces
@@ -44,7 +45,7 @@
 			<p><strong>«&nbsp;Irrégularités dans le cyber espace : devons-nous
 			avoir peur des cyber criminels ?&nbsp;»</strong> (Luc Beirens)</p>
 			
-			<p><img src="images/luc-beirens.jpg" />Le commissaire
+			<p><img src="/images/luc-beirens.jpg" />Le commissaire
 			divisionnaire, Luc Beirens, chef de service de la Federal Computer
 			Crime Unit en sait plus. Dans sa présentation, il vous expliquera
 			les menaces présentes sur l'Internet, qui sont ces criminels et

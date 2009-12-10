@@ -1,9 +1,12 @@
 <div id="main">
 
-	<p><a href="security-privacy">&laquo; Retour au programme</a></p>
-
 	<h2>Sécurité et vie privée &mdash; Orateurs</h2>
 
+	<ul id="submenu">
+		<li><a href="/securite-vie-privee/index.html">Programme</a></li>
+		<li><a href="/securite-vie-privee/sponsoring.html">Les sponsors</a></li>
+	</ul>
+	
 	<p>Les deux orateurs de cette soirée sont&nbsp;:</p>
 	<ul>
 		<li><a href="#avoine">Gildas Avoine</a></li>
@@ -12,16 +15,17 @@
 
 	<h3 id="avoine">Gildas Avoine</h3>
 
-		<p><img src="images/gildas-avoine.jpg" class="aside"/>Gildas Avoine est
+		<p><img src="/images/gildas-avoine.jpg" class="aside"/><a href="http://www.avoine.net">Gildas Avoine</a> est
 		professeur à l'Université catholique de Louvain (UCL) en Belgique, dans
 		le département d'ingénierie informatique. Il a été recruté en 2007 afin
 		de développer dans ce département un groupe de recherche en
 		cryptographie et d'assurer la formation des ingénieurs en sécurité de
-		l'information. Avant de rejoindre l'UCL, Gildas Avoine a été chercheur
+		l'information. En 2008, il a créé le "<a href="http://sites.uclouvain.be/security">Information Security Group</a>". Avant de rejoindre l'UCL, Gildas Avoine a été chercheur
 		au MIT (USA), sous la direction de Ron Rivest, ainsi qu'à l'EPFL
 		(Suisse) où il a obtenu son doctorat en sciences sous la direction de
-		Serge Vaudenay. Auparavant, il a étudié les mathématiques et
-		l'informatique en France, à l'université de Caen.</p>
+		Serge Vaudenay. Auparavant, il a en France, à l'université de Caen,
+		où il a obtenu une licence en mathématique et une licence en informatique,
+		ainsi qu'un master est informatique.</p>
 
 		<p>Son principal axe de recherche concerne la conception d'outils
 		cryptographiques pour sécuriser la RFID, l'IDentification par Radio
@@ -34,27 +38,27 @@
 
 		<p>Gildas Avoine est auteur ou co-auteur de nombreux articles
 		scientifiques, articles de vulgarisation ou livres. Il a en particulier
-		publié en 2007 « Computer System Security » en collaboration avec P.
+		publié en 2007 « <em>Computer System Security</em> » en collaboration avec P.
 		Junod et Ph. Oechslin. En 2005, il a mis en place le site web
-		www.avoine.net/rfid, portail scientifique de la sécurité en RFID.
+		<a href="http://www.avoine.net/rfid">www.avoine.net/rfid</a>, portail scientifique de la sécurité en RFID.
 		Enfin, Gildas Avoine est consultant indépendant et assure des
 		formations sur la sécurité dans le milieu industriel.</p>
 
 	<h3 id="beirens">Luc Beirens</h3>
 
-		<p><img src="images/luc-beirens.jpg" class="aside"/>Depuis 1991, le
+		<p><img src="/images/luc-beirens.jpg" class="aside"/>Depuis 1991, le
 		commissaire divisionnaire Luc Beirens est engagé dans l'informatique
 		légale (computer forensics) et dans des enquêtes sur les cyber crimes.
-		Il est le chef de service de la Federal Computer Crime Unit (FCCU),
-		unité de la Police Fédérale, depuis 2001.</p>
+		Il est le chef de service de la <em>Federal Computer Crime Unit</em> (FCCU),
+		unité de la <em>Police Fédérale</em>, depuis 2001.</p>
 
 		<p>En plus de conseiller ses enquêteurs sur des enquêtes cyber
 		criminelles en cours, il est responsable de l'organisation, des
 		équipements et de l'entrainement des services de police Belge qui
 		effectuent des enquêtes impliquant de la cyber criminalité.</p>
 
-		<p>En tant que membre du European Working Party on Information
-		Technology Crime (EWPITC), groupe de travail européen sur les crimes
+		<p>En tant que membre du <em>European Working Party on Information
+		Technology Crime</em> (EWPITC), groupe de travail européen sur les crimes
 		liés aux technologies de l'information d'Interpol, depuis 1995 et du
 		groupe d'experts en cyber criminalité EUROPOL depuis 2001, il est
 		co-auteur de plusieurs documents relatifs à l'informatique légale et
@@ -67,8 +71,8 @@
 		sont concernées par l'informatique légale et la lutte contre la cyber
 		criminalité et l'e-sécurité.</p>
 
-		<p>En tant que membre du Belgian governmental Network on Information
-		Security (NelNIS), réseau gouvernemental belge sur la sécurité de
+		<p>En tant que membre du <em>Belgian governmental Network on Information
+		Security</em> (NelNIS), réseau gouvernemental belge sur la sécurité de
 		l'information, il est conseillé auprès du gouvernement belge pour des
 		questions relatives au développement et la mise en œuvre de stratégies
 		visant à protéger les infrastructures TIC critiques.</p>
