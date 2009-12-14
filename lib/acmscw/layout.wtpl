@@ -13,7 +13,7 @@
 
     <<+{header.wtpl}
 
-	  <<+{${pagerequest}.wtpl}
+	  <<+{${pagerequest}}
 
     <<+{footer.wtpl}
 

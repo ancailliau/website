@@ -1,15 +1,21 @@
 module AcmScW
   class MainController
     
+    # Finds the page file that maps a given request
+    def self.find_requested_page_file(req_path)
+      req_path = "#{req_path}index" if req_path[req_path.length-1, 1] == '/'
+      req_path = req_path[1..-1] if req_path[0,1]=='/'
+      req_path = $1 if req_path =~ /^(.*?)(\.html?)?$/
+      req_path = "#{req_path}.wtpl"
+      File.exists?(File.join(File.dirname(__FILE__), req_path)) ? req_path : nil
+    end
+    
     def call(env)
       req = Rack::Request.new(env)
       
       # find the main page to compose
-      page = req.fullpath
-      page = "/index.html" if page == '/'
-      page = $1 if page =~ /^\/([a-zA-Z0-9_\/-]+)(\.html?)?\/?$/
-      is404 = !File.exists?(File.join(File.dirname(__FILE__), "#{page}.wtpl"))
-      page = 'index' if is404
+      is404, page = false, MainController.find_requested_page_file(req.fullpath)
+      is404, page = true,  MainController.find_requested_page_file('/') unless page
       
       # compose it
       context = {"base_href"   => AcmScW.base_href,
