@@ -18,8 +18,9 @@ module AcmScW
       is404, page = true,  MainController.find_requested_page_file('/') unless page
       
       # compose it
+      the_class = $1 if page =~ /([a-zA-Z0-9-_]+)\.wtpl$/
       context = {"base_href"   => AcmScW.base_href,
-                 "body_class"  => page,
+                 "body_class"  => the_class,
                  "pagerequest" => page}
       layout = File.join(File.dirname(__FILE__), 'layout.wtpl')
       composed = WLang.file_instantiate(layout, context).to_s
