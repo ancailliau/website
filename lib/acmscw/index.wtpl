@@ -1,6 +1,6 @@
 <div id="main">
 
-	<div id="img"><a href="/latex"><img src="images/Latex-6507.jpg" /></a></div>
+	<div id="img"><a href="/latex"><img src="images/Latex-6526.jpg" /></a></div>
 
 <!--
 
@@ -23,8 +23,12 @@
 	
 -->
 
-	<div class="box box-span-2">
-		<a href="/activites">Découvrez nos activités.<span>Sciences infuses, tutoriels, olympiades d'informatique, etc.</span></a>
+	<div class="box">
+		<a href="/activites">Découvrez nos activités.</a>
+	</div>
+
+	<div class="box">
+		<a href="/scienceinfuse/index.html">Scienceinfuse<span>Les activités organisées</span></a>
 	</div>
 
 	<div class="box">
