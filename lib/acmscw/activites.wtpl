@@ -1,10 +1,5 @@
 <div id="main">
 
-	<div class="side">
-		<img src="/images/link.jpg" />
-		<p>Des activités pour créer des liens et informer.</p>
-	</div>
-
 	<h2>Quels sont les activités organisées&nbsp;?</h2>
 
 	<p>L'ASBL Uclouvain ACM Student Chapter organise tout au long de l'année
@@ -26,30 +21,10 @@
 	sécurité et de la vie privée. <a href="/securite-vie-privee/index.html">En savoir plus...</a></p>
 
 	
-	<h3>Sciences Infuses</h3>
+	<h3>Science Infuse</h3>
 	
-	<p>Partant du constat que les jeunes ont une vision de l'informatique
-	fondée sur des stéréotypes, le département INGI propose des activités aux
-	jeunes pour leur montrer l'envers du décor. Ces activités ne sont pas réalisées
-	sur ordinateur, mais illustrent le fonctionnement de l'informatique à l'aide 
-	de papiers et crayons. La plupart de ces activités sont basées sur celles proposées 
-	sur <a href="http://csunplugged.org">http://csunplugged.org</a>. Elles couvrent 
-	divers aspects de l'informatique: représentation de données sur la machine (binaire, 
-	image, code correcteur d'erreur, etc.), l'algorithmique (tri, coloriage de graphes, 
-	complexité, etc.), les réseaux, l'intelligence artificielle, la sécurité, etc.</p>
-
-	<p>Ces activités sont proposées de manière intensive durant le Printemps des
-	Sciences, festival des sciences où l'enseignement supérieur invite le
-	primaire et le secondaire à venir participer à des ateliers scientifiques.
-	Parmi ces derniers, ceux proposés par le département INGI ont remporté dès le 
-	début un grand succès. L'aspect ludique des activités motive les élèves et leur 
-	permet de réaliser des « défis » qu'ils pensaient hors de portée. Les enseignants 
-	en fin d'atelier sont unanimes quand à l'intérêt de l'approche.</p>
-
-	<p>L'UCLouvain ACM Student Chapter propose de continuer cet évènement
-	durant le weekend et organise donc un évènement à destination des familles.
-	Durant cet évènement, nous proposons de faire découvrir l'informatique
-	grâce à des stands découvertes et des animations thématiques.</p>
+	<p>Découvrez les <a href="/scienceinfuse/index.html">pages consacrées</a> à
+	l'événement.</p>
 
 
 	<h3>Tutoriels</h3>
