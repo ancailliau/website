@@ -2,7 +2,7 @@ module AcmScW
   class MainController
     
     # The folder of this class
-    HERE = File.dirname(__FILE__)
+    PAGES_FOLDER = File.join(File.dirname(__FILE__), '..', '..', 'public', 'pages')
     
     # Finds the page file that maps a given request
     def self.find_requested_page_file(req_path)
@@ -13,13 +13,13 @@ module AcmScW
       # 2) Main index file
       return 'index.wtpl' if req_path.empty?
       # 2) Check if a directory
-      if File.exists?(File.join(HERE, req_path)) and File.directory?(File.join(HERE, req_path))
+      if File.exists?(File.join(PAGES_FOLDER, req_path)) and File.directory?(File.join(PAGES_FOLDER, req_path))
         return File.join(req_path, 'index.wtpl')
       end
       # 3) Looks for files now, by removing extension first
       req_path = $1 if req_path =~ /^(.*?)(\.html?)?$/
       req_path = "#{req_path}.wtpl"
-      File.exists?(File.join(HERE, req_path)) ? req_path : nil
+      File.exists?(File.join(PAGES_FOLDER, req_path)) ? req_path : nil
     end
     
     def call(env)
@@ -33,7 +33,7 @@ module AcmScW
       the_class = $1 if page =~ /([a-zA-Z0-9\-_]+)\.wtpl$/
       context = {"base_href"   => AcmScW.base_href,
                  "pagerequest" => page}
-      layout = File.join(File.dirname(__FILE__), 'layout.wtpl')
+      layout = File.join(PAGES_FOLDER, 'layout.wtpl')
       composed = WLang.file_instantiate(layout, context).to_s
       
       # send result
