@@ -3,14 +3,14 @@
 	<h2>Sécurité et vie privée &mdash; Orateurs</h2>
 
 	<ul id="submenu">
-		<li><a href="/securite-vie-privee/index.html">Programme</a></li>
-		<li><a href="/securite-vie-privee/sponsoring.html">Sponsors</a></li>
+		<li><a href="/securite-vie-privee">Programme</a></li>
+		<li><a href="/securite-vie-privee/sponsoring">Sponsors</a></li>
 	</ul>
 	
 	<p>Les deux orateurs de cette soirée sont&nbsp;:</p>
 	<ul>
-		<li><a href="/securite-vie-privee/orateurs.html#avoine">Gildas Avoine</a></li>
-		<li><a href="/securite-vie-privee/orateurs.html#beirens">Luc Beirens</a></li>
+		<li><a href="/securite-vie-privee/orateurs#avoine">Gildas Avoine</a></li>
+		<li><a href="/securite-vie-privee/orateurs#beirens">Luc Beirens</a></li>
 	</ul>
 
 	<h3 id="avoine">Gildas Avoine</h3>
