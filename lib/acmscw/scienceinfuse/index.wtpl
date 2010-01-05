@@ -4,8 +4,8 @@
 	<h2>Weekend Festival Scienceinfuse</h2>
 
 	<ul id="submenu">
-		<li><a href="/scienceinfuse/acces.html">Accès et inscriptions</a></li>
-		<li><a href="/scienceinfuse/sponsoring.html">Sponsors</a></li>
+		<li><a href="/scienceinfuse/acces">Accès et inscriptions</a></li>
+		<li><a href="/scienceinfuse/sponsoring">Sponsors</a></li>
 	</ul>
 
 	<p>Dans le cadre du Printemps des Sciences 2010, se déroule le samedi 27 et
@@ -25,11 +25,11 @@
 	<p>En attendant l'événement, découvrez les diverses activités qui vous
 	seront proposées&nbsp;:</p>
 	<ul>
-		<li><a href="/scienceinfuse/index.html#classes">Classes</a></li>
-		<li><a href="/scienceinfuse/index.html#ateliers">L'informatique : les jeux vidéos mais
+		<li><a href="/scienceinfuse/#classes">Classes</a></li>
+		<li><a href="/scienceinfuse/#ateliers">L'informatique : les jeux vidéos mais
 		encore...</a></li>
-		<li><a href="/scienceinfuse/index.html#exposition">Exposition</a></li>
-		<li><a href="/scienceinfuse/index.html#alice-et-bob">Alice, Bob et les autres : messages
+		<li><a href="/scienceinfuse/#exposition">Exposition</a></li>
+		<li><a href="/scienceinfuse/#alice-et-bob">Alice, Bob et les autres : messages
 		secrets, piraterie et compagnie</a></li>
 	</ul>
 
