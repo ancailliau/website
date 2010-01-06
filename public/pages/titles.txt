@@ -1,0 +1,10 @@
+/                                UCLouvain ACM Student Chapter
+/activities                      Nos activités
+/latex                           A propos de Latex, nos formations et autres
+/olympiades                      Olympiades d'Informatique
+/scienceinfuse                   Weekend Festival Scienceinfuse
+/scienceinfuse/acces             Scienceinfuse - Accès et inscriptions
+/scienceinfuse/sponsoring        Scienceinfuse - Sponsoring
+/securite-vie-privee             Conférence - Sécurité et vie privée
+/securite-vie-privee/orateurs    Sécurité et vie privée - Orateurs
+/securite-vie-privee/sponsoring  Sécurité et vie privée - Sponsoring
