@@ -37,4 +37,79 @@ database.transaction do |t|
   
   # remove subscriptions now
   database << 'DROP TABLE "NEWS_SUBSCRIPTIONS" CASCADE;'
+
+  # Fills the activities table
+  activities = [
+    {
+      :id => 'conferences', :name => 'Soirées-conférences à thème', :abstract => <<-EOF
+      	<p>Ces conférences à thème ont pour objectif de présenter différents
+      	aspects de l'informatique au grand public. Celles-ci ont lieu à la fois en
+      	semaine et en soirée afin de permettre au plus grand nombre possible d'y
+      	assister. Elles comportent plusieurs présentations dont les orateurs sont
+      	choisis pour leur capacité à faire partager leur passion ou métier au grand
+      	public, cela afin d'assurer la qualité de la conférence.</p>
+	
+      	<p>Notre première soirée de conférences tourne autours du thème de la
+      	sécurité et de la vie privée. <a href="/securite-vie-privee">En savoir 
+      	plus...</a></p>
+      EOF
+    },
+    {
+      :id => 'scienceinfuse', :name => "Science Infuse", :abstract => <<-EOF
+      	<p>Découvrez les <a href="/scienceinfuse">pages consacrées</a> à
+      	l'événement.</p>
+      EOF
+    }, 
+    {
+      :id => 'tutorials', :name => 'Tutoriels', :abstract => <<-EOF
+      	<p>L'ASBL UCLouvain ACM Student Chapter a pour but de promouvoir
+      	l'informatique au niveau scientifique et pédagogique aussi bien auprès des
+      	étudiants que des professionnels. Dans ce cadre, elle organise un cycle de
+      	conférences régulières. Ces dernières, d'une à deux heures chacune, offrent
+      	l'opportunité de se familiariser ou de se perfectionner avec les nombreuses
+      	méthodes et techniques liées à l'informatique ou ses langages de
+      	programmation en vogue ou en devenir.</p>
+
+      	<p>Etudiants et professeurs sont invités à proposer une présentation
+      	tutorielle (titre et court résumé). Ces propositions sont validées par les
+      	organisateurs et soumises ensuite aux préférences des auditeurs.  À la fin
+      	de chaque conférence, les organisateurs présentent rapidement la liste des
+      	propositions en cours et sélectionnent, pour le mois suivant, celle qui a
+      	obtenu le plus de voix de préférences. Le présentateur dispose alors de
+      	quatre semaines pour affiner ses slides, en collaboration avec les
+      	organisateurs, afin de mettre l'accent tant sur l'attrait de la
+      	présentation que sur son accessibilité à tous. Le choix de la langue
+      	(anglais ou français) est laissé à l'appréciation du présentateur.</p>
+      EOF
+    },
+    {
+      :id => 'olympiades', :name => "Olympiades d'informatique", :card_path => '/olympiades', :abstract => <<-EOF
+      	<p>L'IOI (International Olympiads in Informatics) organise des olympiades
+      	internationales d'informatique à destination d'élèves de dernière année 
+      	du secondaire. Afin de pouvoir envoyer des équipes nationales à ces
+      	olympiades, chaque pays est tenu d'organiser des olympiades nationales
+      	équitables au terme desquelles des candidats sont envoyés à l'épreuve
+      	internationale. L'UCLouvain ACM Student Chapter fera partie de l'équipe qui
+      	organisera ces olympiades pour la communauté française de Belgique. De
+      	plus, elle pourrait également proposer des stages d'entraînement aux rhétos
+      	sélectionnés pour les olympiades internationales.</p>
+      EOF
+    },
+    {
+      :id => 'contest', :name => "Concours d'informatique", :abstract => <<-EOF
+      	<p>Il s'agit ici d'organiser des concours de programmation, avant tout pour
+      	les étudiants et chercheurs de l'UCL. Le principe est simple: des problèmes
+      	à résoudre sont proposés, une heure de début et de fin du concours est
+      	également fixée. Les participants sont libres de résoudre le problème dans
+      	n'importe quel langage, et doivent ensuite soumettre leur programme via une
+      	interface web. L'exécution de ces programmes sur les exemples donnés et
+      	éventuellement d'autres exemples permet de les évaluer et de désigner les
+      	gagnants.</p>
+      EOF
+    }
+  ]
+  activities.each do |act|
+    database[:activities].insert(act)
+  end
+
 end
