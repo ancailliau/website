@@ -2,6 +2,10 @@ require 'test/unit'
 require 'acmscw'
 class AcmScWTest < Test::Unit::TestCase
   
+  def setup
+    AcmScW.unload if AcmScW.loaded?
+  end
+  
   def test_load_configuration
     AcmScW.load_configuration <<-EOF
       database_user 'acmscw'

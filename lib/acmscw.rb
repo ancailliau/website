@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'pg'
+require 'sequel'
 require 'rack'
 require 'json'
 require 'waw'
@@ -14,8 +15,23 @@ module AcmScW
   # Configuration parameters
   CONFIG = {}
   
+  # Checks if the configuration has been loaded
+  def self.loaded?
+    CONFIG.size != 0
+  end
+  
+  # Unloads the configuration
+  def self.unload
+    CONFIG.clear
+  end
+  
+  # Returns the place where the deploy file should be placed
+  def self.look_for_deploy_file
+    File.join(File.dirname(__FILE__), '..', 'deploy')
+  end
+  
   # Loads the configuration from a given file
-  def self.load_configuration_file(file)
+  def self.load_configuration_file(file=look_for_deploy_file)
     load_configuration File.read(file)
   end
   
@@ -28,31 +44,28 @@ module AcmScW
   def self.method_missing(name, *args)
     CONFIG[name] = args[0]
     instance_eval <<-EOF
-      def self.#{name}
+      def self.#{name}(value=nil)
+        (CONFIG[:#{name}] = value) if value
         CONFIG[:#{name}] 
       end
     EOF
   end
   
-  # Creates a database connection
-  def self.create_db_connection
-    begin
-      # No connection previously created, or trying a new one
-      @connection = PGconn.open(:host => AcmScW.database_host, 
-                                :dbname => AcmScW.database_name, 
-                                :user => AcmScW.database_user, 
-                                :password => AcmScW.database_pwd)
-      @connection.set_client_encoding(AcmScW.database_encoding)
-      return @connection
-    rescue PGError => ex
-      # Fatal case, no connection can be created (is PostgreSQL running?)
-      raise ex
+  # Executes the given block inside a transaction
+  def self.transaction(*layers, &block)
+    layers = layers.collect{|l| l.instance}
+    self.database.transaction do
+      yield(*layers)
     end
   end
   
-  # Executes the given block inside a transaction
-  def self.transaction(&block)
-    Waw::Transaction.new(create_db_connection).go!(&block)
+  # Returns a Sequel database instance on the configuration
+  def self.database
+    @database ||= Sequel.postgres(:host     => AcmScW.database_host,
+                                  :user     => AcmScW.database_user,
+                                  :password => AcmScW.database_pwd,
+                                  :database => AcmScW.database_name,
+                                  :encoding => AcmScW.database_encoding)
   end
       
 end
@@ -60,3 +73,5 @@ end
 require 'acmscw/json'
 require 'acmscw/main_controller'
 require 'acmscw/services_controller'
+require 'acmscw/business/business_services'
+require 'acmscw/business/people_services'
