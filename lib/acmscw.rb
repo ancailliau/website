@@ -15,8 +15,23 @@ module AcmScW
   # Configuration parameters
   CONFIG = {}
   
+  # Checks if the configuration has been loaded
+  def self.loaded?
+    CONFIG.size != 0
+  end
+  
+  # Unloads the configuration
+  def self.unload
+    CONFIG.clear
+  end
+  
+  # Returns the place where the deploy file should be placed
+  def self.look_for_deploy_file
+    File.join(File.dirname(__FILE__), '..', 'deploy')
+  end
+  
   # Loads the configuration from a given file
-  def self.load_configuration_file(file)
+  def self.load_configuration_file(file=look_for_deploy_file)
     load_configuration File.read(file)
   end
   
@@ -29,7 +44,8 @@ module AcmScW
   def self.method_missing(name, *args)
     CONFIG[name] = args[0]
     instance_eval <<-EOF
-      def self.#{name}
+      def self.#{name}(value=nil)
+        (CONFIG[:#{name}] = value) if value
         CONFIG[:#{name}] 
       end
     EOF
@@ -70,3 +86,5 @@ end
 require 'acmscw/json'
 require 'acmscw/main_controller'
 require 'acmscw/services_controller'
+require 'acmscw/business/business_services'
+require 'acmscw/business/people_services'

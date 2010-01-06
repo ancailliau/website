@@ -12,16 +12,7 @@ module AcmScW
     validate :mail, Waw::Validation::MANDATORY, :missing_email
     validate :mail, Waw::Validation::EMAIL, :invalid_email
     action_define :subscribe, [:mail] do |mail|
-      begin
-        AcmScW.transaction do |trans|
-          trans.NEWS_SUBSCRIPTIONS << {:mail => mail}
-        end
-        :ok
-      rescue PGError => ex
-        puts ex.message
-        puts ex.backtrace.join("\n")
-        :user_already_registered
-      end
+      AcmScW::Business::PeopleServices.instance.subscribe_to_newsletter(mail)
     end
     
     #validate :first_name, Waw::Validation::MANDATORY, :missing_first_name
