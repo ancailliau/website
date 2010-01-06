@@ -36,5 +36,5 @@ database.transaction do |t|
   end
   
   # remove subscriptions now
-  # database << 'DROP TABLE "NEWS_SUBSCRIPTIONS" CASCADE;'
+  database << 'DROP TABLE "NEWS_SUBSCRIPTIONS" CASCADE;'
 end
