@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'pg'
+require 'sequel'
 require 'rack'
 require 'json'
 require 'waw'
