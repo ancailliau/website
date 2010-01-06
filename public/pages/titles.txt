@@ -1,5 +1,5 @@
 /                                UCLouvain ACM Student Chapter
-/activities                      Nos activités
+/activites                       Nos activités
 /latex                           A propos de Latex, nos formations et autres
 /olympiades                      Olympiades d'Informatique
 /scienceinfuse                   Weekend Festival Scienceinfuse
