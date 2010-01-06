@@ -47,7 +47,6 @@ module Waw
       def action_define(name, arg_names, &block)
         validations = @validations || []
         define_method "action_#{name}" do |request, response|
-          puts request.POST.inspect
           args = arg_names.nil? ? [request] : arg_names.collect {|arg_name| request[arg_name]}
           self.send(name, *args)
         end
