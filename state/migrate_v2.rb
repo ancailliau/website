@@ -112,4 +112,32 @@ database.transaction do |t|
     database[:activities].insert(act)
   end
 
+  # Fill the events table
+  events = [
+    {
+      :activity => 'conferences', :name => 'Conférence : Sécurité et vie privée',
+      :date     => Time.utc(2010, 03, 16, 18, 45), :location => "UCL, Louvain-la-Neuve, Auditoire SUD18",
+      :card_path => '/securite-vie-privee', :status => "planned",
+      :abstract => <<-EOF
+        <p>La première soirée de conférences à thème de l'UCLouvain ACM Student Chapter aura lieu le 
+           mardi 16 mars à Louvain-la-Neuve, dans l'auditoire SUD18. Cette soirée est composée de deux 
+           conférences dont le thème principal est la sécurité et la vie privée. Les deux orateurs de 
+           cette conférence sont Gildas Avoine et Luc Beirens.</p>
+      EOF
+    },
+    {
+      :activity => 'scienceinfuse', :name => "Weekend Festival Scienceinfuse 2010",
+      :date => Time.utc(2010, 03, 28, 14, 00), :location => "UCL, Louvain-la-Neuve, Place des Sciences",
+      :card_path => '/scienceinfuse', :status => "planned",
+      :abstract => <<-EOF
+      	<p>Dans le cadre du Printemps des Sciences 2010, se déroule le samedi 27 et
+      	le dimanche 28 mars 2010 à Louvain-la-Neuve un ensemble d'activités de
+      	sensibilisation à l'informatique.</p>
+      EOF
+    }
+  ]
+  events.each do |evt|
+    database[:events].insert(evt)
+  end
+
 end
