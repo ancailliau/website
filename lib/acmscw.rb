@@ -51,34 +51,21 @@ module AcmScW
     EOF
   end
   
-  # Creates a database connection
-  def self.create_db_connection
-    begin
-      # No connection previously created, or trying a new one
-      @connection = PGconn.open(:host => AcmScW.database_host, 
-                                :dbname => AcmScW.database_name, 
-                                :user => AcmScW.database_user, 
-                                :password => AcmScW.database_pwd)
-      @connection.set_client_encoding(AcmScW.database_encoding)
-      return @connection
-    rescue PGError => ex
-      # Fatal case, no connection can be created (is PostgreSQL running?)
-      raise ex
-    end
-  end
-  
   # Executes the given block inside a transaction
-  def self.transaction(&block)
-    Waw::Transaction.new(create_db_connection).go!(&block)
+  def self.transaction(*layers, &block)
+    layers = layers.collect{|l| l.instance}
+    self.database.transaction do
+      yield(*layers)
+    end
   end
   
   # Returns a Sequel database instance on the configuration
   def self.database
-    Sequel.postgres(:host     => AcmScW.database_host,
-                    :user     => AcmScW.database_user,
-                    :password => AcmScW.database_pwd,
-                    :database => AcmScW.database_name,
-                    :encoding => AcmScW.database_encoding)
+    @database ||= Sequel.postgres(:host     => AcmScW.database_host,
+                                  :user     => AcmScW.database_user,
+                                  :password => AcmScW.database_pwd,
+                                  :database => AcmScW.database_name,
+                                  :encoding => AcmScW.database_encoding)
   end
       
 end
