@@ -55,6 +55,15 @@ module AcmScW
   def self.transaction(&block)
     Waw::Transaction.new(create_db_connection).go!(&block)
   end
+  
+  # Returns a Sequel database instance on the configuration
+  def self.database
+    Sequel.postgres(:host     => AcmScW.database_host,
+                    :user     => AcmScW.database_user,
+                    :password => AcmScW.database_pwd,
+                    :database => AcmScW.database_name,
+                    :encoding => AcmScW.database_encoding)
+  end
       
 end
 
