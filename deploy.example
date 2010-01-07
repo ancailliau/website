@@ -19,3 +19,8 @@ database_name     'acmscw'
 database_user     'acmscw'
 database_pwd      'acmscw'
 database_encoding 'utf8'
+
+# Information about the smtp server to use for sending mails
+smtp_host         'smtp.sgsi.ucl.ac.be'
+smtp_port         25
+smtp_timeout      3

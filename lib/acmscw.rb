@@ -52,6 +52,8 @@ module AcmScW
     raise "Incomplete configuration, database_user missing" unless CONFIG.has_key?(:database_user)
     raise "Incomplete configuration, database_pwd missing" unless CONFIG.has_key?(:database_pwd)
     raise "Incomplete configuration, database_encoding missing" unless CONFIG.has_key?(:database_encoding)
+    raise "Incomplete configuration, smtp_host missing" unless CONFIG.has_key?(:smtp_host)
+    raise "Incomplete configuration, smtp_port missing" unless CONFIG.has_key?(:smtp_port)
   end
   
   # Fired when a method is missing
