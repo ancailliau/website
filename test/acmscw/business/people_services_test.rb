@@ -67,6 +67,7 @@ module AcmScW
         assert_equal false, @layer.account_activated?(TEST_USER)
         assert_equal true, @layer.account_waits_activation?(TEST_USER)
         assert_equal false, @layer.people_may_log?(TEST_USER)
+        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
         @layer.activate(activation_key)
         assert_equal true, @layer.account_activated?(TEST_USER)
         assert_equal false, @layer.account_waits_activation?(TEST_USER)
@@ -80,6 +81,7 @@ module AcmScW
         assert_equal false, @layer.account_activated?(TEST_USER)
         assert_equal true, @layer.account_waits_activation?(TEST_USER)
         assert_equal false, @layer.people_may_log?(TEST_USER)
+        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
         @layer.activate(activation_key, :password => 'thepassword')
         assert_equal true, @layer.account_activated?(TEST_USER)
         assert_equal false, @layer.account_waits_activation?(TEST_USER)
@@ -95,11 +97,13 @@ module AcmScW
         assert_equal true, @layer.people_may_log?(TEST_USER)
         assert_equal :ok, @layer.update_profile(TEST_USER, :password => 'newpass')
         assert_equal true, @layer.people_may_log?(TEST_USER)
+        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
         assert_equal :activation_required, @layer.update_profile(TEST_USER, :mail => TEST_USER_ALIAS)
         assert_equal false, @layer.people_may_log?(TEST_USER)
         assert_equal false, @layer.people_may_log?(TEST_USER_ALIAS)
         assert_equal false, @layer.account_activated?(TEST_USER_ALIAS)
         assert_equal true, @layer.account_waits_activation?(TEST_USER_ALIAS)
+        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER_ALIAS)
       end
       
     end
