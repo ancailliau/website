@@ -59,6 +59,33 @@ module AcmScW
         assert_not_nil @layer.activation_key("blambeau@gmail.com")
       end
       
+      def test_account_activation_sc1
+        assert_not_nil(activation_key = @layer.create_default_profile(TEST_USER))
+        assert_equal false, @layer.account_activated?(TEST_USER)
+        assert_equal true, @layer.account_waits_activation?(TEST_USER)
+        assert_equal false, @layer.people_may_log?(TEST_USER)
+        @layer.activate(activation_key)
+        assert_equal true, @layer.account_activated?(TEST_USER)
+        assert_equal false, @layer.account_waits_activation?(TEST_USER)
+        assert_nil @layer.this_people(TEST_USER).first[:activation_key]
+        assert_equal false, @layer.people_may_log?(TEST_USER)
+        assert_equal false, @layer.people_may_log?(TEST_USER, 'withapassword')
+      end
+      
+      def test_account_activation_sc2
+        assert_not_nil(activation_key = @layer.create_default_profile(TEST_USER))
+        assert_equal false, @layer.account_activated?(TEST_USER)
+        assert_equal true, @layer.account_waits_activation?(TEST_USER)
+        assert_equal false, @layer.people_may_log?(TEST_USER)
+        @layer.activate(activation_key, :password => 'thepassword')
+        assert_equal true, @layer.account_activated?(TEST_USER)
+        assert_equal false, @layer.account_waits_activation?(TEST_USER)
+        assert_nil @layer.this_people(TEST_USER).first[:activation_key]
+        assert_equal true, @layer.people_may_log?(TEST_USER)
+        assert_equal true, @layer.people_may_log?(TEST_USER, 'thepassword')
+        assert_equal false, @layer.people_may_log?(TEST_USER, 'notthepassword')
+      end
+      
     end
   end
 end
