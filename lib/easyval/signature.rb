@@ -22,45 +22,12 @@ module EasyVal
       
     end # class Validation
     
-    # A conversion rule
-    class Conversion
-      
-      # Creates a Convertion rule instance
-      def initialize(args, converter, onfailure)
-        @args = args
-        @converter = converter
-        @onfailure = onfailure
-      end
-      
-      # Converts 
-      def convert(hash)
-        @args.each do |arg|
-          converted = @converter.convert(hash[arg])
-          if converted
-            hash[arg] = converted
-          else
-            return @onfailure
-          end
-        end
-        nil
-      end
-      
-    end # class Conversion
-    
     # Creates an empty signature
     def initialize(&block)
       @conversions = []
       @rules = []
       instance_eval(&block) unless block.nil?
     end
-    
-    # Adds a conversion rule
-    def add_conversion(args, converter, onfailure)
-      args = [args] if Symbol===args
-      converter = converter.to_converter if Module===converter
-      @conversions << Conversion.new(args, converter, onfailure)
-    end
-    alias :conversion :add_conversion
     
     # Adds a validation rule
     def add_validation(args, validator, onfailure)
@@ -73,8 +40,6 @@ module EasyVal
     # of onfailure flags.
     def apply(hash)
       converted, failures = hash.dup, []
-      failures = @conversions.collect{|c| c.convert(converted)}.compact
-      return [false, failures] unless failures.empty?
       failures = @rules.collect{|rule| rule.validate(converted)}.compact
       failures.empty? ? [true, converted] : [false, failures]
     end

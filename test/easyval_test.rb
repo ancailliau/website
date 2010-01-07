@@ -30,6 +30,13 @@ module EasyVal
       assert !(EasyVal::Array[EasyVal::Size>2] === ["coucou", "h"])
     end
     
+    def test_equal
+      assert_equal true, EasyVal::Equal.validate(1, 1, 1, 1)
+      assert_equal false, EasyVal::Equal.validate(1, 1, 1, false)
+      assert_equal true, EasyVal::Equal.validate("pass", "pass")
+      assert_equal false, EasyVal::Equal.validate("pass", "pass2")
+    end
+    
     def test_validator
       validator = EasyVal.validator{|val| Integer===val and val>10}
       assert_equal true, validator===11
@@ -69,6 +76,25 @@ module EasyVal
       assert_equal true, /[a-z]+/.to_validator==="blambeau"
       assert_equal false, /[a-z]+/.to_validator==="12339"
     end
+    
+    # def test_typical_web_scenario
+    #   signature = EasyVal.signature do
+    #     validation :mail, EasyVal::Mail, :bad_email
+    #     validation [:password, :confirm], EasyVal::Equal, :passwords_dont_match
+    #     validation :age, EasyVal::Missing | (Integer & (EasyVal >= 18)), :bad_age
+    #   end
+    # 
+    #   ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => "29")
+    #   assert_equal true, ok
+    #   assert_equal({:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29}, values)
+    # 
+    #   ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass2", :age => "29")
+    #   assert_equal false, ok
+    #   assert_equal [:passwords_dont_match], values
+    #   
+    #   ok, value = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass2")
+    #   assert_equal true, ok
+    # end
     
   end
 end
