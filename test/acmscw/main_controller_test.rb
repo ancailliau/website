@@ -31,6 +31,9 @@ module AcmScW
       assert_equal '/securite-vie-privee/sponsoring', MainController.normalize_req_path('/securite-vie-privee/sponsoring.htm')
       assert_equal '/securite-vie-privee/sponsoring', MainController.normalize_req_path('/securite-vie-privee/sponsoring/')
       assert_equal '/securite-vie-privee/sponsoring', MainController.normalize_req_path('   /securite-vie-privee/sponsoring/   ')
+
+      assert_equal '/people/activate_account', MainController.normalize_req_path('/people/activate_account')
+      assert_equal '/people/activate_account', MainController.normalize_req_path('/people/activate_account?actkey=AAA')
     end
     
   end

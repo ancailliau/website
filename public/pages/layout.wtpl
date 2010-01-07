@@ -12,7 +12,7 @@
 	<body ?{pagerequest=='index.wtpl'}{class="index"}>
     <<+{header.wtpl}
 
-	  <<+{${pagerequest}}
+	  <<+{${pagerequest} with request:request, response:response}
 
     <<+{footer.wtpl}
 

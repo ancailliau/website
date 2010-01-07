@@ -104,7 +104,7 @@ module AcmScW
         # send the activation mail now
         template = File.join(File.dirname(__FILE__), 'activation_mail.wtpl')
         context = {'mail_address'    => mail,
-                   'activation_link' => "#{AcmScW.base_href}/services/activate_account?actkey=#{actkey}"}
+                   'activation_link' => (AcmScW.base_href + "people/activate_account?actkey=#{actkey}")}
         message = WLang.file_instantiate(template, context).to_s
         AcmScW::Tools::MailServer.send_mail(message, "no-reply@acm-sc.be", mail)
         

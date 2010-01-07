@@ -86,10 +86,10 @@ module AcmScW
     ##############################################################################################
     
     def call(env)
-      req = Rack::Request.new(env)
+      req, res = Rack::Request.new(env), Rack::Response.new(env)
       
       # find the main page to compose
-      req_path = MainController.normalize_req_path(req.fullpath)
+      req_path = MainController.normalize_req_path(req.path)
       req_path, is404, page = req_path, false, MainController.find_requested_page_file(req_path)
       
       # handle 404
@@ -98,7 +98,9 @@ module AcmScW
       # compose it
       context = {"base_href"   => AcmScW.base_href,
                  "title"       => title_of(req_path),
-                 "pagerequest" => page}
+                 "pagerequest" => page,
+                 "request"     => req,
+                 "response"    => res}
       layout = File.join(PAGES_FOLDER, 'layout.wtpl')
       composed = WLang.file_instantiate(layout, context).to_s
       

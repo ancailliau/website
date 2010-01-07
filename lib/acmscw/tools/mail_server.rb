@@ -11,7 +11,7 @@ module AcmScW
           smtp_conn = Net::SMTP.new(AcmScW.smtp_host, AcmScW.smtp_port)
           smtp_conn.open_timeout = AcmScW.smtp_timeout
           smtp_conn.start
-          smtp_conn.send_message(msgstr, from, *to)
+          smtp_conn.send_message(msg, from, *to)
           smtp_conn.finish
         end
       end
