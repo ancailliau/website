@@ -1,6 +1,7 @@
 require 'easyval/validator'
 require 'easyval/size_validations'
 require 'easyval/array_validations'
+require 'easyval/ext.rb'
 #
 # Provides a reusable architecture for parameter validation 
 #
