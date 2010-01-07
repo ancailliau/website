@@ -4,6 +4,26 @@ module EasyVal
   #
   class Signature
     
+    # The DSL attached to signature
+    class DSL
+      
+      # Creates a DSL instance
+      def initialize(signature)
+        @signature = signature
+      end
+      
+      # Adds a validation
+      def validation(args, validator, onfailure)
+        @signature.add_validation(args, validator, onfailure)
+      end
+      
+      # When a methos is missing
+      def method_missing(name, *args, &block)
+        EasyVal.send(name, *args, &block)
+      end
+      
+    end # class DSL
+    
     # A validation rule
     class Validation
       
@@ -33,7 +53,7 @@ module EasyVal
     def initialize(&block)
       @conversions = []
       @rules = []
-      instance_eval(&block) unless block.nil?
+      DSL.new(self).instance_eval(&block) unless block.nil?
     end
     
     # Adds a validation rule
@@ -41,7 +61,6 @@ module EasyVal
       args = [args] if Symbol===args
       @rules << Validation.new(args, validator, onfailure)
     end
-    alias :validation :add_validation
     
     # Validates argument values given through a hash and returns a series
     # of onfailure flags.

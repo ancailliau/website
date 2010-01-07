@@ -25,7 +25,7 @@ module EasyVal
       signature = EasyVal.signature do
         validation :mail, EasyVal::Mail, :bad_email
         validation [:password, :confirm], EasyVal::Equal, :passwords_dont_match
-        validation :age, EasyVal::Missing | (Integer.to_val & (EasyVal >= 18)), :bad_age
+        validation :age, EasyVal::Missing | (EasyVal::Integer & (EasyVal.is >= 18)), :bad_age
       end
     
       ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29)
@@ -46,6 +46,19 @@ module EasyVal
           
       ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => "19")
       assert_equal({:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 19}, values)
+      assert_equal true, ok
+    end
+
+    def test_typical_web_scenario_sc2
+      signature = EasyVal.signature do
+        validation :mail, mail, :bad_email
+        validation [:password, :confirm], equal, :passwords_dont_match
+        validation :age, missing | (integer & (is >= 18)), :bad_age
+        #validation :newsletter, (default(false) | boolean), :bad_newsletter
+      end
+    
+      ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29)
+      assert_equal({:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29}, values)
       assert_equal true, ok
     end
     
