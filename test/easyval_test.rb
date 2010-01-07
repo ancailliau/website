@@ -30,5 +30,34 @@ module EasyVal
       assert !(EasyVal::Array[EasyVal::Size>2] === ["coucou", "h"])
     end
     
+    def test_validator
+      validator = EasyVal.validator{|val| Integer===val and val>10}
+      assert_equal true, validator===11
+      assert_equal false, validator===10
+      assert_equal false, validator===7
+      assert_equal false, validator==="10"
+    end
+    
+    def test_validator_accepts_multiple_arguments
+      validator = EasyVal.validator{|val1, val2| val1==val2}
+      assert_equal true, validator.validate("hello", "hello")
+      assert_equal false, validator.validate("hello", 10)
+      assert_equal true, validator.validate(10, 10)
+    end
+    
+    def test_validator_conjunction
+      val = (EasyVal::Mandatory & EasyVal.validator{|v| v>10})
+      assert_equal true, val===11
+      assert_equal false, val===10
+      assert_equal false, val===nil
+    end
+    
+    def test_validator_disjunction
+      val = (EasyVal::validator{|v| v<10} | EasyVal.validator{|v| v>10})
+      assert_equal true, val===11
+      assert_equal false, val===10
+      assert_equal true, val===9
+    end
+    
   end
 end

@@ -18,4 +18,9 @@ module EasyVal
   # Validators about size
   Array = EasyVal::ArrayValidations.new
 
+  # Builds a validator with a given block as validation code
+  def self.validator(&block)
+    EasyVal::Validator.new &block
+  end
+
 end

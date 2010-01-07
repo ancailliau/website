@@ -12,14 +12,24 @@ module EasyVal
     end
 
     # Calls the block installed at initialization time    
-    def validate(value)
-      @block.call(value)
+    def validate(*values)
+      @block.call(*values)
     end
     alias :=== :validate
     
     # Negates this validator
     def not
       Validator.new {|value| !self.validate(value)}
+    end
+    
+    # Creates a validator by disjunction
+    def |(validator)
+      Validator.new {|*args| self.validate(*args) or validator.validate(*args)}
+    end
+    
+    # Creates a validator by conjunction
+    def &(validator)
+      Validator.new {|*args| self.validate(*args) and validator.validate(*args)}
     end
     
   end # class Validator
