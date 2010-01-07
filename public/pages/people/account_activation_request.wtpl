@@ -1,0 +1,5 @@
+<form action="" method="post" enctype="multipart/form-data" id="activation-request-form">
+	<label for="mail">Indiquez votre adresse e-mail</label>
+	<input type="text" value="" name="mail" id="mail"/>
+	<input type="submit" value="Go »" />
+</form>

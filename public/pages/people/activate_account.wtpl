@@ -7,13 +7,14 @@
   ?{actkey and people}{
     <form id="account_activation_form" action="">
       <input type="hidden" name="activation_key" value="{actkey}"/>
-      <<+{account_fields.wtpl with people:people}
+      <div><<+{account_fields.wtpl with people:people}</div>
       <input type="submit" value="Activer mon compte">
     </form>  
   }{
     <p>La clé d'activation fournie est manquante ou ne peut plus être utilisée
        pour une activation de compte. Veuillez réintroduire une demande d'activation
        de compte à l'aide du formulaire ci-dessous</p>
+    <div><<+{account_activation_request.wtpl}</div>
     <p>Si le problème persiste, veuillez prendre contact avec le webmaster à l'adresse
        webmaster@uclouvain.acm-sc.be</p>
   }

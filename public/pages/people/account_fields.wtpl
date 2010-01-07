@@ -1,12 +1,12 @@
 <fieldset>
   <legend>Informations de connexion (obligatoire)</legend>
   <div>
-    <p>L'adresse e-mail que nous utilisons pour vous contacter</p>
+    <label>L'adresse e-mail que nous utilisons pour vous contacter</label>
     <input type="text" name="mail" value="{people[:mail]}"/>
   </div>
 
   <div>
-    <p>Mot de passe pour se connecter aux fonctionalités avancées</p>
+    <label>Mot de passe pour se connecter aux fonctionalités avancées</label>
     <input type="password" name="password" value=""/>
     confirmation: <input type="password" name="password_confirm" value=""/>
   </div>
@@ -22,20 +22,20 @@
 <fieldset>
   <legend>A propos de vous (optionnel)</legend>
   <div>
-    <p>Votre nom, votre prénom</p>
+    <label>Votre nom, votre prénom</label>
     <input type="text" name="first_name" value="{people[:first_name]}"/>
     <input type="text" name="last_name" value="{people[:last_name]}"/>
   </div>
 
   <div>
-    <p>Votre occupation (p.ex. Etudiant UCL/INGI, SINF21)</p>
+    <label>Votre occupation (p.ex. Etudiant UCL/INGI, SINF21)</label>
     <input type="text" name="mail" value="{people[:occupation]}"/>
   </div>
 
   <div>
-    <p>Si vous possédez un blog concernant l'informatique et son apprentissage, nous vous invitons
-       a participer à notre univers en indiquant ci-dessous votre flux-rss. Les administrateurs 
-       ajouteront votre flux dès validation.</p>
+    <label>Si vous possédez un blog concernant l'informatique et/ou son apprentissage, nous vous invitons
+       a participer à notre univers en indiquant ci-dessous votre flux rss. Les administrateurs 
+       ajouteront votre flux au site web dès validation.</label>
     <input type="text" name="rss_feed" size="75" value="{people[:rss_feed]}"/>
   </div>
 </fieldset>
