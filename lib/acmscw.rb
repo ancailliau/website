@@ -30,6 +30,11 @@ module AcmScW
     File.join(File.dirname(__FILE__), '..', 'deploy')
   end
   
+  # Loads the configuration from a given string
+  def self.load_configuration(str)
+    self.instance_eval str
+  end
+  
   # Loads the configuration from a given file
   def self.load_configuration_file(file=look_for_deploy_file)
     load_configuration File.read(file)
@@ -47,11 +52,6 @@ module AcmScW
     raise "Incomplete configuration, database_user missing" unless CONFIG.has_key?(:database_user)
     raise "Incomplete configuration, database_pwd missing" unless CONFIG.has_key?(:database_pwd)
     raise "Incomplete configuration, database_encoding missing" unless CONFIG.has_key?(:database_encoding)
-  end
-  
-  # Loads the configuration from a given string
-  def self.load_configuration(str)
-    self.instance_eval str
   end
   
   # Fired when a method is missing
