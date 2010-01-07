@@ -33,6 +33,20 @@ module AcmScW
   # Loads the configuration from a given file
   def self.load_configuration_file(file=look_for_deploy_file)
     load_configuration File.read(file)
+    check_configuration
+  end
+  
+  # Checks that all mandatory configuration properties are present
+  def self.check_configuration
+    raise "Incomplete configuration, base_href missing" unless CONFIG.has_key?(:base_href)
+    raise "Incomplete configuration, google_analytics missing" unless CONFIG.has_key?(:google_analytics)
+    raise "Incomplete configuration, deploy_mode missing" unless CONFIG.has_key?(:deploy_mode)
+    raise "Incomplete configuration, database_host missing" unless CONFIG.has_key?(:database_host)
+    raise "Incomplete configuration, database_port missing" unless CONFIG.has_key?(:database_port)
+    raise "Incomplete configuration, database_name missing" unless CONFIG.has_key?(:database_name)
+    raise "Incomplete configuration, database_user missing" unless CONFIG.has_key?(:database_user)
+    raise "Incomplete configuration, database_pwd missing" unless CONFIG.has_key?(:database_pwd)
+    raise "Incomplete configuration, database_encoding missing" unless CONFIG.has_key?(:database_encoding)
   end
   
   # Loads the configuration from a given string

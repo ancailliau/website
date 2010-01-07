@@ -1,5 +1,18 @@
-base_href         'http://uclouvain.acm-sc.be/index.html'
+# Deploiment mode; accepted values are 'devel', 'test' and 'production'.
+# The deploiment mode drives the way critical code is executed. Tests cannot
+# be run in production mode, for example. Mails are never sent for real 
+# unless the mode is production.
+deploy_mode       'devel'
+
+# The url to put in <base href=""/>. This url should always include http://
+# and should not contain the index.html suffix
+base_href         'http://uclouvain.acm-sc.be/'
+
+# Should google analytics code be included. This flag should be set to true
+# only in production mode.
 google_analytics  false
+
+# Classical parameters for connecting the AcmScW database
 database_host     'localhost'
 database_port     5432
 database_name     'acmscw'
