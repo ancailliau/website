@@ -5,12 +5,12 @@ module AcmScW
       
       # Sends an e-mail
       def self.send_mail(msg, from, to)
-        if AcmScW.deploy_mode == 'production'
+        if AcmScW.deploy_mode == 'devel'
+          to.each {|t| File.open("/tmp/#{t}.txt", 'w') {|io| io << msg}}
+        else
           Net::SMTP.start('smtp.skynet.be', 25) do |smtp|
             smtp.send_message msgstr, from, *to
           end
-        else
-          to.each {|t| File.open("/tmp/#{t}.txt", 'w') {|io| io << msg}}
         end
       end
       
