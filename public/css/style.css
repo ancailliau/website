@@ -21,6 +21,22 @@ a img {
 	border: 0px none;
 }
 
+
+form label {
+	font-size: 1.2em;
+	color: #666;
+	display: block;
+	margin: 15px 0px 5px 0px;
+	width: 75%;
+}
+form fieldset {
+	margin: 15px 0px 15px 0px;
+	padding: 7px 7px 15px 7px;
+}
+form fieldset legend {
+	font-size: 1.2em;
+}
+
 #header,
 #main,
 #footer {
@@ -209,7 +225,7 @@ body.index #main p {
 	font-size: 1.2em;
 	color: #666;
 	display: block;
-	margin-bottom: 10px;
+	margin: 0px 0px 10px 0px;
 }
 
 #main .grey-box form input[type=text] {
@@ -367,21 +383,5 @@ body.index #footer {
 	width: 220px;
 	font-size: 0.9em;
 	text-align: right;
-}
-
-form label {
-	font-size: 1.2em;
-	color: #666;
-	display: block;
-	margin: 15px 0px 5px 0px;
-	width: 75%;
-/*	margin-bottom: 10px; */
-}
-form fieldset {
-	margin: 15px 0px 15px 0px;
-	padding: 7px 7px 15px 7px;
-}
-form fieldset legend {
-	font-size: 1.2em;
 }
 

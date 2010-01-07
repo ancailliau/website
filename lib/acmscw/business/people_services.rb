@@ -47,9 +47,31 @@ module AcmScW
         activation_request(mail)
       end
       
-      # Updates the profile of a user. No check is done.
-      def update_profile(id_or_mail, attrs={})
+      # Updates the profile of a user.
+      def update_profile(id_or_mail, attrs)
+        # First load old attributes
+        old_attrs = this_people(id_or_mail).first
+
+        # if a password is provided te user can now log
+        if attrs[:password] and (old_attrs[:adminlevel] == -1)
+          attrs[:adminlevel] = 0
+        end
+
+        # if the rss is changed, it must be now validated
+        if attrs[:rss_feed] != old_attrs[:rss_feed]
+          attrs[:rss_status] = 'requires-validation'
+        end
+        
+        # update the profile now
         this_people(id_or_mail).update(attrs)
+        
+        # Mail changed, new activation required
+        if attrs[:mail] and (attrs[:mail] != old_attrs[:mail])
+          activation_request(attrs[:mail])
+          return :activation_required
+        else
+          :ok
+        end
       end
       
       # Let someone (un)subscribe to the newsletter
@@ -71,22 +93,22 @@ module AcmScW
       # tests that it matches the password in the database.
       def people_may_log?(id_or_mail, password=nil)
         people = this_people(id_or_mail).first
-        people and people[:activation_key].nil? and \
-               not(people[:password].nil?) and \
-               (people[:adminlevel] >= 0) and \
-               (password.nil? or password==people[:password])
+        not(people.nil?) and people[:activation_key].nil? and \
+                         not(people[:password].nil?) and \
+                         (people[:adminlevel] >= 0) and \
+                         (password.nil? or password==people[:password])
       end
       
       # Checks if a given account is currently activated
       def account_activated?(id_or_mail)
         tuple = this_people(id_or_mail).first
-        tuple and tuple[:activation_key].nil?
+        not(tuple.nil?) and tuple[:activation_key].nil?
       end
       
       # Checks if an account is currently waiting for activation
       def account_waits_activation?(id_or_mail)
         tuple = this_people(id_or_mail).first
-        tuple and not(tuple[:activation_key].nil?)
+        not(tuple.nil?) and not(tuple[:activation_key].nil?)
       end
       
       # Creates a new pseudo-random activation key for a given account
@@ -120,14 +142,13 @@ module AcmScW
         # look for account to update
         to_update = people.filter(:activation_key => activation_key)
         return false if to_update.empty?
+        id = to_update.first[:id]
         
-        # remove the activation key and set the default adminlevel if required
-        attrs = attrs.merge(:activation_key => nil)
-        attrs[:adminlevel] = 0 if (attrs[:password] and not(attrs.has_key?(:adminlevel)))
+        # remove the activation key
+        to_update.update(:activation_key => nil)
         
         # updates the account
-        to_update.update(attrs)
-        true
+        update_profile(id, attrs) unless attrs.empty?
       end
       
     end # class PeopleServices

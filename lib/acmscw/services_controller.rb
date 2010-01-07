@@ -15,6 +15,7 @@ module AcmScW
       AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
         layer.subscribe_to_newsletter(mail)
       end
+      :ok
     end
     
   end # class ServicesController

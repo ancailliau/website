@@ -6,12 +6,15 @@ module AcmScW
     class PeopleServicesTest < BusinessServicesTest
       
       TEST_USER = "testuser@uclouvain.acm-sc.be"
+      TEST_USER_ALIAS = "testuser2@uclouvain.acm-sc.be"
       
       # Forces the test user to disapear 
       def setup
         @layer = AcmScW::Business::PeopleServices.instance 
         @layer.drop_people(TEST_USER)
+        @layer.drop_people(TEST_USER_ALIAS)
         AcmScW::Tools::MailServer.clean(TEST_USER)
+        AcmScW::Tools::MailServer.clean(TEST_USER_ALIAS)
       end
       
       def test_user_exists?
@@ -84,6 +87,19 @@ module AcmScW
         assert_equal true, @layer.people_may_log?(TEST_USER)
         assert_equal true, @layer.people_may_log?(TEST_USER, 'thepassword')
         assert_equal false, @layer.people_may_log?(TEST_USER, 'notthepassword')
+      end
+      
+      def test_modifying_mail_leads_to_new_activation
+        assert_not_nil(activation_key = @layer.create_default_profile(TEST_USER))
+        @layer.activate(activation_key, :password => 'thepassword')
+        assert_equal true, @layer.people_may_log?(TEST_USER)
+        assert_equal :ok, @layer.update_profile(TEST_USER, :password => 'newpass')
+        assert_equal true, @layer.people_may_log?(TEST_USER)
+        assert_equal :activation_required, @layer.update_profile(TEST_USER, :mail => TEST_USER_ALIAS)
+        assert_equal false, @layer.people_may_log?(TEST_USER)
+        assert_equal false, @layer.people_may_log?(TEST_USER_ALIAS)
+        assert_equal false, @layer.account_activated?(TEST_USER_ALIAS)
+        assert_equal true, @layer.account_waits_activation?(TEST_USER_ALIAS)
       end
       
     end
