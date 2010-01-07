@@ -1,14 +1,9 @@
 module EasyVal
   class MissingValidator < EasyVal::Validator
     
-    # Checks if a given value is considered missing
-    def is_missing?(value)
-      value.nil? or (String===value and value.strip.empty?)
-    end
-    
     # Calls the block installed at initialization time    
     def validate(*values)
-      values.all?{|value| is_missing?(value)}
+      values.all?{|value| EasyVal.is_missing?(value)}
     end
     alias :=== :validate
     

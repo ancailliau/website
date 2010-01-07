@@ -5,7 +5,9 @@ require 'easyval/comparison_validations'
 require 'easyval/size_validations'
 require 'easyval/array_validations'
 require 'easyval/missing_validator'
+require 'easyval/default_validator'
 require 'easyval/integer_validator'
+require 'easyval/boolean_validator'
 require 'easyval/ext'
 require 'easyval/signature'
 #
@@ -16,6 +18,11 @@ module EasyVal
   # Version of EasyValidation
   VERSION = "0.0.1".freeze
   
+  # Checks if a given value is considered missing
+  def self.is_missing?(value)
+    value.nil? or (String===value and value.strip.empty?)
+  end
+    
   # Builds a validator with a given block as validation code
   def self.validator(&block)
     EasyVal::Validator.new &block
@@ -33,6 +40,9 @@ module EasyVal
   # Validator/Converter for missing values
   Missing = EasyVal::MissingValidator.new
   def self.missing() Missing; end
+  
+  # Default validator
+  def self.default(default_value) EasyVal::DefaultValidator.new(default_value); end
   
   # Validator for a mail adress
   Mail = /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/.to_validator
@@ -57,5 +67,9 @@ module EasyVal
   # Integer validation
   Integer = EasyVal::IntegerValidator.new
   def self.integer() EasyVal::Integer; end
+  
+  # Boolean validation
+  Boolean = EasyVal::BooleanValidator.new
+  def self.boolean() EasyVal::Boolean; end
 
 end

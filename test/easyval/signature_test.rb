@@ -54,12 +54,28 @@ module EasyVal
         validation :mail, mail, :bad_email
         validation [:password, :confirm], equal, :passwords_dont_match
         validation :age, missing | (integer & (is >= 18)), :bad_age
-        #validation :newsletter, (default(false) | boolean), :bad_newsletter
+        validation :newsletter, (default(false) | boolean), :bad_newsletter
       end
     
       ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29)
-      assert_equal({:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29}, values)
+      assert_equal({:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29, :newsletter => false}, values)
       assert_equal true, ok
+      
+      ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => '29', :newsletter => nil)
+      assert_equal({:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29, :newsletter => false}, values)
+      assert_equal true, ok
+      
+      ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => '29', :newsletter => 'false')
+      assert_equal({:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29, :newsletter => false}, values)
+      assert_equal true, ok
+      
+      ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => '29', :newsletter => 'true')
+      assert_equal({:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29, :newsletter => true}, values)
+      assert_equal true, ok
+
+      ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => '29', :newsletter => 'hello')
+      assert_equal false, ok
+      assert_equal [:bad_newsletter], values
     end
     
   end
