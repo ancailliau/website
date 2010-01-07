@@ -1,0 +1,19 @@
+From: UCLouvain ACM Student Chapter <no-reply@acm-sc.be>
+To: +{mail_address}
+Subject: Votre inscription sur uclouvain.acm-sc.be
+Date: +{Time.now}
+MIME-Version: 1.0
+Content-type: text/html
+
+<p>Bonjour,</p>
+
+<p>Vous nous avez récemment fait part de votre intérêt pour certaines activités proposées
+   par l'ACM Student Chapter et nous vous en remercions. Un compte personnel a été créé sur
+   notre site <a href="{AcmScW.base_href}">${AcmScW.base_href}</a></p>
+   
+<p>Pour activer votre compte, mettre à jour vos préférences (inscription à la newsletter, etc.) 
+   et profiter des fonctionnalités offertes par notre site web, il vous suffit de suivre 
+   <a href="{activation_link}">ce lien</a>. Si cependant vous ne souhaitiez pas profiter de ces 
+   fonctionnalités supplémentaires, vous pouvez simplement ignorer cet email.</p>
+   
+<p>L'équipe de l'UCLouvain ACM Student Chapter</p>
