@@ -1,6 +1,9 @@
 require 'easyval/validator'
+require 'easyval/and_validator'
+require 'easyval/or_validator'
 require 'easyval/size_validations'
 require 'easyval/array_validations'
+require 'easyval/missing_validator'
 require 'easyval/ext'
 require 'easyval/signature'
 #
@@ -42,10 +45,10 @@ module EasyVal
   end
 
   # Validator for mandatory values
-  Mandatory = EasyVal::Validator.new {|value| not(value.nil?)}
+  Mandatory = EasyVal::Validator.new {|*values| values.all?{|v| not(v.nil?)}}
   
   # Validator/Converter for missing values
-  Missing = EasyVal::Validator.new {|value| value.nil? or (String===value and value.strip.empty?)}
+  Missing = EasyVal::MissingValidator.new
   
   # Validator for a mail adress
   Mail = /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/.to_validator

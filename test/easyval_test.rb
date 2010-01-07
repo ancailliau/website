@@ -10,18 +10,18 @@ module EasyVal
       assert EasyVal::Mandatory===0, "EasyVal::Mandatory===0"
       assert EasyVal::Mandatory===1, "EasyVal::Mandatory===1"
       assert EasyVal::Mandatory.not===nil, "EasyVal::Mandatory.not===nil"
-
+    
       assert (EasyVal::Size > 0)==="12", "(EasyVal::Size > 0)==='12'"
       assert (EasyVal::Size > 0).not==="", "(EasyVal::Size > 0).not==="
       assert (EasyVal::Size >= 0)==="12", "(EasyVal::Size >= 0)==='12'"
       assert (EasyVal::Size >= 0)==="", "(EasyVal::Size >= 0)==="
-
+    
       assert (EasyVal::Size > 0)===[:hello], "(EasyVal::Size > 0)===[:hello]"
       assert (EasyVal::Size > 0).not===[], "(EasyVal::Size > 0).not===[]"
-
+    
       assert (EasyVal::Size == 0)===[]
       assert !((EasyVal::Size == 10)===[])
-
+    
       assert EasyVal::Array[String] === []
       assert EasyVal::Array[String] === ["coucou", "hello"]
       assert !(EasyVal::Array[String] === [12])
@@ -76,25 +76,6 @@ module EasyVal
       assert_equal true, /[a-z]+/.to_validator==="blambeau"
       assert_equal false, /[a-z]+/.to_validator==="12339"
     end
-    
-    # def test_typical_web_scenario
-    #   signature = EasyVal.signature do
-    #     validation :mail, EasyVal::Mail, :bad_email
-    #     validation [:password, :confirm], EasyVal::Equal, :passwords_dont_match
-    #     validation :age, EasyVal::Missing | (Integer & (EasyVal >= 18)), :bad_age
-    #   end
-    # 
-    #   ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => "29")
-    #   assert_equal true, ok
-    #   assert_equal({:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass", :age => 29}, values)
-    # 
-    #   ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass2", :age => "29")
-    #   assert_equal false, ok
-    #   assert_equal [:passwords_dont_match], values
-    #   
-    #   ok, value = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass2")
-    #   assert_equal true, ok
-    # end
     
   end
 end

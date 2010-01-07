@@ -20,6 +20,13 @@ module EasyVal
         ok ? nil : @onfailure
       end
       
+      # Converts and validate values given trough a hash
+      def convert_and_validate(hash)
+        ok, values = @validator.convert_and_validate(*@args.collect{|arg| hash[arg]})
+        @args.each_with_index {|arg, i| hash[arg] = values[i]} if ok
+        ok ? nil : @onfailure
+      end
+      
     end # class Validation
     
     # Creates an empty signature
@@ -38,9 +45,17 @@ module EasyVal
     
     # Validates argument values given through a hash and returns a series
     # of onfailure flags.
-    def apply(hash)
+    def validate(hash)
       converted, failures = hash.dup, []
       failures = @rules.collect{|rule| rule.validate(converted)}.compact
+      failures.empty? ? [true, converted] : [false, failures]
+    end
+    
+    # Validates argument values given through a hash and returns a series
+    # of onfailure flags.
+    def apply(hash)
+      converted, failures = hash.dup, []
+      failures = @rules.collect{|rule| rule.convert_and_validate(converted)}.compact
       failures.empty? ? [true, converted] : [false, failures]
     end
     
