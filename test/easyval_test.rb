@@ -65,5 +65,10 @@ module EasyVal
       assert_equal true, Integer.to_validator===10
     end
     
+    def test_to_validator_on_regexp
+      assert_equal true, /[a-z]+/.to_validator==="blambeau"
+      assert_equal false, /[a-z]+/.to_validator==="12339"
+    end
+    
   end
 end
