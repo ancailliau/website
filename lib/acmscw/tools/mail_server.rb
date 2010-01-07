@@ -8,9 +8,9 @@ module AcmScW
         if AcmScW.deploy_mode == 'devel'
           to.each {|t| File.open("/tmp/#{t}.txt", 'w') {|io| io << msg}}
         else
-          Net::SMTP.start('smtp.skynet.be', 25) do |smtp|
-            smtp.send_message msgstr, from, *to
-          end
+          smtp_conn = Net::SMTP.new('smtp.skynet.be', 25)
+          smtp_conn.open_timeout = 2
+          smtp_conn.start {|smtp| smtp.send_message msgstr, from, *to}
         end
       end
       
