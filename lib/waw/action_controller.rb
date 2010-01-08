@@ -25,6 +25,7 @@ module Waw
       
           # Define the secure method
           define_method name do |params|
+            puts "Applying #{name} with #{params.inspect}"
             ok, values = signature.apply(params)
             if ok
               # validation is ok, merge params and continue
@@ -42,10 +43,12 @@ module Waw
     
     # Executes the controller
     def execute(env, request, response)
-      action_name = request.respond_to?(:fullpath) ? request.fullpath : request[:action]
+      action_name = request.respond_to?(:path) ? request.path : request[:action]
+      puts "the action name is #{action_name}"
       if action_name =~ /([a-zA-Z_]+)$/
-        action = action_name.to_sym 
-        self.respond_to?(action) ? self.send(action, request.params) : :action_not_found
+        action = $1.to_sym 
+        puts "the action is #{action}"
+        self.respond_to?(action) ? self.send(action, request.params.symbolize_keys) : :action_not_found
       else
         :action_not_found
       end
