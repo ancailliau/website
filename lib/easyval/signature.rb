@@ -49,11 +49,20 @@ module EasyVal
       
     end # class Validation
     
+    # Rules
+    attr_accessor :rules
+    
     # Creates an empty signature
     def initialize(&block)
-      @conversions = []
       @rules = []
       DSL.new(self).instance_eval(&block) unless block.nil?
+    end
+    
+    # Merges this signature with additional definition
+    def merge(&block)
+      signature = self.dup
+      DSL.new(signature).instance_eval(&block) unless block.nil?
+      signature
     end
     
     # Adds a validation rule
@@ -78,5 +87,13 @@ module EasyVal
       failures.empty? ? [true, converted] : [false, failures]
     end
     
+    # Duplicates this validation
+    def dup
+      copy = Signature.new
+      copy.rules = self.rules.dup
+      copy
+    end
+    
+    protected :rules=
   end # class Signature
 end # module EasyVal

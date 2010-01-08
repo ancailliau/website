@@ -9,9 +9,13 @@ module AcmScW
       UserNoExists = EasyVal.validator do |mail|
         not(PeopleServices.instance.people_exists?(mail))
       end
-      def self.user_not_exists
-        UserNoExists
+      def self.user_not_exists() UserNoExists end
+
+      # Validator for user login
+      UserMayLog = EasyVal.validator do |mail, pass|
+        PeopleServices.instance.people_may_log?(mail, pass)
       end
+      def self.user_may_log() UserMayLog end
       
       # The poeple relation (through a Sequel Dataset instance)
       attr_reader :people
@@ -81,6 +85,7 @@ module AcmScW
           :ok
         end
       end
+      alias :update_account :update_profile
       
       # Let someone (un)subscribe to the newsletter
       def subscribe_to_newsletter(mail, yes_or_no=true)

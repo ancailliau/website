@@ -1,0 +1,27 @@
+<div id="main">
+  ?{Waw.session_has_key?(:user)}{
+    ={AcmScW.database[:people].filter(:mail => '+{Waw.session_get(:user)}').first as people}
+    <form id="about_you">
+      <fieldset>
+        <legend>A propos de vous</legend>
+        <p>Votre nom et prénom: ${people[:last_name]} ${people[:first_name]}</p>
+        <p>Votre adresse e-mail: ${people[:mail]}</p>
+        <p>Votre occupation: ${people[:occupation]}</p>
+        ?{people[:newsletter]}{
+          <p>Vous êtes inscrit à la newsletter</p>  
+        }{
+          <p>Vous n'êtes pas inscrit à la newsletter</p>  
+        }
+        ?{people[:rss_feed]}{
+          <p>Votre flux rss: ${people[:rss_feed]}</p>
+          ?{people[:rss_status]=='requires-validation'}{
+            <p>Votre flux RSS est en cours de validation par les administrateurs</p> 
+          }
+        }
+        <a href="/people/update_account">Modifier ces informations</a>
+      </fieldset>
+    </form>
+}{
+  <p>Vous devez être loggé pour accéder à cette page</p>
+}
+</div>

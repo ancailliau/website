@@ -51,7 +51,11 @@ function activate_account() {
 		},
 		success: function(data) {
 			if (data[0] == "success") {
-			  window.location = "/feedback?mkey=activate_account_ok"
+				if (data[1] == 'ok') {
+  			  window.location = "/people/my_chapter"
+				} else {
+					window.location = "/feedback?mkey=activation_required"
+				}
 			} else if (data[0] == "validation_ko") {
 				str = "";
 				str += "<ul>";
@@ -62,6 +66,34 @@ function activate_account() {
 				$('#activate_account_feedback').html(str);
 			} else {
   			$('#activate_account_feedback').html(messages['server_error']);
+		  }
+		}
+	});
+	return false;
+}
+function update_account() {
+	form = "form#update_account";
+	$.ajax({type: "POST", url: "/services/update_account", data: $(form).serialize(), dataType: "json",
+		error: function(data) {
+			$('#update_account_feedback').html(messages['server_error']);
+		},
+		success: function(data) {
+			if (data[0] == "success") {
+				if (data[1] == 'ok') {
+  			  window.location = "/people/my_chapter"
+				} else {
+					window.location = "/feedback?mkey=activation_required"
+				}
+			} else if (data[0] == "validation_ko") {
+				str = "";
+				str += "<ul>";
+				for (var k in data[1]) {
+					str += "<li>" + messages[data[1][k]] + "</li>";
+				}
+				str += "</ul>";
+				$('#update_account_feedback').html(str);
+			} else {
+  			$('#update_account_feedback').html(messages['server_error']);
 		  }
 		}
 	});
@@ -102,7 +134,7 @@ function login() {
 				if (data[1] == 'ok') {
 				  location.reload(true);
 				} else {
-					$('#login_feedback').html(data[1]);
+					$('#login_feedback').html(messages[data[1]]);
 				}
 			} else if (data[0] == "validation_ko") {
 				$('#login_feedback').html(messages[data[1][0]]);

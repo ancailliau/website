@@ -4,6 +4,12 @@ module AcmScW
   #
   class ServicesController < ::Waw::ActionController
     
+    # Validation that user is logged
+    IsThisUser = EasyVal.validator{|mail| mail==Waw.session_has_key?(:user)}
+    UserIsLogged = EasyVal.validator{|*args| Waw.session_has_key?(:user)}
+    UserIsNotLogged = UserIsLogged.not
+    
+    # Creates a ServicesController instance
     def initialize
       self.content_type = 'application/json'
     end
@@ -14,14 +20,11 @@ module AcmScW
     signature {
       validation :mail, mandatory & mail, :bad_user_or_password
       validation :password, (size>=8) & (size<=15), :bad_user_or_password
+      validation [:mail, :password], AcmScW::Business::PeopleServices.user_may_log, :bad_user_or_password
     }
     def login(params)
-      if AcmScW::Business::PeopleServices.instance.people_may_log?(params[:mail], params[:password])
-        session_set(:user, params[:mail])
-        :ok
-      else
-        :bad_user_or_password
-      end
+      session_set(:user, params[:mail])
+      :ok
     end
     
     # Lagout
@@ -42,15 +45,17 @@ module AcmScW
     end
     
     ### Account creation ###########################################################
-
-    # Activation of an account
-    signature {
-      validation :actkey, mandatory, :missing_activation_key
+    AccountCommonSignature = EasyVal.signature {
       validation :mail, mandatory & mail, :invalid_email
       validation :password, (size>=8) & (size<=15), :bad_password
       validation [:password, :password_confirm], mandatory & equal, :passwords_dont_match
       validation :newsletter, (default(false) | boolean), :bad_newsletter
       validation :rss_feed, missing | weburl, :bad_rss_feed
+    }
+
+    # Activation of an account
+    signature(AccountCommonSignature) {
+      validation :actkey, mandatory, :missing_activation_key
     }
     def activate_account(params)
       result = AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
@@ -72,12 +77,7 @@ module AcmScW
     end
     
     # Account creation
-    signature {
-      validation :mail, mandatory & mail, :invalid_email
-      validation :password, (size>=8) & (size<=15), :bad_password
-      validation [:password, :password_confirm], mandatory & equal, :passwords_dont_match
-      validation :newsletter, (default(false) | boolean), :bad_newsletter
-      validation :rss_feed, missing | weburl, :bad_rss_feed
+    signature(AccountCommonSignature) {
       validation :mail, AcmScW::Business::PeopleServices.user_not_exists, :mail_already_in_use
     }
     def subscribe_account(params)
@@ -86,6 +86,20 @@ module AcmScW
         layer.subscribe(args)
       end
       :ok
+    end
+    
+    # Account update
+    signature(AccountCommonSignature) {
+      validation :mail, IsThisUser | AcmScW::Business::PeopleServices.user_not_exists, :mail_already_in_use
+      validation :mail, UserIsLogged, :user_must_be_logged
+    }
+    def update_account(params)
+      result = AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
+        args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
+        layer.update_account(Waw.session_get(:user), args)
+      end
+      session_set(:user, params[:mail]) if result == :ok
+      result
     end
     
   end # class ServicesController
