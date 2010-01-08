@@ -24,16 +24,16 @@ module Waw
         when :bypass
           result
         when :no_bypass
-          puts "Returning 200 with #{result.inspect}"
+          env['rack.errors'].puts "Returning 200 with #{result.inspect}"
           [200, {'Content-Type' => content_type}, result]
         else
           raise "Unexpected result #{kind}"
       end
     rescue Exception => ex
       # On exception, returns a 500 with a message
-      puts "Fatal error #{ex.message}"
-      puts ex.backtrace.join("\n")
-      puts "Returning 500 with #{result}"
+      env['rack.errors'].puts "Fatal error #{ex.message}"
+      env['rack.errors'].puts ex.backtrace.join("\n")
+      env['rack.errors'].puts "Returning 500 with #{result}"
       [500, {'Content-Type' => content_type}, [ex.message]]
     ensure
       # In all cases, remove thread local variables
