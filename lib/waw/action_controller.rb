@@ -27,7 +27,6 @@ module Waw
       
           # Define the secure method
           define_method name do |params|
-            puts "Applying #{name} with #{params.inspect}"
             ok, values = signature.apply(params)
             if ok
               # validation is ok, merge params and continue

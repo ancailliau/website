@@ -1,10 +1,14 @@
-<div id="main">
-  <h2>Inscription à l'UCLouvain ACM Student Chapter</h2>
-  <p>Veuillez remplir les informations ci-dessous pour vous inscrire sur le site.<br/>
-     Ceci vous donnera accès aux fonctionnalités avancées que nous vous proposons.</p>
-  <form id="subscribe_account" action="javascript:subscribe_account()">
-    <div id="subscribe_account_feedback"></div>
-    <div><<+{account_fields.wtpl with people:Hash.new}</div>
-    <input type="submit" value="Créer mon compte">
-  </form>
-</div>
+?{Waw.session_has_key?(:user)}{
+  <<+{my_chapter.wtpl}
+}{
+  <div id="main">
+    <h2>Inscription à l'UCLouvain ACM Student Chapter</h2>
+    <p>Veuillez remplir les informations ci-dessous pour vous inscrire sur le site.<br/>
+       Ceci vous donnera accès aux fonctionnalités avancées que nous vous proposons.</p>
+    <form id="subscribe_account" action="javascript:subscribe_account()">
+      <div id="subscribe_account_feedback"></div>
+      <div><<+{account_fields.wtpl with people:Hash.new}</div>
+      <input type="submit" value="Créer mon compte">
+    </form>
+  </div>
+}
