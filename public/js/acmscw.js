@@ -67,3 +67,60 @@ function activate_account() {
 	});
 	return false;
 }
+function subscribe_account() {
+	form = "form#subscribe_account";
+	$.ajax({type: "POST", url: "/services/subscribe_account", data: $(form).serialize(), dataType: "json",
+		error: function(data) {
+			$('#subscribe_account_feedback').html(messages['server_error']);
+		},
+		success: function(data) {
+			if (data[0] == "success") {
+			  window.location = "/feedback?mkey=subscribe_account_ok"
+			} else if (data[0] == "validation_ko") {
+				str = "";
+				str += "<ul>";
+				for (var k in data[1]) {
+					str += "<li>" + messages[data[1][k]] + "</li>";
+				}
+				str += "</ul>";
+				$('#subscribe_account_feedback').html(str);
+			} else {
+  			$('#subscribe_account_feedback').html(messages['server_error']);
+		  }
+		}
+	});
+	return false;
+}
+function login() {
+	form = "form#login";
+	$.ajax({type: "POST", url: "/services/login", data: $(form).serialize(), dataType: "json",
+		error: function(data) {
+			$('#login_feedback').html(messages['server_error']);
+		},
+		success: function(data) {
+			if (data[0] == "success") {
+				if (data[1] == 'ok') {
+				  location.reload(true);
+				} else {
+					$('#login_feedback').html(data[1]);
+				}
+			} else if (data[0] == "validation_ko") {
+				$('#login_feedback').html(messages[data[1][0]]);
+			} else {
+  			$('#login_feedback').html(messages['server_error']);
+		  }
+		}
+	});
+	return false;
+}
+function logout() {
+	$.ajax({type: "POST", url: "/services/logout", data: "", dataType: "json",
+		error: function(data) {
+		  location.reload(true);
+		},
+		success: function(data) {
+		  location.reload(true);
+		}
+	});
+	return false;
+}

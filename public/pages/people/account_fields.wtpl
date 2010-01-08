@@ -37,6 +37,6 @@
     <label>Si vous possédez un blog concernant l'informatique et/ou son apprentissage, nous vous invitons
        a participer à notre univers en indiquant ci-dessous votre flux rss. Les administrateurs 
        ajouteront votre flux au site web dès validation.</label>
-    <input type="text" name="rss_feed" size="75" value="{people[:rss_feed]}"/>
+    <input type="text" name="rss_feed" size="50" value="{people[:rss_feed]}"/>
   </div>
 </fieldset>

@@ -25,9 +25,19 @@ module Waw
       env['rack.session']
     end
     
+    # Checks if a session has a given key
+    def session_has_key?(key)
+      session_get(key)
+    end
+
     # Sets a pair inside the session
     def session_set(key, value)
       session[key] = value
+    end
+    
+    # Sets a pair inside the session
+    def session_unset(key)
+      session.delete(key)
     end
     
     # Get a value from the current session

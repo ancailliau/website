@@ -5,6 +5,14 @@ module AcmScW
     class PeopleServices < BusinessServices
       include Singleton
       
+      # Validator for user existence
+      UserNoExists = EasyVal.validator do |mail|
+        not(PeopleServices.instance.people_exists?(mail))
+      end
+      def self.user_not_exists
+        UserNoExists
+      end
+      
       # The poeple relation (through a Sequel Dataset instance)
       attr_reader :people
       
@@ -119,9 +127,10 @@ module AcmScW
       
       # Removes any old password and send an activation mail to some user. The later
       # must exists! Returns the activation unique key.
-      def activation_request(mail)
+      def activation_request(mail, removepass=true)
         actkey = activation_key(mail)
-        this_people(mail).update(:password => nil, :activation_key => actkey)
+        this_people(mail).update(:activation_key => actkey)
+        this_people(mail).update(:password => nil) if removepass
         
         # send the activation mail now
         template = File.join(File.dirname(__FILE__), 'activation_mail.wtpl')
@@ -149,6 +158,12 @@ module AcmScW
         
         # updates the account
         attrs.empty? ? :ok : update_profile(id, attrs)
+      end
+      
+      # Subscribes a new user. Mail must not be already used (leads to database error)
+      def subscribe(attrs)
+        people.insert(attrs)
+        activation_request(attrs[:mail], false)
       end
       
     end # class PeopleServices

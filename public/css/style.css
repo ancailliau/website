@@ -30,7 +30,7 @@ form label {
 	width: 75%;
 }
 form fieldset {
-	margin: 15px 0px 15px 0px;
+	margin: 15px 130px 15px 0px;
 	padding: 7px 7px 15px 7px;
 }
 form fieldset legend {
@@ -197,7 +197,8 @@ body.index #main p {
 #activate_account_feedback ul {
 	margin-left: 30px;
 }
-#activate_account_feedback li {
+#activate_account_feedback li,
+#subscribe_account_feedback li {
 	color: red;
 }
 
@@ -296,9 +297,27 @@ body.index #footer {
 #footer p#internal-links a {
 	float: right;
 	color: #999;
-	width: 220px;
 	font-size: 0.9em;
 	text-align: right;
+	margin-left: 15px;
+}
+
+form#login {
+	display: none;
+	float: right;
+}
+form#login input[type=text] {
+	font-size: 0.9em;
+  width: 140px;
+}
+form#login input[type=password] {
+	font-size: 0.9em;
+  width: 80px;
+}
+form#login p {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-size: 0.9em;
 }
 
 /*

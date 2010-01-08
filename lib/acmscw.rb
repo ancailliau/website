@@ -110,8 +110,8 @@ module AcmScW
 end
 
 require 'acmscw/json'
-require 'acmscw/main_controller'
-require 'acmscw/services_controller'
 require 'acmscw/business/business_services'
 require 'acmscw/business/people_services'
+require 'acmscw/main_controller'
+require 'acmscw/services_controller'
 require 'acmscw/tools/mail_server'

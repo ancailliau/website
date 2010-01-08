@@ -6,9 +6,26 @@
 	</p>
 
 	<p id="internal-links">
-		<a href="mailto:info@uclouvain.acm-sc.be">Contactez nous</a>
-	<!--
+    ?{Waw.session_has_key?(:user)}{
+      <a href="javascript:logout()">Logout</a>
+      <a href="/people/my_chapter">My chapter</a>
+		}{
+  	  <a href="javascript:show_login_form()">Connexion</a>
+  	  <a href="/people/subscribe">Inscription</a>
+		}
 		<a href="/mentions">Mentions légales</a>
-	-->
+		<a href="mailto:info@uclouvain.acm-sc.be">Contactez nous</a>
 	</p>
+  <form id="login" action="javascript:login()">
+    <p id="login_feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
+    <input type="text" name="mail" value=""/>
+    <input type="password" name="password" value=""/>
+    <input type="submit" value="Go »">
+  </form>
+  <script type="text/javascript">
+    function show_login_form() {
+      $('p#internal-links').hide();
+      $('form#login').show();
+    }
+  </script>
 </div>
