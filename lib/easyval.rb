@@ -49,6 +49,9 @@ module EasyVal
   Mail = /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/.to_validator
   def self.mail() Mail; end
 
+  WebUrl = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix.to_validator
+  def self.weburl() WebUrl; end
+
   # Alls passed arguments are equal
   Equal = EasyVal.validator{|*args| args.uniq.size==1}
   def self.equal() Equal; end

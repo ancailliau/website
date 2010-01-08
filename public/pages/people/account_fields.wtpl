@@ -6,9 +6,10 @@
   </div>
 
   <div>
-    <label>Mot de passe pour se connecter aux fonctionalités avancées</label>
-    <input type="password" name="password" value=""/>
-    confirmation: <input type="password" name="password_confirm" value=""/>
+    <label>Mot de passe pour se connecter aux fonctionalités avancées (entre
+           8 et 15 caractères)</label>
+    <input type="password" name="password" value="{people[:password]}"/>
+    confirmation: <input type="password" name="password_confirm" value="{people[:password]}"/>
   </div>
   
   <div>

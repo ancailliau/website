@@ -21,8 +21,10 @@ module AcmScW
     signature {
       validation :actkey, mandatory, :missing_activation_key
       validation :mail, mandatory & mail, :invalid_email
+      validation :password, (size>=8) & (size<=15), :bad_password
       validation [:password, :password_confirm], mandatory & equal, :passwords_dont_match
       validation :newsletter, (default(false) | boolean), :bad_newsletter
+      validation :rss_feed, missing | weburl, :bad_rss_feed
     }
     def activate_account(params)
       result = AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|

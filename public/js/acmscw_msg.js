@@ -1,0 +1,11 @@
+var messages = new Array();
+messages['passwords_dont_match'] = "Les mots de passe ne correspondent pas"
+messages['server_error'] = "Une erreur est survenue. Veuillez réessayer plus tard"
+messages['invalid_email'] = "Adresse email invalide"
+messages['activate_account_ok'] = "<p>Votre compte a été activé</p>"
+messages['newsletter_subscribe_ok'] = "Vous êtes maintenant inscrit"
+messages['bad_rss_feed'] = "Votre flux RSS ne semble pas être une adresse web valide"
+messages['bad_newsletter'] = "L'inscription a la newsletter est invalide"
+messages['missing_activation_key'] = "Clé d'activation manquante"
+messages['activation_request_ok'] = "<p>Un mail vous permettant de réactiver votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>"
+messages['bad_password'] = "Votre mot de passe doit comporter entre 8 et 15 caractères"

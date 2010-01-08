@@ -5,34 +5,12 @@
   <h2>Activation de votre compte</h2>  
   
   ?{actkey and people}{
-    <form id="account-activation-form" action="/services/activate_account">
-      <p id="message"></p>
+    <form id="activate_account" action="javascript:activate_account()">
+      <div id="activate_account_feedback"></div>
       <input type="hidden" name="actkey" value="{actkey}"/>
       <div><<+{account_fields.wtpl with people:people}</div>
       <input type="submit" value="Activer mon compte">
     </form>
-    
-  	<script type="text/javascript">
-  		$(document).ready(function() {
-  			form = "form#account-activation-form";
-  			$(form).submit(function() {
-  				$.ajax({type: "POST", url: $(form).attr('action'), data: $(form).serialize(), dataType: "json",
-  					error: function(data) {
-							alert("A server error occured, please retry later.");
-  					},
-  					success: function(data) {
-  						if (data[0] == "ok") {
-  						  alert("Everything fine");
-  						} else if (data[0] == "validation_ko") {
-  						  $('p#message').html(data[1].toString());
-  						} else {
-  						  alert("A server error occured, please retry later.");
-  					  }
-  					}});
-  				return false;
-  			});
-  		});
-  	</script>
   }{
     <p>La clé d'activation fournie est manquante ou ne peut plus être utilisée
        pour une activation de compte. Veuillez réintroduire une demande d'activation

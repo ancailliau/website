@@ -194,6 +194,13 @@ body.index #main p {
 }
 /* ======================================================================= Feedback */
 
+#activate_account_feedback ul {
+	margin-left: 30px;
+}
+#activate_account_feedback li {
+	color: red;
+}
+
 /* ====================================================== newsletter_subscribe form */
 #main .grey-box {
 	width: 216px;

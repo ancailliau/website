@@ -148,7 +148,7 @@ module AcmScW
         to_update.update(:activation_key => nil)
         
         # updates the account
-        update_profile(id, attrs) unless attrs.empty?
+        attrs.empty? ? :ok : update_profile(id, attrs)
       end
       
     end # class PeopleServices
