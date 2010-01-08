@@ -45,16 +45,17 @@ module Waw
     # Executes the controller
     def execute(env, request, response)
       action_name = request.respond_to?(:path) ? request.path : request[:action]
-      puts "the action name is #{action_name}"
+      Waw.logger.debug("Executing the action whose name is #{action_name}")
       result = if action_name =~ /([a-zA-Z_]+)$/
         action = $1.to_sym 
-        puts "the action is #{action}"
         if self.respond_to?(action) 
           self.send(action, request.params.symbolize_keys)
         else
+          Waw.logger.warn("Action #{action_name} has not been found (no matching method)")
           [:error, :action_not_found]
         end
       else
+        Waw.logger.warn("Action #{action_name} has not been found")
         [:error, :action_not_found]
       end
       [:no_bypass, result]

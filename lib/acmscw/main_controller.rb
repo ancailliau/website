@@ -67,7 +67,7 @@ module AcmScW
         raise "Title file corrupted on line |#{line}|" unless /^([\/a-zA-Z0-9_-]+)\s+(.*)$/ =~ line
         titles[$1] = $2
       end
-      puts "Titles loaded #{titles.inspect}"
+      AcmScW.logger.debug("Titles loaded now.")
       titles
     end
     
@@ -75,7 +75,7 @@ module AcmScW
     def title_of(req_path)
       title = titles[req_path]
       unless title
-        puts "Warning, no dedicated title for #{req_path}"
+        AcmScW.logger.warn("Warning, no dedicated title for #{req_path}")
         title = titles['/']
       end
       title

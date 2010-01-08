@@ -26,6 +26,16 @@ module AcmScW
   # All messages
   MESSAGES= {}
   
+  # Sets the logger to use for Waw itself
+  def self.logger=(logger)
+    @logger = logger
+  end
+
+  # Returns the logger to use  
+  def self.logger
+    @logger ||= Logger.new(STDOUT)
+  end
+
   # Checks if the configuration has been loaded
   def self.loaded?
     CONFIG.size != 0
@@ -75,7 +85,7 @@ module AcmScW
   
   # Returns a specific message
   def self.get_message(key)
-    puts "Warning no such message #{key}" unless MESSAGES.has_key?(key.to_s)
+    AcmScW.logger.warn("Warning no such message #{key}") unless MESSAGES.has_key?(key.to_s)
     MESSAGES[key.to_s]
   end
   

@@ -34,7 +34,7 @@ app = Rack::Builder.new do
   end
 end
 domain = $1 if (AcmScW.base_href =~ /^https?:\/\/(.*?)(:\d+)?\/$/)
-puts "Starting acmscw application with domain #{domain}"
+logger.info("Starting acmscw application with domain #{domain}")
 sessioned = Rack::Session::Pool.new(app,
   :domain       => domain,
   :expire_after => 60 * 60 * 24 # expire after 1 hour
