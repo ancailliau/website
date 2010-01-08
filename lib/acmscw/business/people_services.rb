@@ -6,10 +6,9 @@ module AcmScW
       include Singleton
       
       # Validator for user existence
-      UserNoExists = EasyVal.validator do |mail|
-        not(PeopleServices.instance.people_exists?(mail))
-      end
-      def self.user_not_exists() UserNoExists end
+      UserExists = EasyVal.validator {|mail| PeopleServices.instance.people_exists?(mail)}
+      def self.user_exists() UserExists end
+      def self.user_not_exists() UserExists.not end
 
       # Validator for user login
       UserMayLog = EasyVal.validator do |mail, pass|

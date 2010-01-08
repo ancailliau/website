@@ -2,12 +2,13 @@
   <legend>Informations de connexion (obligatoire)</legend>
   <div>
     <label>L'adresse e-mail que nous utilisons pour vous contacter</label>
-    <input type="text" name="mail" value="{people[:mail]}"/>
+    <input type="text" name="mail" value="{people[:mail]}" onchange="javascript:$('#change_mail_explain').show()"/>
+    <span id="change_mail_explain" class="explain">Changer votre adresse email vous obligera a réactiver
+      votre compte (un mail vous sera envoyé)</p>
   </div>
 
   <div>
-    <label>Mot de passe pour se connecter aux fonctionalités avancées (entre
-           8 et 15 caractères)</label>
+    <label>Mot de passe (entre 8 et 15 caractères)</label>
     <input type="password" name="password" value="{people[:password]}"/>
     confirmation: <input type="password" name="password_confirm" value="{people[:password]}"/>
   </div>

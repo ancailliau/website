@@ -320,6 +320,18 @@ form#login p {
 	font-size: 0.9em;
 }
 
+span.explain {
+	font-size: 1.1em;
+	display: block;
+	float: right;
+	width: 200px;
+	color: red;
+}
+#change_mail_explain {
+	display: none;
+}
+
+
 /*
 #main form#details-form {
 	font-size: 1.2em;

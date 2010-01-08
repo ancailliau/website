@@ -11,6 +11,7 @@ bad_rss_feed                "Votre flux RSS ne semble pas être une adresse web 
 bad_user_or_password        "Utilisateur ou mot de passe invalide"
 mail_already_in_use         "Cette adresse email est déjà utilisée"
 user_must_be_logged         "Vous devez être connecté pour accéder/modifier ces informations"
+unknown_user                "Cette adresse email est inconnue dans notre base de données"
 
 # Ok feedback message
 newsletter_subscribe_ok     "Vous êtes maintenant inscrit"

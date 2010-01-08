@@ -68,7 +68,10 @@ module AcmScW
     end
     
     # Request for activation email
-    signature { validation :mail, mandatory & mail, :invalid_email }
+    signature { 
+      validation :mail, mandatory & mail, :invalid_email 
+      validation :mail, AcmScW::Business::PeopleServices.user_exists, :unknown_user
+    }
     def account_activation_request(params)
       AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
         layer.activation_request(params[:mail])
