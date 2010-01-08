@@ -1,5 +1,5 @@
 module AcmScW
-  class MainController
+  class MainController < Waw::Controller
     
     # The folder of this class
     PAGES_FOLDER = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'public', 'pages'))
@@ -85,9 +85,7 @@ module AcmScW
     ### Main controller implementation, serving the instantiated layout
     ##############################################################################################
     
-    def call(env)
-      req, res = Rack::Request.new(env), Rack::Response.new(env)
-      
+    def execute(env, req, res)
       # find the main page to compose
       req_path = MainController.normalize_req_path(req.path)
       req_path, is404, page = req_path, false, MainController.find_requested_page_file(req_path)
@@ -105,7 +103,7 @@ module AcmScW
       composed = WLang.file_instantiate(layout, context).to_s
       
       # send result
-      [is404 ? 404 : 200, {'Content-Type' => 'text/html'}, [composed]]
+      [:bypass, [is404 ? 404 : 200, {'Content-Type' => 'text/html'}, [composed]]]
     end
     
   end

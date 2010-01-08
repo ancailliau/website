@@ -45,7 +45,7 @@ module Waw
     def execute(env, request, response)
       action_name = request.respond_to?(:path) ? request.path : request[:action]
       puts "the action name is #{action_name}"
-      if action_name =~ /([a-zA-Z_]+)$/
+      result = if action_name =~ /([a-zA-Z_]+)$/
         action = $1.to_sym 
         puts "the action is #{action}"
         if self.respond_to?(action) 
@@ -56,6 +56,7 @@ module Waw
       else
         [:error, :action_not_found]
       end
+      [:no_bypass, result]
     end
   
   end # class ActionController
