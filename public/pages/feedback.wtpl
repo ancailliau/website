@@ -1,0 +1,4 @@
+={AcmScW.get_message(request.params['mkey']) as message}
+<div id="main">
+  <p>+{message}</p>
+</div>

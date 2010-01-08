@@ -8,14 +8,13 @@
 		<title>${title}</title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
 		<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="/js/acmscw.js"></script>
 	</head>
 	<body ?{pagerequest=='index.wtpl'}{class="index"}>
     <<+{header.wtpl}
-
 	  <<+{${pagerequest} with request:request, response:response}
-
+	  <div id="feedback"></div>
     <<+{footer.wtpl}
-
     ?{AcmScW.google_analytics}{
   		<script type="text/javascript">
   		  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

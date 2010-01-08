@@ -10,7 +10,7 @@ module AcmScW
     
     # Subscription to the newsletter
     signature { validation :mail, mandatory & mail, :invalid_email }
-    def subscribe(params)
+    def newsletter_subscribe(params)
       AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
         layer.subscribe_to_newsletter(params[:mail])
       end
@@ -20,7 +20,7 @@ module AcmScW
     # Activation of an account
     signature {
       validation :actkey, mandatory, :missing_activation_key
-      validation :mail, mandatory & mail, :bad_email
+      validation :mail, mandatory & mail, :invalid_email
       validation [:password, :password_confirm], mandatory & equal, :passwords_dont_match
       validation :newsletter, (default(false) | boolean), :bad_newsletter
     }
@@ -35,7 +35,7 @@ module AcmScW
     
     # Request for activation email
     signature { validation :mail, mandatory & mail, :invalid_email }
-    def activation_request(params)
+    def account_activation_request(params)
       AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
         layer.activation_request(params[:mail])
       end

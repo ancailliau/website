@@ -40,16 +40,16 @@ module Waw
     end
     
     def test_controller_subscribe
-      assert_equal :ok, @controller.subscribe(:mail => "blambeau@gmail.com")
-      assert_equal :invalid_email, @controller.subscribe(:mail => "blambeau_gmail.com")
-      assert_equal :missing_email, @controller.subscribe(:mail => nil)
+      assert_equal [:success, :ok], @controller.subscribe(:mail => "blambeau@gmail.com")
+      assert_equal [:validation_ko, [:invalid_email]], @controller.subscribe(:mail => "blambeau_gmail.com")
+      assert_equal [:validation_ko, [:missing_email, :invalid_email]], @controller.subscribe(:mail => nil)
     end
     
     def test_controller_say_hello_to_adult
-      assert_equal 20, @controller.say_hello_to_adult(:age => 20)
-      assert_equal 20, @controller.say_hello_to_adult(:age => "20")
-      assert_equal 20, @controller.say_hello_to_adult(:age => " 20 ")
-      assert_equal :bad_age, @controller.say_hello_to_adult(:age => "18")
+      assert_equal [:success, 20], @controller.say_hello_to_adult(:age => 20)
+      assert_equal [:success, 20], @controller.say_hello_to_adult(:age => "20")
+      assert_equal [:success, 20], @controller.say_hello_to_adult(:age => " 20 ")
+      assert_equal [:validation_ko, [:bad_age]], @controller.say_hello_to_adult(:age => "18")
     end
     
   end

@@ -19,42 +19,11 @@
 	</div>
 
 	<div class="grey-box">
-		<form action="/services/subscribe" method="post" enctype="multipart/form-data" id="subscribe-form">
-			<label for="mail">Inscrivez-vous<br /> à la newsletter</label>
+		<form action="javascript:newsletter_subscribe()" method="post" enctype="multipart/form-data" id="newsletter_subscribe">
+      <label for="mail" id="newsletter_subscribe_feedback">Inscrivez-vous<br /> à la newsletter</label>
 			<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
 			<input type="submit" value="Go »" />
-			<p id="message" ></p>
 		</form>
 	</div>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			form = "form#subscribe-form";
-			$(form).submit(function() {
-				$.ajax({type: "POST", url: $(form).attr('action'), data: $(form).serialize(), dataType: "json",
-					error: function(data) {
-						if (data.status == 500) {
-							$('form#subscribe-form input').hide();
-							$('p#message').show();
-							$('p#message').html("Une erreur est survenue. Veuillez réessayer plus tard.");
-						}
-					},
-					success: function(data) {
-						$('p#message').show();
-						if (data[0] == "ok") {
-							$('form#subscribe-form input').hide();
-							$('p#message').html("Vous êtes maintenant inscrit.");
-						} else if (data[0] == "validation_ko") {
-						  $('p#message').html("Adresse e-mail invalide.");
-						} else {
-							$('form#subscribe-form input').hide();
-							$('p#message').show();
-							$('p#message').html("Une erreur est survenue. Veuillez réessayer plus tard.");
-					  }
-					}});
-				return false;
-			});
-		});
-	</script>
 
 </div>

@@ -29,7 +29,7 @@ module Waw
             ok, values = signature.apply(params)
             if ok
               # validation is ok, merge params and continue
-              [:ok, meth.bind(self).call(params.merge!(values))]
+              [:success, meth.bind(self).call(params.merge!(values))]
             else
               # validation is ko
               [:validation_ko, values]

@@ -10,11 +10,21 @@ require 'easyval'
 # Main module of the whole website
 module AcmScW
   
+  # DSL for messages
+  class MessagesDSL
+    def method_missing(name, *args)
+      AcmScW::MESSAGES[name.to_s] = args[0]
+    end
+  end
+  
   # Version number of ACM Student Chapter Website
   VERSION = "0.0.4".freeze
   
   # Configuration parameters
   CONFIG = {}
+  
+  # All messages
+  MESSAGES= {}
   
   # Checks if the configuration has been loaded
   def self.loaded?
@@ -40,6 +50,7 @@ module AcmScW
   def self.load_configuration_file(file=look_for_deploy_file)
     load_configuration File.read(file)
     check_configuration
+    load_messages
   end
   
   # Checks that all mandatory configuration properties are present
@@ -55,6 +66,17 @@ module AcmScW
     raise "Incomplete configuration, database_encoding missing" unless CONFIG.has_key?(:database_encoding)
     raise "Incomplete configuration, smtp_host missing" unless CONFIG.has_key?(:smtp_host)
     raise "Incomplete configuration, smtp_port missing" unless CONFIG.has_key?(:smtp_port)
+  end
+  
+  # Loads all messages
+  def self.load_messages
+    MessagesDSL.new.instance_eval(File.read(File.join(File.dirname(__FILE__), 'acmscw', 'messages.rb')))
+  end
+  
+  # Returns a specific message
+  def self.get_message(key)
+    puts "Warning no such message #{key}" unless MESSAGES.has_key?(key.to_s)
+    MESSAGES[key.to_s]
   end
   
   # Fired when a method is missing
