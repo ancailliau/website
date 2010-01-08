@@ -42,6 +42,11 @@ module Waw
       
     end # end of class methods
     
+    # Ensapsules the action call 
+    def encapsulate(action, actual_params, &block)
+      yield
+    end
+    
     # Executes the controller
     def execute(env, request, response)
       action_name = request.respond_to?(:path) ? request.path : request[:action]
@@ -49,7 +54,10 @@ module Waw
       result = if action_name =~ /([a-zA-Z_]+)$/
         action = $1.to_sym 
         if self.respond_to?(action) 
-          self.send(action, request.params.symbolize_keys)
+          actual_params = request.params.symbolize_keys
+          encapsulate(action, actual_params) do 
+            self.send(action, actual_params)
+          end
         else
           Waw.logger.warn("Action #{action_name} has not been found (no matching method)")
           [:error, :action_not_found]

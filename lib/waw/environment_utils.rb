@@ -30,7 +30,7 @@ module Waw
       session_get(key)
     end
 
-    # Sets a pair inside the session
+    # Sets a pair inside the session. Returns the value.
     def session_set(key, value)
       session[key] = value
     end

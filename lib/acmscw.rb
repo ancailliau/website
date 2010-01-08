@@ -101,10 +101,9 @@ module AcmScW
   end
   
   # Executes the given block inside a transaction
-  def self.transaction(*layers, &block)
-    layers = layers.collect{|l| l.instance}
+  def self.transaction()
     self.database.transaction do
-      yield(*layers)
+      yield
     end
   end
   

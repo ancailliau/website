@@ -17,4 +17,12 @@ class AcmScWTest < Test::Unit::TestCase
     assert_equal 5432, AcmScW.database_port
   end
   
+  def say_hello
+    true
+  end
+  
+  def test_and_assumption
+    assert_equal :ok, (say_hello and :ok)
+  end
+  
 end

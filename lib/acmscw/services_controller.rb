@@ -4,9 +4,18 @@ module AcmScW
   #
   class ServicesController < ::Waw::ActionController
     
+    # The people business services
+    attr_reader :people_services
+    
     # Creates a ServicesController instance
     def initialize
       self.content_type = 'application/json'
+      @people_services = AcmScW::Business::PeopleServices.instance
+    end
+    
+    # Encapsulate all actions through a database transaction
+    def encapsulate(action, actual_params, &block)
+      AcmScW.transaction &block
     end
     
     ### Login and logout ###########################################################
@@ -18,8 +27,7 @@ module AcmScW
       validation [:mail, :password], user_may_log, :bad_user_or_password
     }
     def login(params)
-      session_set(:user, params[:mail])
-      :ok
+      session_set(:user, params[:mail]) and :ok
     end
     
     # Lagout
@@ -33,10 +41,7 @@ module AcmScW
     # Subscription to the newsletter
     signature { validation :mail, mandatory & mail, :invalid_email }
     def newsletter_subscribe(params)
-      AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
-        layer.subscribe_to_newsletter(params[:mail])
-      end
-      :ok
+      people_services.subscribe_to_newsletter(params[:mail]) and :ok
     end
     
     ### Account creation ###########################################################
@@ -53,11 +58,9 @@ module AcmScW
       validation :actkey, mandatory, :missing_activation_key
     }
     def activate_account(params)
-      result = AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
-        activation_key = params[:actkey]
-        update_args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
-        layer.activate(activation_key, update_args)
-      end
+      activation_key = params[:actkey]
+      update_args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
+      result = people_services.activate(activation_key, update_args)
       session_set(:user, params[:mail]) if result == :ok
       result
     end
@@ -68,10 +71,7 @@ module AcmScW
       validation :mail, user_exists, :unknown_user
     }
     def account_activation_request(params)
-      AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
-        layer.activation_request(params[:mail])
-      end
-      :ok
+      people_services.activation_request(params[:mail]) and :ok
     end
     
     # Account creation
@@ -79,11 +79,8 @@ module AcmScW
       validation :mail, user_not_exists, :mail_already_in_use
     }
     def subscribe_account(params)
-      AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
-        args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
-        layer.subscribe(args)
-      end
-      :ok
+      args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
+      people_services.subscribe(args) and :ok
     end
     
     # Account update
@@ -92,10 +89,8 @@ module AcmScW
       validation :mail, logged, :user_must_be_logged
     }
     def update_account(params)
-      result = AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
-        args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
-        layer.update_account(Waw.session_get(:user), args)
-      end
+      args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
+      result = people_services.update_account(Waw.session_get(:user), args)
       session_set(:user, params[:mail]) if result == :ok
       result
     end
