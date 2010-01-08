@@ -36,19 +36,21 @@
 						if (data.status == 500) {
 							$('form#subscribe-form input').hide();
 							$('p#message').show();
-							$('p#message').html("A server error occured, please retry later.");
+							$('p#message').html("Une erreur est survenue. Veuillez réessayer plus tard.");
 						}
 					},
 					success: function(data) {
 						$('p#message').show();
-						if (data == "invalid_email") {
-							$('p#message').html("Your e-mail is not valid.");
-						} else if (data == "missing_email") {
-							$('p#message').html("Your e-mail is missing.");
+						if (data[0] == "ok") {
+							$('form#subscribe-form input').hide();
+							$('p#message').html("Vous êtes maintenant inscrit.");
+						} else if (data[0] == "validation_ko") {
+						  $('p#message').html("Adresse e-mail invalide.");
 						} else {
 							$('form#subscribe-form input').hide();
-							$('p#message').html("You are now subscribed.");
-						}
+							$('p#message').show();
+							$('p#message').html("Une erreur est survenue. Veuillez réessayer plus tard.");
+					  }
 					}});
 				return false;
 			});

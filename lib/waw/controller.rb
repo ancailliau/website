@@ -12,9 +12,9 @@ module Waw
     def call(env)
       req, res = Rack::Request.new(env), Rack::Response.new(env)
       result = execute(env, req, res)
-      puts "Returning 200 with #{result}"
+      puts "Returning 200 with #{result.inspect}"
       [200, {'Content-Type' => content_type}, result]
-    rescue => ex
+    rescue Exception => ex
       puts "Fatal error #{ex.message}"
       puts ex.backtrace.join("\n")
       puts "Returning 500 with #{result}"

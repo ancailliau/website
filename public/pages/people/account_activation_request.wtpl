@@ -1,5 +1,31 @@
-<form action="" method="post" enctype="multipart/form-data" id="activation-request-form">
-	<label for="mail">Indiquez votre adresse e-mail</label>
+<form action="/services/activation_request" method="post" enctype="multipart/form-data" id="activation-request-form">
+	<label for="mail" id="message">Indiquez votre adresse e-mail</label>
 	<input type="text" value="" name="mail" id="mail"/>
 	<input type="submit" value="Go »" />
 </form>
+<p id="activation-request-feedback" style="display:none; color: green;">
+  Un mail vous permettant de réactiver votre compte vous a été envoyé. Veuillez suivre les 
+  instructions s'y trouvant.
+</p>
+<script type="text/javascript">
+	$(document).ready(function() {
+		form = "form#activation-request-form";
+		$(form).submit(function() {
+			$.ajax({type: "POST", url: $(form).attr('action'), data: $(form).serialize(), dataType: "json",
+				error: function(data) {
+					alert("A server error occured, please retry later.");
+				},
+				success: function(data) {
+					if (data[0] == "ok") {
+					  $('form#activation-request-form').hide()
+					  $('p#activation-request-feedback').show()
+					} else if (data[0] == "validation_ko") {
+					  $('label#message').html("Adresse e-mail invalide");
+					} else {
+					  alert("A server error occured, please retry later.");
+				  }
+				}});
+			return false;
+		});
+	});
+</script>

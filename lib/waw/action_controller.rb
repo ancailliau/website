@@ -29,10 +29,10 @@ module Waw
             ok, values = signature.apply(params)
             if ok
               # validation is ok, merge params and continue
-              meth.bind(self).call(params.merge!(values))
+              [:ok, meth.bind(self).call(params.merge!(values))]
             else
               # validation is ko
-              values.first
+              [:validation_ko, values]
             end
           end 
         end
@@ -48,9 +48,13 @@ module Waw
       if action_name =~ /([a-zA-Z_]+)$/
         action = $1.to_sym 
         puts "the action is #{action}"
-        self.respond_to?(action) ? self.send(action, request.params.symbolize_keys) : :action_not_found
+        if self.respond_to?(action) 
+          self.send(action, request.params.symbolize_keys)
+        else
+          [:error, :action_not_found]
+        end
       else
-        :action_not_found
+        [:error, :action_not_found]
       end
     end
   
