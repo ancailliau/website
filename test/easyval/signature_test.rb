@@ -78,5 +78,23 @@ module EasyVal
       assert_equal [:bad_newsletter], values
     end
     
+    def test_typical_web_scenario_sc3
+      signature = EasyVal.signature do
+        validation :mail, mandatory & mail, :bad_email
+        validation [:password, :confirm], mandatory & equal, :passwords_dont_match
+      end
+      ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "pass", :confirm => "pass")
+      assert_equal true, ok
+      ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => "", :confirm => "")
+      assert_equal false, ok
+      assert_equal [:passwords_dont_match], values
+      ok, values = signature.apply(:mail => "blambeau@gmail.com", :password => nil, :confirm => nil)
+      assert_equal false, ok
+      assert_equal [:passwords_dont_match], values
+      ok, values = signature.apply(:mail => "blambeau@gmail.com")
+      assert_equal false, ok
+      assert_equal [:passwords_dont_match], values
+    end
+    
   end
 end

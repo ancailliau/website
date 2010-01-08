@@ -8,11 +8,20 @@ module Waw
       def this_is_possible
       end
       
-      validate :mail, Waw::Validation::MANDATORY, :missing_email
-      validate :mail, Waw::Validation::EMAIL, :invalid_email
-      action_define :subscribe, [:mail] do |mail|
+      signature {
+        validation :mail, mandatory, :missing_email
+        validation :mail, mail, :invalid_email
+      }
+      def subscribe(params)
         this_is_possible
         :ok
+      end
+      
+      signature {
+        validation :age, integer & (is>18), :bad_age
+      }
+      def say_hello_to_adult(params)
+        params[:age]
       end
       
       def not_an_action
@@ -26,28 +35,21 @@ module Waw
     
     def test_controller_installation
       assert @controller.respond_to?(:subscribe)
-      assert @controller.respond_to?(:action_subscribe)
       assert @controller.respond_to?(:not_an_action)
       assert_equal false, @controller.respond_to?(:action_not_an_action)
     end
     
     def test_controller_subscribe
-      assert_equal :ok, @controller.subscribe("blambeau@gmail.com")
-      assert_equal :invalid_email, @controller.subscribe("blambeau_gmail.com")
-      assert_equal :missing_email, @controller.subscribe(nil)
+      assert_equal :ok, @controller.subscribe(:mail => "blambeau@gmail.com")
+      assert_equal :invalid_email, @controller.subscribe(:mail => "blambeau_gmail.com")
+      assert_equal :missing_email, @controller.subscribe(:mail => nil)
     end
     
-    def test_controller_action_subscribe
-      assert (/^[a-z]+@[a-z]+\.[a-z]/ =~ "blambeau@gmail.com")
-      assert_equal :ok, @controller.action_subscribe({:mail => "blambeau@gmail.com"}, nil)
-      assert_equal :invalid_email, @controller.action_subscribe({:mail => "blambeau_gmail.com"}, nil)
-      assert_equal :missing_email, @controller.action_subscribe({}, nil)
-    end
-    
-    def test_controller_action_execute
-      assert_equal :ok, @controller.execute({:action => 'subscribe', :mail => "blambeau@gmail.com"}, nil)
-      assert_equal :ok, @controller.execute({:action => '/services/subscribe', :mail => "blambeau@gmail.com"}, nil)
-      assert_equal :invalid_email, @controller.execute({:action => '/services/subscribe', :mail => "blambeau_gmail.com"}, nil)
+    def test_controller_say_hello_to_adult
+      assert_equal 20, @controller.say_hello_to_adult(:age => 20)
+      assert_equal 20, @controller.say_hello_to_adult(:age => "20")
+      assert_equal 20, @controller.say_hello_to_adult(:age => " 20 ")
+      assert_equal :bad_age, @controller.say_hello_to_adult(:age => "18")
     end
     
   end

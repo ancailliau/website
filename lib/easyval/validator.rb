@@ -24,7 +24,7 @@ module EasyVal
     
     # Negates this validator
     def not
-      Validator.new {|value| !self.validate(value)}
+      EasyVal::NotValidator.new(self)
     end
     
     # Creates a validator by disjunction

@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'rack'
+require 'easyval'
 module Waw
   
   VERSION = "0.0.1".freeze

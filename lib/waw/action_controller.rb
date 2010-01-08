@@ -5,72 +5,52 @@ module Waw
   #
   class ActionController < Waw::Controller
     
-    # Provides the validation and action methods used by the Controller class.
-    module ClassMethods
-    
-      # Installs a validation rule for the next action to define
-      def validate(*args, &block)
-        @validations = [] unless @validations
-        if block.nil?
-          name, validation, ko_result = args
-          block = Kernel.lambda do |arg_value|
-            if validation.respond_to?(:waw_action_validate)
-              validation.waw_action_validate(arg_value)
-            elsif Proc===validation
-              validation.call(arg_value)
+    # Class methods
+    class << self
+      
+      # Fired when a signature will be next installed
+      def signature(&block)
+        @signature = EasyVal.signature(&block)
+      end
+      
+      # If a signature has been installed, let the next added method
+      # become an action
+      def method_added(name)
+        if @signature and not(@critical)
+          @critical = true                      # next method will be added by myself
+          signature = @signature                # be careful about execution scope!
+      
+          # Introspection to find the unsecure method
+          meth = instance_method(name)
+      
+          # Define the secure method
+          define_method name do |params|
+            ok, values = signature.apply(params)
+            if ok
+              # validation is ok, merge params and continue
+              meth.bind(self).call(params.merge!(values))
             else
-              raise "Unable to use #{validation} for action argument validation"
+              # validation is ko
+              values.first
             end
-          end
-          @validations << [name, block, ko_result]
-        else
-          name, ko_result = args
-          @validations << [name, block, ko_result]
+          end 
         end
+        @signature, @critical = nil, false       # erase signature, leave critical section
       end
-    
-      # Converts and validate action arguments
-      def validate_action_arguments(arg_names, args, validations)
-        validations.each do |name, validation, ko_result|
-          index = arg_names.index(name)
-          value, ok = validation.call(args[index])
-          if ok
-            args[index] = value
-          else
-            return ko_result
-          end
-        end
-        [args, true]
-      end
-    
-      # Adds an action definition
-      def action_define(name, arg_names, &block)
-        validations = @validations || []
-        define_method "action_#{name}" do |request, response|
-          args = arg_names.nil? ? [request] : arg_names.collect {|arg_name| request[arg_name]}
-          self.send(name, *args)
-        end
-        define_method name do |*args|
-          args, ok = self.class.validate_action_arguments(arg_names, args, validations)
-          ok ? self.instance_exec(*args, &block) : args
-        end
-        @validations = nil
-      end
-    
-    end # module ActionMethods
+      
+    end # end of class methods
     
     # Executes the controller
-    def execute(request, response)
+    def execute(env, request, response)
       action_name = request.respond_to?(:fullpath) ? request.fullpath : request[:action]
       if action_name =~ /([a-zA-Z_]+)$/
-        action = "action_#{$1}".to_sym 
-        self.respond_to?(action) ? self.send(action, request, response) : :action_not_found
+        action = action_name.to_sym 
+        self.respond_to?(action) ? self.send(action, request.params) : :action_not_found
       else
         :action_not_found
       end
     end
   
-    extend ClassMethods
   end # class ActionController
 
 end # module Waw 

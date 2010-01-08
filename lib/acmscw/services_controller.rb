@@ -9,13 +9,29 @@ module AcmScW
     end
     
     # Subscription to the newsletter
-    validate :mail, Waw::Validation::MANDATORY, :missing_email
-    validate :mail, Waw::Validation::EMAIL, :invalid_email
-    action_define :subscribe, [:mail] do |mail|
+    signature {
+      validation :mail, mandatory & mail, :invalid_email
+    }
+    def subscribe(params)
       AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
-        layer.subscribe_to_newsletter(mail)
+        layer.subscribe_to_newsletter(params[:mail])
       end
       :ok
+    end
+    
+    signature {
+      validation :actkey, mandatory, :missing_activation_key
+      validation :mail, mandatory & mail, :bad_email
+      validation [:password, :confirm], mandatory & equal, :passwords_dont_match
+      validation :newsletter, (default(false) | boolean), :bad_newsletter
+    }
+    def activate_account(params)
+      result = AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
+        activation_key = params[:actkey]
+        update_args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
+        layer.activate(activation_key, update_args)
+      end
+      result
     end
     
   end # class ServicesController

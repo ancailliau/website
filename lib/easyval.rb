@@ -1,4 +1,5 @@
 require 'easyval/validator'
+require 'easyval/not_validator'
 require 'easyval/and_validator'
 require 'easyval/or_validator'
 require 'easyval/comparison_validations'
@@ -33,13 +34,13 @@ module EasyVal
     EasyVal::Signature.new &block
   end
 
-  # Validator for mandatory values
-  Mandatory = EasyVal::Validator.new {|*values| values.all?{|v| not(v.nil?)}}
-  def self.mandatory() Mandatory; end
-  
   # Validator/Converter for missing values
   Missing = EasyVal::MissingValidator.new
   def self.missing() Missing; end
+  
+  # Validator for mandatory values
+  Mandatory = Missing.not
+  def self.mandatory() Mandatory; end
   
   # Default validator
   def self.default(default_value) EasyVal::DefaultValidator.new(default_value); end

@@ -11,7 +11,7 @@ module Waw
     # Handler for Rack calls to the controller
     def call(env)
       req, res = Rack::Request.new(env), Rack::Response.new(env)
-      result = execute(req, res)
+      result = execute(env, req, res)
       puts "Returning 200 with #{result}"
       [200, {'Content-Type' => content_type}, result]
     rescue => ex
@@ -22,7 +22,7 @@ module Waw
     end
     
     # Executes the controller on a Rack::Request and Rack::Response pair
-    def execute(request, response)
+    def execute(env, request, response)
       raise "Should be subclassed"
     end
     

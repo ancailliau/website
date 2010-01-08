@@ -6,7 +6,6 @@ module EasyVal
     def test_historical_first
       assert EasyVal::Mandatory===false, "EasyVal::Mandatory===false"
       assert EasyVal::Mandatory===true, "EasyVal::Mandatory===true"
-      assert EasyVal::Mandatory==="", "EasyVal::Mandatory==="""
       assert EasyVal::Mandatory===0, "EasyVal::Mandatory===0"
       assert EasyVal::Mandatory===1, "EasyVal::Mandatory===1"
       assert EasyVal::Mandatory.not===nil, "EasyVal::Mandatory.not===nil"

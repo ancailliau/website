@@ -29,7 +29,7 @@
 
   <div>
     <label>Votre occupation (p.ex. Etudiant UCL/INGI, SINF21)</label>
-    <input type="text" name="mail" value="{people[:occupation]}"/>
+    <input type="text" name="occupation" value="{people[:occupation]}"/>
   </div>
 
   <div>
