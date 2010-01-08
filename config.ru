@@ -14,11 +14,22 @@ raise "Missing deployment file 'deploy', copy and edit deploy.example first!" un
 AcmScW.load_configuration_file(deploy_file)
 
 # handle rack services
-use Rack::Static, :urls => ["/images", "/css", "/js", "/slides", "/downloads"], :root => 'public'
-map '/' do
-  run AcmScW::MainController.new
+app = Rack::Builder.new do
+  use Rack::Static, :urls => ["/images", "/css", "/js", "/slides", "/downloads"], :root => 'public'  
+  use Rack::CommonLogger
+  use Rack::ShowExceptions
+  map '/' do
+    run AcmScW::MainController.new
+  end
+  map '/services' do
+    use AcmScW::JSON
+    run AcmScW::ServicesController.new
+  end
 end
-map '/services' do
-  use AcmScW::JSON
-  run AcmScW::ServicesController.new
-end
+domain = $1 if (AcmScW.base_href =~ /^https?:\/\/(.*?)(:\d+)?\/$/)
+puts "Starting acmscw application with domain #{domain}"
+sessioned = Rack::Session::Pool.new(app,
+  :domain       => domain,
+  :expire_after => 60 * 60 * 24 # expire after 1 hour
+)
+run sessioned
