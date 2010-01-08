@@ -11,6 +11,7 @@ module Waw
     
     # Handler for Rack calls to the controller
     def call(env)
+      Waw.logger.debug("Starting Waw::Controller.call")
       req, res = Rack::Request.new(env), Rack::Response.new(env)
       
       # Save thread local variables
@@ -24,16 +25,17 @@ module Waw
         when :bypass
           result
         when :no_bypass
-          env['rack.errors'].puts "Returning 200 with #{result.inspect}"
+          Waw.logger.debug("Returning 200 with #{result.inspect}")
           [200, {'Content-Type' => content_type}, result]
         else
+          Waw.logger.fatal("Unexpected controller result #{kind}")
           raise "Unexpected result #{kind}"
       end
     rescue Exception => ex
       # On exception, returns a 500 with a message
-      env['rack.errors'].puts "Fatal error #{ex.message}"
-      env['rack.errors'].puts ex.backtrace.join("\n")
-      env['rack.errors'].puts "Returning 500 with #{result}"
+      Waw.logger.error("Fatal error #{ex.message}")
+      Waw.logger.error(ex.backtrace.join("\n"))
+      Waw.logger.error("Returning 500 with #{result}")
       [500, {'Content-Type' => content_type}, [ex.message]]
     ensure
       # In all cases, remove thread local variables

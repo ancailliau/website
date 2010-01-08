@@ -7,16 +7,23 @@ lib = File.join(here, 'lib')
 # handle ruby load path and requires
 $LOAD_PATH.unshift(lib)
 require 'acmscw'
+require 'logger'
 
 # Load deployment
 deploy_file = File.join(here, 'deploy')
 raise "Missing deployment file 'deploy', copy and edit deploy.example first!" unless File.exists?(deploy_file)
 AcmScW.load_configuration_file(deploy_file)
 
+# Logging
+logger =  Logger.new(File.join(here, 'logs', 'acmscw.log'), 'weekly')
+logger.level = Logger::DEBUG
+AcmScW.logger = logger
+Waw.logger = logger
+
 # handle rack services
 app = Rack::Builder.new do
   use Rack::Static, :urls => ["/images", "/css", "/js", "/slides", "/downloads"], :root => 'public'  
-  use Rack::CommonLogger
+  use Rack::CommonLogger, logger
   use Rack::ShowExceptions
   map '/' do
     run AcmScW::MainController.new
