@@ -120,6 +120,7 @@ module AcmScW
 end
 
 require 'acmscw/json'
+require 'acmscw/validations'
 require 'acmscw/business/business_services'
 require 'acmscw/business/people_services'
 require 'acmscw/main_controller'

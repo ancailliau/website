@@ -4,11 +4,6 @@ module AcmScW
   #
   class ServicesController < ::Waw::ActionController
     
-    # Validation that user is logged
-    IsThisUser = EasyVal.validator{|mail| mail==Waw.session_has_key?(:user)}
-    UserIsLogged = EasyVal.validator{|*args| Waw.session_has_key?(:user)}
-    UserIsNotLogged = UserIsLogged.not
-    
     # Creates a ServicesController instance
     def initialize
       self.content_type = 'application/json'
@@ -20,7 +15,7 @@ module AcmScW
     signature {
       validation :mail, mandatory & mail, :bad_user_or_password
       validation :password, (size>=8) & (size<=15), :bad_user_or_password
-      validation [:mail, :password], AcmScW::Business::PeopleServices.user_may_log, :bad_user_or_password
+      validation [:mail, :password], user_may_log, :bad_user_or_password
     }
     def login(params)
       session_set(:user, params[:mail])
@@ -70,7 +65,7 @@ module AcmScW
     # Request for activation email
     signature { 
       validation :mail, mandatory & mail, :invalid_email 
-      validation :mail, AcmScW::Business::PeopleServices.user_exists, :unknown_user
+      validation :mail, user_exists, :unknown_user
     }
     def account_activation_request(params)
       AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
@@ -81,7 +76,7 @@ module AcmScW
     
     # Account creation
     signature(AccountCommonSignature) {
-      validation :mail, AcmScW::Business::PeopleServices.user_not_exists, :mail_already_in_use
+      validation :mail, user_not_exists, :mail_already_in_use
     }
     def subscribe_account(params)
       AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
@@ -93,8 +88,8 @@ module AcmScW
     
     # Account update
     signature(AccountCommonSignature) {
-      validation :mail, IsThisUser | AcmScW::Business::PeopleServices.user_not_exists, :mail_already_in_use
-      validation :mail, UserIsLogged, :user_must_be_logged
+      validation :mail, is_current_user | user_not_exists, :mail_already_in_use
+      validation :mail, logged, :user_must_be_logged
     }
     def update_account(params)
       result = AcmScW.transaction(AcmScW::Business::PeopleServices) do |layer|
