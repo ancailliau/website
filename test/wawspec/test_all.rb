@@ -7,7 +7,6 @@ $LOAD_PATH.unshift(File.join(top, 'lib'), File.join(top, 'vendor', 'waw', 'lib')
 require 'net/http'
 require 'waw'
 require 'waw/testing/wawspec'
-require 'test/unit'
 
 # Load the waw application
 app = Waw.load_application(top)
@@ -34,9 +33,27 @@ rescue Errno::ECONNREFUSED => ex
   sleep 1
 end until (ok or (try += 1)>3)
 
-test_files = Dir[File.join(File.dirname(__FILE__), '**/*.wawspec')]
+t1 = Time.now
+puts "Running wawspec suite (#{File.expand_path(here)})"
+tt, ta, tf, te = 0, 0, 0, 0
+test_files = Dir[File.join(here, '**/*.wawspec')]
 test_files.each { |file|
-  puts "Executing #{file}"
-  load(file) 
+  STDOUT.write "."
+  begin
+    scenario = Kernel.eval(File.read(file))
+    scenario.run
+    tt += 1
+    ta += scenario.assertion_count
+  rescue Test::Unit::AssertionFailedError => ex
+    puts ex.message
+    puts ex.backtrace.join("\n")
+    tf += 1
+  rescue Exception => ex
+    puts ex.message
+    puts ex.backtrace.join("\n")
+    te += 1
+  end
 }
+puts "\nFinished in #{Time.now - t1} seconds.\n"
+puts "#{tt} tests, #{ta} assertions, #{tf} failures, #{te} errors"
 t.kill
