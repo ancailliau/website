@@ -11,16 +11,6 @@ module AcmScW
   # Version number of ACM Student Chapter Website
   VERSION = "0.0.4".freeze
   
-  # Sets the logger to use for Waw itself
-  def self.logger=(logger)
-    @logger = logger
-  end
-
-  # Returns the logger to use  
-  def self.logger
-    @logger ||= Logger.new(STDOUT)
-  end
-
   # Checks that all mandatory configuration properties are present
   def self.check_configuration
     raise "Incomplete configuration, web_domain missing" unless Waw.config.knows?(:web_domain)
@@ -32,7 +22,6 @@ module AcmScW
     raise "Incomplete configuration, smtp_host missing" unless Waw.config.knows?(:smtp_host)
     raise "Incomplete configuration, smtp_port missing" unless Waw.config.knows?(:smtp_port)
   end
-  
   
   # Executes the given block inside a transaction
   def self.transaction()
