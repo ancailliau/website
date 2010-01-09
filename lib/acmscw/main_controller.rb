@@ -3,6 +3,7 @@ module AcmScW
     
     # The folder of this class
     PAGES_FOLDER = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'public', 'pages'))
+    TEMPLATES_FOLDER = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'templates'))
     
     ##############################################################################################
     ### About requested path and normalization
@@ -99,8 +100,9 @@ module AcmScW
                  "pagerequest" => page,
                  "request"     => req,
                  "response"    => res}
-      layout = File.join(PAGES_FOLDER, 'layout.wtpl')
+      layout = File.join(TEMPLATES_FOLDER, 'layout.wtpl')
       composed = WLang.file_instantiate(layout, context).to_s
+      puts composed
       
       # send result
       [:bypass, [is404 ? 404 : 200, {'Content-Type' => 'text/html'}, [composed]]]
