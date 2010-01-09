@@ -14,12 +14,12 @@ web_base          'http://uclouvain.acm-sc.be/'
 google_analytics  false
 
 # Classical parameters for connecting the AcmScW database
-database_host     'localhost'
-database_port     5432
-database_name     'acmscw'
-database_user     'acmscw'
-database_pwd      'acmscw'
-database_encoding 'utf8'
+database           :host     => 'localhost',
+                   :port     => 5432,
+                   :database => 'acmscw',
+                   :user     => 'acmscw',
+                   :password => 'acmscw',
+                   :encoding => 'utf8'
 
 # Information about the smtp server to use for sending mails
 smtp_host         'smtp.sgsi.ucl.ac.be'

@@ -1,6 +1,6 @@
 here = File.dirname(__FILE__)
 top  = File.join(here, '..', '..')
-$LOAD_PATH.unshift(File.join(top, 'lib'), File.join(top, 'vendor', 'waw', 'lib'))
+$LOAD_PATH.unshift(File.join(top, 'lib'), File.join(top, 'vendor', 'waw', 'lib'), File.join(top, 'test', 'unit'))
 require 'waw'
 require 'test/unit'
 

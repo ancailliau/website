@@ -34,12 +34,8 @@ module AcmScW
     raise "Incomplete configuration, web_base missing" unless Waw.config.knows?(:web_base)
     raise "Incomplete configuration, google_analytics missing" unless Waw.config.knows?(:google_analytics)
     raise "Incomplete configuration, deploy_mode missing" unless Waw.config.knows?(:deploy_mode)
-    raise "Incomplete configuration, database_host missing" unless Waw.config.knows?(:database_host)
-    raise "Incomplete configuration, database_port missing" unless Waw.config.knows?(:database_port)
-    raise "Incomplete configuration, database_name missing" unless Waw.config.knows?(:database_name)
-    raise "Incomplete configuration, database_user missing" unless Waw.config.knows?(:database_user)
-    raise "Incomplete configuration, database_pwd missing" unless Waw.config.knows?(:database_pwd)
-    raise "Incomplete configuration, database_encoding missing" unless Waw.config.knows?(:database_encoding)
+    raise "Incomplete configuration, database missing" unless Waw.config.knows?(:database)
+    raise "Wrong database configuration" unless [:host, :port, :database, :user, :password, :encoding].all?{|k| Waw.config.database.has_key?(k)}
     raise "Incomplete configuration, smtp_host missing" unless Waw.config.knows?(:smtp_host)
     raise "Incomplete configuration, smtp_port missing" unless Waw.config.knows?(:smtp_port)
   end
@@ -54,11 +50,7 @@ module AcmScW
   
   # Returns a Sequel database instance on the configuration
   def self.database
-    @database ||= Sequel.postgres(:host     => Waw.config.database_host,
-                                  :user     => Waw.config.database_user,
-                                  :password => Waw.config.database_pwd,
-                                  :database => Waw.config.database_name,
-                                  :encoding => Waw.config.database_encoding)
+    @database ||= Sequel.postgres(Waw.config.database)
   end
       
 end
