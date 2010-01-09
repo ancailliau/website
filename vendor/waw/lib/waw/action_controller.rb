@@ -15,7 +15,7 @@ module Waw
       
       # Fired when a signature will be next installed
       def signature(signature=nil, &block)
-        signature = (signature.nil? ? EasyVal::Signature.new : signature)
+        signature = (signature.nil? ? Waw::Validation::Signature.new : signature)
         signature = signature.merge(&block) if block
         @signature = signature
       end

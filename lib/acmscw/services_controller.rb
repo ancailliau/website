@@ -45,7 +45,7 @@ module AcmScW
     end
     
     ### Account creation ###########################################################
-    AccountCommonSignature = EasyVal.signature {
+    AccountCommonSignature = Waw::Validation.signature {
       validation :mail, mandatory & mail, :invalid_email
       validation :password, (size>=8) & (size<=15), :bad_password
       validation [:password, :password_confirm], mandatory & equal, :passwords_dont_match

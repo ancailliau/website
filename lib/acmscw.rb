@@ -5,7 +5,6 @@ require 'rack'
 require 'json'
 require 'waw'
 require 'wlang'
-require 'easyval'
 
 # Main module of the whole website
 module AcmScW

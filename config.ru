@@ -3,9 +3,10 @@
 # Some paths
 here = File.dirname(__FILE__)
 lib = File.join(here, 'lib')
+waw_lib = File.join(here, 'vendor', 'waw', 'lib')
 
 # handle ruby load path and requires
-$LOAD_PATH.unshift(lib)
+$LOAD_PATH.unshift(lib, waw_lib)
 require 'acmscw'
 require 'logger'
 

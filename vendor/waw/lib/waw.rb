@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'rack'
-require 'easyval'
 
 require 'waw/ext'
 require 'waw/validation'
