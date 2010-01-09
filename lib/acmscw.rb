@@ -15,7 +15,6 @@ module AcmScW
   # Returns a specific message
   def self.get_message(key)
     AcmScW.logger.warn("Using deprecated API AcmScW.get_message, #{caller[0]}")
-    AcmScW.logger.warn("Warning no such message #{key}") unless MESSAGES.has_key?(key.to_s)
     Waw::Resources.messages.send(key.to_s.to_sym)
   end
   
