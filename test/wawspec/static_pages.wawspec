@@ -1,0 +1,10 @@
+scenario :static_pages do
+  locations = %w{index activites latex olympiades scienceinfuse/index scienceinfuse/acces
+                 scienceinfuse/sponsoring securite-vie-privee/index securite-vie-privee/orateurs
+                 securite-vie-privee/sponsoring} 
+  locations.each do |loc|
+    location(AcmScW.base_href + loc)
+    assert !is404, "Page #{loc} has been correctly found (location: #{browser.location})"
+    assert i_see("<!-- #{loc}.wtpl -->"), "User is correctly on #{loc}"
+  end
+end
