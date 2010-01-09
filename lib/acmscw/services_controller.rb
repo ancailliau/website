@@ -13,6 +13,15 @@ module AcmScW
       @people_services = AcmScW::Business::PeopleServices.instance
     end
     
+    # Service installation on a rack builder
+    def install_on_rack_builder(config, builder)
+      myself = self
+      builder.map '/services' do
+        use AcmScW::JSON
+        run myself
+      end
+    end
+    
     # Encapsulate all actions through a database transaction
     def encapsulate(action, actual_params, &block)
       AcmScW.transaction &block
