@@ -27,7 +27,7 @@ app = Rack::Builder.new do
   use Rack::CommonLogger, logger
   use Rack::ShowExceptions
   map '/' do
-    run AcmScW::MainController.new
+    run Waw::Services::PublicPages.new
   end
   map '/services' do
     use AcmScW::JSON
