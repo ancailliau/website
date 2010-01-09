@@ -6,6 +6,10 @@ class AcmScWTest < Test::Unit::TestCase
     AcmScW.unload if AcmScW.loaded?
   end
   
+  def test_waw_project_structure
+    Waw::Services::PublicPages.check_options
+  end
+  
   def test_load_configuration
     AcmScW.load_configuration <<-EOF
       database_user 'acmscw'
