@@ -12,25 +12,11 @@ module AcmScW
   # Version number of ACM Student Chapter Website
   VERSION = "0.0.4".freeze
   
-  # DSL for messages
-  class MessagesDSL
-    def method_missing(name, *args)
-      AcmScW::MESSAGES[name.to_s] = args[0]
-    end
-  end
-  
-  # All messages
-  MESSAGES= {}
-
-  # Loads all messages
-  def self.load_messages
-    MessagesDSL.new.instance_eval(File.read(File.join(File.dirname(__FILE__), 'acmscw', 'messages.rb')))
-  end
-  
   # Returns a specific message
   def self.get_message(key)
+    AcmScW.logger.warn("Using deprecated API AcmScW.get_message, #{caller[0]}")
     AcmScW.logger.warn("Warning no such message #{key}") unless MESSAGES.has_key?(key.to_s)
-    MESSAGES[key.to_s]
+    Waw::Resources.messages.send(key.to_s.to_sym)
   end
   
   # Sets the logger to use for Waw itself
