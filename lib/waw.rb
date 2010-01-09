@@ -6,6 +6,7 @@ require 'waw/ext'
 require 'waw/validation'
 require 'waw/environment_utils'
 require 'waw/controller'
+require 'waw/action'
 require 'waw/action_controller'
 module Waw
   

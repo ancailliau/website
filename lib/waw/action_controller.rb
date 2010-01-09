@@ -8,6 +8,11 @@ module Waw
     # Class methods
     class << self
       
+      # Returns the actions
+      def actions
+        @actions ||= {}
+      end
+      
       # Fired when a signature will be next installed
       def signature(signature=nil, &block)
         signature = (signature.nil? ? EasyVal::Signature.new : signature)
@@ -20,21 +25,14 @@ module Waw
       def method_added(name)
         if @signature and not(@critical)
           @critical = true                      # next method will be added by myself
-          signature = @signature                # be careful about execution scope!
       
-          # Introspection to find the unsecure method
-          meth = instance_method(name)
-      
+          # Create the action instance
+          action = Waw::ActionController::Action.new(name, @signature, instance_method(name))
+          actions[name] = action
+          
           # Define the secure method
           define_method name do |params|
-            ok, values = signature.apply(params)
-            if ok
-              # validation is ok, merge params and continue
-              [:success, meth.bind(self).call(params.merge!(values))]
-            else
-              # validation is ko
-              [:validation_ko, values]
-            end
+            action.execute(self, params)
           end 
         end
         @signature, @critical = nil, false       # erase signature, leave critical section
