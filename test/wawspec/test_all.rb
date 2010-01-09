@@ -39,4 +39,4 @@ test_files.each { |file|
   puts "Executing #{file}"
   load(file) 
 }
-
+t.kill
