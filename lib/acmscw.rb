@@ -48,7 +48,7 @@ module AcmScW
       
 end
 
-require 'acmscw/validations'
+require 'acmscw/waw_ext/validations'
 require 'acmscw/business/business_services'
 require 'acmscw/business/people_services'
 require 'acmscw/services_controller'
