@@ -5,7 +5,7 @@ module AcmScW
     class PeopleServices < BusinessServices
       include Singleton
       
-      # The poeple relation (through a Sequel Dataset instance)
+      # The people relation (through a Sequel Dataset instance)
       attr_reader :people
       
       # Creates a services layer instance
