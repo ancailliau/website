@@ -1,4 +1,3 @@
-={AcmScW.database[:activities] as activities}
 <div id="main">
 
 	<h2>Quels sont les activités organisées&nbsp;?</h2>
@@ -9,7 +8,7 @@
 	href="mailto:info@uclouvain.acm-sc.be">contacter</a> pour toute question ou
 	information complémentaire.</p>
 
-  *{activities as act}{
+  *{model.activities as act}{
     ?{act[:card_path]}{
       <h3><a href="{act[:card_path]}">${act[:name]}</a></h3>
     }{

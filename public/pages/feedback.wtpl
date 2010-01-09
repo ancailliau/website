@@ -1,4 +1,3 @@
-={AcmScW.get_message(request.params['mkey']) as message}
 <div id="main">
-  <p>+{message}</p>
+  <p>+{messages[request.params['mkey'].to_sym]}</p>
 </div>

@@ -1,9 +1,8 @@
-={AcmScW.database[:events].filter(:status => 'planned') as events}
 <div id="main">
 
 	<h2>Nos prochains événements</h2>
 
-  *{events as evt}{
+  *{model.planned_events as evt}{
     <h3>${evt[:name]}</h3>
     <p>${evt[:date].strftime('%d/%m/%Y à %H:%M')}, ${evt[:location]}</p>
     +{evt[:abstract]}
