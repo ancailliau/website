@@ -17,7 +17,7 @@ module AcmScW
     def install_on_rack_builder(config, builder)
       myself = self
       builder.map '/services' do
-        use AcmScW::JSON
+        use Waw::RackUtils::JSON
         run myself
       end
     end

@@ -2,7 +2,6 @@ require 'rubygems'
 require 'pg'
 require 'sequel'
 require 'rack'
-require 'json'
 require 'waw'
 require 'wlang'
 
@@ -49,7 +48,6 @@ module AcmScW
       
 end
 
-require 'acmscw/json'
 require 'acmscw/validations'
 require 'acmscw/business/business_services'
 require 'acmscw/business/people_services'
