@@ -1,0 +1,1 @@
+people    AcmScW::Business::PeopleServices.new

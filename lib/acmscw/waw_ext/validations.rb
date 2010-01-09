@@ -2,13 +2,13 @@ module Waw
   module Validation
 
     # Validator for user existence
-    UserExists = Waw::Validation.validator {|mail| AcmScW::Business::PeopleServices.instance.people_exists?(mail)}
+    UserExists = Waw::Validation.validator {|mail| Waw.resources.business.people.people_exists?(mail)}
     def self.user_exists() UserExists end
     def self.user_not_exists() UserExists.not end
 
     # Validator for user login
     UserMayLog = Waw::Validation.validator do |mail, pass|
-      AcmScW::Business::PeopleServices.instance.people_may_log?(mail, pass)
+      Waw.resources.business.people.people_may_log?(mail, pass)
     end
     def self.user_may_log() UserMayLog end
       

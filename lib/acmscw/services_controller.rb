@@ -10,7 +10,7 @@ module AcmScW
     # Creates a ServicesController instance
     def initialize
       self.content_type = 'application/json'
-      @people_services = AcmScW::Business::PeopleServices.instance
+      @people_services = Waw.resources.business.people
     end
     
     # Service installation on a rack builder

@@ -2,8 +2,7 @@ require 'base64'
 require 'singleton'
 module AcmScW
   module Business
-    class PeopleServices < BusinessServices
-      include Singleton
+    class PeopleServices
       
       # The people relation (through a Sequel Dataset instance)
       attr_reader :people

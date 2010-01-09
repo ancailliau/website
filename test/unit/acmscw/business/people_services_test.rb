@@ -10,7 +10,7 @@ module AcmScW
       
       # Forces the test user to disapear 
       def setup
-        @layer = AcmScW::Business::PeopleServices.instance 
+        @layer = AcmScW::Business::PeopleServices.new
         @layer.drop_people(TEST_USER)
         @layer.drop_people(TEST_USER_ALIAS)
         AcmScW::Tools::MailServer.clean(TEST_USER)
