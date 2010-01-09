@@ -12,12 +12,6 @@ module AcmScW
   # Version number of ACM Student Chapter Website
   VERSION = "0.0.4".freeze
   
-  # Returns a specific message
-  def self.get_message(key)
-    AcmScW.logger.warn("Using deprecated API AcmScW.get_message, #{caller[0]}")
-    Waw::Resources.messages.send(key.to_s.to_sym)
-  end
-  
   # Sets the logger to use for Waw itself
   def self.logger=(logger)
     @logger = logger
