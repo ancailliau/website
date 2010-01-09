@@ -1,0 +1,4 @@
+scenario :index do
+  location AcmScW.base_href
+  assert i_see("<!-- index.wtpl -->"), "User is on the index page"
+end

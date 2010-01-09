@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- ${pagerequest} -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-language" content="fr" />
@@ -14,7 +15,6 @@
 	<body ?{pagerequest=='index.wtpl'}{class="index"}>
     <<+{header.wtpl}
 	  <<+{${pagerequest} with request:request, response:response}
-	  <div id="feedback"></div>
     <<+{footer.wtpl}
     ?{AcmScW.google_analytics}{
   		<script type="text/javascript">
