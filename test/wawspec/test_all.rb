@@ -21,14 +21,14 @@ rescue LoadError => e
   server = Rack::Handler::WEBrick
 end
 t = Thread.new(app) do |app|
-  options = {:Port => 9292, :Host => "0.0.0.0", :AccessLog => []}
+  options = {:Port => Waw.config.web_port, :Host => "0.0.0.0", :AccessLog => []}
   server.run app, options
 end
 
 # Wait until the server is loaded
 try, ok = 0, false
 begin
-  Net::HTTP.get(URI.parse("http://localhost:9292/"))
+  Net::HTTP.get(URI.parse(Waw.config.web_base))
   ok = true
 rescue Errno::ECONNREFUSED => ex
   sleep 1
