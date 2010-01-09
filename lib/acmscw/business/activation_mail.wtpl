@@ -9,7 +9,7 @@ Content-type: text/html
 
 <p>Vous nous avez récemment fait part de votre intérêt pour certaines activités proposées
    par l'ACM Student Chapter et nous vous en remercions. Un compte personnel a été créé sur
-   notre site <a href="{AcmScW.base_href}">${AcmScW.base_href}</a></p>
+   notre site <a href="{Waw.config.web_base}">${Waw.config.web_base}</a></p>
    
 <p>Pour activer votre compte, mettre à jour vos préférences (inscription à la newsletter, etc.) 
    et profiter des fonctionnalités offertes par notre site web, il vous suffit de suivre 

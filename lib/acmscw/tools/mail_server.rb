@@ -5,11 +5,11 @@ module AcmScW
       
       # Sends an e-mail
       def self.send_mail(msg, from, to)
-        if AcmScW.deploy_mode == 'devel'
+        if Waw.config.deploy_mode == 'devel'
           to.each {|t| File.open("/tmp/#{t}.txt", 'w') {|io| io << msg}}
         else
-          smtp_conn = Net::SMTP.new(AcmScW.smtp_host, AcmScW.smtp_port)
-          smtp_conn.open_timeout = AcmScW.smtp_timeout
+          smtp_conn = Net::SMTP.new(Waw.config.smtp_host, Waw.config.smtp_port)
+          smtp_conn.open_timeout = Waw.config.smtp_timeout
           smtp_conn.start
           smtp_conn.send_message(msg, from, *to)
           smtp_conn.finish

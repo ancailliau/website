@@ -9,6 +9,9 @@ require 'wlang'
 # Main module of the whole website
 module AcmScW
   
+  # Version number of ACM Student Chapter Website
+  VERSION = "0.0.4".freeze
+  
   # DSL for messages
   class MessagesDSL
     def method_missing(name, *args)
@@ -16,67 +19,9 @@ module AcmScW
     end
   end
   
-  # Version number of ACM Student Chapter Website
-  VERSION = "0.0.4".freeze
-  
-  # Configuration parameters
-  CONFIG = {}
-  
   # All messages
   MESSAGES= {}
-  
-  # Sets the logger to use for Waw itself
-  def self.logger=(logger)
-    @logger = logger
-  end
 
-  # Returns the logger to use  
-  def self.logger
-    @logger ||= Logger.new(STDOUT)
-  end
-
-  # Checks if the configuration has been loaded
-  def self.loaded?
-    CONFIG.size != 0
-  end
-  
-  # Unloads the configuration
-  def self.unload
-    CONFIG.clear
-  end
-  
-  # Returns the place where the deploy file should be placed
-  def self.look_for_deploy_file
-    File.join(File.dirname(__FILE__), '..', 'deploy')
-  end
-  
-  # Loads the configuration from a given string
-  def self.load_configuration(str)
-    self.instance_eval str
-  end
-  
-  # Loads the configuration from a given file
-  def self.load_configuration_file(file=look_for_deploy_file)
-    load_configuration File.read(file)
-    check_configuration
-    load_messages
-  end
-  
-  # Checks that all mandatory configuration properties are present
-  def self.check_configuration
-    raise "Incomplete configuration, base_href missing" unless CONFIG.has_key?(:base_href)
-    raise "Incomplete configuration, google_analytics missing" unless CONFIG.has_key?(:google_analytics)
-    raise "Incomplete configuration, deploy_mode missing" unless CONFIG.has_key?(:deploy_mode)
-    raise "Incomplete configuration, database_host missing" unless CONFIG.has_key?(:database_host)
-    raise "Incomplete configuration, database_port missing" unless CONFIG.has_key?(:database_port)
-    raise "Incomplete configuration, database_name missing" unless CONFIG.has_key?(:database_name)
-    raise "Incomplete configuration, database_user missing" unless CONFIG.has_key?(:database_user)
-    raise "Incomplete configuration, database_pwd missing" unless CONFIG.has_key?(:database_pwd)
-    raise "Incomplete configuration, database_encoding missing" unless CONFIG.has_key?(:database_encoding)
-    raise "Incomplete configuration, smtp_host missing" unless CONFIG.has_key?(:smtp_host)
-    raise "Incomplete configuration, smtp_port missing" unless CONFIG.has_key?(:smtp_port)
-  end
-  
   # Loads all messages
   def self.load_messages
     MessagesDSL.new.instance_eval(File.read(File.join(File.dirname(__FILE__), 'acmscw', 'messages.rb')))
@@ -88,16 +33,32 @@ module AcmScW
     MESSAGES[key.to_s]
   end
   
-  # Fired when a method is missing
-  def self.method_missing(name, *args)
-    CONFIG[name] = args[0]
-    instance_eval <<-EOF
-      def self.#{name}(value=nil)
-        (CONFIG[:#{name}] = value) if value
-        CONFIG[:#{name}] 
-      end
-    EOF
+  # Sets the logger to use for Waw itself
+  def self.logger=(logger)
+    @logger = logger
   end
+
+  # Returns the logger to use  
+  def self.logger
+    @logger ||= Logger.new(STDOUT)
+  end
+
+  # Checks that all mandatory configuration properties are present
+  def self.check_configuration
+    raise "Incomplete configuration, web_domain missing" unless Waw.config.knows?(:web_domain)
+    raise "Incomplete configuration, web_base missing" unless Waw.config.knows?(:web_base)
+    raise "Incomplete configuration, google_analytics missing" unless Waw.config.knows?(:google_analytics)
+    raise "Incomplete configuration, deploy_mode missing" unless Waw.config.knows?(:deploy_mode)
+    raise "Incomplete configuration, database_host missing" unless Waw.config.knows?(:database_host)
+    raise "Incomplete configuration, database_port missing" unless Waw.config.knows?(:database_port)
+    raise "Incomplete configuration, database_name missing" unless Waw.config.knows?(:database_name)
+    raise "Incomplete configuration, database_user missing" unless Waw.config.knows?(:database_user)
+    raise "Incomplete configuration, database_pwd missing" unless Waw.config.knows?(:database_pwd)
+    raise "Incomplete configuration, database_encoding missing" unless Waw.config.knows?(:database_encoding)
+    raise "Incomplete configuration, smtp_host missing" unless Waw.config.knows?(:smtp_host)
+    raise "Incomplete configuration, smtp_port missing" unless Waw.config.knows?(:smtp_port)
+  end
+  
   
   # Executes the given block inside a transaction
   def self.transaction()
@@ -108,11 +69,11 @@ module AcmScW
   
   # Returns a Sequel database instance on the configuration
   def self.database
-    @database ||= Sequel.postgres(:host     => AcmScW.database_host,
-                                  :user     => AcmScW.database_user,
-                                  :password => AcmScW.database_pwd,
-                                  :database => AcmScW.database_name,
-                                  :encoding => AcmScW.database_encoding)
+    @database ||= Sequel.postgres(:host     => Waw.config.database_host,
+                                  :user     => Waw.config.database_user,
+                                  :password => Waw.config.database_pwd,
+                                  :database => Waw.config.database_name,
+                                  :encoding => Waw.config.database_encoding)
   end
       
 end

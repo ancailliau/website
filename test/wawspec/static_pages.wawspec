@@ -3,7 +3,7 @@ scenario :static_pages do
                  scienceinfuse/sponsoring securite-vie-privee/index securite-vie-privee/orateurs
                  securite-vie-privee/sponsoring} 
   locations.each do |loc|
-    location(AcmScW.base_href + loc)
+    location(Waw.config.web_base + loc)
     assert !is404, "Page #{loc} has been correctly found (location: #{browser.location})"
     assert i_see("<!-- #{loc}.wtpl -->"), "User is correctly on #{loc}"
   end
