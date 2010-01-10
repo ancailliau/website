@@ -1,0 +1,6 @@
+scenario __FILE__ do 
+  go Waw.config.web_base
+  
+  user = {:mail => "test-user@acmscw.be"}
+  assert(invoke_json_service("/services/update_account", {}) =~ "success/validation-ko/user_must_be_logged")
+end

@@ -1,4 +1,4 @@
-scenario :subscribe do
+scenario __FILE__ do
   people_mail = "test-user@acmscw.be"
   Waw.resources.business.people.drop_people(people_mail)
   AcmScW::Tools::MailServer.clean(people_mail)

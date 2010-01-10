@@ -1,15 +1,16 @@
-scenario :newsletter_unknown do 
+scenario __FILE__ do 
   people_mail = "test-user@acmscw.be"
-  Waw.resources.business.people.drop_people(people_mail)
-  AcmScW::Tools::MailServer.clean(people_mail)
+  people = {:mail => "test-user@acmscw.be"}
+  Waw.resources.business.people.drop_people(people[:mail])
+  AcmScW::Tools::MailServer.clean(people[:mail])
   
   # Start on the root
-  location Waw.config.web_base
+  go Waw.config.web_base
   
   # invoke the subscribe_account service
-  args = {:mail => people_mail}
-  result = invoke_json_service("/services/newsletter_subscribe", args)          
-  assert_json_service_result_matches result, "success/ok", "Successful newsletter invocation"
+  assert_server_invoke "success/ok", "Successful newsletter invocation" do
+    service "/services/newsletter_subscribe", people
+  end
   
   # Check the confirmation message
   assert AcmScW::Tools::MailServer.mail_has_been_sent?(people_mail), "activation mail sent"
@@ -17,12 +18,12 @@ scenario :newsletter_unknown do
   assert (found = has_tag?("a", {:href => ".*?activate_account.*?"}, mail_contents))
   
   # Follow the activation link
-  location found[:href]
+  go found[:href]
   assert has_tag?("form", :id => "activate_account"), "On the activate_account form"
   
   # Fill the form and send it
   actkey = $1 if found[:href] =~ /actkey=(.*)$/
-  args = args.merge(:actkey => actkey, :password => "password", :password_confirm => "password")
+  args = people.merge(:actkey => actkey, :password => "password", :password_confirm => "password")
   result = invoke_json_service("/services/activate_account", args)
   assert_json_service_result_matches result, "success/ok", "Successful activate service invocation"
   
