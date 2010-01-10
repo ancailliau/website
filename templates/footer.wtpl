@@ -16,12 +16,12 @@
 		<a href="/mentions">Mentions légales</a>
 		<a href="mailto:info@uclouvain.acm-sc.be">Contactez nous</a>
 	</p>
-  <form id="login" action="javascript:login()">
+	@{/services/login}{
     <p id="login_feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
     <input type="text" name="mail" value=""/>
     <input type="password" name="password" value=""/>
     <input type="submit" value="Go »">
-  </form>
+	}
   <script type="text/javascript">
     function show_login_form() {
       $('p#internal-links').hide();

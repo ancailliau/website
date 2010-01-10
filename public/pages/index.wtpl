@@ -19,11 +19,11 @@
 	</div>
 
 	<div class="grey-box">
-		<form action="javascript:newsletter_subscribe()" method="post" enctype="multipart/form-data" id="newsletter_subscribe">
+	  @{/services/newsletter_subscribe}{
       <label for="mail" id="newsletter_subscribe_feedback">Inscrivez-vous<br /> à la newsletter</label>
 			<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
 			<input type="submit" value="Go »" />
-		</form>
+	  }
 	</div>
 
 </div>

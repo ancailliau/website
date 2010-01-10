@@ -2,11 +2,11 @@
   <h2>Modification de votre profil</h2>
   ?{Waw.session_has_key?(:user)}{
     ={AcmScW.database[:people].filter(:mail => '+{Waw.session_get(:user)}').first as people}
-    <form id="update_account" action="javascript:update_account()">
+    @{/services/update_account}{
       <div id="update_account_feedback"></div>
       <div><<+{account_fields.wtpl with people: people}</div>
       <input type="submit" value="Modifier mon compte">
-    </form>
+    }
   }{
     <p>Vous devez être loggé pour accéder à cette page</p>
   }
