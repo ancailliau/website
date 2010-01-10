@@ -98,8 +98,7 @@ module AcmScW
     routing {
       upon 'error'         do feedback end
       upon 'validation_ko' do form_validation_feedback end
-      upon 'success/ok'    do redirect(:url => '/people/my_chapter') end
-      upon 'success/activation_required' do redirect(:url => '/feedback?mkey=subscribe_account_ok') end
+      upon 'success/ok'    do redirect(:url => '/feedback?mkey=subscribe_account_ok') end
     }
     def subscribe_account(params)
       args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)

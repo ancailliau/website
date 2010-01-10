@@ -14,12 +14,12 @@ raise "Tests cannot be run in production mode, to avoid modifying real database 
       "or sending spam mails to real users." unless Waw.config.deploy_mode=='devel'
 
 # Load waw through rack in a different thread
-begin
-  server = Rack::Handler::Mongrel
-rescue LoadError => e
-  server = Rack::Handler::WEBrick
-end
 t = Thread.new(app) do |app|
+  begin
+    server = Rack::Handler::Mongrel
+  rescue LoadError => e
+    server = Rack::Handler::WEBrick
+  end
   options = {:Port => Waw.config.web_port, :Host => "0.0.0.0", :AccessLog => []}
   server.run app, options
 end

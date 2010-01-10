@@ -1,6 +1,7 @@
 scenario :subscribe do
   people_mail = "test-user@acmscw.be"
   Waw.resources.business.people.drop_people(people_mail)
+  AcmScW::Tools::MailServer.clean(people_mail)
   
   # Start on the root
   location Waw.config.web_base
@@ -18,5 +19,13 @@ scenario :subscribe do
   assert_json_service_result_matches result, "success/ok", "Successful subscribe service invocation"
   
   # Now I see the confirmation message
-  #assert i_see(Waw.resources.messages.subscribe_account_ok), "subscribe_account_ok seen after successful "
+  assert i_see(Waw.resources.messages.subscribe_account_ok), "subscribe_account_ok seen after successfull subscription"
+  
+  # Check the confirmation message
+  assert AcmScW::Tools::MailServer.mail_has_been_sent?(people_mail), "activation mail sent"
+  mail_contents = AcmScW::Tools::MailServer.mail_contents(people_mail)
+  assert (found = has_tag?("a", {:href => ".*?activate_account.*?"}, mail_contents))
+  
+  # Follow the activation link
+  location found[:href]
 end
