@@ -27,8 +27,8 @@ module AcmScW
       end
       
       # Drop a given people
-      def drop_people(id_or_mail)
-        this_people(id_or_mail).delete
+      def drop_people(*id_or_mail)
+        people.filter(:mail => id_or_mail).delete
       end
       
       # Checks if a given user exists or not
