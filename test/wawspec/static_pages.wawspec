@@ -3,8 +3,7 @@ scenario __FILE__ do
                  scienceinfuse/sponsoring securite-vie-privee/index securite-vie-privee/orateurs
                  securite-vie-privee/sponsoring} 
   locations.each do |loc|
-    location(Waw.config.web_base + loc)
-    assert !is404, "Page #{loc} has been correctly found (location: #{browser.location})"
-    assert i_see("<!-- #{loc}.wtpl -->"), "User is correctly on #{loc}"
+    assert_not_404(Waw.config.web_base + loc)
+    assert_i_see "<!-- #{loc}.wtpl -->", "User is correctly on #{loc}"
   end
 end

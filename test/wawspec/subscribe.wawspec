@@ -1,40 +1,38 @@
 scenario __FILE__ do
   people_mail = "test-user@acmscw.be"
+  people = {:mail       => people_mail,
+            :password   => "mypassword", 
+            :password_confirm => "mypassword",
+            :newsletter => "true"}
   Waw.resources.business.people.drop_people(people_mail)
   AcmScW::Tools::MailServer.clean(people_mail)
   
   # Start on the root
-  location Waw.config.web_base
+  go Waw.config.web_base
   
   # Go through the subscription link
   follow 'a', :href => '/people/subscribe'
-  assert i_see("<!-- people/subscribe.wtpl -->"), "User is on the subscribe page"
+  assert_i_see "<!-- people/subscribe.wtpl -->", "User is on the subscribe page"
   assert has_tag?("form", :id => "subscribe_account")
   
   # invoke the subscribe_account service
-  args = {:mail       => people_mail,
-          :password   => "mypassword", :password_confirm => "mypassword",
-          :newsletter => "true"}
-  result = invoke_json_service("/services/subscribe_account", args)          
-  assert_json_service_result_matches result, "success/ok", "Successful subscribe service invocation"
-  
-  # Now I see the confirmation message
-  assert i_see(Waw.resources.messages.subscribe_account_ok), "subscribe_account_ok seen after successfull subscription"
+  assert_service_invoke "success/ok", "Successful subscribe service invocation" do
+    service "/services/subscribe_account", people
+  end
+  assert_i_see Waw.resources.messages.subscribe_account_ok, "Feedback message subscribe_account_ok seen"
   
   # Check the confirmation message
-  assert AcmScW::Tools::MailServer.mail_has_been_sent?(people_mail), "activation mail sent"
-  mail_contents = AcmScW::Tools::MailServer.mail_contents(people_mail)
-  assert (found = has_tag?("a", {:href => ".*?activate_account.*?"}, mail_contents))
+  href, actkey = assert_activation_mail_sent(people_mail)
   
   # Follow the activation link
-  location found[:href]
-  assert has_tag?("form", :id => "activate_account"), "On the activate_account form"
+  assert_not_404 href, "Activation link lead to a valid page"
+  assert_has_tag "form", :id => "activate_account"
   
   # Fill the form and send it
-  actkey = $1 if found[:href] =~ /actkey=(.*)$/
-  result = invoke_json_service("/services/activate_account", args.merge(:actkey => actkey))
-  assert_json_service_result_matches result, "success/ok", "Successful activate service invocation"
+  assert_service_invoke "success/ok", "Successful activate service invocation" do
+    service "/services/activate_account", people.merge(:actkey => actkey)
+  end
   
   # I'm now on the people/my_chapter page
-  assert i_see("<!-- people/my_chapter.wtpl -->"), "User is on the my_chapter page"
+  assert_i_see "<!-- people/my_chapter.wtpl -->", "User is on the my_chapter page"
 end

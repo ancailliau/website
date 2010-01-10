@@ -1,32 +1,29 @@
 scenario __FILE__ do 
-  people_mail = "test-user@acmscw.be"
-  people = {:mail => "test-user@acmscw.be"}
-  Waw.resources.business.people.drop_people(people[:mail])
-  AcmScW::Tools::MailServer.clean(people[:mail])
+  people_mail, people = "test-user@acmscw.be", {:mail => "test-user@acmscw.be"}
+  Waw.resources.business.people.drop_people(people_mail)
+  AcmScW::Tools::MailServer.clean(people_mail)
   
   # Start on the root
   go Waw.config.web_base
   
   # invoke the subscribe_account service
-  assert_server_invoke "success/ok", "Successful newsletter invocation" do
+  assert_service_invoke "success/ok", "Successful newsletter invocation" do
     service "/services/newsletter_subscribe", people
   end
   
   # Check the confirmation message
-  assert AcmScW::Tools::MailServer.mail_has_been_sent?(people_mail), "activation mail sent"
-  mail_contents = AcmScW::Tools::MailServer.mail_contents(people_mail)
-  assert (found = has_tag?("a", {:href => ".*?activate_account.*?"}, mail_contents))
+  href, actkey = assert_activation_mail_sent(people_mail)
   
   # Follow the activation link
-  go found[:href]
-  assert has_tag?("form", :id => "activate_account"), "On the activate_account form"
+  assert_not_404 href, "Activation link lead to a valid page"
+  assert_has_tag "form", :id => "activate_account"
   
   # Fill the form and send it
-  actkey = $1 if found[:href] =~ /actkey=(.*)$/
   args = people.merge(:actkey => actkey, :password => "password", :password_confirm => "password")
-  result = invoke_json_service("/services/activate_account", args)
-  assert_json_service_result_matches result, "success/ok", "Successful activate service invocation"
+  assert_service_invoke "success/ok", "Successful activate service invocation" do
+    service "/services/activate_account", args
+  end
   
   # I'm now on the people/my_chapter page
-  assert i_see("<!-- people/my_chapter.wtpl -->"), "User is on the my_chapter page"
+  assert_i_see "<!-- people/my_chapter.wtpl -->", "User is on the my_chapter page"
 end

@@ -1,4 +1,4 @@
 scenario __FILE__ do
-  location Waw.config.web_base
-  assert i_see("<!-- index.wtpl -->"), "User is on the index page"
+  assert_not_404 Waw.config.web_base
+  assert_i_see "<!-- index.wtpl -->", "User is on the index page"
 end
