@@ -1,0 +1,22 @@
+scenario :subscribe do
+  people_mail = "test-user@acmscw.be"
+  Waw.resources.business.people.drop_people(people_mail)
+  
+  # Start on the root
+  location Waw.config.web_base
+  
+  # Go through the subscription link
+  follow 'a', :href => '/people/subscribe'
+  assert i_see("<!-- people/subscribe.wtpl -->"), "User is on the subscribe page"
+  assert has_tag?("form", :id => "subscribe_account")
+  
+  # invoke the subscribe_account service
+  args = {:mail       => people_mail,
+          :password   => "mypassword", :password_confirm => "mypassword",
+          :newsletter => "true"}
+  result = invoke_json_service("/services/subscribe_account", args)          
+  assert_json_service_result_matches result, "success/ok", "Successful subscribe service invocation"
+  
+  # Now I see the confirmation message
+  #assert i_see(Waw.resources.messages.subscribe_account_ok), "subscribe_account_ok seen after successful "
+end

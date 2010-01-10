@@ -45,8 +45,7 @@ test_files.each { |file|
     tt += 1
     ta += scenario.assertion_count
   rescue Test::Unit::AssertionFailedError => ex
-    puts ex.message
-    puts ex.backtrace.join("\n")
+    puts "\nAssertion failed: #{ex.message}"
     tf += 1
   rescue Exception => ex
     puts ex.message
