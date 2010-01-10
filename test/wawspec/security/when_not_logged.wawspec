@@ -2,7 +2,9 @@ scenario __FILE__ do
   go Waw.config.web_base
   
   user = {:mail => "test-user@acmscw.be"}
-  assert_service_invoke "validation_ko/user_must_be_logged", "User must be logged for updating account" do
-    service "/services/update_account", {}
-  end
+  assert_service_invoke "User must be logged for updating account", {
+    :service => "/services/update_account",
+    :arguments => user, 
+    :result  => "validation_ko/user_must_be_logged"
+  }
 end

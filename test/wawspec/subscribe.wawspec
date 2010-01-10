@@ -16,9 +16,11 @@ scenario __FILE__ do
   assert has_tag?("form", :id => "subscribe_account")
   
   # invoke the subscribe_account service
-  assert_service_invoke "success/ok", "Successful subscribe service invocation" do
-    service "/services/subscribe_account", people
-  end
+  assert_form_service_invoke "Successful subscribe service invocation", {
+    :service    => "/services/subscribe_account",
+    :arguments  => people,
+    :result     => "success/ok"
+  }
   assert_i_see Waw.resources.messages.subscribe_account_ok, "Feedback message subscribe_account_ok seen"
   
   # Check the confirmation message
@@ -29,9 +31,11 @@ scenario __FILE__ do
   assert_has_tag "form", :id => "activate_account"
   
   # Fill the form and send it
-  assert_service_invoke "success/ok", "Successful activate service invocation" do
-    service "/services/activate_account", people.merge(:actkey => actkey)
-  end
+  assert_form_service_invoke "Successful activate service invocation", {
+    :service    => "/services/activate_account",
+    :arguments  => people.merge(:actkey => actkey),
+    :result     => "success/ok"
+  }
   
   # I'm now on the people/my_chapter page
   assert_i_see "<!-- people/my_chapter.wtpl -->", "User is on the my_chapter page"
