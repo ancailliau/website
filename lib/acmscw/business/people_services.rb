@@ -142,7 +142,7 @@ module AcmScW
       def activate(activation_key, attrs={})
         # look for account to update
         to_update = people.filter(:activation_key => activation_key)
-        return false if to_update.empty?
+        return :ko if to_update.empty?
         id = to_update.first[:id]
         
         # remove the activation key
