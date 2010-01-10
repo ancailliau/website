@@ -11,7 +11,7 @@ module AcmScW
     
     # Encapsulate all actions through a database transaction
     def encapsulate(action, actual_params, &block)
-      AcmScW.transaction &block
+      AcmScW.transaction(&block)
     end
     
     # Returns people_services

@@ -12,7 +12,8 @@ module Waw
       def assert_activation_mail_sent(to, msg="An activation e-mail has been sent to #{to}")
         assert_mail_sent(to, msg)
         mail_contents = AcmScW::Tools::MailServer.mail_contents(to)
-        assert (found = has_tag?("a", {:href => ".*?activate_account.*?"}, mail_contents)), "#{msg} (activation link not found)"
+        found = has_tag?("a", {:href => ".*?activate_account.*?"}, mail_contents)
+        assert found, "#{msg} (activation link not found)"
         if found[:href] =~ /actkey=(.*)$/
           [found[:href], $1]
         else
