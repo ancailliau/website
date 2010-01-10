@@ -35,20 +35,20 @@ end until (ok or (try += 1)>3)
 
 t1 = Time.now
 puts "Running wawspec suite (#{File.expand_path(here)})"
+Dir[File.join(here, '**/*.wawspec')].each {|f| load(f)}
 tt, ta, tf, te = 0, 0, 0, 0
-test_files = Dir[File.join(here, '**/*.wawspec')]
-test_files.each { |file|
+Waw::WawSpec::SCENARIOS.each { |name, scenario|
   STDOUT.write "."
   begin
-    scenario = Kernel.eval(File.read(file))
     scenario.run
     tt += 1
     ta += scenario.assertion_count
   rescue Test::Unit::AssertionFailedError => ex
-    puts "\nAssertion failed: #{ex.message}"
+    puts "\nAssertion failed #{name}: #{ex.message}"
+    puts ex.backtrace[0]
     tf += 1
   rescue Exception => ex
-    puts ex.message
+    puts "Fatal error #{name}: #{ex.message}"
     puts ex.backtrace.join("\n")
     te += 1
   end

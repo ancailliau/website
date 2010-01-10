@@ -1,4 +1,4 @@
-scenario :subscribe do
+scenario :newsletter_unknown do 
   people_mail = "test-user@acmscw.be"
   Waw.resources.business.people.drop_people(people_mail)
   AcmScW::Tools::MailServer.clean(people_mail)
@@ -6,20 +6,10 @@ scenario :subscribe do
   # Start on the root
   location Waw.config.web_base
   
-  # Go through the subscription link
-  follow 'a', :href => '/people/subscribe'
-  assert i_see("<!-- people/subscribe.wtpl -->"), "User is on the subscribe page"
-  assert has_tag?("form", :id => "subscribe_account")
-  
   # invoke the subscribe_account service
-  args = {:mail       => people_mail,
-          :password   => "mypassword", :password_confirm => "mypassword",
-          :newsletter => "true"}
-  result = invoke_json_service("/services/subscribe_account", args)          
-  assert_json_service_result_matches result, "success/ok", "Successful subscribe service invocation"
-  
-  # Now I see the confirmation message
-  assert i_see(Waw.resources.messages.subscribe_account_ok), "subscribe_account_ok seen after successfull subscription"
+  args = {:mail => people_mail}
+  result = invoke_json_service("/services/newsletter_subscribe", args)          
+  assert_json_service_result_matches result, "success/ok", "Successful newsletter invocation"
   
   # Check the confirmation message
   assert AcmScW::Tools::MailServer.mail_has_been_sent?(people_mail), "activation mail sent"
@@ -32,7 +22,8 @@ scenario :subscribe do
   
   # Fill the form and send it
   actkey = $1 if found[:href] =~ /actkey=(.*)$/
-  result = invoke_json_service("/services/activate_account", args.merge(:actkey => actkey))
+  args = args.merge(:actkey => actkey, :password => "password", :password_confirm => "password")
+  result = invoke_json_service("/services/activate_account", args)
   assert_json_service_result_matches result, "success/ok", "Successful activate service invocation"
   
   # I'm now on the people/my_chapter page

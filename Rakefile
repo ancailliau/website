@@ -17,6 +17,8 @@ Rake::TestTask.new(:unit_test) do |test|
 end
 
 desc "Launches wawspec test"
-task :test => :unit_test do
+task :wawspec do
   require('test/wawspec/test_all.rb')
 end
+
+task :test => [:unit_test, :wawspec]
