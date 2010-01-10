@@ -7,10 +7,10 @@
 
 	<p id="internal-links">
     ?{Waw.session_has_key?(:user)}{
-      <a href="javascript:logout()">Logout</a>
+      <a onclick="javascript:logout()">Logout</a>
       <a href="/people/my_chapter">My chapter</a>
 		}{
-  	  <a href="javascript:show_login_form()">Connexion</a>
+  	  <a onclick="javascript:show_login_form()">Connexion</a>
   	  <a href="/people/subscribe">Inscription</a>
 		}
 		<a href="/mentions">Mentions légales</a>
