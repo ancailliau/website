@@ -4,27 +4,19 @@ module AcmScW
   #
   class ServicesController < ::Waw::ActionController
     
-    # The people business services
-    attr_reader :people_services
-    
     # Creates a ServicesController instance
     def initialize
       self.content_type = 'application/json'
-      @people_services = Waw.resources.business.people
-    end
-    
-    # Service installation on a rack builder
-    def install_on_rack_builder(config, builder)
-      myself = self
-      builder.map '/services' do
-        use Waw::RackUtils::JSON
-        run myself
-      end
     end
     
     # Encapsulate all actions through a database transaction
     def encapsulate(action, actual_params, &block)
       AcmScW.transaction &block
+    end
+    
+    # Returns people_services
+    def people_services
+      @people_services ||= Waw.resources.business.people
     end
     
     ### Login and logout ###########################################################
