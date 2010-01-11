@@ -9,8 +9,15 @@
       <div id="activate_account_feedback"></div>
       <input type="hidden" name="actkey" value="{actkey}"/>
       <div><<+{account_fields.wtpl with people:people}</div>
-      <input type="submit" value="Activer mon compte">
+      <input type="submit" value="Activer mon compte"/>
     }
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    	  $("input#account_fields_mail").change(function() {
+    	    $('#change_mail_explain').show();
+    	  });
+      });
+    </script>
   }{
     <p>La clé d'activation fournie est manquante ou ne peut plus être utilisée
        pour une activation de compte. Veuillez réintroduire une demande d'activation

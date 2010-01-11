@@ -2,7 +2,7 @@
   <legend>Informations de connexion (obligatoire)</legend>
   <div>
     <label>L'adresse e-mail que nous utilisons pour vous contacter</label>
-    <input type="text" name="mail" value="{people[:mail]}" onchange="javascript:$('#change_mail_explain').show()"/>
+    <input type="text" name="mail" value="{people[:mail]}" id="account_fields_mail"/>
     <span id="change_mail_explain" class="explain">Changer votre adresse email vous obligera a réactiver
       votre compte (un mail vous sera envoyé)</p>
   </div>

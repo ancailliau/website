@@ -5,8 +5,15 @@
     @{/services/update_account}{
       <div id="update_account_feedback"></div>
       <div><<+{account_fields.wtpl with people: people}</div>
-      <input type="submit" value="Modifier mon compte">
+      <input type="submit" value="Modifier mon compte"/>
     }
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    	  $("input#account_fields_mail").change(function() {
+    	    $('#change_mail_explain').show();
+    	  });
+      });
+    </script>
   }{
     <p>Vous devez être loggé pour accéder à cette page</p>
   }
