@@ -18,12 +18,14 @@
      votre adresse e-mail à l'aide du formulaire ci-dessous.</p>
    
   @{/webserv/event/register_by_mail}{
-    <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
-    	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
-    	<input type="hidden" name="event" value="{event}"/>
-    	<input type="text" value="" name="mail" id="mail"/>
-    	<input type="submit" value="Go »" />
-    	+{action.ajax_form_preparer}
-    </form>
+    ={(form_id ? form_id : action.id) as theid}{
+      <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{theid}">
+      	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
+      	<input type="hidden" name="event" value="{event}"/>
+      	<input type="text" value="" name="mail" id="mail"/>
+      	<input type="submit" value="Go »" />
+      	+{action.ajax_form_preparer(:form_id => '+{theid}')}
+      </form>
+    }
   }
 }
