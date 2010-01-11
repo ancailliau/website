@@ -1,0 +1,28 @@
+?{Waw.session_has_key?(:user)}{
+  ?{business.event.is_registered?(Waw.session_get(:user), event)}{
+    @{/webserv/event/unregister_to_this_event}{
+    	<input type="hidden" name="event" value="{event}"/>
+    	<p class="feedback">
+  	    +{messages.you_are_registered_to_this_event} 
+  	    <a onclick="javascript:unregister_to_this_event()">+{messages.click_here_to_unregister}</a>  
+      </p>
+    }
+  }{
+    @{/webserv/event/register_to_this_event}{
+    	<input type="hidden" name="event" value="{event}"/>
+    	<p class="feedback">
+  	    <a onclick="javascript:register_to_this_event()">+{messages.click_here_to_register}</a>  
+      </p>
+    }
+  }
+}{
+  <p>Pour vous inscrire à cet événement, il vous suffit de nous faire connaître
+     votre adresse e-mail à l'aide du formulaire ci-dessous.</p>
+   
+  @{/webserv/event/register_by_mail}{
+  	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
+  	<input type="hidden" name="event" value="{event}"/>
+  	<input type="text" value="" name="mail" id="mail"/>
+  	<input type="submit" value="Go »" />
+  }
+}

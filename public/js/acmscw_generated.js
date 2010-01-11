@@ -3,6 +3,10 @@
 
 /* Messages, from waw.resources.messages */
 var messages = new Array();
+messages['activate_account_ok'] = "<p>Votre compte a été activé</p>";
+messages['unknown_user'] = "Cette adresse email est inconnue dans notre base de données";
+messages['bad_password'] = "Votre mot de passe doit comporter entre 8 et 15 caractères";
+messages['event_registration_ok'] = "Vous êtes maintenant inscrit à cet événement!";
 messages['subscribe_account_ok'] = "<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['click_here_to_register'] = "Cliquez-ici pour vous inscrire à cet événement";
 messages['mail_already_in_use'] = "Cette adresse email est déjà utilisée";
@@ -20,10 +24,6 @@ messages['activation_request_ok'] = "<p>Un mail vous permettant de réactiver vo
 messages['newsletter_subscribe_ok'] = "Vous êtes maintenant inscrit";
 messages['bad_user_or_password'] = "Utilisateur ou mot de passe invalide (<a href='/people/lost_password'>perdu?</a>)";
 messages['missing_activation_key'] = "Clé d'activation manquante";
-messages['activate_account_ok'] = "<p>Votre compte a été activé</p>";
-messages['unknown_user'] = "Cette adresse email est inconnue dans notre base de données";
-messages['bad_password'] = "Votre mot de passe doit comporter entre 8 et 15 caractères";
-messages['event_registration_ok'] = "Vous êtes maintenant inscrit à cet événement!";
 
 
 /*

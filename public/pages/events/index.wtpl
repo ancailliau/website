@@ -4,8 +4,10 @@
 
   *{model.planned_events as evt}{
     <h3>${evt[:name]}</h3>
+
     <p>${evt[:date].strftime('%d/%m/%Y à %H:%M')}, ${evt[:location]}</p>
     +{evt[:abstract]}
+
     <p><a href="{evt[:card_path]}">En savoir plus ...</a></p>
   }
 
