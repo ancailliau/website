@@ -22,7 +22,8 @@ module AcmScW
       
       # Ensures the id about an id_or_mail
       def people_id(id_or_mail)
-        this_people(id_or_mail).first[:id]
+        first = this_people(id_or_mail).first
+        first ? first[:id] : nil
       end
       
       # Returns the attribute name for a given people identifier
