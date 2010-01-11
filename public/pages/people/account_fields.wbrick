@@ -4,7 +4,7 @@
     <label>L'adresse e-mail que nous utilisons pour vous contacter</label>
     <input type="text" name="mail" value="{people[:mail]}" id="account_fields_mail"/>
     <span id="change_mail_explain" class="explain">Changer votre adresse email vous obligera a réactiver
-      votre compte (un mail vous sera envoyé)</p>
+      votre compte (un mail vous sera envoyé)</span>
   </div>
 
   <div>
