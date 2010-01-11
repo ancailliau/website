@@ -5,7 +5,7 @@
   <h2>Activation de votre compte</h2>  
   
   ?{actkey and people}{
-    @{/services/activate_account}{
+    @{/webserv/people/activate_account}{
       <div id="activate_account_feedback"></div>
       <input type="hidden" name="actkey" value="{actkey}"/>
       <div><<+{account_fields.wbrick with people:people}</div>

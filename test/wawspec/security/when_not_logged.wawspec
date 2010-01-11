@@ -3,7 +3,7 @@ scenario __FILE__ do
   
   user = {:mail => "test-user@acmscw.be"}
   assert_service_invoke "User must be logged for updating account", {
-    :service => "/services/update_account",
+    :service => "/webserv/people/update_account",
     :arguments => user, 
     :result  => "validation_ko/user_must_be_logged"
   }

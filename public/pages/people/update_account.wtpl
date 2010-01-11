@@ -2,7 +2,7 @@
   <h2>Modification de votre profil</h2>
   ?{Waw.session_has_key?(:user)}{
     ={AcmScW.database[:people].filter(:mail => '+{Waw.session_get(:user)}').first as people}
-    @{/services/update_account}{
+    @{/webserv/people/update_account}{
       <div id="update_account_feedback"></div>
       <div><<+{account_fields.wbrick with people: people}</div>
       <input type="submit" value="Modifier mon compte"/>
@@ -15,6 +15,6 @@
       });
     </script>
   }{
-    <p>Vous devez être loggé pour accéder à cette page</p>
+    +{messages.user_must_be_logged}
   }
 </div>

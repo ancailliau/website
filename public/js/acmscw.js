@@ -1,6 +1,6 @@
 function newsletter_subscribe() {
 	form = "form#newsletter_subscribe";
-	$.ajax({type: "POST", url: "/services/newsletter_subscribe", data: $(form).serialize(), dataType: "json",
+	$.ajax({type: "POST", url: "/webserv/people/newsletter_subscribe", data: $(form).serialize(), dataType: "json",
 		error: function(data) {
 			$('form#newsletter_subscribe input').hide();
 			$('#newsletter_subscribe_feedback').show();
@@ -23,7 +23,7 @@ function newsletter_subscribe() {
 }
 function account_activation_request() {
 	form = "form#account_activation_request";
-	$.ajax({type: "POST", url: "/services/account_activation_request", data: $(form).serialize(), dataType: "json",
+	$.ajax({type: "POST", url: "/webserv/people/account_activation_request", data: $(form).serialize(), dataType: "json",
 		error: function(data) {
 			$('form#account_activation_request input').hide();
 			$('#account_activation_request_feedback').show();
@@ -45,7 +45,7 @@ function account_activation_request() {
 }
 function activate_account() {
 	form = "form#activate_account";
-	$.ajax({type: "POST", url: "/services/activate_account", data: $(form).serialize(), dataType: "json",
+	$.ajax({type: "POST", url: "/webserv/people/activate_account", data: $(form).serialize(), dataType: "json",
 		error: function(data) {
 			$('#activate_account_feedback').html(messages['server_error']);
 		},
@@ -73,7 +73,7 @@ function activate_account() {
 }
 function update_account() {
 	form = "form#update_account";
-	$.ajax({type: "POST", url: "/services/update_account", data: $(form).serialize(), dataType: "json",
+	$.ajax({type: "POST", url: "/webserv/people/update_account", data: $(form).serialize(), dataType: "json",
 		error: function(data) {
 			$('#update_account_feedback').html(messages['server_error']);
 		},
@@ -101,7 +101,7 @@ function update_account() {
 }
 function subscribe_account() {
 	form = "form#subscribe_account";
-	$.ajax({type: "POST", url: "/services/subscribe_account", data: $(form).serialize(), dataType: "json",
+	$.ajax({type: "POST", url: "/webserv/people/subscribe_account", data: $(form).serialize(), dataType: "json",
 		error: function(data) {
 			$('#subscribe_account_feedback').html(messages['server_error']);
 		},
@@ -125,7 +125,7 @@ function subscribe_account() {
 }
 function login() {
 	form = "form#login";
-	$.ajax({type: "POST", url: "/services/login", data: $(form).serialize(), dataType: "json",
+	$.ajax({type: "POST", url: "/webserv/people/login", data: $(form).serialize(), dataType: "json",
 		error: function(data) {
 			$('#login_feedback').html(messages['server_error']);
 		},
@@ -146,7 +146,7 @@ function login() {
 	return false;
 }
 function logout() {
-	$.ajax({type: "POST", url: "/services/logout", data: "", dataType: "json",
+	$.ajax({type: "POST", url: "/webserv/people/logout", data: "", dataType: "json",
 		error: function(data) {
 		  location.reload(true);
 		},

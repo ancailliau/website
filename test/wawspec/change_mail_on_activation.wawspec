@@ -18,7 +18,7 @@ scenario __FILE__ do
   
   # invoke the subscribe_account service
   assert_form_service_invoke "Successful subscribe service invocation", {
-    :service    => "/services/subscribe_account",
+    :service    => "/webserv/people/subscribe_account",
     :arguments  => people,
     :result     => "success/ok"
   }
@@ -33,7 +33,7 @@ scenario __FILE__ do
   
   # Fill the form and send it
   assert_form_service_invoke "Successful activate service invocation", {
-    :service    => "/services/activate_account",
+    :service    => "/webserv/people/activate_account",
     :arguments  => people.merge(:actkey => actkey, :mail => next_mail),
     :result     => "success/activation_required"
   }

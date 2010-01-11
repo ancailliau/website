@@ -38,7 +38,6 @@ end
 
 require 'acmscw/waw_ext/validations'
 require 'acmscw/waw_ext/assertions'
-require 'acmscw/business/business_services'
 require 'acmscw/business/people_services'
-require 'acmscw/services_controller'
+require 'acmscw/controllers/people_controller'
 require 'acmscw/tools/mail_server'
