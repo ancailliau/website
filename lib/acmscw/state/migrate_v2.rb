@@ -114,6 +114,7 @@ database.transaction do |t|
   # Fill the events table
   events = [
     {
+      :id       => 'securite_vie_privee_2010',
       :activity => 'conferences', :name => 'Conférence : Sécurité et vie privée',
       :date     => Time.utc(2010, 03, 16, 18, 45), :location => "UCL, Louvain-la-Neuve, Auditoire SUD18",
       :card_path => '/securite-vie-privee', :status => "planned",
@@ -125,6 +126,7 @@ database.transaction do |t|
       EOF
     },
     {
+      :id       => 'scienceinfuse_2010',
       :activity => 'scienceinfuse', :name => "Weekend Festival Scienceinfuse 2010",
       :date => Time.utc(2010, 03, 28, 14, 00), :location => "UCL, Louvain-la-Neuve, Place des Sciences",
       :card_path => '/scienceinfuse', :status => "planned",

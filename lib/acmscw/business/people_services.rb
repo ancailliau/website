@@ -1,5 +1,4 @@
 require 'base64'
-require 'singleton'
 module AcmScW
   module Business
     class PeopleServices
@@ -19,6 +18,11 @@ module AcmScW
       # Filters the people dataset on a given tuple
       def this_people(id_or_mail)
         people.filter(id_or_mail?(id_or_mail) => id_or_mail)
+      end
+      
+      # Ensures the id about an id_or_mail
+      def people_id(id_or_mail)
+        this_people(id_or_mail).first[:id]
       end
       
       # Returns the attribute name for a given people identifier

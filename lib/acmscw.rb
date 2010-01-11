@@ -39,5 +39,6 @@ end
 require 'acmscw/waw_ext/validations'
 require 'acmscw/waw_ext/assertions'
 require 'acmscw/business/people_services'
+require 'acmscw/business/event_services'
 require 'acmscw/controllers/people_controller'
 require 'acmscw/tools/mail_server'

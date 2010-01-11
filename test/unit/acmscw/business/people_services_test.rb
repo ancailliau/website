@@ -1,9 +1,8 @@
 require 'test/unit'
-require 'acmscw/business/business_services_test'
 require 'acmscw'
 module AcmScW
   module Business
-    class PeopleServicesTest < BusinessServicesTest
+    class PeopleServicesTest < Test::Unit::TestCase
       
       TEST_USER = "testuser@uclouvain.acm-sc.be"
       TEST_USER_ALIAS = "testuser2@uclouvain.acm-sc.be"
