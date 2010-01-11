@@ -12,9 +12,17 @@ bad_user_or_password        "Utilisateur ou mot de passe invalide (<a href='/peo
 mail_already_in_use         "Cette adresse email est déjà utilisée"
 user_must_be_logged         "Vous devez être connecté pour accéder/modifier ces informations"
 unknown_user                "Cette adresse email est inconnue dans notre base de données"
+unknown_event               "Cet événement n'est pas connu"
 
-# Ok feedback message
+# Ok feedback messages
 newsletter_subscribe_ok     "Vous êtes maintenant inscrit"
+event_registration_ok       "Vous êtes maintenant inscrit à cet événement!"
+
+click_here_to_register            "Cliquez-ici pour vous inscrire à cet événement"
+you_are_registered_to_this_event  "Vous êtes inscrit à cet événement!"
+click_here_to_unregister          "Cliquez-ici pour vous désinscrire"
+
+# Redirect feedback messages
 activation_request_ok       "<p>Un mail vous permettant de réactiver votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>"
 activate_account_ok         "<p>Votre compte a été activé</p>"
 subscribe_account_ok        "<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>"

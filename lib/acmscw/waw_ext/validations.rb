@@ -21,5 +21,10 @@ module Waw
     def self.logged() UserIsLogged end
     def self.not_logged() UserIsLogged.not end
     
+    # Validator for event existence
+    EventExists = Waw::Validation.validator {|event| Waw.resources.business.event.event_exists?(event)}
+    def self.event_exists() EventExists end
+    def self.event_not_exists() EventExists.not end
+      
   end
 end

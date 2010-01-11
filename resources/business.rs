@@ -1,1 +1,2 @@
-people    AcmScW::Business::PeopleServices.new
+people     AcmScW::Business::PeopleServices.new
+event      AcmScW::Business::EventServices.new

@@ -1,0 +1,55 @@
+<div id="main">
+
+	<h2>Sécurité et vie privée &mdash; Accès et inscriptions</h2>
+
+	<ul id="submenu">
+		<li><a href="/securite-vie-privee">Programme</a></li>
+		<li><a href="/securite-vie-privee/orateurs">Orateurs</a></li>
+		<li><a href="/securite-vie-privee/sponsoring">Sponsors</a></li>
+	</ul>
+	
+	<p>Cette conférence se déroule à Louvain-la-Neuve, sur le site de l'Université
+	catholique de Louvain. Le site est très facile d'accès par les transports
+	en communs (train et bus), mais également en voiture via l'autoroute E411
+	Bruxelles-Namur qui passe à proximité du site. Vous trouverez des
+	informations détaillées sur comment se rendre à Louvain-la-Neuve sur le <a
+	href="http://www.uclouvain.be/acces-lln.html">site web de
+	l'université</a>.</p>
+
+	<p>Plus précisément, la conférence aura lieu dans l'auditoire SUD18. Cet auditoire 
+	se situe à environ dix minutes de marche des gares de train et de bus. Si vous venez 
+	en voiture, nous vous conseillons les parkings 11 (Sainte Barbe) et 23 (Sciences). 
+	Vous trouverez également plus d'informations sur le 
+	<a href="http://www.uclouvain.be/68206.html">site de l'université</a>.</p>
+
+  ?{Waw.session_has_key?(:user)}{
+    ?{business.event.is_registered?(Waw.session_get(:user), 'securite_vie_privee_2010')}{
+      @{/webserv/event/unregister_to_this_event}{
+      	<input type="hidden" name="event" value="securite_vie_privee_2010"/>
+      	<p class="feedback">
+    	    +{messages.you_are_registered_to_this_event} 
+    	    <a onclick="javascript:unregister_to_this_event()">+{messages.click_here_to_unregister}</a>  
+        </p>
+      }
+    }{
+      @{/webserv/event/register_to_this_event}{
+      	<input type="hidden" name="event" value="securite_vie_privee_2010"/>
+      	<p class="feedback">
+    	    <a onclick="javascript:register_to_this_event()">+{messages.click_here_to_register}</a>  
+        </p>
+      }
+    }
+  }{
+    <p>Pour vous inscrire à cette conférence, il vous suffit de nous faire connaître
+       votre adresse e-mail à l'aide du formulaire ci-dessous.</p>
+     
+    @{/webserv/event/register_by_mail}{
+    	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
+    	<input type="hidden" name="event" value="securite_vie_privee_2010"/>
+    	<input type="text" value="" name="mail" id="mail"/>
+    	<input type="submit" value="Go »" />
+    }
+  }
+
+</div>
+

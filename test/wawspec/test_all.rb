@@ -38,7 +38,7 @@ end until (ok or (try += 1)>3)
 
 puts "Running wawspec tests now"
 t1 = Time.now
-Dir[File.join(here, '**/*.wawspec')].each {|f| load(f)}
+Dir[File.join(here, "**/*.wawspec")].each {|f| load(f)}
 tt, ta, tf, te = 0, 0, 0, 0
 Waw::WawSpec::SCENARIOS.each { |name, scenario|
   STDOUT.write "."

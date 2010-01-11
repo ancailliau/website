@@ -41,6 +41,7 @@ module AcmScW
       routing { upon '*' do refresh end }
       def logout(params)
         session_unset(:user)
+        :ok
       end
     
       ### Newsletter #################################################################
