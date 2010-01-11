@@ -1,11 +1,10 @@
-TOP = File.join(File.dirname(__FILE__), '..')
+TOP = File.join(File.dirname(__FILE__), '..', '..', '..')
 $LOAD_PATH.unshift File.join(TOP, 'lib')
+$LOAD_PATH.unshift File.join(TOP, 'vendor', 'waw', 'lib')
 require 'acmscw'
 
-# Loads the AcmScW configuration
-deploy_file = File.join(TOP, 'deploy')
-raise "Missing deployment file 'deploy', copy and edit deploy.example first!" unless File.exists?(deploy_file)
-AcmScW.load_configuration_file(deploy_file)
+# Loads WAW configuration
+Waw.load_application(TOP)
 
 # Open a connection to the database, through sequel
 database = AcmScW.database
