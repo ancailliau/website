@@ -7,4 +7,7 @@ scenario __FILE__ do
     :arguments => user, 
     :result  => "validation_ko/user_must_be_logged"
   }
+
+  go '/people/my_chapter'
+  assert_i_see Waw.resources.messages.user_must_be_logged
 end

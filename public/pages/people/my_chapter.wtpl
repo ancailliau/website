@@ -1,1 +1,1 @@
-<<+{update_account.wtpl}
+<<+{update_account.wtpl using self}

@@ -15,6 +15,6 @@
       });
     </script>
   }{
-    +{messages.user_must_be_logged}
+    <p>+{messages.user_must_be_logged}</p>
   }
 </div>
