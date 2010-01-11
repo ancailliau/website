@@ -6,7 +6,7 @@
   
   ?{actkey and people}{
     @{/webserv/people/activate_account}{
-      <div id="activate_account_feedback"></div>
+      <div class="feedback"></div>
       <input type="hidden" name="actkey" value="{actkey}"/>
       <div><<+{account_fields.wbrick with people:people}</div>
       <input type="submit" value="Activer mon compte"/>

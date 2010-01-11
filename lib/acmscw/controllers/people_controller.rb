@@ -29,8 +29,8 @@ module AcmScW
         validation [:mail, :password], user_may_log, :bad_user_or_password
       }
       routing {
-        upon 'error', 'validation_ko' do feedback end
-        upon 'success/ok'             do refresh  end
+        upon 'validation_ko' do feedback end
+        upon 'success/ok'    do refresh  end
       }
       def login(params)
         session_set(:user, params[:mail]) and :ok
@@ -47,7 +47,11 @@ module AcmScW
     
       # Subscription to the newsletter
       signature { validation :mail, mandatory & mail, :invalid_email }
-      routing { upon '*' do feedback end }
+      routing { 
+        upon 'validation_ko' do feedback(:hide_input => false) end 
+        upon 'success/ok'    do feedback(:hide_input => true, 
+                                         :message => 'newsletter_subscribe_ok') end 
+      }
       def newsletter_subscribe(params)
         people_services.subscribe_to_newsletter(params[:mail]) and :ok
       end
@@ -56,7 +60,7 @@ module AcmScW
       AccountCommonSignature = Waw::Validation.signature {
         validation :mail, mandatory & mail, :invalid_email
         validation :password, (size>=8) & (size<=15), :bad_password
-        validation [:password, :password_confirm], mandatory & equal, :passwords_dont_match
+        validation [:password, :password_confirm], missing | equal, :passwords_dont_match
         validation :newsletter, (default(false) | boolean), :bad_newsletter
         validation :rss_feed, missing | weburl, :bad_rss_feed
       }

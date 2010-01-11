@@ -20,7 +20,7 @@
 
 	<div class="grey-box">
 	  @{/webserv/people/newsletter_subscribe}{
-      <label for="mail" id="newsletter_subscribe_feedback">Inscrivez-vous<br /> à la newsletter</label>
+      <label for="mail" class="feedback">Inscrivez-vous<br /> à la newsletter</label>
 			<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
 			<input type="submit" value="Go »" />
 	  }

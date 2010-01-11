@@ -39,8 +39,7 @@ form fieldset legend {
 
 #header,
 #main,
-#footer,
-#feedback {
+#footer {
 	width: 680px;
 	margin: 0 auto;
 }
@@ -181,25 +180,11 @@ body.index #main p {
 /* ======================================================================= body.index */
 
 /* ======================================================================= Feedback */
-#feedback {
-	display: none;
-	position: relative;
-}
-#feedback p {
-	font-size: 1.2em;
-	color: #666;
-	line-height: 150%;
-	padding-right: 240px;
-	text-align: justify;
-}
-/* ======================================================================= Feedback */
 
-#activate_account_feedback ul {
+form .feedback ul {
 	margin-left: 30px;
 }
-#activate_account_feedback li,
-#subscribe_account_feedback li,
-#update_account_feedback li  {
+form .feedback ul li {
 	color: red;
 }
 

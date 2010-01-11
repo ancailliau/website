@@ -17,7 +17,7 @@
 		<a href="mailto:info@uclouvain.acm-sc.be">Contactez nous</a>
 	</p>
 	@{/webserv/people/login}{
-    <p id="login_feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
+    <p class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
     <input type="text" name="mail" value=""/>
     <input type="password" name="password" value=""/>
     <input type="submit" value="Go »">

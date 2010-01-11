@@ -1,5 +1,5 @@
 @{/webserv/people/account_activation_request}{
-	<label for="mail" id="account_activation_request_feedback">Indiquez votre adresse e-mail</label>
+	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
 	<input type="text" value="" name="mail" id="mail"/>
 	<input type="submit" value="Go »" />
 }
