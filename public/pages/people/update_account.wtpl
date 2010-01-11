@@ -3,9 +3,12 @@
   ?{Waw.session_has_key?(:user)}{
     ={AcmScW.database[:people].filter(:mail => '+{Waw.session_get(:user)}').first as people}
     @{/webserv/people/update_account}{
-      <div class="feedback"></div>
-      <div><<+{account_fields.wbrick with people: people}</div>
-      <input type="submit" value="Modifier mon compte"/>
+      <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
+        <div class="feedback"></div>
+        <div><<+{account_fields.wbrick with people: people}</div>
+        <input type="submit" value="Modifier mon compte"/>
+      	+{action.ajax_form_preparer}
+      </form>
     }
     <script type="text/javascript">
     	$(document).ready(function() {

@@ -7,6 +7,8 @@
 
     <p>${evt[:date].strftime('%d/%m/%Y à %H:%M')}, ${evt[:location]}</p>
     +{evt[:abstract]}
+    
+    <<+{event_registration.wbrick using self with event: evt[:id]}
 
     <p><a href="{evt[:card_path]}">En savoir plus ...</a></p>
   }

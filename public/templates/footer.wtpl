@@ -17,10 +17,13 @@
 		<a href="mailto:info@uclouvain.acm-sc.be">Contactez nous</a>
 	</p>
 	@{/webserv/people/login}{
-    <p class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
-    <input type="text" name="mail" value=""/>
-    <input type="password" name="password" value=""/>
-    <input type="submit" value="Go »">
+    <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
+      <p class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
+      <input type="text" name="mail" value=""/>
+      <input type="password" name="password" value=""/>
+      <input type="submit" value="Go »">
+    	+{action.ajax_form_preparer}
+    </form>
 	}
   <script type="text/javascript">
     function show_login_form() {

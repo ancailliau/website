@@ -1,36 +1,29 @@
 ?{Waw.session_has_key?(:user)}{
   ?{business.event.is_registered?(Waw.session_get(:user), event)}{
     @{/webserv/event/unregister_to_this_event}{
-    	<input type="hidden" name="event" value="{event}"/>
     	<p class="feedback">
   	    +{messages.you_are_registered_to_this_event} 
-  	    <a onclick="javascript:do_unregister()">+{messages.click_here_to_unregister}</a>  
+  	    <a onclick="{action.ajax_link(:event => event)}">+{messages.click_here_to_unregister}</a>  
       </p>
     }
   }{
     @{/webserv/event/register_to_this_event}{
-    	<input type="hidden" name="event" value="{event}"/>
     	<p class="feedback">
-  	    <a onclick="javascript:do_register()">+{messages.click_here_to_register}</a>  
+  	    <a onclick="{action.ajax_link(:event => event)}">+{messages.click_here_to_register}</a>  
       </p>
     }
   }
-  <script type="text/javascript">
-    function do_register() {
-      $('form#register_to_this_event').submit();
-    }
-    function do_unregister() {
-      $('form#unregister_to_this_event').submit();
-    }
-  </script>
 }{
   <p>Pour vous inscrire à cet événement, il vous suffit de nous faire connaître
      votre adresse e-mail à l'aide du formulaire ci-dessous.</p>
    
   @{/webserv/event/register_by_mail}{
-  	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
-  	<input type="hidden" name="event" value="{event}"/>
-  	<input type="text" value="" name="mail" id="mail"/>
-  	<input type="submit" value="Go »" />
+    <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
+    	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
+    	<input type="hidden" name="event" value="{event}"/>
+    	<input type="text" value="" name="mail" id="mail"/>
+    	<input type="submit" value="Go »" />
+    	+{action.ajax_form_preparer}
+    </form>
   }
 }
