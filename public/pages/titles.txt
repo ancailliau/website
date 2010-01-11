@@ -9,3 +9,8 @@
 /securite-vie-privee             Conférence - Sécurité et vie privée
 /securite-vie-privee/orateurs    Sécurité et vie privée - Orateurs
 /securite-vie-privee/sponsoring  Sécurité et vie privée - Sponsoring
+
+/people/subscribe                UCLouvain ACM Student Chapter - Inscription
+/people/activate_account         UCLouvain ACM Student Chapter - Activation de votre compte
+/people/update_account           UCLouvain ACM Student Chapter - Modification de votre compte
+/people/lost_password            UCLouvain ACM Student Chapter - Mot de passe perdu ?

@@ -8,7 +8,7 @@
     @{/services/activate_account}{
       <div id="activate_account_feedback"></div>
       <input type="hidden" name="actkey" value="{actkey}"/>
-      <div><<+{account_fields.wtpl with people:people}</div>
+      <div><<+{account_fields.wbrick with people:people}</div>
       <input type="submit" value="Activer mon compte"/>
     }
     <script type="text/javascript">
@@ -22,7 +22,7 @@
     <p>La clé d'activation fournie est manquante ou ne peut plus être utilisée
        pour une activation de compte. Veuillez réintroduire une demande d'activation
        de compte à l'aide du formulaire ci-dessous</p>
-    <div><<+{account_activation_request.wtpl}</div>
+    <div><<+{account_activation_request.wbrick}</div>
     <p>Si le problème persiste, veuillez prendre contact avec le webmaster à l'adresse
        webmaster@uclouvain.acm-sc.be</p>
   }

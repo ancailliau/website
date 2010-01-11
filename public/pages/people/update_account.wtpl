@@ -4,7 +4,7 @@
     ={AcmScW.database[:people].filter(:mail => '+{Waw.session_get(:user)}').first as people}
     @{/services/update_account}{
       <div id="update_account_feedback"></div>
-      <div><<+{account_fields.wtpl with people: people}</div>
+      <div><<+{account_fields.wbrick with people: people}</div>
       <input type="submit" value="Modifier mon compte"/>
     }
     <script type="text/javascript">

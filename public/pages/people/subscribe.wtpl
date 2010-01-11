@@ -7,7 +7,7 @@
        Ceci vous donnera accès aux fonctionnalités avancées que nous vous proposons.</p>
     @{/services/subscribe_account}{
       <div id="subscribe_account_feedback"></div>
-      <div><<+{account_fields.wtpl with people:Hash.new}</div>
+      <div><<+{account_fields.wbrick with people:Hash.new}</div>
       <input type="submit" value="Créer mon compte"/>
     }
   </div>
