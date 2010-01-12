@@ -24,7 +24,7 @@ wawaccess do
                "session"     => Waw.session}
     Waw.resources.each {|k, v| context[k.to_s] = v}
     
-    contents = WLang.file_instantiate(File.join(wawaccess.folder, 'templates/layout.wtpl'), context)
+    contents = WLang.file_instantiate(File.join(wawaccess.folder, '../templates/layout.wtpl'), context)
     [200, {'Content-Type' => 'text/html'}, [contents]]
   end
   

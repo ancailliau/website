@@ -13,7 +13,7 @@
 	</head>
 	<body class="{theclass}">
     <<+{header.wtpl}
-	  <<+{../../${pagerequest} using self}
+	  <<+{../${pagerequest} using self}
     <<+{footer.wtpl}
     ?{Waw.config.google_analytics}{
   		<script type="text/javascript">
