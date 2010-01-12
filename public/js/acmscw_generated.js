@@ -3,9 +3,6 @@
 
 /* Messages, from waw.resources.messages */
 var messages = new Array();
-messages['click_here_to_register'] = "Cliquez-ici pour vous inscrire à cet événement";
-messages['mail_already_in_use'] = "Cette adresse email est déjà utilisée";
-messages['passwords_dont_match'] = "Les mots de passe ne correspondent pas";
 messages['activation_required'] = "<p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte.<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['you_are_registered_to_this_event'] = "Vous êtes inscrit à cet événement!";
 messages['unknown_event'] = "Cet événement n'est pas connu";
@@ -24,6 +21,9 @@ messages['unknown_user'] = "Cette adresse email est inconnue dans notre base de 
 messages['bad_password'] = "Votre mot de passe doit comporter entre 8 et 15 caractères";
 messages['event_registration_ok'] = "Vous êtes maintenant inscrit à cet événement!";
 messages['subscribe_account_ok'] = "<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
+messages['click_here_to_register'] = "Cliquez-ici pour vous inscrire à cet événement";
+messages['mail_already_in_use'] = "Cette adresse email est déjà utilisée";
+messages['passwords_dont_match'] = "Les mots de passe ne correspondent pas";
 
 
 /*
