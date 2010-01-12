@@ -3,16 +3,6 @@
 
 /* Messages, from waw.resources.messages */
 var messages = new Array();
-messages['activation_required'] = "<p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte.<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
-messages['you_are_registered_to_this_event'] = "Vous êtes inscrit à cet événement!";
-messages['unknown_event'] = "Cet événement n'est pas connu";
-messages['invalid_email'] = "Adresse email invalide";
-messages['bad_newsletter'] = "L'inscription a la newsletter est invalide";
-messages['click_here_to_unregister'] = "Cliquez-ici pour vous désinscrire";
-messages['user_must_be_logged'] = "Vous devez être connecté pour accéder/modifier ces informations";
-messages['bad_rss_feed'] = "Votre flux RSS ne semble pas être une adresse web valide";
-messages['server_error'] = "Une erreur est survenue. Veuillez réessayer plus tard";
-messages['activation_request_ok'] = "<p>Un mail vous permettant de réactiver votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['newsletter_subscribe_ok'] = "Vous êtes maintenant inscrit";
 messages['bad_user_or_password'] = "Utilisateur ou mot de passe invalide (<a href='/people/lost_password'>perdu?</a>)";
 messages['missing_activation_key'] = "Clé d'activation manquante";
@@ -24,6 +14,16 @@ messages['subscribe_account_ok'] = "<p>Un mail vous permettant d'activer votre c
 messages['click_here_to_register'] = "Cliquez-ici pour vous inscrire à cet événement";
 messages['mail_already_in_use'] = "Cette adresse email est déjà utilisée";
 messages['passwords_dont_match'] = "Les mots de passe ne correspondent pas";
+messages['activation_required'] = "<p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte.<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
+messages['you_are_registered_to_this_event'] = "Vous êtes inscrit à cet événement!";
+messages['unknown_event'] = "Cet événement n'est pas connu";
+messages['invalid_email'] = "Adresse email invalide";
+messages['bad_newsletter'] = "L'inscription a la newsletter est invalide";
+messages['click_here_to_unregister'] = "Cliquez-ici pour vous désinscrire";
+messages['user_must_be_logged'] = "Vous devez être connecté pour accéder/modifier ces informations";
+messages['bad_rss_feed'] = "Votre flux RSS ne semble pas être une adresse web valide";
+messages['server_error'] = "Une erreur est survenue. Veuillez réessayer plus tard";
+messages['activation_request_ok'] = "<p>Un mail vous permettant de réactiver votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 
 
 /*
