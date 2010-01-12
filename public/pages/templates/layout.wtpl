@@ -14,7 +14,7 @@
 	</head>
 	<body ?{pagerequest=='index.wtpl'}{class="index"}>
     <<+{header.wtpl}
-	  <<+{../pages/${pagerequest} using self}
+	  <<+{../${pagerequest} using self}
     <<+{footer.wtpl}
     ?{Waw.config.google_analytics}{
   		<script type="text/javascript">
