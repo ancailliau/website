@@ -29,7 +29,7 @@ scenario __FILE__ do
   }
   
   # I'm now on the people/my_chapter page
-  assert_i_see "<!-- people/my_chapter.wtpl -->", "User is on the my_chapter page"
+  assert_i_see "<!-- pages/people/my_chapter.wtpl -->", "User is on the my_chapter page"
 
   # Second activation fails
   assert_form_service_invoke "Second activation with same key fails", {

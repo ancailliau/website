@@ -12,7 +12,7 @@ scenario __FILE__ do
   
   # Go through the subscription link
   follow 'a', :href => '/people/subscribe'
-  assert_i_see "<!-- people/subscribe.wtpl -->", "User is on the subscribe page"
+  assert_i_see "<!-- pages/people/subscribe.wtpl -->", "User is on the subscribe page"
   assert has_tag?("form", :id => "subscribe_account")
   
   # invoke the subscribe_account service
@@ -38,6 +38,6 @@ scenario __FILE__ do
   }
   
   # I'm now on the people/my_chapter page
-  assert_i_see "<!-- people/my_chapter.wtpl -->", "User is on the my_chapter page"
+  assert_i_see "<!-- pages/people/my_chapter.wtpl -->", "User is on the my_chapter page"
   assert_i_see "A propos de vous"
 end

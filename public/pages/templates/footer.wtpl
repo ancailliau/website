@@ -21,7 +21,7 @@
       <p class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
       <input type="text" name="mail" value=""/>
       <input type="password" name="password" value=""/>
-      <input type="submit" value="Go »">
+      <input type="submit" value="Go »"/>
     	+{action.ajax_form_preparer}
     </form>
 	}

@@ -4,6 +4,6 @@ scenario __FILE__ do
                  securite-vie-privee/sponsoring} 
   locations.each do |loc|
     assert_not_404(Waw.config.web_base + loc)
-    assert_i_see "<!-- #{loc}.wtpl -->", "User is correctly on #{loc}"
+    assert_i_see "<!-- pages/#{loc}.wtpl -->", "User is correctly on #{loc}"
   end
 end
