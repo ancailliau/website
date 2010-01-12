@@ -2,13 +2,14 @@ wawaccess do
   strategy :deny_all
 
   # We serve all as static file by default
-  match file do |url, realpath, wawaccess, env|
-    wawaccess.static url, env
+  match file do
+    static
   end
 
   # When something is not found, we look in the pages wawaccess
-  match true do |url, realpath, wawaccess, env|
-    wawaccess.apply "/pages/#{url}", env
+  match true do
+    #puts "Applying /pages on #{served_file}, becomes /pages/#{served_file}"
+    apply "/pages/#{served_file}"
   end
 
 end

@@ -7,31 +7,32 @@ wawaccess do
   strategy :deny_all
   
   # When a folder is requested, find the associated index file
-  match directory do |url, realpath, wawaccess, env|
-    wawaccess.apply "#{url}/index.wtpl", env
+  match directory do
+    apply "#{served_file}/index.wtpl"
   end
 
   # We match .wtpl files using wlang
-  match file(:extension => '.wtpl') do |url, realpath, wawaccess, env|
+  match file(:extension => '.wtpl') do
     context = {"title"       => "UCL ACM Student Chapter",
-               "pagerequest" => url,
-               "theclass"    => (url == 'pages/index.wtpl' ? 'index' : 'other'),
+               "pagerequest" => served_file,
+               "theclass"    => (served_file == 'pages/index.wtpl' ? 'index' : 'other'),
                "env"         => Waw.env,
                "request"     => Waw.request, 
                "response"    => Waw.response,
                "session"     => Waw.session}
     Waw.resources.each {|k, v| context[k.to_s] = v}
     
-    contents = WLang.file_instantiate(File.join(wawaccess.folder, '../templates/layout.wtpl'), context)
+    template = File.join(folder, '../templates/layout.wtpl')
+    contents = WLang.file_instantiate(template, context)
     [200, {'Content-Type' => 'text/html'}, [contents]]
   end
   
   # When the file cannot be found
-  match true do |url, realpath, wawaccess, env|
-    if /\.wtpl$/ =~ url
-      [404, {'Content-Type' => 'text/plain'}, ["Requested url #{url} does not exists"]]
+  match true do
+    if /\.wtpl$/ =~ served_file
+      [404, {'Content-Type' => 'text/plain'}, ["Requested url #{served_file} does not exists"]]
     else
-      wawaccess.apply "#{url}.wtpl", env
+      apply "#{served_file}.wtpl"
     end
   end
   
