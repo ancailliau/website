@@ -28,3 +28,9 @@ activation_request_ok       "<p>Un mail vous permettant de réactiver votre comp
 subscribe_account_ok        "<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>"
 activation_required         "<p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte."\
                             "<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>"
+
+
+# About olympiades
+olympiades_mandatory_fields   "Les champs des deux premières sections sont tous obligatoires"
+invalid_birthdate             "Votre date de naissance doit respecter JJ/MM/AAAA"
+olympiades_registration_ok    "<p>Votre inscription a bien été prise en compte. Nous vous tiendrons au courant par email.</p>"

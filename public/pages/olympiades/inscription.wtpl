@@ -5,7 +5,7 @@
   <p>Après votre inscription, nous vous contacterons officiellement par e-mail pour
      vous tenir au courant des démarches et dates importantes</p>
       
-  @{/webserv/olympiades/register}{
+  @{/webserv/olympiades/olympiades_register}{
     <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
       <div class="feedback"></div>
       
@@ -14,7 +14,7 @@
 
         <div>
           <label>Vos genre, nom et prénom</label>
-          <select name="sex">
+          <select name="gender">
             <option value="M">Mr.</option>
             <option value="F">Mme.</option>
           </select>
@@ -81,7 +81,7 @@
         
         <div>
           <label>Comment avez-vous eu connaissance des Olympiades ?</label>
-          <select name="center" id="olympiades_field_center" onchange="javascript:olympiades_enable_other()">
+          <select name="knows_how" id="olympiades_field_center" onchange="javascript:olympiades_enable_other()">
             <option value=""></option>
             <option value="professeur">Professeur</option>
             <option value="affiche">Affiche</option>
@@ -108,6 +108,7 @@
           }
         }
       </script>
+      +{action.ajax_form_preparer}
   </form>
   }
 </div>
