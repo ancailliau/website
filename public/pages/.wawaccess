@@ -7,14 +7,12 @@ wawaccess do
   strategy :deny_all
   
   # When a folder is requested, find the associated index file
-  serve directory do |url, realpath, wawaccess, env|
-    #puts "Serving directory #{url} #{realpath}"
+  match directory do |url, realpath, wawaccess, env|
     wawaccess.apply "#{url}/index.wtpl", env
   end
 
-  # We serve .wtpl files using wlang
-  serve file(:extension => '.wtpl') do |url, realpath, wawaccess, env|
-    #puts "Serving .wtpl file #{url} with #{realpath} and #{url == 'pages/index.wtpl'}"
+  # We match .wtpl files using wlang
+  match file(:extension => '.wtpl') do |url, realpath, wawaccess, env|
     context = {"title"       => "UCL ACM Student Chapter",
                "pagerequest" => url,
                "theclass"    => (url == 'pages/index.wtpl' ? 'index' : 'other'),
@@ -29,8 +27,7 @@ wawaccess do
   end
   
   # When the file cannot be found
-  notfound do |url, realpath, wawaccess, env|
-    #puts "Notfound #{url}"
+  match true do |url, realpath, wawaccess, env|
     if /\.wtpl$/ =~ url
       [404, {'Content-Type' => 'text/plain'}, ["Requested url #{url} does not exists"]]
     else
