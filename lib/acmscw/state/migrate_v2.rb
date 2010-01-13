@@ -1,6 +1,5 @@
 TOP = File.join(File.dirname(__FILE__), '..', '..', '..')
 $LOAD_PATH.unshift File.join(TOP, 'lib')
-$LOAD_PATH.unshift File.join(TOP, 'vendor', 'waw', 'lib')
 require 'acmscw'
 
 # Loads WAW configuration

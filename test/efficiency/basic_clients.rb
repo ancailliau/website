@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'waw'
 CLIENTS   = 10
 NB_REQUEST = 10

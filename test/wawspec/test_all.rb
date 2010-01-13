@@ -1,9 +1,10 @@
 # Handle load path
 here = File.dirname(__FILE__)
 top  = File.join(here, '..', '..')
-$LOAD_PATH.unshift(File.join(top, 'lib'), File.join(top, 'vendor', 'waw', 'lib'))
+$LOAD_PATH.unshift(File.join(top, 'lib'))
 
 # Makes the require
+require 'rubygems'
 require 'net/http'
 require 'waw'
 require 'waw/testing/wawspec'
