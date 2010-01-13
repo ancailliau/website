@@ -36,6 +36,9 @@ form fieldset {
 form fieldset legend {
 	font-size: 1.2em;
 }
+blockquote {
+	
+}
 
 #header,
 #main,
@@ -91,6 +94,10 @@ form fieldset legend {
 	line-height: 150%;
 	padding-right: 240px;
 	text-align: justify;
+}
+#main blockquote {
+	font-size: 1.2em;
+	color: #666;
 }
 #main ul {
 	margin: 0 0 0 16px;

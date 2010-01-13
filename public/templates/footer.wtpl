@@ -13,7 +13,7 @@
   	  <a onclick="javascript:show_login_form()">Connexion</a>
   	  <a href="/people/subscribe">Inscription</a>
 		}
-		<a href="/mentions">Mentions légales</a>
+		<a href="/mentions-legales">Mentions légales</a>
 		<a href="mailto:info@uclouvain.acm-sc.be">Contactez nous</a>
 	</p>
 	@{/webserv/people/login}{

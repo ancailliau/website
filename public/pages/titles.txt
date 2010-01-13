@@ -1,4 +1,5 @@
 /                                UCLouvain ACM Student Chapter
+/mentions-legales                UCLouvain ACM Student Chapter - Mentions légales
 /activites                       Nos activités
 /events                          Nos prochains événements
 /latex                           A propos de Latex, nos formations et autres
