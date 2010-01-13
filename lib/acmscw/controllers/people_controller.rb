@@ -73,7 +73,7 @@ module AcmScW
       routing {
         upon 'error'         do feedback end
         upon 'validation_ko' do form_validation_feedback end
-        upon 'success/ok'    do redirect(:url => '/people/my_chapter') end
+        upon 'success/ok'    do redirect(:url => '/people/account_activation_ok') end
         upon 'success/activation_required' do redirect(:url => '/feedback?mkey=activation_required') end
       }
       def activate_account(params)
@@ -119,7 +119,7 @@ module AcmScW
       routing {
         upon 'error' do feedback end
         upon 'validation_ko' do form_validation_feedback end
-        upon 'success/ok' do redirect(:url => '/people/my_chapter') end
+        upon 'success/ok' do feedback(:hide_input => false, :message => 'update_account_ok') end
         upon 'success/activation_required' do redirect(:url => '/feedback?mkey=activation_required') end
       }
       def update_account(params)

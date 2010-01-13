@@ -3,7 +3,6 @@
 
 /* Messages, from waw.resources.messages */
 var messages = new Array();
-messages['activate_account_ok'] = "<p>Votre compte a été activé</p>";
 messages['activation_request_ok'] = "<p>Un mail vous permettant de réactiver votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['activation_required'] = "<p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte.<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['bad_newsletter'] = "L'inscription a la newsletter est invalide";
@@ -22,6 +21,7 @@ messages['server_error'] = "Une erreur est survenue. Veuillez réessayer plus ta
 messages['subscribe_account_ok'] = "<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['unknown_event'] = "Cet événement n'est pas connu";
 messages['unknown_user'] = "Cette adresse email est inconnue dans notre base de données";
+messages['update_account_ok'] = "<p>Les informations vous concernant ont été mises à jour avec succès!</p>";
 messages['user_must_be_logged'] = "Vous devez être connecté pour accéder/modifier ces informations";
 messages['you_are_registered_to_this_event'] = "Vous êtes inscrit à cet événement!";
 
@@ -107,7 +107,7 @@ function activate_account(request_data, form) {
         $(form + ' .feedback').html(messages[data[1][0]]);
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          window.location = "/people/my_chapter";
+          window.location = "/people/account_activation_ok";
         } else if (data[1] == 'activation_required') {
           window.location = "/feedback?mkey=activation_required";
         }
@@ -210,7 +210,8 @@ function update_account(request_data, form) {
         $(form + ' .feedback').html(messages[data[1][0]]);
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          window.location = "/people/my_chapter";
+          $(form + ' .feedback').show();
+          $(form + ' .feedback').html(messages['update_account_ok']);
         } else if (data[1] == 'activation_required') {
           window.location = "/feedback?mkey=activation_required";
         }

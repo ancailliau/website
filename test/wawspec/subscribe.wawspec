@@ -38,6 +38,5 @@ scenario __FILE__ do
   }
   
   # I'm now on the people/my_chapter page
-  assert_i_see "<!-- pages/people/my_chapter.wtpl -->", "User is on the my_chapter page"
-  assert_i_see "A propos de vous"
+  assert_i_see "<!-- pages/people/account_activation_ok.wtpl -->", "User is on the feedback page"
 end
