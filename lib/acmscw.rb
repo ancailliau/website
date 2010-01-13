@@ -34,6 +34,49 @@ module AcmScW
     @database ||= Sequel.postgres(Waw.config.database)
   end
       
+  ##############################################################################################
+  ### About titles
+  ##############################################################################################
+
+  # Locates the titles file
+  def self.titles_file
+    File.join(File.dirname(__FILE__), '..', 'public', 'pages', 'titles.txt')
+  end
+
+  # Lazy load of all titles
+  def self.titles
+    @titles ||= load_titles
+  end
+
+  # Loads the titles from the title descriptor file
+  def self.load_titles
+    titles = {}
+    if File.exists?(titles_file)
+      File.open(titles_file).readlines.each do |line|
+        line = line.strip
+        next if line.empty?
+        raise "Title file corrupted on line |#{line}|" unless /^([\/a-zA-Z0-9_-]+)\s+(.*)$/ =~ line
+        titles[$1] = $2
+      end
+      Waw.logger.debug("AcmSCW titles loaded successfully")
+    else
+      Waw.logger.warn("AcmSCW, failed to load titles.txt, not found")
+    end  
+    titles
+  end
+
+  # Returns the title of a normalized requested path
+  def self.title_of(req_path)
+    req_path = $1 if req_path =~ /^pages(\/.*?)\.wtpl$/
+    req_path = $1 if req_path =~ /^(.*?)\/index$/
+    title = titles[req_path]
+    unless title
+      Waw.logger.warn("Warning, no dedicated title for #{req_path}")
+      title = titles['/']
+    end
+    title
+  end
+
 end
 
 require 'acmscw/waw_ext/validations'
