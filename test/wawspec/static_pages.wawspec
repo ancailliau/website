@@ -6,4 +6,10 @@ scenario __FILE__ do
     assert_not_404(Waw.config.web_base + loc)
     assert_i_see "<!-- pages/#{loc}.wtpl -->", "User is correctly on #{loc}"
   end
+  
+  nolocations = %w{not_a_page hello say/hello/to/the/world index.html greptheworld}
+  nolocations.each do |loc|
+    assert_is_404(Waw.config.web_base + loc)
+    assert_has_tag "div", :id => 'main'
+  end
 end

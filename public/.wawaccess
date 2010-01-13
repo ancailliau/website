@@ -8,7 +8,6 @@ wawaccess do
 
   # When something is not found, we look in the pages wawaccess
   match true do
-    #puts "Applying /pages on #{served_file}, becomes /pages/#{served_file}"
     apply "/pages/#{served_file}"
   end
 

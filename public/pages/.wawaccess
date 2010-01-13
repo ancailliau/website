@@ -30,7 +30,18 @@ wawaccess do
   # When the file cannot be found
   match true do
     if /\.wtpl$/ =~ served_file
-      [404, {'Content-Type' => 'text/plain'}, ["Requested url #{served_file} does not exists"]]
+      context = {"title"       => AcmScW.title_of(served_file),
+                 "pagerequest" => 'pages/404.wtpl',
+                 "theclass"    => 'other',
+                 "env"         => Waw.env,
+                 "request"     => Waw.request, 
+                 "response"    => Waw.response,
+                 "session"     => Waw.session}
+      Waw.resources.each {|k, v| context[k.to_s] = v}
+    
+      template = File.join(folder, '../templates/layout.wtpl')
+      contents = WLang.file_instantiate(template, context)
+      [404, {'Content-Type' => 'text/html'}, [contents]]
     else
       apply "#{served_file}.wtpl"
     end
