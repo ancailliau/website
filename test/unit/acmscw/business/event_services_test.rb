@@ -19,16 +19,16 @@ module AcmScW
         AcmScW.database[:activities].filter(:id => 'test_activity').delete
         AcmScW.database[:activities].insert(
           {
-            :id => 'test_activity', :name => 'Soirées-conférences à thème', :abstract => <<-EOF
-            	<p>Ces conférences à thème ont pour objectif de présenter différents
-            	aspects de l'informatique au grand public. Celles-ci ont lieu à la fois en
-            	semaine et en soirée afin de permettre au plus grand nombre possible d'y
-            	assister. Elles comportent plusieurs présentations dont les orateurs sont
-            	choisis pour leur capacité à faire partager leur passion ou métier au grand
-            	public, cela afin d'assurer la qualité de la conférence.</p>
+            :id => 'test_activity', :name => 'Soirees-conferences a theme', :abstract => <<-EOF
+            	<p>Ces conferences a theme ont pour objectif de presenter differents
+            	aspects de l'informatique au grand public. Celles-ci ont lieu a la fois en
+            	semaine et en soiree afin de permettre au plus grand nombre possible d'y
+            	assister. Elles comportent plusieurs presentations dont les orateurs sont
+            	choisis pour leur capacite a faire partager leur passion ou metier au grand
+            	public, cela afin d'assurer la qualite de la conference.</p>
 	
-            	<p>Notre première soirée de conférences tourne autours du thème de la
-            	sécurité et de la vie privée. <a href="/securite-vie-privee">En savoir 
+            	<p>Notre premiere soiree de conferences tourne autours du theme de la
+            	securite et de la vie privee. <a href="/securite-vie-privee">En savoir 
             	plus...</a></p>
             EOF
           }

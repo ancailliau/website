@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'pg'
 require 'sequel'
 require 'waw'
 require 'wlang'

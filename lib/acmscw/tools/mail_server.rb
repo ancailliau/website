@@ -4,7 +4,7 @@ module AcmScW
     class MailServer
       
       # Sends an e-mail
-      def self.send_mail(msg, from, to)
+      def self.send_mail(msg, from, *to)
         if Waw.config.deploy_mode == 'devel'
           to.each {|t| File.open("/tmp/#{t}.txt", 'w') {|io| io << msg}}
         else

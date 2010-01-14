@@ -9,6 +9,13 @@ require 'net/http'
 require 'waw'
 require 'waw/testing/wawspec'
 
+module Test
+  module Unit
+    class AssertionFailedError < StandardError
+    end
+  end
+end
+
 puts "Running wawspec suite (#{File.expand_path(here)})"
 puts "Loading waw application and web server"
 
@@ -49,6 +56,10 @@ Waw::WawSpec::SCENARIOS.each { |name, scenario|
     tt += 1
     ta += scenario.assertion_count
   rescue Test::Unit::AssertionFailedError => ex
+    puts "\nAssertion failed #{name}: #{ex.message}"
+    puts ex.backtrace[0]
+    tf += 1
+  rescue MiniTest::Assertion => ex
     puts "\nAssertion failed #{name}: #{ex.message}"
     puts ex.backtrace[0]
     tf += 1
