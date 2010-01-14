@@ -10,20 +10,28 @@
         <legend>A propos de vous et votre école (obligatoire)</legend>
 
         <div>
-          <label>Vos nom et prénom</label>
-          <select name="gender">
-            <option value="M">Mr.</option>
-            <option value="F">Mme.</option>
-          </select>
-          <input type="text" name="first_name"/>
-          <input type="text" name="last_name"/>
+          <div style="float:left">
+            <label for="gender">Sexe</label>
+            <select name="gender" style="margin-left:0px;">
+              <option value="M">Mr.</option>
+              <option value="F">Mme.</option>
+            </select>
+          </div>
+          <div style="float:left; margin-left: 15px">
+            <label for="first_name">Prénom</label>
+            <input type="text" name="first_name"/>
+          </div>
+          <div style="float:left; margin-left: 15px">
+            <label for="last_name">Nom</label>
+            <input type="text" name="last_name"/>
+          </div>
+          <div style="clear: left"></div>
         </div>
 
         <div>
-          <label>Votre adresse e-mail</label>
-          <input type="text" name="mail" style="width:200px"/>
-          <p>Cette adresse e-mail sera utilisée pour communication officielle et
-            doit donc être consultée régulièrement</p>
+          <label>Votre adresse e-mail <span style="color:red; font-size:1em;">(utilisée pour les communications officielles,
+          doit donc être consultée régulièrement)</span></label>
+          <input type="text" name="mail" style="width:360px"/>
         </div>
 
         <div>

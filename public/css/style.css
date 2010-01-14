@@ -16,6 +16,9 @@ a {
 	color: #005c9c;
 	text-decoration: none;
 }
+a:hover {
+	cursor: pointer;
+}
 
 a img {
 	border: 0px none;

@@ -3,7 +3,7 @@ To: +{mail_address}
 Subject: Votre inscription sur uclouvain.acm-sc.be
 Date: +{Time.now}
 MIME-Version: 1.0
-Content-type: text/html
+Content-type: text/html; charset=UTF-8
 
 <p>Bonjour,</p>
 
@@ -14,6 +14,6 @@ Content-type: text/html
 <p>Pour activer votre compte, mettre à jour vos préférences (inscription à la newsletter, etc.) 
    et profiter des fonctionnalités offertes par notre site web, il vous suffit de suivre 
    <a href="{activation_link}">ce lien</a>. Si cependant vous ne souhaitiez pas profiter de ces 
-   fonctionnalités supplémentaires, vous pouvez simplement ignorer cet email.</p>
+   fonctionnalités supplémentaires, vous pouvez simplement ignorer cet e-mail.</p>
    
 <p>L'équipe de l'UCLouvain ACM Student Chapter</p>

@@ -3,7 +3,7 @@
   <div>
     <label>L'adresse e-mail que nous utilisons pour vous contacter</label>
     <input type="text" name="mail" value="{people[:mail]}" id="account_fields_mail"/>
-    <span id="change_mail_explain" class="explain">Changer votre adresse email vous obligera a réactiver
+    <span id="change_mail_explain" class="explain">Changer votre adresse e-mail vous obligera a réactiver
       votre compte (un mail vous sera envoyé)</span>
   </div>
 
@@ -16,28 +16,35 @@
   <div>
     <p>
       <input type="checkbox" name="newsletter" value="true" ?{people[:newsletter]}{checked="checked"}>
-      Je souhaite m'abonner à la newsletter</input>
+      Je souhaite m'abonner à la newsletter <br/>(au maximum un e-mail par mois)</input>
     </p>
   </div>
 </fieldset>
 
 <fieldset>
   <legend>A propos de vous (optionnel)</legend>
-  <div>
-    <label>Votre nom, votre prénom</label>
+  <div style="float:left">
+    <label for="first_name">Votre prénom</label>
     <input type="text" name="first_name" value="{people[:first_name]}"/>
+  </div>
+  
+  <div style="float:left">
+    <label for="last_name">Votre nom</label>
     <input type="text" name="last_name" value="{people[:last_name]}"/>
   </div>
+  <div style="clear:both"></div>
 
   <div>
-    <label>Votre occupation (p.ex. Etudiant UCL/INGI, SINF21)</label>
+    <label>Votre occupation/profession <br/> (p.ex. Etudiant UCL/INGI en SINF21, Analyste programmeur chez..., etc.)</label>
     <input type="text" name="occupation" value="{people[:occupation]}"/>
   </div>
-
+  
+  <!--
   <div>
     <label>Si vous possédez un blog concernant l'informatique et/ou son apprentissage, nous vous invitons
        a participer à notre univers en indiquant ci-dessous votre flux rss. Les administrateurs 
        ajouteront votre flux au site web dès validation.</label>
     <input type="text" name="rss_feed" size="50" value="{people[:rss_feed]}"/>
   </div>
+  -->
 </fieldset>

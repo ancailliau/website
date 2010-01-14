@@ -8,6 +8,7 @@
 		<title>${title}</title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
 		<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="/js/waw.js"></script>
 		<script type="text/javascript" src="/js/acmscw.js"></script>
 		<script type="text/javascript" src="/js/acmscw_generated.js"></script>
 	</head>

@@ -10,15 +10,17 @@
       <a onclick="javascript:logout()">Logout</a>
       <a href="/people/my_chapter">My chapter</a>
 		}{
-  	  <a onclick="javascript:show_login_form()">Connexion</a>
+  	  <a class="button" onclick="javascript:show_login_form()">Connexion</a>
   	  <a href="/people/subscribe">Inscription</a>
 		}
 		<a href="/mentions-legales">Mentions légales</a>
-		<a href="mailto:info@uclouvain.acm-sc.be">Contactez nous</a>
+		<a href="mailto:info@uclouvain.acm-sc.be">Contactez-nous</a>
 	</p>
 	@{/webserv/people/login}{
     <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
-      <p class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
+      <p class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)
+      <a class="button" style="float:right" onclick="javascript:hide_login_form()">fermer</a>
+      </p>
       <input type="text" name="mail" value=""/>
       <input type="password" name="password" value=""/>
       <input type="submit" value="Go »"/>
@@ -26,6 +28,10 @@
     </form>
 	}
   <script type="text/javascript">
+    function hide_login_form() {
+      $('p#internal-links').show();
+      $('form#login').hide();
+    }
     function show_login_form() {
       $('p#internal-links').hide();
       $('form#login').show();
