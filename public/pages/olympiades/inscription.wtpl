@@ -2,9 +2,6 @@
   
   <h2>Olympiades d'Informatique &mdash; Inscriptions</h2>
   
-  <p>Après votre inscription, nous vous contacterons officiellement par e-mail pour
-     vous tenir au courant des démarches et dates importantes</p>
-      
   @{/webserv/olympiades/olympiades_register}{
     <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
       <div class="feedback"></div>
@@ -13,7 +10,7 @@
         <legend>A propos de vous et votre école (obligatoire)</legend>
 
         <div>
-          <label>Vos genre, nom et prénom</label>
+          <label>Vos nom et prénom</label>
           <select name="gender">
             <option value="M">Mr.</option>
             <option value="F">Mme.</option>
@@ -22,12 +19,14 @@
           <input type="text" name="last_name"/>
         </div>
 
-        <div style="float:left; width: 230px;">
+        <div>
           <label>Votre adresse e-mail</label>
           <input type="text" name="mail" style="width:200px"/>
+          <p>Cette adresse e-mail sera utilisée pour communication officielle et
+            doit donc être consultée régulièrement</p>
         </div>
 
-        <div style="float:left;" style="width:200px">
+        <div>
           <label>Date de naissance</label>
           <input type="text" name="birthdate" style="width:130px"/>
         </div>
@@ -62,6 +61,11 @@
             <option value="superieur">Supérieur</option>
           </select>
         </div>
+
+        <div>
+          <label>Année d'étude</label>
+          <input type="text" name="study_level" style="width:125px"/>
+        </div>
         
         <div>
           <label>Centre où vous souhaitez passer la demi-finale</label>
@@ -90,8 +94,8 @@
             <option value="presse">Une connaissance</option>
             <option value="autre">Autre</option>
           </select>
-          <span>&nbsp;Autre:</span>
-          <input id="olympiades_field_other" type="text" name="center" disabled="" value=""/>
+          <span id="olympiades_field_other_label" style="display:none;">&nbsp;Autre:</span>
+          <input id="olympiades_field_other" style="display:none;" type="text" name="knows_other" value=""/>
         </div>
         
       </fieldset>
@@ -101,10 +105,16 @@
       <script type="text/javascript">
         function olympiades_enable_other() {
           if ($('select#olympiades_field_center').val() == 'autre') {
-            $('input#olympiades_field_other').removeAttr('disabled');
+            $('#olympiades_field_other_label').html('&nbsp;Précisez:');
+            $('#olympiades_field_other_label').show();
+            $('input#olympiades_field_other').show();
+          } else if ($('select#olympiades_field_center').val() == 'professeur') {
+            $('#olympiades_field_other_label').html('&nbsp;Nom du professeur:');
+            $('#olympiades_field_other_label').show();
+            $('input#olympiades_field_other').show();
           } else {
-            $('input#olympiades_field_other').val("");
-            $('input#olympiades_field_other').attr('disabled', 'disabled');
+            $('#olympiades_field_other_label').hide();
+            $('input#olympiades_field_other').hide();
           }
         }
       </script>
