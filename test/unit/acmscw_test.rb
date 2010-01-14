@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'waw'
+require 'acmscw'
 class AcmScWTest < Test::Unit::TestCase
   
   def say_hello
