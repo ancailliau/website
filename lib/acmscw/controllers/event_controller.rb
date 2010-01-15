@@ -5,11 +5,6 @@ module AcmScW
     #
     class EventController < ::Waw::ActionController
     
-      # Creates a controller instance
-      def initialize
-        self.content_type = 'application/json'
-      end
-    
       # Encapsulate all actions through a database transaction
       def encapsulate(action, actual_params, &block)
         AcmScW.transaction(&block)

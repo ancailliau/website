@@ -1,5 +1,5 @@
-@{/webserv/people/account_activation_request}{
-  <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
+={controllers.people.account_activation_request as action}{
+  <form method="post" enctype="multipart/form-data" id="{action.id}">
   	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
   	<input type="text" value="" name="mail" id="mail"/>
   	<input type="submit" value="Go »" />

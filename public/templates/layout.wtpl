@@ -13,9 +13,9 @@
 		<script type="text/javascript" src="/js/acmscw_generated.js"></script>
 	</head>
 	<body class="{theclass}">
-    <<+{header.wtpl}
+    <<+{header.wtpl using self}
 	  <<+{../${pagerequest} using self}
-    <<+{footer.wtpl}
+    <<+{footer.wtpl using self}
     ?{Waw.config.google_analytics}{
   		<script type="text/javascript">
   		  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

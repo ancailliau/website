@@ -19,7 +19,7 @@
 	</div>
 
 	<div class="grey-box">
-	  @{/webserv/people/newsletter_subscribe}{
+	  ={controllers.people.newsletter_subscribe as action}{
       <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
         <label for="mail" class="feedback">Inscrivez-vous<br /> à la newsletter</label>
   			<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>

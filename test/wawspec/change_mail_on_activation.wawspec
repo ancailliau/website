@@ -14,7 +14,7 @@ scenario __FILE__ do
   # Go through the subscription link
   follow 'a', :href => '/people/subscribe'
   assert_i_see "<!-- pages/people/subscribe.wtpl -->", "User is on the subscribe page"
-  assert has_tag?("form", :id => "subscribe_account")
+  assert has_tag?("form", :id => Waw.resources.controllers.people.subscribe_account.id)
   
   # invoke the subscribe_account service
   assert_form_service_invoke "Successful subscribe service invocation", {
@@ -29,7 +29,7 @@ scenario __FILE__ do
   
   # Follow the activation link
   assert_not_404 href, "Activation link lead to a valid page"
-  assert_has_tag "form", :id => "activate_account"
+  assert_has_tag "form", :id => Waw.resources.controllers.people.activate_account.id
   
   # Fill the form and send it
   assert_form_service_invoke "Successful activate service invocation", {

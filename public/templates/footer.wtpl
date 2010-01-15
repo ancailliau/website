@@ -7,7 +7,7 @@
 
 	<p id="internal-links">
     ?{Waw.session_has_key?(:user)}{
-      <a onclick="javascript:logout()">Logout</a>
+      <a onclick="{controllers.people.logout.ajax_link}">Logout</a>
       <a href="/people/my_chapter">My chapter</a>
 		}{
   	  <a class="button" onclick="javascript:show_login_form()">Connexion</a>
@@ -16,14 +16,14 @@
 		<a href="/mentions-legales">Mentions légales</a>
 		<a href="mailto:info@uclouvain.acm-sc.be">Contactez-nous</a>
 	</p>
-	@{/webserv/people/login}{
-    <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
+	={controllers.people.login as action}{
+    <form action="{action.uri}" method="post" enctype="multipart/form-data" id="login">
       <p style="float:left;" class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
       <p><a class="button" style="float:right" onclick="javascript:hide_login_form()">fermer</a></p>
       <input type="text" name="mail" value=""/>
       <input type="password" name="password" value=""/>
       <input type="submit" value="Go »"/>
-    	+{action.ajax_form_preparer}
+    	+{action.ajax_form_preparer(:form_id => 'login')}
     </form>
 	}
   <script type="text/javascript">

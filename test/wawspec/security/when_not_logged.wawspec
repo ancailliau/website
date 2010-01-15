@@ -5,7 +5,7 @@ scenario __FILE__ do
   assert_service_invoke "User must be logged for updating account", {
     :service => "/webserv/people/update_account",
     :arguments => user, 
-    :result  => "validation_ko/user_must_be_logged"
+    :result  => "validation-ko/user_must_be_logged"
   }
 
   go '/people/my_chapter'

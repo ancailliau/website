@@ -18,7 +18,6 @@ scenario __FILE__ do
   
   # Follow the activation link
   assert_not_404 href, "Activation link lead to a valid page"
-  assert_has_tag "form", :id => "activate_account"
   
   # Fill the form and send it
   args = people.merge(:actkey => actkey, :password => "password", :password_confirm => "password")

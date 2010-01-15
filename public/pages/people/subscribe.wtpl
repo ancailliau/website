@@ -1,16 +1,16 @@
 ?{Waw.session_has_key?(:user)}{
-  <<+{my_chapter.wtpl}
+  <<+{my_chapter.wtpl using self}
 }{
   <div id="main">
     <h2>Inscription à l'UCLouvain ACM Student Chapter</h2>
     <p>Veuillez remplir les informations ci-dessous pour vous inscrire sur le site.<br/>
        Ceci vous donnera accès aux fonctionnalités avancées que nous vous proposons.</p>
 
-    @{/webserv/people/subscribe_account}{
+    ={controllers.people.subscribe_account as action}{
       <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
         <div class="feedback"></div>
         <div>
-          <<+{account_fields.wbrick with people:Hash.new}
+          <<+{account_fields.wbrick using self with people:Hash.new}
         </div>
         <input type="submit" value="Créer mon compte"/>
       	+{action.ajax_form_preparer}

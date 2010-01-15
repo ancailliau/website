@@ -1,13 +1,13 @@
 ?{Waw.session_has_key?(:user)}{
   ?{business.event.is_registered?(Waw.session_get(:user), event)}{
-    @{/webserv/event/unregister_to_this_event}{
+    ={controllers.event.unregister_to_this_event as action}{
     	<p class="feedback">
   	    +{messages.you_are_registered_to_this_event} 
   	    <a onclick="{action.ajax_link(:event => event)}">+{messages.click_here_to_unregister}</a>  
       </p>
     }
   }{
-    @{/webserv/event/register_to_this_event}{
+    ={controllers.event.register_to_this_event as action}{
     	<p class="feedback">
   	    <a onclick="{action.ajax_link(:event => event)}">+{messages.click_here_to_register}</a>  
       </p>
@@ -17,9 +17,9 @@
   <p>Pour vous inscrire à cet événement, il vous suffit de nous faire connaître
      votre adresse e-mail à l'aide du formulaire ci-dessous.</p>
    
-  @{/webserv/event/register_by_mail}{
+  ={controllers.event.register_by_mail as action}{
     ={(form_id ? form_id : action.id) as theid}{
-      <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{theid}">
+      <form method="post" enctype="multipart/form-data" id="{theid}">
       	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
       	<input type="hidden" name="event" value="{event}"/>
       	<input type="text" value="" name="mail" id="mail"/>

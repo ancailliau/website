@@ -8,10 +8,10 @@ Waw.rack do
   map '/webserv' do
     use ::Waw::JSONController
     map '/event' do
-      run ::AcmScW::Controllers::EventController.new
+      run ::AcmScW::Controllers::EventController.instance
     end
     map '/people' do
-      run ::AcmScW::Controllers::PeopleController.new
+      run ::AcmScW::Controllers::PeopleController.instance
     end
   end
 end

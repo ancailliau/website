@@ -5,11 +5,6 @@ module AcmScW
     #
     class OlympiadesController < ::Waw::ActionController
     
-      # Creates a controller instance
-      def initialize
-        self.content_type = 'application/json'
-      end
-    
       # Encapsulate all actions through a database transaction
       def encapsulate(action, actual_params, &block)
         AcmScW.transaction(&block)
@@ -22,7 +17,7 @@ module AcmScW
         validation :birthdate, /\d\d\/\d\d\/\d\d\d\d/.to_validator, :invalid_birthdate
       }
       routing {
-        upon 'validation_ko' do form_validation_feedback end
+        upon 'validation-ko' do form_validation_feedback end
         upon 'success/ok'    do redirect(:url => '/feedback?mkey=olympiades_registration_ok') end
       }
       # Registers to the olympiades

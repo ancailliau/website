@@ -12,10 +12,12 @@ scenario __FILE__ do
   go Waw.config.web_base
   
   # invoke the subscribe_account service
+  assert_has_tag "form", :id => "login"
   assert_form_service_invoke "Successful login invocation", {
     :service    => "/webserv/people/login",
     :arguments  => {:mail => people[:mail], :password => people[:password]},
-    :result     => "success/ok"
+    :result     => "success/ok",
+    :check_form => false
   }
   
   # Now i can go to the account update page

@@ -5,11 +5,6 @@ module AcmScW
     #
     class PeopleController < ::Waw::ActionController
     
-      # Creates a controller instance
-      def initialize
-        self.content_type = 'application/json'
-      end
-    
       # Encapsulate all actions through a database transaction
       def encapsulate(action, actual_params, &block)
         AcmScW.transaction(&block)
@@ -29,7 +24,7 @@ module AcmScW
         validation [:mail, :password], user_may_log, :bad_user_or_password
       }
       routing {
-        upon 'validation_ko' do feedback end
+        upon 'validation-ko' do feedback end
         upon 'success/ok'    do refresh  end
       }
       def login(params)
@@ -49,7 +44,7 @@ module AcmScW
       # Subscription to the newsletter
       signature { validation :mail, mandatory & mail, :invalid_email }
       routing { 
-        upon 'validation_ko' do feedback(:hide_input => false) end 
+        upon 'validation-ko' do feedback(:hide_input => false) end 
         upon 'success/ok'    do feedback(:hide_input => true, 
                                          :message => 'newsletter_subscribe_ok') end 
       }
@@ -72,7 +67,7 @@ module AcmScW
       }
       routing {
         upon 'error'         do feedback end
-        upon 'validation_ko' do form_validation_feedback end
+        upon 'validation-ko' do form_validation_feedback end
         upon 'success/ok'    do redirect(:url => '/people/account_activation_ok') end
         upon 'success/activation_required' do redirect(:url => '/feedback?mkey=activation_required') end
       }
@@ -90,7 +85,7 @@ module AcmScW
         validation :mail, user_exists, :unknown_user
       }
       routing {
-        upon 'error', 'validation_ko' do feedback end
+        upon 'error', 'validation-ko' do feedback end
         upon 'success/ok'             do redirect(:url => '/feedback?mkey=activation_request_ok') end
       }
       def account_activation_request(params)
@@ -103,7 +98,7 @@ module AcmScW
       }
       routing {
         upon 'error'         do feedback end
-        upon 'validation_ko' do form_validation_feedback end
+        upon 'validation-ko' do form_validation_feedback end
         upon 'success/ok'    do redirect(:url => '/feedback?mkey=subscribe_account_ok') end
       }
       def subscribe_account(params)
@@ -118,7 +113,7 @@ module AcmScW
       }
       routing {
         upon 'error' do feedback end
-        upon 'validation_ko' do form_validation_feedback end
+        upon 'validation-ko' do form_validation_feedback end
         upon 'success/ok' do feedback(:hide_input => false, :message => 'update_account_ok') end
         upon 'success/activation_required' do redirect(:url => '/feedback?mkey=activation_required') end
       }

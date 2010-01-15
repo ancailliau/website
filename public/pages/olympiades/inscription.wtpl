@@ -2,8 +2,8 @@
   
   <h2>Olympiades d'Informatique &mdash; Inscriptions</h2>
   
-  @{/webserv/olympiades/olympiades_register}{
-    <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
+  ={controllers.olympiades.olympiades_register as action}{
+    <form method="post" enctype="multipart/form-data" id="{action.id}">
       <div class="feedback"></div>
       
       <fieldset>

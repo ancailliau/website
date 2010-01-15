@@ -13,13 +13,16 @@ scenario __FILE__ do
   assert_form_service_invoke "Successful event registration", {
     :service    => "/webserv/event/register_by_mail",
     :arguments  => {:mail => people[:mail], :event => THIS_EVENT},
-    :result     => "success/ok"
+    :result     => "success/ok",
+    :check_form => false
   }
   
+  assert_has_tag "form", :id => 'login'
   assert_service_invoke "Successful login then", {
     :service    => "/webserv/people/login",
     :arguments  => {:mail => people[:mail], :password => people[:password]},
-    :result     => "success/ok"
+    :result     => "success/ok",
+    :check_form => false
   }
   assert_not_404 '/securite-vie-privee/acces'
   assert_i_see Waw.resources.messages.click_here_to_unregister
@@ -47,5 +50,5 @@ scenario __FILE__ do
     :check_form => false
   }
   assert_not_404 '/securite-vie-privee/acces'
-  assert_has_tag "form", :id => "register_by_mail"
+  assert_has_tag "form", :id => "webserv_event_register_by_mail"
 end

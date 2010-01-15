@@ -6,6 +6,8 @@ require 'wlang'
 # Main module of the whole website
 module AcmScW
   
+  WLang::FILE_EXTENSIONS['.wbrick'] = 'wlang/xhtml'
+  
   # Version number of ACM Student Chapter Website
   VERSION = "0.0.4".freeze
   

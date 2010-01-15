@@ -7,10 +7,12 @@ scenario __FILE__ do
   assert_not_404 Waw.config.web_base
   assert_i_see "Connexion"
   
+  assert_has_tag "form", :id => 'login'
   assert_form_service_invoke "Successful login then", {
     :service    => "/webserv/people/login",
     :arguments  => {:mail => people[:mail], :password => people[:password]},
-    :result     => "success/ok"
+    :result     => "success/ok",
+    :check_form => false
   }
   assert_not_404 Waw.config.web_base + 'securite-vie-privee'
   assert_i_see "My chapter"
