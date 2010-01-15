@@ -18,9 +18,8 @@
 	</p>
 	@{/webserv/people/login}{
     <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
-      <p class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)
-      <a class="button" style="float:right" onclick="javascript:hide_login_form()">fermer</a>
-      </p>
+      <p style="float:left;" class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
+      <p><a class="button" style="float:right" onclick="javascript:hide_login_form()">fermer</a></p>
       <input type="text" name="mail" value=""/>
       <input type="password" name="password" value=""/>
       <input type="submit" value="Go »"/>

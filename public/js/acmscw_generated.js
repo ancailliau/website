@@ -3,8 +3,8 @@
 
 /* Messages, from waw.resources.messages */
 var messages = new Array();
-messages['activation_request_ok'] = "<p>Un mail vous permettant de réactiver votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
-messages['activation_required'] = "<p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte.<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
+messages['activation_request_ok'] = "<p>Un e-mail vous permettant de réactiver votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
+messages['activation_required'] = "<p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte.<p>Un e-mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['bad_newsletter'] = "L'inscription a la newsletter est invalide";
 messages['bad_password'] = "Votre mot de passe doit comporter entre 8 et 15 caractères";
 messages['bad_rss_feed'] = "Votre flux RSS ne semble pas être une adresse web valide";
@@ -12,73 +12,27 @@ messages['bad_user_or_password'] = "Utilisateur ou mot de passe invalide (<a hre
 messages['click_here_to_register'] = "Cliquez-ici pour vous inscrire à cet événement";
 messages['click_here_to_unregister'] = "Cliquez-ici pour vous désinscrire";
 messages['event_registration_ok'] = "Vous êtes maintenant inscrit à cet événement!";
-messages['invalid_email'] = "Adresse email invalide";
-messages['mail_already_in_use'] = "Cette adresse email est déjà utilisée";
+messages['invalid_birthdate'] = "Votre date de naissance doit respecter JJ/MM/AAAA";
+messages['invalid_email'] = "Adresse e-mail invalide";
+messages['mail_already_in_use'] = "Cette adresse e-mail est déjà utilisée";
 messages['missing_activation_key'] = "Clé d'activation manquante";
 messages['newsletter_subscribe_ok'] = "Vous êtes maintenant inscrit";
+messages['olympiades_mandatory_fields'] = "Les champs des deux premières sections sont tous obligatoires";
+messages['olympiades_registration_ok'] = "<p>Nous avons bien reçu toutes vos données, votre inscription vous sera confirmée par e-mail.</p><p>Si vous n'avez pas reçu cette confirmation endéans les 5 jours, veuillez nous contacter sur <a href='mailto:info@uclouvain-acm-sc.be'>info@uclouvain-acm-sc.be</a></p>";
 messages['passwords_dont_match'] = "Les mots de passe ne correspondent pas";
 messages['server_error'] = "Une erreur est survenue. Veuillez réessayer plus tard";
-messages['subscribe_account_ok'] = "<p>Un mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
+messages['subscribe_account_ok'] = "<p>Un e-mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['unknown_event'] = "Cet événement n'est pas connu";
-messages['unknown_user'] = "Cette adresse email est inconnue dans notre base de données";
+messages['unknown_user'] = "Cette adresse e-mail est inconnue dans notre base de données";
 messages['update_account_ok'] = "<p>Les informations vous concernant ont été mises à jour avec succès!</p>";
 messages['user_must_be_logged'] = "Vous devez être connecté pour accéder/modifier ces informations";
 messages['you_are_registered_to_this_event'] = "Vous êtes inscrit à cet événement!";
 
-
-/*
- * Actions contributed by AcmScW::Controllers::EventController
- */
-function register_by_mail(request_data, form) {
-  $.ajax({type: "POST", url: "/webserv/event/register_by_mail", data: request_data, dataType: "json",
-    error: function(data) {
-      window.location = '/feedback?mkey=server_error'
-    },
-    success: function(data) {
-      if (data[0] == 'success') {
-        if (data[1] == 'ok') {
-          $(form + ' input').hide();
-          $(form + ' .feedback').show();
-          $(form + ' .feedback').html(messages['event_registration_ok']);
-        }
-      } else {
-       $(form + ' .feedback').show();
-       $(form + ' .feedback').html(messages[data[1][0]]);      }
-    }
-  });
-  return false;
-}  
-function register_to_this_event(request_data, form) {
-  $.ajax({type: "POST", url: "/webserv/event/register_to_this_event", data: request_data, dataType: "json",
-    error: function(data) {
-      window.location = '/feedback?mkey=server_error'
-    },
-    success: function(data) {
-      location.reload(true);
-    }
-  });
-  return false;
-}  
-function unregister_to_this_event(request_data, form) {
-  $.ajax({type: "POST", url: "/webserv/event/unregister_to_this_event", data: request_data, dataType: "json",
-    error: function(data) {
-      window.location = '/feedback?mkey=server_error'
-    },
-    success: function(data) {
-      location.reload(true);
-    }
-  });
-  return false;
-}  
-
-
-/*
- * Actions contributed by AcmScW::Controllers::PeopleController
- */
+/* Actions contributed by AcmScW::Controllers::PeopleController, mapped to /webserv/people */
 function account_activation_request(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/account_activation_request", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error'
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'error') {
@@ -99,7 +53,7 @@ function account_activation_request(request_data, form) {
 function activate_account(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/activate_account", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error'
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'error') {
@@ -127,7 +81,7 @@ function activate_account(request_data, form) {
 function login(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/login", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error'
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'success') {
@@ -145,7 +99,7 @@ function login(request_data, form) {
 function logout(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/logout", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error'
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       location.reload(true);
@@ -156,7 +110,7 @@ function logout(request_data, form) {
 function newsletter_subscribe(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/newsletter_subscribe", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error'
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'success') {
@@ -176,7 +130,7 @@ function newsletter_subscribe(request_data, form) {
 function subscribe_account(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/subscribe_account", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error'
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'error') {
@@ -202,7 +156,7 @@ function subscribe_account(request_data, form) {
 function update_account(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/update_account", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error'
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'error') {
@@ -224,6 +178,48 @@ function update_account(request_data, form) {
         str += '</ul>';
         $(form + ' .feedback').html(str);
       }
+    }
+  });
+  return false;
+}  
+/* Actions contributed by AcmScW::Controllers::EventController, mapped to /webserv/event */
+function register_by_mail(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/event/register_by_mail", data: request_data, dataType: "json",
+    error: function(data) {
+      window.location = '/feedback?mkey=server_error';
+    },
+    success: function(data) {
+      if (data[0] == 'success') {
+        if (data[1] == 'ok') {
+          $(form + ' input').hide();
+          $(form + ' .feedback').show();
+          $(form + ' .feedback').html(messages['event_registration_ok']);
+        }
+      } else {
+       $(form + ' .feedback').show();
+       $(form + ' .feedback').html(messages[data[1][0]]);}
+    }
+  });
+  return false;
+}  
+function register_to_this_event(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/event/register_to_this_event", data: request_data, dataType: "json",
+    error: function(data) {
+      window.location = '/feedback?mkey=server_error';
+    },
+    success: function(data) {
+      location.reload(true);
+    }
+  });
+  return false;
+}  
+function unregister_to_this_event(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/event/unregister_to_this_event", data: request_data, dataType: "json",
+    error: function(data) {
+      window.location = '/feedback?mkey=server_error';
+    },
+    success: function(data) {
+      location.reload(true);
     }
   });
   return false;
