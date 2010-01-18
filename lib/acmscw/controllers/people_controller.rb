@@ -108,8 +108,8 @@ module AcmScW
     
       # Account update
       signature(AccountCommonSignature) {
-        validation :mail, is_current_user | user_not_exists, :mail_already_in_use
         validation :mail, logged, :user_must_be_logged
+        validation :mail, is_current_user | user_not_exists, :mail_already_in_use
       }
       routing {
         upon 'error' do feedback end

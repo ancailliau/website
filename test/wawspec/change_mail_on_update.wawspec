@@ -5,6 +5,7 @@ scenario __FILE__ do
             :password   => "mypassword", 
             :newsletter => "true"}
   Waw.resources.business.people.drop_people(people_mail, next_mail)
+  assert AcmScW.database[:people].filter(:mail => [people_mail, next_mail]).empty?, "Remove people works"
   Waw.resources.model.people.insert(people.merge(:adminlevel => 0))
   AcmScW::Tools::MailServer.clean(people_mail, next_mail)
   
@@ -22,9 +23,9 @@ scenario __FILE__ do
   
   # Now i can go to the account update page
   assert_not_404 "/people/update_account"
-
+  
   # First update is ok
-  assert_form_service_invoke "Successful update service invocation", {
+  assert_form_service_invoke "Successful update service invocation (#{people_mail})", {
     :service    => "/webserv/people/update_account",
     :arguments  => people.merge(:password_confirm => people[:password]),
     :result     => "success/ok"
@@ -34,7 +35,7 @@ scenario __FILE__ do
   assert_not_404 "/people/update_account"
   
   # First update is ok
-  assert_form_service_invoke "Successful update service invocation", {
+  assert_form_service_invoke "Successful update service invocation (#{next_mail})", {
     :service    => "/webserv/people/update_account",
     :arguments  => people.merge(:mail => next_mail, :password_confirm => people[:password]),
     :result     => "success/activation_required"

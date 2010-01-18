@@ -5,8 +5,8 @@ module Waw
    validator :user_not_exists,  user_exists.not
    validator :user_may_log,     validator {|mail, pass| Waw.resources.business.people.people_may_log?(mail, pass)}
 
-   validator :is_current_user,  validator{|mail| mail==Waw.session_has_key?(:user)}
-   validator :logged,           validator{|*args| Waw.session_has_key?(:user)}
+   validator :is_current_user,  validator{|mail| mail==Waw.session[:user]}
+   validator :logged,           validator{|*args| Waw.session.has_key?(:user)}
    validator :not_logged,       logged.not
    
    validator :event_exists,     validator {|event| Waw.resources.business.event.event_exists?(event)}  
