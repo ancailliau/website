@@ -13,5 +13,8 @@ Waw.rack do
     map '/people' do
       run ::AcmScW::Controllers::PeopleController.instance
     end
+    map '/olympiades' do
+      run ::AcmScW::Controllers::OlympiadesController.instance
+    end
   end
 end

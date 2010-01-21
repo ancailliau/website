@@ -10,6 +10,7 @@ module AcmScW
         AcmScW.transaction(&block)
       end
     
+      # Registers to the olympiades
       signature {
         validation [:gender, :first_name, :last_name, :mail, :birthdate, :street, :postal_code,
                     :city, :school_name, :school_city, :category, :center], mandatory, :olympiades_mandatory_fields
@@ -20,8 +21,8 @@ module AcmScW
         upon 'validation-ko' do form_validation_feedback end
         upon 'success/ok'    do redirect(:url => '/feedback?mkey=olympiades_registration_ok') end
       }
-      # Registers to the olympiades
-      def olympiades_register(params)
+      def register(params)
+        puts params.inspect();
         :ok
       end
     

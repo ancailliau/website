@@ -1,7 +1,7 @@
 <h2>Olympiades d'Informatique &mdash; Inscriptions</h2>
 
-={controllers.olympiades.olympiades_register as action}{
-  <form method="post" enctype="multipart/form-data" id="{action.id}">
+={controllers.olympiades.register as action}{
+  <form method="post" enctype="multipart/form-data" id="olympiades_register">
     <div class="feedback"></div>
     
     <fieldset>
@@ -62,17 +62,52 @@
       
       <div>
         <label>Catégorie dans laquelle vous concourrez</label>
-        <select name="category">
+        <select id="category" name="category" onchange="javascript:olympiades_category_changed()">
           <option value="secondaire">Secondaire</option>
           <option value="superieur">Supérieur</option>
         </select>
+        <script type="text/javascript">
+          function olympiades_category_changed() {
+            if ($('#category').val() == 'superieur') {
+              $('form#olympiades_register .orientation').show();
+            } else {
+              $('form#olympiades_register .orientation').hide();
+            }
+          }
+        </script>
       </div>
-
+      
       <div>
         <label>Année d'étude</label>
         <input type="text" name="study_level" style="width:125px"/>
       </div>
       
+      <div class="orientation" style="display:none">
+        <label>Orientation</label>
+        <select id="orientation" name="orientation" onchange="javascript:olympiades_orientation_changed()">
+          <option value="civil">Ingénieur Civil</option>
+          <option value="industriel">Ingénieur Industriel</option>
+          <option value="sciences">Sciences Informatiques</option>
+          <option value="gestion">Informatique de gestion</option>
+          <option value="systèmes">Informatique et systèmes</option>
+          <option value="autre">Autre</option>
+        </select>
+        <span  class="orientation_other_label" style="display:none;">&nbsp;Précisez:&nbsp;</span>
+        <input id="orientation_other" class="orientation_other" style="display:none;" type="text" name="orientation_other" value=""/>
+        <script type="text/javascript">
+          function olympiades_orientation_changed() {
+            if ($('#orientation').val() == 'autre') {
+              $('form#olympiades_register .orientation_other_label').show();
+              $('form#olympiades_register .orientation_other').show();
+            } else {
+              $('#orientation_other').val('');
+              $('form#olympiades_register .orientation_other_label').hide();
+              $('form#olympiades_register .orientation_other').hide();
+            }
+          }
+        </script>
+      </div>
+
       <div>
         <label>Centre où vous souhaitez passer la demi-finale</label>
         <select name="center">
@@ -91,8 +126,7 @@
       
       <div>
         <label>Comment avez-vous eu connaissance des Olympiades ?</label>
-        <select name="knows_how" id="olympiades_field_center" onchange="javascript:olympiades_enable_other()">
-          <option value=""></option>
+        <select id="knowshow" name="knowshow" id="knowshow" onchange="javascript:olympiades_knowshow_changed()">
           <option value="professeur">Professeur</option>
           <option value="affiche">Affiche</option>
           <option value="acm-sc.be">Site de l'ACM Student Chapter</option>
@@ -100,31 +134,32 @@
           <option value="presse">Une connaissance</option>
           <option value="autre">Autre</option>
         </select>
-        <span id="olympiades_field_other_label" style="display:none;">&nbsp;Autre:</span>
-        <input id="olympiades_field_other" style="display:none;" type="text" name="knows_other" value=""/>
+        <span class="knowshow_other_label" style="display:none;">&nbsp;Autre:&nbsp;</span>
+        <input id="knowshow_other" class="knowshow_other" style="display:none;" type="text" name="knowshow_other" value=""/>
+        <script type="text/javascript">
+          function olympiades_knowshow_changed() {
+            if ($('#knowshow').val() == 'autre') {
+              $('form#olympiades_register .knowshow_other_label').html('&nbsp;Précisez:&nbsp;');
+              $('form#olympiades_register .knowshow_other_label').show();
+              $('form#olympiades_register .knowshow_other').show();
+            } else if ($('#knowshow').val() == 'professeur') {
+              $('form#olympiades_register .knowshow_other_label').html('&nbsp;Nom du professeur:&nbsp;');
+              $('form#olympiades_register .knowshow_other_label').show();
+              $('form#olympiades_register .knowshow_other').show();
+            } else {
+              $('#knowshow_other').val('');
+              $('form#olympiades_register .knowshow_other_label').hide();
+              $('form#olympiades_register .knowshow_other').hide();
+            }
+          }
+        </script>
       </div>
       
     </fieldset>
     
     <input type="submit" value="M'inscrire">
     
-    <script type="text/javascript">
-      function olympiades_enable_other() {
-        if ($('select#olympiades_field_center').val() == 'autre') {
-          $('#olympiades_field_other_label').html('&nbsp;Précisez:');
-          $('#olympiades_field_other_label').show();
-          $('input#olympiades_field_other').show();
-        } else if ($('select#olympiades_field_center').val() == 'professeur') {
-          $('#olympiades_field_other_label').html('&nbsp;Nom du professeur:');
-          $('#olympiades_field_other_label').show();
-          $('input#olympiades_field_other').show();
-        } else {
-          $('#olympiades_field_other_label').hide();
-          $('input#olympiades_field_other').hide();
-        }
-      }
-    </script>
-    +{action.ajax_form_preparer}
+    +{action.ajax_form_preparer(:form_id => 'olympiades_register')}
 </form>
 }
   
