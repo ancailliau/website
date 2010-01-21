@@ -14,17 +14,28 @@
   <p>Le meilleur moyen de nous contacter est sans aucun doute de façon électronique via l'adresse e-mail 
      <a href="mailto:info@uclouvain.acm-sc.be">info@uclouvain.acm-sc.be</a> ou encore via le formulaire suivant :</p>
 
-  <form id="contact-form">
-    <div>
-      <label>Votre adresse e-mail</label>
-      <input type="text" name="mail"/>
-    </div>
-    <div>
-      <label>Votre message, commentaire ou question</label>
-      <textarea style="width:100%; height:120px" name="question">
-      </textarea>
-    </div>
-  </form>
+  ={controllers.main.send_message as action}{
+    <form id="{action.id}">
+      <div class="feedback"></div>
+      <div>
+        <label>Votre adresse e-mail</label>
+        <input style="width: 100%;" type="text" name="mail"/>
+      </div>
+      <div>
+        <label>Le sujet de votre message</label>
+        <input style="width: 100%;" type="text" name="subject"/>
+      </div>
+      <div>
+        <label>Votre message, commentaire ou question</label>
+        <textarea style="width:100%; height:120px; margin-bottom: 10px;" name="message">
+        </textarea>
+      </div>
+      <div>
+        <input type="submit" value="Envoyer"/>
+      </div>
+      +{action.ajax_form_preparer}
+    </form>
+  }
 
   <p>Vous pouvez également nous contacter par courrier papier à l'adresse suivante :</p>
 
@@ -39,7 +50,7 @@
 
   <p>Nous sommes en constante recherche de dons et de sponsors pour l'organisation de chacune de nos activités et pour le 
      fonctionnement de l'association. Si vous désirez nous soutenir financièrement ou matériellement, prenez contact avec 
-     le responsable sponsor, Damien Leroy, à l'adresse e-mail suivante: 
+     le responsable sponsor, Damien Leroy, à l'adresse e-mail suivante : 
      <a href="mailto:sponsors@uclouvain.acm-sc.be">sponsors@uclouvain.acm-sc.be</a>.</p>
 
   <h3>Site web</h3>

@@ -199,6 +199,7 @@ body.index #main p {
 /* ======================================================================= Feedback */
 
 #main form .feedback ul {
+	width: 100%;
 	padding-right: 0px;
 	margin-left: 30px;
 }
