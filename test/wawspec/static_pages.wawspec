@@ -1,7 +1,7 @@
 scenario __FILE__ do
   locations = %w{index activites latex scienceinfuse/index scienceinfuse/acces
                  scienceinfuse/sponsoring securite-vie-privee/index securite-vie-privee/orateurs
-                 securite-vie-privee/sponsoring events/index mentions-legales} 
+                 securite-vie-privee/sponsoring events/index mentions-legales contact} 
   locations.each do |loc|
     assert_not_404(Waw.config.web_base + loc)
     assert_i_see "<!-- pages/#{loc}.wtpl -->", "User is correctly on #{loc}"
