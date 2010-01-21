@@ -20,10 +20,11 @@ echo 'If a password is prompted, it is the one for sudo'
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 
 echo 'Installing required ruby gems'
+sudo gem install --no-rdoc --no-ri vendor/json-1.1.9.gem
 sudo gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
 sudo gem install --no-rdoc --no-ri vendor/rack-1.1.0.gem
-sudo gem install --no-rdoc --no-ri vendor/wlang-0.8.4.gem
-sudo gem install --no-rdoc --no-ri vendor/waw-0.1.0.gem
+sudo gem install --no-rdoc --no-ri vendor/wlang-0.8.5.gem
+sudo gem install --no-rdoc --no-ri vendor/waw-0.1.2.gem
 
 #
 # The code expects an 'acmscw' postgresql database, accessible through an 
