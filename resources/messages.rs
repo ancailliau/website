@@ -33,6 +33,10 @@ activation_required         "<p>Vous avez modifié votre adresse e-mail. Vous de
 # About olympiades
 olympiades_mandatory_fields   "Les champs des deux premières sections sont tous obligatoires"
 invalid_birthdate             "Votre date de naissance doit respecter JJ/MM/AAAA"
+olympiades_orientation_missing "Vous devez préciser votre orientation d'étude"
+olympiades_orientation_other_missing "Vous devez préciser votre orientation d'étude"
+olympiades_knowshow_other_missing "Vous devez préciser la manière dont vous avez eu connaissance des olympiades"
 olympiades_registration_ok    "<p>Nous avons bien reçu toutes vos données, votre inscription vous sera confirmée par e-mail.</p>"\
                               "<p>Si vous n'avez pas reçu cette confirmation endéans les 5 jours, veuillez nous contacter sur "\
                               "<a href='mailto:info@uclouvain-acm-sc.be'>info@uclouvain-acm-sc.be</a></p>"
+                              

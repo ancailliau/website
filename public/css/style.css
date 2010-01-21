@@ -37,7 +37,6 @@ a img {
 	font-size: 1.2em;
 	color: #666;
 	margin: 15px 0px 5px 0px;
-	width: 75%;
 }
 #main form label {
 	display: block;
@@ -199,10 +198,11 @@ body.index #main p {
 
 /* ======================================================================= Feedback */
 
-form .feedback ul {
+#main form .feedback ul {
+	padding-right: 0px;
 	margin-left: 30px;
 }
-form .feedback ul li {
+#main form .feedback ul li {
 	color: red;
 }
 

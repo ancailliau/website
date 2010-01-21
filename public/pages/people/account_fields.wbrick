@@ -10,14 +10,12 @@
   <div>
     <label>Mot de passe (entre 8 et 15 caractères)</label>
     <input type="password" name="password" value="{people[:password]}"/>
-    confirmation: <input type="password" name="password_confirm" value="{people[:password]}"/>
+    <label style="display: inline">&nbsp;confirmation:&nbsp;</label><input type="password" name="password_confirm" value="{people[:password]}"/>
   </div>
   
-  <div>
-    <p>
-      <input type="checkbox" name="newsletter" value="true" ?{people[:newsletter]}{checked="checked"}>
-      Je souhaite m'abonner à la newsletter <br/>(au maximum un e-mail par mois)</input>
-    </p>
+  <div style="margin-top: 10px;">
+    <input type="checkbox" name="newsletter" value="true" ?{people[:newsletter]}{checked="checked"}/>
+    <label style="display: inline">Je souhaite m'abonner à la newsletter <br/>(au maximum un e-mail par mois)</label>
   </div>
 </fieldset>
 

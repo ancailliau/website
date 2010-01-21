@@ -71,6 +71,8 @@
             if ($('#category').val() == 'superieur') {
               $('form#olympiades_register .orientation').show();
             } else {
+              $('#orientation').val('');
+              $('#orientation_other').val('');
               $('form#olympiades_register .orientation').hide();
             }
           }
@@ -85,6 +87,7 @@
       <div class="orientation" style="display:none">
         <label>Orientation</label>
         <select id="orientation" name="orientation" onchange="javascript:olympiades_orientation_changed()">
+          <option value=""></option>
           <option value="civil">Ingénieur Civil</option>
           <option value="industriel">Ingénieur Industriel</option>
           <option value="sciences">Sciences Informatiques</option>
@@ -127,15 +130,18 @@
       <div>
         <label>Comment avez-vous eu connaissance des Olympiades ?</label>
         <select id="knowshow" name="knowshow" id="knowshow" onchange="javascript:olympiades_knowshow_changed()">
-          <option value="professeur">Professeur</option>
+          <option value=""></option>
           <option value="affiche">Affiche</option>
-          <option value="acm-sc.be">Site de l'ACM Student Chapter</option>
+          <option value="professeur">Professeur</option>
+          <option value="acm-sc.be">ACM Student Chapter</option>
           <option value="facebook">Facebook</option>
           <option value="presse">Une connaissance</option>
           <option value="autre">Autre</option>
         </select>
-        <span class="knowshow_other_label" style="display:none;">&nbsp;Autre:&nbsp;</span>
-        <input id="knowshow_other" class="knowshow_other" style="display:none;" type="text" name="knowshow_other" value=""/>
+        <div style="margin-top:5px; padding-left: 10px;">
+          <span class="knowshow_other_label">&nbsp;Autre:&nbsp;</span>
+          <input id="knowshow_other" class="knowshow_other" style="display:none;" type="text" name="knowshow_other" value=""/>
+        </div>
         <script type="text/javascript">
           function olympiades_knowshow_changed() {
             if ($('#knowshow').val() == 'autre') {
@@ -157,9 +163,16 @@
       
     </fieldset>
     
-    <input type="submit" value="M'inscrire">
+    <input type="submit" value="M'inscrire"/>
     
     +{action.ajax_form_preparer(:form_id => 'olympiades_register')}
+    <script type="text/javascript">
+      $(document).ready(function() {
+        olympiades_category_changed();
+        olympiades_orientation_changed();
+        olympiades_knowshow_changed();
+   	  });
+    </script>
 </form>
 }
   
