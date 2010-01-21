@@ -8,7 +8,6 @@ body {
 	/* With this font-size, we have that 100% = 10px which is a convenient
 	 * value to use */
 	font-size: 62.5%;
-
 	padding-bottom: 60px;
 }
 
@@ -19,32 +18,9 @@ a {
 a:hover {
 	cursor: pointer;
 }
-
 a img {
 	border: 0px none;
 }
-
-
-form label, form span {
-	font-size: 1.2em;
-	color: #666;
-	margin: 15px 0px 5px 0px;
-	width: 75%;
-}
-form label {
-	display: block;
-}
-form fieldset {
-	margin: 15px 130px 15px 0px;
-	padding: 7px 7px 15px 7px;
-}
-form fieldset legend {
-	font-size: 1.2em;
-}
-blockquote {
-	
-}
-
 
 #header,
 #main,
@@ -52,6 +28,29 @@ blockquote {
 	width: 680px;
 	margin: 0 auto;
 }
+
+/* ======================================================================= Forms inside main */
+#main form {
+	padding-right: 240px;
+}
+#main form label, form span {
+	font-size: 1.2em;
+	color: #666;
+	margin: 15px 0px 5px 0px;
+	width: 75%;
+}
+#main form label {
+	display: block;
+}
+#main form fieldset {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 7px 7px 15px 7px;
+}
+#main form fieldset legend {
+	font-size: 1.2em;
+}
+
 
 /* ======================================================================= Header */
 #header {
@@ -129,6 +128,12 @@ blockquote {
 	font-size: 1em;
 	color: #999;
 	text-align: right;
+}
+#main .side ul {
+	font-size: 1.2em;
+}
+#main .side ul ul {
+	font-size: 1em;
 }
 /* ======================================================================= Main */
 
@@ -267,7 +272,6 @@ form .feedback ul li {
 	left: 480px;
 	width: 200px;
 }
-
 #submenu ul {
 	width: 200px;
 }

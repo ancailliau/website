@@ -13,35 +13,14 @@ wawaccess do
 
   # We match .wtpl files using wlang
   match file(:extension => '.wtpl') do
-    context = {"title"       => AcmScW.title_of(served_file),
-               "pagerequest" => served_file,
-               "theclass"    => (served_file == 'pages/index.wtpl' ? 'index' : 'other'),
-               "env"         => Waw.env,
-               "request"     => Waw.request, 
-               "response"    => Waw.response,
-               "session"     => Waw.session}
-    Waw.resources.each {|k, v| context[k.to_s] = v}
-    
-    template = File.join(folder, '../templates/layout.wtpl')
-    contents = WLang.file_instantiate(template, context)
-    [200, {'Content-Type' => 'text/html'}, [contents]]
+    wlang '../templates/layout.wtpl', {:title    => AcmScW.title_of(served_file),
+                                       :theclass => (served_file == 'pages/index.wtpl' ? 'index' : 'other')}
   end
   
   # When the file cannot be found
   match true do
     if /\.wtpl$/ =~ served_file
-      context = {"title"       => AcmScW.title_of(served_file),
-                 "pagerequest" => 'pages/404.wtpl',
-                 "theclass"    => 'other',
-                 "env"         => Waw.env,
-                 "request"     => Waw.request, 
-                 "response"    => Waw.response,
-                 "session"     => Waw.session}
-      Waw.resources.each {|k, v| context[k.to_s] = v}
-    
-      template = File.join(folder, '../templates/layout.wtpl')
-      contents = WLang.file_instantiate(template, context)
-      [404, {'Content-Type' => 'text/html'}, [contents]]
+      apply '/pages/404.wtpl', 404
     else
       apply "#{served_file}.wtpl"
     end

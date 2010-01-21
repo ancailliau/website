@@ -1,133 +1,130 @@
-<div id="main">
-  
-  <h2>Olympiades d'Informatique &mdash; Inscriptions</h2>
-  
-  ={controllers.olympiades.olympiades_register as action}{
-    <form method="post" enctype="multipart/form-data" id="{action.id}">
-      <div class="feedback"></div>
-      
-      <fieldset>
-        <legend>A propos de vous et votre école (obligatoire)</legend>
+<h2>Olympiades d'Informatique &mdash; Inscriptions</h2>
 
-        <div>
-          <div style="float:left">
-            <label for="gender">Sexe</label>
-            <select name="gender" style="margin-left:0px;">
-              <option value="M">Mr.</option>
-              <option value="F">Mme.</option>
-            </select>
-          </div>
-          <div style="float:left; margin-left: 15px">
-            <label for="first_name">Prénom</label>
-            <input type="text" name="first_name"/>
-          </div>
-          <div style="float:left; margin-left: 15px">
-            <label for="last_name">Nom</label>
-            <input type="text" name="last_name"/>
-          </div>
-          <div style="clear: left"></div>
-        </div>
+={controllers.olympiades.olympiades_register as action}{
+  <form method="post" enctype="multipart/form-data" id="{action.id}">
+    <div class="feedback"></div>
+    
+    <fieldset>
+      <legend>A propos de vous et votre école (obligatoire)</legend>
 
-        <div>
-          <label>Votre adresse e-mail <span style="color:red; font-size:1em;">(utilisée pour les communications officielles,
-          doit donc être consultée régulièrement)</span></label>
-          <input type="text" name="mail" style="width:360px"/>
-        </div>
-
-        <div>
-          <label>Date de naissance</label>
-          <input type="text" name="birthdate" style="width:130px"/>
-        </div>
-        <div style="clear:both"></div>
-
-        <div>
-          <label>Rue et numéro</label>
-          <input type="text" name="street" style="width:360px"/>
-        </div>
-
-        <div>
-          <label>Code postal et ville</label>
-          <input type="text" name="postal_code" style="width:75px"/>
-          <input type="text" name="city" style="width:275px"/>
-        </div>
-
-        <div>
-          <label>Nom et ville de votre école/haute école/université</label>
-          <input type="text" name="school_name" style="width:225px"/>
-          <input type="text" name="school_city" style="width:125px"/>
-        </div>
-
-      </fieldset>
-
-      <fieldset>
-        <legend>A propos du concours (obligatoire)</legend>
-        
-        <div>
-          <label>Catégorie dans laquelle vous concourrez</label>
-          <select name="category">
-            <option value="secondaire">Secondaire</option>
-            <option value="superieur">Supérieur</option>
+      <div>
+        <div style="float:left">
+          <label for="gender">Sexe</label>
+          <select name="gender" style="margin-left:0px;">
+            <option value="M">Mr.</option>
+            <option value="F">Mme.</option>
           </select>
         </div>
+        <div style="float:left; margin-left: 15px">
+          <label for="first_name">Prénom</label>
+          <input type="text" name="first_name"/>
+        </div>
+        <div style="float:left; margin-left: 15px">
+          <label for="last_name">Nom</label>
+          <input type="text" name="last_name"/>
+        </div>
+        <div style="clear: left"></div>
+      </div>
 
-        <div>
-          <label>Année d'étude</label>
-          <input type="text" name="study_level" style="width:125px"/>
-        </div>
-        
-        <div>
-          <label>Centre où vous souhaitez passer la demi-finale</label>
-          <select name="center">
-            <option value="ucl">UCL (Louvain-la-Neuve)</option>
-            <option value="fundp">FUNDP (Namur)</option>
-            <option value="umons">UMons (Mons)</option>
-            <option value="ulg">ULg (Liège)</option>
-            <option value="ulb">ULB (Bruxelles)</option>
-            <option value="hers">HERS (Libramont)</option>
-          </select>
-        </div>
-      </fieldset>
+      <div>
+        <label>Votre adresse e-mail <span style="color:red; font-size:1em;">(utilisée pour les communications officielles,
+        doit donc être consultée régulièrement)</span></label>
+        <input type="text" name="mail" style="width:360px"/>
+      </div>
 
-      <fieldset>
-        <legend>Autres informations</legend>
-        
-        <div>
-          <label>Comment avez-vous eu connaissance des Olympiades ?</label>
-          <select name="knows_how" id="olympiades_field_center" onchange="javascript:olympiades_enable_other()">
-            <option value=""></option>
-            <option value="professeur">Professeur</option>
-            <option value="affiche">Affiche</option>
-            <option value="acm-sc.be">Site de l'ACM Student Chapter</option>
-            <option value="facebook">Facebook</option>
-            <option value="presse">Une connaissance</option>
-            <option value="autre">Autre</option>
-          </select>
-          <span id="olympiades_field_other_label" style="display:none;">&nbsp;Autre:</span>
-          <input id="olympiades_field_other" style="display:none;" type="text" name="knows_other" value=""/>
-        </div>
-        
-      </fieldset>
+      <div>
+        <label>Date de naissance</label>
+        <input type="text" name="birthdate" style="width:130px"/>
+      </div>
+      <div style="clear:both"></div>
+
+      <div>
+        <label>Rue et numéro</label>
+        <input type="text" name="street" style="width:360px"/>
+      </div>
+
+      <div>
+        <label>Code postal et ville</label>
+        <input type="text" name="postal_code" style="width:75px"/>
+        <input type="text" name="city" style="width:275px"/>
+      </div>
+
+      <div>
+        <label>Nom et ville de votre école/haute école/université</label>
+        <input type="text" name="school_name" style="width:225px"/>
+        <input type="text" name="school_city" style="width:125px"/>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>A propos du concours (obligatoire)</legend>
       
-      <input type="submit" value="M'inscrire">
+      <div>
+        <label>Catégorie dans laquelle vous concourrez</label>
+        <select name="category">
+          <option value="secondaire">Secondaire</option>
+          <option value="superieur">Supérieur</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Année d'étude</label>
+        <input type="text" name="study_level" style="width:125px"/>
+      </div>
       
-      <script type="text/javascript">
-        function olympiades_enable_other() {
-          if ($('select#olympiades_field_center').val() == 'autre') {
-            $('#olympiades_field_other_label').html('&nbsp;Précisez:');
-            $('#olympiades_field_other_label').show();
-            $('input#olympiades_field_other').show();
-          } else if ($('select#olympiades_field_center').val() == 'professeur') {
-            $('#olympiades_field_other_label').html('&nbsp;Nom du professeur:');
-            $('#olympiades_field_other_label').show();
-            $('input#olympiades_field_other').show();
-          } else {
-            $('#olympiades_field_other_label').hide();
-            $('input#olympiades_field_other').hide();
-          }
+      <div>
+        <label>Centre où vous souhaitez passer la demi-finale</label>
+        <select name="center">
+          <option value="ucl">UCL (Louvain-la-Neuve)</option>
+          <option value="fundp">FUNDP (Namur)</option>
+          <option value="umons">UMons (Mons)</option>
+          <option value="ulg">ULg (Liège)</option>
+          <option value="ulb">ULB (Bruxelles)</option>
+          <option value="hers">HERS (Libramont)</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Autres informations</legend>
+      
+      <div>
+        <label>Comment avez-vous eu connaissance des Olympiades ?</label>
+        <select name="knows_how" id="olympiades_field_center" onchange="javascript:olympiades_enable_other()">
+          <option value=""></option>
+          <option value="professeur">Professeur</option>
+          <option value="affiche">Affiche</option>
+          <option value="acm-sc.be">Site de l'ACM Student Chapter</option>
+          <option value="facebook">Facebook</option>
+          <option value="presse">Une connaissance</option>
+          <option value="autre">Autre</option>
+        </select>
+        <span id="olympiades_field_other_label" style="display:none;">&nbsp;Autre:</span>
+        <input id="olympiades_field_other" style="display:none;" type="text" name="knows_other" value=""/>
+      </div>
+      
+    </fieldset>
+    
+    <input type="submit" value="M'inscrire">
+    
+    <script type="text/javascript">
+      function olympiades_enable_other() {
+        if ($('select#olympiades_field_center').val() == 'autre') {
+          $('#olympiades_field_other_label').html('&nbsp;Précisez:');
+          $('#olympiades_field_other_label').show();
+          $('input#olympiades_field_other').show();
+        } else if ($('select#olympiades_field_center').val() == 'professeur') {
+          $('#olympiades_field_other_label').html('&nbsp;Nom du professeur:');
+          $('#olympiades_field_other_label').show();
+          $('input#olympiades_field_other').show();
+        } else {
+          $('#olympiades_field_other_label').hide();
+          $('input#olympiades_field_other').hide();
         }
-      </script>
-      +{action.ajax_form_preparer}
-  </form>
-  }
-</div>
+      }
+    </script>
+    +{action.ajax_form_preparer}
+</form>
+}
   

@@ -1,0 +1,22 @@
+scenario __FILE__ do
+  
+  because(".wawaccess is are correctly written") {
+    i_reach Waw.config.web_base + 'olympiades'
+    i_see "Olympiades d'Informatique"
+
+    %w{index equipe demi-finales formation inscription olympiades-internationales 
+      questions reglement}.each {|word|
+      i_reach Waw.config.web_base + "olympiades/#{word}"
+      i_see "<!-- olympiades-wspec: #{word}.wtpl -->"
+    }
+  }
+  
+  because(".wawaccess is secure") {
+    i_dont_reach Waw.config.web_base + 'olympiades/.wawaccess'
+    i_dont_reach Waw.config.web_base + 'pages/olympiades/.wawaccess'
+    i_dont_reach Waw.config.web_base + 'olympiades/layout.wtpl'
+    i_dont_reach Waw.config.web_base + 'olympiades/menu.wtpl'
+    i_dont_reach Waw.config.web_base + 'pages/olympiades/layout.wtpl'
+  }
+  
+end

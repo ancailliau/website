@@ -1,5 +1,5 @@
 scenario __FILE__ do
-  locations = %w{index activites latex olympiades/index scienceinfuse/index scienceinfuse/acces
+  locations = %w{index activites latex scienceinfuse/index scienceinfuse/acces
                  scienceinfuse/sponsoring securite-vie-privee/index securite-vie-privee/orateurs
                  securite-vie-privee/sponsoring events/index mentions-legales} 
   locations.each do |loc|

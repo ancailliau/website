@@ -1,0 +1,14 @@
+<ul id="submenu">
+	<li><a href="/olympiades">Présentation</a></li>
+	<li><a href="/olympiades/demi-finales">Demi-Finales</a></li>
+		<ul>
+			<li><a href="/olympiades/inscription">Inscriptions</a></li>
+		</ul>
+	<li><a href="/olympiades/finales">Finales</a></li>
+		<ul>
+			<li><a href="/olympiades/formation">Formation</a></li>
+		</ul>
+	<li><a href="/olympiades/questions">Exemples de questions</a></li>
+	<li><a href="/olympiades/olympiades-internationales">Olympiades Internationales</a></li>
+	<li><a href="/olympiades/equipe">Équipe</a></li>
+</ul>
