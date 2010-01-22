@@ -6,8 +6,9 @@ deploy_mode       'devel'
 
 # The url to put in <base href=""/>. This url should always include http://
 # and should not contain the index.html suffix
-web_domain        'uclouvain.acm-sc.be'
-web_base          'http://uclouvain.acm-sc.be/'
+web_domain        '127.0.0.1'
+web_port          9292
+web_base          "http://#{web_domain}:#{web_port}/"
 
 # Should google analytics code be included. This flag should be set to true
 # only in production mode.
