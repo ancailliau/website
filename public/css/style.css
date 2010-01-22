@@ -346,7 +346,7 @@ span.explain {
 	display: none;
 }
 
-form#newsletter_subscribe label.feedback {
+form#newsletter_form label.feedback {
 	height:30px;
 }
 

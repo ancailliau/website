@@ -20,11 +20,18 @@
 
 	<div class="grey-box">
 	  ={controllers.people.newsletter_subscribe as action}{
-      <form method="post" enctype="multipart/form-data" id="{action.id}">
+      <form method="post" enctype="multipart/form-data" id="newsletter_form">
         <label for="mail" class="feedback">Inscrivez-vous<br /> à la newsletter</label>
-  			<input type="text" value="john.doe@mail.com" name="mail" id="mail"/>
+  			<input type="text" value="john.doe@mail.com" name="mail" id="mail" onfocus="javascript:newsletter_mail_onfocus()"/>
   			<input type="submit" value="Go »" />
-      	+{action.ajax_form_preparer}
+      	+{action.ajax_form_preparer(:form_id => 'newsletter_form')}
+      	<script type="text/javascript">
+      	  function newsletter_mail_onfocus() {
+      	    if ($('#mail').val() == 'john.doe@mail.com') {
+      	      $('#mail').val('');
+      	    }
+      	  }
+      	</script>
       </form>
 	  }
 	</div>

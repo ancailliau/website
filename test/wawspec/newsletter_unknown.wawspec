@@ -10,7 +10,8 @@ scenario __FILE__ do
   assert_form_service_invoke "Successful newsletter invocation", {
     :service    => "/webserv/people/newsletter_subscribe",
     :arguments  => people,
-    :result     => "success/ok"
+    :result     => "success/ok",
+    :check_form => false
   }
   
   # Check the confirmation message
