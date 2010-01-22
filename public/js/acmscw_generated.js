@@ -27,6 +27,7 @@ messages['olympiades_orientation_other_missing'] = "Vous devez préciser votre o
 messages['olympiades_registration_ok'] = "<p>Nous avons bien reçu toutes vos données, votre inscription vous sera confirmée par e-mail.</p><p>Si vous n'avez pas reçu cette confirmation endéans les 5 jours, veuillez nous contacter sur <a href='mailto:info@uclouvain-acm-sc.be'>info@uclouvain-acm-sc.be</a></p>";
 messages['passwords_dont_match'] = "Les mots de passe ne correspondent pas";
 messages['server_error'] = "Une erreur est survenue. Veuillez réessayer plus tard";
+messages['should_not_fail'] = "La validation de ce formulaire n'aurait pas du échouer.<br/> si le problème persiste, veuillez prendre contact avec le webmaster";
 messages['subscribe_account_ok'] = "<p>Un e-mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['unknown_event'] = "Cet événement n'est pas connu";
 messages['unknown_user'] = "Cette adresse e-mail est inconnue dans notre base de données";

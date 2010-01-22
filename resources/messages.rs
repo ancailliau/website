@@ -1,5 +1,7 @@
 # Strong error message
 server_error                "Une erreur est survenue. Veuillez réessayer plus tard"
+should_not_fail             "La validation de ce formulaire n'aurait pas du échouer.<br/> "\
+                            "si le problème persiste, veuillez prendre contact avec le webmaster"
 
 # Validation messages
 invalid_email               "Adresse e-mail invalide"
