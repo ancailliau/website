@@ -28,7 +28,12 @@ scenario __FILE__ do
                   base.merge(:orientation => 'blabla'),
                   base.merge(:gender => 'blabla'),
                   base.merge(:category => 'blabla'),
-                  base.merge(:center => 'blabla'),]
+                  base.merge(:center => 'blabla'),
+                  base.merge(:birthdate => "00/12/1990"),
+                  base.merge(:birthdate => "32/12/1990"),
+                  base.merge(:birthdate => "32/00/1990"),
+                  base.merge(:birthdate => "32/13/1990"),
+                  base.merge(:birthdate => "12/11/1765")]
   
   valid_data.each do |data|
     assert_service_invoke "Successful subscribe service invocation", {

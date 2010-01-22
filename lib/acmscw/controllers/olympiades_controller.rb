@@ -25,7 +25,7 @@ module AcmScW
                     
         # Regular expressions for mail and birthdate
         validation :mail, mail, :invalid_email
-        validation :birthdate, /\d\d\/\d\d\/\d\d\d\d/, :invalid_birthdate
+        validation :birthdate, /(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/](19|20)\d\d/, :invalid_birthdate
 
         # combo boxes, that should never fail
         validation :gender,      is.in(*GENDER),                :should_not_fail
