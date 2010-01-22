@@ -9,6 +9,7 @@
 # Meeting those requirements is behind the scope of this INSTALL file
 
 # Gems (see vendor folder)
+#   json >= 1.1.9  (sudo gem install sequel, for the last version)
 #   sequel >= 3.8  (sudo gem install sequel, for the last version)
 #   rack >= 1.1.0 (sudo gem install rack, for the last version)
 #   wlang >= 0.8.4 (or see http://github.com/blambeau/wlang for the last version)

@@ -1,0 +1,76 @@
+<div id="main">
+  <h2>Contact</h2>
+
+  <p>L'UCLouvain ACM Student Chapter ASBL a été fondée en septembre 2009. Il s'agit d'une association filiale de 
+     l'<a href="http://www.acm.org">ACM</a> dont le but est de promouvoir les sciences informatique. Elle s'adresse 
+     aux personnes intéressées par ce domaine (étudiants, professeurs, professionels de l'ICT, ...). Pour ce faire, 
+     elle organise différentes activités telles que des conférences, des tutoriels et des concours de programmation.</p>
+
+  <h3>Contacter l'association</h3>
+
+  <p>N'hésitez pas à nous faire part de vos suggestions, idées, remarques ou questions à propos de notre association et de 
+     nos activités.</p>
+
+  <p>Le meilleur moyen de nous contacter est sans aucun doute de façon électronique via l'adresse e-mail 
+     <a href="mailto:info@uclouvain.acm-sc.be">info@uclouvain.acm-sc.be</a> ou encore via le formulaire suivant :</p>
+
+  ={controllers.main.send_message as action}{
+    <form id="{action.id}">
+      <div class="feedback"></div>
+      <div>
+        <label>Votre adresse e-mail</label>
+        <input style="width: 100%;" type="text" name="mail"/>
+      </div>
+      <div>
+        <label>Le sujet de votre message</label>
+        <input style="width: 100%;" type="text" name="subject"/>
+      </div>
+      <div>
+        <label>Votre message, commentaire ou question</label>
+        <textarea style="width:100%; height:120px; margin-bottom: 10px;" name="message"></textarea>
+      </div>
+      <div>
+        <input type="submit" value="Envoyer"/>
+      </div>
+      +{action.ajax_form_preparer}
+    </form>
+  }
+
+  <p>Vous pouvez également nous contacter par courrier papier à l'adresse suivante :</p>
+
+  <blockquote>
+  	UCLouvain ACM Student Chapter ASBL<br />
+  	Place Sainte Barbe, 2<br />
+  	1348 Louvain-la-Neuve<br />
+  	Belgique
+  </blockquote>
+
+  <h3>Dons et Sponsoring</h3>
+
+  <p>Nous sommes en constante recherche de dons et de sponsors pour l'organisation de chacune de nos activités et pour le 
+     fonctionnement de l'association. Si vous désirez nous soutenir financièrement ou matériellement, prenez contact avec 
+     le responsable sponsor, Damien Leroy, à l'adresse e-mail suivante : 
+     <a href="mailto:sponsors@uclouvain.acm-sc.be">sponsors@uclouvain.acm-sc.be</a>.</p>
+
+  <h3>Site web</h3>
+
+  <p>Pour tout problème lié à l'utilisation du site web ou pour signaler toute erreur ou faute que vous trouveriez, 
+     prenez contact avec le webmaster à l'adresse e-mail suivante : 
+     <a href="mailto:webmaster@uclouvain.acm-sc.be">webmaster@uclouvain.acm-sc.be</a>.</p>
+
+  <h3>Équipe</h3>
+
+  <p>L'association est actuellement composée de :</p>
+
+  <ul>
+  	<li>Sébastien Combéfis, <em>Président</em> (<a href="mailto:sebastien.combefis@uclouvain.acm-sc.be">sebastien.combefis@uclouvain.acm-sc.be</a>) ;</li>
+  	<li>Antoine Cailliau, <em>Vice-Président</em> (<a href="mailto:antoine.cailliau@uclouvain.acm-sc.be">antoine.cailliau@uclouvain.acm-sc.be</a>) ;</li>
+  	<li>Damien Leroy, <em>Secrétaire et Responsable sponsors</em> (<a href="mailto:damien.leroy@uclouvain.acm-sc.be">damien.leroy@uclouvain.acm-sc.be</a>) ;</li>
+  	<li>Pierre Bouilliez, <em>Trésorier</em> (<a href="mailto:pierre.bouilliez@uclouvain.acm-sc.be">pierre.bouilliez@uclouvain.acm-sc.be</a>) ;</li>
+  	<li>José Vander Meulen (<a href="mailto:jose.vandermeulen@uclouvain.acm-sc.be">jose.vandermeulen@uclouvain.acm-sc.be</a>) ;</li>
+  	<li>et nos nombreux membres nous apportant une aide précieuse.</li>
+  </ul>
+
+  <p>Certaines activités ont des responsables spécifiques dont vous trouverez les noms sur les pages de ces dernières. 
+     Pour toute question spécifique à un évènement précis, préfèrez contacter directement ces responsables.</p>
+</div>

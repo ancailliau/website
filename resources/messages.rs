@@ -13,6 +13,8 @@ mail_already_in_use         "Cette adresse e-mail est déjà utilisée"
 user_must_be_logged         "Vous devez être connecté pour accéder/modifier ces informations"
 unknown_user                "Cette adresse e-mail est inconnue dans notre base de données"
 unknown_event               "Cet événement n'est pas connu"
+missing_subject             "Le sujet de votre demande ne peut pas être vide"
+missing_message             "Le contenu de votre message ne peut pas être vide"
 
 # Ok feedback messages
 newsletter_subscribe_ok     "Vous êtes maintenant inscrit"
@@ -28,7 +30,7 @@ activation_request_ok       "<p>Un e-mail vous permettant de réactiver votre co
 subscribe_account_ok        "<p>Un e-mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>"
 activation_required         "<p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte."\
                             "<p>Un e-mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>"
-
+contact_ok                  "<p>Votre message nous a bien été envoyé. Nous y donnerons suite prochainement.</p>"
 
 # About olympiades
 olympiades_mandatory_fields   "Les champs des deux premières sections sont tous obligatoires"

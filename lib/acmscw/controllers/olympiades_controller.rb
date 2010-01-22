@@ -19,7 +19,7 @@ module AcmScW
         validation [:category, :study_level, :center], mandatory, :olympiades_mandatory_fields
       }
       routing {
-        upon 'validation-ko' do form_validation_feedback end
+        upon 'validation-ko' do form_validation_feedback(:scroll => :top) end
         upon 'success/ok'    do redirect(:url => '/feedback?mkey=olympiades_registration_ok') end
       }
       def register(params)

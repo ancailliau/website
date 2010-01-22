@@ -14,7 +14,7 @@
   	  <a href="/people/subscribe">Inscription</a>
 		}
 		<a href="/mentions-legales">Mentions légales</a>
-		<a href="mailto:info@uclouvain.acm-sc.be">Contactez-nous</a>
+		<a href="/contact">Contactez-nous</a>
 	</p>
 	={controllers.people.login as action}{
     <form action="{action.uri}" method="post" enctype="multipart/form-data" id="login">

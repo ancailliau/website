@@ -2,7 +2,7 @@
 
 ={controllers.olympiades.register as action}{
   <form method="post" enctype="multipart/form-data" id="olympiades_register">
-    <div class="feedback"></div>
+    <div id="feedback" class="feedback"></div>
     
     <fieldset>
       <legend>A propos de vous et votre école (obligatoire)</legend>
@@ -10,7 +10,7 @@
       <div>
         <div style="float:left">
           <label for="gender">Sexe</label>
-          <select name="gender" style="margin-left:0px;">
+          <select id="gender" name="gender" style="margin-left:0px;">
             <option value="M">Mr.</option>
             <option value="F">Mme.</option>
           </select>
@@ -33,7 +33,7 @@
       </div>
 
       <div>
-        <label>Date de naissance</label>
+        <label>Date de naissance (JJ/MM/AAAA)</label>
         <input type="text" name="birthdate" style="width:130px"/>
       </div>
       <div style="clear:both"></div>

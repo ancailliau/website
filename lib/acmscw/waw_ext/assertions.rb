@@ -5,6 +5,7 @@ module Waw
       # Asserts that a mail has been sent
       def assert_mail_sent(to, msg="An e-mail has been sent to #{to}")
         assert AcmScW::Tools::MailServer.mail_has_been_sent?(to), msg
+        AcmScW::Tools::MailServer.mail_contents(to)
       end
       
       # Asserts that an account activation e-mail has been sent. When passes, 

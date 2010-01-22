@@ -7,6 +7,9 @@ Waw.rack do
   end
   map '/webserv' do
     use ::Waw::JSONController
+    map '/main' do
+      run ::AcmScW::Controllers::MainController.instance
+    end
     map '/event' do
       run ::AcmScW::Controllers::EventController.instance
     end
