@@ -5,4 +5,8 @@
    parties : des questions sur papier et des questions à résoudre sur ordinateur. La journée se terminera par la cérémonie 
    de remise des prix qui sera suivie d'un drink.</p>
 
-<p>De plus amples informations seront disponibles sur le site web en temps utiles.</p>
+<<+{../events/event_registration.wbrick using self with event: 'finale_olympiades_2010'}
+
+<p><strong>Il s'agit ici d'une inscription à l'événement, proposées aux enseignants et/ou visiteurs.
+Pour vous inscrire aux olympiades elles-mêmes, utilisez <a href="/olympiades/inscription">ce lien</a>
+</strong></p>

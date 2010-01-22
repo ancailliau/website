@@ -116,7 +116,8 @@ database.transaction do |t|
     {
       :id       => 'securite_vie_privee_2010',
       :activity => 'conferences', :name => 'Conférence : Sécurité et vie privée',
-      :date     => Time.utc(2010, 03, 16, 18, 45), :location => "UCL, Louvain-la-Neuve, Auditoire SUD18",
+      :start_time => Time.utc(2010, 03, 16, 18, 45), :end_time => Time.utc(2010, 03, 16, 22, 00),
+      :location => "UCL, Louvain-la-Neuve, Auditoire SUD18",
       :card_path => '/securite-vie-privee', :status => "planned",
       :abstract => <<-EOF
         <p>La première soirée de conférences à thème de l'UCLouvain ACM Student Chapter aura lieu le 
@@ -128,14 +129,30 @@ database.transaction do |t|
     {
       :id       => 'scienceinfuse_2010',
       :activity => 'scienceinfuse', :name => "Weekend Festival Scienceinfuse 2010",
-      :date => Time.utc(2010, 03, 28, 14, 00), :location => "UCL, Louvain-la-Neuve, Place des Sciences",
+      :start_time => Time.utc(2010, 03, 27, 14, 00), :end_time => Time.utc(2010, 03, 28, 17, 00), 
+      :location => "UCL, Louvain-la-Neuve, Place des Sciences",
       :card_path => '/scienceinfuse', :status => "planned",
       :abstract => <<-EOF
       	<p>Dans le cadre du Printemps des Sciences 2010, se déroule le samedi 27 et
       	le dimanche 28 mars 2010 à Louvain-la-Neuve un ensemble d'activités de
       	sensibilisation à l'informatique.</p>
       EOF
+    },
+    {
+      :id       => 'finale_olympiades_2010',
+      :activity => 'olympiades', :name => "Finale des Olympiades d'informatique 2010",
+      :start_time => Time.utc(2010, 05, 12, 14, 00), :end_time => Time.utc(2010, 05, 12, 19, 00), 
+      :location => "UCL, Louvain-la-Neuve",
+      :card_path => '/olympiades/finales', :status => "planned",
+      :abstract => <<-EOF
+      	<p>Les Finales des olympiades d'informatique 2010 se dérouleront à l'UCL, à Louvain-la-Neuve, 
+      	le mercredi 12 mai 2010 de 14h à 19h. L'épreuve durera trois heures et la proclamation des gagnants 
+      	sera faite le jour même, en fin de journée. Les deux concours comporteront deux parties : des 
+      	questions sur papier et des questions à résoudre sur ordinateur. La journée se terminera par la 
+      	cérémonie de remise des prix qui sera suivie d'un drink.</p>
+      EOF
     }
+    
   ]
   events.each do |evt|
     database[:events].insert(evt)

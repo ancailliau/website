@@ -5,7 +5,7 @@
   *{model.planned_events as evt}{
     <h3>${evt[:name]}</h3>
 
-    <p>${evt[:date].strftime('%d/%m/%Y à %H:%M')}, ${evt[:location]}</p>
+    <p>${evt[:start_time].strftime('%d/%m/%Y à %H:%M')}, ${evt[:location]}</p>
     +{evt[:abstract]}
     
     <<+{event_registration.wbrick using self with event: evt[:id], form_id: evt[:id]}
