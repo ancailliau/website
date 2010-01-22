@@ -1,5 +1,6 @@
 <ul id="submenu">
 	<li><a href="/olympiades">Présentation</a></li>
+	<li><a href="/olympiades/reglement">Règlement</a></li>
 	<li><a href="/olympiades/demi-finales">Demi-Finales</a></li>
 		<ul>
 			<li><a href="/olympiades/inscription">Inscriptions</a></li>
