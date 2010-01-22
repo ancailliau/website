@@ -36,7 +36,7 @@ contact_ok                  "<p>Votre message nous a bien été envoyé. Nous y 
 
 # About olympiades
 olympiades_mandatory_fields   "Les champs des deux premières sections sont tous obligatoires"
-invalid_birthdate             "Votre date de naissance doit respecter JJ/MM/AAAA"
+invalid_birthdate             "Votre date de naissance doit respecter JJ/MM/AAAA et être une date valide"
 olympiades_orientation_missing "Vous devez préciser votre orientation d'étude"
 olympiades_orientation_other_missing "Vous devez préciser votre orientation d'étude"
 olympiades_knowshow_other_missing "Vous devez préciser la manière dont vous avez eu connaissance des olympiades"
