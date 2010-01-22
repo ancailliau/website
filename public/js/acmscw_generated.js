@@ -48,7 +48,9 @@ function webserv_main_send_message(request_data, form) {
           str += '<li>' + messages[data[1][k]] + '</li>';
         }
         str += '</ul>';
-        $(form + ' .feedback').show();  $(form + ' .feedback').html(str);
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           window.location = "/feedback?mkey=contact_ok";
@@ -96,7 +98,9 @@ function webserv_people_activate_account(request_data, form) {
           str += '<li>' + messages[data[1][k]] + '</li>';
         }
         str += '</ul>';
-        $(form + ' .feedback').show();  $(form + ' .feedback').html(str);
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           window.location = "/people/account_activation_ok";
@@ -173,7 +177,9 @@ function webserv_people_subscribe_account(request_data, form) {
           str += '<li>' + messages[data[1][k]] + '</li>';
         }
         str += '</ul>';
-        $(form + ' .feedback').show();  $(form + ' .feedback').html(str);
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           window.location = "/feedback?mkey=subscribe_account_ok";
@@ -199,7 +205,9 @@ function webserv_people_update_account(request_data, form) {
           str += '<li>' + messages[data[1][k]] + '</li>';
         }
         str += '</ul>';
-        $(form + ' .feedback').show();  $(form + ' .feedback').html(str);
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           $(form + ' .feedback').show();
@@ -268,7 +276,10 @@ function webserv_olympiades_register(request_data, form) {
           str += '<li>' + messages[data[1][k]] + '</li>';
         }
         str += '</ul>';
-        $(form + ' .feedback').show();  $(form + ' .feedback').html(str);
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      $('html, body').animate( { scrollTop: 0 }, 'slow' );
+      
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           window.location = "/feedback?mkey=olympiades_registration_ok";

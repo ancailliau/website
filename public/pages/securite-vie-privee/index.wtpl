@@ -1,14 +1,9 @@
 <div id="main">
 
 	<h2>Conférence&nbsp;: Sécurité et vie privée</h2>
-
-	<ul id="submenu">
-		<li><a href="/securite-vie-privee">Programme</a></li>
-		<li><a href="/securite-vie-privee/orateurs">Orateurs</a></li>
-		<li><a href="/securite-vie-privee/acces">Accès et inscriptions</a></li>
-		<li><a href="/securite-vie-privee/sponsoring">Sponsors</a></li>
-	</ul>
-
+  
+  <<+{menu.wbrick using self with entries: 'menu.rb'}
+  
 	<p>La première soirée de conférences à thème de l'UCLouvain ACM Student Chapter aura lieu 
 	   le mardi 16 mars à Louvain-la-Neuve, dans l'auditoire SUD18. Cette soirée est composée 
 	   de deux conférences dont le thème principal est la sécurité et la vie privée.</p>

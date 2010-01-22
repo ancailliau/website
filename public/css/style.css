@@ -92,12 +92,18 @@ a img {
 	display: block;
 }
 #main p,
-#main ul {
+#main ul,
+#main ol,
+#main ol {
 	font-size: 1.2em;
 	color: #666;
 	line-height: 150%;
 	padding-right: 240px;
 	text-align: justify;
+}
+#main ol ol {
+	font-size: 1em;
+	padding-right: 0px;
 }
 #main blockquote {
 	font-size: 1.2em;
@@ -108,7 +114,8 @@ a img {
 	padding: 0 240px 0 0;
 	list-style-type: inside;
 }
-#main ul li {
+#main ul li,
+#main ol li {
 	margin: 0 0 2px 0;
 }
 #main .side {
