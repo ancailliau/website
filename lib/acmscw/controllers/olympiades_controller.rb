@@ -54,6 +54,12 @@ module AcmScW
         end
         raise Waw::Validation::KO, additionals unless additionals.empty?
         Waw.logger.debug("Olympiades.register(#{params.inspect})");
+        AcmScW.database[:olympiades_registrations].insert(
+          params.keep(:gender, :first_name, :last_name, :mail, :birthdate, 
+                      :street, :postal_code, :city, :school_name, :school_city, 
+                      :category, :study_level, :center, :orientation, :orientation_other, 
+                      :knowshow, :knowshow_other)
+        )
         :ok
       end
     
