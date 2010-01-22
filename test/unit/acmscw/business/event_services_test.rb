@@ -39,7 +39,8 @@ module AcmScW
           :name => '',
           :abstract => '',
           :card_path => '',
-          :date => Time.now,
+          :start_time => Time.now,
+          :end_time => Time.now,
           :location => '',
           :formal_location => '',
           :status => 'pending'
