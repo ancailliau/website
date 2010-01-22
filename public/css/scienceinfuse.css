@@ -1,0 +1,22 @@
+#scienceinfuse {
+	min-height: 200px;
+}
+#scienceinfuse dl dt {
+	width: 60px;	
+}
+#scienceinfuse dl dd {
+	margin-left: 60px;
+}
+#scienceinfuse .index dl {
+	padding-left: 30px;
+}
+#scienceinfuse .index dl dt {
+	width: 120px;	
+}
+#scienceinfuse .index dl dd {
+	margin-left: 120px;
+}
+#scienceinfuse ul {
+  font-size: 1em;
+	padding-right: 0px;
+}

@@ -1,0 +1,10 @@
+<ul id="submenu">
+	<li><a href="/scienceinfuse">Programme</a></li>
+		<ul>
+			<li><a href="/scienceinfuse/ateliers">Ateliers</a></li>
+			<li><a href="/scienceinfuse/stands">Stands</a></li>
+			<li><a href="/scienceinfuse/spectacle">Spectacle</a></li>
+		</ul>
+	<li><a href="/scienceinfuse/acces-inscription">Accès et inscription</a></li>
+	<li><a href="/scienceinfuse/sponsoring">Sponsors</a></li>
+</ul>

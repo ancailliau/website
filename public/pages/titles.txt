@@ -1,14 +1,27 @@
 /                                UCLouvain ACM Student Chapter
+/contact                         UCLouvain ACM Student Chapter - Contact
 /404                             UCLouvain ACM Student Chapter - Page non trouvée
 /mentions-legales                UCLouvain ACM Student Chapter - Mentions légales
 /activites                       Nos activités
 /events                          Nos prochains événements
 /latex                           A propos de Latex, nos formations et autres
+
 /olympiades                      Olympiades d'Informatique
+/olympiades/demi-finales         Olympiades d'Informatique - Demi-Finales
+/olympiades/equipe               Olympiades d'Informatique- Equipe
+/olympiades/finales              Olympiades d'Informatique- Finales
+/olympiades/formation            Olympiades d'Informatique- Formation
+/olympiades/inscription          Olympiades d'Informatique- Inscriptions
+/olympiades/olympiades-internationales   Olympiades Internationales d'Informatique
+/olympiades/questions            Olympiades d'Informatique- Exemples de questions
+/olympiades/reglement            Olympiades d'Informatique- Règlement
 
 /scienceinfuse                   Weekend Festival Scienceinfuse
-/scienceinfuse/acces             Scienceinfuse - Accès et inscriptions
+/scienceinfuse/acces-inscription Scienceinfuse - Accès et inscriptions
 /scienceinfuse/sponsoring        Scienceinfuse - Sponsoring
+/scienceinfuse/ateliers          Scienceinfuse - Ateliers
+/scienceinfuse/spectacle         Scienceinfuse - Spectacle scientifique
+/scienceinfuse/stands            Scienceinfuse - Stands interactifs
 
 /securite-vie-privee             Conférence - Sécurité et vie privée
 /securite-vie-privee/orateurs    Sécurité et vie privée - Orateurs

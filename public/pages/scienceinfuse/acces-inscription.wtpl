@@ -1,0 +1,17 @@
+<h2>Weekend Festival Scienceinfuse &mdash; Accès et inscription</h2>
+
+<p>Le weekend se déroule à Louvain-la-Neuve, sur le site de l'Université catholique de Louvain. Le site est très facile 
+   d'accès par les transports en communs (train et bus), mais également en voiture via l'autoroute E411 Bruxelles-Namur 
+   qui passe à proximité du site. Vous trouverez des informations détaillées sur comment se rendre à Louvain-la-Neuve sur 
+   le <a href="http://www.uclouvain.be/acces-lln.html">site web de l'université</a>.</p>
+
+<p>Nos activités se déroulent dans la salle d'étude du bâtiment des Sciences, Place des Sciences. La salle se situe à 
+   environ dix minutes de marche des gares de train et de bus. Si vous venez en voiture, nous vous conseillons les parkings 
+   11 (Sainte Barbe) et 23 (Sciences). Vous trouverez également plus d'informations sur le 
+   <a href="http://www.uclouvain.be/68206.html">site web de l'université</a>.</p>
+
+<p>Les inscriptions pour les ateliers interactifs se font par le site de 
+   <a href="http://www.uclouvain.be/305482.html">Scienceinfuse</a>. Afin de faciliter l'organisation des stands et être
+   tenu au courant des nouvelles informations, inscrivez-vous.</p>
+
+<<+{../events/event_registration.wbrick using self with event: 'scienceinfuse_2010'}

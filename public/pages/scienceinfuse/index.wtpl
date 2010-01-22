@@ -1,176 +1,37 @@
+<div class="index">
+  <h2>Weekend Festival Scienceinfuse</h2>
 
-<div id="main">
+  <p>Dans le cadre du Printemps des Sciences 2010, se déroule le samedi 27 et le dimanche 28 mars 2010 à Louvain-la-Neuve 
+     un ensemble d'activités de sensibilisation à l'informatique. Durant ce weekend, tout un chacun, aussi bien les grands 
+     que les petits, va pouvoir découvrir ce qu'est l'informatique, en tant que science. Divers types d'animations sont 
+     proposées durant le weekend :</p>
 
-	<h2>Weekend Festival Scienceinfuse</h2>
+  <p>Les classes sont réservées aux élèves de primaire et de secondaire tandis que les stands et le spectacle sont ouverts 
+    à tout public. Voici le programme du weekend (le programme détaillé de chaque type d'animation est disponible sur la 
+    page associée) :</p>
 
-	<ul id="submenu">
-		<li><a href="/scienceinfuse">Programme</a></li>
-		<li><a href="/scienceinfuse/acces">Accès et inscriptions</a></li>
-		<li><a href="/scienceinfuse/sponsoring">Sponsors</a></li>
-	</ul>
+  <h3>27 mars 2010</h3>
 
-	<p>Dans le cadre du Printemps des Sciences 2010, se déroule le samedi 27 et
-	le dimanche 28 mars 2010 à Louvain-la-Neuve un ensemble d'activités de
-	sensibilisation à l'informatique.</p>
+  <dl>
+  	<dt>de 14h00 à 17h00</dt>
+  	<dd><p>Visite des <a href="/scienceinfuse/stands">stands</a>.</p></dd>
+	
+  	<dt>à 14h00 et à 15h45</dt>
+  	<dd><p><a href="/scienceinfuse/ateliers">Ateliers</a> interactifs.</p></dd>
+	
+  	<dt>de 17h30 à 18h30</dt>
+  	<dd><p><a href="/scienceinfuse/spectacle">Spectacle</a> scientifique.</p></dd>
+  </dl>
 
-	<p>Partant du constat que les jeunes ont une vision de l'informatique
-	fondée sur des stéréotypes, le département INGI propose des activités aux
-	jeunes pour leur montrer l'envers du décor. Ces activités ne sont pas réalisées
-	sur ordinateur, mais illustrent le fonctionnement de l'informatique à l'aide 
-	de papiers et crayons. La plupart de ces activités sont basées sur celles proposées 
-	sur <a href="http://csunplugged.org">http://csunplugged.org</a>. Elles couvrent 
-	divers aspects de l'informatique: représentation de données sur la machine (binaire, 
-	image, code correcteur d'erreur, etc.), l'algorithmique (tri, coloriage de graphes, 
-	complexité, etc.), les réseaux, l'intelligence artificielle, la sécurité, etc.</p>
+  <h3>28 mars 2010</h3>
 
-	<p>En attendant l'événement, découvrez les diverses activités qui vous
-	seront proposées&nbsp;:</p>
-	<ul>
-		<li><a href="/scienceinfuse/#classes">Classes</a></li>
-		<li><a href="/scienceinfuse/#ateliers">L'informatique : les jeux vidéos mais
-		encore...</a></li>
-		<li><a href="/scienceinfuse/#exposition">Exposition</a></li>
-		<li><a href="/scienceinfuse/#alice-et-bob">Alice, Bob et les autres : messages
-		secrets, piraterie et compagnie</a></li>
-	</ul>
+  <dl>
+  	<dt>de 14h00 à 17h00</dt>
+  	<dd><p>Visite des <a href="/scienceinfuse/stands">stands</a>.</p></dd>
+	
+  	<dt>à 14h00 et à 15h45</dt>
+  	<dd><p><a href="/scienceinfuse/ateliers">Ateliers</a> interactifs.</p></dd>
+  </dl>
 
-	<h3 id="classes">Classes</h3>
-
-	<p>Ces activités se déroulent en classes de 15 enfants maximum et ne sont
-	pas accessibles aux adultes. Samedi et dimanche, quatre classes seront
-	organisées. La durée d'une classe est de 1h30. Vous pouvez accompagner vos
-	enfants et ensuite visiter nos différents stands.</p>
-
-	<dl>
-
-		<dt>14h00</dt>
-		<dd>
-			<p><strong>Comment l'ordinateur écrit-il les nombres, les lettres ?
-			Découverte du binaire et de la représentation d'images.</strong>
-			(de 6 à 11&nbsp;ans) <br /> L'ordinateur ne maîtrise que les 0 et les 1.
-			Comment peut-il manipuler d'autres nombres, des lettres et des
-			images ? A toi de jouer au détective ! Au cours de cet atelier, tu
-			apprendras à coder les nombres en binaire et à représenter les
-			lettres et les images sous forme de chiffres.</p>
-
-			<p><strong>Comment sécuriser les messages sur l'ordinateur
-			?</strong> (à partir de 12&nbsp;ans) <br /> Comment communiquer par
-			messages secrets ? On peut se mettre d'accord en secret avec son
-			interlocuteur sur un codage et être les seuls à le connaître ...
-			Pas si facile car comment se mettre d'accord en secret sur le
-			codage ? C'est un peu « De la poule ou de l'oeuf, qui était-là le
-			premier ? » ... Au cours de cet atelier, après la découverte de
-			méthodes « classiques », tu apprendras une autre méthode. Tu rends
-			tout simplement public la manière d'encoder les messages. Comment
-			peux-tu alors garder un secret si tout le monde sait comment il a
-			été encodé ?</p>
-		</dd>
-		
-		<dt>15h45</dt>
-		<dd>
-			<p><strong>Ce n'est pas dans l'ordre ... Trions comme un
-			ordinateur, avec méthode !</strong> (de 6 à 11&nbsp;ans)<br />
-			C'est pratique de ne pas fouiller dans tout le magasin après les
-			chaussures de la bonne pointure. C'est facile de trouver un mot
-			dans le dictionnaire. Ben oui, c'est trié dans le bon ordre ! Mais
-			au fait, comment trie-t-on ? Tu as déjà essayé d'expliquer à
-			quelqu'un comment tu t'y prends pour trier ?</p>
-
-			<p><strong>Eliza... tu es un ordinateur ou un humain ?</strong> (à
-			partir de 12&nbsp;ans)<br /> Rien de plus bête qu'un ordinateur, il
-			obéit aux ordres sans même réfléchir. Pas simple de lui faire
-			comprendre ce qu'on attend de lui. Et pourtant, penses-tu qu'un
-			ordinateur puisse paraître aussi intelligent qu'un humain ? Peut-on
-			faire la différence entre les réponses d'un ordinateur et d'un
-			humain ?</p>
-		</dd>
-	</dl>
-
-	<h3 id="ateliers">L'informatique : les jeux vidéos mais encore ... ?</h3>
-
-	<p>Durant tout le weekend, de 14h à 17h, venez découvrir différents stands
-	qui vous présentent divers aspects de l'informatique. Ces stands sont
-	accessibles à tout le monde et la durée d'une visite à un stand varie de 5
-	à 20 minutes.</p>
-
-	<ul>
-		<li><strong>Jeux vidéo d'hier et d'aujourd'hui : quelle évolution
-		!</strong><br /> Venez, venez et découvrez les jeux qui ont fait
-		l'histoire de l'informatique. Des plus vieux comme tetris, pong et
-		pacman aux plus récents. Découvrez également des réalisations
-		d'étudiants de deuxième de l'École Polytechnique de Louvain.</li>
-
-		<li><strong>Qu'y a-t-il dans cette boite ? Démontage de PC (neufs et
-		anciens).</strong><br /> Vous vous êtes toujours demandé ce qu'il y
-		avait à l'intérieur d'un ordinateur ? C'est le moment de venir
-		découvrir les pièces qui le constituent et de comprendre leur rôle.
-		Vous pourrez même démonter et remonter par vous-même un vieil
-		ordinateur !</li>
-
-		<li><strong>Edubuntu : la version éducative de Ubuntu, le logiciel
-		libre au service des jeunes et des parents.</strong><br /> Vous ne
-		savez pas quoi faire sur votre ordinateur ? Venez découvrir Edubuntu
-		qui propose une pléthore de programmes éducatifs dans le domaine des
-		sciences, des mathématiques, des langues, etc. En particulier, apprenez
-		l'espagnol, étudiez les atomes, observez les étoiles, etc.</li>
-
-		<li><strong>Sécuriser l'information ? Je réponds cryptographie
-		!</strong><br /> Vous avez des choses à cacher ? Des informations à
-		protéger ? Découvrez la cryptographie à l'aide de méthodes simples
-		qu'il est possible de mettre en œuvre avec un crayon et du papier. Vous
-		aurez même l'occasion de jouer le méchant et de tenter de décrypter des
-		messages chiffrés.</li>
-
-		<li><strong>Ce n'est pas dans le bon ordre ... Trions, mais avec
-		méthode.</strong><br /> Lorsque vous devez trier des objets dans un
-		certain ordre, vous êtes capable de le faire assez vite. Venez
-		découvrir comment l'ordinateur s'y prend et prenez sa place le temps
-		d'un court instant en triant des boites numérotées de manière
-		croissante.</li>
-
-		<li><strong>Eliza ... T'es un ordi oui ou non ?</strong><br /> Les
-		ordinateurs seront-ils un jour plus intelligents que les êtres humains
-		? Venez vous confronter au test de Turing durant lequel vous allez
-		pouvoir discuter via un ordinateur, avec un être humain et un autre
-		ordinateur. Saurez-vous distinguer l'homme de la machine ?</li>
-
-		<li><strong>Des briques en plastique ... intelligentes !</strong><br />
-		Vous connaissez les Lego® ? Vous avez déjà vu des Lego® bouger ? Venez
-		à ce stand découvrir un robot Lego® nettoyeur de vitre, réalisé et
-		programmé par des étudiants ingénieurs en première année à l'École
-		Polytechnique de Louvain.</li>
-
-		<li><strong>Ma première animation : on me donne le scénario, je
-		programme l'animation.</strong><br /> Aujourd'hui, c'est très facile de
-		créer une animation. Venez découvrir comment créer votre propre
-		animation sur ordinateur, rien qu'en utilisant la souris en utilisant
-		Scratch. Nous vous fournissons un scénario, vous le programmez sur
-		ordinateur et vous voyez directement le résultat.</li>
-	</ul>
-
-	<h3 id="exposition">Exposition</h3>
-
-	<p>Durant tout le weekend, de 14h à 17h, venez également découvrir une
-	exposition de pièces d'ordinateur, depuis les plus anciennes très
-	volumineuses jusqu'à celles d'aujourd'hui, miniaturisées. Ce sera
-	l'occasion de voir l'évolution rapide qu'il y a eu côté matériel
-	informatique.</p>
-
-	<h3 id="alice-et-bob">Alice, Bob et les autres : messages secrets, piraterie et
-	compagnie</h3>
-
-	<p>Un spectacle scientifique sera donnée le samedi 27 mars de 17h30 à
-	18h30. Celle-ci est ouverte à tous, à partir de 6 ans. Elle aura pour thème
-	la théorie de l'information et montrera divers problèmes qui peuvent
-	survenir lorsqu'on tente de communiquer un message à une autre
-	personne.</p>
-
-	<p>« Alice veut envoyer un message à Bob, mais elle va être confrontée à
-	plusieurs problèmes majeurs : le papier pourrait être abimé en cours de
-	route, elle a une quantité limitée de papier et la méchante Chantal ne
-	demande pas mieux que de voler son message ! Comment peut-on résoudre ces
-	trois problèmes ? Cette conférence vous apporte quelques éléments de
-	réponses, le tout de manière ludique ! »</p>
-
+  <p><img src="/images/Printemps-des-sciences.png" alt="Printemps des Sciences" /></p>
 </div>
-

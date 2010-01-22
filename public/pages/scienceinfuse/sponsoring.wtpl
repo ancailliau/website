@@ -1,15 +1,5 @@
-<div id="main">
+<h2>Scienceinfuse &mdash; Sponsors</h2>
 
-	<h2>Scienceinfuse &mdash; Sponsors</h2>
-	
-	<ul id="submenu">
-		<li><a href="/scienceinfuse">Programme</a></li>
-		<li><a href="/scienceinfuse/acces">Accès et inscriptions</a></li>
-		<li><a href="/scienceinfuse/sponsoring">Sponsors</a></li>
-	</ul>
-
-	<p>Si vous souhaitez sponsoriser l'évènement, contactez-nous à l'adresse
-	suivante <a
-	href="mailto:sponsors@uclouvain.acm-sc.be">sponsors@uclouvain.acm-sc.be</a></p>
-
-</div>
+<p>Si vous souhaitez sponsoriser l'évènement, contactez-nous à l'adresse suivante 
+  <a href="mailto:sponsors@uclouvain.acm-sc.be">sponsors@uclouvain.acm-sc.be</a>
+</p>
