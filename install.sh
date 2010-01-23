@@ -16,16 +16,12 @@
 #   waw >= 0.1.0 (or see http://github.com/blambeau/waw for the last version)
 #
 # To install those gems, type the following commands
-echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-echo 'If a password is prompted, it is the one for sudo'
-echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-
 echo 'Installing required ruby gems'
-sudo gem install --no-rdoc --no-ri vendor/json-1.1.9.gem
-sudo gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
-sudo gem install --no-rdoc --no-ri vendor/rack-1.1.0.gem
-sudo gem install --no-rdoc --no-ri vendor/wlang-0.8.5.gem
-sudo gem install --no-rdoc --no-ri vendor/waw-0.1.2.gem
+gem install --no-rdoc --no-ri vendor/json-1.1.9.gem
+gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
+gem install --no-rdoc --no-ri vendor/rack-1.1.0.gem
+gem install --no-rdoc --no-ri vendor/wlang-0.8.5.gem
+gem install --no-rdoc --no-ri vendor/waw-0.1.2.gem
 
 #
 # The code expects an 'acmscw' postgresql database, accessible through an 
@@ -41,8 +37,8 @@ echo 'Installing postgresql database now...'
 echo 'If a password is prompted, it is the one used for'
 echo 'the acmscw database user'
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-sudo su postgres -c 'createuser --superuser --createdb --login --pwprompt acmscw'
-sudo su postgres -c 'createdb --owner acmscw --encoding utf8 acmscw'
+su postgres -c 'createuser --superuser --createdb --login --pwprompt acmscw'
+su postgres -c 'createdb --owner acmscw --encoding utf8 acmscw'
 ruby -Ilib lib/acmscw/state/migrate_v2.rb
 
 # You can now start the web application using the following command
