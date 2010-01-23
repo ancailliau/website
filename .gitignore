@@ -3,3 +3,4 @@ waw.deploy
 config/*.cfg
 tmp
 logs
+.DS_Store

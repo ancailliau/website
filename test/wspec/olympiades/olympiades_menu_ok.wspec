@@ -1,0 +1,20 @@
+scenario "The olympiades pages do not contain lost internal links" do
+  
+  because("The index page is well written") {
+    i_reach Waw.config.web_base + 'olympiades'
+    i_could_reach all_internal_links
+  }
+  
+  #
+  # Commented, not because it fails, but because it is time consuming.
+  # Webmasters will check this from time to time
+  #
+  # because("Each sub page is well written") {
+  #   %w{index equipe demi-finales formation inscription olympiades-internationales questions reglement}.each {|word|
+  #     i_reach Waw.config.web_base + "olympiades/#{word}"
+  #     i_could_reach all_internal_links
+  #   }
+  # }
+  #
+  
+end

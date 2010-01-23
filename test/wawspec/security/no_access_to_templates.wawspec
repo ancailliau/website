@@ -1,9 +1,0 @@
-scenario __FILE__ do 
-  go Waw.config.web_base
-  assert_is_404 '/pages/activities.wtpl'
-  assert_is_404 '/templates/layout.wtpl'
-  assert_is_404 '/pages/people/account_fields.wbrick'
-  assert_is_404 '/people/account_fields'
-  assert_is_404 '/people/account_fields.html'
-  assert_is_404 '/people/account_fields.wbrick'
-end

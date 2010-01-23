@@ -1,0 +1,17 @@
+scenario __FILE__ do 
+  
+  because(".wawaccess files are correctly written") {
+    go Waw.config.web_base
+    %w{
+      /pages/activities.wtpl
+      /templates/layout.wtpl
+      /pages/people/account_fields.wbrick
+      /people/account_fields
+      /people/account_fields.html
+      /people/account_fields.wbrick
+    }.each {|page|
+      i_dont_reach page
+    }
+  }
+
+end

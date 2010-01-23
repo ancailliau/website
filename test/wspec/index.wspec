@@ -1,0 +1,21 @@
+scenario __FILE__ do
+  
+  because("The root .wawaccess file is correctly written") {
+    i_reach Waw.config.web_base
+    i_see "<!-- pages/index.wtpl -->"
+    
+    all_tags('link', :rel => 'stylesheet').each do |stylesheet|
+      i_could_reach stylesheet[:href]
+    end
+
+    all_tags('script', :type => 'text/javascript').each do |script|
+      i_could_reach script[:src]
+    end
+  }
+  
+  because("The index page contains no lost internal links") do
+    i_reach Waw.config.web_base
+    i_could_reach all_internal_links
+  end
+  
+end

@@ -1,0 +1,20 @@
+scenario __FILE__ do
+  
+  because("The overall .wawaccess architecture is correct") {
+    locations = %w{index activites latex securite-vie-privee/index securite-vie-privee/orateurs
+                   securite-vie-privee/sponsoring events/index mentions-legales contact} 
+    locations.each do |loc|
+      i_reach Waw.config.web_base + loc
+      i_see "<!-- pages/#{loc}.wtpl -->"
+    end
+  }
+  
+  because("404 pages are friendly handled") {
+  nolocations = %w{not_a_page hello say/hello/to/the/world index.html greptheworld}
+    nolocations.each do |loc|
+      i_dont_reach Waw.config.web_base + loc
+      i_see "La page demandée n'existe pas ou plus, veuillez nous en excuser"
+    end
+  }
+
+end

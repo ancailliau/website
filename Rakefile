@@ -16,9 +16,9 @@ Rake::TestTask.new(:unit_test) do |test|
   test.verbose    =  true
 end
 
-desc "Launches wawspec test"
-task :wawspec do
-  require('test/wawspec/test_all.rb')
+desc "Launches wspec test"
+task :wspec do
+  require('test/wspec/test_all.rb')
 end
 
-task :test => [:unit_test, :wawspec]
+task :test => [:unit_test, :wspec]
