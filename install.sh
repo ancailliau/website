@@ -1,19 +1,21 @@
+set -e
 # 
 # If you are an happy guy, executing this file will do the job, otherwise
 # read on!
 #
 # Requirements:
-#   ruby >= 1.8.6
-#   postgresql >= 8.3
+#   Ruby >= 1.8.6, with C++ headers
+#   Rubygems >= 1.3.5
+#   Postgresql >= 8.3, with C++ headers
 #
 # Meeting those requirements is behind the scope of this INSTALL file
 
 # Gems (see vendor folder)
-#   json >= 1.1.9  (sudo gem install sequel, for the last version)
+#   json >= 1.1.9  (sudo gem install json, for the last version)
 #   sequel >= 3.8  (sudo gem install sequel, for the last version)
 #   rack >= 1.1.0 (sudo gem install rack, for the last version)
-#   wlang >= 0.8.4 (or see http://github.com/blambeau/wlang for the last version)
-#   waw >= 0.1.0 (or see http://github.com/blambeau/waw for the last version)
+#   wlang >= 0.8.5 (or see http://github.com/blambeau/wlang for the last version)
+#   waw >= 0.1.2 (or see http://github.com/blambeau/waw for the last version)
 #
 # To install those gems, type the following commands
 echo 'Installing required ruby gems'
@@ -35,7 +37,7 @@ echo ''
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 echo 'Installing postgresql database now...'
 echo 'If a password is prompted, it is the one used for'
-echo 'the acmscw database user'
+echo 'the acmscw database user (see your config file)'
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 su postgres -c 'createuser --superuser --createdb --login --pwprompt acmscw'
 su postgres -c 'createdb --owner acmscw --encoding utf8 acmscw'
