@@ -1,0 +1,26 @@
+requirement("Users should not be allowed to send fake messages") {
+  
+  acm_receiver = "UCLouvain ACM Student Chapter <info@uclouvain.acm-sc.be>"
+  acm_mailbox  = business.mail_agent.mailbox(acm_receiver)
+  acm_mailbox.clear
+
+  therefore("The contact form should be robust to bad data") {
+    go index_page + 'contact'
+    form = form(:action => controllers.main.send_message)
+
+    [ {},
+      {:mail => "test@example.com"},
+      {:mail => "test@example.com", :subject => ""},
+      {:mail => "test@example.com", :subject => "    "},
+      {:mail => "test@example.com", :subject => "Something to say"},
+      {:mail => "test@example.com", :message => ""},
+      {:mail => "test@example.com", :message => "   "},
+      {:mail => "test@example.com", :message => "Something to explain"},
+      {:mail => "not_a mail",       :subject => "Something to say", :message => "Something to explain"},
+    ].each do |data|
+      i_submit form, with(data)
+      assert acm_mailbox.empty?, "Data #{data.inspect} does not pass validation"
+    end
+  }
+  
+}
