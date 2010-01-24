@@ -11,6 +11,29 @@ module AcmScW
         @people = AcmScW.database[:people]
       end
       
+      # Returns the mail agent to use
+      def mail_agent
+        unless @mail_agent
+          @mail_agent = get_mail_agent
+          template = @mail_agent.add_template(:activation)
+          template.from         = "UCLouvain ACM Student Chapter <no-reply@uclouvain.acm-sc.be>"
+          template.subject      = "Votre inscription sur uclouvain.acm-sc.be"
+          template.content_type = 'text/html'
+          template.charset      = 'UTF-8'
+          template.body         = File.read(File.join(File.dirname(__FILE__), 'activation_mail.wtpl'))
+        end
+        @mail_agent
+      end
+      
+      # May be overrided for testing purposes
+      def get_mail_agent
+        if Waw.resources.nil?
+          ::Waw::Tools::Mail::MailAgent.new
+        else
+          Waw.resources.business.mail_agent
+        end 
+      end
+      
       ############################################################################
       ### About people finding
       ############################################################################
@@ -131,12 +154,10 @@ module AcmScW
         this_people(mail).update(:activation_key => actkey)
         this_people(mail).update(:password => nil) if removepass
         
-        # send the activation mail now
-        template = File.join(File.dirname(__FILE__), 'activation_mail.wtpl')
-        context = {'mail_address'    => mail,
+        # Send the activation mail
+        context = {'web_base'    => Waw.config.web_base,
                    'activation_link' => (Waw.config.web_base + "people/activate_account?actkey=#{actkey}")}
-        message = WLang.file_instantiate(template, context).to_s
-        AcmScW::Tools::MailServer.send_mail(message, "no-reply@acm-sc.be", mail)
+        mail_agent.send_mail(:activation, context, mail)
         
         # return the activation key
         actkey

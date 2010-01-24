@@ -23,6 +23,6 @@ database           :host     => 'localhost',
                    :encoding => 'utf8'
 
 # Information about the smtp server to use for sending mails
-smtp_host         'smtp.sgsi.ucl.ac.be'
-smtp_port         25
-smtp_timeout      3
+smtp_config        :host => 'smtp.sgsi.ucl.ac.be',
+                   :port => 25,
+                   :timeout => 3

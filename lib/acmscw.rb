@@ -19,8 +19,7 @@ module AcmScW
     raise "Incomplete configuration, deploy_mode missing" unless Waw.config.knows?(:deploy_mode)
     raise "Incomplete configuration, database missing" unless Waw.config.knows?(:database)
     raise "Wrong database configuration" unless [:host, :port, :database, :user, :password, :encoding].all?{|k| Waw.config.database.has_key?(k)}
-    raise "Incomplete configuration, smtp_host missing" unless Waw.config.knows?(:smtp_host)
-    raise "Incomplete configuration, smtp_port missing" unless Waw.config.knows?(:smtp_port)
+    raise "Incomplete configuration, smtp_config missing" unless Waw.config.knows?(:smtp_config)
   end
   
   # Executes the given block inside a transaction
@@ -82,10 +81,10 @@ end
 
 require 'acmscw/waw_ext/validations'
 require 'acmscw/waw_ext/assertions'
+require 'acmscw/business/main_services'
 require 'acmscw/business/people_services'
 require 'acmscw/business/event_services'
 require 'acmscw/controllers/main_controller'
 require 'acmscw/controllers/people_controller'
 require 'acmscw/controllers/event_controller'
 require 'acmscw/controllers/olympiades_controller'
-require 'acmscw/tools/mail_server'

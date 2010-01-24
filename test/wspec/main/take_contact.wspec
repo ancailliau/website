@@ -1,9 +1,10 @@
 requirement("Users should be able to take contact with the organisers easily") {
   
+  acm_receiver = "UCLouvain ACM Student Chapter <info@uclouvain.acm-sc.be>"
   args = {:mail       => "test-user@acmscw.be",
           :subject    => "This is my subject", 
           :message    => "This is my message"}
-  AcmScW::Tools::MailServer.clean("info@uclouvain.acm-sc.be")
+  business.mail_agent.mailbox(acm_receiver).clear
   
   therefore("A contact link should be proposed on the index page") {
     go       index_page
@@ -19,7 +20,7 @@ requirement("Users should be able to take contact with the organisers easily") {
   therefore("Submitting the form should send an e-mail to the organisers") {
     i_submit form(:action => controllers.main.send_message), with(args)
     i_see    messages.contact_ok
-    #assert   mailbox("info@uclouvain.acm-sc.be").has_new_mail?
+    assert   business.mail_agent.mailbox(acm_receiver).size == 1
     
     # by_the_way {
     #   contents = mailbox.readmail("info@uclouvain.acm-sc.be")

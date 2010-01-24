@@ -8,6 +8,7 @@ requirement "The website should provide a way for users to log in and log out" d
   therefore("A connexion link should be accessible on the index page") {
     go     index_page
     i_see  "Connexion"
+    i_dont_see "My chapter"
     i_see  form(:id => 'login', :action => controllers.people.login)
   }
   
