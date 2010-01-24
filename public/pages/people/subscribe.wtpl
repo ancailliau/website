@@ -1,4 +1,4 @@
-?{Waw.session_has_key?(:user)}{
+?{Waw.session.has_key?(:user)}{
   <<+{my_chapter.wtpl using self}
 }{
   <div id="main">

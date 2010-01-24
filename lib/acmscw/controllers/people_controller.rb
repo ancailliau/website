@@ -119,7 +119,7 @@ module AcmScW
       }
       def update_account(params)
         args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
-        result = people_services.update_account(Waw.session_get(:user), args)
+        result = people_services.update_account(session.get(:user), args)
         case result
           when :ok
             session_set(:user, params[:mail])

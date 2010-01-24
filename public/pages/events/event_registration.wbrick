@@ -1,5 +1,5 @@
-?{Waw.session_has_key?(:user)}{
-  ?{business.event.is_registered?(Waw.session_get(:user), event)}{
+?{session.has_key?(:user)}{
+  ?{business.event.is_registered?(session.get(:user), event)}{
     ={controllers.event.unregister_to_this_event as action}{
     	<p class="feedback">
   	    +{messages.you_are_registered_to_this_event} 

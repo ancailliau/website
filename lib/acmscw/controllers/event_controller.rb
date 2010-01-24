@@ -38,7 +38,7 @@ module AcmScW
       } 
       routing { upon '*' do refresh end }
       def register_to_this_event(params)
-        event_services.register(Waw.session_get(:user), params[:event])
+        event_services.register(session.get(:user), params[:event])
         :ok
       end
       
@@ -49,7 +49,7 @@ module AcmScW
       } 
       routing { upon '*' do refresh end }
       def unregister_to_this_event(params)
-        event_services.unregister(Waw.session_get(:user), params[:event])
+        event_services.unregister(session.get(:user), params[:event])
         :ok
       end
     
