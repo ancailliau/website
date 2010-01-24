@@ -1,0 +1,7 @@
+scenario "The website should not give access outside the public structure" do
+  
+  because("The .wawaccess files are correctly written") {
+    i_may_not_reach Waw.config.web_base + '../logs/webapp.log'
+  }
+  
+end
