@@ -1,7 +1,7 @@
-scenario "The olympiades pages do not contain lost internal links" do
+requirement "The olympiades activity menu is correctly written" do
   
-  because("The index page is well written") {
-    i_reach Waw.config.web_base + 'olympiades'
+  therefore("The olympiades index page should not contain lost internal links") {
+    i_reach index_page + 'olympiades'
     i_could_reach all_internal_links
   }
   
@@ -9,12 +9,12 @@ scenario "The olympiades pages do not contain lost internal links" do
   # Commented, not because it fails, but because it is time consuming.
   # Webmasters will check this from time to time
   #
-  # because("Each sub page is well written") {
+  # therefore("Each of its sub pages is well written") {
   #   %w{index equipe demi-finales formation inscription olympiades-internationales questions reglement}.each {|word|
-  #     i_reach Waw.config.web_base + "olympiades/#{word}"
+  #     i_reach index_page + "olympiades/#{word}"
   #     i_could_reach all_internal_links
   #   }
   # }
-  #
+  
   
 end

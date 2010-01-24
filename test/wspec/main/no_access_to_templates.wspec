@@ -1,6 +1,6 @@
-scenario __FILE__ do 
+requirement "The website should be secure enough through wawaccess files" do 
   
-  because(".wawaccess files are correctly written") {
+  therefore("The private templates should not be reachable directly") {
     go Waw.config.web_base
     %w{
       /pages/activities.wtpl
