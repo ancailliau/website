@@ -56,8 +56,8 @@ module AcmScW
       AccountCommonSignature = Waw::Validation.signature {
         validation :mail, mandatory & mail, :invalid_email
         validation :password, (size>=8) & (size<=15), :bad_password
-        validation [:password, :password_confirm], missing | equal, :passwords_dont_match
-        validation :newsletter, (default(false) | boolean), :bad_newsletter
+        validation [:password, :password_confirm], missing | same, :passwords_dont_match
+        validation :newsletter, (boolean | default(false)), :bad_newsletter
         validation :rss_feed, missing | weburl, :bad_rss_feed
       }
 

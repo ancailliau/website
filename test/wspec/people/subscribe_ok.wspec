@@ -29,8 +29,12 @@ requirement "The web site should allow users to subscribe" do
   
   therefore("Following the mail activation link should success") {
     mail     = mailbox.read(0)
-    i_follow link(:href => /activate_account/, mail.body)
-    i_see "<!-- pages/people/account_activation_ok.wtpl -->"
+    link     = link({:href => /activate_account/}, mail.body)
+    actkey   = $1 if link[:href] =~ /activate_account\?actkey=(.*)$/
+    i_follow   link
+    i_see    "Activation de votre compte"
+    i_submit form(:action => controllers.people.activate_account), with(people.merge(:actkey => actkey))
+    i_see    "Votre compte a été activé!"
   }  
   
   therefore("The user should be able to login") {
