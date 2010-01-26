@@ -18,7 +18,7 @@
      votre adresse e-mail à l'aide du formulaire ci-dessous.</p>
    
   ={controllers.event.register_by_mail as action}{
-    ={(form_id ? form_id : action.id) as theid}{
+    ={(knows?(:form_id) ? form_id : action.id) as theid}{
       <form method="post" enctype="multipart/form-data" id="{theid}">
       	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
       	<input type="hidden" name="event" value="{event}"/>

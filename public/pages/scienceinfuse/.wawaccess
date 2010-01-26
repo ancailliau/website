@@ -19,7 +19,8 @@ wawaccess do
     file = $1 if /([a-z-]+\.wtpl)$/ =~ served_file
     wlang '../../templates/layout.wtpl', {:title    => AcmScW.title_of(served_file), 
                                           "served_file" => 'pages/scienceinfuse/layout.wtpl',
-                                          :which_scienceinfuse => file}
+                                          :which_scienceinfuse => file,
+                                          :theclass => "other"}
   end
 
 end
