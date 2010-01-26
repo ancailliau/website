@@ -14,16 +14,16 @@ set -e
 #   json >= 1.1.9  (sudo gem install json, for the last version)
 #   sequel >= 3.8  (sudo gem install sequel, for the last version)
 #   rack >= 1.1.0 (sudo gem install rack, for the last version)
-#   wlang >= 0.8.5 (or see http://github.com/blambeau/wlang for the last version)
-#   waw >= 0.1.2 (or see http://github.com/blambeau/waw for the last version)
+#   wlang >= 0.9.0 (or see http://github.com/blambeau/wlang for the last version)
+#   waw >= 0.1.3 (or see http://github.com/blambeau/waw for the last version)
 #
 # To install those gems, type the following commands
 echo 'Installing required ruby gems'
 gem install --no-rdoc --no-ri vendor/json-1.1.9.gem
 gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
 gem install --no-rdoc --no-ri vendor/rack-1.1.0.gem
-gem install --no-rdoc --no-ri vendor/wlang-0.8.5.gem
-gem install --no-rdoc --no-ri vendor/waw-0.1.2.gem
+gem install --no-rdoc --no-ri vendor/wlang-0.9.0.gem
+gem install --no-rdoc --no-ri vendor/waw-0.1.3.gem
 
 #
 # The code expects an 'acmscw' postgresql database, accessible through an 
