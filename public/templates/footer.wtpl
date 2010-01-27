@@ -6,7 +6,7 @@
 	</p>
 
 	<p id="internal-links">
-    ?{Waw.session_has_key?(:user)}{
+    ?{session.has_key?(:user)}{
       <a onclick="{controllers.people.logout.ajax_link}">Logout</a>
       <a href="/people/my_chapter">My chapter</a>
 		}{

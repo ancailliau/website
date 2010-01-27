@@ -9,7 +9,7 @@
       <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
         <div class="feedback"></div>
         <input type="hidden" name="actkey" value="{actkey}"/>
-        <div><<+{account_fields.wbrick using self with people:people}</div>
+        <div><<+{account_fields.wbrick with people:people}</div>
         <input type="submit" value="Activer mon compte"/>
       	+{action.ajax_form_preparer}
       </form>

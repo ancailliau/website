@@ -1,6 +1,6 @@
-scenario __FILE__ do
+requirement "The olympiades structre is working" do
   
-  because(".wawaccess is are correctly written") {
+  therefore("Sub pages can be reached correctly") {
     i_reach Waw.config.web_base + 'olympiades'
     i_see "Olympiades d'Informatique"
 
@@ -11,7 +11,7 @@ scenario __FILE__ do
     }
   }
   
-  because(".wawaccess is secure") {
+  therefore("Templates cannot be accessed directly") {
     i_dont_reach Waw.config.web_base + 'olympiades/.wawaccess'
     i_dont_reach Waw.config.web_base + 'pages/olympiades/.wawaccess'
     i_dont_reach Waw.config.web_base + 'olympiades/layout.wtpl'

@@ -1,0 +1,21 @@
+requirement("The scienceinfuse activity is correctly written") do
+  
+  therefore("Index page and sub pages are reachable") {
+    i_reach index_page + 'scienceinfuse'
+    i_see "Weekend Festival Scienceinfuse"
+
+    %w{index acces-inscription ateliers spectacle stands}.each {|word|
+      i_reach index_page + "scienceinfuse/#{word}"
+      i_see "<!-- scienceinfuse-wspec: #{word}.wtpl -->"
+    }
+  }
+  
+  therefore("Templates are not reachable directly") {
+    i_dont_reach index_page + 'scienceinfuse/.wawaccess'
+    i_dont_reach index_page + 'pages/scienceinfuse/.wawaccess'
+    i_dont_reach index_page + 'scienceinfuse/layout.wtpl'
+    i_dont_reach index_page + 'scienceinfuse/menu.wtpl'
+    i_dont_reach index_page + 'pages/scienceinfuse/layout.wtpl'
+  }
+  
+end

@@ -12,8 +12,18 @@ module AcmScW
         @layer = AcmScW::Business::PeopleServices.new
         @layer.drop_people(TEST_USER)
         @layer.drop_people(TEST_USER_ALIAS)
-        AcmScW::Tools::MailServer.clean(TEST_USER)
-        AcmScW::Tools::MailServer.clean(TEST_USER_ALIAS)
+        @layer.mail_agent.mailbox(TEST_USER).clear
+        @layer.mail_agent.mailbox(TEST_USER_ALIAS).clear
+      end
+      
+      # Asserts that a mail has been sent to someone
+      def assert_mail_sent(who)
+        assert_equal false, @layer.mail_agent.mailbox(who).empty?
+      end
+      
+      # Asserts that a mail has been sent to someone
+      def assert_no_mail_sent(who)
+        assert_equal true, @layer.mail_agent.mailbox(who).empty?
       end
       
       def test_user_exists?
@@ -33,7 +43,7 @@ module AcmScW
         assert_equal false, @layer.subscribed_to_newsletter?(TEST_USER)
         assert_equal false, @layer.account_activated?(TEST_USER)
         assert_equal true, @layer.account_waits_activation?(TEST_USER)
-        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
+        assert_mail_sent(TEST_USER)
         @layer.subscribe_to_newsletter(TEST_USER)
         assert_equal true, @layer.subscribed_to_newsletter?(TEST_USER)
       end
@@ -44,17 +54,17 @@ module AcmScW
         assert_equal true, @layer.subscribed_to_newsletter?(TEST_USER)
         assert_equal false, @layer.account_activated?(TEST_USER)
         assert_equal true, @layer.account_waits_activation?(TEST_USER)
-        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
+        assert_mail_sent(TEST_USER)
       end
       
       def test_subscribe_on_existing_user
         assert_equal false, @layer.people_exists?(TEST_USER)
         @layer.create_default_profile(TEST_USER)
         assert_equal true, @layer.people_exists?(TEST_USER)
-        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
-        AcmScW::Tools::MailServer.clean(TEST_USER)
+        assert_mail_sent(TEST_USER)
+        @layer.mail_agent.mailbox(TEST_USER).clear
         @layer.subscribe_to_newsletter(TEST_USER)
-        assert_equal false, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
+        assert_no_mail_sent(TEST_USER)
       end
       
       def test_activation_key
@@ -66,7 +76,7 @@ module AcmScW
         assert_equal false, @layer.account_activated?(TEST_USER)
         assert_equal true, @layer.account_waits_activation?(TEST_USER)
         assert_equal false, @layer.people_may_log?(TEST_USER)
-        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
+        assert_mail_sent(TEST_USER)
         @layer.activate(activation_key)
         assert_equal true, @layer.account_activated?(TEST_USER)
         assert_equal false, @layer.account_waits_activation?(TEST_USER)
@@ -80,7 +90,7 @@ module AcmScW
         assert_equal false, @layer.account_activated?(TEST_USER)
         assert_equal true, @layer.account_waits_activation?(TEST_USER)
         assert_equal false, @layer.people_may_log?(TEST_USER)
-        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
+        assert_mail_sent(TEST_USER)
         @layer.activate(activation_key, :password => 'thepassword')
         assert_equal true, @layer.account_activated?(TEST_USER)
         assert_equal false, @layer.account_waits_activation?(TEST_USER)
@@ -96,13 +106,13 @@ module AcmScW
         assert_equal true, @layer.people_may_log?(TEST_USER)
         assert_equal :ok, @layer.update_profile(TEST_USER, :password => 'newpass')
         assert_equal true, @layer.people_may_log?(TEST_USER)
-        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER)
+        assert_mail_sent(TEST_USER)
         assert_equal :activation_required, @layer.update_profile(TEST_USER, :mail => TEST_USER_ALIAS)
         assert_equal false, @layer.people_may_log?(TEST_USER)
         assert_equal false, @layer.people_may_log?(TEST_USER_ALIAS)
         assert_equal false, @layer.account_activated?(TEST_USER_ALIAS)
         assert_equal true, @layer.account_waits_activation?(TEST_USER_ALIAS)
-        assert_equal true, AcmScW::Tools::MailServer.mail_has_been_sent?(TEST_USER_ALIAS)
+        assert_mail_sent(TEST_USER_ALIAS)
       end
       
     end

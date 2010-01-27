@@ -56,8 +56,8 @@ module AcmScW
       AccountCommonSignature = Waw::Validation.signature {
         validation :mail, mandatory & mail, :invalid_email
         validation :password, (size>=8) & (size<=15), :bad_password
-        validation [:password, :password_confirm], missing | equal, :passwords_dont_match
-        validation :newsletter, (default(false) | boolean), :bad_newsletter
+        validation [:password, :password_confirm], missing | same, :passwords_dont_match
+        validation :newsletter, (boolean | default(false)), :bad_newsletter
         validation :rss_feed, missing | weburl, :bad_rss_feed
       }
 
@@ -119,7 +119,7 @@ module AcmScW
       }
       def update_account(params)
         args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
-        result = people_services.update_account(Waw.session_get(:user), args)
+        result = people_services.update_account(session.get(:user), args)
         case result
           when :ok
             session_set(:user, params[:mail])

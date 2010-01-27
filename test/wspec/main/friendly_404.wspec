@@ -1,0 +1,8 @@
+requirement "The web site should provide a friendly 404 not found page" do
+
+  %w{not_a_page hello say/hello/to/the/world index.html greptheworld}.each do |loc|
+    i_dont_reach index_page + loc
+    i_see "La page demandée n'existe pas ou plus, veuillez nous en excuser"
+  end
+
+end

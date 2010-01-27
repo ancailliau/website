@@ -1,5 +1,5 @@
-?{Waw.session_has_key?(:user)}{
-  ?{business.event.is_registered?(Waw.session_get(:user), event)}{
+?{session.has_key?(:user)}{
+  ?{business.event.is_registered?(session.get(:user), event)}{
     ={controllers.event.unregister_to_this_event as action}{
     	<p class="feedback">
   	    +{messages.you_are_registered_to_this_event} 
@@ -18,7 +18,7 @@
      votre adresse e-mail à l'aide du formulaire ci-dessous.</p>
    
   ={controllers.event.register_by_mail as action}{
-    ={(form_id ? form_id : action.id) as theid}{
+    ={(knows?(:form_id) ? form_id : action.id) as theid}{
       <form method="post" enctype="multipart/form-data" id="{theid}">
       	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
       	<input type="hidden" name="event" value="{event}"/>

@@ -19,7 +19,8 @@ wawaccess do
     file = $1 if /([a-z-]+\.wtpl)$/ =~ served_file
     wlang '../../templates/layout.wtpl', {:title    => AcmScW.title_of(served_file), 
                                           "served_file" => 'pages/olympiades/layout.wtpl',
-                                          :which_olympiades => file}
+                                          :which_olympiades => file,
+                                          :theclass => "other"}
   end
 
 end

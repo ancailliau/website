@@ -6,18 +6,17 @@
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <base href="{Waw.config.web_base}"/>
 		<title>${title}</title>
-		<link rel="stylesheet" type="text/css" href="/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="/css/olympiades.css" />
-		<link rel="stylesheet" type="text/css" href="/css/scienceinfuse.css" />
-		<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
-		<script type="text/javascript" src="/js/waw.js"></script>
-		<script type="text/javascript" src="/js/acmscw.js"></script>
-		<script type="text/javascript" src="/js/acmscw_generated.js"></script>
+		*{css_files as css}{
+  		<link rel="stylesheet" type="text/css" href="{css}" />
+  	}
+		*{js_files as js}{
+  		<script type="text/javascript" src="{js}"></script>
+  	}
 	</head>
 	<body class="{theclass}">
-    <<+{header.wtpl using self}
-	  <<+{../${served_file} using self}
-    <<+{footer.wtpl using self}
+    <<+{header.wtpl}
+	  <<+{../${served_file} share all}
+    <<+{footer.wtpl}
     ?{Waw.config.google_analytics}{
   		<script type="text/javascript">
   		  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

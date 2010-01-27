@@ -1,15 +1,8 @@
-From: UCLouvain ACM Student Chapter <no-reply@uclouvain.acm-sc.be>
-To: +{mail_address}
-Subject: Votre inscription sur uclouvain.acm-sc.be
-Date: +{Time.now}
-MIME-Version: 1.0
-Content-type: text/html; charset=UTF-8
-
 <p>Bonjour,</p>
 
 <p>Vous nous avez récemment fait part de votre intérêt pour certaines activités proposées
    par l'ACM Student Chapter et nous vous en remercions. Un compte personnel a été créé sur
-   notre site <a href="{Waw.config.web_base}">${Waw.config.web_base}</a></p>
+   notre site <a href="{web_base}">${web_base}</a></p>
    
 <p>Pour activer votre compte, mettre à jour vos préférences (inscription à la newsletter, etc.) 
    et profiter des fonctionnalités offertes par notre site web, il vous suffit de suivre 

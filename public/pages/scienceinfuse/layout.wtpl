@@ -1,10 +1,10 @@
 <div id="main">
   <div id="scienceinfuse">
   	<div class="side" style="margin-right:-15px;">
-  	  <<+{menu.wtpl using self}
+  	  <<+{menu.wtpl}
   	</div>
 
     <!-- scienceinfuse-wspec: ${which_scienceinfuse} -->
-    <<+{${which_scienceinfuse} using self}
+    <<+{${which_scienceinfuse}}
   </div>
 </div>

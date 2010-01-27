@@ -1,8 +1,0 @@
-From: +{mail}
-To: info@uclouvain.acm-sc.be
-Subject: +{subject}
-Date: +{Time.now}
-MIME-Version: 1.0
-Content-type: text/html; charset=UTF-8
-
-+{message}

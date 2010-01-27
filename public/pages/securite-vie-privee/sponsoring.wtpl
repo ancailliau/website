@@ -2,7 +2,7 @@
 
 	<h2>Sécurité et vie privée &mdash; Sponsors</h2>
 	
-  <<+{menu.wbrick using self with entries: '../securite-vie-privee/menu.rb'}
+  <<+{menu.wbrick}
 
 	<p>Si vous souhaitez sponsoriser l'évènement, contactez-nous à l'adresse
 	suivante <a

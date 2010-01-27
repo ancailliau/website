@@ -2,6 +2,11 @@ module AcmScW
   module Controllers
     class MainController < ::Waw::ActionController
       
+      # Returns an instance to the MainServies business layer
+      def main_services
+        @main_services ||= Waw.resources.business.main
+      end
+      
       signature {
         validation :mail, mail,                 :invalid_email
         validation :subject, String & mandatory, :missing_subject
@@ -12,10 +17,8 @@ module AcmScW
         upon 'validation-ko' do form_validation_feedback                      end
       }
       def send_message(params)
-        template = File.join(File.dirname(__FILE__), 'contact_mail.wtpl')
-        message = WLang.file_instantiate(template, params.unsymbolize_keys).to_s
-        AcmScW::Tools::MailServer.send_mail(message, params[:mail], 'info@uclouvain.acm-sc.be')
-        :ok
+        from, subject, message = params[:mail], params[:subject], params[:message]
+        main_services.send_contact_mail(from, subject, message)
       end
       
     end # class MainController

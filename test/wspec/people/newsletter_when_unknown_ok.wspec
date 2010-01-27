@@ -1,0 +1,25 @@
+requirement("Registration to the newsletter should create a default profile") do 
+
+  people_mail, people = "test-user@acmscw.be", {:mail => "test-user@acmscw.be"}
+  business.people.drop_people(people_mail)
+  mailbox = business.mail_agent.mailbox(people_mail)
+  mailbox.clear
+  
+  therefore("Newsletter registration form should appear on the index page") {
+    go       index_page
+    i_see    form(:id => 'newsletter_form')
+  }
+
+  therefore("Submitting the form should lead to an activation mail") {
+    i_submit form(:id => 'newsletter_form', :action => controllers.people.newsletter_subscribe), with(people)
+    mail = mailbox.read(0)
+    assert_not_nil mail, "Mail has been received"
+  }
+  
+  therefore("Submitting the form a second time should not") {
+    mailbox.clear
+    i_submit form(:id => 'newsletter_form', :action => controllers.people.newsletter_subscribe), with(people)
+    assert mailbox.empty?
+  }
+  
+end

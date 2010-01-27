@@ -1,6 +1,4 @@
-scenario __FILE__ do
-  
-  go Waw.config.web_base + 'olympiades/register'
+requirement "Registration to the olympiades is both ok and robust" do
   
   base = {
     :gender      => 'M', 
@@ -35,17 +33,22 @@ scenario __FILE__ do
                   base.merge(:birthdate => "32/13/1990"),
                   base.merge(:birthdate => "12/11/1765")]
   
-  valid_data.each do |data|
-    assert_service_invoke "Successful subscribe service invocation", {
-      :service    => "/webserv/olympiades/register",
-      :arguments  => data,
-      :result     => "success/ok"
-    }
-  end
+  therefore("It allows all valid registration possibilities") {
+    go index_page + 'olympiades/inscription'
+    theform = form(:id => 'olympiades_register', :action => controllers.olympiades.register)
+    valid_data.each do |data|
+      i_submit theform, with(data)
+      i_see    messages.olympiades_registration_ok
+    end
+  }
 
-  invalid_data.each do |data|
-    result = invoke_json_service "/webserv/olympiades/register", data
-    assert_equal 'validation-ko', result[0], "Validation-ko on #{data.inspect}"
-  end
+  therefore("It does not allow invalid data registrations") {
+    go index_page + 'olympiades/inscription'
+    theform = form(:id => 'olympiades_register', :action => controllers.olympiades.register)
+    invalid_data.each do |data|
+      i_submit      theform, with(data)
+      i_dont_see    messages.olympiades_registration_ok
+    end
+  }
 
 end

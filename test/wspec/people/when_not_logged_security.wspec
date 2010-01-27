@@ -1,0 +1,8 @@
+requirement "The people services should be sufficiently secure" do 
+  
+  therefore("The user should not be able to access it's chapter without being logged") {
+    go      index_page + "people/my_chapter"
+    i_see   Waw.resources.messages.user_must_be_logged
+  }
+
+end
