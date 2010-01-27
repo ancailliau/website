@@ -1,7 +1,9 @@
 require 'rubygems'
 require 'sequel'
-require 'waw'
+gem 'wlang', '< 0.9.0'
+gem 'waw',   '< 0.2.0'
 require 'wlang'
+require 'waw'
 
 # Main module of the whole website
 module AcmScW

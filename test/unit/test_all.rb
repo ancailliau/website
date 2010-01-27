@@ -4,7 +4,6 @@ $LOAD_PATH.unshift(File.join(top, 'lib'), File.join(top, 'test', 'unit'))
 
 # Requires
 require 'rubygems'
-require 'waw'
 require 'acmscw'
 require 'test/unit'
 
