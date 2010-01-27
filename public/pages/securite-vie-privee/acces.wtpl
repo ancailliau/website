@@ -2,7 +2,7 @@
 
 	<h2>Sécurité et vie privée &mdash; Accès et inscriptions</h2>
 
-  <<+{menu.wbrick using self with entries: 'menu.rb'}
+  <<+{menu.wbrick}
 	
 	<p>Cette conférence se déroule à Louvain-la-Neuve, sur le site de l'Université
 	catholique de Louvain. Le site est très facile d'accès par les transports

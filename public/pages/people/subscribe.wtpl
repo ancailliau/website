@@ -10,7 +10,7 @@
       <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
         <div class="feedback"></div>
         <div>
-          <<+{account_fields.wbrick using self with people:Hash.new}
+          <<+{account_fields.wbrick with people:Hash.new}
         </div>
         <input type="submit" value="Créer mon compte"/>
       	+{action.ajax_form_preparer}

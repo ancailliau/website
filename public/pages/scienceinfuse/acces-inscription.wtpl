@@ -14,4 +14,4 @@
    <a href="http://www.uclouvain.be/305482.html">Scienceinfuse</a>. Afin de faciliter l'organisation des stands et être
    tenu au courant des nouvelles informations, inscrivez-vous.</p>
 
-<<+{../events/event_registration.wbrick using self with event: 'scienceinfuse_2010'}
+<<+{../events/event_registration.wbrick with event: 'scienceinfuse_2010'}

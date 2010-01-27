@@ -14,9 +14,9 @@
   	}
 	</head>
 	<body class="{theclass}">
-    <<+{header.wtpl using self}
-	  <<+{../${served_file} using self}
-    <<+{footer.wtpl using self}
+    <<+{header.wtpl}
+	  <<+{../${served_file} share all}
+    <<+{footer.wtpl}
     ?{Waw.config.google_analytics}{
   		<script type="text/javascript">
   		  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

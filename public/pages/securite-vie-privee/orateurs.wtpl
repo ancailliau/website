@@ -2,7 +2,7 @@
 
 	<h2>Sécurité et vie privée &mdash; Orateurs</h2>
 
-  <<+{menu.wbrick using self with entries: 'menu.rb'}
+  <<+{menu.wbrick}
 	
 	<p>Les deux orateurs de cette soirée sont&nbsp;:</p>
 	<ul>
