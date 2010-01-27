@@ -12,18 +12,20 @@ set -e
 
 # Gems (see vendor folder)
 #   json >= 1.1.9  (sudo gem install json, for the latest version)
-#   sequel >= 3.8  (sudo gem install sequel, for the latest version)
+#   pg >= 0.8.0 (sudo gem install pg, for the latest version)
 #   rack >= 1.1.0 (sudo gem install rack, for the latest version)
 #   rdoc >= 2.4.1 (sudo gem install rdoc, for the latest version)
+#   sequel >= 3.8  (sudo gem install sequel, for the latest version)
 #   wlang >= 0.9.0 (or see http://github.com/blambeau/wlang for the latest version)
 #   waw >= 0.2.0 (or see http://github.com/blambeau/waw for the latest version)
 #
 # To install those gems, type the following commands
 echo 'Installing required ruby gems'
 gem install --no-rdoc --no-ri vendor/json-1.1.9.gem
-gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
+gem install --no-rdoc --no-ri vendor/pg-0.8.0.gem
 gem install --no-rdoc --no-ri vendor/rack-1.1.0.gem
 gem install --no-rdoc --no-ri vendor/rdoc-2.4.1.gem
+gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
 gem install --no-rdoc --no-ri vendor/wlang-0.9.0.gem
 gem install --no-rdoc --no-ri vendor/waw-0.2.0.gem
 
