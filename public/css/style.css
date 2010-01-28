@@ -146,9 +146,9 @@ a img {
 /* ======================================================================= body.index */
 body.index #main .box {
 	border: 1px solid #ccc;
-	margin: 20px 13px 0 0 ;
+	margin: 20px 7px 0 0 ;
 	float: left;
-	width: 98px;
+	width: 88px;
 	height: 86px;
 	line-height: 1.8em;
 }
@@ -160,10 +160,10 @@ body.index #main .box-span-2 {
 }
 body.index #main .box a {
 	display: block;
-	width: 78px;
+	width: 68px;
 	height: 66px;
 	padding: 10px;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	text-decoration: none;
 	color: #666;
 }
@@ -216,7 +216,7 @@ body.index #main p {
 
 /* ====================================================== newsletter_subscribe form */
 #main .grey-box {
-	width: 216px;
+	width: 191px;
 	height: 86px;
 	border: 1px solid #ccc;
 	padding: 1px;
@@ -231,21 +231,21 @@ body.index #main p {
 	float: left;
 	overflow: auto;
 
-	width: 196px;
+	width: 171px;
 	height: 66px;
 }
 #main .grey-box form label {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	color: #666;
 	display: block;
 	margin: 0px 0px 10px 0px;
 }
 #main .grey-box form input[type=text] {
-	width: 132px;
+	width: 102px;
 	float: left;
 }
 #main .grey-box form input#mail {
-	width: 132px;
+	width: 102px;
 	float: left;
 }
 #main .grey-box form input[type=submit] {

@@ -7,6 +7,10 @@
 	</div>
 
 	<div class="box">
+		<a href="/latex">LaTeX<span>Informations complémentaires</span></a>
+	</div>
+
+	<div class="box">
 		<a href="/scienceinfuse">Scienceinfuse<span>Les activités organisées</span></a>
 	</div>
 
@@ -15,7 +19,7 @@
 	</div>
 
 	<div class="box">
-		<a href="/latex">LaTeX<span>Informations complémentaires</span></a>
+		<a href="/olympiades">Olympiades<span>Olympiades d'Informatique</span></a>
 	</div>
 
 	<div class="grey-box">
