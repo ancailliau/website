@@ -1,0 +1,435 @@
+body, html {
+	margin: 0;
+	font-family: "Myriad Pro", "Arial", sans-serif;
+	font-size: 100%;
+}
+
+body {
+	/* With this font-size, we have that 100% = 10px which is a convenient
+	 * value to use */
+	font-size: 62.5%;
+	padding-bottom: 60px;
+}
+
+a {
+	color: #005c9c;
+	text-decoration: none;
+}
+a:hover {
+	cursor: pointer;
+}
+a img {
+	border: 0px none;
+}
+
+#header,
+#main,
+#footer {
+	width: 680px;
+	margin: 0 auto;
+}
+
+/* ======================================================================= Forms inside main */
+#main form {
+	padding-right: 240px;
+}
+#main form label, form span {
+	font-size: 1.2em;
+	color: #666;
+	margin: 15px 0px 5px 0px;
+}
+#main form label {
+	display: block;
+}
+#main form fieldset {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 7px 7px 15px 7px;
+}
+#main form fieldset legend {
+	font-size: 1.2em;
+}
+
+
+/* ======================================================================= Header */
+#header {
+	margin: 20px auto;
+	/* With this property, the height of the wrapper includes the height of the
+	 * floating elements */
+	overflow: auto;
+}
+#header h1 {
+	background: url("/images/logo.png") no-repeat top left;
+	height: 40px;
+	width: 186px;
+	float: left;
+}
+#header h1 a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#header h1 span {
+	display: none;
+}
+#header p {
+	font-size: 1.6em;
+	float: right;
+	text-align: right;
+}
+/* ======================================================================= Header */
+
+/* ======================================================================= Main */
+#main {
+	position: relative;
+}
+#main div#img {
+	border: 1px solid #ccc;
+	padding: 1px;
+	width: 676px;
+}
+#main div#img img {
+	display: block;
+}
+#main p,
+#main ul,
+#main ol,
+#main ol {
+	font-size: 1.2em;
+	color: #666;
+	line-height: 150%;
+	padding-right: 240px;
+	text-align: justify;
+}
+#main ol ol {
+	font-size: 1em;
+	padding-right: 0px;
+}
+#main blockquote {
+	font-size: 1.2em;
+	color: #666;
+}
+#main ul {
+	margin: 0 0 0 16px;
+	padding: 0 240px 0 0;
+	list-style-type: inside;
+}
+#main ul li,
+#main ol li {
+	margin: 0 0 2px 0;
+}
+#main .side {
+	margin-top: 2em;
+	padding: 10px 0 0 0;
+	float: right;
+	width: 220px;
+}
+#main .side img {
+	border: 1px solid #ccc;
+	padding: 1px;
+	display: block;
+}
+#main .side p {
+	padding: 0;
+	font-size: 1em;
+	color: #999;
+	text-align: right;
+}
+#main .side ul {
+	font-size: 1.2em;
+}
+#main .side ul ul {
+	font-size: 1em;
+}
+/* ======================================================================= Main */
+
+/* ======================================================================= body.index */
+body.index #main .box {
+	border: 1px solid #ccc;
+	margin: 20px 7px 0 0 ;
+	float: left;
+	width: 88px;
+	height: 86px;
+	line-height: 1.8em;
+}
+body.index #main .box:hover {
+	border-color: #666;
+}
+body.index #main .box-span-2 {
+	width: 198px;
+}
+body.index #main .box a {
+	display: block;
+	width: 68px;
+	height: 66px;
+	padding: 10px;
+	font-size: 1.1em;
+	text-decoration: none;
+	color: #666;
+}
+body.index #main .box:hover a {
+	color: black;
+}
+body.index #main .box-span-2 a {
+	width: 178px;
+}
+body.index #main .box a span {
+	color: #999;
+	font-size: 0.9em;
+	display: block;
+}
+body.index #main .box:hover a span {
+	color: #666;
+}
+body.index #main h2,
+body.index #main p {
+	padding-left: 490px;
+	padding-right: 10px;
+	line-height: 120%;
+}
+body.index #main p {
+	font-size: 1.2em;
+	color: #999;
+}
+#main h2 {
+	font-weight: normal;
+	font-size: 1.5em;
+	margin: 0 0 10px 0;
+}
+#main h3 {
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-top: 40px;
+}
+/* ======================================================================= body.index */
+
+/* ======================================================================= Feedback */
+
+#main form .feedback ul {
+	width: 100%;
+	padding-right: 0px;
+	margin-left: 30px;
+}
+#main form .feedback ul li {
+	color: red;
+}
+
+/* ====================================================== newsletter_subscribe form */
+#main .grey-box {
+	width: 191px;
+	height: 86px;
+	border: 1px solid #ccc;
+	padding: 1px;
+	background: #fff;
+
+	float: right;
+	margin: 20px 0 0 0;
+}
+#main .grey-box form {
+	background: #e5e5e5 url("/images/grey-gradient-background.png") repeat-x 0 0;
+	padding: 10px;
+	float: left;
+	overflow: auto;
+
+	width: 171px;
+	height: 66px;
+}
+#main .grey-box form label {
+	font-size: 1.1em;
+	color: #666;
+	display: block;
+	margin: 0px 0px 10px 0px;
+}
+#main .grey-box form input[type=text] {
+	width: 102px;
+	float: left;
+}
+#main .grey-box form input#mail {
+	width: 102px;
+	float: left;
+}
+#main .grey-box form input[type=submit] {
+	float: right;
+}
+#main .grey-box form p {
+	margin: 5px 0 0 0;
+	clear: left;
+	float: left;
+	padding: 0;
+}
+/* ====================================================== newsletter_subscribe form */
+
+#main dl dt {
+	float: left;
+	width: 60px;
+	font-size: 1.2em;
+}
+
+#main dl dd {
+	margin-left: 60px;
+}
+
+#main img.aside,
+#main dl dd img {
+	position: absolute;
+	left: 480px;
+}
+
+#submenu {
+	position: absolute;
+	left: 480px;
+	width: 200px;
+}
+#submenu ul {
+	width: 200px;
+}
+
+#footer {
+	clear: both;
+	padding-top: 20px;
+	font-size: 1.2em;
+	margin-top: 40px;
+}
+body.index #footer {
+	margin-top: 0;
+}
+
+#footer p {
+	margin: 0;
+	padding: 0;
+}
+
+#footer p#social-links a {
+	width: 100px;
+	display: block;
+	float: left;
+	color: #005999;
+	margin: 0 10px 0 0;
+	line-height: 1.4em;
+	font-size: 0.9em;
+}
+
+#footer p#internal-links a {
+	float: right;
+	color: #999;
+	font-size: 0.9em;
+	text-align: right;
+	margin-left: 15px;
+}
+
+form#login {
+	display: none;
+	float: right;
+}
+form#login input[type=text] {
+	font-size: 0.9em;
+  width: 140px;
+}
+form#login input[type=password] {
+	font-size: 0.9em;
+  width: 80px;
+}
+form#login p {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-size: 0.9em;
+}
+
+span.explain {
+	font-size: 1.1em;
+	display: block;
+	float: right;
+	width: 200px;
+	color: red;
+}
+#change_mail_explain {
+	display: none;
+}
+
+form#newsletter_form label.feedback {
+	height:30px;
+}
+
+#main form#details-form {
+	font-size: 1.2em;
+	color: #666;
+	line-height: 150%;
+	padding-right: 220px;
+}
+
+#main form#details-form label {
+	display: block;
+	width: 200px;
+	float: left;
+}
+
+#main form#details-form label.with-input {
+	width: auto;
+	margin: 0 5px 0 0;
+}
+
+#main form#details-form input,
+#main form#details-form textarea {
+	display: block;
+	float: left;
+	margin-bottom: 10px;
+	width: 240px;
+	font-size: 1em;
+}
+
+#main form#details-form legend {
+	font-size: 1.2em;
+	padding: 0 1em;
+	margin-left: 1em;
+	color: #666;
+}
+
+#main form#details-form fieldset {
+	border: 1px solid #ccc;
+	border-width: 1px 0 0 0 ;
+	font-size: 0.9em;
+	margin: 0 0 20px 0;
+	width: 443px;
+	padding: 20px 5px 5px 5px;
+	clear: left;
+}
+
+#main form#details-form fieldset p {
+	padding: 0;
+	margin: 0;
+}
+
+#main form#details-form textarea {
+	height: 60px;
+}
+
+#main form#details-form input.checkbox {
+	width: auto;
+	margin: 0 10px 0 0;
+	padding: 0;
+	border: 0;
+	clear: left;
+}
+
+#main form#details-form input.submit {
+	width: auto;
+}
+
+#main form#details-form input.small {
+	width: 200px;
+	display: inline-block;
+}
+
+#main form#details-form strong {
+	float: left;
+	display: block;
+	width: 200px;
+	clear: left;
+	margin: 10px 0 0 0;
+}
+
+#main form#details-form span.right {
+	float: left;
+	display: block;
+	margin: 10px 0 10px 0;
+}
