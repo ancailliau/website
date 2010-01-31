@@ -14,7 +14,7 @@
     }
   }
 }{
-  <p>Pour vous inscrire à cet événement, il vous suffit de nous faire connaître
+  <p>Pour vous inscrire à cet évènement, il vous suffit de nous faire connaitre
      votre adresse e-mail à l'aide du formulaire ci-dessous.</p>
    
   ={controllers.event.register_by_mail as action}{

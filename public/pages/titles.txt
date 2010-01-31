@@ -3,22 +3,22 @@
 /404                             UCLouvain ACM Student Chapter - Page non trouvée
 /mentions-legales                UCLouvain ACM Student Chapter - Mentions légales
 /activites                       Nos activités
-/events                          Nos prochains événements
+/events                          Nos prochains évènements
 /latex                           A propos de Latex, nos formations et autres
 
-/olympiades                      Olympiades d'Informatique
-/olympiades/demi-finales         Olympiades d'Informatique - Demi-Finales
-/olympiades/equipe               Olympiades d'Informatique- Equipe
-/olympiades/finales              Olympiades d'Informatique- Finales
-/olympiades/formation            Olympiades d'Informatique- Formation
-/olympiades/inscription          Olympiades d'Informatique- Inscriptions
+/olympiades                      Olympiades belges d'Informatique
+/olympiades/demi-finales         Olympiades belges d'Informatique - Demi-Finales
+/olympiades/equipe               Olympiades belges d'Informatique- Equipe
+/olympiades/finales              Olympiades belges d'Informatique- Finales
+/olympiades/formation            Olympiades belges d'Informatique- Formation
+/olympiades/inscription          Olympiades belges d'Informatique- Inscriptions
 /olympiades/olympiades-internationales   Olympiades Internationales d'Informatique
-/olympiades/questions            Olympiades d'Informatique- Exemples de questions
-/olympiades/reglement            Olympiades d'Informatique- Règlement
+/olympiades/questions            Olympiades belges d'Informatique- Exemples de questions
+/olympiades/reglement            Olympiades belges d'Informatique- Règlement
 
 /scienceinfuse                   Weekend Festival Scienceinfuse
-/scienceinfuse/acces-inscription Scienceinfuse - Accès et inscriptions
-/scienceinfuse/sponsoring        Scienceinfuse - Sponsoring
+/scienceinfuse/acces-inscription Scienceinfuse - Accès et inscription
+/scienceinfuse/sponsoring        Scienceinfuse - Sponsors
 /scienceinfuse/ateliers          Scienceinfuse - Ateliers
 /scienceinfuse/spectacle         Scienceinfuse - Spectacle scientifique
 /scienceinfuse/stands            Scienceinfuse - Stands interactifs

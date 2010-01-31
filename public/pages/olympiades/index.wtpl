@@ -1,4 +1,4 @@
-<h2>Olympiades d'Informatique</h2>
+<h2>Olympiades belges d'Informatique</h2>
 
 <p>Les Olympiades d'Informatique (OI) sont une compétition de programmation, d'algorithmique et de logique, organisée en 
    Communauté Française de Belgique par l'UCLouvain ACM Student Chapter ASBL et les Facultés Universitaires Notre-Dame de 
@@ -7,6 +7,11 @@
 <p>Les Olympiades sont composées de deux concours. Le premier est destiné aux élèves de cinquième et sixième secondaire 
    et a pour but d'identifier des candidats pour les <a href="http://www.ioinformatics.org">Olympiades Internationales 
    d'Informatique</a> (IOI). Le second concours est destiné aux étudiants en première année d'études supérieures.</p>
+
+<div style="float: right">
+  <small>Co-organisé avec</small><br/><br/>
+  <img style="width: 130px" src="/images/fundp.png" alt="International Olympiads in Informatics" />
+</div>
 
 <p>Les Olympiades se déroulent en deux étapes :</p>
 
@@ -17,7 +22,9 @@
 
 <p><strong>Attention, <a href="/olympiades/inscription">inscription</a> avant le 10 mars 2010 !</strong></p>
 
-<p>Pour être tenu au courant des news des Olympiades, inscrivez-vous à <a href="/olympiades/finales">la finale</a></p>
+<p>Rejoignez <a href="http://www.facebook.com/group.php?gid=303863304852">le groupe Facebook des Olympiades</a> pour y poser toutes vos questions et discuter avec notre équipe.</p>
+
+<p>Si vous ne souhaitez pas vous inscrire au concours, mais être tenus informés à propos de l'évènement, inscrivez-vous à <a href="/olympiades/finales">la finale</a>.</p>
 
 <h3>Calendrier</h3>
 
