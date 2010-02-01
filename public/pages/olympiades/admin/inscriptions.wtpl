@@ -1,0 +1,27 @@
+={(AcmScW.database[:people].filter(:mail => '+{session.get(:user)}').first || {}) as people}
+={(people[:adminlevel] || -1) as adminlevel}
+={[:id, :gender, :first_name, :last_name, :mail, :category, :study_level, :orientation, :center, :school_name] as fields}
+<div id="main">
+  <div id="olympiades">
+    ?{adminlevel >= 2}{
+      <h2>Inscriptions aux olympiades</h2>
+
+      <table>
+        <tr>
+          *{fields as field}{
+            <th>${field}</th>
+          }
+        </tr>
+        *{model.olympiades_registrations as r}{
+          <tr>
+            *{fields as field}{
+              <td>${r[field]}</td>
+            }
+          </tr>
+        }
+      </table>      
+    }{
+      <p>+{messages.user_must_be_logged}</p>
+    }
+  </div>
+</div>

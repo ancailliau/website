@@ -1,0 +1,24 @@
+wawaccess do
+  
+  # We don't inherits static configuration
+  inherits false
+  
+  # By default, we deny the call
+  strategy :deny_all
+  
+  # We match .wtpl files using wlang
+  match file(:extension => '.wtpl') do
+    wlang '../../../templates/layout.wtpl', {:title    => AcmScW.title_of(served_file),
+                                            :theclass => (served_file == 'pages/index.wtpl' ? 'index' : 'other')}
+  end
+  
+  # When the file cannot be found
+  match true do
+    if /\.wtpl$/ =~ served_file
+      apply '/pages/404.wtpl', 404
+    else
+      apply "#{served_file}.wtpl"
+    end
+  end
+  
+end
