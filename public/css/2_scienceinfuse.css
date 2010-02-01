@@ -7,16 +7,20 @@
 #scienceinfuse dl dd {
 	margin-left: 60px;
 }
-#scienceinfuse .index dl {
+#scienceinfuse dl.calendar {
 	padding-left: 30px;
 }
-#scienceinfuse .index dl dt {
+#scienceinfuse dl.calendar dt {
 	width: 120px;	
 }
-#scienceinfuse .index dl dd {
+#scienceinfuse dl.calendar dd {
 	margin-left: 120px;
 }
 #scienceinfuse ul {
-  font-size: 1em;
-	padding-right: 0px;
+  font-size: normal;
+	padding-right: 240px;
 }
+#scienceinfuse ul.stands li {
+	margin-top: 10px;
+}
+

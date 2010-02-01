@@ -10,68 +10,66 @@
   la page des <a href="/scienceinfuse/acces-inscription">inscriptions</a>. Voici une description des différents 
   stands que vous pourrez découvrir durant le weekend :</p>
 
-<ul>
+<ul class="stands">
 	<li>
-		<p><strong>Jeux vidéo d'hier et d'aujourd'hui : quelle évolution !</strong></p>
-
-		<p>Venez, venez et découvrez les jeux qui ont fait l'histoire de l'informatique. Des plus vieux comme tetris, pong et 
+		<div><strong>Jeux vidéo d'hier et d'aujourd'hui : quelle évolution !</strong></div>
+		<div>Venez, venez et découvrez les jeux qui ont fait l'histoire de l'informatique. Des plus vieux comme tetris, pong et 
 		  pacman aux plus récents. Découvrez également des réalisations d'étudiants de deuxième année de l'École Polytechnique de 
-		  Louvain.</p>
+		  Louvain.</div>
 	</li>
 	
 	<li>
-		<p><strong>Qu'y a-t-il dans cette boite ? Démontage de PC (neufs et anciens).</strong></p>
-		
-		<p>Vous vous êtes toujours demandé ce qu'il y avait à l'intérieur d'un ordinateur ? C'est le moment de venir 
+		<div><strong>Qu'y a-t-il dans cette boite ? Démontage de PC (neufs et anciens).</strong></div>
+		<div>Vous vous êtes toujours demandé ce qu'il y avait à l'intérieur d'un ordinateur ? C'est le moment de venir 
 		   découvrir les pièces qui le constituent et de comprendre leur rôle. Vous pourrez même démonter et remonter par 
-		   vous-même un vieil ordinateur !</p>
+		   vous-même un vieil ordinateur !</div>
 	</li>
 	
 	<li>
-		<p><strong>Edubuntu : la version éducative de Ubuntu, le logiciel libre au service des jeunes et des parents.</strong></p>
+		<div><strong>Edubuntu : la version éducative de Ubuntu, le logiciel libre au service des jeunes et des parents.</strong></div>
 		
-		<p>Vous ne savez pas quoi faire sur votre ordinateur ? Venez découvrir Edubuntu qui propose une pléthore de 
+		<div>Vous ne savez pas quoi faire sur votre ordinateur ? Venez découvrir Edubuntu qui propose une pléthore de 
 		   programmes éducatifs dans le domaine des sciences, des mathématiques, des langues, etc. En particulier, apprenez 
-		   l'espagnol, étudiez les atomes, observez les étoiles, etc.</p>
+		   l'espagnol, étudiez les atomes, observez les étoiles, etc.</div>
 	</li>
 	
 	<li>
-		<p><strong>Sécuriser l'information ? Je réponds cryptographie !</strong></p>
+		<div><strong>Sécuriser l'information ? Je réponds cryptographie !</strong></div>
 		
-		<p>Vous avez des choses à cacher ? Des informations à protéger ? Découvrez la cryptographie à l'aide de méthodes 
+		<div>Vous avez des choses à cacher ? Des informations à protéger ? Découvrez la cryptographie à l'aide de méthodes 
 		   simples qu'il est possible de mettre en &oelig;uvre avec un crayon et du papier. Vous aurez même l'occasion de jouer le 
-		   méchant et de tenter de décrypter des messages chiffrés.</p>
+		   méchant et de tenter de décrypter des messages chiffrés.</div>
 	</li>
 	
 	<li>
-		<p><strong>Ce n'est pas dans le bon ordre ... Trions, mais avec méthode.</strong></p>
+		<div><strong>Ce n'est pas dans le bon ordre ... Trions, mais avec méthode.</strong></div>
 		
-		<p>Lorsque vous devez trier des objets dans un certain ordre, vous êtes capables de le faire assez vite. Venez découvrir 
+		<div>Lorsque vous devez trier des objets dans un certain ordre, vous êtes capables de le faire assez vite. Venez découvrir 
 		   comment l'ordinateur s'y prend et prenez sa place le temps d'un court instant en triant des boites numérotées de 
-		   manière croissante.</p>
+		   manière croissante.</div>
 	</li>
 	
 	<li>
-		<p><strong>Eliza ... T'es un ordi oui ou non ?</strong></p>
+		<div><strong>Eliza ... T'es un ordi oui ou non ?</strong></div>
 		
-		<p>Les ordinateurs seront-ils un jour plus intelligents que les êtres humains ? Venez vous confronter au test de Turing 
+		<div>Les ordinateurs seront-ils un jour plus intelligents que les êtres humains ? Venez vous confronter au test de Turing 
 		   durant lequel vous allez pouvoir discuter via un ordinateur, avec un être humain et un autre ordinateur. Saurez-vous 
-		   distinguer l'homme de la machine ?</p>
+		   distinguer l'homme de la machine ?</div>
 	</li>
 	
 	<li>
-		<p><strong>Des briques en plastique ... intelligentes !</strong></p>
+		<div><strong>Des briques en plastique ... intelligentes !</strong></div>
 		
-		<p>Vous connaissez les Lego&reg; ? Vous avez déjà vu des Lego&reg; bouger ? Venez à ce stand découvrir un robot Lego&reg; 
+		<div>Vous connaissez les Lego&reg; ? Vous avez déjà vu des Lego&reg; bouger ? Venez à ce stand découvrir un robot Lego&reg; 
 		   nettoyeur de vitre, réalisé et programmé par des étudiants ingénieurs en première année de l'École Polytechnique de 
-		   Louvain.</p>
+		   Louvain.</div>
 	</li>
 	
 	<li>
-		<p><strong>Ma première animation : on me donne le scénario, je programme l'animation.</strong></p>
+		<div><strong>Ma première animation : on me donne le scénario, je programme l'animation.</strong></div>
 		
-		<p>Aujourd'hui, c'est très facile de créer une animation. Venez découvrir comment créer votre propre animation sur 
+		<div>Aujourd'hui, c'est très facile de créer une animation. Venez découvrir comment créer votre propre animation sur 
 		  ordinateur, rien qu'en utilisant la souris en utilisant Scratch. Nous vous fournissons un scénario, vous le programmez 
-		  sur ordinateur et vous voyez directement le résultat.</p>
+		  sur ordinateur et vous voyez directement le résultat.</div>
 	</li>
 </ul>

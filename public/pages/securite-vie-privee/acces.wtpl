@@ -18,6 +18,6 @@
 	Vous trouverez également plus d'informations sur le 
 	<a href="http://www.uclouvain.be/68206.html">site de l'université</a>.</p>
 
-  <<+{../events/event_registration.wbrick using self with event: 'securite_vie_privee_2010'}
+  <<+{../events/event_registration.wbrick with event: 'securite_vie_privee_2010'}
 </div>
 
