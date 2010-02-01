@@ -8,9 +8,7 @@ wawaccess do
   
   # Send the inscriptions.csv file
   match 'inscriptions.csv' do
-    people = AcmScW.database[:people].filter(:mail => session.get(:user)).first || {}
-    adminlevel = people[:adminlevel] || -1
-    if adminlevel > 2
+    if session.adminlevel > 2
       require 'fastercsv'
       fields = [:id, :gender, :first_name, :last_name, :mail, :birthdate,
       :street, :postal_code, :city, :school_name, :school_city,

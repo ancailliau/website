@@ -82,7 +82,7 @@ module AcmScW
 end
 
 require 'acmscw/waw_ext/validations'
-require 'acmscw/waw_ext/assertions'
+require 'acmscw/waw_ext/session'
 require 'acmscw/business/main_services'
 require 'acmscw/business/people_services'
 require 'acmscw/business/event_services'

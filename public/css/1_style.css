@@ -282,6 +282,11 @@ body.index #main p {
 #submenu ul {
 	width: 200px;
 }
+#adminmenu {
+	position: absolute;
+  left: 480px;
+  top: 340px;	
+}
 
 #footer {
 	clear: both;
