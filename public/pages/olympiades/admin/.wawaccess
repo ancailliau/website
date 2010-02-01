@@ -6,19 +6,33 @@ wawaccess do
   # By default, we deny the call
   strategy :deny_all
   
-  # We match .wtpl files using wlang
-  match file(:extension => '.wtpl') do
-    wlang '../../../templates/layout.wtpl', {:title    => AcmScW.title_of(served_file),
-                                            :theclass => (served_file == 'pages/index.wtpl' ? 'index' : 'other')}
+  # Send the inscriptions.csv file
+  match 'inscriptions.csv' do
+    people = AcmScW.database[:people].filter(:mail => session.get(:user)).first || {}
+    adminlevel = people[:adminlevel] || -1
+    if adminlevel > 2
+      require 'fastercsv'
+      fields = [:id, :gender, :first_name, :last_name, :mail, :birthdate,
+      :street, :postal_code, :city, :school_name, :school_city,
+      :category, :study_level, :orientation, :orientation_other,
+      :center, :knowshow, :knowshow_other]
+      csv_string = FasterCSV.generate do |csv|
+        csv << fields
+        Waw.resources.model.olympiades_registrations.order(:id).each do |row|
+          csv << fields.collect{|field| row[field]}
+        end  
+      end
+      [200, {'Content-Type' => 'text/plain; charset=utf8',
+             'Content-disposition' => 'attachment; filename=olympiades_inscriptions.csv'}, 
+             [csv_string.to_s]]
+    else
+      deny
+    end
   end
   
   # When the file cannot be found
   match true do
-    if /\.wtpl$/ =~ served_file
-      apply '/pages/404.wtpl', 404
-    else
-      apply "#{served_file}.wtpl"
-    end
+    deny
   end
   
 end

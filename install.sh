@@ -11,6 +11,7 @@ set -e
 # Meeting those requirements is behind the scope of this INSTALL file
 
 # Gems (see vendor folder)
+#   fastercsv >= 1.5.1  (sudo gem install fastercsv, for the latest version)
 #   json >= 1.1.9  (sudo gem install json, for the latest version)
 #   pg >= 0.8.0 (sudo gem install pg, for the latest version)
 #   rack >= 1.1.0 (sudo gem install rack, for the latest version)
@@ -21,6 +22,7 @@ set -e
 #
 # To install those gems, type the following commands
 echo 'Installing required ruby gems'
+gem install --no-rdoc --no-ri vendor/fastercsv-1.5.1.gem
 gem install --no-rdoc --no-ri vendor/json-1.1.9.gem
 gem install --no-rdoc --no-ri vendor/pg-0.8.0.gem
 gem install --no-rdoc --no-ri vendor/rack-1.1.0.gem
