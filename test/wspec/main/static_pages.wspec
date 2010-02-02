@@ -2,7 +2,8 @@ requirement "The pseudo-static pages should be correctly served" do
   
   therefore("They should be reachable directly") {
     locations = %w{index activites latex securite-vie-privee/index securite-vie-privee/orateurs
-                   securite-vie-privee/sponsoring events/index mentions-legales contact} 
+                   securite-vie-privee/acces-inscription securite-vie-privee/sponsors events/index
+                   mentions-legales contact} 
     locations.each do |loc|
       i_reach Waw.config.web_base + loc
       i_see "<!-- pages/#{loc}.wtpl -->"

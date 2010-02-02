@@ -1,6 +1,6 @@
 [
   ['Programme', '/securite-vie-privee'],
   ['Orateurs',  '/securite-vie-privee/orateurs'],
-  ['Accès et inscriptions', '/securite-vie-privee/acces'],
-  ['Sponsors', '/securite-vie-privee/sponsoring']
+  ['Accès et inscription', '/securite-vie-privee/acces-inscription'],
+  ['Sponsors', '/securite-vie-privee/sponsors']
 ]

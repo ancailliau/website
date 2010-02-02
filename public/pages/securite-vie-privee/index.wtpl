@@ -6,23 +6,25 @@
   
 	<p>La première soirée de conférences à thème de l'UCLouvain ACM Student Chapter aura lieu 
 	   le mardi 16 mars à Louvain-la-Neuve, dans l'auditoire SUD18. Cette soirée est composée 
-	   de deux conférences dont le thème principal est la sécurité et la vie privée.</p>
+	   de deux conférences dont le thème principal est la sécurité et la vie privée dans le
+           domaine des technologies de l'information et de la communication (ICT).</p>
 
-	<p>Pour vous inscrire à cette conférence cliquez <a href="/securite-vie-privee/acces">ici</a>.</p>
+	<p>La participation a la conférence est gratuite, mais vous devez vous inscrire à l'aide du
+           formulaire disponible sur <a href="/securite-vie-privee/acces-inscription">la page des inscriptions</a>.</p>
 
 	<h3>Programme</h3>
 
 	<dl>
 
 		<dt>18h45</dt>
-		<dd><p>Accueil et enregistrement</p></dd>
+		<dd><p>Accueil et enregistrement.</p></dd>
 
 		<dt>19h00</dt>
 		<dd>
 			<p><strong>«&nbsp;Ces puces qui nous démangent&nbsp;»</strong>
 			(Gildas Avoine)</p>
 		
-			<p><img src="/images/gildas-avoine.jpg" />Les puces électroniques sans contact s'initient
+			<p>Les puces électroniques sans contact s'initient
 			un peu plus chaque jour dans notre quotidien. Que ce soit les
 			passeports biométriques, les cartes de contrôle d'accès, les
 			abonnements aux transports publics, ou les cartes de fidélité, tous ces
@@ -41,7 +43,7 @@
 			<p><strong>«&nbsp;Irrégularités dans le cyber espace : devons-nous
 			avoir peur des cyber criminels ?&nbsp;»</strong> (Luc Beirens)</p>
 			
-			<p><img src="/images/luc-beirens.jpg" />Le commissaire
+			<p>Le commissaire
 			divisionnaire, Luc Beirens, chef de service de la Federal Computer
 			Crime Unit en sait plus. Dans sa présentation, il vous expliquera
 			les menaces présentes sur l'Internet, qui sont ces criminels et
@@ -49,12 +51,12 @@
 			fins. Qui sont les victimes et que pouvons-nous faire pour éviter
 			d'en devenir une ? Et que fait la police contre cette forme de
 			criminalité ? Cette présentation, pleine d'exemples et de tuyaux,
-			est conseillée à chacun qui souhaite pouvoir surfer de manière
-			sécurisée sur l'Internet.  </p>
+			est conseillée à chacun qui souhaite pouvoir surfer en toute
+			sécurité sur l'Internet.  </p>
 		</dd>
 
 		<dt>22h00</dt>
-		<dd><p>Clôture</p></dd>
+		<dd><p>Clôture.</p></dd>
 	</dl>
 
 </div>
