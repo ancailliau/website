@@ -1,0 +1,12 @@
+requirement("Sponsor's logo should be present on all pages") do
+  therefore("Going to the index page should lead to a <img> tag") {
+    i_reach index_page + 'securite-vie-privee'
+    i_see link(:href => "http://www.steria.be/")
+    i_see tag(:img, :src => /steria-logo-small/)
+  }
+  therefore("Going to the sponsors page should lead to a <img> tag with a big one") {
+    i_reach index_page + 'securite-vie-privee/sponsors'
+    i_see link(:href => "http://www.steria.be/")
+    i_see tag(:img, :src => /steria-logo-big/)
+  }
+end
