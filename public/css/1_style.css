@@ -442,7 +442,7 @@ form#login .close {
 /* ==================================================================== Forms */
 
 form.form-300 p.feedback,
-#main form p.feedback {
+#main form div.feedback {
 	display: none;
 	border: 1px solid #2aa2d8;
 	background: #f2f9fd;
@@ -451,7 +451,7 @@ form.form-300 p.feedback,
 }
 
 form.form-300 p.feedback ul,
-#main form p.feedback ul {
+#main form div.feedback ul {
 	width: 100%;
 }
 
@@ -479,7 +479,7 @@ form.form-300 p.feedback ul,
 }
 
 #main form fieldset {
-	margin: 0;
+	margin: 2em 0 0 0;
 	padding: 10px 0 0 0;
 	border: 0px none;
 	border-top: 3px solid #f1f1f1;
