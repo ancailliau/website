@@ -1,19 +1,29 @@
+<div class="index">
 <h2>Weekend Festival Scienceinfuse</h2>
 
-<p>Dans le cadre du <a href="http://www.printempsdessciences.be/">Printemps des Sciences 2010</a>, se déroule le samedi 27 et le dimanche 28 mars 2010 à Louvain-la-Neuve 
-   un ensemble d'activités de sensibilisation à l'informatique. Durant ce weekend, tout un chacun, aussi bien les grands 
-   que les petits, va pouvoir découvrir ce qu'est l'informatique, en tant que science. Plusieurs types d'animations sont 
-   proposés durant le weekend :</p>
+<p>
+	Dans le cadre du <a href="http://www.printempsdessciences.be/">Printemps
+	des Sciences 2010</a>, se déroule le samedi 27 et le dimanche 28 mars 2010
+	à Louvain-la-Neuve un ensemble d'activités de sensibilisation à
+	l'informatique. Durant ce weekend, tout un chacun, aussi bien les grands
+	que les petits, va pouvoir découvrir ce qu'est l'informatique, en tant que
+	science. Plusieurs types d'animations sont proposés durant le weekend :
+</p>
 
 <ul>
-  <li><a href="/scienceinfuse/ateliers">Ateliers</a> interactifs</li>
-  <li><a href="/scienceinfuse/stands">Stands</a> interactifs</li>
-  <li><a href="/scienceinfuse/spectacle">Spectacle</a> scientifique</li>
+	<li><a href="/scienceinfuse/ateliers">Ateliers</a> interactifs</li>
+	<li><a href="/scienceinfuse/stands">Stands</a> interactifs</li>
+	<li><a href="/scienceinfuse/spectacle">Spectacle</a> scientifique</li>
 </ul>
 
-<p>Les ateliers sont réservés aux élèves de primaire et de secondaire tandis que les stands et le spectacle sont ouverts 
-  à tout public. Voici le programme du weekend (le programme détaillé de chaque type d'animation est disponible sur la 
-  page associée) :</p>
+<p>
+	Les ateliers sont réservés aux élèves de primaire et de secondaire tandis
+	que les stands et le spectacle sont ouverts à tout public. Voici le
+	programme du weekend (le programme détaillé de chaque type d'animation est
+	disponible sur la page associée) :
+</p>
+	
+<p><img src="/images/Printemps-des-Sciences.png" alt="Printemps des Sciences" /></p>
 
 <h3>Samedi 27 mars 2010</h3>
 
@@ -38,4 +48,5 @@
 	<dd><p><a href="/scienceinfuse/ateliers">Ateliers</a> interactifs.</p></dd>
 </dl>
 
-<p><img src="/images/Printemps-des-Sciences.png" alt="Printemps des Sciences" /></p>
+
+</div>

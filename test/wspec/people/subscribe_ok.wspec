@@ -11,7 +11,7 @@ requirement "The web site should allow users to subscribe" do
   
   therefore("The index page should provide a subscribe link") {
     go     index_page
-    i_see  "Inscription"
+    i_see  "Inscrivez-vous"
   }
   
   therefore("Following the link should reach the subscribe page") {
@@ -40,7 +40,7 @@ requirement "The web site should allow users to subscribe" do
   therefore("The user should be able to login") {
     go index_page
     i_submit form(:id => 'login', :action => controllers.people.login), with(people)
-    i_see "My chapter"
+    i_see "Editer mon profil"
   }
 
 end

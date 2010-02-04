@@ -4,32 +4,41 @@
 
 	<h2>Découvrez LaTeX &mdash; la composition de document par excellence</h2>
 
-	<p>LaTeX est un langage de balisage utilisé pour composer des documents à
-	l'allure professionel. Ce système de composition de document est
-	principalement utilisé par les mathématiciens, les scientiques, les
-	ingénieurs et ceux issus du monde académique ou industriel. Cette formation
-	est divisée en deux parties, vous permettant ainsi de découvrir LaTeX
-	progressivement.</p>
+	<p>
+		LaTeX est un langage de balisage utilisé pour composer des documents à
+		l'allure professionel. Ce système de composition de document est
+		principalement utilisé par les mathématiciens, les scientiques, les
+		ingénieurs et ceux issus du monde académique ou industriel. Cette
+		formation est divisée en deux parties, vous permettant ainsi de
+		découvrir LaTeX progressivement.
+	</p>
 
 	<ul>
-		<li>La première partie consistait en un <strong>cours
-		théorique</strong> présentant les bases de LaTeX. Cette partie
-		présentait en particulier ce qu'il était possible de réaliser avec
-		LaTeX, en particulier&nbsp: comment positionner et inclure des images,
-		comment écrire des formules mathématique, etc.<br />Vous pouvez
-		télécharger les transparents projetés <a
-		href="/slides/formation-latex.pdf">ici</a>.</li>
+		<li>
+			La première partie consistait en un <strong>cours
+			théorique</strong> présentant les bases de LaTeX. Cette partie
+			présentait en particulier ce qu'il était possible de réaliser avec
+			LaTeX, en particulier&nbsp: comment positionner et inclure des
+			images, comment écrire des formules mathématique, etc.<br />Vous
+			pouvez télécharger les transparents projetés <a
+			href="/slides/formation-latex.pdf">ici</a>.
+		</li>
 		
-		<li>La seconde partie consiste en <strong>sessions pratiques</strong>
-		encadrée sur ordinateur.  Il vous sera alors demandé de réaliser des
-		documents à l'aide de LaTeX. Plusieurs sessions de différents niveau
-		sont organisés&nbsp;: du plus débutant au plus avancé.  </li>
+		<li>
+			La seconde partie consiste en <strong>sessions pratiques</strong>
+			encadrée sur ordinateur.  Il vous sera alors demandé de réaliser
+			des documents à l'aide de LaTeX. Plusieurs sessions de différents
+			niveau sont organisés&nbsp;: du plus débutant au plus avancé.
+		</li>
 	</ul>
 	
-	<p>Les formations pratiques auront lieu dans la salle DAO (<a
-	href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=104799927147349536591.000477cce98e89ae44699&ll=50.668083,4.622422&spn=0.002013,0.004823&t=h&z=18">plan</a>),
-	sauf la scéance de lundi entre 14h et 16h qui aura lieu en salle Candix (<a
-	href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=104799927147349536591.000477cce98e89ae44699&ll=50.668083,4.622422&spn=0.002013,0.004823&t=h&z=18">plan</a>).</p>
+	<p>
+		Les formations pratiques auront lieu dans la salle DAO (<a
+		href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=104799927147349536591.000477cce98e89ae44699&ll=50.668083,4.622422&spn=0.002013,0.004823&t=h&z=18">plan</a>),
+		sauf la scéance de lundi entre 14h et 16h qui aura lieu en salle Candix
+		(<a
+		href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=104799927147349536591.000477cce98e89ae44699&ll=50.668083,4.622422&spn=0.002013,0.004823&t=h&z=18">plan</a>).
+	</p>
 
 	<p>Les fichiers suivants sont disponibles</p>
 	<ul>

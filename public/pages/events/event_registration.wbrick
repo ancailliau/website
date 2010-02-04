@@ -19,12 +19,16 @@
    
   ={controllers.event.register_by_mail as action}{
     ={(knows?(:form_id) ? form_id : action.id) as theid}{
-      <form method="post" enctype="multipart/form-data" id="{theid}">
-      	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
+      <form method="post" enctype="multipart/form-data" id="{theid}" class="form-460 form-followed">
       	<input type="hidden" name="event" value="{event}"/>
-      	<input type="text" value="" name="mail" id="mail"/>
-      	<input type="submit" value="Go »" />
-      	+{action.ajax_form_preparer(:form_id => '+{theid}')}
+      	<p class="span-4">
+		  	<label for="mail">Indiquez votre adresse e-mail&nbsp;:</label>
+		  	<input type="text" value="" name="mail" id="mail"/>
+      	</p>
+      	<p class="form-button">
+		  	<input type="submit" value="M'inscrire »" />
+		  	+{action.ajax_form_preparer(:form_id => '+{theid}')}
+      	<p>
       </form>
     }
   }

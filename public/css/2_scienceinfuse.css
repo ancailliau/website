@@ -1,26 +1,19 @@
-#scienceinfuse {
-	min-height: 200px;
-}
-#scienceinfuse dl dt {
+#main #scienceinfuse  dl dt {
 	width: 60px;	
 }
-#scienceinfuse dl dd {
+
+#main #scienceinfuse dl dd {
 	margin-left: 60px;
 }
-#scienceinfuse dl.calendar {
+
+#main #scienceinfuse .index dl {
 	padding-left: 30px;
 }
-#scienceinfuse dl.calendar dt {
+
+#main #scienceinfuse .index dl dt {
 	width: 120px;	
 }
-#scienceinfuse dl.calendar dd {
+
+#main #scienceinfuse .index dl dd {
 	margin-left: 120px;
 }
-#scienceinfuse ul {
-  font-size: normal;
-	padding-right: 240px;
-}
-#scienceinfuse ul.stands li {
-	margin-top: 10px;
-}
-

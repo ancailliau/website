@@ -6,34 +6,47 @@
 	</p>
 
 	<p id="internal-links">
-    ?{session.has_key?(:user)}{
-      <a onclick="{controllers.people.logout.ajax_link}">Logout</a>
-      <a href="/people/my_chapter">My chapter</a>
-		}{
-  	  <a class="button" onclick="javascript:show_login_form()">Connexion</a>
-  	  <a href="/people/subscribe">Inscription</a>
-		}
+		?{!session.has_key?(:user)}{<a class="button" onclick="javascript:show_login_form()">Connexion</a>}
 		<a href="/mentions-legales">Mentions légales</a>
-		<a href="/contact">Contactez-nous</a>
 	</p>
+	
 	={controllers.people.login as action}{
-    <form action="{action.uri}" method="post" enctype="multipart/form-data" id="login">
-      <p style="float:left;" class="feedback">Entrez votre e-mail et mot de passe (<a href="/people/lost_password">perdu?</a>)</p>
-      <p><a class="button" style="float:right" onclick="javascript:hide_login_form()">fermer</a></p>
-      <input type="text" name="mail" value=""/>
-      <input type="password" name="password" value=""/>
-      <input type="submit" value="Go »"/>
-    	+{action.ajax_form_preparer(:form_id => 'login')}
-    </form>
+		<form action="{action.uri}" method="post" enctype="multipart/form-data" id="login" class="form-300">
+			<p>Pour accéder à MyChapter, merci de vous connecter. Si vous
+			n'êtes pas encore enregistré, <a
+			href="/people/subscribe">inscrivez-vous</a>.</p>
+			
+			<p class="feedback"></p>
+			
+			<p class="span-3">
+				<label for="mail">Mon e-mail&nbsp;:</label>
+				<input type="text" name="mail" value=""/>
+			</p>
+			
+			<p class="span-3">
+				<label for="mail">Mon mot de passe (<a href="/people/lost_password">perdu?</a>)&nbsp;:</label>
+				<input type="password" name="password" value=""/>
+			</p>
+			
+			<p class="form-button">
+				<input type="submit" value="Go »"/>
+				+{action.ajax_form_preparer(:form_id => 'login')}
+				<a href="#" onclick="javascript:hide_login_form()">Fermer</a>
+			</p>
+		</form>
 	}
-  <script type="text/javascript">
-    function hide_login_form() {
-      $('p#internal-links').show();
-      $('form#login').hide();
-    }
-    function show_login_form() {
-      $('p#internal-links').hide();
-      $('form#login').show();
-    }
-  </script>
+	
+	<script type="text/javascript">
+		function hide_login_form() {
+			$('p#internal-links').show();
+			$('form#login').hide();
+			return false;
+		}
+		function show_login_form() {
+			$('p#internal-links').hide();
+			$('form#login').show();
+			return false;
+		}
+	</script>
+	
 </div>

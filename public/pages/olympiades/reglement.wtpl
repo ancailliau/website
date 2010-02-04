@@ -1,45 +1,84 @@
 <h2>Olympiades d'Informatique &mdash; Règlement</h2>
 
 <ol>
-	<li>Les Olympiades d'Informatique (OI) sont un concours d'informatique organisé par l'UCLouvain ACM Student Chapter ASBL et les Facultés Universitaires Notre-Dame de la Paix de Namur.</li>
+	<li>Les Olympiades d'Informatique (OI) sont un concours d'informatique
+	organisé par l'UCLouvain ACM Student Chapter ASBL et les Facultés
+	Universitaires Notre-Dame de la Paix de Namur.</li>
 	
-	<li>Les OI sont coordonnées par un comité de coordination (CCOI) composé au minimum d'un représentant pour chaque entité organisatrice. Le CCOI est chargé de gérer tous les aspects liés au concours.</li>
+	<li>Les OI sont coordonnées par un comité de coordination (CCOI) composé au
+	minimum d'un représentant pour chaque entité organisatrice. Le CCOI est
+	chargé de gérer tous les aspects liés au concours.</li>
 	
-	<li>La langue officielle des OI est le français. Toute la communication et les questions seront établies en français.</li>
+	<li>La langue officielle des OI est le français. Toute la communication et
+	les questions seront établies en français.</li>
 	
-	<li>Les candidats aux OI doivent s'inscrire avant la date limite qui est établie par le CCOI et indiquées dans un calendrier. En s'inscrivant, les candidats acceptent intégralement le présent règlement.</li>
+	<li>Les candidats aux OI doivent s'inscrire avant la date limite qui est
+	établie par le CCOI et indiquées dans un calendrier. En s'inscrivant, les
+	candidats acceptent intégralement le présent règlement.</li>
 	
-	<li>Les candidats doivent résider en Belgique et être inscrits dans un établissement scolaire établi en Communauté Française de Belgique (CFWB) au cours de l'année scolaire durant laquelle prennent place les OI. Les candidats doivent avoir moins de 25 ans au 1<sup>er</sup> mai de l'année au cours de laquelle ont lieu les OI.</li>
+	<li>Les candidats doivent résider en Belgique et être inscrits dans un
+	établissement scolaire établi en Communauté Française de Belgique (CFWB) au
+	cours de l'année scolaire durant laquelle prennent place les OI. Les
+	candidats doivent avoir moins de 25 ans au 1<sup>er</sup> mai de l'année au
+	cours de laquelle ont lieu les OI.</li>
 	
 	<li>Deux concours sont organisés durant ces Olympiades.
-		<ol style="list-style-type: lower-alpha;">
-			<li>Le premier concours est destiné à des élèves étant en cinquième ou sixième secondaire général, technique ou professionnel du réseau officiel ou libre.</li>
+	
+		<ol>
+			<li>Le premier concours est destiné à des élèves étant en cinquième
+			ou sixième secondaire général, technique ou professionnel du réseau
+			officiel ou libre.</li>
 			
-			<li>Le second concours est destiné à des étudiants en première année d'études supérieures, du réseau officiel ou libre.</li>
+			<li>Le second concours est destiné à des étudiants en première
+			année d'études supérieures, du réseau officiel ou libre.</li>
 		</ol>
 	
-	Une preuve d'inscription dans un établissement scolaire peut être demandée aux participants par les organisateurs des OI.</li>
+	Une preuve d'inscription dans un établissement scolaire peut être demandée
+	aux participants par les organisateurs des OI.</li>
 	
-	<li>Les questions sont préparées par le CCOI. Chacune d'entre elle est accompagnée d'un niveau de difficulté indicatif. Les questions sont différentes pour les deux concours des OI. Il y a deux types de questions (uniquement pour la Finale).
-		<ol style="list-style-type: lower-alpha;">
-			<li>Le premier type de questions doit être répondu sur papier, en français. Les réponses peuvent être données en pseudo-code ou dans un des langages de programmation officiellement autorisé.</li>
+	<li>Les questions sont préparées par le CCOI. Chacune d'entre elle est
+	accompagnée d'un niveau de difficulté indicatif. Les questions sont
+	différentes pour les deux concours des OI. Il y a deux types de questions
+	(uniquement pour la Finale).
+	
+		<ol>
+			<li>Le premier type de questions doit être répondu sur papier, en
+			français. Les réponses peuvent être données en pseudo-code ou dans
+			un des langages de programmation officiellement autorisé.</li>
 			
-			<li>Le second type de question doit être répondu sur ordinateur sous forme d'un programme écrit dans un des langages de programmation officiellement autorisé.</li>
+			<li>Le second type de question doit être répondu sur ordinateur
+			sous forme d'un programme écrit dans un des langages de
+			programmation officiellement autorisé.</li>
 		</ol>
 	
-	Les langages de programmation officiellement autorisés pour les questions sur ordinateur sont le Java, C, C++, C\#, Pascal, Python, Ruby et PHP.</li>
+	Les langages de programmation officiellement autorisés pour les questions
+	sur ordinateur sont le Java, C, C++, C\#, Pascal, Python, Ruby et PHP.</li>
 	
-	<li>Le CCOI constitue un jury chargé de corriger les réponses des candidats et d'établir le classement des candidats et de désigner les lauréats pour les deux concours.</li>
+	<li>Le CCOI constitue un jury chargé de corriger les réponses des candidats
+	et d'établir le classement des candidats et de désigner les lauréats pour
+	les deux concours.</li>
 	
-	<li>Les OI sont organisées en deux étapes : Demi-Finales et Finales. Les dates de ces étapes sont fixées par le CCOI et indiquées dans un calendrier.</li>
+	<li>Les OI sont organisées en deux étapes : Demi-Finales et Finales. Les
+	dates de ces étapes sont fixées par le CCOI et indiquées dans un
+	calendrier.</li>
 	
-	<li>Les candidats des Demi-Finales de chaque concours ayant obtenus au moins un score de 60% sont sélectionnés pour les Finales, le nombre de sélectionnés étant plafonné à 60 finalistes pour chaque concours, tout centre régional confondu.</li>
+	<li>Les candidats des Demi-Finales de chaque concours ayant obtenus au
+	moins un score de 60% sont sélectionnés pour les Finales, le nombre de
+	sélectionnés étant plafonné à 60 finalistes pour chaque concours, tout
+	centre régional confondu.</li>
 	
 	<li>Les lauréats des Finales de chaque concours recevront des prix.</li>
 	
-	<li>Au minimum deux des lauréats du concours pour élèves du secondaire ayant obtenu les meilleurs scores à la Finale se verront proposer de faire partie de l'équipe nationale pour les Olympiades Internationales d'Informatique (IOI). Ceux-ci doivent, de plus, entrer dans les critères des IOI, entre autres avoir moins de 20 ans au 1<sup>er</sup> juillet de l'année des IOI et avoir la nationalité belge.</li>
+	<li>Au minimum deux des lauréats du concours pour élèves du secondaire
+	ayant obtenu les meilleurs scores à la Finale se verront proposer de faire
+	partie de l'équipe nationale pour les Olympiades Internationales
+	d'Informatique (IOI). Ceux-ci doivent, de plus, entrer dans les critères
+	des IOI, entre autres avoir moins de 20 ans au 1<sup>er</sup> juillet de
+	l'année des IOI et avoir la nationalité belge.</li>
 	
-	<li>Un candidat renonçant à sa participation aux IOI pourra être remplacé par un autre finaliste, la décision revenant au CCOI.</li>
+	<li>Un candidat renonçant à sa participation aux IOI pourra être remplacé
+	par un autre finaliste, la décision revenant au CCOI.</li>
 	
-	<li>Tout point non prévu par le présent règlement sera tranché par le CCOI.</li>
+	<li>Tout point non prévu par le présent règlement sera tranché par le
+	CCOI.</li>
 </ol>

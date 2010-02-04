@@ -8,19 +8,19 @@ requirement "The website should provide a way for users to log in and log out" d
   therefore("A connexion link should be accessible on the index page") {
     go     index_page
     i_see  "Connexion"
-    i_dont_see "My chapter"
+    i_dont_see "Editer mon profil"
     i_see  form(:id => 'login', :action => controllers.people.login)
   }
   
   therefore("Submitting the login form with a correct user should work") {
     result = i_submit form(:id => 'login', :action => controllers.people.login), with(people)
-    i_see    "My chapter"
+    i_see    "Editer mon profil"
   }
   
   therefore("It should be possible to log out when logged in") {
     i_see       "Logout"
     i_invoke    controllers.people.logout
-    i_dont_see  "My chapter"
+    i_dont_see  "Editer mon profil"
     i_dont_see  "Logout"
     i_see       "Connexion"
     i_see       form(:id => 'login', :action => controllers.people.login)

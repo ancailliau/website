@@ -1,27 +1,36 @@
 <div id="main">
+	<<+{menu.wbrick share all}
 
 	<h2>Sécurité et vie privée &mdash; Accès et inscription</h2>
-
-  <<+{menu.wbrick share all}
 	
-	<p>Cette conférence se déroule à Louvain-la-Neuve, sur le site de l'Université
-	catholique de Louvain. Ce dernier est très facile d'accès par les transports
-	en communs (train et bus), mais également en voiture via l'autoroute E411
-	Bruxelles-Namur qui passe à proximité du site. Vous trouverez des
-	informations détaillées sur comment se rendre à Louvain-la-Neuve sur le <a
-	href="http://www.uclouvain.be/acces-lln.html">site web de
-	l'université</a>.</p>
+	<p>
+		Cette conférence se déroule à Louvain-la-Neuve, sur le site de
+		l'Université catholique de Louvain. Ce dernier est très facile d'accès
+		par les transports en communs (train et bus), mais également en voiture
+		via l'autoroute E411 Bruxelles-Namur qui passe à proximité du site.
+		Vous trouverez des informations détaillées sur comment se rendre à
+		Louvain-la-Neuve sur le <a
+		href="http://www.uclouvain.be/acces-lln.html">site web de
+		l'université</a>.
+	</p>
 
-	<p>Plus précisément, la conférence aura lieu dans l'auditoire SUD18. Cet auditoire 
-	se situe à environ dix minutes de marche des gares de train et de bus. Si vous venez 
-	en voiture, nous vous conseillons les parkings 11 (Sainte Barbe) et 23 (Sciences). 
-	Vous trouverez également plus d'informations sur le 
-	<a href="http://www.uclouvain.be/68206.html">site web de l'université</a>.</p>
+	<p>
+		Plus précisément, la conférence aura lieu dans l'auditoire SUD18. Cet
+		auditoire se situe à environ dix minutes de marche des gares de train
+		et de bus. Si vous venez en voiture, nous vous conseillons les parkings
+		11 (Sainte Barbe) et 23 (Sciences).  Vous trouverez également plus
+		d'informations sur le <a href="http://www.uclouvain.be/68206.html">site
+		web de l'université</a>.
+	</p>
 
-	<p>Retrouvez également le lieu où se déroule la soirée <a href="http://maps.google.be/maps?f=q&source=s_q&hl=fr&geocode=&q=louvain+la+neuve+place+croix+du+sud&sll=50.805935,4.432983&sspn=3.492241,7.932129&ie=UTF8&hq=&hnear=Croix+du+Sud,+Louvain-la-Neuve+1348+Louvain-La-Neuve,+Brabant+Wallon,+R%C3%A9gion+Wallonne&ll=50.666546,4.619732&spn=0.003421,0.007746&t=h&z=17">via Google Maps</a>.</p>
+	<p>
+		Retrouvez également le lieu où se déroule la soirée <a
+		href="http://maps.google.be/maps?f=q&source=s_q&hl=fr&geocode=&q=louvain+la+neuve+place+croix+du+sud&sll=50.805935,4.432983&sspn=3.492241,7.932129&ie=UTF8&hq=&hnear=Croix+du+Sud,+Louvain-la-Neuve+1348+Louvain-La-Neuve,+Brabant+Wallon,+R%C3%A9gion+Wallonne&ll=50.666546,4.619732&spn=0.003421,0.007746&t=h&z=17">via
+		Google Maps</a>.
+	</p>
 
 	<h3>Inscription</h3>
 
-  <<+{../events/event_registration.wbrick with event: 'securite_vie_privee_2010'}
+	<<+{../events/event_registration.wbrick with event: 'securite_vie_privee_2010'}
 </div>
 

@@ -16,6 +16,10 @@
 
 ?{session.adminlevel > 2}{
 <ul id="adminmenu">
-  <li><a href="/olympiades/admin/inscriptions.csv">inscriptions.csv</a></li>
+	<li><a href="/olympiades/admin/inscriptions.csv">inscriptions.csv</a></li>
 </ul>
 }
+
+<h3>Co-organisé avec<h3>
+<img src="/images/fundp.png" alt="Faculté universitaire notre dame de la paix" />
+

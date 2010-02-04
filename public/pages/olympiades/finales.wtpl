@@ -1,12 +1,19 @@
 <h2>Olympiades d'Informatique &mdash; Finales</h2>
 
-<p>Les Finales se dérouleront à l'UCL, à Louvain-la-Neuve, le mercredi 12 mai 2010 de 14h à 19h. L'épreuve durera trois 
-   heures et la proclamation des gagnants sera faite le jour même, en fin de journée. Les deux concours comporteront deux 
-   parties : des questions sur papier et des questions à résoudre sur ordinateur. La journée se terminera par la cérémonie 
-   de remise des prix qui sera suivie d'un drink.</p>
+<p>
+	Les Finales se dérouleront à l'UCL, à Louvain-la-Neuve, le mercredi 12 mai
+	2010 de 14h à 19h. L'épreuve durera trois heures et la proclamation des
+	gagnants sera faite le jour même, en fin de journée. Les deux concours
+	comporteront deux parties : des questions sur papier et des questions à
+	résoudre sur ordinateur. La journée se terminera par la cérémonie de remise
+	des prix qui sera suivie d'un drink.
+</p>
 
 <<+{../events/event_registration.wbrick with event: 'finale_olympiades_2010'}
 
-<p><strong>Il s'agit ici d'une inscription à l'événement, proposées aux enseignants et/ou visiteurs.
-Pour vous inscrire aux olympiades elles-mêmes, utilisez <a href="/olympiades/inscription">ce lien</a>
-</strong></p>
+<p>
+	<strong>Il s'agit ici d'une inscription à l'événement, proposées aux
+	enseignants et/ou visiteurs.  Pour vous inscrire aux olympiades
+	elles-mêmes, utilisez <a href="/olympiades/inscription">ce lien</a>
+	</strong>
+</p>

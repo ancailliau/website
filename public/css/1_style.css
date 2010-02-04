@@ -1,3 +1,5 @@
+/* ============================================================ HTML Elements */
+
 body, html {
 	margin: 0;
 	font-family: "Myriad Pro", "Arial", sans-serif;
@@ -9,15 +11,18 @@ body {
 	 * value to use */
 	font-size: 62.5%;
 	padding-bottom: 60px;
+	border-top: 2px solid black;
 }
 
 a {
 	color: #005c9c;
 	text-decoration: none;
 }
+
 a:hover {
 	cursor: pointer;
 }
+
 a img {
 	border: 0px none;
 }
@@ -25,238 +30,315 @@ a img {
 #header,
 #main,
 #footer {
-	width: 680px;
+	width: 700px;
 	margin: 0 auto;
 }
 
-/* ======================================================================= Forms inside main */
-#main form {
-	padding-right: 240px;
-}
-#main form label, form span {
-	font-size: 1.2em;
-	color: #666;
-	margin: 15px 0px 5px 0px;
-}
-#main form label {
-	display: block;
-}
-#main form fieldset {
-	margin-top: 15px;
-	margin-bottom: 15px;
-	padding: 7px 7px 15px 7px;
-}
-#main form fieldset legend {
-	font-size: 1.2em;
-}
+/* =================================================================== Header */
 
-
-/* ======================================================================= Header */
 #header {
 	margin: 20px auto;
 	/* With this property, the height of the wrapper includes the height of the
 	 * floating elements */
 	overflow: auto;
+	width: 758px;
+	padding-right: 58px;
 }
-#header h1 {
-	background: url("/images/logo.png") no-repeat top left;
-	height: 40px;
-	width: 186px;
+
+#header #logo {
 	float: left;
 }
+
+#header h1 {
+	background: url("/images/website/logo.png") no-repeat top left;
+	height: 40px;
+	width: 190px;
+	margin: 0;
+	padding: 0;
+}
+
 #header h1 a {
 	display: block;
 	width: 100%;
 	height: 100%;
 }
+
 #header h1 span {
 	display: none;
 }
-#header p {
-	font-size: 1.6em;
-	float: right;
-	text-align: right;
-}
-/* ======================================================================= Header */
 
-/* ======================================================================= Main */
+#header p {
+	font-size: 1.1em;
+	color: #666;
+	text-align: left;
+	margin: 0 0 0 60px;
+	padding: 0;
+}
+
+/* ============================================================ Header > Menu */
+
+/* The menu is probably the most complex part (in CSS) on the website.
+ * Please be very carefull when modifying to not break any browser support. */
+
+#header ul#menu {
+	margin: 15px 0 0 0;
+	padding: 0;
+	float: right;
+	list-style-type: none;
+	height: 27px;
+	background: url("/images/website/grey-menu-center.png") repeat-x top center;
+}
+
+#header ul#menu li {
+	font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+	float: left;
+	height: 27px;
+}
+
+#header ul#menu li a {
+	line-height: 22px;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+#header ul#menu li a span {
+	padding: 0 10px;
+	line-height: 22px;
+	display: block;
+	height: 100%:
+}
+
+#header ul#menu li:first-child {
+	background: url("/images/website/grey-menu-left.png") no-repeat top left;
+}
+
+#header ul#menu li:last-child {
+	background: url("/images/website/grey-menu-right.png") no-repeat top right;
+}
+
+#header ul#menu li.active {
+	background: url("/images/website/active-center.png") repeat top center;
+}
+
+#header ul#menu li.active a {
+	color: #fff;
+	text-shadow: 0px 1px #163c65;
+	background: url("/images/website/active-left.png") no-repeat top left;
+}
+
+#header ul#menu li.active a span {
+	background: url("/images/website/active-right.png") no-repeat top right;
+}
+
+#header ul#menu li a {
+	color: #666;
+	text-shadow: 0px 1px #fff;
+}
+
+#header ul#menu li.subscribe {
+	background: url("/images/website/green-menu.png") no-repeat top left;
+}
+
+#header ul#menu li.subscribe a {
+	color: #fff;
+	text-shadow: 0px 1px #617123;
+}
+
+/* ===================================================================== Main */
+
 #main {
 	position: relative;
 }
-#main div#img {
-	border: 1px solid #ccc;
-	padding: 1px;
-	width: 676px;
-}
-#main div#img img {
+
+#main img {
 	display: block;
 }
+
 #main p,
 #main ul,
-#main ol {
+#main ol,
+#main blockquote {
 	font-size: 1.2em;
 	color: #666;
 	line-height: 150%;
 	padding-right: 240px;
 	text-align: justify;
 }
+
+#main ul p {
+	font-size: 1em;
+	padding: 0;
+}
+
 #main ol ol {
 	font-size: 1em;
 	padding-right: 0px;
+	list-style-type: lower-alpha;
 }
-#main blockquote {
-	font-size: 1.2em;
-	color: #666;
-}
+
 #main ul {
 	margin: 0 0 0 16px;
 	padding: 0 240px 0 0;
 	list-style-type: inside;
 }
+
+#main ul ul {
+	padding: 0;
+	font-size: 1em;
+}
+
 #main ul li,
 #main ol li {
 	margin: 0 0 2px 0;
 }
+
+#main h2 {
+	font-weight: normal;
+	font-size: 1.5em;
+	margin: 0 0 10px 0;
+}
+
+#main h3 {
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-top: 40px;
+}
+
+/* ================================================================= Side bar */
+
 #main .side {
 	margin-top: 2em;
 	padding: 10px 0 0 0;
 	float: right;
 	width: 220px;
 }
+
 #main .side img {
-	border: 1px solid #ccc;
-	padding: 1px;
 	display: block;
 }
+
 #main .side p {
 	padding: 0;
-	font-size: 1em;
-	color: #999;
-	text-align: right;
-}
-#main .side ul {
 	font-size: 1.2em;
+	color: #999;
 }
-#main .side ul ul {
-	font-size: 1em;
-}
-/* ======================================================================= Main */
 
-/* ======================================================================= body.index */
-body.index #main .box {
-	border: 1px solid #ccc;
-	margin: 20px 7px 0 0 ;
-	float: left;
-	width: 88px;
-	height: 86px;
-	line-height: 1.8em;
+#main .side h3 {
+	margin: 1em 0;
+	padding: 0;
+	font-size: 1.2em;
+	color: #999;
 }
-body.index #main .box:hover {
-	border-color: #666;
-}
-body.index #main .box-span-2 {
-	width: 198px;
-}
-body.index #main .box a {
-	display: block;
-	width: 68px;
-	height: 66px;
-	padding: 10px;
+/* ================================================================= User bar */
+
+.user-bar {
 	font-size: 1.1em;
-	text-decoration: none;
-	color: #666;
-}
-body.index #main .box:hover a {
-	color: black;
-}
-body.index #main .box-span-2 a {
-	width: 178px;
-}
-body.index #main .box a span {
-	color: #999;
-	font-size: 0.9em;
-	display: block;
-}
-body.index #main .box:hover a span {
-	color: #666;
-}
-body.index #main h2,
-body.index #main p {
-	padding-left: 490px;
-	padding-right: 10px;
-	line-height: 120%;
-}
-body.index #main p {
-	font-size: 1.2em;
-	color: #999;
-}
-#main h2 {
-	font-weight: normal;
-	font-size: 1.5em;
-	margin: 0 0 10px 0;
-}
-#main h3 {
-	font-weight: normal;
-	font-size: 1.3em;
-	margin-top: 40px;
-}
-/* ======================================================================= body.index */
-
-/* ======================================================================= Feedback */
-
-#main form .feedback ul {
-	width: 100%;
-	padding-right: 0px;
-	margin-left: 30px;
-}
-#main form .feedback ul li {
-	color: red;
+	background: #000;
+	line-height: 20px;
+	height: 20px;
+	color: #ccc;
 }
 
-/* ====================================================== newsletter_subscribe form */
-#main .grey-box {
-	width: 191px;
-	height: 86px;
-	border: 1px solid #ccc;
-	padding: 1px;
-	background: #fff;
+.user-bar div {
+	width: 700px;
+	margin: 0 auto;
+}
 
+.user-bar a {
+	color: #ccc;
+}
+
+.user-bar p {
+	margin: 0;
+	padding: 0;
+}
+
+.user-bar p:first-child {
+	float: left;
+}
+
+.user-bar p:last-child {
 	float: right;
-	margin: 20px 0 0 0;
 }
-#main .grey-box form {
-	background: #e5e5e5 url("/images/grey-gradient-background.png") repeat-x 0 0;
-	padding: 10px;
-	float: left;
-	overflow: auto;
 
-	width: 171px;
-	height: 66px;
+/* =============================================================== body.index */
+
+body.index #main {
+	overflow: auto;
 }
+
+body.index #main img {
+	float: left;
+}
+
+body.index #main .rapid {
+	width: 220px;
+	float: right;
+}
+
+body.index #main .rapid ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+body.index #main .rapid ul li {
+	margin: 0;
+	padding: 0;
+	line-height: 160%;
+}
+
+body.index #main .rapid ul li a {
+	color: #999;
+	text-decoration: none;
+}
+
+body.index #main .rapid ul li a:hover {
+	color: #005c9c;
+}
+
+/* ================================================================= grey-box */
+
+#main .grey-box {
+	width: 220px;
+	height: 93px;
+	background: url("/images/website/grey-box.png") top left;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#main .grey-box form {
+	padding: 10px;
+	width: 200px;
+}
+
 #main .grey-box form label {
-	font-size: 1.1em;
+	font-size: 1.2em;
 	color: #666;
 	display: block;
 	margin: 0px 0px 10px 0px;
+	text-shadow: 0px 1px #fff;
 }
-#main .grey-box form input[type=text] {
-	width: 102px;
-	float: left;
-}
+
 #main .grey-box form input#mail {
-	width: 102px;
+	width: 132px;
 	float: left;
 }
+
 #main .grey-box form input[type=submit] {
 	float: right;
 }
+
 #main .grey-box form p {
 	margin: 5px 0 0 0;
 	clear: left;
 	float: left;
 	padding: 0;
 }
-/* ====================================================== newsletter_subscribe form */
 
 #main dl dt {
 	float: left;
@@ -275,17 +357,11 @@ body.index #main p {
 }
 
 #submenu {
-	position: absolute;
-	left: 480px;
 	width: 200px;
 }
+
 #submenu ul {
 	width: 200px;
-}
-#adminmenu {
-	position: absolute;
-  left: 480px;
-  top: 340px;	
 }
 
 #footer {
@@ -294,13 +370,9 @@ body.index #main p {
 	font-size: 1.2em;
 	margin-top: 40px;
 }
+
 body.index #footer {
 	margin-top: 0;
-}
-
-#footer p {
-	margin: 0;
-	padding: 0;
 }
 
 #footer p#social-links a {
@@ -321,24 +393,6 @@ body.index #footer {
 	margin-left: 15px;
 }
 
-form#login {
-	display: none;
-	float: right;
-}
-form#login input[type=text] {
-	font-size: 0.9em;
-  width: 140px;
-}
-form#login input[type=password] {
-	font-size: 0.9em;
-  width: 80px;
-}
-form#login p {
-	margin-top: 2px;
-	margin-bottom: 2px;
-	font-size: 0.9em;
-}
-
 span.explain {
 	font-size: 1.1em;
 	display: block;
@@ -346,94 +400,225 @@ span.explain {
 	width: 200px;
 	color: red;
 }
+
 #change_mail_explain {
 	display: none;
 }
 
-form#newsletter_form label.feedback {
-	height:30px;
+/* =============================================================== Login form */
+
+form#login {
+	display: none;
+	position: relative;
 }
 
-#main form#details-form {
-	font-size: 1.2em;
-	color: #666;
-	line-height: 150%;
-	padding-right: 220px;
+form#login {
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	background: #fff;
+	width: 300px;
+	margin-left: -150px;
+	border: 5px solid #000;
+	padding: 20px;
 }
 
-#main form#details-form label {
-	display: block;
-	width: 200px;
+form#login .close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+/* ================================================= Title in activities page */
+
+#main h3.activity {
+	padding-right: 240px;
+}
+
+#main h3.activity a {
+	float: right;
+}
+
+/* ==================================================================== Forms */
+
+form.form-300 p.feedback,
+#main form p.feedback {
+	display: none;
+	border: 1px solid #2aa2d8;
+	background: #f2f9fd;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+form.form-300 p.feedback ul,
+#main form p.feedback ul {
+	width: 100%;
+}
+
+#main form.form-followed {
 	float: left;
-}
-
-#main form#details-form label.with-input {
-	width: auto;
-	margin: 0 5px 0 0;
-}
-
-#main form#details-form input,
-#main form#details-form textarea {
-	display: block;
-	float: left;
-	margin-bottom: 10px;
-	width: 240px;
-	font-size: 1em;
-}
-
-#main form#details-form legend {
-	font-size: 1.2em;
-	padding: 0 1em;
-	margin-left: 1em;
-	color: #666;
-}
-
-#main form#details-form fieldset {
-	border: 1px solid #ccc;
-	border-width: 1px 0 0 0 ;
-	font-size: 0.9em;
 	margin: 0 0 20px 0;
-	width: 443px;
-	padding: 20px 5px 5px 5px;
-	clear: left;
 }
 
-#main form#details-form fieldset p {
+#main form p {
+	margin: 0 0 10px 0;
 	padding: 0;
+}
+
+#main form label {
+	display: block;
+	line-height: 1.6em;
+}
+
+#main form input {
+	display: block;
+}
+
+#main form textarea {
+	height: 100px;
+}
+
+#main form fieldset {
 	margin: 0;
+	padding: 10px 0 0 0;
+	border: 0px none;
+	border-top: 3px solid #f1f1f1;
 }
 
-#main form#details-form textarea {
-	height: 60px;
+#main form legend {
+	margin: 0 10px;
+	padding: 0 10px;
+	font-size: 1.2em;
 }
 
-#main form#details-form input.checkbox {
+#footer form.form-300 {
+	width: 300px;
+}
+
+#footer form.form-300 p.span-3 {
+	width: 300px;
+	clear: left;
+}
+
+#footer form.form-300 p.span-3 input {
+	width: 296px;
+}
+
+#footer form.form-300 p.form-button {
+	width: 300px;
+	line-height: 22px;
+}
+
+#footer form.form-300 p.form-button input {
 	width: auto;
+	float: left;
 	margin: 0 10px 0 0;
-	padding: 0;
-	border: 0;
+}
+
+#main form.form-460 {
+	width: 460px;
+}
+
+#main form.form-460 fieldset {
+	width: 460px;
+}
+
+#main form.form-460 p.span-1 {
+	width: 105px;
+	float: left;
+	margin-right: 10px;
+}
+
+#main form.form-460 p.span-1-last {
+	width: 115px;
+	float: left;
+}
+
+#main form.form-460 p.span-1 select,
+#main form.form-460 p.span-1 textarea,
+#main form.form-460 p.span-1 input {
+	width: 101px;
+}
+
+#main form.form-460 p.span-1-last select,
+#main form.form-460 p.span-1-last textarea,
+#main form.form-460 p.span-1-last input {
+	width: 111px;
+}
+
+#main form.form-460 p.span-2 {
+	width: 220px;
+	float: left;
+	margin-right: 10px;
+}
+
+#main form.form-460 p.span-2-last {
+	width: 230px;
+	float: left;
+	margin-right: 0px;
+}
+
+#main form.form-460 p.span-2 select,
+#main form.form-460 p.span-2 textarea,
+#main form.form-460 p.span-2 input {
+	width: 216px;
+}
+
+#main form.form-460 p.span-2-last textarea,
+#main form.form-460 p.span-2-last input {
+	width: 226px;
+}
+
+#main form.form-460 p.span-3 {
+	width: 335px;
+	float: left;
+	margin-right: 10px;
+}
+
+#main form.form-460 p.span-3-last {
+	width: 345px;
+	float: left;
+}
+
+#main form.form-460 p.span-3 select,
+#main form.form-460 p.span-3 textarea,
+#main form.form-460 p.span-3 input {
+	width: 331px;
+}
+
+#main form.form-460 p.span-3-last textarea,
+#main form.form-460 p.span-3-last input {
+	width: 341px;
+}
+
+#main form.form-460 p.span-4 {
+	width: 460px;
 	clear: left;
 }
 
-#main form#details-form input.submit {
+#main form.form-460 p.span-4-checkbox {
+	width: 460px;
+	clear: left;
+}
+
+#main form.form-460 p.span-4-checkbox input,
+#main form.form-460 p.span-4-checkbox label {
+	display: inline;
+}
+
+#main form.form-460 p.span-4 select,
+#main form.form-460 p.span-4 textarea,
+#main form.form-460 p.span-4 input {
+	width: 456px;
+}
+
+#main form.form-460 p.form-button {
+	width: 460px;
+	line-height: 22px;
+}
+
+#main form.form-460 p.form-button input {
 	width: auto;
-}
-
-#main form#details-form input.small {
-	width: 200px;
-	display: inline-block;
-}
-
-#main form#details-form strong {
 	float: left;
-	display: block;
-	width: 200px;
-	clear: left;
-	margin: 10px 0 0 0;
-}
-
-#main form#details-form span.right {
-	float: left;
-	display: block;
-	margin: 10px 0 10px 0;
+	margin: 0 10px 0 0;
 }

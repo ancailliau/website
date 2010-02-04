@@ -1,23 +1,23 @@
 <div id="main">
-  <h2>Modification de votre profil</h2>
-  ?{session.has_key?(:user)}{
-    ={AcmScW.database[:people].filter(:mail => '+{session.get(:user)}').first as people}
-    ={controllers.people.update_account as action}{
-      <form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}">
-        <div class="feedback"></div>
-        <div><<+{account_fields.wbrick with people: people}</div>
-        <input type="submit" value="Modifier mon compte"/>
-      	+{action.ajax_form_preparer}
-      </form>
-    }
-    <script type="text/javascript">
-    	$(document).ready(function() {
-    	  $("input#account_fields_mail").change(function() {
-    	    $('#change_mail_explain').show();
-    	  });
-      });
-    </script>
-  }{
-    <p>+{messages.user_must_be_logged}</p>
-  }
+	<h2>Modification de votre profil</h2>
+	?{session.has_key?(:user)}{
+		={AcmScW.database[:people].filter(:mail => '+{session.get(:user)}').first as people}
+		={controllers.people.update_account as action}{
+			<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+				<div class="feedback"></div>
+				<div><<+{account_fields.wbrick with people: people}</div>
+				<input type="submit" value="Modifier mon compte »"/>
+				+{action.ajax_form_preparer}
+			</form>
+		}
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("input#account_fields_mail").change(function() {
+					$('#change_mail_explain').show();
+				});
+			});
+		</script>
+	}{
+		<p>+{messages.user_must_be_logged}</p>
+	}
 </div>

@@ -1,16 +1,6 @@
-#olympiades dl dt {
+#main #olympiades dl dt {
 	width: 120px;	
 }
-#olympiades dl dd {
+#main #olympiades dl dd {
 	margin-left: 120px;
-}
-
-#olympiades table {
-	font-family: arial;
-	font-size: 11px;
-	border-collapse: collapse;
-}
-#olympiades table tr td {
-	border: 1px solid black;
-	padding: 2px;
 }

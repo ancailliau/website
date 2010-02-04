@@ -1,15 +1,15 @@
 <div id="main">
 
-  <h2>Votre compte a été activé!</h2>
-    
-  <p>Vous êtes maintenant authentifié sur notre site et avez accès à certaines
-     fonctionnalités supplémentaires:</p>
-  
-  <ul>
-    <li>Pour modifier les informations vous concernant ou vos paramètres cliquez
-        <a href="/people/my_chapter">ici</a></li>
-    <li>Pour vous inscrire en toute simplicité à nos prochains événements, cliquez
-        <a href="/events">ici</a></li>
-  </ul>
+	<h2>Votre compte a été activé!</h2>
+		
+	<p>Vous êtes maintenant authentifié sur notre site et avez accès à certaines
+		 fonctionnalités supplémentaires:</p>
+	
+	<ul>
+		<li>Pour modifier les informations vous concernant ou vos paramètres cliquez
+				<a href="/people/my_chapter">ici</a></li>
+		<li>Pour vous inscrire en toute simplicité à nos prochains événements, cliquez
+				<a href="/events">ici</a></li>
+	</ul>
 
 </div>

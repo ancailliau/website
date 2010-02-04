@@ -1,30 +1,29 @@
 <div id="main">
+	<<+{menu.wbrick share all}
 
 	<h2>Sécurité et vie privée &mdash; Orateurs</h2>
 
-  <<+{menu.wbrick share all}
-
-	<p>Deux orateurs seront présents durant cette soirée. Le premier, Gildas Avoine, est professeur
-           à l'Université catholique de Louvain (UCL) en Belgique, dans le département d'ingénierie
-           informatique. Il présentera des problèmes liés aux puces RFID. Le second orateur, Luc Beirens,
-           est commissaire divisionnaire et chef de service de la Federal Computer Crime Unit (FCCU).
-           Il vous expliquera des menaces présentent sur Internet et la cybercriminalité.</p>
+	<p>
+		Deux orateurs seront présents durant cette soirée. Le premier, Gildas
+		Avoine, est professeur à l'Université catholique de Louvain (UCL) en
+		Belgique, dans le département d'ingénierie informatique. Il présentera
+		des problèmes liés aux puces RFID. Le second orateur, Luc Beirens, est
+		commissaire divisionnaire et chef de service de la Federal Computer
+		Crime Unit (FCCU).  Il vous expliquera des menaces présentent sur
+		Internet et la cybercriminalité.
+    </p>
 	
-	<p>Vous pouvez consulter ici une brève biographie de ces deux orateurs&nbsp;:</p>
+	<h3>Gildas Avoine</h3>
 
-	<ul>
-		<li><a href="/securite-vie-privee/orateurs#avoine">Gildas Avoine</a></li>
-		<li><a href="/securite-vie-privee/orateurs#beirens">Luc Beirens</a></li>
-	</ul>
-
-	<h3 id="avoine">Gildas Avoine</h3>
-
-		<p><img src="/images/gildas-avoine.jpg" class="aside"/><a href="http://www.avoine.net">Gildas Avoine</a> est
-		professeur à l'Université catholique de Louvain (UCL) en Belgique, dans
-		le département d'ingénierie informatique. Il a été recruté en 2007 afin
-		de développer dans ce département un groupe de recherche en
-		cryptographie et d'assurer la formation des ingénieurs en sécurité de
-		l'information. En 2008, il a créé le "<a href="http://sites.uclouvain.be/security">Information Security Group</a>". Avant de rejoindre l'UCL, Gildas Avoine a été chercheur
+		<p><img src="/images/gildas-avoine.jpg" class="aside"/><a
+		href="http://www.avoine.net">Gildas Avoine</a> est professeur à
+		l'Université catholique de Louvain (UCL) en Belgique, dans le
+		département d'ingénierie informatique. Il a été recruté en 2007 afin de
+		développer dans ce département un groupe de recherche en cryptographie
+		et d'assurer la formation des ingénieurs en sécurité de l'information.
+		En 2008, il a créé le "<a
+		href="http://sites.uclouvain.be/security">Information Security
+		Group</a>". Avant de rejoindre l'UCL, Gildas Avoine a été chercheur
 		au MIT (USA), sous la direction de Ron Rivest, ainsi qu'à l'EPFL
 		(Suisse) où il a obtenu son doctorat en sciences sous la direction de
 		Serge Vaudenay. Auparavant, il a en France, à l'université de Caen,
@@ -42,19 +41,20 @@
 
 		<p>Gildas Avoine est auteur ou co-auteur de nombreux articles
 		scientifiques, articles de vulgarisation ou livres. Il a en particulier
-		publié en 2007 « <em>Computer System Security</em> » en collaboration avec P.
-		Junod et Ph. Oechslin. En 2005, il a mis en place le site web
-		<a href="http://www.avoine.net/rfid">www.avoine.net/rfid</a>, portail scientifique de la sécurité en RFID.
-		Enfin, Gildas Avoine est consultant indépendant et assure des
-		formations sur la sécurité dans le milieu industriel.</p>
+		publié en 2007 « <em>Computer System Security</em> » en collaboration
+		avec P.  Junod et Ph. Oechslin. En 2005, il a mis en place le site web
+		<a href="http://www.avoine.net/rfid">www.avoine.net/rfid</a>, portail
+		scientifique de la sécurité en RFID.  Enfin, Gildas Avoine est
+		consultant indépendant et assure des formations sur la sécurité dans le
+		milieu industriel.</p>
 
-	<h3 id="beirens">Luc Beirens</h3>
+	<h3>Luc Beirens</h3>
 
 		<p><img src="/images/luc-beirens.jpg" class="aside"/>Depuis 1991, le
 		commissaire divisionnaire Luc Beirens est engagé dans l'informatique
 		légale (computer forensics) et dans des enquêtes sur les cyber crimes.
-		Il est le chef de service de la <em>Federal Computer Crime Unit</em> (FCCU),
-		unité de la <em>Police Fédérale</em>, depuis 2001.</p>
+		Il est le chef de service de la <em>Federal Computer Crime Unit</em>
+		(FCCU), unité de la <em>Police Fédérale</em>, depuis 2001.</p>
 
 		<p>En plus de conseiller ses enquêteurs sur des enquêtes cyber
 		criminelles en cours, il est responsable de l'organisation, des

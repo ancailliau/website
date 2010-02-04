@@ -1,43 +1,26 @@
 <div id="main">
 
-	<div id="img"><a href="/latex"><img src="images/Latex-6526.jpg" /></a></div>
+	<img src="images/website/home-picture.png" />
 
-	<div class="box">
-		<a href="/activites">Découvrez nos activités.</a>
-	</div>
-
-	<div class="box">
-		<a href="/latex">LaTeX<span>Informations complémentaires</span></a>
-	</div>
-
-	<div class="box">
-		<a href="/scienceinfuse">Scienceinfuse<span>Les activités organisées</span></a>
-	</div>
-
-	<div class="box">
-		<a href="/securite-vie-privee">Conférence<span>Sécurité et vie privée</span></a>
-	</div>
-
-	<div class="box">
-		<a href="/olympiades">Olympiades<span>Olympiades d'Informatique</span></a>
+	<div class="rapid">
+		<h2>Accès rapide</h2>
+		<ul>
+			<li><a href="/olympiades">Olympiades d'informatique</a></li>
+			<li><a href="/scienceinfuse">Scienceinfuse</a></li>
+			<li><a href="/securite-vie-privee">Conférence «&nbsp;Sécurité et vie privée&nbsp;»</a></li>
+		</ul>
 	</div>
 
 	<div class="grey-box">
-	  ={controllers.people.newsletter_subscribe as action}{
-      <form method="post" enctype="multipart/form-data" id="newsletter_form">
-        <label for="mail" class="feedback">Inscrivez-vous<br /> à la newsletter</label>
-  			<input type="text" value="john.doe@mail.com" name="mail" id="mail" onfocus="javascript:newsletter_mail_onfocus()"/>
-  			<input type="submit" value="Go »" />
-      	+{action.ajax_form_preparer(:form_id => 'newsletter_form')}
-      	<script type="text/javascript">
-      	  function newsletter_mail_onfocus() {
-      	    if ($('#mail').val() == 'john.doe@mail.com') {
-      	      $('#mail').val('');
-      	    }
-      	  }
-      	</script>
-      </form>
-	  }
+	={controllers.people.newsletter_subscribe as action}{
+		<form method="post" enctype="multipart/form-data" id="newsletter_form">
+			<label for="mail" class="feedback">Inscrivez-vous<br /> à la newsletter</label>
+			<input type="text" value="john.doe@mail.com" name="mail" id="mail" />
+			<input type="submit" value="Go »" />
+			
+			+{action.ajax_form_preparer(:form_id => 'newsletter_form')}
+		</form>
+	}
 	</div>
 
 </div>

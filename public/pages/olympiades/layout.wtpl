@@ -1,10 +1,10 @@
 <div id="main">
-  <div id="olympiades">
-  	<div class="side" style="margin-right:-15px;">
-  	  <<+{menu.wtpl}
-  	</div>
+	<div id="olympiades">
+		<div class="side">
+			<<+{menu.wtpl}
+		</div>
 
-    <!-- olympiades-wspec: ${which_olympiades} -->
-    <<+{${which_olympiades}}
-  </div>
+		<!-- olympiades-wspec: ${which_olympiades} -->
+		<<+{${which_olympiades}}
+	</div>
 </div>

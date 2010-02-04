@@ -1,12 +1,14 @@
+<div class="side">
 <<={menu.rb as entries}{
-  <div id="submenu">
-    <ul>
+    <ul id="submenu">
     *{entries as e}{
       <li><a href="{e[1]}">${e[0]}</a></li>
     }
     </ul>
-    ?{served_file == 'pages/securite-vie-privee/sponsors.wtpl'}{}{
-      <p><a href="http://www.steria.be/"><img src="/images/steria-logo-small.jpg" alt="Steria Belgium" /></a></p>
-    }
-  </div>
 }
+?{served_file != 'pages/securite-vie-privee/sponsors.wtpl'}{
+  <h3>Sponsorisé par</h3>
+  <p><a href="http://www.steria.be/"><img src="/images/steria-logo-small.jpg" alt="Steria Belgium" /></a></p>
+}
+</div>
+

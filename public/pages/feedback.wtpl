@@ -1,4 +1,4 @@
 ={request.params['mkey'] as key}
 <div id="main">
-  <p>+{key and messages[key.to_sym] ? messages[key.to_sym] : key}</p>
+	<p>+{key and messages[key.to_sym] ? messages[key.to_sym] : key}</p>
 </div>

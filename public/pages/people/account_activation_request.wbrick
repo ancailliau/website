@@ -1,8 +1,12 @@
 ={controllers.people.account_activation_request as action}{
-  <form method="post" enctype="multipart/form-data" id="{action.id}">
-  	<label for="mail" class="feedback">Indiquez votre adresse e-mail</label>
-  	<input type="text" value="" name="mail" id="mail"/>
-  	<input type="submit" value="Go »" />
-  	+{action.ajax_form_preparer}
-  </form>
+	<form method="post" enctype="multipart/form-data" id="{action.id}" class="form-460 form-followed">
+		<p class="span-4">
+			<label for="mail" class="feedback">Mon addresse e-mail&nbsp;:</label>
+			<input type="text" value="" name="mail" id="mail"/>
+		</p>
+		<p class="form-button">
+		<input type="submit" value="Recevoir une clé d'activation »" />
+		+{action.ajax_form_preparer}
+		</p>
+	</form>
 }
