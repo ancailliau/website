@@ -10,8 +10,7 @@
 		</p>
 
 		={controllers.people.subscribe_account as action}{
-			<form action="{action.uri}" method="post"
-			enctype="multipart/form-data" id="{action.id}" class="form-460">
+			<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
 				<div class="feedback"></div>
 				<<+{account_fields.wbrick with people:Hash.new}
 				<p class="button-form">
