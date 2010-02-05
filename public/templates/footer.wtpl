@@ -45,6 +45,7 @@
 		function show_login_form() {
 			$('p#internal-links').hide();
 			$('form#login').show();
+			$('html, body').animate( { scrollTop: 0 }, 'slow' );
 			return false;
 		}
 	</script>
