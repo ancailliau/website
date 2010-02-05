@@ -3,7 +3,7 @@
 	<img src="images/website/home-picture.png" />
 
 	<div class="rapid">
-		<h2>Accès rapide</h2>
+		<h2>Prochains évènements</h2>
 		<ul>
 			<li><a href="/olympiades">Olympiades d'informatique</a></li>
 			<li><a href="/scienceinfuse">Scienceinfuse</a></li>
