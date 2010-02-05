@@ -31,7 +31,7 @@
 			<p class="form-button">
 				<input type="submit" value="Go »"/>
 				+{action.ajax_form_preparer(:form_id => 'login')}
-				<a href="#" onclick="javascript:hide_login_form()">Fermer</a>
+				<a href="#" onclick="hide_login_form()">Fermer</a>
 			</p>
 		</form>
 	}
