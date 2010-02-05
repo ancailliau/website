@@ -1,7 +1,8 @@
 ={controllers.people.account_activation_request as action}{
 	<form method="post" enctype="multipart/form-data" id="{action.id}" class="form-460 form-followed">
+		<div class="feedback"></div>
 		<p class="span-4">
-			<label for="mail" class="feedback">Mon addresse e-mail&nbsp;:</label>
+			<label for="mail">Mon addresse e-mail&nbsp;:</label>
 			<input type="text" value="" name="mail" id="mail"/>
 		</p>
 		<p class="form-button">
