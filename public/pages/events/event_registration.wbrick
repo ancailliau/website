@@ -20,6 +20,7 @@
   ={controllers.event.register_by_mail as action}{
     ={(knows?(:form_id) ? form_id : action.id) as theid}{
       <form method="post" enctype="multipart/form-data" id="{theid}" class="form-460 form-followed">
+		<div class="feedback"></div>
       	<input type="hidden" name="event" value="{event}"/>
       	<p class="span-4">
 		  	<label for="mail">Indiquez votre adresse e-mail&nbsp;:</label>
