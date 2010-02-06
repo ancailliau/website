@@ -27,6 +27,11 @@ a img {
 	border: 0px none;
 }
 
+img.floating {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
 #header,
 #main,
 #footer {

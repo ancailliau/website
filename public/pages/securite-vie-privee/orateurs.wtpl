@@ -15,7 +15,7 @@
 	
 	<h3>Gildas Avoine</h3>
 
-		<p><img src="/images/gildas-avoine.jpg" class="aside"/><a
+		<p><img src="/images/gildas-avoine.jpg" class="floating" /><a
 		href="http://www.avoine.net">Gildas Avoine</a> est professeur à
 		l'Université catholique de Louvain (UCL) en Belgique, dans le
 		département d'ingénierie informatique. Il a été recruté en 2007 afin de
@@ -50,7 +50,7 @@
 
 	<h3>Luc Beirens</h3>
 
-		<p><img src="/images/luc-beirens.jpg" class="aside"/>Depuis 1991, le
+		<p><img src="/images/luc-beirens.jpg" class="floating"/>Depuis 1991, le
 		commissaire divisionnaire Luc Beirens est engagé dans l'informatique
 		légale (computer forensics) et dans des enquêtes sur les cyber crimes.
 		Il est le chef de service de la <em>Federal Computer Crime Unit</em>
