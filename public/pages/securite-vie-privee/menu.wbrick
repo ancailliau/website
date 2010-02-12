@@ -9,6 +9,7 @@
 ?{served_file != 'pages/securite-vie-privee/sponsors.wtpl'}{
   <h3>Sponsorisé par</h3>
   <p><a href="http://www.steria.be/"><img src="/images/steria-logo-small.jpg" alt="Steria Belgium" /></a></p>
+  <p><a href="http://www.lsec.be/"><img src="/images/lsec-logo-small.jpg" alt="LSEC" /></a></p>
 }
 </div>
 

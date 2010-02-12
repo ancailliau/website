@@ -1,19 +1,19 @@
 <h2>Olympiades belges d'Informatique</h2>
 
 <p>
-	Les Olympiades d'Informatique (OI) sont une compétition de programmation,
+	Les Olympiades belges d'Informatique (OI) sont une compétition de programmation,
 	d'algorithmique et de logique, organisée en Communauté Française de
 	Belgique par l'UCLouvain ACM Student Chapter ASBL et les Facultés
-	Universitaires Notre-Dame de la Paix (FUNDP) de Namur. Cette année aura
+	Universitaires Notre-Dame de la Paix de Namur (FUNDP). Cette année aura
 	lieu la première édition de cet évènement.
 </p>
 
 <p>
 	Les Olympiades sont composées de deux concours. Le premier est destiné aux
-	élèves de cinquième et sixième secondaire et a pour but d'identifier des
-	candidats pour les <a href="http://www.ioinformatics.org">Olympiades
+	élèves en fin de secondaire et permettra d'identifier des
+	candidats pour les <a href="/olympiades/olympiades-internationales">Olympiades
 	Internationales d'Informatique</a> (IOI). Le second concours est destiné
-	aux étudiants en première année d'études supérieures.
+	aux étudiants en première année d'étude supérieure.
 </p>
 
 <p>
@@ -21,19 +21,17 @@
 </p>
 
 <ul>
-	<li>Demi-Finales dans plusieurs centres régionaux ;</li>
-	<li>Finales à Louvain-la-Neuve.</li>
+	<li>Demi-Finales dans six centres régionaux, le mercredi 24 mars 2010 ;</li>
+	<li>Finales à Louvain-la-Neuve, le mercredi 12 mai 2010.</li>
 </ul>
+
+<p>
+	Pour connaitre toutes les dates, consultez <a href="/olympiades/calendrier">le calendrier</a>.
+</p>
 
 <p>
 	<strong>Attention, <a href="/olympiades/inscription">inscription</a> avant
 	le 10 mars 2010 !</strong>
-</p>
-
-<p>
-	Rejoignez <a href="http://www.facebook.com/group.php?gid=303863304852">le
-	groupe Facebook des Olympiades</a> pour y poser toutes vos questions et
-	discuter avec notre équipe.
 </p>
 
 <p>
@@ -42,42 +40,7 @@
 	href="/olympiades/finales">la finale</a>.
 </p>
 
-<h3>Calendrier</h3>
-
-<dl>
-	<dt>22 janvier 2010</dt>
-	<dd><p>Lancement des OI 2010 et début des <a
-	href="/olympiades/inscription">inscriptions</a>.</p></dd>
-	
-	<dt>10 mars 2010</dt>
-	<dd><p>Date limite pour les inscriptions.</p></dd>
-	
-	<dt>24 mars 2010</dt>
-	<dd><p><a href="/olympiades/demi-finales">Demi-finales</a> dans les centres
-	régionaux.</p></dd>
-	
-	<dt>15-16 avril 2010</dt>
-	<dd><p><a href="/olympiades/formation">Formation</a> algorithmique
-	(optionnelle) pour les élèves du secondaire (2<sup>ième</sup> semaine des
-	vacances de Pâques).</p></dd>
-	
-	<dt>12 mai 2010</dt>
-	<dd><p><a href="/olympiades/finales">Finales</a> à Louvain-la-Neuve et
-	cérémonie de remise des prix.</p></dd>
-	
-	<dt>12-16 juillet 2010</dt>
-	<dd><p><a href="/olympiades/formation">Formation</a> algorithmique
-	(obligatoire) approfondie pour les élèves du secondaire sélectionnés pour
-	faire partie de l'équipe nationale pour les IOI (2<sup>ième</sup> semaine
-	de juillet).</p></dd>
-	
-	<dt>14-21 aout 2010</dt>
-	<dd><p>22<sup>iemes</sup> Olympiades Internationales d'Informatique (IOI) à
-	l'Université de Waterloo (province d'Ontario) au Canada (<a
-	href="http://www.ioi2010.org">http://www.ioi2010.org/</a>).</p></dd>
-</dl>
-
-<h3>Documents</h3>
+<h3>Informations complémentaires</h3>
 
 <p>
 	Vous pouvez télécharger librement différents documents d'information sur
@@ -85,20 +48,18 @@
 </p>
 
 <ul>
-	<li><a href="/downloads/OI-2010-dossier-information.pdf">Dossier d'information</a></li>
-	<li><a href="/downloads/OI-2010-poster.pdf">Affiche publicitaire</a></li>
-	<li><a href="/olympiades/questions">Exemples de questions</a></li>
-	<li><a href="/olympiades/reglement">Règlement du concours</a></li>
+	<li><a href="/downloads/OI-2010-dossier-information.pdf">Dossier d'information</a>
+	et <a href="/downloads/OI-2010-poster.pdf">affiche publicitaire</a> ;</li>
+	<li><a href="/downloads/OI-2010-intro-algo.pdf">Introduction à l'algorithmique</a> ;</li>
+	<li><a href="/olympiades/questions">Exemples de questions</a>.</li>
 </ul>
 
-<h3>Partenaires</h3>
-
 <p>
-	Les Olympiades d'Informatique sont soutenues par les universités et hautes
-	écoles de la Communauté Française. Si vous souhaitez sponsoriser les
-	Olympiades d'Informatique, prenez directement contact avec le responsable
-	sponsor, Damien Leroy, à l'adresse e-mail suivante : <a
-	href="mailto:sponsors@uclouvain.acm-sc.be">sponsors@uclouvain.acm-sc.be</a>.
+	Rejoignez également <a href="http://www.facebook.com/group.php?gid=303863304852">le
+	groupe Facebook des Olympiades</a> pour y poser toutes vos questions et
+	discuter avec notre équipe.
 </p>
+
+<h3>Avec le soutien de</h3>
 
 <p><img src="/images/OI-2010-soutien.png" alt="Soutien OI 2010" /></p>

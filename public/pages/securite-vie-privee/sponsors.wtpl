@@ -8,7 +8,7 @@
 
 	<h3>Sponsors premiums</h3>
 
-	<p><a href="http://www.steria.be/" ><img style="display: block; margin: 0 auto;" src="/images/steria-logo-big.jpg" alt="Steria Belgium" /></a></p>
+	<p id="sponsors"><a href="http://www.steria.be/"><img src="/images/steria-logo-big.jpg" alt="Steria Belgium" /></a><a href="http://www.lsec.be/"><img src="/images/lsec-logo-big.jpg" alt="LSEC" /></a></p>
 
 	<h3>Sponsors standards</h3>
 

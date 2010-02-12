@@ -1,4 +1,4 @@
-<h2>Olympiades d'Informatique &mdash; Inscriptions</h2>
+<h2>Olympiades belges d'Informatique &mdash; Inscriptions</h2>
 
 ={controllers.olympiades.register as action}{
 	<form method="post" enctype="multipart/form-data" id="olympiades_register" class="form-460">

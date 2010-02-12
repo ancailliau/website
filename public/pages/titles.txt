@@ -1,5 +1,6 @@
 /                                UCLouvain ACM Student Chapter
 /contact                         UCLouvain ACM Student Chapter - Contact
+/a-propos                        UCLouvain ACM Student Chapter - À propos
 /404                             UCLouvain ACM Student Chapter - Page non trouvée
 /mentions-legales                UCLouvain ACM Student Chapter - Mentions légales
 /activites                       Nos activités
@@ -7,20 +8,22 @@
 /latex                           A propos de Latex, nos formations et autres
 
 /olympiades                      Olympiades belges d'Informatique
+/olympiades/calendrier           Olympiades belges d'Informatique - Calendrier
 /olympiades/demi-finales         Olympiades belges d'Informatique - Demi-Finales
-/olympiades/equipe               Olympiades belges d'Informatique- Equipe
-/olympiades/finales              Olympiades belges d'Informatique- Finales
-/olympiades/formation            Olympiades belges d'Informatique- Formation
-/olympiades/inscription          Olympiades belges d'Informatique- Inscriptions
+/olympiades/equipe               Olympiades belges d'Informatique - Equipe
+/olympiades/finales              Olympiades belges d'Informatique - Finales
+/olympiades/formation            Olympiades belges d'Informatique - Formation
+/olympiades/inscription          Olympiades belges d'Informatique - Inscriptions
 /olympiades/olympiades-internationales   Olympiades Internationales d'Informatique
-/olympiades/questions            Olympiades belges d'Informatique- Exemples de questions
-/olympiades/reglement            Olympiades belges d'Informatique- Règlement
+/olympiades/presse               Olympiades belges d'Informatique - Presse
+/olympiades/questions            Olympiades belges d'Informatique - Exemples de questions
+/olympiades/reglement            Olympiades belges d'Informatique - Règlement
 
 /scienceinfuse                   Weekend Festival Scienceinfuse
 /scienceinfuse/acces-inscription Scienceinfuse - Accès et inscription
-/scienceinfuse/sponsoring        Scienceinfuse - Sponsors
 /scienceinfuse/ateliers          Scienceinfuse - Ateliers
 /scienceinfuse/spectacle         Scienceinfuse - Spectacle scientifique
+/scienceinfuse/sponsors          Scienceinfuse - Sponsors
 /scienceinfuse/stands            Scienceinfuse - Stands interactifs
 
 /securite-vie-privee             Conférence - Sécurité et vie privée
