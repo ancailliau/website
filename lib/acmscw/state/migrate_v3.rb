@@ -16,5 +16,6 @@ database.transaction do |t|
     database << File.read(File.join(File.dirname(__FILE__), 'schema_v2.sql'))
     database << File.read(File.join(File.dirname(__FILE__), 'olympiades.sql'))
     database << File.read(File.join(File.dirname(__FILE__), 'data_v2.sql'))
+    database << File.read(File.join(File.dirname(__FILE__), 'data_v3.sql'))
   end
 end
