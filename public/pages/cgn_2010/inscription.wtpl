@@ -9,7 +9,7 @@
 		</ul>
 	</div>
 
-	<<+{../events/event_registration.wbrick with event: 'cgn_2010'}
+	<<+{../events/event_registration.wbrick with event: 'computer_graphics_night_2010'}
 
 	</div>
 </div>

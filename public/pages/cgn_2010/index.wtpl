@@ -26,7 +26,7 @@
 		20h, une participation minime au frais sera demandée.
 	</p>
 
-	<<+{../events/event_registration.wbrick with event: 'cgn_2010'}
+	<<+{../events/event_registration.wbrick with event: 'computer_graphics_night_2010'}
 
 	</div>
 </div>
