@@ -276,11 +276,12 @@ body.index #main {
 }
 
 body.index #main img {
-	float: left;
+	margin: 0 0 20px 0;
 }
 
 body.index #main .rapid {
 	width: 220px;
+	margin-top: 110px;
 	float: right;
 }
 
@@ -311,9 +312,7 @@ body.index #main .rapid ul li a:hover {
 	width: 220px;
 	height: 93px;
 	background: url("/images/website/grey-box.png") top left;
-	position: absolute;
-	bottom: 0;
-	right: 0;
+	float: right;
 }
 
 #main .grey-box form {
