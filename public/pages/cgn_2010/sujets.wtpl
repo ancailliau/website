@@ -1,0 +1,74 @@
+<div id="main">
+	<div id="cgn">
+
+	<div class="side">
+		<ul id="submenu">
+			<li><a href="cgn_2010/">Accueil</a></li>
+			<li><a href="cgn_2010/inscription">Inscrivez-vous</a></li>
+			<li><a href="cgn_2010/sujets">Les sujets</a></li>
+		</ul>
+		<img src="images/buddha.png" />
+	</div>
+
+	<h2>Computer Graphics Night 2010&nbsp;: Les sujets</h2>
+
+	<p>
+		Au terme de la nuit, nous souhaitons que tout les participants repartent
+		avec une implémentation de base couvrant l'un des 4 sujets proposés.
+	</p>
+	
+	<dl>
+		<dt>Ray tracing</dt>
+		<dd>
+			<p>
+				Le ray tracing est une technique de rendu tridimensionnel qui
+				permet à partir d'une description d'une scène de produire une
+				image reflétant ce qui pourrait être vu par une caméra. La
+				technique n'est pas aussi rapide que la rastérisation mais
+				permet d'obtenir des résultats extrèmement réalistes.
+			</p>
+		</dd>
+		<dt>Rastérisation</dt>
+		<dd>
+			<p>
+				La rastérisation est une technique de rendu tridimensionnel.
+				Le but est de fournir une image bidimensionnelle (un bitmap)
+				d'une scène 3-D décrite de manière vectorielle.  Cette
+				technique procède par transformations successives de la scène à
+				l'aide de différentes matrices de transformation.  La
+				rastérisation a l'avantage d'être plus rapide que le ray
+				tracing, une autre technique de rendu 3-D largement répandue,
+				et est pour cela fortement utilisée dans les jeux vidéos
+				actuels.
+			</p>
+		</dd>
+		<dt>Seam Carving</dt>
+		<dd>
+			<p>
+				Le Seam Carving est une technique de redimensionnement d'image
+				basée sur la suppression de pixels dits de moindre importance.
+				Le but de cette technique est de redimensionner une image en ne
+				modifiant pas la taille des éléments importants de l'image (par
+				exemple un personnage) mais en ajoutant ou supprimant des
+				pixels du fond et des éléments moins importants de l'image.
+				Elle fonctionne par détection de "seam" (chemins de pixels
+				adjacents) de moindre énergie.  Cette énergie peut être
+				calculée de différentes manières.
+			</p>
+		</dd>
+		<dt>Fractal compression</dt>
+		<dd>
+			<p>
+				La compression fractale est une méthode de compression d'image
+				avec perte.  Cette technique est surtout efficace pour les
+				images naturelles et se base sur le fait que certaines parties
+				d'une image ressemblent souvent à d'autres parties de la même
+				image.  Elle fonctionne par conversion de ces parties en
+				données mathématiques appelées codes fractals.
+			</p>
+		</dd>
+	</dl>
+	
+
+	</div>
+</div>

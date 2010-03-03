@@ -1,0 +1,15 @@
+<div id="main">
+	<div id="cgn">
+
+	<div class="side">
+		<ul id="submenu">
+			<li><a href="cgn_2010/">Accueil</a></li>
+			<li><a href="cgn_2010/inscription">Inscrivez-vous</a></li>
+			<li><a href="cgn_2010/sujets">Les sujets</a></li>
+		</ul>
+	</div>
+
+	<<+{../events/event_registration.wbrick with event: 'cgn_2010'}
+
+	</div>
+</div>
