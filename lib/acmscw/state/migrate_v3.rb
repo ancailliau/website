@@ -1,9 +1,11 @@
-TOP = File.join(File.dirname(__FILE__), '..', '..', '..')
-$LOAD_PATH.unshift File.join(TOP, 'lib')
-require 'acmscw'
+require "rubygems"
+gem 'wlang', '< 1.0.0'
+gem 'waw',   '< 0.3.0'
+require 'wlang'
+require 'waw'
 
 # Loads WAW configuration
-Waw.load_application(TOP)
+Waw.autoload(__FILE__)
 
 # Open a connection to the database, through sequel
 database = AcmScW.database

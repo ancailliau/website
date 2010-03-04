@@ -1,16 +1,19 @@
 <div id="main">
+  <div id="events">
 
 	<h2>Nos prochains événements</h2>
 
-  *{model.planned_events as evt}{
-    <h3>${evt[:name]}</h3>
-
-    <p>${evt[:start_time].strftime('%d/%m/%Y à %H:%M')}, ${evt[:location]}</p>
-    +{evt[:abstract]}
-    
-    <<+{event_registration.wbrick with event: evt[:id], form_id: evt[:id]}
-
-    <p><a href="{evt[:card_path]}">En savoir plus ...</a></p>
+  *{model.planned_events as event}{
+    <h3><a href="/events/${event[:id]}">${event[:name]}</a></h3>
+    <ul>
+      <li>Début: ${event[:start_time].strftime('%d/%m/%Y à %H:%M')}</li>
+      <li>Fin: ${event[:end_time].strftime('%d/%m/%Y à %H:%M')}</li>
+      <li>Lieu: ${event[:location]}</li>
+    </ul>
+    +{event[:abstract]}
+    <<+{event_registration.wbrick with event: event[:id], form_id: event[:id]}
+    <p><a href="{event[:card_path]}">En savoir plus ...</a></p>
   }
 
+  </div>
 </div>
