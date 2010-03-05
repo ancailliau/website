@@ -35,7 +35,7 @@ messages['update_account_ok'] = "<p>Les informations vous concernant ont été m
 messages['user_must_be_logged'] = "Vous devez être connecté pour accéder/modifier ces informations";
 messages['you_are_registered_to_this_event'] = "Vous êtes inscrit à cet événement!";
 
-/* Actions contributed by AcmScW::Controllers::MainController, mapped to / */
+/* Actions contributed by AcmScW::Controllers::MainController, mapped to /webserv/main */
 function webserv_main_send_message(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/main/send_message", data: request_data, dataType: "json",
     error: function(data) {
@@ -61,23 +61,23 @@ function webserv_main_send_message(request_data, form) {
   });
   return false;
 }  
-/* Actions contributed by AcmScW::Controllers::PeopleController, mapped to / */
+/* Actions contributed by AcmScW::Controllers::PeopleController, mapped to /webserv/people */
 function webserv_people_account_activation_request(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/account_activation_request", data: request_data, dataType: "json",
     error: function(data) {
       window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
-      if (data[0] == 'error') {
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(messages[data[1][0]]);
-      } else if (data[0] == 'validation-ko') {
+      if (data[0] == 'validation-ko') {
         $(form + ' .feedback').show();
         $(form + ' .feedback').html(messages[data[1][0]]);
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           window.location = "/feedback?mkey=activation_request_ok";
         }
+      } else if (data[0] == 'error') {
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(messages[data[1][0]]);
       }
     }
   });
@@ -89,10 +89,7 @@ function webserv_people_activate_account(request_data, form) {
       window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
-      if (data[0] == 'error') {
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(messages[data[1][0]]);
-      } else if (data[0] == 'validation-ko') {
+      if (data[0] == 'validation-ko') {
         str = '';
         str += '<ul>';
         for (var k in data[1]) {
@@ -108,6 +105,9 @@ function webserv_people_activate_account(request_data, form) {
         } else if (data[1] == 'activation_required') {
           window.location = "/feedback?mkey=activation_required";
         }
+      } else if (data[0] == 'error') {
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(messages[data[1][0]]);
       }
     }
   });
@@ -168,10 +168,7 @@ function webserv_people_subscribe_account(request_data, form) {
       window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
-      if (data[0] == 'error') {
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(messages[data[1][0]]);
-      } else if (data[0] == 'validation-ko') {
+      if (data[0] == 'validation-ko') {
         str = '';
         str += '<ul>';
         for (var k in data[1]) {
@@ -185,6 +182,9 @@ function webserv_people_subscribe_account(request_data, form) {
         if (data[1] == 'ok') {
           window.location = "/feedback?mkey=subscribe_account_ok";
         }
+      } else if (data[0] == 'error') {
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(messages[data[1][0]]);
       }
     }
   });
@@ -196,10 +196,7 @@ function webserv_people_update_account(request_data, form) {
       window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
-      if (data[0] == 'error') {
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(messages[data[1][0]]);
-      } else if (data[0] == 'validation-ko') {
+      if (data[0] == 'validation-ko') {
         str = '';
         str += '<ul>';
         for (var k in data[1]) {
@@ -216,12 +213,15 @@ function webserv_people_update_account(request_data, form) {
         } else if (data[1] == 'activation_required') {
           window.location = "/feedback?mkey=activation_required";
         }
+      } else if (data[0] == 'error') {
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(messages[data[1][0]]);
       }
     }
   });
   return false;
 }  
-/* Actions contributed by AcmScW::Controllers::EventController, mapped to / */
+/* Actions contributed by AcmScW::Controllers::EventController, mapped to /webserv/event */
 function webserv_event_register_by_mail(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/register_by_mail", data: request_data, dataType: "json",
     error: function(data) {
@@ -263,7 +263,7 @@ function webserv_event_unregister_to_this_event(request_data, form) {
   });
   return false;
 }  
-/* Actions contributed by AcmScW::Controllers::OlympiadesController, mapped to / */
+/* Actions contributed by AcmScW::Controllers::OlympiadesController, mapped to /webserv/olympiades */
 function webserv_olympiades_register(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/olympiades/register", data: request_data, dataType: "json",
     error: function(data) {

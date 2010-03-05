@@ -13,7 +13,7 @@
 
   
   ?{session.adminlevel > 2}{
-    <h3>Personnes inscrites à cet événement (<a href="/events/${event[:id]}.csv">.csv</a>)</h3>
+    <h3>${registered.count} personnes inscrites à cet événement (<a href="/events/${event[:id]}.csv">.csv</a>)</h3>
     <table class="dataset">
       *{registered as r}{
         <tr>
