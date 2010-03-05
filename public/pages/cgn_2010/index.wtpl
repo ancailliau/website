@@ -26,6 +26,10 @@
 		20h, une participation minime au frais sera demandée.
 	</p>
 
+	<p>
+		Pour suivre les projets des étudiants : <a href="http://www.maximux.be/cgn/">Le blog de l'événement</a>
+	</p>
+
 	<<+{../events/event_registration.wbrick with event: 'computer_graphics_night_2010'}
 
 	</div>
