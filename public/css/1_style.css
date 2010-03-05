@@ -165,7 +165,8 @@ img.floating {
 #main p,
 #main ul,
 #main ol,
-#main blockquote {
+#main blockquote,
+#main table {
 	font-size: 1.2em;
 	color: #666;
 	line-height: 150%;
@@ -625,4 +626,14 @@ form.form-300 p.feedback ul,
 	width: auto;
 	float: left;
 	margin: 0 10px 0 0;
+}
+
+
+#main table.dataset {
+	border-collapse: collapse;
+	width: 460px;
+}
+#main table.dataset tr td {
+	border: 1px solid black;
+	padding: 2px 5px;
 }
