@@ -1,0 +1,69 @@
+<h2>Olympiades belges d'Informatique &mdash; Règles de la demi-finale</h2>
+
+<p>
+	La demi-finale est composée de deux concours distincts, le premier pour
+	les élèves du secondaire et le second pour les étudiants en première
+	année du supérieur. Chacune de ces catégories aura un questionnaire distinct.
+</p>
+
+<p>
+	L'épreuve se passe complètement sur papier et dure trois heures. Les participants
+	ne doivent se munir que de quoi écrire; des feuilles de brouillon leurs seront
+	fournies lors de l'épreuve. Les participants sont libres de poser des questions
+	aux surveillants qui décideront de répondre ou non à la question du participant.
+</p>
+
+<p>
+	Les participants peuvent répondre aux questions en français, en pseudo-code ou dans
+	un des langages de programmation autorisés : Java, C, C++, C#, Pascal, Python,
+	Ruby et PHP. Il est interdit d'utiliser des fonctions provenant de quelque
+	librairie non-standard que ce soit. En cas de doute, le participant est invité
+	à se renseigner	auprès des surveillants.
+</p>
+
+<p>
+	Vous trouverez ci-dessous quelques indications sur le type des questions
+	auxquelles vous serez confrontés durant la demi-finale.
+</p>
+
+	<h3>Concours pour le secondaire</h3>
+
+<p>
+	Les participants devront résoudre cinq questions, dont trois petites et deux grosses.
+	Voici les types et les thèmes de ces questions :
+</p>
+
+<ul>
+	<li>QCM : lire et comprendre un petit algorithme et soit compléter un trou,
+	soit indiquer ce que calcule l'algorithme ou enfin trouver une erreur.</li>
+
+	<li>Trouver un algorithme pour résoudre un problème contextualisé.</li>
+
+	<li>Donner un algorithme permettant de calculer la valeur d'une expression mathématique.</li>
+
+	<li>Sur base de la définition précise de plusieurs opérations de base, les utiliser
+	afin de résoudre un problème.</li>
+
+	<li>Fournir un algorithme pour résoudre un problème nécessitant la manipulation d'un tableau.</li>
+</ul>
+
+
+	<h3>Concours pour le supérieur</h3>
+
+<ul>
+	<li>QCM : lire et comprendre un petit algorithme et soit compléter un trou,
+	soit indiquer ce que calcule l'algorithme ou enfin trouver une erreur.</li>
+
+	<li>Lire, comprendre et faire une comparaison de différents algorithmes
+	permettant de résoudre un même problème.</li>
+
+	<li>Lire et comprendre ce que fait un algorithme compliqué, ensuite proposer
+	une variante de l'algorithme pour soit le rendre plus performant, soit pour
+	résoudre un problème plus général.</li>
+
+	<li>Sur base d'une spécification précise d'un problème, comprendre le problème,
+	trouver et définir un algorithme permettant de le résoudre.</li>
+
+	<li>Sur base d'une structure de données expliquées et d'un problème énoncé,
+	définir un algorithme qui résout ce problème.</li>
+</ul>
