@@ -9,7 +9,12 @@
 		</ul>
 	</div>
 
-	<<+{../events/event_registration.wbrick with event: 'computer_graphics_night_2010'}
+	<p>
+		Du au nombre important d'inscription, nous ne sommes plus en capacité
+		d'en accepter des nouvelles. Veuillez nous excuser de ce désagrément;
+		nous serons heureux de vous voir lors de la présentation finale qui
+		suivra l'événement.
+	</p>
 
 	</div>
 </div>
