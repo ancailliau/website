@@ -4,7 +4,6 @@
 	<div class="side">
 		<ul id="submenu">
 			<li><a href="cgn_2010/">Accueil</a></li>
-			<li><a href="cgn_2010/inscription">Inscrivez-vous</a></li>
 			<li><a href="cgn_2010/sujets">Les sujets</a></li>
 		</ul>
 		<img src="images/ray.png" />
@@ -15,27 +14,14 @@
 	<p>
 		12 heures pour construire une implémentation d’un algorithme ou d’une 
 		technologie tournée vers l’infographie. Au long de cette nuit, le but 
-		est de construire, soi-même, un implémentation de l'un des quatres 
-		sujet proposé.
-	</p>
-	
-	<p>
-		En pratique, la nuit a lieu du <strong>mardi 9 à 18h jusqu'au mercredi 10 à 6h</strong>.
-		Entre 18h et 20h, l'accès est libre et ouvert à tout ceux qui sont
-		intéressé par venir voir ce qui va être réalisé pendant la nuit. Dès 
-		20h, une participation minime au frais sera demandée.
+		est de construire, soi-même, un implémentation de l'un des quatre
+		sujets proposés.
 	</p>
 
-	<p>
-		Pour suivre les projets des étudiants : <a href="http://www.maximux.be/cgn/">Le blog de l'événement</a>
-	</p>
-
-	<p>
-		Du au nombre important d'inscription, nous ne sommes plus en capacité
-		d'en accepter des nouvelles. Veuillez nous excuser de ce désagrément;
-		nous serons heureux de vous voir lors de la présentation finale qui
-		suivra l'événement.
-	</p>
+	<ul>
+		<li><a href="http://www.maximux.be/cgn/">Le blog de l'événement</a></li>
+		<li><a href="http://www.flickr.com/photos/computer_graphics_night/">Les photos</a></li>
+	</ul>	
 
 	</div>
 </div>

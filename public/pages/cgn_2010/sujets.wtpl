@@ -4,7 +4,6 @@
 	<div class="side">
 		<ul id="submenu">
 			<li><a href="cgn_2010/">Accueil</a></li>
-			<li><a href="cgn_2010/inscription">Inscrivez-vous</a></li>
 			<li><a href="cgn_2010/sujets">Les sujets</a></li>
 		</ul>
 		<img src="images/buddha.png" />
