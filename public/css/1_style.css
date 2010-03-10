@@ -307,6 +307,10 @@ body.index #main .rapid ul li a:hover {
 	color: #005c9c;
 }
 
+body.index #main h2 {
+	margin-top: 10px;
+}
+
 /* ================================================================= grey-box */
 
 #main .grey-box {
