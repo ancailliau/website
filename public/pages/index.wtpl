@@ -1,6 +1,6 @@
 <div id="main">
 
-	<a href="/securite-vie-privee"><img src="images/47190519_1583d79676_b.jpg" /></a>
+	<a href="/olympiades"><img src="images/384183109_6d916a11f2_b.jpg" /></a>
 
 	<div class="grey-box">
 	={controllers.people.newsletter_subscribe as action}{
@@ -17,13 +17,13 @@
 	<div>
 		<h2>Nos prochains évènements</h2>
 		<ul>
-			<li><a href="/securite-vie-privee"><strong>Conférence «&nbsp;Sécurité et vie privée&nbsp;»</strong></a> - Mardi 16 mars</li>
-			<li><a href="/olympiades">Olympiades belges d'informatique</a> - Mercredi 24 mars</li>
+			<li><strong><a href="/olympiades">Olympiades belges d'informatique</a></strong> - Mercredi 24 mars</li>
 			<li><a href="/scienceinfuse">Weekend festival Scienceinfuse</a> - Le week-end du 27 mars</li>
 		</ul>
 		
 		<h2>Nos évènements passés</h2>
 		<ul>
+			<li><a href="/securite-vie-privee">Conférence «&nbsp;Sécurité et vie privée&nbsp;»</a></li>
 			<li><a href="/cgn_2010">Computer Graphics Night</a></li>
 			<li><a href="/latex">Conférence LaTeX</a></li>
 		</ul>
