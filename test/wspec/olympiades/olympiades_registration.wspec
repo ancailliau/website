@@ -1,54 +1,8 @@
-requirement "Registration to the olympiades is both ok and robust" do
+requirement "Registration are closed" do
   
-  base = {
-    :gender      => 'M', 
-    :first_name  => 'Test', 
-    :last_name   => 'Student Chapter', 
-    :mail        => 'test@test.acm-sc.be', 
-    :birthdate   => '22/06/1987', 
-    :street      => 'Rue de la marche',
-    :postal_code => '5000', 
-    :city        => 'Namur', 
-    :school_name => 'Institut du test', 
-    :school_city => '1300 Wavre', 
-    :category    => 'secondaire', 
-    :study_level => 'INGI21', 
-    :center      => 'ucl'
-  }
-  valid_data = [base, 
-                base.merge(:category => 'superieur', :orientation => 'civil'),
-                base.merge(:category => 'superieur', :orientation => 'autre', :orientation_other => 'blabla'),
-                base.merge(:knowshow => 'affiche'),
-                base.merge(:knowshow => 'autre', :knowshow_other => 'blabla'),
-                base.merge(:category => 'superieur', :orientation => 'autre', :orientation_other => 'blabla', :knowshow => 'autre', :knowshow_other => 'blabla')]
-  invalid_data = [base.merge(:knowshow => 'autre'),
-                  base.merge(:category => 'superieur'),
-                  base.merge(:orientation => 'blabla'),
-                  base.merge(:gender => 'blabla'),
-                  base.merge(:category => 'blabla'),
-                  base.merge(:center => 'blabla'),
-                  base.merge(:birthdate => "00/12/1990"),
-                  base.merge(:birthdate => "32/12/1990"),
-                  base.merge(:birthdate => "32/00/1990"),
-                  base.merge(:birthdate => "32/13/1990"),
-                  base.merge(:birthdate => "12/11/1765")]
-  
-  therefore("It allows all valid registration possibilities") {
+  therefore("It do not see the form") {
     go index_page + 'olympiades/inscription'
-    theform = form(:id => 'olympiades_register', :action => controllers.olympiades.register)
-    valid_data.each do |data|
-      i_submit theform, with(data)
-      i_see    messages.olympiades_registration_ok
-    end
-  }
-
-  therefore("It does not allow invalid data registrations") {
-    go index_page + 'olympiades/inscription'
-    theform = form(:id => 'olympiades_register', :action => controllers.olympiades.register)
-    invalid_data.each do |data|
-      i_submit      theform, with(data)
-      i_dont_see    messages.olympiades_registration_ok
-    end
+    i_dont_see    form(:action => controllers.main.send_message)
   }
 
 end
