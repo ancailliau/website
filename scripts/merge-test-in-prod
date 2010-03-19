@@ -1,0 +1,108 @@
+#!/bin/sh
+#
+
+echo "Delete old test and production branches"
+
+git branch -l | grep " test " > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+	git branch -D test > /dev/null
+	if [ $? -ne 0 ] ; then
+		echo "Unable to remove the test branch"
+		exit 1
+	fi
+fi
+
+git branch -l | grep " production " > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+	git branch -D test > /dev/null
+	if [ $? -ne 0 ] ; then
+		echo "Unable to remove the test branch"
+		exit 1
+	fi
+fi
+
+echo "Update remote branch (can take a while)"
+
+git remote update > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to remote update"
+	exit 1
+fi
+
+echo "Creating new test and production branches"
+
+git branch test webmaster/test > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to create a new test branch based on webmaster/test"
+	exit 1
+fi
+
+git branch production webmaster/production > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to create a new production branch based on webmaster/production"
+	exit 1
+fi
+
+git checkout test > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to checkout test"
+	exit 1
+fi
+
+echo "Rebasing test on production"
+
+git rebase production > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to rebase on production"
+	exit 1
+fi
+
+git checkout production > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to checkout production"
+	exit 1
+fi
+
+echo "Merging test into production"
+
+git merge test > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to merge test into production"
+	exit 1
+fi
+
+echo "Pushing production"
+
+git push webmaster production > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to push production"
+	exit 1
+fi
+
+git checkout master > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to checkout master"
+	exit 1
+fi
+
+echo "Removing branches"
+
+git branch -D production > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to delete production branch"
+	exit 1
+fi
+
+git branch -D test > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to delete test branch"
+	exit 1
+fi
+
+echo "Updating test version on server"
+
+ssh acmscw@chapter.info.ucl.ac.be /home/acmscw/update-production > /dev/null 2>&1
+if [  $? -ne 0 ]; then
+	echo "Unable to update version on the server"
+	exit 1
+fi
