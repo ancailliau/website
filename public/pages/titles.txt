@@ -7,14 +7,19 @@
 /events                          Nos prochains évènements
 /latex                           A propos de Latex, nos formations et autres
 
+/cgn_2010                        Computer Graphics Night 2010
+/cgn_2010/sujets                 Computer Graphics Night 2010 - Sujets
+
 /olympiades                      Olympiades belges d'Informatique
 /olympiades/calendrier           Olympiades belges d'Informatique - Calendrier
 /olympiades/demi-finales         Olympiades belges d'Informatique - Demi-Finales
+/olympiades/demi-finales-regles  Olympiades belges d'Informatique - Règlement des demi-finales
 /olympiades/equipe               Olympiades belges d'Informatique - Equipe
 /olympiades/finales              Olympiades belges d'Informatique - Finales
 /olympiades/formation            Olympiades belges d'Informatique - Formation
 /olympiades/inscription          Olympiades belges d'Informatique - Inscriptions
 /olympiades/olympiades-internationales   Olympiades Internationales d'Informatique
+/olympiades/partenaires          Olympiades belges d'Informatique - Partenaires
 /olympiades/presse               Olympiades belges d'Informatique - Presse
 /olympiades/questions            Olympiades belges d'Informatique - Exemples de questions
 /olympiades/reglement            Olympiades belges d'Informatique - Règlement
