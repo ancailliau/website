@@ -1,6 +1,6 @@
 module AcmScW
   module Business
-    class MainServices
+    class MainServices  < AcmScW::Business::AbstractServices
 
       # Returns the mail agent to use
       def mail_agent
@@ -14,15 +14,6 @@ module AcmScW
           template.body         = "${message}"
         end
         @mail_agent
-      end
-      
-      # May be overrided for testing purposes
-      def get_mail_agent
-        if Waw.resources.nil?
-          ::Waw::Tools::Mail::MailAgent.new
-        else
-          Waw.resources.business.mail_agent
-        end 
       end
       
       # Sends a contact mail to info@uclouvain.acm-sc.be

@@ -16,6 +16,11 @@ module AcmScW
         AcmScW.transaction(&block)
       end
     
+      # Returns people_services
+      def olympiades_services
+        @olympiades_services ||= Waw.resources.business.olympiades
+      end
+    
       # Registers to the olympiades
       signature {
         # Mandatory fields
@@ -60,6 +65,18 @@ module AcmScW
                       :category, :study_level, :center, :orientation, :orientation_other, 
                       :knowshow, :knowshow_other)
         )
+        :ok
+      end
+      
+      signature {
+        validation :mail, is_admin, :forbidden
+      }
+      routing {
+        upon 'validation-ko' do redirect(:url => 'feedback?mkey=forbidden') end 
+        upon 'success/ok' do redirect(:url => 'feedback?mkey=send_results_announce_mail_ok') end   
+      }
+      def send_results_announce_mail(params)
+        olympiades_services.send_results_announce_mail
         :ok
       end
     

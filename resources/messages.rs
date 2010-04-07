@@ -2,6 +2,7 @@
 server_error                "Une erreur est survenue. Veuillez réessayer plus tard"
 should_not_fail             "La validation de ce formulaire n'aurait pas du échouer.<br/> "\
                             "si le problème persiste, veuillez prendre contact avec le webmaster"
+forbidden                   "Vous ne pouvez pas accéder à cette information ou exécuter ce service."
 
 # Validation messages
 invalid_email               "Adresse e-mail invalide"
@@ -43,4 +44,4 @@ olympiades_knowshow_other_missing "Vous devez préciser la manière dont vous av
 olympiades_registration_ok    "<p>Nous avons bien reçu toutes vos données, votre inscription vous sera confirmée par e-mail.</p>"\
                               "<p>Si vous n'avez pas reçu cette confirmation endéans les 5 jours, veuillez nous contacter sur "\
                               "<a href='mailto:info@uclouvain.acm-sc.be'>info@uclouvain.acm-sc.be</a></p>"
-                              
+send_results_announce_mail_ok "Les mails annoncant les résultats des olympiades ont bien été envoyés."
