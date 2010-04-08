@@ -1,6 +1,6 @@
 <div id="main">
 
-	<a href="/scienceinfuse"><img src="images/327377643_711818a972_b.jpg" /></a>
+	<a href="/scienceinfuse"><img src="images/384183109_6d916a11f2_b.jpg" /></a>
 
 	<div class="grey-box">
 	={controllers.people.newsletter_subscribe as action}{
@@ -17,12 +17,13 @@
 	<div>
 		<h2>Nos prochains évènements</h2>
 		<ul>
-			<li><strong><a href="/scienceinfuse">Weekend festival Scienceinfuse</a></strong> - Le week-end du 27 mars</li>
+			<li><strong><a href="/olympiades">Olympiades belges d'Informatique</a></strong> - Le mercredi 12 mai</li>
 		</ul>
 		
 		<h2>Nos évènements passés</h2>
 		<ul>
-			<li><a href="/olympiades">Olympiades belges d'informatique</a></strong></li>
+			<li><a href="/scienceinfuse">Weekend Festival Scienceinfuse</a><li>
+			<li><a href="/olympiades/demi-finales">Olympiades belges d'Informatique - Demi-Finales</a></li>
 			<li><a href="/securite-vie-privee">Conférence «&nbsp;Sécurité et vie privée&nbsp;»</a></li>
 			<li><a href="/cgn_2010">Computer Graphics Night</a></li>
 			<li><a href="/latex">Conférence LaTeX</a></li>
