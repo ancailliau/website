@@ -1,6 +1,6 @@
 <div id="main">
 
-	<a href="/scienceinfuse"><img src="images/384183109_6d916a11f2_b.jpg" /></a>
+	<a href="/olympiades"><img src="images/384183109_6d916a11f2_b.jpg" /></a>
 
 	<div class="grey-box">
 	={controllers.people.newsletter_subscribe as action}{
