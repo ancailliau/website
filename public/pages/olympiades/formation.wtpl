@@ -1,22 +1,53 @@
 <h2>Olympiades belges d'Informatique &mdash; Formation</h2>
 
 <p>
-	Des formations seront organisées pour les élèves du secondaire. La première
-	formation se déroule durant la seconde semaine des vacances de Pâques,
-	durant deux jours. Le premier jour est consacré à une introduction à
-	l'algorithmique tandis que le second jour sera consacré à des exercices
-	plus avancés. Cette formation est optionnelle.
+	Une formation est organisée ce jeudi 15 avril et vendredi 16 avril 2010.
+	La formation se déroule sur deux jours et est gratuite, seuls les repas de midi
+	sont à la charge des participants. Il est possible d'acheter un sandwich pour
+	2,5 &euro; et une boisson pour 0,70 &euro;. La formation est prioritairement réservée
+	aux élèves du secondaire sélectionnés pour la finale des Olympiades.
 </p>
 
 <p>
-	Au minimum deux des lauréats de la finale des élèves du secondaire se
-	verront proposer de faire partie de l'équipe Belge pour les Olympiades
-	Internationales d'Informatique. La seconde formation, qui se déroule durant
-	la seconde semaine de juillet, est obligatoire et est destinée à l'équipe
-	nationale qui ira défendre les couleurs de la Belgique pour les IOI.
+	La formation se déroule à Louvain-la-Neuve, dans les locaux de l'Université. Le rendez-vous
+	est fixé sur la place Sainte-Barbe (<a href="http://maps.google.be/maps?f=q&source=s_q&hl=fr&geocode=&q=louvain+la+neuve+place+sainte+barbe&sll=50.805935,4.432983&sspn=3.305003,8.580322&ie=UTF8&hq=&hnear=Place+Sainte-Barbe,+Louvain-la-Neuve+1348+Louvain-La-Neuve,+Brabant+Wallon,+R%C3%A9gion+Wallonne&ll=50.668566,4.623131&spn=0.000809,0.002095&t=h&z=19">Google Maps</a>). Pour vous inscrire à la formation, il vous
+	suffit d'envoyer un e-mail à <a
+	href="mailto:sebastien.combefis@uclouvain.acm-sc.be">sebastien.combefis@uclouvain.acm-sc.be</a>
+	en mentionnant votre nom, votre prénom, ainsi que les jours durant lesquels vous vous présenterez.
 </p>
 
 <p>
-	De plus amples informations seront envoyées aux participants et seront
-	disponibles sur le site web en temps utiles.
+	Vous pouvez n'assister qu'à un des deux jours si vous le souhaitez. Voici le programme
+	de la formation :
 </p>
+
+<h3>Jeudi 15 avril</h3>
+
+<p>
+	Cette première journée est destinée à l'apprentissage d'un langage de programmation
+	(Python) et à l'algorithmique. Le tout est basé sur des exercices sur papier.
+</p>
+
+<dl>
+	<dt>de 9h à 12h</dt>
+	<dd><p>Formation au langage Python</p></dd>
+
+	<dt>de 13h30 à 17h</dt>
+	<dd><p>Exercices algorithmiques sur papier</p></dd>
+</dl>
+
+<h3>Vendredi 16 avril</h3>
+
+<p>
+	Cette seconde journée est consacrée à la résolution d'exercices sur machine. Elle
+	permettra également de découvrir comment fonctionnera le mode de soumission des
+	programmes lors de la finale des Olympiades.
+</p>
+
+<dl>
+	<dt>de 9h à 12h</dt>
+	<dd><p>Exercices sur machine</p></dd>
+
+	<dt>de 13h30 à 17h</dt>
+	<dd><p>Exercices sur machine</p></dd>
+</dl>
