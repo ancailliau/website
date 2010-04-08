@@ -1,0 +1,24 @@
+
+<h2>Résultats des demi-finales</h2>
+
+<p> Ci-dessous sont repris, par ordre alphabétique, les sélectionnés pour la finale parmis les participants des demi-finales de chaque des catégories. </p>
+<p>Chaque participant, qu'il soit sélectionné pour la finale ou pas, va également recevoir un e-mail lui permettant
+de consulter ses points.<!-- (si vous ne l'avez pas reçu au 6 avril, veuillez contacter <a href="mailto:damien.leroy@uclouvain.acm-sc.be">Damien Leroy </a>).--></p>
+
+<h3>Catégorie secondaire</h3>
+<dl>
+*{model.olympiades_results_sec as r}{
+	<dt>${r[:nom]} ${r[:prenom]}</dt>
+	<dd><p>${r[:etablissement]}, ${r[:type]}e secondaire</p></dd>
+  }
+</dl>
+
+<h3>Catégorie supérieur</h3>
+<p>Suite à quelques problèmes avec l'un des correcteurs, l'arrivée de ces résultats souffrira d'un léger retard de moins de 24h. 
+Veuillez nous en excusez.</p>
+<dl>
+*{model.olympiades_results_sup as r}{
+	<dt>${r[:nom]} ${r[:prenom]}</dt>
+	<dd><p>${r[:etablissement]}, ${r[:type]}</p></dd>
+  }
+</dl>
