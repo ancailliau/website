@@ -7,7 +7,8 @@ module AcmScW
         unless @mail_agent
           @mail_agent = get_mail_agent
           template = @mail_agent.add_template(:olympiades_results_announce)
-          template.from         = "UCLouvain ACM Student Chapter <no-reply@uclouvain.acm-sc.be>"
+          template.from         = "UCLouvain ACM Student Chapter <no-reply@acm-sc.be>"
+          template.bcc          = ["no-reply@acm-sc.be"]
           template.subject      = "OI2010 - Résultats de la demi-finale"
           template.content_type = 'text/html'
           template.charset      = 'UTF-8'
