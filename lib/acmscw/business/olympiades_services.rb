@@ -22,7 +22,12 @@ module AcmScW
         Waw.resources.model.olympiades_results.reject{|p| p[:email].nil? or p[:email].empty? }.each do |people|
           mail, sid = people[:email], people[:sid]
           context = {:url => Waw.config.web_base + "olympiades/resultats-demi-finales/show/#{sid}"}
-          mail_agent.send_mail(:olympiades_results_announce, context, mail)
+          begin 
+            mail_agent.send_mail(:olympiades_results_announce, context, mail)
+            Waw.logger.debug "Mail successfully sent to #{mail}"
+          rescue Exception => ex
+            Waw.logger.error "Unable to send mail to #{mail}: #{ex.message}"
+          end
         end
       end
       
