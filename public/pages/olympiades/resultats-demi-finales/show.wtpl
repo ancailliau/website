@@ -1,0 +1,7 @@
+<!-- Ce template attends une hash ruby, sous le nom de 'people' 
+     contenant un tuple de la db.olympiades_results -->
+<div id="main">
+  <h1>Résultat pour ${people[:nom]} ${people[:prenom]}</h1>
+	<p>Votre score pour la demi-finale est de <strong>${people[:points]}</strong>. Pour
+		
+</div>

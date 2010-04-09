@@ -1,0 +1,26 @@
+wawaccess do
+  inherits true
+  
+  match 'index.wtpl' do
+    wlang '../../../templates/layout.wtpl', {
+      :title    => AcmScW.title_of(served_file),
+      :theclass => "other",
+      "served_file" => 'pages/olympiades/layout.wtpl',
+      :which_olympiades => 'resultats-demi-finales/index.wtpl'
+    }
+  end
+  
+  match /show(\/(.*))?$/ do |url, bsid, sid|
+    people = AcmScW.database[:olympiades_results].filter(:sid => sid).first
+    if people
+      wlang '../../../templates/layout.wtpl', {
+        :people   => people, 
+        :title    => AcmScW.title_of(served_file),
+        :theclass => "other",
+        "served_file" => 'pages/olympiades/resultats-demi-finales/show.wtpl'}
+    else
+      apply "404.wtpl"
+    end
+  end
+  
+end

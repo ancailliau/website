@@ -83,9 +83,11 @@ end
 
 require 'acmscw/waw_ext/validations'
 require 'acmscw/waw_ext/session'
+require 'acmscw/business/abstract_services'
 require 'acmscw/business/main_services'
 require 'acmscw/business/people_services'
 require 'acmscw/business/event_services'
+require 'acmscw/business/olympiades_services'
 require 'acmscw/controllers/main_controller'
 require 'acmscw/controllers/people_controller'
 require 'acmscw/controllers/event_controller'

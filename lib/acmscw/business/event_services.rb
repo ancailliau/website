@@ -1,6 +1,6 @@
 module AcmScW
   module Business
-    class EventServices
+    class EventServices < AcmScW::Business::AbstractServices
       
       # Returns the events relation
       def events

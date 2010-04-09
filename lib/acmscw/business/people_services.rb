@@ -1,7 +1,7 @@
 require 'base64'
 module AcmScW
   module Business
-    class PeopleServices
+    class PeopleServices < AcmScW::Business::AbstractServices
       
       # The people relation (through a Sequel Dataset instance)
       attr_reader :people
@@ -23,15 +23,6 @@ module AcmScW
           template.body         = File.read(File.join(File.dirname(__FILE__), 'activation_mail.wtpl'))
         end
         @mail_agent
-      end
-      
-      # May be overrided for testing purposes
-      def get_mail_agent
-        if Waw.resources.nil?
-          ::Waw::Tools::Mail::MailAgent.new
-        else
-          Waw.resources.business.mail_agent
-        end 
       end
       
       ############################################################################
