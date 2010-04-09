@@ -68,17 +68,17 @@ module AcmScW
         :ok
       end
       
-      signature {
-        validation :mail, is_admin, :forbidden
-      }
-      routing {
-        upon 'validation-ko' do redirect(:url => 'feedback?mkey=forbidden') end 
-        upon 'success/ok' do redirect(:url => 'feedback?mkey=send_results_announce_mail_ok') end   
-      }
-      def send_results_announce_mail(params)
-        olympiades_services.send_results_announce_mail
-        :ok
-      end
+      # signature {
+      #   validation :mail, is_admin, :forbidden
+      # }
+      # routing {
+      #   upon 'validation-ko' do redirect(:url => 'feedback?mkey=forbidden') end 
+      #   upon 'success/ok' do redirect(:url => 'feedback?mkey=send_results_announce_mail_ok') end   
+      # }
+      # def send_results_announce_mail(params)
+      #   olympiades_services.send_results_announce_mail
+      #   :ok
+      # end
     
     end # class OlympiadesController
   end # module Controllers
