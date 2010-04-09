@@ -18,7 +18,7 @@ module AcmScW
       
       # Sends an email to participant with URL to their points
       def send_results_announce_mail
-        Waw.resources.model.olympiades_results.select{|p| people[:email] != "" }.each do |people|
+        Waw.resources.model.olympiades_results.reject{|p| p[:email].nil? or p[:email].empty? }.each do |people|
           mail, sid = people[:email], people[:sid]
           context = {:url => Waw.config.web_base + "olympiades/resultats-demi-finales/show/#{sid}"}
           mail_agent.send_mail(:olympiades_results_announce, context, mail)

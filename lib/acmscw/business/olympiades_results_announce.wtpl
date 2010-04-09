@@ -2,7 +2,7 @@
 
 <p>Vous avez récemment participé aux 1ères Olympiades belges d'Informatiques organisées par l'<a href="{Waw.config.web_base}">UCLouvain ACM Student Chapter</a> et les FUNDP.</p>
 
-<p>Vous pouvez prendre connaissance de la liste des sélectionnés pour la finale sur <a href="{Waw.config.web_base}olympiades/resultats-demi-finales">cette page</a> et consulter votre score personnel via le lien suivant : <a href="{url}">{url}</a>.</p>
+<p>Vous pouvez prendre connaissance de la liste des sélectionnés pour la finale sur <a href="{Waw.config.web_base}olympiades/resultats-demi-finales">cette page</a> et consulter votre score personnel via le lien suivant : <a href="{url}">${url}</a>.</p>
 
 <p>Afin de faciliter la communication entre les participants et avec les organisateurs, nous avons mis en place le site <a href="http://oi2010.monassoc.com/">http://oi2010.monassoc.com/</a>. Nous recommandons aux finalistes de s'y inscrire et de le consulter régulièrement.</p>
 
