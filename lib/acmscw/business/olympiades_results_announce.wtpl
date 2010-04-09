@@ -1,7 +1,11 @@
 <p>Bonjour,</p>
 
-<p>Vous avez récemment participé aux olympiades d'informatiques organisées par l'<a href="{Waw.config.web_base}">ACM Student Chapter</a>.</p>
+<p>Vous avez récemment participé aux 1ères Olympiades belges d'Informatiques organisées par l'<a href="{Waw.config.web_base}">UCLouvain ACM Student Chapter</a> et les FUNDP.</p>
 
-<p>Vous pouvez prendre connaissance de vos points en cliquant <a href="{url}">ici</a></p>
+<p>Vous pouvez prendre connaissance de la liste des sélectionnés pour la finale sur <a href="{Waw.config.web_base}olympiades/resultats-demi-finales">cette page</a> et consulter votre score personnel via le lien suivant : <a href="{url}">${url}</a>.</p>
 
-<p>L'équipe des Olympiades</p>
+<p>Afin de faciliter la communication entre les participants et avec les organisateurs, nous avons mis en place le site <a href="http://oi2010.monassoc.com/">http://oi2010.monassoc.com/</a>. Nous recommandons aux finalistes de s'y inscrire et de le consulter régulièrement.</p>
+
+<p>Comme annoncé précédemment, une formation d'algorithmique et de programmation est organisée la semaine prochaine à Louvain-la-Neuve. Celle-ci est prioritairement réservée aux élèves de secondaire sélectionnés pour la finale. Les détails de cette formation se trouvent sur <a href="http://oi2010.monassoc.com/">notre site</a> via lequel vous pouvez vous y inscrire.</p>
+
+<p>Le comité OI2010</p>

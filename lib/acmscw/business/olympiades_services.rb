@@ -8,7 +8,7 @@ module AcmScW
           @mail_agent = get_mail_agent
           template = @mail_agent.add_template(:olympiades_results_announce)
           template.from         = "UCLouvain ACM Student Chapter <no-reply@uclouvain.acm-sc.be>"
-          template.subject      = "Vos résultats aux olympiades"
+          template.subject      = "OI2010 - Résultats de la demi-finale"
           template.content_type = 'text/html'
           template.charset      = 'UTF-8'
           template.body         = File.read(File.join(File.dirname(__FILE__), 'olympiades_results_announce.wtpl'))
@@ -18,9 +18,9 @@ module AcmScW
       
       # Sends an email to participant with URL to their points
       def send_results_announce_mail
-        Waw.resources.model.olympiades_results.each do |people|
-          mail, sid = people[:mail], people[:sid]
-          context = {:url => Waw.config.web_base + "olympiades/results/show/#{sid}"}
+        Waw.resources.model.olympiades_results.reject{|p| p[:email].nil? or p[:email].empty? }.each do |people|
+          mail, sid = people[:email], people[:sid]
+          context = {:url => Waw.config.web_base + "olympiades/resultats-demi-finales/show/#{sid}"}
           mail_agent.send_mail(:olympiades_results_announce, context, mail)
         end
       end
