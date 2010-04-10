@@ -70,16 +70,16 @@ function webserv_people_account_activation_request(request_data, form) {
       window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
-      if (data[0] == 'error') {
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(messages[data[1][0]]);
-      } else if (data[0] == 'validation-ko') {
+      if (data[0] == 'validation-ko') {
         $(form + ' .feedback').show();
         $(form + ' .feedback').html(messages[data[1][0]]);
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           window.location = "/feedback?mkey=activation_request_ok";
         }
+      } else if (data[0] == 'error') {
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(messages[data[1][0]]);
       }
     }
   });
@@ -91,10 +91,7 @@ function webserv_people_activate_account(request_data, form) {
       window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
-      if (data[0] == 'error') {
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(messages[data[1][0]]);
-      } else if (data[0] == 'validation-ko') {
+      if (data[0] == 'validation-ko') {
         str = '';
         str += '<ul>';
         for (var k in data[1]) {
@@ -110,6 +107,9 @@ function webserv_people_activate_account(request_data, form) {
         } else if (data[1] == 'activation_required') {
           window.location = "/feedback?mkey=activation_required";
         }
+      } else if (data[0] == 'error') {
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(messages[data[1][0]]);
       }
     }
   });
@@ -170,10 +170,7 @@ function webserv_people_subscribe_account(request_data, form) {
       window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
-      if (data[0] == 'error') {
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(messages[data[1][0]]);
-      } else if (data[0] == 'validation-ko') {
+      if (data[0] == 'validation-ko') {
         str = '';
         str += '<ul>';
         for (var k in data[1]) {
@@ -187,6 +184,9 @@ function webserv_people_subscribe_account(request_data, form) {
         if (data[1] == 'ok') {
           window.location = "/feedback?mkey=subscribe_account_ok";
         }
+      } else if (data[0] == 'error') {
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(messages[data[1][0]]);
       }
     }
   });
@@ -198,10 +198,7 @@ function webserv_people_update_account(request_data, form) {
       window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
-      if (data[0] == 'error') {
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(messages[data[1][0]]);
-      } else if (data[0] == 'validation-ko') {
+      if (data[0] == 'validation-ko') {
         str = '';
         str += '<ul>';
         for (var k in data[1]) {
@@ -218,6 +215,9 @@ function webserv_people_update_account(request_data, form) {
         } else if (data[1] == 'activation_required') {
           window.location = "/feedback?mkey=activation_required";
         }
+      } else if (data[0] == 'error') {
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(messages[data[1][0]]);
       }
     }
   });
@@ -286,23 +286,6 @@ function webserv_olympiades_register(request_data, form) {
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           window.location = "/feedback?mkey=olympiades_registration_ok";
-        }
-      }
-    }
-  });
-  return false;
-}  
-function webserv_olympiades_send_results_announce_mail(request_data, form) {
-  $.ajax({type: "POST", url: "/webserv/olympiades/send_results_announce_mail", data: request_data, dataType: "json",
-    error: function(data) {
-      window.location = '/feedback?mkey=server_error';
-    },
-    success: function(data) {
-      if (data[0] == 'validation-ko') {
-        window.location = "feedback?mkey=forbidden";
-      } else if (data[0] == 'success') {
-        if (data[1] == 'ok') {
-          window.location = "feedback?mkey=send_results_announce_mail_ok";
         }
       }
     }
