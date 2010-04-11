@@ -4,12 +4,12 @@
 			<li><a href="/olympiades/calendrier">Calendrier</a></li>
 			<li><a href="/olympiades/questions">Exemples de questions</a></li>
 			<li><a href="/olympiades/reglement">Règlement du concours</a></li>
-			<li><a href="/olympiades/equipe">Équipe</a></li>
+			<li><a href="/olympiades/equipe">Comité OI2010</a></li>
 		</ul>
 	</li>
 	<li><a href="/olympiades/demi-finales">Demi-Finales</a>
 		<ul>
-			<li><a href="/olympiades/centres-regionaux">Centres régionaux</a></li>
+			<!--<li><a href="/olympiades/centres-regionaux">Centres régionaux</a></li>-->
 			<li><a href="/olympiades/demi-finales-regles">Règlement de la demi-finale</a></li>
 			<li><a href="/olympiades/resultats-demi-finales">Résultats</a></li>
 		</ul>
