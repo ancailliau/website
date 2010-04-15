@@ -8,5 +8,21 @@
 	aux élèves du secondaire sélectionnés pour la finale des Olympiades.
 </p>
 
-<p>La description de la formation ainsi que l'inscription à celle-ci se fait exclusivement via le site de préparation des finales : <a href="http://oi2010.monassoc.com/">http://oi2010.monassoc.com/</a>
 <p>
+	La description de la formation, ainsi que l'inscription, se fait via le site de préparation
+	des finales : <a href="http://oi2010.monassoc.com/">http://oi2010.monassoc.com/</a>.
+<p>
+
+<h3>Au programme</h3>
+
+<ul>
+	<li>Introduction à la programmation avec Python</li>
+	<li>Exercices algorithmique sur papier</li>
+	<li>Exercices sur machine</li>
+</ul>
+
+<h3>Documents utiles</h3>
+
+<ul>
+	<li><a href="/slides/formation-python-10.04.2010.pdf">Transparents de l'introduction à Python</a></li>
+</ul>
