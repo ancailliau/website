@@ -5,14 +5,37 @@
 	2010 de 14h à 19h30. L'épreuve durera trois heures et la proclamation des
 	gagnants sera faite le jour même, en fin de journée. Les deux concours
 	comporteront deux parties : des questions sur papier et des questions à
-	résoudre sur ordinateur. La journée se terminera par la cérémonie de remise
-	des prix qui sera suivie d'un drink.
+	résoudre sur ordinateur. L'épreuve sera suivie d'une conférence et la
+	journée se terminera par la cérémonie de remise	des prix et d'un cocktail.
 </p>
 
-<h3>Cérémonie de proclamation</h3
+<h3>Programme</h3>
+
+<dl>
+	<dt>14h-17h</dt>
+	<dd><p>Finales des Olympiades belges d'Informatique.</p></dd>
+
+	<dt>17h15-18h30</dt>
+	<dd><p>Conférence avec Bruno Schröder (Microsoft) et Carmelo Zaccone (AWT).</p></dd>
+
+	<dt>18h30-19h00</dt>
+	<dd><p>Proclamation des résultats.</p></dd>
+
+	<dt>19h00-20h00</dt>
+	<dd><p>Cocktail.</p></dd>
+</dl>
 
 <p>
-	La proclamation des résultats se fait le mercredi 12 mai 2010, à 18h30, à Louvain-la-Neuve.
+	Les détails sur la conférence seront bientôt disponibles.
+</p>
+
+
+<h3>Accès et inscription</h3>
+
+<p>
+	La conférence et la proclamation se déroulera dans les auditoires des sciences situés
+	Place des Sciences à Louvain-la-Neuve. Vous pouvez trouver un plan d'accès sur
+	<a href="http://maps.google.be/maps?f=q&source=s_q&hl=fr&geocode=&q=louvain+la+neuve+place+des+sciences&sll=50.805935,4.432983&sspn=3.305003,8.580322&ie=UTF8&hq=&hnear=Place+des+Sciences,+Louvain-la-Neuve+1348+Louvain-La-Neuve,+Brabant+Wallon,+R%C3%A9gion+Wallonne&ll=50.66809,4.619783&spn=0.001618,0.00419&t=h&z=18">Google Maps</a> ou via le <a href="http://www.uclouvain.be/acces-lln.html">site web de l'université</a>.
 </p>
 
 <<+{../events/event_registration.wbrick with event: 'finale_olympiades_2010'}
