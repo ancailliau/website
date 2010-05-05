@@ -1,0 +1,126 @@
+<h2>Olympiades belges d'Informatique &mdash; Règlement des finales</h2>
+
+<p>Ce document contient toutes les règles relatives à la finale des Olympiades belges d'Informatique 2010. Tout participant violant quelque partie que ce soit de ce règlement sera passible de disqualification immédiate de l'épreuve. Les participants à la finale des Olympiades belges d'Informatique 2010 acceptent intégralement ce règlement, par leur participation à la finale.</p>
+
+
+<h3>Partie écrite</h3>
+
+<p>Deux types de questions seront possibles lors de la partie écrite de l'épreuve :</p>
+
+<ul>
+	<li>Des questions à choix multiples (QCM) qui consistent soit à trouver le résultat produit par un algorithme, soit à trouver l'instruction manquante d'un algorithme, soit d'indiquer une instruction erronée de l'algorithme ;
+Des questions ouvertes où le participant doit trouver une instruction ou un court bloc d'instructions manquant.</li>
+
+	<li>Pour les QCM, le participant coche la case correspondant à sa réponse avec une croix. En cas d'erreur, il peut annuler son choix en noircissant complètement la case. Une seule solution est possible par question. Les réponses erronées sont pénalisées par une cote négative, les abstentions par une cote nulle et les bonnes réponses permettent d'obtenir une cote positive. Les valeurs de ces cotes seront mentionnées sur le questionnaire.</li>
+</ul>
+
+
+<h3>Partie sur machine</h3>
+
+<h4>Tâches</h4>
+
+<p>Étant donné la diversité des langages de programmation autorisés, l'efficacité des programmes ne sera pas un critère d'évaluation primordial. Les temps d'exécution ne seront pas comparés entre eux, mais une limite de temps maximal sera imposée pour l'exécution des programmes des participants. L'évaluation sera uniquement basée sur l'exécution de tests qui permettront de différencier différents niveaux d'efficacité. Les jeux de test élémentaires sont choisis de manière à ce que toute implémentation raisonnable puisse trouver une solution au problème endéans la limite de temps imposée. Tous les candidats sont donc invités à proposer une solution, même si cette dernière est incapable de gérer les gros problèmes, étant donné que cela lui rapportera quand même des points. La qualité du code produit ne sera pas prise en compte.</p>
+
+<p>Durant l'épreuve, le participant sera confronté à une tâche de type batch. Le programme soumis lit ses données depuis un fichier texte et produit son résultat dans un autre fichier texte.</p>
+
+<pIl n'y a pas de limites quand à la mémoire qui peut être utilisée par les programmes, si ce n'est celle imposée par les caractéristiques de la machine.</p>
+
+<h4>Soumission des délivrables</h4>
+
+<p>Les participants disposent, sur le bureau de leur session, d'un répertoire nommé <b>OI2010</b>, composé de cinq répertoires :</p>
+
+<ul>
+	<li><b>prog</b> : est utilisé pour stocker les délivrables requis par la question (code source du programme et fichiers de sortie pour les tâches de type sortie seulement) ;</li>
+	<li><b>skeleton</b> : contient des squelettes de code et un makefile (peut être utilisé par le participant pour produire un délivrable dans le bon format) ;</li>
+	<li><b>tests</b> : contient un jeu de tests élémentaires (peut être complété par le participant) ;</li>
+	<li><b>backup</b> : est utilisé pour effectuer des sauvegardes de sécurité de votre programme ;</li>
+	<li><b>doc</b> : contient de la documentation pour les différents langages.</li>
+</ul>
+
+<p>Seul le contenu du répertoire <b>prog</b> sera automatiquement soumis aux organisateurs une fois l'épreuve terminée. Le participant veillera à bien placer sa solution à la racine de ce répertoire. Les participants sont invités à utiliser les squelettes fournis afin que le format des délivrables soit correct. Ce n'est pas une obligation, mais si le squelette fourni (ou le Makefile) est modifié, c'est au participant de faire en sorte de garantir que sa solution respecte le comportement demandé, ce dernier sera décrit dans l'énoncé.</p>
+
+<p>Les participants sont invités à faire des backups de leur solutions de temps en temps. Cette sauvegarde peut se faire n'importe où sur le disque de la machine, mais devrait de préférence être faite dans le répertoire <b>backup</b>. Les organisateurs ne pourront pas être tenus responsables de problèmes de dernière seconde qui feraient que plus aucun des tests ne fonctionne.</p>
+
+<p>Les participants seront prévenus cinq minutes avant la fin de l'épreuve, cela leur permettant de finaliser la version en cours du répertoire <b>prog</b> où de transférer la dernière version fonctionnelle depuis le répertoire <b>backup</b> vers le répertoire <b>prog</b>, seul le contenu de ce dernier étant transmis.
+
+<h4>Spécification des machines</h4>
+
+<p>Toutes les machines fonctionnent sous Linux. Les participants doivent travailler sur ce système d'exploitation. Les participants ne peuvent en aucun cas redémarrer les machines. Les machines sont équipées de :</p>
+
+<ul>
+	<li><b>Système d'exploitation</b> : Fedora 11 (Leonidas)</li>
+	<li><b>Navigateur web</b> : Mozilla Firefox</li>
+	<li><b>Éditeur texte</b> : vi, vim, emacs, xemacs, gedit, bluefish, scite</li>
+	<li><b>IDE</b> : eclipse (Java et C/C++), BlueJ, NetBeans</li>
+</ul>
+
+<p>Les langages de programmation acceptés pour la partie sur machine sont exclusivement : Java, C, C++, C#, Pascal, Python, Ruby et PHP. Les versions installées des compilateurs sont :</p>
+
+<ul>
+	<li><b>Java</b>(TM) SE Runtime Environment (build 1.6.0_15-b03)</li>
+	<li><b>gcc</b> (GCC) 4.4.1 20090725 (Red Hat 4.4.1-2)</li>
+	<li><b>Mono</b> JIT compiler version 2.4.2.3 (tarball Sat Sep  5 10:46:55 EDT 2009)</li>
+	<li><b>fpc</b> [0.007] Free Pascal Compiler version 2.2.2 [2008/10/26] for i386</li>
+	<li><b>Python</b> 2.6 (r26:66714, Nov  3 2009, 17:33:38), [GCC 4.4.1 20090725 (Red Hat 4.4.1-2)] on linux2</li>
+	<li><b>ruby</b> 1.8.6 (2009-08-04 patchlevel 383) [i386-linux]</li>
+	<li><b>PHP</b> 5.2.13 (cli) (built: Mar  6 2010 12:40:51)</li>
+</ul>
+
+<p>Les participants ne disposent d'aucun accès à Internet. Les participants auront accès à une documentation pour chacun des langages. Ils pourront utiliser toutes les librairies standards disponibles avec les langages. La documentation qui leur sera accessible est la suivante :</p>
+
+<ul>
+	<li>Java : http://java.sun.com/javase/6/docs</li>
+	<li>Pascal : http://www.freepascal.org/docs-html/fpctoc.html</li>
+	<li>Python : http://docs.python.org/</li>
+	<li>Ruby : http://www.ruby-doc.org/</li>
+	<li>PHP : http://www.php.net/manual/fr/</li>
+</ul>
+
+<p>Les spécifications techniques des machines sont :</p>
+
+<ul>
+	<li><b>Processeur</b> : Intel Core 2 6400 2.13GHz</li>
+	<li><b>RAM</b> : 2 barrettes de 1Go DDR2 (HYMP512U64CP8-Y5)</li>
+	<li><b>Mémoire</b> : +/- 6Go de disponible sur le disque (légèrement variable en fonction de la machine)</li>
+	<li><b>Clavier</b> : belge</li>
+	<li><b>Souris</b> : 3 boutons (avec roulette)</li>
+</ul>
+
+<h3>Déroulement de l'épreuve</h3>
+
+<p>La Finale commence à 14h pour se finir à 17h et se découpe en deux parties : partie écrite et partie sur machine. Chacune de ces parties dure 1h15. Les types d'épreuve sont alternés entre le concours pour les élèves du secondaires et celui pour les étudiants du supérieur. Durant chaque partie de l'épreuve, les participants ne peuvent pas communiquer entre eux ou avec toute autre personne (excepté avec les organisateurs et surveillants) par quelque moyen que ce soit et ne peuvent quitter leur place, par exemple pour aller aux toilettes ou pour fumer une cigarette. Ils doivent également respecter les consignes données par les organisateurs, tout au long de l'épreuve.</p>
+
+<p>Pour les deux parties de l'épreuve, les participants ne peuvent avoir que de quoi écrire, tout autre objet ou dispositif électronique est strictement interdit. Les participants doivent également éteindre leurs téléphones portables (et assimilés). Les participants devront placer toutes leurs affaires (sac, veste, etc.) à l'endroit indiqué par les organisateurs, avant de prendre place. Des feuilles de brouillon seront mises à leurs disposition. Les participants ne peuvent ni boire, ni manger durant les deux parties de l'épreuve. Ils sont invités à le faire avant, après et pendant le changement entre les deux parties.</p>
+
+<h4>Début et fin de l'épreuve</h4>
+
+<p>Les participants sont invités à s'installer aux places indiquées par les organisateurs, à déposer leur carte d'identité sur la table et à lire les consignes générales présentées sur la première feuille du questionnaire. Les participants ne sont autorisés à ouvrir le questionnaire que lorsqu'ils en reçoivent l'autorisation des organisateurs. À partir de ce moment, ils ont exactement 1h15 pour répondre aux questions. Une fois ce délai écoulé, les participants doivent poser leur bic/crayon pour la partie écrite et ne plus toucher le clavier pour la partie sur machine.</p>
+
+<p>En ce qui concerne la partie sur machine, les participants doivent avant tout encoder leur nom et prénom dans la fenêtre présentée sur la session. Cette étape est obligatoire et si elle n'est pas exécutée adéquatement, le rapatriement des délivrables ne pourra pas se faire et le participant aura donc 0 point pour cette partie.</p>
+
+<h4>Clarification et support</h4>
+
+<p>Les participants sont libres de poser des questions aux organisateurs, mais pas aux surveillants. Ceux-ci répondront à toutes questions techniques liées à la compréhension des questionnaires et liées à l'infrastructure ou à l'exécution des squelettes et tests fournis. Au moins un organisateur sera présent régulièrement pour la partie écrite et pour la partie sur machine. Ceux-ci seront clairement identifiables et vous seront présentés au début de l'épreuve.</p>
+
+<p>Pour toute question non liée à l'épreuve en soi (par exemple avoir des feuilles de brouillon, connaitre l'heure ou le temps qu'il reste, localiser les toilettes entre les deux parties de l'épreuve, etc.), les participants peuvent s'adresser aux surveillants.</p>
+
+<h4>Exécution de tests de validation</h4>
+
+<p>Pendant toute la durée de la partie sur machine, les participants ont l'occasion d'exécuter une série de tests simples de validation sur leur programme. Ces tests sont d'une importance primordiale car ils permettent de vérifier que le programme fonctionne conformément aux consignes. Les squelettes de base du programme qui seront fournis aux participants passeront ces tests et il reviendra donc aux participants de faire en sorte qu'ils fonctionnent toujours à la fin de l'épreuve. Bien que le type de test soit similaire à ceux qui seront exécutés pour l'évaluation des programmes, les tests fournis ne couvriront que des exemples relativement petits et simples. Il est fortement conseillé aux participants d'exécuter les tests avant la soumission finale, l'échec d'exécution de ceux-ci signifiera très probablement un score nul.</p>
+
+<h3>Évaluation</h3>
+
+<p>Chacune des deux parties de l'épreuve comptera pour un poids similaire. Pour la partie écrite, les réponses erronées des QCM seront sanctionnées par une note négative, les abstentions par une cote nulle et les bonnes réponses seront notées positivement. Et pour les codes à compléter, la réponse sera considérée comme bonne ou mauvaise. Pour la partie sur machine, pour les tâches de type sortie seulement, la note dépendra du nombre de résultats corrects soumis. Pour les autres types de tâches, la note ne dépendra que de tests effectués sur les programmes soumis. Les programmes seront soumis à plusieurs jeux de test, de plus en plus complexes, et la note dépendra du nombre de jeux de tests résolus. L'exécution du programme ne pourra dépasser une certaine limite de temps. La taille maximale des jeux de tests ainsi que la limite de temps seront spécifiés dans l'énoncé. Les jeux de tests utilisés seront du même type, mais différents, que ceux fournis durant l'épreuve.</p>
+
+<h3>Code de conduite</h3>
+
+<p>L'épreuve se déroule dans les locaux de l'Université catholique de Louvain. Les participants sont donc tenus de respecter les règles locales imposées par l'Université. De plus, les participants sont tenus d'adopter un comportement civique et responsable envers les autres personnes présentes et envers le matériel mis à disposition. En particulier, les participants ne peuvent en aucun cas :</p>
+
+<ul>
+	<li>causer des dommages au matériel mis à disposition ;</li>
+	<li>utiliser les machines pour toute activité non liée à l'épreuve ;</li>
+	<li>détourner la sécurité des machines et communiquer avec les autres participants ou leur fournir des fichiers ;</li>
+	<li>communiquer avec toute autre personne que les organisateurs ou surveillants pendant les deux parties de l'épreuve.</li>
+</ul>
+
+<p>Attention, essayer de tricher, c'est déjà de la triche. Toute tentative sera passible d'une disqualification immédiate du participant, cette décision étant laissée à l'appréciation des organisateurs.</p>
