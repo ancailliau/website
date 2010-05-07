@@ -4,20 +4,28 @@
 	Les Olympiades belges d'Informatique (OI) ne pourraient avoir lieu sans nos partenaires et nos sponsors pour les prix que nous remercions.
 </p>
 
-<h3>Sponsors</h3>
+<h3>Sponsor principal</h3>
 
 	<p id="sponsors">
-		<a href="http://www.technofuturtic.be/"><img src="/images/technofutur-tic-logo.png" alt="TechnoFutur TIC" /></a>&nbsp;<a href="http://www8.hp.com/be/fr/home.html"><img src="/images/hp-logo.png" alt="HP Belgium" /></a>&nbsp;<a href="http://www.dell.be/"><img src="/images/dell-logo.jpg" alt="Dell Belgium" /></a>
+		<a href="http://www.ores.net"><img src="/images/ores-logo.png" alt="ORES" /></a>
+	</p>
+
+	<p>ORES est l’opérateur chargé de l’exploitation des réseaux de distribution d’électricité et de gaz naturel d'environ 200 communes en Région Wallonne. Cette mission nous a été confiée par les huit gestionnaires de réseau de distribution du secteur mixte en Wallonie (Ideg, Ieh, Igh, Interest, Interlux, Intermosane, Sedilec et Simogel). Notre entreprise compte plus de 2.000 collaborateurs.</p>
+
+<h3>Prix sponsorisés par</h3>
+
+	<p id="sponsors">
+		<a href="http://www.technofuturtic.be/"><img src="/images/technofutur-tic-logo.png" alt="TechnoFutur TIC" /></a>&nbsp;&nbsp;&nbsp;<a href="http://www8.hp.com/be/fr/home.html"><img src="/images/hp-logo.png" alt="HP Belgium" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.dell.be/"><img src="/images/dell-logo.jpg" alt="Dell Belgium" /></a>
 	</p>
 
 	<p id="sponsors">
-		<a href="http://www.editions-eyrolles.com/Theme/020000/informatique"><img src="/images/eyrolles-logo.jpg" alt="Eyrolles" /></a>
+		<a href="http://www.editions-eyrolles.com/Theme/020000/informatique"><img src="/images/eyrolles-logo.jpg" alt="Eyrolles" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.irislink.com/"><img src="/images/iris-logo.png" alt="I.R.I.S." /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.macline.be/"><img src="/images/macline-logo.png" alt="MacLine" /></a>
 	</p>
 
 <h3>Soutien</h3>
 
 <p>
-	Les OI sont soutenues par toutes les universités et hautes écoles de la Communauté Française de Belgique, organisant des formations en informatique.
+	Les OI sont soutenues par toutes les universités et hautes écoles de la Communauté Française de Belgique proposant des programmes de cours en informatique.
 </p>
 
 <div id="unif-he">
