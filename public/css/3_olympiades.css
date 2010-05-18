@@ -22,3 +22,13 @@
 #unif-he div img {
 	display: inline;
 }
+
+table.score {
+	padding-right: 15px !important;
+	width:470px;
+}
+
+table.score tr td {
+	vertical-align: top;
+	text-align:left;
+}

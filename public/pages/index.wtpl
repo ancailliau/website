@@ -15,13 +15,14 @@
 	</div>
 
 	<div>
-		<h2>Nos prochains évènements</h2>
+		<h2>Nos prochaines activités</h2>
 		<ul>
-			<li><strong><a href="/olympiades">Olympiades belges d'Informatique - Finale</a></strong> - Le mercredi 12 mai</li>
+			<li><a href="/olympiades">Participation aux Olympiades Internationales (IOI)</a> - 14-21 août 2010</li>
 		</ul>
 		
 		<h2>Nos évènements passés</h2>
 		<ul>
+			<li><a href="/olympiades/finales">Olympiades belges d'Informatique - Finale</a></li>
 			<li><a href="/scienceinfuse">Weekend Festival Scienceinfuse</a></li>
 			<li><a href="/olympiades/demi-finales">Olympiades belges d'Informatique - Demi-Finales</a></li>
 			<li><a href="/securite-vie-privee">Conférence «&nbsp;Sécurité et vie privée&nbsp;»</a></li>
