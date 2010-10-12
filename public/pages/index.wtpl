@@ -1,6 +1,6 @@
 <div id="main">
 
-	<a href="/olympiades"><img src="images/384183109_6d916a11f2_b.jpg" /></a>
+	<img src="images/384183109_6d916a11f2_b.jpg" />
 
 	<div class="grey-box">
 	={controllers.people.newsletter_subscribe as action}{
@@ -17,17 +17,13 @@
 	<div>
 		<h2>Nos prochaines activités</h2>
 		<ul>
-			<li><a href="/olympiades">Participation aux Olympiades Internationales (IOI)</a> - 14-21 aout 2010</li>
+		<li>Nos activités 2010-2011 seront dévoilées sous peu !</li>
 		</ul>
 		
 		<h2>Nos évènements passés</h2>
 		<ul>
-			<li><a href="/olympiades/finales">Olympiades belges d'Informatique - Finale</a></li>
+			<li><a href="/olympiades">Olympiades belges d'Informatique</a></li>
 			<li><a href="/scienceinfuse">Weekend Festival Scienceinfuse</a></li>
-			<li><a href="/olympiades/demi-finales">Olympiades belges d'Informatique - Demi-Finales</a></li>
-			<li><a href="/securite-vie-privee">Conférence «&nbsp;Sécurité et vie privée&nbsp;»</a></li>
-			<li><a href="/cgn_2010">Computer Graphics Night</a></li>
-			<li><a href="/latex">Conférence LaTeX</a></li>
 		</ul>
 
 	</div>
