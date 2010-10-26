@@ -1,6 +1,0 @@
-<ul id="menu">
-	?{!session.has_key?(:user)}{<li class="subscribe"><a href="/people/subscribe"><span>Inscrivez-vous</span></a></li>}
-	<li ?{served_file == 'pages/activites.wtpl'}{class="active"}><a href="/activites"><span>Activités</span></a></li>
-	<li ?{served_file == 'pages/a-propos.wtpl'}{class="active"}><a href="/a-propos"><span>À propos</span></a></li>
-	<li ?{served_file == 'pages/contact.wtpl'}{class="active"}><a href="/contact"><span>Contactez-nous</span></a></li>
-</ul>

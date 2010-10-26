@@ -1,0 +1,65 @@
+wawaccess do
+    
+  #
+  # Matches the root site index, '/'
+  #
+  # This request is directly redirected to /index (see next rule)
+  #
+  match root do
+    apply "index"
+  end
+  
+  # 
+  # Matches all existing files. Accesses to standard downloadable 
+  # files are granted. Others ar immediately denied.
+  #
+  match file do
+    if File.directory?(served_file)
+      apply "#{served_file}/index"
+    elsif served_file =~ /\.(js|css|tar|gz|zip|jpg|gif|png|bmp|pdf)$/
+      static
+    else
+      deny
+    end
+  end
+  
+  #
+  # Matches everything else
+  #
+  match /.*[a-z0-9A-Z\-]+$/ do |url|
+    url = "#{url}/index" if File.directory?(File.join(folder, url))
+
+    # Find the source file
+    source_file = if File.exists?(File.join(folder, "#{url}.whtml"))
+      File.join(folder, "#{url}.whtml")
+    elsif File.exists?(File.join(folder, "#{url}.wtpl"))
+      File.join(folder, "#{url}.wtpl")
+    else
+      File.join(folder, "404.whtml")
+    end
+    
+    # Load the source text
+    source = case File.extname(source_file)
+      when '.whtml'
+        File.read(source_file)
+      when '.wtpl'
+        context = {:normalized_url => url}
+        WLang::file_instantiate(source_file, default_wlang_context.merge(context))
+    end
+    
+    template = "templates/layout.wtpl"
+    context  = {:title          => "ACM Student Chapter", 
+                :theclass       => (url == "index" ? "index" : "other"),
+                :normalized_url => url,
+                :body           => source}
+    wlang template, context
+  end
+  
+  # 
+  # Matches everything else and returns a friendly 404 page.
+  #
+  match true do
+    apply "404", 404
+  end
+  
+end

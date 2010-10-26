@@ -1,0 +1,6 @@
+wawaccess do
+  inherits false
+  match true do
+    deny
+  end
+end

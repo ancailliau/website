@@ -1,0 +1,119 @@
+<h2>Weekend Festival Scienceinfuse &mdash; Stands interactifs</h2>
+
+<p>
+	Durant tout le weekend, de 14h à 17h, des stands interactifs vous
+	permettent de découvrir différents aspects de l'informatique. Ces stands
+	sont accessibles à tout le monde et la durée d'une visite à un stand varie
+	de 5 à 20 minutes.  De plus, vous pourrez également visiter une mini
+	exposition de pièces d'ordinateur, depuis les plus anciennes très
+	volumineuses jusqu'à celles d'aujourd'hui, miniaturisées. Ce sera
+	l'occasion de voir l'évolution rapide qui s'est produite ces dernières
+	années.
+</p>
+
+<p>
+	Afin de faciliter l'organisation des stands et recevoir des informations,
+	vous pouvez vous inscrire sur la page des <a
+	href="acces-inscription">inscriptions</a>. Voici une
+	description des différents stands que vous pourrez découvrir durant le
+	weekend :
+</p>
+
+<ul class="stands">
+	<li>
+		<p><strong>Jeux vidéo d'hier et d'aujourd'hui : quelle évolution
+		!</strong></p>
+		
+		<p>
+			Venez, venez et découvrez les jeux qui ont fait l'histoire de
+			l'informatique. Des plus vieux comme tetris, pong et pacman aux
+			plus récents. Découvrez également des réalisations d'étudiants de
+			deuxième année de l'École Polytechnique de Louvain.
+		</p>
+	</li>
+	
+	<li>
+		<p><strong>Qu'y a-t-il dans cette boite ? Démontage de PC (neufs et
+		anciens).</strong></p>
+
+		<p>
+			Vous vous êtes toujours demandé ce qu'il y avait à l'intérieur d'un
+			ordinateur ? C'est le moment de venir découvrir les pièces qui le
+			constituent et de comprendre leur rôle. Vous pourrez même démonter
+			et remonter par vous-même un vieil ordinateur !
+		</p>
+	</li>
+	
+	<li>
+		<p><strong>Edubuntu : la version éducative de Ubuntu, le logiciel libre
+		au service des jeunes et des parents.</strong></p>
+		
+		<p>
+			Vous ne savez pas quoi faire sur votre ordinateur ? Venez découvrir
+			Edubuntu qui propose une pléthore de programmes éducatifs dans le
+			domaine des sciences, des mathématiques, des langues, etc. En
+			particulier, apprenez l'espagnol, étudiez les atomes, observez les
+			étoiles, etc.
+		</p>
+	</li>
+	
+	<li>
+		<p><strong>Sécuriser l'information ? Je réponds cryptographie !</strong></p>
+		
+		<p>
+			Vous avez des choses à cacher ? Des informations à protéger ?
+			Découvrez la cryptographie à l'aide de méthodes simples qu'il est
+			possible de mettre en &oelig;uvre avec un crayon et du papier. Vous
+			aurez même l'occasion de jouer le méchant et de tenter de décrypter
+			des messages chiffrés.
+		</p>
+	</li>
+	
+	<li>
+		<p><strong>Ce n'est pas dans le bon ordre ... Trions, mais avec
+		méthode.</strong></p>
+		
+		<p>
+			Lorsque vous devez trier des objets dans un certain ordre, vous
+			êtes capables de le faire assez vite. Venez découvrir comment
+			l'ordinateur s'y prend et prenez sa place le temps d'un court
+			instant en triant des boites numérotées de manière croissante.
+		</p>
+	</li>
+	
+	<li>
+		<p><strong>Eliza ... T'es un ordi oui ou non ?</strong></p>
+		
+		<p>
+			Les ordinateurs seront-ils un jour plus intelligents que les êtres
+			humains ? Venez vous confronter au test de Turing durant lequel
+			vous allez pouvoir discuter via un ordinateur, avec un être humain
+			et un autre ordinateur. Saurez-vous distinguer l'homme de la
+			machine ?
+		</p>
+	</li>
+	
+	<li>
+		<p><strong>Des briques en plastique ... intelligentes !</strong></p>
+		
+		<p>
+			Vous connaissez les Lego&reg; ? Vous avez déjà vu des Lego&reg;
+			bouger ? Venez à ce stand découvrir un robot Lego&reg; nettoyeur de
+			vitre, réalisé et programmé par des étudiants ingénieurs en
+			première année de l'École Polytechnique de Louvain.
+		</p>
+	</li>
+	
+	<li>
+		<p><strong>Ma première animation : on me donne le scénario, je
+		programme l'animation.</strong></p>
+		
+		<p>
+			Aujourd'hui, c'est très facile de créer une animation. Venez
+			découvrir comment créer votre propre animation sur ordinateur, rien
+			qu'en utilisant la souris en utilisant Scratch. Nous vous
+			fournissons un scénario, vous le programmez sur ordinateur et vous
+			voyez directement le résultat.
+		</p>
+	</li>
+</ul>

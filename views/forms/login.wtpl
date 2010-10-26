@@ -1,0 +1,38 @@
+={controllers.people.login as action}{
+	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="login" class="form-300">
+		<p>Pour accéder à MyChapter, merci de vous connecter. Si vous
+		n'êtes pas encore enregistré, <a
+		href="/people/subscribe">inscrivez-vous</a>.</p>
+		
+		<p class="feedback"></p>
+		
+		<p class="span-3">
+			<label for="mail">Mon e-mail&nbsp;:</label>
+			<input type="text" name="mail" value="" tabindex="100" />
+		</p>
+		
+		<p class="span-3">
+			<label for="mail">Mon mot de passe (<a href="/people/lost_password">perdu?</a>)&nbsp;:</label>
+			<input type="password" name="password" value="" tabindex="101"/>
+		</p>
+		
+		<p class="form-button">
+			<input type="submit" tabindex="102" value="Go »"/>
+			+{action.ajax_form_preparer(:form_id => 'login')}
+			<a href="#" onclick="hide_login_form()">Fermer</a>
+		</p>
+	</form>
+}
+<script type="text/javascript">
+	function hide_login_form() {
+		$('p#internal-links').show();
+		$('form#login').hide();
+		return false;
+	}
+	function show_login_form() {
+		$('p#internal-links').hide();
+		$('form#login').show();
+		$('html, body').animate( { scrollTop: 0 }, 'slow' );
+		return false;
+	}
+</script>

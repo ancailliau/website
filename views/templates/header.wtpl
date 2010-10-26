@@ -1,0 +1,17 @@
+<div id="header">
+  <div id="logo">
+  	<h1><a href="/"><span>UCLouvain ACM Student Chapter</span></a></h1>
+  	<p>Spread computer science, inform people&nbsp;</p>
+  </div>
+  <ul id="menu">
+  	<li ?{normalized_url == 'activites/2009-2010/index'}{class="active"}>
+  	  <a href="/activites/2009-2010"><span>Activités</span></a>
+  	</li>
+  	<li ?{normalized_url == 'a-propos'}{class="active"}>
+  	  <a href="/a-propos"><span>À propos</span></a>
+  	</li>
+  	<li ?{normalized_url == 'contact'}{class="active"}>
+  	  <a href="/contact"><span>Contactez-nous</span></a>
+  	</li>
+  </ul>
+</div>
