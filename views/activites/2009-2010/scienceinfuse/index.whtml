@@ -1,46 +1,50 @@
 <h2>Weekend Festival Scienceinfuse</h2>
 
-<p>
-	Dans le cadre du <a href="http://www.printempsdessciences.be/">Printemps
-	des Sciences 2010</a>, se déroule le samedi 27 et le dimanche 28 mars 2010
-	à Louvain-la-Neuve un ensemble d'activités de sensibilisation à
-	l'informatique. Durant ce weekend, tout un chacun, aussi bien les grands
-	que les petits, va pouvoir découvrir ce qu'est l'informatique, en tant que
-	science. Plusieurs types d'animations sont proposés durant le weekend :
-</p>
+<div class="index">
 
-<ul>
-	<li><a href="ateliers">Ateliers</a> interactifs</li>
-	<li><a href="stands">Stands</a> interactifs</li>
-	<li><a href="spectacle">Spectacle</a> scientifique</li>
-</ul>
+  <p>
+  	Dans le cadre du <a href="http://www.printempsdessciences.be/">Printemps
+  	des Sciences 2010</a>, se déroule le samedi 27 et le dimanche 28 mars 2010
+  	à Louvain-la-Neuve un ensemble d'activités de sensibilisation à
+  	l'informatique. Durant ce weekend, tout un chacun, aussi bien les grands
+  	que les petits, va pouvoir découvrir ce qu'est l'informatique, en tant que
+  	science. Plusieurs types d'animations sont proposés durant le weekend :
+  </p>
 
-<p>
-	Les ateliers sont réservés aux élèves de primaire et de secondaire tandis
-	que les stands et le spectacle sont ouverts à tout public.
-</p>
+  <ul>
+  	<li><a href="ateliers">Ateliers</a> interactifs</li>
+  	<li><a href="stands">Stands</a> interactifs</li>
+  	<li><a href="spectacle">Spectacle</a> scientifique</li>
+  </ul>
+
+  <p>
+  	Les ateliers sont réservés aux élèves de primaire et de secondaire tandis
+  	que les stands et le spectacle sont ouverts à tout public.
+  </p>
 	
-<p><img src="images/Printemps-des-Sciences.png" alt="Printemps des Sciences" /></p>
+  <p><img src="images/Printemps-des-Sciences.png" alt="Printemps des Sciences" /></p>
 
-<h3>Samedi 27 mars 2010</h3>
+  <h3>Samedi 27 mars 2010</h3>
 
-<dl class="calendar">
-	<dt>de 14h à 17h</dt>
-	<dd><p>Visite des <a href="stands">stands</a>.</p></dd>
+  <dl class="calendar">
+  	<dt>de 14h à 17h</dt>
+  	<dd><p>Visite des <a href="stands">stands</a>.</p></dd>
 
-	<dt>à 14h et à 15h45</dt>
-	<dd><p><a href="ateliers">Ateliers</a> interactifs.</p></dd>
+  	<dt>à 14h et à 15h45</dt>
+  	<dd><p><a href="ateliers">Ateliers</a> interactifs.</p></dd>
 
-	<dt>de 17h30 à 18h30</dt>
-	<dd><p><a href="spectacle">Spectacle</a> scientifique.</p></dd>
-</dl>
+  	<dt>de 17h30 à 18h30</dt>
+  	<dd><p><a href="spectacle">Spectacle</a> scientifique.</p></dd>
+  </dl>
 
-<h3>Dimanche 28 mars 2010</h3>
+  <h3>Dimanche 28 mars 2010</h3>
 
-<dl class="calendar">
-	<dt>de 14h à 17h</dt>
-	<dd><p>Visite des <a href="stands">stands</a>.</p></dd>
+  <dl class="calendar">
+  	<dt>de 14h à 17h</dt>
+  	<dd><p>Visite des <a href="stands">stands</a>.</p></dd>
 
-	<dt>à 14h et à 15h45</dt>
-	<dd><p><a href="ateliers">Ateliers</a> interactifs.</p></dd>
-</dl>
+  	<dt>à 14h et à 15h45</dt>
+  	<dd><p><a href="ateliers">Ateliers</a> interactifs.</p></dd>
+  </dl>
+
+</div>

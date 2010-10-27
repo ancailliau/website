@@ -2,5 +2,9 @@
 	<li><a href="index">Accueil</a></li>
 	<li><a href="sujets">Les sujets</a></li>
 </ul>
-<img src="images/ray.png" />
-<img src="images/buddha.png" />
+
+?{normalized_url == 'activites/2009-2010/tutoriels/computer-graphics-night/sujets'}{
+  <img src="images/buddha.png" />
+}{
+  <img src="images/ray.png" />
+}

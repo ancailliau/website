@@ -1,7 +1,11 @@
-#main #cgn  dl dt {
+#main .computer-graphics-night dl dt {
 	width: 120px;	
 }
 
-#main #cgn dl dd {
+#main .computer-graphics-night dl dd {
 	margin-left: 120px;
+}
+
+#main .computer-graphics-night .side img {
+	margin-top: 30px;
 }
