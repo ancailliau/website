@@ -65,8 +65,7 @@ wawaccess do
     end
     
     # Create the wlang context now
-    context  = {:theclass       => (url == "index" ? "index" : "other"),
-                :normalized_url => url,
+    context  = {:normalized_url => url,
                 :stylesheets    => stylesheets,
                 :scripts        => scripts,
                 :classes        => classes}
@@ -82,17 +81,15 @@ wawaccess do
     end
     
     # Set the right menu
-    context[:side] = unless side_file.nil?
-      WLang::file_instantiate(side_file, default_wlang_context.merge(context))
-    else
-      ""
+    unless side_file.nil?
+      context[:side] = WLang::file_instantiate(side_file, default_wlang_context.merge(context))
     end
     
     # Set the page title
     context[:title] = if context[:body] =~ /^<h2>(.*?)<\/h2>/
        $1.gsub("&mdash;", "-")
     else
-      "ACM Student Chapter"
+      "UCLouvain ACM Student Chapter"
     end
     
     template = "templates/layout.wtpl"

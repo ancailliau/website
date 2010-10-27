@@ -17,14 +17,16 @@
 		}
 	</head>
 	
-	<body class="{theclass}">
+	<body>
 		<<+{header.wtpl share all}
 
 		<div id="main">
 		  <div class="*{classes as c}{+{c}}{ }">
-  		  <div class="side">
-  		    +{side}
-  		  </div>
+		    ?{knows?(:side)}{
+    		  <div class="side">
+    		    +{side}
+    		  </div>
+		    }
     		+{body}
     	</div>
   	</div>

@@ -268,15 +268,11 @@ img.floating {
 
 /* =============================================================== body.index */
 
-body.index #main {
-	overflow: auto;
-}
-
-body.index #main img {
+#index_page img {
 	margin: 0 0 20px 0;
 }
 
-body.index #main h2 {
+#index_page h2 {
 	margin-top: 10px;
 }
 
@@ -324,11 +320,7 @@ body.index #main h2 {
 	clear: both;
 	padding-top: 20px;
 	font-size: 1.2em;
-	margin-top: 40px;
-}
-
-body.index #footer {
-	margin-top: 0;
+/*	margin-top: 40px; */
 }
 
 #footer p#social-links a {
