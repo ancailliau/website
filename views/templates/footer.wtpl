@@ -6,7 +6,7 @@
 	</p>
 
 	<p id="internal-links">
-    <a class="button" onclick="javascript:show_popup('/forms/login', 300)">Connexion</a>
+    <a class="button" onclick="javascript:show_form('login', 300)">Connexion</a>
 		<a href="/mentions-legales">Mentions légales</a>
 	</p>	
 </div>

@@ -1,0 +1,53 @@
+<fieldset>
+	<legend>Informations de connexion (obligatoire)</legend>
+	
+	<p class="span-4">
+		<label for="mail">Adresse e-mail</label>
+		<input type="text" name="mail" value="{people[:mail]}" id="account_fields_mail"/>
+		<span id="change_mail_explain" class="explain">Changer votre adresse e-mail vous obligera a réactiver
+			votre compte (un mail vous sera envoyé)</span>
+	</p>
+
+	<p class="span-2">
+		<label for="password">Mot de passe (8 à 15 caractères)</label>
+		<input type="password" name="password" value="{people[:password]}"/>
+	</p>
+	
+	<p class="span-2-last">
+		<label for="password_confirm">Mot de passe (confirmation)</label>
+		<input type="password" name="password_confirm" value="{people[:password]}"/>
+	</p>
+	
+	<p class="span-4-checkbox">
+		<input type="checkbox" name="newsletter" value="true" ?{people[:newsletter]}{checked="checked"}/>
+		<label for="newsletter">Je souhaite m'abonner à la newsletter (au maximum un e-mail par mois)</label>
+	</p>
+</fieldset>
+
+<fieldset>
+	<legend>A propos de moi (facultatif)</legend>
+	
+	<p class="span-2">
+		<label for="first_name">Prénom</label>
+		<input type="text" name="first_name" value="{people[:first_name]}"/>
+	</p>
+	
+	<p class="span-2-last">
+		<label for="last_name">Nom</label>
+		<input type="text" name="last_name" value="{people[:last_name]}"/>
+	</p>
+
+	<p class="span-4">
+		<label>Occupation, ma profession <br />(p.ex. Etudiant UCL/INGI en SINF21, Analyste programmeur chez..., etc.)</label>
+		<input type="text" name="occupation" value="{people[:occupation]}"/>
+	</p>
+	
+	<!--
+	<div>
+		<label>Si vous possédez un blog concernant l'informatique et/ou son apprentissage, nous vous invitons
+			 a participer à notre univers en indiquant ci-dessous votre flux rss. Les administrateurs 
+			 ajouteront votre flux au site web dès validation.</label>
+		<input type="text" name="rss_feed" size="50" value="{people[:rss_feed]}"/>
+	</div>
+	-->
+</fieldset>

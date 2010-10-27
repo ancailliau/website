@@ -12,9 +12,15 @@ function show_popup(url, width) {
 		$('#popup').show();
     $('html, body').animate( { scrollTop: 0 }, 'slow' );
 	});
+	return false;
 }
 function hide_popup(refresh) {
 	$('#popup').hide();
   $('#hide').hide();
   if (refresh) { location.reload(true); }
+	return false;
 }  
+function show_form(name, width) {
+	show_popup("/forms/" + name, width);
+	return false;
+}

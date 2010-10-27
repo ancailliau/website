@@ -36,9 +36,7 @@ form fieldset {
 	border-top: 3px solid #f1f1f1;
 }
 form legend {
-	margin: 0 10px;
-	padding: 0 10px;
-	font-size: 1.2em;
+	font-weight: bold;
 }
 
 
