@@ -1,7 +1,7 @@
-#main #olympiades dl dt {
+#main .olympiades dl dt {
 	width: 120px;	
 }
-#main #olympiades dl dd {
+#main .olympiades dl dd {
 	margin-left: 120px;
 }
 

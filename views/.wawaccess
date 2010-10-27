@@ -66,8 +66,8 @@ wawaccess do
     
     # Create the wlang context now
     context  = {:normalized_url => url,
-                :stylesheets    => stylesheets,
-                :scripts        => scripts,
+                :stylesheets    => stylesheets.reverse,
+                :scripts        => scripts.reverse,
                 :classes        => classes}
     
     # Set the page contents
