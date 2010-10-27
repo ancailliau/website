@@ -1,4 +1,4 @@
-<ul id="submenu">
+<ul class="menu">
 	<li><a href="index">Programme</a></li>
 	<li><a href="orateurs">Orateurs</a></li>
 	<li><a href="sponsors">Sponsors</a></li>

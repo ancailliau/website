@@ -18,16 +18,18 @@
 	</head>
 	
 	<body class="{theclass}">
-		<<+{header.wtpl    share all}
+		<<+{header.wtpl share all}
+
 		<div id="main">
-		  <div class="side">
-		    +{side}
-		  </div>
 		  <div class="*{classes as c}{+{c}}{ }">
+  		  <div class="side">
+  		    +{side}
+  		  </div>
     		+{body}
     	</div>
   	</div>
-		<<+{footer.wtpl    share all}
+
+		<<+{footer.wtpl share all}
 		?{Waw.config.google_analytics}{<<{analytics.whtml}}
 	</body>
 	

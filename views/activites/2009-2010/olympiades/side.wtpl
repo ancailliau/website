@@ -1,4 +1,4 @@
-<ul id="submenu">
+<ul class="menu">
 	<li><a href="index">Présentation</a>
 		<ul>
 			<li><a href="calendrier">Calendrier</a></li>

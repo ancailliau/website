@@ -213,6 +213,23 @@ img.floating {
 	margin-top: 40px;
 }
 
+#main dl dt {
+	float: left;
+	width: 60px;
+	font-size: 1.2em;
+}
+
+#main dl dd {
+	margin-left: 60px;
+}
+
+#main img.aside,
+#main dl dd img {
+	position: absolute;
+	left: 480px;
+}
+
+
 /* ================================================================= Side bar */
 
 #main .side {
@@ -238,37 +255,16 @@ img.floating {
 	font-size: 1.2em;
 	color: #999;
 }
-/* ================================================================= User bar */
 
-.user-bar {
-	font-size: 1.1em;
-	background: #000;
-	line-height: 20px;
-	height: 20px;
-	color: #ccc;
+#main .side .menu {
+	width: 200px;
 }
 
-.user-bar div {
-	width: 700px;
-	margin: 0 auto;
+#main .side .menu ul {
+	width: 200px;
 }
 
-.user-bar a {
-	color: #ccc;
-}
 
-.user-bar p {
-	margin: 0;
-	padding: 0;
-}
-
-.user-bar p:first-child {
-	float: left;
-}
-
-.user-bar p:last-child {
-	float: right;
-}
 
 /* =============================================================== body.index */
 
@@ -278,33 +274,6 @@ body.index #main {
 
 body.index #main img {
 	margin: 0 0 20px 0;
-}
-
-body.index #main .rapid {
-	width: 220px;
-	margin-top: 110px;
-	float: right;
-}
-
-body.index #main .rapid ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
-body.index #main .rapid ul li {
-	margin: 0;
-	padding: 0;
-	line-height: 160%;
-}
-
-body.index #main .rapid ul li a {
-	color: #999;
-	text-decoration: none;
-}
-
-body.index #main .rapid ul li a:hover {
-	color: #005c9c;
 }
 
 body.index #main h2 {
@@ -349,29 +318,7 @@ body.index #main h2 {
 	padding: 0;
 }
 
-#main dl dt {
-	float: left;
-	width: 60px;
-	font-size: 1.2em;
-}
-
-#main dl dd {
-	margin-left: 60px;
-}
-
-#main img.aside,
-#main dl dd img {
-	position: absolute;
-	left: 480px;
-}
-
-#submenu {
-	width: 200px;
-}
-
-#submenu ul {
-	width: 200px;
-}
+/* ================================================================= footer */
 
 #footer {
 	clear: both;
@@ -400,18 +347,6 @@ body.index #footer {
 	font-size: 0.9em;
 	text-align: right;
 	margin-left: 15px;
-}
-
-span.explain {
-	font-size: 1.1em;
-	display: block;
-	float: right;
-	width: 200px;
-	color: red;
-}
-
-#change_mail_explain {
-	display: none;
 }
 
 /* =============================================================== Login form */
@@ -641,3 +576,16 @@ form.form-300 p.feedback ul,
 	border: 1px solid black;
 	padding: 2px 5px;
 }
+
+span.explain {
+	font-size: 1.1em;
+	display: block;
+	float: right;
+	width: 200px;
+	color: red;
+}
+
+#change_mail_explain {
+	display: none;
+}
+

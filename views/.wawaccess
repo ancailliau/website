@@ -71,7 +71,7 @@ wawaccess do
                 :scripts        => scripts,
                 :classes        => classes}
     
-    # Load the source text
+    # Set the page contents
     context[:body] = case File.extname(source_file)
       when '.whtml'
         File.read(source_file)
@@ -81,7 +81,7 @@ wawaccess do
         ""
     end
     
-    # Instantiate the menu if there is one
+    # Set the right menu
     context[:side] = unless side_file.nil?
       WLang::file_instantiate(side_file, default_wlang_context.merge(context))
     else

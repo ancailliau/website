@@ -4,6 +4,7 @@
   	<p>Spread computer science, inform people&nbsp;</p>
   </div>
   <ul id="menu">
+    <li class="subscribe"><a href="/people/subscribe"><span>Inscrivez-vous</span></a></li>
   	<li ?{normalized_url == 'activites/2009-2010/index'}{class="active"}>
   	  <a href="/activites/2009-2010"><span>Activités</span></a>
   	</li>
