@@ -1,41 +1,46 @@
 wawaccess do
-    
-  #
-  # Matches the root site index, '/'
-  #
-  # This request is directly redirected to /index (see next rule)
-  #
-  match root do
-    apply "index"
+   
+  ######################################################################## MATCHERS 
+  
+  # Recognizes existing folders only
+  matcher :directory do
+    File.directory?(File.join(folder, req_path))
   end
   
-  # 
-  # Matches all existing files. Accesses to standard downloadable 
-  # files are granted. Others ar immediately denied.
-  #
-  match file do
-    if File.directory?(served_file)
-      apply "#{served_file}/index"
-    elsif served_file =~ /\.(js|css|tar|gz|zip|jpg|gif|png|bmp|pdf)$/
-      static
-    else
-      deny
-    end
+  # Recognizes any downloadable file (extension match and file
+  # exists)
+  matcher :downloadable do
+    req_path =~ /\.(js|css|tar|gz|zip|jpg|gif|png|bmp|pdf)$/ and
+    File.exists?(File.join(folder, req_path))
   end
   
-  #
-  # Matches everything else
-  #
-  match /.*[a-z0-9A-Z\-]+$/ do |url|
-    url = "#{url}/index" if File.directory?(File.join(folder, url))
-
+  # Recognizes pages that can be composed
+  matcher :composable do
+    ['wtpl', 'whtml'].any?{|ext|
+      File.exists?(File.join(folder, "#{req_path}.#{ext}"))
+    }
+  end
+  
+  ######################################################################## SERVICE RULES 
+  
+  # REWRITING: / => /index
+  # REWRITING: /folder_1/.../folder_n => /folder_1/.../folder_n/index
+  match directory do
+    apply "#{req_path}/index"
+  end
+  
+  # RULE: downloadable -> static service
+  match downloadable do
+    static
+  end
+  
+  # RULE: composable -> composed
+  match composable do
     # Find the source file
-    source_file = if File.exists?(File.join(folder, "#{url}.whtml"))
-      File.join(folder, "#{url}.whtml")
-    elsif File.exists?(File.join(folder, "#{url}.wtpl"))
-      File.join(folder, "#{url}.wtpl")
-    else
-      File.join(folder, "404.whtml")
+    source_file = if File.exists?(File.join(folder, "#{req_path}.whtml"))
+      File.join(folder, "#{req_path}.whtml")
+    elsif File.exists?(File.join(folder, "#{req_path}.wtpl"))
+      File.join(folder, "#{req_path}.wtpl")
     end
     
     # Create the css and js files
@@ -65,9 +70,9 @@ wawaccess do
     end
     
     # Create the wlang context now
-    context  = {:base           => "#{Waw.config.web_base}#{url}",
-                :normalized_url => url,
-                :page_name      => File.basename(url),
+    context  = {:base           => "#{Waw.config.web_base}#{req_path}",
+                :normalized_url => req_path,
+                :page_name      => File.basename(req_path),
                 :stylesheets    => stylesheets.reverse,
                 :scripts        => scripts.reverse,
                 :classes        => classes}
@@ -98,9 +103,24 @@ wawaccess do
     wlang template, context
   end
   
-  # 
-  # Matches everything else and returns a friendly 404 page.
-  #
+  ######################################################################## REWRITING RULES 
+  
+  match 'activites' do
+    apply "activites/2009-2010"
+  end
+  match 'securite-vie-privee' do
+    apply "activites/2009-2010/conferences/securite-vie-privee"
+  end
+  match 'olympiades' do
+    apply "activites/2009-2010/olympiades"
+  end
+  match 'scienceinfuse' do
+    apply "activites/2009-2010/scienceinfuse"
+  end
+
+  ######################################################################## MATCH ALL RULES
+  
+  # RULE: true -> 404 error
   match true do
     apply "404", 404
   end
