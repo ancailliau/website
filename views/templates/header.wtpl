@@ -6,7 +6,7 @@
   </div>
   <ul id="menu">
     ?{!session.has_key?(:user)}{
-      <li class="subscribe"><a onclick="javascript:show_form('accounts/subscribe', 460)"><span>Inscrivez-vous</span></a></li>
+      <li class="subscribe"><a onclick="javascript:show_form('/accounts/subscribe', 460)"><span>Inscrivez-vous</span></a></li>
     }
   	<li ?{normalized_url == 'activites/2009-2010/index'}{class="active"}>
   	  <a href="/activites/2009-2010"><span>Activités</span></a>
