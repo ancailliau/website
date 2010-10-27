@@ -182,7 +182,7 @@ function webserv_people_subscribe_account(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          window.location = "/feedback?mkey=subscribe_account_ok";
+          show_message('subscribe_ok')
         }
       } else if (data[0] == 'error') {
         $(form + ' .feedback').show();

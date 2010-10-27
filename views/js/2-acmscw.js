@@ -24,3 +24,7 @@ function show_form(name, width) {
 	show_popup("/forms/" + name, width);
 	return false;
 }
+function show_message(name) {
+	show_popup('/messages/' + name, 300);
+	return false;
+}

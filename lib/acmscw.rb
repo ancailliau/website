@@ -83,6 +83,7 @@ end
 
 require 'acmscw/waw_ext/validations'
 require 'acmscw/waw_ext/session'
+require 'acmscw/waw_ext/routing'
 require 'acmscw/business/abstract_services'
 require 'acmscw/business/main_services'
 require 'acmscw/business/people_services'

@@ -1,0 +1,11 @@
+div.ok-message {
+	background: url(../images/ok-48.png) no-repeat top left;
+}
+div.ko-message {
+	background: url(../images/ko-48.png) no-repeat top left;
+}
+div.message h3 {
+	margin: 0px;
+	margin-bottom: 30px;
+	padding: 15px 0 0 60px;
+}

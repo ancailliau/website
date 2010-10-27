@@ -97,9 +97,9 @@ module AcmScW
         validation :mail, user_not_exists, :mail_already_in_use
       }
       routing {
-        upon 'error'         do feedback end
+        upon 'error'         do feedback                 end
         upon 'validation-ko' do form_validation_feedback end
-        upon 'success/ok'    do redirect(:url => '/feedback?mkey=subscribe_account_ok') end
+        upon 'success/ok'    do message(:subscribe_ok)   end
       }
       def subscribe_account(params)
         args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)

@@ -37,6 +37,14 @@
     <div id="popup"></div>
 
 		?{Waw.config.google_analytics}{<<{analytics.whtml}}
+
+		?{knows?(:message)}{
+		  <script type="text/javascript">
+      	$(document).ready(function(){ 
+      	  show_message('{message}');
+      	}); 
+      </script>
+		}
 	</body>
 	
 </html>
