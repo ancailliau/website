@@ -4,7 +4,10 @@ wawaccess do
   
   # Recognizes existing folders only
   matcher :directory do
-    File.directory?(File.join(folder, req_path))
+    File.directory?(File.join(folder, req_path)) and (
+      File.exists?(File.join(folder, req_path, "index.whtml")) or
+      File.exists?(File.join(folder, req_path, "index.wtpl"))
+    )
   end
   
   # Recognizes any downloadable file (extension match and file
@@ -94,7 +97,7 @@ wawaccess do
     
     # Set the page title
     context[:title] = if context[:body] =~ /^<h2>(.*?)<\/h2>/
-       $1.gsub("&mdash;", "-")
+       CGI::unescapeHTML($1).gsub("&mdash;", "-").gsub("&nbsp;", " ")
     else
       "UCLouvain ACM Student Chapter"
     end
