@@ -6,7 +6,7 @@
 
 		<meta http-equiv="Content-language" content="fr" />
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-		<base href="+{Waw.config.web_base}+{normalized_url}"/>
+		<base href="{base}"/>
 	
 		*{stylesheets as css}{
 		<link rel="stylesheet" type="text/css" href="{css}" />

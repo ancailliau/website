@@ -65,7 +65,9 @@ wawaccess do
     end
     
     # Create the wlang context now
-    context  = {:normalized_url => url,
+    context  = {:base           => "#{Waw.config.web_base}#{url}",
+                :normalized_url => url,
+                :page_name      => File.basename(url),
                 :stylesheets    => stylesheets.reverse,
                 :scripts        => scripts.reverse,
                 :classes        => classes}

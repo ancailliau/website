@@ -3,7 +3,7 @@
 	<li><a href="sujets">Les sujets</a></li>
 </ul>
 
-?{normalized_url == 'activites/2009-2010/tutoriels/computer-graphics-night/sujets'}{
+?{page_name == 'sujets'}{
   <img src="images/buddha.png" />
 }{
   <img src="images/ray.png" />
