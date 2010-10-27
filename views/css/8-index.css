@@ -1,0 +1,48 @@
+/* =============================================================== index_page */
+
+#index_page img {
+	margin: 0 0 20px 0;
+}
+
+#index_page h2 {
+	margin-top: 10px;
+}
+
+/* ================================================================= grey-box */
+
+#main .grey-box {
+	width: 220px;
+	height: 93px;
+	background: url("../images/grey-box.png") top left;
+	float: right;
+}
+
+#main .grey-box form {
+	padding: 10px;
+	width: 200px;
+}
+
+#main .grey-box form label {
+	font-size: 1.2em;
+	color: #666;
+	display: block;
+	margin: 0px 0px 10px 0px;
+	text-shadow: 0px 1px #fff;
+}
+
+#main .grey-box form input#mail {
+	width: 132px;
+	float: left;
+}
+
+#main .grey-box form input[type=submit] {
+	float: right;
+}
+
+#main .grey-box form p {
+	margin: 5px 0 0 0;
+	clear: left;
+	float: left;
+	padding: 0;
+}
+

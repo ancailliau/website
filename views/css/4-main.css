@@ -1,0 +1,76 @@
+/* ===================================================================== Main */
+
+#main {
+	position: relative;
+}
+
+#main img {
+	display: block;
+}
+
+#main p,
+#main ul,
+#main ol,
+#main blockquote,
+#main table {
+	font-size: 1.2em;
+	color: #666;
+	line-height: 150%;
+	padding-right: 240px;
+	text-align: justify;
+}
+
+#main ul p {
+	font-size: 1em;
+	padding: 0;
+}
+
+#main ol ol {
+	font-size: 1em;
+	padding-right: 0px;
+	list-style-type: lower-alpha;
+}
+
+#main ul {
+	margin: 0 0 0 16px;
+	padding: 0 240px 0 0;
+	list-style-type: inside;
+}
+
+#main ul ul {
+	padding: 0;
+	font-size: 1em;
+}
+
+#main ul li,
+#main ol li {
+	margin: 0 0 2px 0;
+}
+
+#main h2 {
+	font-weight: normal;
+	font-size: 1.5em;
+	margin: 0 0 10px 0;
+}
+
+#main h3 {
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-top: 40px;
+}
+
+#main dl dt {
+	float: left;
+	width: 60px;
+	font-size: 1.2em;
+}
+
+#main dl dd {
+	margin-left: 60px;
+}
+
+#main img.aside,
+#main dl dd img {
+	position: absolute;
+	left: 480px;
+}

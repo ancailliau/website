@@ -1,0 +1,41 @@
+/* =================================================================== Header */
+
+#header {
+	margin: 20px auto;
+	/* With this property, the height of the wrapper includes the height of the
+	 * floating elements */
+	overflow: auto;
+	width: 758px;
+	padding-right: 58px;
+}
+
+#header #logo {
+	float: left;
+}
+
+#header h1 {
+	background: url("../images/logo.png") no-repeat top left;
+	height: 40px;
+	width: 190px;
+	margin: 0;
+	padding: 0;
+}
+
+#header h1 a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#header h1 span {
+	display: none;
+}
+
+#header p {
+	font-size: 1.1em;
+	color: #666;
+	text-align: left;
+	margin: 0 0 0 60px;
+	padding: 0;
+}
+

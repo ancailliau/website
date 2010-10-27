@@ -19,20 +19,7 @@
 		<p class="form-button">
 			<input type="submit" tabindex="102" value="Go »"/>
 			+{action.ajax_form_preparer(:form_id => 'login')}
-			<a href="#" onclick="hide_login_form()">Fermer</a>
+			<a href="#" onclick="hide_popup()">Fermer</a>
 		</p>
 	</form>
 }
-<script type="text/javascript">
-	function hide_login_form() {
-		$('p#internal-links').show();
-		$('form#login').hide();
-		return false;
-	}
-	function show_login_form() {
-		$('p#internal-links').hide();
-		$('form#login').show();
-		$('html, body').animate( { scrollTop: 0 }, 'slow' );
-		return false;
-	}
-</script>

@@ -1,0 +1,71 @@
+/* ============================================================ Header > Menu */
+
+/* The menu is probably the most complex part (in CSS) on the website.
+ * Please be very carefull when modifying to not break any browser support. */
+
+#header ul#menu {
+	margin: 15px 0 0 0;
+	padding: 0;
+	float: right;
+	list-style-type: none;
+	height: 27px;
+	background: url("../images/grey-menu-center.png") repeat-x top center;
+}
+
+#header ul#menu li {
+	font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+	float: left;
+	height: 27px;
+}
+
+#header ul#menu li a {
+	line-height: 22px;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+#header ul#menu li a span {
+	padding: 0 10px;
+	line-height: 22px;
+	display: block;
+	height: 100%:
+}
+
+#header ul#menu li:first-child {
+	background: url("../images/grey-menu-left.png") no-repeat top left;
+}
+
+#header ul#menu li:last-child {
+	background: url("../images/grey-menu-right.png") no-repeat top right;
+}
+
+#header ul#menu li.active {
+	background: url("../images/active-center.png") repeat top center;
+}
+
+#header ul#menu li.active a {
+	color: #fff;
+	text-shadow: 0px 1px #163c65;
+	background: url("../images/active-left.png") no-repeat top left;
+}
+
+#header ul#menu li.active a span {
+	background: url("../images/active-right.png") no-repeat top right;
+}
+
+#header ul#menu li a {
+	color: #666;
+	text-shadow: 0px 1px #fff;
+}
+
+#header ul#menu li.subscribe {
+	background: url("../images/green-menu.png") no-repeat top left;
+}
+
+#header ul#menu li.subscribe a {
+	color: #fff;
+	text-shadow: 0px 1px #617123;
+}

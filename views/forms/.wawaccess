@@ -1,6 +1,19 @@
 wawaccess do
+
   inherits false
+
+  matcher :valid_form do
+    File.exists?(File.join(folder, File.basename(req_path) + ".wtpl"))
+  end
+  
+  match valid_form do
+    template = File.join(folder, File.basename(req_path) + ".wtpl")
+    source = WLang::file_instantiate(template, default_wlang_context)
+    [200, {'Content-Type' => 'text/html'}, [ source ]]
+  end
+
   match true do
     deny
   end
+
 end

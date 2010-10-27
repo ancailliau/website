@@ -32,6 +32,10 @@
   	</div>
 
 		<<+{footer.wtpl share all}
+
+    <div id="hide"></div>
+    <div id="popup"></div>
+
 		?{Waw.config.google_analytics}{<<{analytics.whtml}}
 	</body>
 	

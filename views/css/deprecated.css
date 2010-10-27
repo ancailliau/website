@@ -1,0 +1,9 @@
+/* ================================================= Title in activities page */
+
+#main h3.activity {
+	padding-right: 240px;
+}
+
+#main h3.activity a {
+	float: right;
+}

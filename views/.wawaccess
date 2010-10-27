@@ -51,19 +51,14 @@ wawaccess do
     stylesheets, scripts, classes = [], [], []
     side_file = nil
     until current_folder == File.dirname(folder)
-      # find css stylesheets
-      Dir[File.join(current_folder, "css", "*.css")].each do |file|
-        stylesheets << file[folder.length..-1]
-      end
-
-      # find scripts
-      Dir[File.join(current_folder, "js", "*.js")].each do |file|
-        scripts << file[folder.length..-1]
-      end
+      # find stylesheets and scripts
+      stylesheets.unshift Dir[File.join(current_folder, "css", "*.css")].sort.collect{|file| file[folder.length..-1]}
+      scripts.unshift Dir[File.join(current_folder, "js", "*.js")].sort.collect{|file| file[folder.length..-1]}
 
       # extend css classes
       classes << File.basename(current_folder)
       
+      # set side file
       if side_file.nil? and File.exists?(File.join(current_folder, "side.wtpl"))
         side_file = File.join(current_folder, "side.wtpl")
       end
@@ -76,8 +71,8 @@ wawaccess do
     context  = {:base           => "#{Waw.config.web_base}#{req_path}",
                 :normalized_url => req_path,
                 :page_name      => File.basename(req_path),
-                :stylesheets    => stylesheets.reverse,
-                :scripts        => scripts.reverse,
+                :stylesheets    => stylesheets.flatten,
+                :scripts        => scripts.flatten,
                 :classes        => classes}
     
     # Set the page contents
