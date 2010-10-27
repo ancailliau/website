@@ -1,0 +1,32 @@
+wawaccess do
+  inherits true
+  
+  match /activate(\/(.+))?$/ do |url, n, actkey|
+    people = AcmScW.database[:people].filter(:activation_key => actkey).first
+    if actkey.nil? or people.nil?
+      [301, {'Location' => '/accounts/activation-ko'}, []]
+    elsif request.params['jsrequest']
+      folder = wawaccess.root.folder
+      template = File.join(folder, "accounts/activate.form")
+      source   = WLang::file_instantiate(template, default_wlang_context.merge(:actkey => actkey, :people => people))
+      [200, {'Content-Type' => 'text/html'}, [ source ]]
+    else
+      folder = wawaccess.root.folder
+      context  = {
+                  :base           => Waw.config.web_base,
+                  :normalized_url => 'index',
+                  :page_name      => 'index',
+                  :stylesheets    => Dir[File.join(folder, "css", "*.css")].sort.collect{|file| file[folder.length..-1]},
+                  :scripts        => Dir[File.join(folder, "js", "*.js")].sort.collect{|file| file[folder.length..-1]},
+                  :classes        => ["views"],
+                  :body           => WLang::file_instantiate(File.join(folder, 'index.wtpl'), default_wlang_context),
+                  :form           => "/accounts/activate/#{actkey}",
+                  :title          => "UCLouvain ACM Student Chapter"
+                 }
+      template = File.join(folder, "templates/layout.wtpl")
+      source   = WLang::file_instantiate(template, default_wlang_context.merge(context))
+      [200, {'Content-Type' => 'text/html'}, [ source ]]
+    end
+  end
+  
+end

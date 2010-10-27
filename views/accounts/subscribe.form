@@ -1,22 +1,26 @@
-<h3>Inscription à l'UCLouvain ACM Student Chapter</h3>
+<div class="message logo-message">
 
-<p>
-	Veuillez remplir les informations ci-dessous pour vous inscrire sur
-	le site.<br/> Ceci vous donnera accès aux fonctionnalités avancées
-	que nous vous proposons.
-</p>
+  <h3>Inscription à l'UCLouvain ACM Student Chapter</h3>
 
-={controllers.people.subscribe_account as action}{
-	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
-		<div class="feedback"></div>
+  <p>
+  	Veuillez remplir les informations ci-dessous pour vous inscrire sur
+  	le site.<br/> Ceci vous donnera accès aux fonctionnalités avancées
+  	que nous vous proposons.
+  </p>
 
-		<<+{account_fields.wbrick with people:Hash.new}
+  ={controllers.people.subscribe_account as action}{
+  	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+  		<div class="feedback"></div>
 
-		<p class="form-button">
-			<input type="submit" value="Créer mon compte »"/>
-			<a href="#" onclick="hide_popup()">Fermer</a>
-		</p>
+  		<<+{account_fields.wbrick with people:Hash.new}
 
-		+{action.ajax_form_preparer}
-	</form>
-}
+  		<p class="form-button">
+  			<input type="submit" value="Créer mon compte »"/>
+  			<a href="#" onclick="hide_popup()">Fermer</a>
+  		</p>
+
+  		+{action.ajax_form_preparer}
+  	</form>
+  }
+
+</div>

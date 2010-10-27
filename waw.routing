@@ -5,26 +5,8 @@ Waw.rack do
   map '/' do
     run ::Waw::StaticController.new(:public => 'views')
   end
-  map '/activate-account' do
-    run lambda{|env|
-      req = Rack::Request.new(env)
-      params = {:actkey => req.params['actkey']}
-      result = ::AcmScW::Controllers::PeopleController.instance.activate_account(params)
-      puts result
-      where = case result.join('/')
-        when 'success/ok'
-          '/accounts/activation-ok'
-        else 
-          '/accounts/activation-ko'
-      end
-      [301, {'Location' => where}, []]
-    }
-  end
   map '/webserv' do
     use ::Waw::JSONController
-    map '/main' do
-      run ::AcmScW::Controllers::MainController.instance
-    end
     map '/event' do
       run ::AcmScW::Controllers::EventController.instance
     end

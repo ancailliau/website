@@ -148,7 +148,7 @@ module AcmScW
         
         # Send the activation mail
         context = {'web_base'    => Waw.config.web_base,
-                   'activation_link' => (Waw.config.web_base + "people/activate_account?actkey=#{actkey}")}
+                   'activation_link' => (Waw.config.web_base + "accounts/activate/#{actkey}")}
         mail_agent.send_mail(:activation, context, mail)
         
         # return the activation key

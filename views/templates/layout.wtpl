@@ -45,6 +45,13 @@
       	}); 
       </script>
 		}
+		?{knows?(:form)}{
+		  <script type="text/javascript">
+      	$(document).ready(function(){ 
+      	  show_form('{form}', 460);
+      	}); 
+      </script>
+		}
 	</body>
 	
 </html>

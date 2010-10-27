@@ -37,32 +37,6 @@ messages['update_account_ok'] = "<p>Les informations vous concernant ont été m
 messages['user_must_be_logged'] = "Vous devez être connecté pour accéder/modifier ces informations";
 messages['you_are_registered_to_this_event'] = "Vous êtes inscrit à cet événement!";
 
-/* Actions contributed by AcmScW::Controllers::MainController, mapped to / */
-function webserv_main_send_message(request_data, form) {
-  $.ajax({type: "POST", url: "/webserv/main/send_message", data: request_data, dataType: "json",
-    error: function(data) {
-      window.location = '/feedback?mkey=server_error';
-    },
-    success: function(data) {
-      if (data[0] == 'validation-ko') {
-        str = '';
-        str += '<ul>';
-        for (var k in data[1]) {
-          str += '<li>' + messages[data[1][k]] + '</li>';
-        }
-        str += '</ul>';
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(str);
-      
-      } else if (data[0] == 'success') {
-        if (data[1] == 'ok') {
-          window.location = "/feedback?mkey=contact_ok";
-        }
-      }
-    }
-  });
-  return false;
-}  
 /* Actions contributed by AcmScW::Controllers::PeopleController, mapped to / */
 function webserv_people_account_activation_request(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/account_activation_request", data: request_data, dataType: "json",

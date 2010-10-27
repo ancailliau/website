@@ -18,9 +18,15 @@ wawaccess do
   end
   
   # Recognizes forms
-  matcher :form do
+  matcher :jsform do
     File.exists?(File.join(folder, "#{req_path}.form")) and 
     request.params.include?('jsrequest')
+  end
+  
+  # Recognizes forms from non-js requester
+  matcher :nonjsform do
+    File.exists?(File.join(folder, "#{req_path}.form")) and 
+    not(request.params.include?('jsrequest'))
   end
   
   # Recognizes messages from javascript requester
@@ -55,6 +61,30 @@ wawaccess do
     static
   end
   
+  # RULE: form -> static service
+  match jsform do
+    template = File.join(wawaccess.root.folder, "#{req_path}.form")
+    source = WLang::file_instantiate(template, default_wlang_context)
+    [200, {'Content-Type' => 'text/html'}, [ source ]]
+  end
+  
+  # RULE: non-js form -> special service
+  match nonjsform do
+    context  = {
+                :base           => Waw.config.web_base,
+                :normalized_url => 'index',
+                :page_name      => 'index',
+                :stylesheets    => Dir[File.join(folder, "css", "*.css")].sort.collect{|file| file[folder.length..-1]},
+                :scripts        => Dir[File.join(folder, "js", "*.js")].sort.collect{|file| file[folder.length..-1]},
+                :classes        => ["views"],
+                :body           => WLang::file_instantiate(File.join(folder, 'index.wtpl'), default_wlang_context),
+                :form           => req_path,
+                :title          => "UCLouvain ACM Student Chapter"
+               }
+    template = "templates/layout.wtpl"
+    wlang template, context
+  end
+  
   # RULE: message -> static service
   match jsmessage do
     [ 200, 
@@ -62,13 +92,7 @@ wawaccess do
       File.readlines(File.join(folder, "#{req_path}.msg")) ]
   end
   
-  match form do
-    template = File.join(wawaccess.root.folder, "#{req_path}.form")
-    source = WLang::file_instantiate(template, default_wlang_context)
-    [200, {'Content-Type' => 'text/html'}, [ source ]]
-  end
-  
-  # RULE: no-js-message -> special service
+  # RULE: non-js message -> special service
   match nonjsmessage do
     context  = {
                 :base           => Waw.config.web_base,
