@@ -9,6 +9,7 @@ require 'waw'
 module AcmScW
   
   WLang::FILE_EXTENSIONS['.wbrick'] = 'wlang/xhtml'
+  WLang::FILE_EXTENSIONS['.form'] = 'wlang/xhtml'
   
   # Version number of ACM Student Chapter Website
   VERSION = "0.0.4".freeze

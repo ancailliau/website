@@ -1,4 +1,4 @@
-<div class="message ko-message">
+<div class="message warn-message">
   <h3>Veuillez ré-activer votre compte</h3>
 
   <p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte.</p>

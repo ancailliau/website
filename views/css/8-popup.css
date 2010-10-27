@@ -4,6 +4,9 @@ div.ok-message {
 div.ko-message {
 	background: url(../images/ko-48.png) no-repeat top left;
 }
+div.warn-message {
+	background: url(../images/warn-48.png) no-repeat top left;
+}
 div.message h3 {
 	margin: 0px;
 	margin-bottom: 30px;

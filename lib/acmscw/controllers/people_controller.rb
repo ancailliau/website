@@ -114,7 +114,7 @@ module AcmScW
       routing {
         upon 'error' do feedback end
         upon 'validation-ko' do form_validation_feedback end
-        upon 'success/ok' do feedback(:hide_input => false, :message => 'update_account_ok') end
+        upon 'success/ok' do message('accounts/update-ok') end
         upon 'success/activation_required' do message('accounts/activation-required') end
       }
       def update_account(params)

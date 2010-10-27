@@ -3,7 +3,7 @@
   <img src="images/384183109_6d916a11f2_b.jpg" />
 
   <div class="grey-box">
-    <<+{forms/newsletter.wtpl}
+    <<+{newsletter.form}
   </div>
 
   <div>

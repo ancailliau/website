@@ -8,7 +8,7 @@ messages['activation_required'] = "<p>Vous avez modifié votre adresse e-mail. V
 messages['bad_newsletter'] = "L'inscription a la newsletter est invalide";
 messages['bad_password'] = "Votre mot de passe doit comporter entre 8 et 15 caractères";
 messages['bad_rss_feed'] = "Votre flux RSS ne semble pas être une adresse web valide";
-messages['bad_user_or_password'] = "Utilisateur ou mot de passe invalide (<a href='/people/lost_password'>perdu?</a>)";
+messages['bad_user_or_password'] = "Utilisateur ou mot de passe invalide";
 messages['click_here_to_register'] = "Cliquez-ici pour vous inscrire à cet événement";
 messages['click_here_to_unregister'] = "Cliquez-ici pour vous désinscrire";
 messages['contact_ok'] = "<p>Votre message nous a bien été envoyé. Nous y donnerons suite prochainement.</p>";
@@ -210,8 +210,7 @@ function webserv_people_update_account(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          $(form + ' .feedback').show();
-          $(form + ' .feedback').html(messages['update_account_ok']);
+          show_message('accounts/update-ok')
         } else if (data[1] == 'activation_required') {
           show_message('accounts/activation-required')
         }

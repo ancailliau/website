@@ -17,6 +17,12 @@ wawaccess do
     File.exists?(File.join(folder, req_path))
   end
   
+  # Recognizes forms
+  matcher :form do
+    File.exists?(File.join(folder, "#{req_path}.form")) and 
+    request.params.include?('jsrequest')
+  end
+  
   # Recognizes messages from javascript requester
   matcher :jsmessage do
     File.exists?(File.join(folder, "#{req_path}.msg")) and 
@@ -54,6 +60,12 @@ wawaccess do
     [ 200, 
       {'Content-Type' => 'text/html'},
       File.readlines(File.join(folder, "#{req_path}.msg")) ]
+  end
+  
+  match form do
+    template = File.join(wawaccess.root.folder, "#{req_path}.form")
+    source = WLang::file_instantiate(template, default_wlang_context)
+    [200, {'Content-Type' => 'text/html'}, [ source ]]
   end
   
   # RULE: no-js-message -> special service

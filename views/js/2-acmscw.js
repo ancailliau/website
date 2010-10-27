@@ -21,7 +21,7 @@ function hide_popup(refresh) {
 	return false;
 }  
 function show_form(name, width) {
-	show_popup("/forms/" + name, width);
+	show_popup(name, width);
 	return false;
 }
 function show_message(name) {
