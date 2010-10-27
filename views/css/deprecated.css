@@ -1,4 +1,14 @@
-/* ================================================= Title in activities page */
+span.explain {
+	font-size: 1.1em;
+	display: block;
+	float: right;
+	width: 200px;
+	color: red;
+}
+
+#change_mail_explain {
+	display: none;
+}
 
 #main h3.activity {
 	padding-right: 240px;

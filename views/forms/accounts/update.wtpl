@@ -1,0 +1,31 @@
+<h3>Modification de votre profil</h3>
+
+?{session.has_key?(:user)}{
+	={AcmScW.database[:people].filter(:mail => '+{session.get(:user)}').first as people}
+
+	={controllers.people.update_account as action}{
+		<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+			<div class="feedback"></div>
+
+			<div><<+{account_fields.wbrick with people: people}</div>
+
+  		<p class="form-button">
+  			<input type="submit" value="Modifier mon compte »"/>
+  			<a href="#" onclick="hide_popup()">Fermer</a>
+  		</p>
+
+			+{action.ajax_form_preparer}
+		</form>
+	}
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("input#account_fields_mail").change(function() {
+				$('#change_mail_explain').show();
+			});
+		});
+	</script>
+	
+}{
+	<p>Vous devez être authentifié pour accéder à ces informations</p>
+}

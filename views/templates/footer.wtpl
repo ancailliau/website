@@ -6,7 +6,7 @@
 	</p>
 
 	<p id="internal-links">
-    <a class="button" onclick="javascript:show_form('login', 300)">Connexion</a>
+    ?{!session.has_key?(:user)}{<a class="button" onclick="javascript:show_form('login', 300)">Connexion</a>}
 		<a href="/mentions-legales">Mentions légales</a>
 	</p>	
 </div>

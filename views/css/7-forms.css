@@ -7,9 +7,9 @@ form div.feedback {
 	padding: 10px;
 	margin-bottom: 20px;
 }
-form.form-300 p.feedback ul,
-form div.feedback ul {
-	width: 100%;
+form .feedback ul {
+	margin: 0px;
+	padding-left: 20px;
 }
 form.form-followed {
 	float: left;

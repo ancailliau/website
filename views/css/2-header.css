@@ -1,3 +1,35 @@
+/* ================================================================= User bar */
+
+.user-bar {
+	font-size: 1.1em;
+	background: #000;
+	line-height: 20px;
+	height: 20px;
+	color: #ccc;
+}
+
+.user-bar div {
+	width: 700px;
+	margin: 0 auto;
+}
+
+.user-bar a {
+	color: #ccc;
+}
+
+.user-bar p {
+	margin: 0;
+	padding: 0;
+}
+
+.user-bar p:first-child {
+	float: left;
+}
+
+.user-bar p:last-child {
+	float: right;
+}
+
 /* =================================================================== Header */
 
 #header {
