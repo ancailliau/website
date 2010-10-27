@@ -38,20 +38,64 @@ wawaccess do
       File.join(folder, "404.whtml")
     end
     
+    # Create the css and js files
+    current_folder = File.dirname(source_file)
+    stylesheets, scripts, classes = [], [], []
+    side_file = nil
+    until current_folder == File.dirname(folder)
+      # find css stylesheets
+      Dir[File.join(current_folder, "css", "*.css")].each do |file|
+        stylesheets << file[folder.length..-1]
+      end
+
+      # find scripts
+      Dir[File.join(current_folder, "js", "*.js")].each do |file|
+        scripts << file[folder.length..-1]
+      end
+
+      # extend css classes
+      classes << File.basename(current_folder)
+      
+      if side_file.nil? and File.exists?(File.join(current_folder, "side.wtpl"))
+        side_file = File.join(current_folder, "side.wtpl")
+      end
+      
+      # continue
+      current_folder = File.dirname(current_folder)
+    end
+    
+    # Create the wlang context now
+    context  = {:theclass       => (url == "index" ? "index" : "other"),
+                :normalized_url => url,
+                :stylesheets    => stylesheets,
+                :scripts        => scripts,
+                :classes        => classes}
+    
     # Load the source text
-    source = case File.extname(source_file)
+    context[:body] = case File.extname(source_file)
       when '.whtml'
         File.read(source_file)
       when '.wtpl'
-        context = {:normalized_url => url}
         WLang::file_instantiate(source_file, default_wlang_context.merge(context))
+      else 
+        ""
+    end
+    
+    # Instantiate the menu if there is one
+    context[:side] = unless side_file.nil?
+      WLang::file_instantiate(side_file, default_wlang_context.merge(context))
+    else
+      ""
+    end
+    
+    # Set the page title
+    context[:title] = if context[:body] =~ /^<h2>(.*?)<\/h2>/
+       $1.gsub("&mdash;", "-")
+    else
+      "ACM Student Chapter"
     end
     
     template = "templates/layout.wtpl"
-    context  = {:title          => "ACM Student Chapter", 
-                :theclass       => (url == "index" ? "index" : "other"),
-                :normalized_url => url,
-                :body           => source}
     wlang template, context
   end
   
