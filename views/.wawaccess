@@ -17,6 +17,18 @@ wawaccess do
     File.exists?(File.join(folder, req_path))
   end
   
+  # Recognizes messages from javascript requester
+  matcher :jsmessage do
+    File.exists?(File.join(folder, "#{req_path}.msg")) and 
+    request.params.include?('jsrequest')
+  end
+  
+  # Recognizes messages from non-js requester
+  matcher :nonjsmessage do
+    File.exists?(File.join(folder, "#{req_path}.msg")) and 
+    not(request.params.include?('jsrequest'))
+  end
+  
   # Recognizes pages that can be composed
   matcher :composable do
     ['wtpl', 'whtml'].any?{|ext|
@@ -37,8 +49,37 @@ wawaccess do
     static
   end
   
+  # RULE: message -> static service
+  match jsmessage do
+    [ 200, 
+      {'Content-Type' => 'text/html'},
+      File.readlines(File.join(folder, "#{req_path}.msg")) ]
+  end
+  
+  # RULE: no-js-message -> special service
+  match nonjsmessage do
+    context  = {
+                :base           => Waw.config.web_base,
+                :normalized_url => 'index',
+                :page_name      => 'index',
+                :stylesheets    => Dir[File.join(folder, "css", "*.css")].sort.collect{|file| file[folder.length..-1]},
+                :scripts        => Dir[File.join(folder, "js", "*.js")].sort.collect{|file| file[folder.length..-1]},
+                :classes        => ["views"],
+                :body           => WLang::file_instantiate(File.join(folder, 'index.wtpl'), default_wlang_context),
+                :message        => req_path,
+                :title          => "UCLouvain ACM Student Chapter"
+               }
+    template = "templates/layout.wtpl"
+    wlang template, context
+  end
+  
   # RULE: composable -> composed
   match composable do
+    # Create the wlang context now
+    context  = {:base           => "#{Waw.config.web_base}#{req_path}",
+                :normalized_url => req_path,
+                :page_name      => File.basename(req_path)}
+    
     # Find the source file
     source_file = if File.exists?(File.join(folder, "#{req_path}.whtml"))
       File.join(folder, "#{req_path}.whtml")
@@ -68,12 +109,9 @@ wawaccess do
     end
     
     # Create the wlang context now
-    context  = {:base           => "#{Waw.config.web_base}#{req_path}",
-                :normalized_url => req_path,
-                :page_name      => File.basename(req_path),
-                :stylesheets    => stylesheets.flatten,
-                :scripts        => scripts.flatten,
-                :classes        => classes}
+    context.merge!(:stylesheets    => stylesheets.flatten,
+                   :scripts        => scripts.flatten,
+                   :classes        => classes)
     
     # Set the page contents
     context[:body] = case File.extname(source_file)

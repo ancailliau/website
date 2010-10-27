@@ -1,5 +1,5 @@
 function show_popup(url, width) {
-	$.get(url, function(data) { 
+	$.get(url + "?jsrequest=true", function(data) { 
 		$('#popup').html(data); 
 	  $('#popup').width(width);
 		$('#popup').css("margin-left", "-" + (width/2) + "px");
@@ -25,6 +25,6 @@ function show_form(name, width) {
 	return false;
 }
 function show_message(name) {
-	show_popup('/messages/' + name, 300);
+	show_popup(name, 300);
 	return false;
 }

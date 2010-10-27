@@ -75,7 +75,7 @@ function webserv_people_account_activation_request(request_data, form) {
         $(form + ' .feedback').html(messages[data[1][0]]);
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          window.location = "/feedback?mkey=activation_request_ok";
+          show_message('/accounts/activation-request-ok')
         }
       } else if (data[0] == 'error') {
         $(form + ' .feedback').show();
@@ -103,9 +103,9 @@ function webserv_people_activate_account(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          window.location = "/people/account_activation_ok";
+          window.location = "/accounts/activation-ok";
         } else if (data[1] == 'activation_required') {
-          window.location = "/feedback?mkey=activation_required";
+          show_message('accounts/activation-required')
         }
       } else if (data[0] == 'error') {
         $(form + ' .feedback').show();
@@ -182,7 +182,7 @@ function webserv_people_subscribe_account(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          show_message('subscribe_ok')
+          show_message('accounts/subscribe-ok')
         }
       } else if (data[0] == 'error') {
         $(form + ' .feedback').show();
@@ -213,7 +213,7 @@ function webserv_people_update_account(request_data, form) {
           $(form + ' .feedback').show();
           $(form + ' .feedback').html(messages['update_account_ok']);
         } else if (data[1] == 'activation_required') {
-          window.location = "/feedback?mkey=activation_required";
+          show_message('accounts/activation-required')
         }
       } else if (data[0] == 'error') {
         $(form + ' .feedback').show();

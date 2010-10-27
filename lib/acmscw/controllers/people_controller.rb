@@ -68,8 +68,8 @@ module AcmScW
       routing {
         upon 'error'         do feedback end
         upon 'validation-ko' do form_validation_feedback end
-        upon 'success/ok'    do redirect(:url => '/people/account_activation_ok') end
-        upon 'success/activation_required' do redirect(:url => '/feedback?mkey=activation_required') end
+        upon 'success/ok'    do redirect(:url => '/accounts/activation-ok') end
+        upon 'success/activation_required' do message('accounts/activation-required') end
       }
       def activate_account(params)
         activation_key = params[:actkey]
@@ -86,7 +86,7 @@ module AcmScW
       }
       routing {
         upon 'error', 'validation-ko' do feedback end
-        upon 'success/ok'             do redirect(:url => '/feedback?mkey=activation_request_ok') end
+        upon 'success/ok'             do message('/accounts/activation-request-ok') end
       }
       def account_activation_request(params)
         people_services.activation_request(params[:mail]) and :ok
@@ -97,9 +97,9 @@ module AcmScW
         validation :mail, user_not_exists, :mail_already_in_use
       }
       routing {
-        upon 'error'         do feedback                 end
-        upon 'validation-ko' do form_validation_feedback end
-        upon 'success/ok'    do message(:subscribe_ok)   end
+        upon 'error'         do feedback                          end
+        upon 'validation-ko' do form_validation_feedback          end
+        upon 'success/ok'    do message("accounts/subscribe-ok")  end
       }
       def subscribe_account(params)
         args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
@@ -115,7 +115,7 @@ module AcmScW
         upon 'error' do feedback end
         upon 'validation-ko' do form_validation_feedback end
         upon 'success/ok' do feedback(:hide_input => false, :message => 'update_account_ok') end
-        upon 'success/activation_required' do redirect(:url => '/feedback?mkey=activation_required') end
+        upon 'success/activation_required' do message('accounts/activation-required') end
       }
       def update_account(params)
         args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
