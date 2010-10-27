@@ -5,7 +5,7 @@ la vie privée dans le domaine des technologies de l'information et de la commun
 
 <h3>Sponsors premiums</h3>
 
-<p id="sponsors">
+<p  class="sponsors">
   <a href="http://www.steria.be/"><img src="images/steria-logo-big.jpg" alt="Steria Belgium" /></a>
   <a href="http://www.lsec.be/"><img src="images/lsec-logo-big.jpg" alt="LSEC" /></a>
 </p>
