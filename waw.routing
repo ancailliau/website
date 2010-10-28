@@ -5,6 +5,12 @@ Waw.rack do
   map '/' do
     run ::Waw::StaticController.new(:public => 'views')
   end
+  map '/admin' do
+    run ::Waw::StaticController.new(:public => 'admin')
+  end
+  map '/dba' do
+    run ::DbAgile::Restful::Middleware::OneDatabase.new(::AcmScW::dba_database)
+  end
   map '/webserv' do
     use ::Waw::JSONController
     map '/event' do

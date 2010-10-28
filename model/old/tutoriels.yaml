@@ -1,0 +1,55 @@
+--- 
+logical: 
+  tutorials: 
+    heading: 
+      id:          { domain: Integer }
+      title:       { domain: String }
+      abstract:    { domain: String }
+      slides_path: { domain: String, mandatory: false}
+      closed:      { domain: SByC::TypeSystem::Ruby::Boolean, default: false }
+    constraints: 
+      pk: {type: :primary_key, attributes: [id]}
+  planned_tutorial: 
+    heading: 
+      event: {domain: String}
+      tutorial: {domain: Integer, mandatory: false}
+    constraints: 
+      pk: {type: :primary_key, attributes: [event]}
+      planned_tutorial_isa_event: {type: foreign_key, attributes: [ event ], references: events}
+      planned_tutorial_which_tutorial: {type: foreign_key, attributes: [ tutorial ], references: tutorials}
+  tutorial_speakers: 
+    heading: 
+      tutorial: {domain: Integer}
+      people: {domain: Integer}
+      main_contact: {domain: SByC::TypeSystem::Ruby::Boolean}
+    constraints: 
+      pk: {type: :primary_key, attributes: [tutorial, people]}
+      tutorial_speaker_isa_people: {type: foreign_key, attributes: [ people ], references: people}
+      tutorial_speaker_for_tutorial: {type: foreign_key, attributes: [tutorial], references: tutorials}
+  tutorial_pool: 
+    heading: 
+      id: {domain: String}
+      comment: {domain: String}
+    constraints: 
+      pk: {type: :primary_key, attributes: [id]}
+  tutorial_pool_candidates: 
+    heading: 
+      pool: {domain: String}
+      tutorial: {domain: Integer}
+    constraints: 
+      pk: {type: :primary_key, attributes: [pool, tutorial]}
+      tutorial_pool_candidate_for_pool: {type: foreign_key, attributes: [pool], references: tutorial_pool}
+      tutorial_pool_candidate_for_tutorial: {type: foreign_key, attributes: [tutorial], references: tutorials}
+  tutorial_pool_interest: 
+    heading: 
+      pool: {domain: String}
+      tutorial: {domain: Integer}
+      people: {domain: Integer}
+      order: {domain: Integer}
+    constraints: 
+      pk: {type: :primary_key, attributes: [pool, tutorial, people]}
+      tutorial_pool_interest_for_candidate: {type: foreign_key, attributes: [ pool, tutorial ], references: tutorial_pool_candidates}
+      tutorial_pool_interest_from_people: {type: foreign_key, attributes: [ people ], references: people}
+--- 
+physical: 
+  indexes: {}

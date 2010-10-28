@@ -45,7 +45,7 @@
 	float: left;
 }
 
-#header h1 {
+#logo h1 {
 	background: url("../images/logo.png") no-repeat top left;
 	height: 40px;
 	width: 190px;
@@ -53,17 +53,17 @@
 	padding: 0;
 }
 
-#header h1 a {
+#logo h1 a {
 	display: block;
 	width: 100%;
 	height: 100%;
 }
 
-#header h1 span {
+#logo h1 span {
 	display: none;
 }
 
-#header p {
+#logo p {
 	font-size: 1.1em;
 	color: #666;
 	text-align: left;

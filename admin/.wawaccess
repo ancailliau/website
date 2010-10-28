@@ -1,0 +1,15 @@
+wawaccess do
+  
+  match root do
+    apply 'index'
+  end
+  
+  match /^index$/ do
+    wlang 'index.wtpl', {:dbschema => AcmScW::dba_database.schema}
+  end
+  
+  match file do
+    static
+  end
+  
+end

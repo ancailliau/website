@@ -1,0 +1,14 @@
+---
+logical: 
+  webr_newsletter:
+    SELECT id, mail, last_name, first_name, occupation
+      FROM people
+     WHERE newsletter = true
+     ORDER BY id ASC
+  webr_allregistered:
+    SELECT id, mail, last_name, first_name, occupation
+      FROM people    
+     ORDER BY id ASC
+---
+physical: {}
+  

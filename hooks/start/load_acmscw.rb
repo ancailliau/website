@@ -1,2 +1,1 @@
 AcmScW.check_configuration
-AcmScW.titles
