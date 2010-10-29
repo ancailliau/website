@@ -13,11 +13,9 @@ module AcmScW
         if session.has_key?(:user)
           @app.call(env)
         else
-          [ 
-            301, 
-            {'Location' => @options[:redirect_url]}, 
-            []
-          ]
+          kernel.call(env.dup.merge(
+            'PATH_INFO' => '/403'
+          ))
         end
       end
     

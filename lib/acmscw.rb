@@ -1,9 +1,21 @@
+begin
+  require 'waw'
+rescue LoadError => ex
+  require 'rubygems'
+  gem 'waw',   '>= 0.3.0'
+  require 'waw'
+end
+
+begin
+  require 'wlang'
+rescue LoadError => ex
+  require 'rubygems'
+  gem 'wlang', '< 1.0.0'
+  require 'wlang'
+end
+
 require 'rubygems'
 require 'sequel'
-gem 'wlang', '< 1.0.0'
-gem 'waw',   '< 0.4.0'
-require 'wlang'
-require 'waw'
 
 # Main module of the whole website
 module AcmScW
