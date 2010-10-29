@@ -33,23 +33,38 @@
       
       <div id="admin-left">
         <div id="admin-menu">
+
           <h3><a href="#">Queries prémâchés</a></h3>  
-          <div>
+          <div class="accordion-tab">
             <ul>
-              <li><a onclick="javascript:open_dataset('webr_newsletter.html', 'Newsletter')">Inscrits à la newletter</a></li>
-              <li><a onclick="javascript:open_dataset('webr_allregistered.html', 'Inscrits')">Tous les inscrits</a></li>
+              +{admin.tab_and_csv.call('webr_newsletter', 'Newsletter', 'Inscrits à la newletter')}
+              +{admin.tab_and_csv.call('webr_allregistered', 'Inscrits', 'Tous les inscrits')}
             </ul>
           </div>
+
           <h3><a href="#">Tables de la db</a></h3>  
-          <div>
+          <div class="accordion-tab">
             <ul>
               *{dbschema.logical.parts as p}{
-                <li><a onclick="javascript:open_dataset('{p.name}.html', '{p.name}')">${p.name}</a></li>  
+                +{admin.tab_and_csv.call(p.name, p.name, p.name)}
               }
             </ul>
           </div>
+
           <h3><a href="#">Gestion des événements</a></h3>  
-          <div>
+          <div class="accordion-tab">
+            <h4>Evénements prochains</h4>
+            <ul>
+              *{model.webr_planned_events as p}{
+                <li><a onclick="javascript:open_tab('/admin/event/+{p[:id]}', '{p[:name]}')">${p[:id]}</a></li>
+              }
+            </ul>
+            <h4>Evénements passés</h4>
+            <ul>
+              *{model.webr_past_events as p}{
+                <li><a onclick="javascript:open_tab('/admin/event/+{p[:id]}', '{p[:name]}')">${p[:id]}</a></li>
+              }
+            </ul>
           </div>
         </div>
         <div id="logo">

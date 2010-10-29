@@ -14,6 +14,7 @@
 	float: left;
 	width: 750px;
 }
+
 #admin-menu {
 	margin-bottom: 20px;
 	height: 615px;
@@ -21,10 +22,34 @@
 #admin-menu #logo {
 	height: 85px;
 }
-#admin-menu ul {
-	margin: 0px;
-	padding: 0px 5px 0px 20px;
+
+#admin-menu .ui-accordion-content {
+	padding-top: 5px;
+	padding-left: 10px;
 }
+#admin-menu .accordion-tab ul {
+	margin: 0px;
+	padding: 0px 5px 0px 25px;
+}
+#admin-menu .accordion-tab a {
+	color: blue;
+}
+#admin-menu .accordion-tab a:hover {
+	text-decoration: underline;
+}
+#admin-menu .accordion-tab ul li {
+	color: blue;
+	list-style: square;
+}
+#admin-menu .accordion-tab ul li img {
+	padding-left: 3px;
+}
+#admin-menu .accordion-tab h4 {
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 3px;
+}
+
 #admin-tabs {
 	height: 700px;
 }
@@ -33,6 +58,7 @@
 	overflow: auto;
 }
 #admin-tabs div table {
+	width: 100%;
 	border-collapse: collapse;
 }
 #admin-tabs div table tr td {
@@ -40,4 +66,7 @@
 	padding: 3px;
 }
 #admin-tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
-
+#admin-tabs h3 img {
+	padding: 0px 5px;
+	vertical-align: middle;
+}

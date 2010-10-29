@@ -3,7 +3,7 @@ wawaccess do
   ######################################################################## MATCHERS 
   
   matcher :status_page do
-    req_path =~ /^\d+$/
+    req_path =~ /^(403|404|500|503)$/
   end
   
   # Recognizes existing folders only

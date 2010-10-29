@@ -1,0 +1,18 @@
+<div>
+  <h3>Description de l'événement</h3>
+  
+  <p>Du ${event[:start_time].strftime('%d/%m/%y')} ${event[:start_time].strftime('%H:%M')} au 
+        ${event[:end_time].strftime('%d/%m/%y')} à ${event[:end_time].strftime('%H:%M')},
+        ${event[:location]}</p>
+  <p>+{event[:abstract]}</p>
+
+  <h3>
+    Personnes inscrites (${subscribed_people.count})
+    <span>
+      <a href="/dba/webr_event_participants.csv?event=${event[:id]}" target="_blank">
+        <img src="images/csv_icon.gif"/>
+      </a>
+    </span>
+  </h3>
+  <<+{people_list.wtpl with list:subscribed_people}
+</div>

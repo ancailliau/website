@@ -8,8 +8,19 @@ wawaccess do
     wlang 'index.wtpl', {:dbschema => AcmScW::dba_database.schema}
   end
   
+  match /event\/(.*)$/ do |url,evtid|
+    wlang 'event.wtpl', {
+      :event             => AcmScW.database[:events].filter(:id => evtid).first,
+      :subscribed_people => AcmScW.database[:webr_event_participants].filter(:event => evtid)
+    }
+  end
+  
   match file do
     static
+  end
+  
+  match true do
+    kernel.call(rack_env.dup.merge('PATH_INFO' => '/404'))
   end
   
 end
