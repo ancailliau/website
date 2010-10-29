@@ -22,7 +22,7 @@
 
     <div class="status-center">
       <div class="message status-+{status}">
-        <<{+{status}.whtml}
+        <<+{+{status}.wtpl}
       </div>
     </div>
 
