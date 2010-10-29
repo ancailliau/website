@@ -34,20 +34,11 @@
       <div id="admin-left">
         <div id="admin-menu">
 
-          <h3><a href="#">Queries prémâchés</a></h3>  
+          <h3><a href="#">Gestion des inscrits</a></h3>  
           <div class="accordion-tab">
             <ul>
               +{admin.tab_and_csv.call('webr_newsletter', 'Newsletter', 'Inscrits à la newletter')}
               +{admin.tab_and_csv.call('webr_allregistered', 'Inscrits', 'Tous les inscrits')}
-            </ul>
-          </div>
-
-          <h3><a href="#">Tables de la db</a></h3>  
-          <div class="accordion-tab">
-            <ul>
-              *{dbschema.logical.parts as p}{
-                +{admin.tab_and_csv.call(p.name, p.name, p.name)}
-              }
             </ul>
           </div>
 
@@ -66,6 +57,16 @@
               }
             </ul>
           </div>
+
+          <h3><a href="#">Toute la db</a></h3>  
+          <div class="accordion-tab">
+            <ul>
+              *{dbschema.logical.parts as p}{
+                +{admin.tab_and_csv.call(p.name, p.name, p.name)}
+              }
+            </ul>
+          </div>
+
         </div>
         <div id="logo">
         	<h1><a href="/"><span>UCLouvain ACM Student Chapter</span></a></h1>
