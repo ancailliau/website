@@ -52,6 +52,7 @@ form.form-300 p.span-3 input {
 	width: 296px;
 }
 form.form-300 p.form-button {
+	margin-top: 20px;
 	width: 300px;
 	line-height: 22px;
 }
@@ -142,6 +143,7 @@ form.form-460 p.span-4 input {
 	width: 456px;
 }
 form.form-460 p.form-button {
+	margin-top: 20px;
 	width: 460px;
 	line-height: 22px;
 }

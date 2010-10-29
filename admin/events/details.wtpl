@@ -14,5 +14,5 @@
       </a>
     </span>
   </h3>
-  <<+{people_list.wtpl with list:subscribed_people}
+  <<+{../tools/people_list.wtpl with list:subscribed_people}
 </div>

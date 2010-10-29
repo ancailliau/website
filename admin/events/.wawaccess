@@ -1,0 +1,12 @@
+wawaccess do
+  
+  inherits true
+  
+  match /details\/(.*)$/ do |url,evtid|
+    wlang 'details.wtpl', {
+      :event             => AcmScW.database[:events].filter(:id => evtid).first,
+      :subscribed_people => AcmScW.database[:webr_event_participants].filter(:event => evtid)
+    }
+  end
+  
+end

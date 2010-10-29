@@ -1,5 +1,10 @@
 wawaccess do
   
+  matcher :jsform do
+    File.exists?(File.join(folder, "#{req_path}.form")) and 
+    request.params.include?('jsrequest')
+  end
+  
   match root do
     apply 'index'
   end
@@ -8,11 +13,8 @@ wawaccess do
     wlang 'index.wtpl', {:dbschema => AcmScW::dba_database.schema}
   end
   
-  match /event\/(.*)$/ do |url,evtid|
-    wlang 'event.wtpl', {
-      :event             => AcmScW.database[:events].filter(:id => evtid).first,
-      :subscribed_people => AcmScW.database[:webr_event_participants].filter(:event => evtid)
-    }
+  match jsform do
+    wlang "#{req_path}.form", wlang_context
   end
   
   match file do

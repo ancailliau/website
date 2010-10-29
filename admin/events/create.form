@@ -1,0 +1,24 @@
+<div class="message logo-message">
+
+  <h3>Création d'un événement</h3>
+
+  <p>
+  	Veuillez remplir les champs suivants concernant l'événement.
+  </p>
+
+  ={controllers.event.create as action}{
+  	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+  		<div class="feedback"></div>
+
+      <<+{event-fields.wtpl with event: Hash.new}
+
+  		<p class="form-button">
+  			<input type="submit" value="Créer cet événement »"/>
+  			<a onclick="hide_popup()">Fermer</a>
+  		</p>
+
+  		+{action.ajax_form_preparer}
+  	</form>
+  }
+
+</div>

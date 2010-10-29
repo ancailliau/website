@@ -11,10 +11,13 @@
 		<link rel="stylesheet" type="text/css" href="../css/1-layout.css" />
 		<link rel="stylesheet" type="text/css" href="../css/2-header.css" />
 		<link rel="stylesheet" type="text/css" href="../css/6-footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/7-forms.css" />
+		<link rel="stylesheet" type="text/css" href="../css/8-popup.css" />
 		*{css_files as css}{
 		<link rel="stylesheet" type="text/css" href="{css}" />
 		}
 
+		<script type="text/javascript" src="../js/2-acmscw.js"></script>
 		*{js_files as js}{
 		<script type="text/javascript" src="{js}"></script>
 		}
@@ -44,18 +47,7 @@
 
           <h3><a href="#">Gestion des événements</a></h3>  
           <div class="accordion-tab">
-            <h4>Evénements prochains</h4>
-            <ul>
-              *{model.webr_planned_events as p}{
-                <li><a onclick="javascript:open_tab('/admin/event/+{p[:id]}', '{p[:name]}')">${p[:id]}</a></li>
-              }
-            </ul>
-            <h4>Evénements passés</h4>
-            <ul>
-              *{model.webr_past_events as p}{
-                <li><a onclick="javascript:open_tab('/admin/event/+{p[:id]}', '{p[:name]}')">${p[:id]}</a></li>
-              }
-            </ul>
+            <<+{events/menu.wtpl}
           </div>
 
           <h3><a href="#">Toute la db</a></h3>  
@@ -91,6 +83,8 @@
       
     </div>
     
+    <div id="hide"></div>
+    <div id="popup"></div>
 	  <script type="text/javascript">
     	$(document).ready(function(){ 
     	  $("#admin-menu").accordion();  

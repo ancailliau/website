@@ -15,6 +15,15 @@ module AcmScW
         @event_services ||= Waw.resources.business.event
       end
     
+      signature {
+      }
+      routing {
+        upon '*' do feedback end
+      }
+      def create(params)
+        :ok
+      end
+    
       ### Login and logout ###########################################################
     
       # Login

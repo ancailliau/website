@@ -1,0 +1,45 @@
+<p class="span-3">
+	<label for="id">Identifiant ([a-z][a-z0-9-]+)</label>
+	<input type="text" name="id" value="{event[:mail]}"/>
+</p>
+
+<p class="span-1">
+	<label for="nb_places">Nb places</label>
+	<input type="text" name="nb_places" value="{event[:nb_places]}"/>
+</p>
+
+<p class="span-1">
+	<label for="start_date">Date de début</label>
+	<input class="date" type="text" name="start_date" value="{event[:start_date]}"/>
+</p>
+
+<p class="span-1">
+	<label for="start_time">Heure (hh:mm)</label>
+	<input class="time" type="text" name="start_time" value="{event[:start_time]}"/>
+</p>
+
+<p class="span-1">
+	<label for="end_date">Date de fin</label>
+	<input class="date" type="text" name="end_date" value="{event[:end_date]}"/>
+</p>
+
+<p class="span-1">
+	<label for="end_time">Heure (hh:mm)</label>
+	<input class="time" type="text" name="end_time" value="{event[:end_time]}"/>
+</p>
+
+<p class="span-4">
+	<label for="lieu">Lieu</label>
+	<input type="text" name="location" value="{event[:location]}"/>
+</p>
+
+<p class="span-4">
+	<label for="abstract">Description (texte ou html)</label>
+	<textarea name="abstract">+{event[:abstract]}</textarea>
+</p>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("input.date").datepicker();
+	});
+</script>

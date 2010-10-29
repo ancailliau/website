@@ -1,0 +1,22 @@
+<h4>Actions</h4>
+<ul>
+  <li><a onclick="javascript:show_popup('/admin/events/create', 460)">Créer un événement</a></li>
+</ul>
+
+<h4>Evénements prochains</h4>
+<ul>
+  *{model.webr_planned_events as p}{
+    <li>
+      <a onclick="javascript:open_tab('/admin/events/details/+{p[:id]}', '{p[:name]}')">${p[:id]}</a>
+    </li>
+  }
+</ul>
+
+<h4>Evénements passés</h4>
+<ul>
+  *{model.webr_past_events as p}{
+    <li>
+      <a onclick="javascript:open_tab('/admin/events/details/+{p[:id]}', '{p[:name]}')">${p[:id]}</a>
+    </li>
+  }
+</ul>

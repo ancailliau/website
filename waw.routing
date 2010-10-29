@@ -6,11 +6,11 @@ Waw.rack do
     run ::Waw::StaticController.new(:public => 'views')
   end
   map '/admin' do
-    #use ::AcmScW::Controllers::EnsureAuth, :redirect_url => '/403'
+    use ::AcmScW::Controllers::EnsureAuth, :redirect_url => '/403'
     run ::Waw::StaticController.new(:public => 'admin')
   end
   map '/dba' do
-    #use ::AcmScW::Controllers::EnsureAuth, :redirect_url => '/403'
+    use ::AcmScW::Controllers::EnsureAuth, :redirect_url => '/403'
     run ::DbAgile::Restful::Middleware::OneDatabase.new(::AcmScW::dba_database)
   end
   map '/webserv' do

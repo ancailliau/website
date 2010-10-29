@@ -197,6 +197,18 @@ function webserv_people_update_account(request_data, form) {
   return false;
 }  
 /* Actions contributed by AcmScW::Controllers::EventController, mapped to / */
+function webserv_event_create(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/event/create", data: request_data, dataType: "json",
+    error: function(data) {
+      window.location = '/feedback?mkey=server_error';
+    },
+    success: function(data) {
+      $(form + ' .feedback').show();
+      $(form + ' .feedback').html(messages[data[1][0]]);
+    }
+  });
+  return false;
+}  
 function webserv_event_register_by_mail(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/register_by_mail", data: request_data, dataType: "json",
     error: function(data) {
