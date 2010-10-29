@@ -36,8 +36,6 @@
     <div id="hide"></div>
     <div id="popup"></div>
 
-		?{Waw.config.google_analytics}{<<{analytics.whtml}}
-
 		?{knows?(:message)}{
 		  <script type="text/javascript">
       	$(document).ready(function(){ 
@@ -52,6 +50,7 @@
       	}); 
       </script>
 		}
+		?{Waw.config.google_analytics}{<<{analytics.whtml}}
 	</body>
 	
 </html>

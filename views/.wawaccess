@@ -2,6 +2,10 @@ wawaccess do
    
   ######################################################################## MATCHERS 
   
+  matcher :status_page do
+    req_path =~ /^\d+$/
+  end
+  
   # Recognizes existing folders only
   matcher :directory do
     File.directory?(File.join(folder, req_path)) and (
@@ -49,6 +53,9 @@ wawaccess do
   end
   
   ######################################################################## SERVICE RULES 
+  match status_page do
+    apply "status/#{req_path}"
+  end
   
   # REWRITING: / => /index
   # REWRITING: /folder_1/.../folder_n => /folder_1/.../folder_n/index
@@ -63,26 +70,19 @@ wawaccess do
   
   # RULE: form -> static service
   match jsform do
-    template = File.join(wawaccess.root.folder, "#{req_path}.form")
-    source = WLang::file_instantiate(template, default_wlang_context)
-    [200, {'Content-Type' => 'text/html'}, [ source ]]
+    wlang "#{req_path}.form", wlang_context
   end
   
   # RULE: non-js form -> special service
   match nonjsform do
-    context  = {
-                :base           => Waw.config.web_base,
-                :normalized_url => 'index',
-                :page_name      => 'index',
-                :stylesheets    => Dir[File.join(folder, "css", "*.css")].sort.collect{|file| file[folder.length..-1]},
-                :scripts        => Dir[File.join(folder, "js", "*.js")].sort.collect{|file| file[folder.length..-1]},
-                :classes        => ["views"],
-                :body           => WLang::file_instantiate(File.join(folder, 'index.wtpl'), default_wlang_context),
-                :form           => req_path,
-                :title          => "UCLouvain ACM Student Chapter"
-               }
-    template = "templates/layout.wtpl"
-    wlang template, context
+    served  = File.join(folder, 'index')
+    context = wlang_context(served)
+    context = context.merge({
+      :base => Waw.config.web_base,
+      :body => WLang::file_instantiate("#{served}.wtpl", context),
+      :form => "/" + req_path
+    })
+    wlang "templates/layout.wtpl", context
   end
   
   # RULE: message -> static service
@@ -94,81 +94,47 @@ wawaccess do
   
   # RULE: non-js message -> special service
   match nonjsmessage do
-    context  = {
-                :base           => Waw.config.web_base,
-                :normalized_url => 'index',
-                :page_name      => 'index',
-                :stylesheets    => Dir[File.join(folder, "css", "*.css")].sort.collect{|file| file[folder.length..-1]},
-                :scripts        => Dir[File.join(folder, "js", "*.js")].sort.collect{|file| file[folder.length..-1]},
-                :classes        => ["views"],
-                :body           => WLang::file_instantiate(File.join(folder, 'index.wtpl'), default_wlang_context),
-                :message        => req_path,
-                :title          => "UCLouvain ACM Student Chapter"
-               }
-    template = "templates/layout.wtpl"
-    wlang template, context
+    served  = File.join(folder, 'index')
+    context = wlang_context(served)
+    context = context.merge({
+      :base => config.web_base,
+      :body => WLang::file_instantiate("#{served}.wtpl", context),
+      :message => "/" + req_path
+    })
+    wlang "templates/layout.wtpl", context
   end
   
   # RULE: composable -> composed
   match composable do
-    # Create the wlang context now
-    context  = {:base           => "#{Waw.config.web_base}#{req_path}",
-                :normalized_url => req_path,
-                :page_name      => File.basename(req_path)}
-    
-    # Find the source file
-    source_file = if File.exists?(File.join(folder, "#{req_path}.whtml"))
+    # served file and folder
+    served_file = if File.exists?(File.join(folder, "#{req_path}.whtml"))
       File.join(folder, "#{req_path}.whtml")
     elsif File.exists?(File.join(folder, "#{req_path}.wtpl"))
       File.join(folder, "#{req_path}.wtpl")
     end
-    
-    # Create the css and js files
-    current_folder = File.dirname(source_file)
-    stylesheets, scripts, classes = [], [], []
-    side_file = nil
-    until current_folder == File.dirname(folder)
-      # find stylesheets and scripts
-      stylesheets.unshift Dir[File.join(current_folder, "css", "*.css")].sort.collect{|file| file[folder.length..-1]}
-      scripts.unshift Dir[File.join(current_folder, "js", "*.js")].sort.collect{|file| file[folder.length..-1]}
+    served_folder = File.basename(served_file)
 
-      # extend css classes
-      classes << File.basename(current_folder)
-      
-      # set side file
-      if side_file.nil? and File.exists?(File.join(current_folder, "side.wtpl"))
-        side_file = File.join(current_folder, "side.wtpl")
-      end
-      
-      # continue
-      current_folder = File.dirname(current_folder)
+    # default wlang context first
+    context = wlang_context(served_file)
+    
+    # find side menu
+    if context[:side_file]
+      context[:side] = WLang::file_instantiate context[:side_file], wlang_context(served_file)
     end
     
-    # Create the wlang context now
-    context.merge!(:stylesheets    => stylesheets.flatten,
-                   :scripts        => scripts.flatten,
-                   :classes        => classes)
-    
-    # Set the page contents
-    context[:body] = case File.extname(source_file)
+    # find the body
+    context[:body] = case File.extname(served_file)
       when '.whtml'
-        File.read(source_file)
+        File.read(served_file)
       when '.wtpl'
-        WLang::file_instantiate(source_file, default_wlang_context.merge(context))
+        WLang::file_instantiate served_file, wlang_context(served_file)
       else 
         ""
     end
     
-    # Set the right menu
-    unless side_file.nil?
-      context[:side] = WLang::file_instantiate(side_file, default_wlang_context.merge(context))
-    end
-    
-    # Set the page title
-    context[:title] = if context[:body] =~ /^<h2>(.*?)<\/h2>/
-       CGI::unescapeHTML($1).gsub("&mdash;", "-").gsub("&nbsp;", " ")
-    else
-      "UCLouvain ACM Student Chapter"
+    # override title
+    if context[:body] =~ /^<h2>(.*?)<\/h2>/
+      context[:title] = CGI::unescapeHTML($1).gsub("&mdash;", "-").gsub("&nbsp;", " ")
     end
     
     template = "templates/layout.wtpl"

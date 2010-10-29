@@ -25,6 +25,18 @@ module AcmScW
     raise "Wrong database configuration" unless [:host, :port, :database, :user, :password, :encoding].all?{|k| Waw.config.database.has_key?(k)}
     raise "Incomplete configuration, smtp_config missing" unless Waw.config.knows?(:smtp_config)
   end
+
+  ######################################################################## Views
+  
+  def stylesheets(folder)
+    Dir[File.join(folder, "css", "*.css")].sort.collect{|file| file[folder.length..-1]}
+  end
+  
+  def scripts(folder)
+    Dir[File.join(folder, "js", "*.js")].sort.collect{|file| file[folder.length..-1]}
+  end
+  
+  ######################################################################## Database
   
   # Executes the given block inside a transaction
   def self.transaction()
@@ -61,11 +73,13 @@ end
 require 'acmscw/waw_ext/validations'
 require 'acmscw/waw_ext/session'
 require 'acmscw/waw_ext/routing'
+require 'acmscw/waw_ext/waw_access'
 require 'acmscw/business/abstract_services'
 require 'acmscw/business/main_services'
 require 'acmscw/business/people_services'
 require 'acmscw/business/event_services'
 require 'acmscw/business/olympiades_services'
+require 'acmscw/controllers/ensure_auth'
 require 'acmscw/controllers/people_controller'
 require 'acmscw/controllers/event_controller'
 require 'acmscw/controllers/olympiades_controller'

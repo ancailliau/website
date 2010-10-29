@@ -1,0 +1,20 @@
+wawaccess do
+  
+  inherits false
+  
+  match /\/status.css/ do
+    static
+  end
+  
+  match /\/(\d+)$/ do |url, status|
+    served = File.join(folder, "#{status}.whtml")
+    wlang 'layout.wtpl', 
+          wlang_context(served).merge(:status => status), 
+          status.to_i
+  end
+  
+  match true do
+    deny
+  end
+
+end

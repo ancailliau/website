@@ -22,8 +22,13 @@
 	padding: 0;
 }
 
-.user-bar p:first-child {
+.user-bar p {
 	float: left;
+	padding-left: 20px;
+}
+
+.user-bar p:first-child {
+	padding-left: 0px;
 }
 
 .user-bar p:last-child {

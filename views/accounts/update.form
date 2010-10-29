@@ -30,6 +30,10 @@
 	
   }{
   	<p>Vous devez être authentifié pour accéder à ces informations</p>
+
+		<p class="form-button">
+			<a onclick="hide_popup()">Fermer</a>
+		</p>
   }
 
 </div>

@@ -1,0 +1,21 @@
+body.status-page .status-center {
+	width: 550px;
+	margin: 0px auto;
+	padding: 100px 0px;
+	font-size: 1.2em;
+}
+body.status-page .status-center .message {
+	padding-left: 75px;
+}
+body.status-page .status-center .status-403 {
+	background: url(/images/stop-48.png) no-repeat top left;
+}
+body.status-page .status-center .status-404 {
+	background: url(/images/sad-48.png) no-repeat top left;
+}
+body.status-page .status-center .status-500 {
+	background: url(/images/error-48.png) no-repeat top left;
+}
+body.status-page .status-center .status-503 {
+	background: url(/images/tools-48.png) no-repeat top left;
+}
