@@ -51,7 +51,7 @@ messages['you_are_registered_to_this_event'] = "Vous êtes inscrit à cet évén
 function webserv_people_account_activation_request(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/account_activation_request", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -72,7 +72,7 @@ function webserv_people_account_activation_request(request_data, form) {
 function webserv_people_activate_account(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/activate_account", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -102,7 +102,7 @@ function webserv_people_activate_account(request_data, form) {
 function webserv_people_login(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/login", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -120,7 +120,7 @@ function webserv_people_login(request_data, form) {
 function webserv_people_logout(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/logout", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       location.reload(true);
@@ -131,7 +131,7 @@ function webserv_people_logout(request_data, form) {
 function webserv_people_newsletter_subscribe(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/newsletter_subscribe", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -151,7 +151,7 @@ function webserv_people_newsletter_subscribe(request_data, form) {
 function webserv_people_subscribe_account(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/subscribe_account", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -179,7 +179,7 @@ function webserv_people_subscribe_account(request_data, form) {
 function webserv_people_update_account(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/update_account", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -210,7 +210,7 @@ function webserv_people_update_account(request_data, form) {
 function webserv_event_create(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/create", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -235,7 +235,7 @@ function webserv_event_create(request_data, form) {
 function webserv_event_register_by_mail(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/register_by_mail", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'success') {
@@ -254,7 +254,7 @@ function webserv_event_register_by_mail(request_data, form) {
 function webserv_event_register_to_this_event(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/register_to_this_event", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       location.reload(true);
@@ -265,7 +265,7 @@ function webserv_event_register_to_this_event(request_data, form) {
 function webserv_event_unregister_to_this_event(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/unregister_to_this_event", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       location.reload(true);
@@ -276,7 +276,7 @@ function webserv_event_unregister_to_this_event(request_data, form) {
 function webserv_event_update(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/update", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -302,7 +302,7 @@ function webserv_event_update(request_data, form) {
 function webserv_olympiades_register(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/olympiades/register", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/500';
+      window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
