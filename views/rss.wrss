@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>${config.application_name}</title>
+    <description>${config.application_name} - Spread computer science, inform people</description>
+    <lastBuildDate>!{Time.now.to_s}</lastBuildDate>
+    <link>${config.web_base}</link>
+    *{model.webr_planned_events as e}{
+      <item>
+          <title>${e[:name]}</title>
+          <description>${e[:abstract]}</description>
+          <pubDate>${Time.now.to_s}</pubDate>
+          <link>${e[:cardpath]}</link>
+      </item>
+    }
+  </channel>
+</rss>

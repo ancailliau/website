@@ -46,3 +46,15 @@
 	padding: 0;
 }
 
+/* ================================================================= events */
+#events-page ul {
+	padding-left: 20px;
+}
+#events-page ul li {
+	list-style: square;
+}
+#events-page ul li h3 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1.1em;
+}

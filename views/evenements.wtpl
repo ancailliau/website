@@ -1,0 +1,26 @@
+<div id="events-page">
+
+  <h2>Nos événements à venir</h2>
+
+  <ul>
+    *{model.webr_planned_events as e}{
+    <li>
+      <h3><a href="{e[:cardpath]}">${e[:name]}</a></h3>
+      <p>${e[:abstract]} ... <a href="{e[:cardpath]}">en savoir plus</a></p>
+    </li>
+    }
+  </ul>
+
+  <h2>Nos événements passés</h2>
+
+  <ul>
+    *{model.webr_past_events as e}{
+    <li>
+      <h3><a href="{e[:cardpath]}">${e[:name]}</a></h3>
+      <p>${utils.summarize.call(e[:abstract], 30)} ... <a href="{e[:cardpath]}">en savoir plus</a></p>
+    </li>
+    }
+  </ul>
+
+
+</div>

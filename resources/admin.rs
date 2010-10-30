@@ -6,6 +6,3 @@ tab_and_csv lambda{|report, long_name, short_name|
   </li>
 EOF
 }
-date_of  lambda{|time| time && time.strftime('%d/%m/%Y');       }
-time_of  lambda{|time| time && time.strftime('%H:%M');          }
-time_str lambda{|time| time && time.strftime('%d/%m/%Y %H:%M'); }

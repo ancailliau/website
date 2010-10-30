@@ -1,4 +1,4 @@
-<Files ~ "\.(wtpl|whtml|wawaccess|htaccess)$">
+<Files ~ "\.(wtpl|whtml|wrss|wawaccess|htaccess)$">
   order allow,deny
   deny from all
 </Files>

@@ -1,5 +1,7 @@
 --- 
 logical: 
+  webr_past_events: SELECT * FROM events WHERE current_timestamp > end_time ORDER BY start_time DESC
+  webr_planned_events: SELECT * FROM events WHERE end_time > current_timestamp ORDER BY start_time ASC
   LATEX_SUBSCRIPTIONS: 
     heading: 
       first_name: {domain: String, mandatory: false}
@@ -187,8 +189,6 @@ logical:
   webr_allregistered: SELECT id, mail, last_name, first_name, occupation FROM people ORDER BY id ASC
   webr_event_participants: SELECT r.event, p.id, p.mail, p.last_name, p.first_name, p.occupation FROM people as p JOIN event_registrations as r ON p.id = r.people ORDER BY id ASC
   webr_newsletter: SELECT id, mail, last_name, first_name, occupation FROM people WHERE newsletter = true ORDER BY id ASC
-  webr_past_events: SELECT id, activity, name, card_path FROM events WHERE current_timestamp > end_time ORDER BY start_time DESC
-  webr_planned_events: SELECT id, activity, name, card_path FROM events WHERE end_time > current_timestamp ORDER BY start_time ASC
 --- 
 physical: 
   indexes: {}

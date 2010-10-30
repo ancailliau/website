@@ -21,6 +21,7 @@ require 'sequel'
 module AcmScW
   
   WLang::FILE_EXTENSIONS['.wbrick'] = 'wlang/xhtml'
+  WLang::FILE_EXTENSIONS['.wrss'] = 'wlang/xhtml'
   WLang::FILE_EXTENSIONS['.form'] = 'wlang/xhtml'
   
   # Version number of ACM Student Chapter Website

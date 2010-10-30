@@ -20,22 +20,22 @@
 
 <p class="span-1">
 	<label for="start_date">Date de début</label>
-	<input class="date" type="text" name="start_date" value="{admin.date_of.call(event[:start_time])}"/>
+	<input class="date" type="text" name="start_date" value="{utils.date_of.call(event[:start_time])}"/>
 </p>
 
 <p class="span-1">
 	<label for="start_time">Heure (hh:mm)</label>
-	<input class="time" type="text" name="start_time" value="{admin.time_of.call(event[:start_time])}"/>
+	<input class="time" type="text" name="start_time" value="{utils.time_of.call(event[:start_time])}"/>
 </p>
 
 <p class="span-1">
 	<label for="end_date">Date de fin</label>
-	<input class="date" type="text" name="end_date" value="{admin.date_of.call(event[:end_time])}"/>
+	<input class="date" type="text" name="end_date" value="{utils.date_of.call(event[:end_time])}"/>
 </p>
 
 <p class="span-1">
 	<label for="end_time">Heure (hh:mm)</label>
-	<input class="time" type="text" name="end_time" value="{admin.time_of.call(event[:end_time])}"/>
+	<input class="time" type="text" name="end_time" value="{utils.time_of.call(event[:end_time])}"/>
 </p>
 
 <p class="span-3">
@@ -50,7 +50,7 @@
 
 
 <p class="span-4">
-	<label for="abstract">Description (texte ou html)</label>
+	<label for="abstract">Description (un paragraphe en texte brut)</label>
 	<textarea name="abstract">+{event[:abstract]}</textarea>
 </p>
 

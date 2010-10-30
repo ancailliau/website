@@ -52,6 +52,10 @@ wawaccess do
     }
   end
   
+  matcher :rss do 
+    File.exists?(File.join(folder, "#{req_path}.wrss"))
+  end
+  
   ######################################################################## SERVICE RULES 
   match status_page do
     apply "status/#{req_path}"
@@ -139,6 +143,10 @@ wawaccess do
     
     template = "templates/layout.wtpl"
     wlang template, context
+  end
+  
+  match rss do
+    wlang "#{req_path}.wrss", default_wlang_context, 200, {'Content-Type' => "application/rss+xml"}
   end
   
   ######################################################################## REWRITING RULES 

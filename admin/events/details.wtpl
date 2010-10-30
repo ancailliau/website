@@ -15,7 +15,7 @@
     <tr>
     <tr>
       <td>Quand?</td>
-      <td>Du ${admin.time_str.call(event[:start_time])} au ${admin.time_str.call(event[:end_time])}</td>
+      <td>Du ${utils.time_str.call(event[:start_time])} au ${utils.time_str.call(event[:end_time])}</td>
     <tr>
     <tr>
       <td>Où?</td>
