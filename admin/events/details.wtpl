@@ -1,11 +1,32 @@
 <div>
-  <h3>Description de l'événement</h3>
+  <h3>
+    Description de l'événement
+    <span>
+      <a onclick="javascript:show_popup('/admin/events/update/+{event[:id]}', 460)">
+        <img src="images/famfamicons/application_form_edit.png"/>
+      </a>
+    </span>
+  </h3>
   
-  <p>Du ${event[:start_time].strftime('%d/%m/%y')} ${event[:start_time].strftime('%H:%M')} au 
-        ${event[:end_time].strftime('%d/%m/%y')} à ${event[:end_time].strftime('%H:%M')},
-        ${event[:location]}</p>
-  <p>+{event[:abstract]}</p>
-
+  <table>
+    <tr>
+      <td>Titre</td>
+      <td>+{event[:name]}</td>
+    <tr>
+    <tr>
+      <td>Quand?</td>
+      <td>Du ${admin.time_str.call(event[:start_time])} au ${admin.time_str.call(event[:end_time])}</td>
+    <tr>
+    <tr>
+      <td>Où?</td>
+      <td>${event[:location]} ?{event[:nb_places]}{(${event[:nb_places]} places disponibles)}</td>
+    <tr>
+    <tr>
+      <td>Résumé</td>
+      <td>+{event[:abstract]}</td>
+    <tr>
+  </table>
+    
   <h3>
     Personnes inscrites (${subscribed_people.count})
     <span>

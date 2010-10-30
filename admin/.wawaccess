@@ -5,6 +5,12 @@ wawaccess do
     request.params.include?('jsrequest')
   end
   
+  # Recognizes messages from javascript requester
+  matcher :jsmessage do
+    File.exists?(File.join(folder, "#{req_path}.msg")) and 
+    request.params.include?('jsrequest')
+  end
+  
   match root do
     apply 'index'
   end
@@ -15,6 +21,12 @@ wawaccess do
   
   match jsform do
     wlang "#{req_path}.form", wlang_context
+  end
+  
+  match jsmessage do
+    [ 200, 
+      {'Content-Type' => 'text/html'},
+      File.readlines(File.join(folder, "#{req_path}.msg")) ]
   end
   
   match file do

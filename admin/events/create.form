@@ -10,11 +10,11 @@
   	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
   		<div class="feedback"></div>
 
-      <<+{event-fields.wtpl with event: Hash.new}
+      <<+{event-fields.wtpl with event: Hash.new, update: false}
 
   		<p class="form-button">
   			<input type="submit" value="Créer cet événement »"/>
-  			<a onclick="hide_popup()">Fermer</a>
+  			<a class="button" onclick="hide_popup()">Fermer</a>
   		</p>
 
   		+{action.ajax_form_preparer}
@@ -22,3 +22,9 @@
   }
 
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+	  $("form input:submit, a.button").button();
+  });
+</script>
+

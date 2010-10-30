@@ -10,7 +10,9 @@ module Waw
    validator :logged,           validator{|*args| Waw.session.has_key?(:user)}
    validator :not_logged,       logged.not
    
-   validator :event_exists,     validator {|event| Waw.resources.business.event.event_exists?(event)}  
+   validator :activity_exists,  validator{|act| !AcmScW.database[:activities].filter(:id => act).empty?}   
+   
+   validator :event_exists,     validator{|event| Waw.resources.business.event.event_exists?(event)}  
    validator :event_not_exists, event_exists.not
   
   end

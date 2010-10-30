@@ -15,18 +15,40 @@ module AcmScW
         @event_services ||= Waw.resources.business.event
       end
     
-      signature {
+      EventCommonSignature = Waw::Validation.signature {
+        validation :activity, activity_exists, :invalid_event_activity
+        validation :id, mandatory & /^[a-z][a-z0-9\-]+/,       :invalid_event_id
+        validation :name, mandatory, :invalid_event_name
+        validation :nb_places, (integer & (is > 0) | missing), :invalid_event_places
+        validation [:start_date, :start_time], datetime(:date_format => '%d/%m/%Y'), :invalid_event_start_time
+        validation [:end_date, :end_time], datetime(:date_format => '%d/%m/%Y'), :invalid_event_end_time
+        validation :location, mandatory, :invalid_event_location
+        validation :abstract, mandatory, :invalid_event_abstract
       }
+
+      signature(EventCommonSignature)
       routing {
-        upon '*' do feedback end
+        upon 'validation-ko' do form_validation_feedback     end
+        upon 'success/ok'    do message('events/create-ok')  end
       }
       def create(params)
+        event_services.create_event(params.keep(:id, :activity, :name, :nb_places, :start_time, :end_time, :location, :abstract))
+        :ok
+      end
+    
+      signature(EventCommonSignature)
+      routing {
+        upon 'validation-ko' do form_validation_feedback     end
+        upon 'success/ok'    do message('events/update-ok')  end
+      }
+      def update(params)
+        event_services.update_event(params.keep(:id, :activity, :name, :nb_places, :start_time, :end_time, :location, :abstract))
         :ok
       end
     
       ### Login and logout ###########################################################
     
-      # Login
+      # Register by email
       signature {
         validation :mail, mandatory & mail, :invalid_email
         validation :event, event_exists, :unknown_event
@@ -40,7 +62,7 @@ module AcmScW
         :ok
       end
       
-      # Register to an event
+      # Register when logged
       signature {
         validation :event, logged, :user_must_be_logged
         validation :event, event_exists, :unknown_event

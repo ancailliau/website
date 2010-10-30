@@ -12,10 +12,20 @@ messages['bad_user_or_password'] = "Utilisateur ou mot de passe invalide";
 messages['click_here_to_register'] = "Cliquez-ici pour vous inscrire à cet événement";
 messages['click_here_to_unregister'] = "Cliquez-ici pour vous désinscrire";
 messages['contact_ok'] = "<p>Votre message nous a bien été envoyé. Nous y donnerons suite prochainement.</p>";
+messages['event_create_ok'] = "L'événement a été correctement créé";
 messages['event_registration_ok'] = "Vous êtes maintenant inscrit à cet événement!";
+messages['event_update_ok'] = "L'événement a été mis à jour";
 messages['forbidden'] = "Vous ne pouvez pas accéder à cette information ou exécuter ce service.";
 messages['invalid_birthdate'] = "Votre date de naissance doit respecter JJ/MM/AAAA et être une date valide";
 messages['invalid_email'] = "Adresse e-mail invalide";
+messages['invalid_event_abstract'] = "La description de l'événement est obligatoire";
+messages['invalid_event_activity'] = "Activité inconnue";
+messages['invalid_event_end_time'] = "La date/heure de fin d'événement est invalide ou manquante";
+messages['invalid_event_id'] = "Identifiant d'événement invalide (=~ /[a-z][a-z0-9-]+/) ou manquant";
+messages['invalid_event_location'] = "Le lieu est obligatoire";
+messages['invalid_event_name'] = "Le nom de l'événement est obligatoire";
+messages['invalid_event_places'] = "Le nombre de place doit être un entier strictement positif";
+messages['invalid_event_start_time'] = "La date/heure de début d'événement est invalide ou manquante";
 messages['mail_already_in_use'] = "Cette adresse e-mail est déjà utilisée";
 messages['missing_activation_key'] = "Clé d'activation manquante";
 messages['missing_message'] = "Le contenu de votre message ne peut pas être vide";
@@ -203,8 +213,21 @@ function webserv_event_create(request_data, form) {
       window.location = '/feedback?mkey=server_error';
     },
     success: function(data) {
-      $(form + ' .feedback').show();
-      $(form + ' .feedback').html(messages[data[1][0]]);
+      if (data[0] == 'validation-ko') {
+        str = '';
+        str += '<ul>';
+        for (var k in data[1]) {
+          str += '<li>' + messages[data[1][k]] + '</li>';
+        }
+        str += '</ul>';
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
+      } else if (data[0] == 'success') {
+        if (data[1] == 'ok') {
+          show_message('events/create-ok')
+        }
+      }
     }
   });
   return false;
@@ -246,6 +269,31 @@ function webserv_event_unregister_to_this_event(request_data, form) {
     },
     success: function(data) {
       location.reload(true);
+    }
+  });
+  return false;
+}  
+function webserv_event_update(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/event/update", data: request_data, dataType: "json",
+    error: function(data) {
+      window.location = '/feedback?mkey=server_error';
+    },
+    success: function(data) {
+      if (data[0] == 'validation-ko') {
+        str = '';
+        str += '<ul>';
+        for (var k in data[1]) {
+          str += '<li>' + messages[data[1][k]] + '</li>';
+        }
+        str += '</ul>';
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
+      } else if (data[0] == 'success') {
+        if (data[1] == 'ok') {
+          show_message('events/update-ok')
+        }
+      }
     }
   });
   return false;

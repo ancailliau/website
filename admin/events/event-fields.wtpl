@@ -1,6 +1,46 @@
-<p class="span-3">
+<p class="span-2">
+	<label for="activity">Activité</label>
+  <select name="activity">
+    *{model.activities as a}{
+      <option value="{a[:id]}" ?{a[:id] == event[:activity]}{selected="selected"}>${a[:name]}</option>
+    }
+  </select>
+</p>
+
+<p class="span-2">
 	<label for="id">Identifiant ([a-z][a-z0-9-]+)</label>
-	<input type="text" name="id" value="{event[:mail]}"/>
+	?{update}{<input type="hidden" name="id" value="{event[:id]}"/>}
+  <input type="text" name="id" value="{event[:id]}" ?{update}{disabled="disabled"}/>  
+</p>
+
+<p class="span-4">
+	<label for="name">Titre</label>
+	<input type="text" name="name" value="{event[:name]}"/>
+</p>
+
+<p class="span-1">
+	<label for="start_date">Date de début</label>
+	<input class="date" type="text" name="start_date" value="{admin.date_of.call(event[:start_time])}"/>
+</p>
+
+<p class="span-1">
+	<label for="start_time">Heure (hh:mm)</label>
+	<input class="time" type="text" name="start_time" value="{admin.time_of.call(event[:start_time])}"/>
+</p>
+
+<p class="span-1">
+	<label for="end_date">Date de fin</label>
+	<input class="date" type="text" name="end_date" value="{admin.date_of.call(event[:end_time])}"/>
+</p>
+
+<p class="span-1">
+	<label for="end_time">Heure (hh:mm)</label>
+	<input class="time" type="text" name="end_time" value="{admin.time_of.call(event[:end_time])}"/>
+</p>
+
+<p class="span-3">
+	<label for="lieu">Lieu</label>
+	<input type="text" name="location" value="{event[:location]}"/>
 </p>
 
 <p class="span-1">
@@ -8,30 +48,6 @@
 	<input type="text" name="nb_places" value="{event[:nb_places]}"/>
 </p>
 
-<p class="span-1">
-	<label for="start_date">Date de début</label>
-	<input class="date" type="text" name="start_date" value="{event[:start_date]}"/>
-</p>
-
-<p class="span-1">
-	<label for="start_time">Heure (hh:mm)</label>
-	<input class="time" type="text" name="start_time" value="{event[:start_time]}"/>
-</p>
-
-<p class="span-1">
-	<label for="end_date">Date de fin</label>
-	<input class="date" type="text" name="end_date" value="{event[:end_date]}"/>
-</p>
-
-<p class="span-1">
-	<label for="end_time">Heure (hh:mm)</label>
-	<input class="time" type="text" name="end_time" value="{event[:end_time]}"/>
-</p>
-
-<p class="span-4">
-	<label for="lieu">Lieu</label>
-	<input type="text" name="location" value="{event[:location]}"/>
-</p>
 
 <p class="span-4">
 	<label for="abstract">Description (texte ou html)</label>
@@ -40,6 +56,6 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("input.date").datepicker();
+		$("input.date").datepicker({ dateFormat: 'dd/mm/yy' });
 	});
 </script>

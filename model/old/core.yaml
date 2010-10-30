@@ -45,9 +45,9 @@ logical:
       card_path: {domain: String, mandatory: false}
       start_time: {domain: Time}
       end_time: {domain: Time}
+      nb_places: {domain: Integer, mandatory: false}
       location: {domain: String, mandatory: false}
       formal_location: {domain: String, mandatory: false}
-      status: {domain: String}
     constraints: 
       pk: {type: :primary_key, attributes: [id]}
       event_which_activity: {type: foreign_key, attributes: [activity], references: activities}

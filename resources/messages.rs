@@ -45,3 +45,16 @@ olympiades_registration_ok    "<p>Nous avons bien reçu toutes vos données, vot
                               "<p>Si vous n'avez pas reçu cette confirmation endéans les 5 jours, veuillez nous contacter sur "\
                               "<a href='mailto:info@uclouvain.acm-sc.be'>info@uclouvain.acm-sc.be</a></p>"
 send_results_announce_mail_ok "Les mails annoncant les résultats des olympiades ont bien été envoyés."
+
+
+# About events
+event_update_ok               "L'événement a été mis à jour"
+event_create_ok               "L'événement a été correctement créé"
+invalid_event_id              "Identifiant d'événement invalide (=~ /[a-z][a-z0-9-]+/) ou manquant"
+invalid_event_activity        "Activité inconnue"
+invalid_event_name            "Le nom de l'événement est obligatoire"
+invalid_event_places          "Le nombre de place doit être un entier strictement positif"
+invalid_event_start_time      "La date/heure de début d'événement est invalide ou manquante"
+invalid_event_end_time        "La date/heure de fin d'événement est invalide ou manquante"
+invalid_event_location        "Le lieu est obligatoire"
+invalid_event_abstract        "La description de l'événement est obligatoire"

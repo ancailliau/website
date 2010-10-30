@@ -7,6 +7,16 @@ module AcmScW
         AcmScW.database[:events]
       end
       
+      # Creates an event
+      def create_event(tuple)
+        AcmScW.database[:events].insert(tuple)
+      end
+      
+      # Creates an event
+      def update_event(tuple)
+        AcmScW.database[:events].filter(:id => tuple[:id]).update(tuple)
+      end
+      
       # Returns people_services
       def people_services
         @people_services ||= Waw.resources.business.people

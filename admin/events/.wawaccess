@@ -9,4 +9,8 @@ wawaccess do
     }
   end
   
+  match /update\/(.*)$/ do |url,evtid|
+    wlang 'update.form', { :event => AcmScW.database[:events].filter(:id => evtid).first }
+  end
+  
 end
