@@ -10,14 +10,13 @@ databases:
     effective_schema:
       - devel/effective.yaml
   old:
-    uri: postgres://acmscw@localhost/acmscw_old
+    uri: postgres://acmscw@localhost/acmscw
     announced_schema:
       - old/core.yaml
       - old/latex.yaml
       - old/olympiades.yaml
       - old/tutoriels.yaml
       - old/oldies.yaml
-      - old/reports.yaml
     effective_schema:
       - old/effective.yaml
 current: old

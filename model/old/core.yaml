@@ -13,7 +13,6 @@ logical:
       newsletter: {domain: SByC::TypeSystem::Ruby::Boolean, mandatory: false}
       rss_feed: {domain: String, mandatory: false}
       rss_status: {domain: String, mandatory: false}
-      subscription_time: {domain: Time, mandatory: false}
     constraints: 
       pk: {type: :primary_key, attributes: [id]}
       uniq_people_activation: {type: :candidate_key, attributes: [activation_key]}
@@ -45,9 +44,9 @@ logical:
       card_path: {domain: String, mandatory: false}
       start_time: {domain: Time}
       end_time: {domain: Time}
-      nb_places: {domain: Integer, mandatory: false}
       location: {domain: String, mandatory: false}
       formal_location: {domain: String, mandatory: false}
+      status: {domain: String}
     constraints: 
       pk: {type: :primary_key, attributes: [id]}
       event_which_activity: {type: foreign_key, attributes: [activity], references: activities}

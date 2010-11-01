@@ -1,7 +1,5 @@
 --- 
 logical: 
-  webr_past_events: SELECT * FROM events WHERE current_timestamp > end_time ORDER BY start_time DESC
-  webr_planned_events: SELECT * FROM events WHERE end_time > current_timestamp ORDER BY start_time ASC
   LATEX_SUBSCRIPTIONS: 
     heading: 
       first_name: {domain: String, mandatory: false}
@@ -76,8 +74,8 @@ logical:
       id: {domain: String}
       location: {domain: String, mandatory: false}
       name: {domain: String}
-      nb_places: {domain: Integer, mandatory: false}
       start_time: {domain: Time}
+      status: {domain: String}
     constraints: 
       event_which_activity: {type: :foreign_key, attributes: [activity], references: activities}
       pk: {type: :primary_key, attributes: [id]}
@@ -131,7 +129,6 @@ logical:
       password: {domain: String, mandatory: false}
       rss_feed: {domain: String, mandatory: false}
       rss_status: {domain: String, mandatory: false}
-      subscription_time: {domain: Time, mandatory: false}
     constraints: 
       ak_people_mail: {type: :candidate_key, attributes: [mail]}
       pk: {type: :primary_key, attributes: [id]}
@@ -186,9 +183,6 @@ logical:
       title: {domain: String}
     constraints: 
       pk: {type: :primary_key, attributes: [id]}
-  webr_allregistered: SELECT id, mail, last_name, first_name, occupation FROM people ORDER BY id ASC
-  webr_event_participants: SELECT r.event, p.id, p.mail, p.last_name, p.first_name, p.occupation FROM people as p JOIN event_registrations as r ON p.id = r.people ORDER BY id ASC
-  webr_newsletter: SELECT id, mail, last_name, first_name, occupation FROM people WHERE newsletter = true ORDER BY id ASC
 --- 
 physical: 
   indexes: {}
