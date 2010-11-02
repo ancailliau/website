@@ -10,7 +10,7 @@ module AcmScW
     
       # Handler for Rack calls to the controller
       def call(env)
-        if session.has_key?(:user)
+        if Waw::Validation::is_admin.validate
           @app.call(env)
         else
           kernel.call(env.dup.merge(

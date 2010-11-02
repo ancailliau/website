@@ -34,6 +34,7 @@ messages['mail_already_in_use'] = "Cette adresse e-mail est déjà utilisée";
 messages['missing_activation_key'] = "Clé d'activation manquante";
 messages['missing_message'] = "Le contenu de votre message ne peut pas être vide";
 messages['missing_subject'] = "Le sujet de votre demande ne peut pas être vide";
+messages['must_be_admin'] = "Vous devez être administrateur pour utiliser cette fonction";
 messages['newsletter_subscribe_ok'] = "Vous êtes maintenant inscrit";
 messages['olympiades_knowshow_other_missing'] = "Vous devez préciser la manière dont vous avez eu connaissance des olympiades";
 messages['olympiades_mandatory_fields'] = "Les champs des deux premières sections sont tous obligatoires";

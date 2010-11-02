@@ -7,7 +7,7 @@ module Waw
    validator :user_may_log,     validator {|mail, pass| Waw.resources.business.people.people_may_log?(mail, pass)}
 
    validator :is_current_user,  validator{|mail| mail==Waw.session[:user]}
-   validator :is_admin,         validator{|*args| Waw.session.adminlevel >= 2}
+   validator :is_admin,         validator{|*args| Waw.session.adminlevel > 0}
    validator :logged,           validator{|*args| Waw.session.has_key?(:user)}
    validator :not_logged,       logged.not
    

@@ -36,7 +36,9 @@ module AcmScW
         validation :abstract, mandatory, :invalid_event_abstract
       }
 
-      signature(EventCommonSignature)
+      signature(EventCommonSignature) {
+        validation :id, is_admin, :must_be_admin
+      }
       routing {
         upon 'validation-ko' do form_validation_feedback     end
         upon 'success/ok'    do message('events/create-ok')  end
@@ -46,7 +48,9 @@ module AcmScW
         :ok
       end
     
-      signature(EventCommonSignature)
+      signature(EventCommonSignature) {
+        validation :id, is_admin, :must_be_admin
+      }
       routing {
         upon 'validation-ko' do form_validation_feedback     end
         upon 'success/ok'    do message('events/update-ok')  end

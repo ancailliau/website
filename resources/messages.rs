@@ -20,6 +20,7 @@ unknown_user                "Cette adresse e-mail est inconnue dans notre base d
 unknown_event               "Cet événement n'est pas connu"
 missing_subject             "Le sujet de votre demande ne peut pas être vide"
 missing_message             "Le contenu de votre message ne peut pas être vide"
+must_be_admin               "Vous devez être administrateur pour utiliser cette fonction"
 
 # Ok feedback messages
 newsletter_subscribe_ok     "Vous êtes maintenant inscrit"
