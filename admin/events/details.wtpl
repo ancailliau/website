@@ -19,7 +19,8 @@
     <tr>
     <tr>
       <td>Où?</td>
-      <td>${event[:location]} ?{event[:nb_places]}{(${event[:nb_places]} places disponibles)}</td>
+      <td>${event[:location]} ?{event[:nb_places]}{
+          (${event[:nb_places]} places disponibles)}</td>
     <tr>
     <tr>
       <td>Résumé</td>

@@ -241,6 +241,8 @@ function webserv_event_register_logged(request_data, form) {
       if (data[0] == 'validation-ko') {
         if (data[1] == 'no_remaining_place') {
           show_message('/events/no-place-remaining')
+        } else if (data[1] == 'not_a_planned_event') {
+          show_message('/events/past-event')
         } else {
          str = '';
          str += '<ul>';
@@ -269,6 +271,8 @@ function webserv_event_register_notlogged(request_data, form) {
       if (data[0] == 'validation-ko') {
         if (data[1] == 'no_remaining_place') {
           show_message('/events/no-place-remaining')
+        } else if (data[1] == 'not_a_planned_event') {
+          show_message('/events/past-event')
         } else {
          str = '';
          str += '<ul>';

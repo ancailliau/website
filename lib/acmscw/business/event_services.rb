@@ -29,6 +29,12 @@ module AcmScW
       end
       alias :event_exists? :has_event?
       
+      # Checks if an event has available places 
+      def may_still_register?(id)
+        tuple = AcmScW::database[:webr_planned_events].filter(:id => id).first
+        tuple and (tuple[:remaining_places].nil? or (tuple[:remaining_places] > 0))
+      end
+      
       def is_registered?(people, event)
         args = {:event => event, :people => ps.people_id(people)}
         not(AcmScW.database[:event_registrations].filter(args).empty?)
