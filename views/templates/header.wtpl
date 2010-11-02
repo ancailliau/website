@@ -8,8 +8,8 @@
     ?{!session.has_key?(:user)}{
       <li class="subscribe"><a onclick="javascript:show_form('/accounts/subscribe', 460)"><span>Inscrivez-vous</span></a></li>
     }
-  	<li ?{normalized_url == 'activites/2009-2010/index'}{class="active"}>
-  	  <a href="/activites/2009-2010"><span>Activités</span></a>
+  	<li ?{normalized_url == 'activites/index'}{class="active"}>
+  	  <a href="/activites"><span>Activités</span></a>
   	</li>
   	<li ?{normalized_url == 'a-propos'}{class="active"}>
   	  <a href="/a-propos"><span>À propos</span></a>
