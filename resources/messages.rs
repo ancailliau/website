@@ -6,6 +6,8 @@ forbidden                   "Vous ne pouvez pas accéder à cette information ou
 
 # Validation messages
 invalid_email               "Adresse e-mail invalide"
+invalid_first_name          "Le prénom est obligatoire"
+invalid_last_name           "Le nom est obligatoire"
 missing_activation_key      "Clé d'activation manquante"
 bad_passwords               "Mot de passe invalide ou non confirmé correctement"
 bad_newsletter              "L'inscription a la newsletter est invalide"

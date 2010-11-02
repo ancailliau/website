@@ -21,12 +21,15 @@ messages['invalid_birthdate'] = "Votre date de naissance doit respecter JJ/MM/AA
 messages['invalid_email'] = "Adresse e-mail invalide";
 messages['invalid_event_abstract'] = "La description de l'événement est obligatoire";
 messages['invalid_event_activity'] = "Activité inconnue";
+messages['invalid_event_card_path'] = "Le lien vers la page explicative est obligatoire";
 messages['invalid_event_end_time'] = "La date/heure de fin d'événement est invalide ou manquante";
 messages['invalid_event_id'] = "Identifiant d'événement invalide (=~ /[a-z][a-z0-9-]+/) ou manquant";
 messages['invalid_event_location'] = "Le lieu est obligatoire";
 messages['invalid_event_name'] = "Le nom de l'événement est obligatoire";
 messages['invalid_event_places'] = "Le nombre de place doit être un entier strictement positif";
 messages['invalid_event_start_time'] = "La date/heure de début d'événement est invalide ou manquante";
+messages['invalid_first_name'] = "Le prénom est obligatoire";
+messages['invalid_last_name'] = "Le nom est obligatoire";
 messages['mail_already_in_use'] = "Cette adresse e-mail est déjà utilisée";
 messages['missing_activation_key'] = "Clé d'activation manquante";
 messages['missing_message'] = "Le contenu de votre message ne peut pas être vide";
@@ -87,9 +90,9 @@ function webserv_people_activate_account(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          show_message('accounts/activation-ok')
+          show_message('/accounts/activation-ok')
         } else if (data[1] == 'activation_required') {
-          show_message('accounts/activation-required')
+          show_message('/accounts/activation-required')
         }
       } else if (data[0] == 'error') {
         $(form + ' .feedback').show();
@@ -166,7 +169,7 @@ function webserv_people_subscribe_account(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          show_message('accounts/subscribe-ok')
+          show_message('/accounts/subscribe-ok')
         }
       }
     }
@@ -191,9 +194,9 @@ function webserv_people_update_account(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          show_message('accounts/update-ok')
+          show_message('/accounts/update-ok')
         } else if (data[1] == 'activation_required') {
-          show_message('accounts/activation-required')
+          show_message('/accounts/activation-required')
         }
       } else if (data[0] == 'error') {
         $(form + ' .feedback').show();
@@ -229,43 +232,52 @@ function webserv_event_create(request_data, form) {
   });
   return false;
 }  
-function webserv_event_register_by_mail(request_data, form) {
-  $.ajax({type: "POST", url: "/webserv/event/register_by_mail", data: request_data, dataType: "json",
+function webserv_event_register_logged(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/event/register_logged", data: request_data, dataType: "json",
     error: function(data) {
       window.location = '/500';
     },
     success: function(data) {
-      if (data[0] == 'success') {
-        if (data[1] == 'ok') {
-          $(form + ' input').hide();
-          $(form + ' .feedback').show();
-          $(form + ' .feedback').html(messages['event_registration_ok']);
+      if (data[0] == 'validation-ko') {
+        str = '';
+        str += '<ul>';
+        for (var k in data[1]) {
+          str += '<li>' + messages[data[1][k]] + '</li>';
         }
-      } else {
-       $(form + ' .feedback').show();
-       $(form + ' .feedback').html(messages[data[1][0]]);}
+        str += '</ul>';
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
+      } else if (data[0] == 'success') {
+        if (data[1] == 'ok') {
+          show_message('/events/registration-ok')
+        }
+      }
     }
   });
   return false;
 }  
-function webserv_event_register_to_this_event(request_data, form) {
-  $.ajax({type: "POST", url: "/webserv/event/register_to_this_event", data: request_data, dataType: "json",
+function webserv_event_register_notlogged(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/event/register_notlogged", data: request_data, dataType: "json",
     error: function(data) {
       window.location = '/500';
     },
     success: function(data) {
-      location.reload(true);
-    }
-  });
-  return false;
-}  
-function webserv_event_unregister_to_this_event(request_data, form) {
-  $.ajax({type: "POST", url: "/webserv/event/unregister_to_this_event", data: request_data, dataType: "json",
-    error: function(data) {
-      window.location = '/500';
-    },
-    success: function(data) {
-      location.reload(true);
+      if (data[0] == 'validation-ko') {
+        str = '';
+        str += '<ul>';
+        for (var k in data[1]) {
+          str += '<li>' + messages[data[1][k]] + '</li>';
+        }
+        str += '</ul>';
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
+      } else if (data[0] == 'success') {
+        if (data[1] == 'ok') {
+          show_message('/events/registration-ok')
+        }
+      }
     }
   });
   return false;

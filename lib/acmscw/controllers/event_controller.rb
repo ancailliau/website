@@ -13,9 +13,16 @@ module AcmScW
       end
     
       # Returns people_services
-      def event_services
-        @event_services ||= Waw.resources.business.event
+      def people_services
+        @people_services ||= Waw.resources.business.people
       end
+    
+      # Returns event_services
+      def event_services
+        @event_services  ||= Waw.resources.business.event
+      end
+    
+      ######################################################################### Creation and update
     
       EventCommonSignature = Waw::Validation.signature {
         validation :activity, activity_exists, :invalid_event_activity
@@ -49,19 +56,31 @@ module AcmScW
         :ok
       end
     
-      ### Login and logout ###########################################################
+      ######################################################################### Registration 
+      RegistrationCommonSignature = Waw::Validation.signature {
+        validation :first_name, mandatory, :invalid_first_name
+        validation :last_name,  mandatory, :invalid_last_name
+        validation :newsletter, (boolean | default(false)), :bad_newsletter
+      }
     
       # Register by email
-      signature {
+      signature(RegistrationCommonSignature) {
         validation :mail, mandatory & mail, :invalid_email
         validation :event, event_exists, :unknown_event
       }
       routing {
-        upon 'success/ok' do feedback(:message => 'event_registration_ok', :hide_input => true) end
-        upon '*' do feedback end
+        upon 'success/ok'    do message('/events/registration-ok') end
+        upon 'validation-ko' do form_validation_feedback                 end
       }
-      def register_by_mail(params)
-        event_services.register(params[:mail], params[:event])
+      def register_notlogged(params)
+        mail = params[:mail]
+        unless people_services.people_exists?(mail)
+          people_services.create_default_profile(mail)
+          people_services.update_profile(mail, 
+            params.keep(:first_name, :last_name, :newsletter)
+          )
+        end
+        event_services.register(mail, params[:event])
         :ok
       end
       
@@ -70,23 +89,25 @@ module AcmScW
         validation :event, logged, :user_must_be_logged
         validation :event, event_exists, :unknown_event
       } 
-      routing { upon '*' do refresh end }
-      def register_to_this_event(params)
+      routing {
+        upon 'success/ok'    do message('/events/registration-ok') end
+        upon 'validation-ko' do form_validation_feedback           end
+      }
+      def register_logged(params)
+        unless people_services.looks_complete?(session.get(:user))
+          ok, rewrited = RegistrationCommonSignature.apply(params)
+          unless ok
+            raise(Waw::Validation::KO, rewrited) 
+          else
+            people_services.update_profile(session.get(:user), 
+              params.keep(:first_name, :last_name, :newsletter)
+            )
+          end
+        end
         event_services.register(session.get(:user), params[:event])
         :ok
       end
       
-      # Unregister to an event
-      signature {
-        validation :event, logged, :user_must_be_logged
-        validation :event, event_exists, :unknown_event
-      } 
-      routing { upon '*' do refresh end }
-      def unregister_to_this_event(params)
-        event_services.unregister(session.get(:user), params[:event])
-        :ok
-      end
-    
     end # class PeopleController
   end # module Controllers
 end # module AcmScW

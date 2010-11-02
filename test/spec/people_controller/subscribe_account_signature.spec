@@ -6,6 +6,8 @@ describe AcmScW::Controllers::PeopleController do
     
     let(:valid_params){{ 
       :mail             => "testuser@acm-sc.be",
+      :last_name        => "LastName",
+      :first_name       => "FirstName",
       :set_password     => true,
       :password         => "testtesttest",
       :password_confirm => "testtesttest"

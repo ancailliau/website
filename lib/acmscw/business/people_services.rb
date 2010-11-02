@@ -65,6 +65,12 @@ module AcmScW
         not(this_people(id_or_mail).empty?)
       end
       
+      # Does a given user profile looks complete?
+      def looks_complete?(id_or_mail)
+        tuple = this_people(id_or_mail).first
+        tuple && tuple[:first_name] && tuple[:last_name]
+      end
+      
       ############################################################################
       ### About people profiles
       ############################################################################

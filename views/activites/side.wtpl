@@ -2,7 +2,7 @@
 	<li>Nos grands thèmes d'activité</li>
 	<ul>
 	  *{model.activities as a}{
-	    <li><a href="{a[:id]}">${a[:name]}</a></li>
+	    <li><a href="/activites/${a[:id]}">${a[:name]}</a></li>
 	  }
 	</ul>
 </ul>

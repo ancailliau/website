@@ -74,3 +74,9 @@
 	position: absolute;
 	left: 480px;
 }
+
+#main p.important-info {
+	min-height: 50px;
+	background: url(/images/warn-48.png) no-repeat top left;
+	padding-left: 60px;
+}

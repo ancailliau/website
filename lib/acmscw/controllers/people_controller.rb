@@ -55,6 +55,8 @@ module AcmScW
       ### Account creation ###########################################################
       AccountCommonSignature = Waw::Validation.signature {
         validation :mail, mandatory & mail, :invalid_email
+        validation :first_name, mandatory, :invalid_first_name
+        validation :last_name, mandatory, :invalid_last_name
         validation :set_password, boolean | default(false), :should_not_fail
         validation [:set_password, :password, :password_confirm], valid_set_password, :bad_passwords
         validation :newsletter, (boolean | default(false)), :bad_newsletter
@@ -67,8 +69,8 @@ module AcmScW
         validation :set_password, boolean && (is == true), :bad_passwords
       }
       routing {
-        upon 'validation-ko' do form_validation_feedback          end
-        upon 'success/ok'    do message("accounts/subscribe-ok")  end
+        upon 'validation-ko' do form_validation_feedback           end
+        upon 'success/ok'    do message("/accounts/subscribe-ok")  end
       }
       def subscribe_account(params)
         args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
@@ -80,10 +82,10 @@ module AcmScW
         validation :actkey, mandatory, :missing_activation_key
       }
       routing {
-        upon 'error'                       do feedback                                    end
-        upon 'validation-ko'               do form_validation_feedback                    end
-        upon 'success/ok'                  do message('accounts/activation-ok')           end
-        upon 'success/activation_required' do message('accounts/activation-required')     end
+        upon 'error'                       do feedback                                     end
+        upon 'validation-ko'               do form_validation_feedback                     end
+        upon 'success/ok'                  do message('/accounts/activation-ok')           end
+        upon 'success/activation_required' do message('/accounts/activation-required')     end
       }
       def activate_account(params)
         # Take the activation key
@@ -123,8 +125,8 @@ module AcmScW
       routing {
         upon 'error' do feedback end
         upon 'validation-ko' do form_validation_feedback end
-        upon 'success/ok' do message('accounts/update-ok') end
-        upon 'success/activation_required' do message('accounts/activation-required') end
+        upon 'success/ok' do message('/accounts/update-ok') end
+        upon 'success/activation_required' do message('/accounts/activation-required') end
       }
       def update_account(params)
         # Compute the update arguments

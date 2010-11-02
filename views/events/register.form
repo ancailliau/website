@@ -1,0 +1,13 @@
+<div class="message logo-message">
+
+  <h3>${event[:name]} - Inscription</h3>	
+
+  <p>${event[:abstract]}</p>
+  
+  ?{session.has_key?(:user)}{
+    <<+{register-logged.wbrick with event: event}
+  }{
+    <<+{register-notlogged.wbrick with event: event}
+  }
+
+</div>
