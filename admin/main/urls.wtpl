@@ -16,6 +16,9 @@
             <img src="images/famfamicons/application_form_delete.png"/>
           </a>
         }
+        <a onclick="javascript:show_popup('/admin/main/update-url-rewriting/${r[:short]}', 460)">
+          <img src="images/famfamicons/application_form_edit.png"/>
+        </a>
       </td>
     </tr>
   }

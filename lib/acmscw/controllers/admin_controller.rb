@@ -9,7 +9,7 @@ module AcmScW
     
       
       signature {
-        validation :id, is_admin, :must_be_admin
+        validation :short, is_admin, :must_be_admin
         validation :short, mandatory, :invalid_short_url
         validation :long, mandatory,  :invalid_long_url
       }
@@ -23,8 +23,22 @@ module AcmScW
       end
       
       signature {
+        validation :short, is_admin, :must_be_admin
         validation :short, mandatory, :invalid_short_url
-        validation :id, is_admin, :must_be_admin
+        validation :long,  mandatory,  :invalid_long_url
+      }
+      routing {
+        upon 'validation-ko' do form_validation_feedback                       end
+        upon 'success/ok'    do message('/admin/main/update-url-rewriting-ok') end
+      }
+      def update_url_rewriting(params)
+        AcmScW::database[:url_rewriting].filter(params.keep(:short)).update(params.keep(:long))
+        :ok
+      end
+      
+      signature {
+        validation :short, is_admin, :must_be_admin
+        validation :short, mandatory, :invalid_short_url
       }
       routing {
         upon 'validation-ko' do message('/admin/main/rm-url-rewriting-ko')  end

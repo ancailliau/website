@@ -1,0 +1,39 @@
+<div class="message logo-message">
+
+  <h3>Modification d'une règle</h3>
+
+  <p>
+  	Veuillez remplir les champs suivants concernant la règle de réécriture.
+  </p>
+
+  ={controllers.admin.update_url_rewriting as action}{
+  	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+  		<div class="feedback"></div>
+
+      <p class="span-4">
+      	<label for="short">URL courte (relatif au site)</label>
+      	<input type="hidden" name="short" value="{rule[:short]}"/>
+      	<input type="text" value="{rule[:short]}" disabled="disabled"/>
+      </p>
+
+      <p class="span-4">
+      	<label for="long">URL longue (relatif au site)</label>
+      	<input type="text" name="long" value="{rule[:long]}"/>
+      </p>
+
+  		<p class="form-button">
+  			<input type="submit" value="Modifier la règle »"/>
+  			<a class="button" onclick="hide_popup()">Fermer</a>
+  		</p>
+
+  		+{action.ajax_form_preparer}
+  	</form>
+  }
+
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+	  $("form input:submit, a.button").button();
+  });
+</script>
+
