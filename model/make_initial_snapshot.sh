@@ -1,4 +1,8 @@
 dba --repository=. --use=old sql:send "UPDATE activities SET id='tutoriels' WHERE id='tutoriels';"
+dba --repository=. --use=old sql:send "UPDATE events SET id='scienceinfuse-2010' WHERE id='scienceinfuse_2010';"
+dba --repository=. --use=old sql:send "UPDATE events SET id='finale-olympiades-2010' WHERE id='finale_olympiades_2010';"
+dba --repository=. --use=old sql:send "UPDATE events SET id='securite-vie-privee-2010' WHERE id='securite_vie_privee_2010';"
+dba --repository=. --use=old sql:send "UPDATE events SET id='computer-graphics-night-2010' WHERE id='computer_graphics_night_2010';"
 dba --repository=. --use=old sql:send "DELETE FROM events WHERE id='google_summer_code_2010';"
 
 dba --repository=. --use=old bulk:export --csv --type-safe --output=./snapshots/initial/people.csv mig_people 
