@@ -10,16 +10,13 @@
 	l'informatique ou ses langages de programmation en vogue ou en devenir.
 </p>
 
-<p>
-	Etudiants et professeurs sont invités à proposer une présentation
-	tutorielle (titre et court résumé). Ces propositions sont validées par
-	les organisateurs et soumises ensuite aux préférences des auditeurs. À
-	la fin de chaque conférence, les organisateurs présentent rapidement la
-	liste des propositions en cours et sélectionnent, pour le mois suivant,
-	celle qui a obtenu le plus de voix de préférences. Le présentateur
-	dispose alors de quatre semaines pour affiner ses slides, en
-	collaboration avec les organisateurs, afin de mettre l'accent tant sur
-	l'attrait de la présentation que sur son accessibilité à tous. Le choix
-	de la langue (anglais ou français) est laissé à l'appréciation du
-	présentateur.
-</p>
+<p>Vous trouverez ci-dessous la liste des tutoriels organisés dernièrement:</p>
+
+<ul>
+*{model.events.filter(:activity => 'tutoriels').order(:start_time.desc) as e}{
+  <li>
+    <p><a href="{e[:card_path]}">${e[:name]}</a></p>
+    <p>${e[:abstract]}</p>
+  </li>
+}
+</ul>
