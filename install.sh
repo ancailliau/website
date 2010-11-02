@@ -29,7 +29,8 @@ gem install --no-rdoc --no-ri vendor/rack-1.1.0.gem
 gem install --no-rdoc --no-ri vendor/rdoc-2.4.1.gem
 gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
 gem install --no-rdoc --no-ri vendor/wlang-0.9.0.gem
-gem install --no-rdoc --no-ri vendor/waw-0.2.1.gem
+gem install --no-rdoc --no-ri vendor/waw-0.3.0.gem
+gem install --no-rdoc --no-ri vendor/dbagile-0.0.1.gem
 
 #
 # The code expects an 'acmscw' postgresql database, accessible through an 
