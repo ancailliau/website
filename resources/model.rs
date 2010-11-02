@@ -1,5 +1,0 @@
-people                   AcmScW.database[:people]
-activities               AcmScW.database[:activities]
-events                   AcmScW.database[:events]
-webr_past_events         AcmScW.database[:webr_past_events]
-webr_planned_events      AcmScW.database[:webr_planned_events]
