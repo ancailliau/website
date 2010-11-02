@@ -58,3 +58,4 @@ invalid_event_start_time      "La date/heure de début d'événement est invalid
 invalid_event_end_time        "La date/heure de fin d'événement est invalide ou manquante"
 invalid_event_location        "Le lieu est obligatoire"
 invalid_event_abstract        "La description de l'événement est obligatoire"
+invalid_event_card_path       "Le lien vers la page explicative est obligatoire"

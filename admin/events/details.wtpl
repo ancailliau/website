@@ -23,7 +23,11 @@
     <tr>
     <tr>
       <td>Résumé</td>
-      <td>+{event[:abstract]}</td>
+      <td>${event[:abstract]}</td>
+    <tr>
+    <tr>
+      <td>Plus d'info sur</td>
+      <td><a href="{event[:card_path]}">${event[:card_path]}</a></td>
     <tr>
   </table>
     

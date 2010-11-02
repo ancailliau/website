@@ -5,6 +5,8 @@ module AcmScW
     #
     class EventController < ::Waw::ActionController
     
+      EVENT_COLUMNS = [:id, :activity, :name, :nb_places, :start_time, :end_time, :location, :abstract, :card_path]
+    
       # Encapsulate all actions through a database transaction
       def encapsulate(action, actual_params, &block)
         AcmScW.transaction(&block)
@@ -23,6 +25,7 @@ module AcmScW
         validation [:start_date, :start_time], datetime(:date_format => '%d/%m/%Y'), :invalid_event_start_time
         validation [:end_date, :end_time], datetime(:date_format => '%d/%m/%Y'), :invalid_event_end_time
         validation :location, mandatory, :invalid_event_location
+        validation :card_path, mandatory, :invalid_event_card_path
         validation :abstract, mandatory, :invalid_event_abstract
       }
 
@@ -32,7 +35,7 @@ module AcmScW
         upon 'success/ok'    do message('events/create-ok')  end
       }
       def create(params)
-        event_services.create_event(params.keep(:id, :activity, :name, :nb_places, :start_time, :end_time, :location, :abstract))
+        event_services.create_event(params.keep(*EVENT_COLUMNS))
         :ok
       end
     
@@ -42,7 +45,7 @@ module AcmScW
         upon 'success/ok'    do message('events/update-ok')  end
       }
       def update(params)
-        event_services.update_event(params.keep(:id, :activity, :name, :nb_places, :start_time, :end_time, :location, :abstract))
+        event_services.update_event(params.keep(*EVENT_COLUMNS))
         :ok
       end
     

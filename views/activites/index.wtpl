@@ -5,22 +5,22 @@
   <p>
   	L'ASBL UCLouvain ACM Student Chapter organise tout au long de l'année
   	plusieurs activités en lien avec l'informatique. Cette page décrit les
-  	différentes activités qui seront organisées. N'hésitez à nous <a
+  	différentes activités qui sont organisées. N'hésitez à nous <a
   	href="mailto:info@uclouvain.acm-sc.be">contacter</a> pour toute
-  	question ou information complémentaire.
+  	question ou information complémentaire. Voyez aussi la 
+  	<a href="/evenements">page consacrée aux événements de l'ASBL</a>
   </p>
   
   *{model.activities as a}{
+    ={model.events.filter(:activity => a[:id]).order(:start_time.desc) as events}
 
     <h3>${a[:name]}</h3>
   
-    <p>${a[:abstract]}</p>
+    <p>${a[:abstract]} 
+       ?{!events.empty?}{Voyez aussi les pages consacrées aux événements suivants:}
+    </p>
     
-    ={model.events.filter(:activity => a[:id]).order(:start_time.desc) as events}
-    ?{events.empty?}{
-      <p>Nous n'avons pas encore organisé d'événement dans ce cadre</p>
-    }{
-      <p>Pour plus d'information, consultez les pages des événements ci-dessous:</p>
+    ?{!events.empty?}{
       <ul style="padding-left: 20px">
         *{events as e}{
           <li><a href="{e[:card_path]}">${e[:name]}</a></li>

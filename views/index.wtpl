@@ -7,17 +7,26 @@
   </div>
 
   <div>
-  
-  	<h2>Nos prochaines activités</h2>
-  	<ul>
-  	  <li>Nos activités 2010-2011 seront dévoilées sous peu !</li>
-  	</ul>
+    ={model.webr_planned_events.order(:start_time.asc).limit(4) as p_events}
+    ={model.webr_past_events.order(:start_time.desc).limit(4 - p_events.count) as o_events}
+    
+    ?{!p_events.empty?}{
+      <h2>A ne pas rater prochainement!</h2>
+      <ul>
+        *{p_events as e}{
+          <li><a href="{e[:card_path]}">${e[:name]}</a></li>  
+        }
+      </ul>
+    }
 
-  	<h2>Nos évènements passés</h2>
-  	<ul>
-  		<li><a href="activites/2009-2010/olympiades">Olympiades belges d'Informatique</a></li>
-  		<li><a href="activites/2009-2010/scienceinfuse">Weekend Festival Scienceinfuse</a></li>
-  	</ul>
+    ?{!o_events.empty?}{
+    	<h2>Nos dernières activités</h2>
+    	<ul>
+        *{o_events as e}{
+          <li><a href="{e[:card_path]}">${e[:name]}</a></li>  
+        }
+    	</ul>
+	  }
 
   </div>
   

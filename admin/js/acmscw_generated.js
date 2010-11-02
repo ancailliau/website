@@ -21,6 +21,7 @@ messages['invalid_birthdate'] = "Votre date de naissance doit respecter JJ/MM/AA
 messages['invalid_email'] = "Adresse e-mail invalide";
 messages['invalid_event_abstract'] = "La description de l'événement est obligatoire";
 messages['invalid_event_activity'] = "Activité inconnue";
+messages['invalid_event_card_path'] = "Le lien vers la page explicative est obligatoire";
 messages['invalid_event_end_time'] = "La date/heure de fin d'événement est invalide ou manquante";
 messages['invalid_event_id'] = "Identifiant d'événement invalide (=~ /[a-z][a-z0-9-]+/) ou manquant";
 messages['invalid_event_location'] = "Le lieu est obligatoire";

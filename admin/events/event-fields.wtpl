@@ -48,6 +48,10 @@
 	<input type="text" name="nb_places" value="{event[:nb_places]}"/>
 </p>
 
+<p class="span-4">
+	<label for="card_path">URL de la page explicative (en relatif au site)</label>
+	<input type="text" name="card_path" value="{event[:card_path]}"/>
+</p>
 
 <p class="span-4">
 	<label for="abstract">Description (un paragraphe en texte brut)</label>
