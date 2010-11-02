@@ -15,6 +15,18 @@
     <h3>${a[:name]}</h3>
   
     <p>${a[:abstract]}</p>
+    
+    ={model.events.filter(:activity => a[:id]).order(:start_time.desc) as events}
+    ?{events.empty?}{
+      <p>Nous n'avons pas encore organisé d'événement dans ce cadre</p>
+    }{
+      <p>Pour plus d'information, consultez les pages des événements ci-dessous:</p>
+      <ul style="padding-left: 20px">
+        *{events as e}{
+          <li><a href="{e[:card_path]}">${e[:name]}</a></li>
+        }
+      </ul>
+    }
 
   }
 </div>

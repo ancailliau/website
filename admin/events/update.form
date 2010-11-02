@@ -14,7 +14,7 @@
 
   		<p class="form-button">
   			<input type="submit" value="Mettre à jour »"/>
-  			<a class="button" onclick="hide_popup_and_refresh_admin()">Fermer</a>
+  			<a class="button" onclick="hide_popup()">Fermer</a>
   		</p>
 
   		+{action.ajax_form_preparer}

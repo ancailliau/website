@@ -154,6 +154,9 @@ wawaccess do
   match 'securite-vie-privee' do
     apply "activites/2009-2010/conferences/securite-vie-privee"
   end
+  match 'cgn_2010' do
+    apply "activites/2009-2010/tutoriels/computer-graphics-night"
+  end
   match 'olympiades' do
     apply "activites/2009-2010/olympiades"
   end
