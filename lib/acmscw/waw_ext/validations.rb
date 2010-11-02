@@ -1,3 +1,4 @@
+require "acmscw/waw_ext/password_validator"
 module Waw
   module Validation
 
@@ -14,6 +15,8 @@ module Waw
    
    validator :event_exists,     validator{|event| Waw.resources.business.event.event_exists?(event)}  
    validator :event_not_exists, event_exists.not
+   
+   validator :valid_set_password, AcmScW::PasswordValidator.new
   
   end
 end

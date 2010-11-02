@@ -1,3 +1,4 @@
+require 'digest/md5'
 require 'base64'
 module AcmScW
   module Business
@@ -25,6 +26,12 @@ module AcmScW
         end
         @mail_agent
       end
+      
+      # Generates an activation key
+      def generate_activation_key
+        "%0#{256 / 4}x" % rand(2**256 - 1)
+      end
+      alias :generate_sid :generate_activation_key
       
       ############################################################################
       ### About people finding
@@ -64,7 +71,12 @@ module AcmScW
       
       # Creates a default profile for a given mail adress
       def create_default_profile(mail)
-        people.insert(:mail => mail, :newsletter => false)
+        people.insert(
+          :id => 1+(people.max(:id) || 0), 
+          :mail => mail, 
+          :newsletter => false,
+          :subscription_time => Time.now
+        )
         activation_request(mail)
       end
       
@@ -73,7 +85,12 @@ module AcmScW
         # First load old attributes
         old_attrs = this_people(id_or_mail).first
 
-        # if a password is provided te user can now log
+        # Encodes the password using MD5
+        unless attrs[:password].nil? 
+          attrs[:password] = Digest::MD5.hexdigest(attrs[:password])
+        end
+        
+        # if a password is provided the user can now log
         if attrs[:password] and (old_attrs[:adminlevel] == -1)
           attrs[:adminlevel] = 0
         end
@@ -118,7 +135,7 @@ module AcmScW
         not(people.nil?) and people[:activation_key].nil? and \
                          not(people[:password].nil?) and \
                          (people[:adminlevel] >= 0) and \
-                         (password.nil? or password==people[:password])
+                         (password.nil? or (Digest::MD5.hexdigest(password) == people[:password]))
       end
       
       # Checks if a given account is currently activated
@@ -133,16 +150,10 @@ module AcmScW
         not(tuple.nil?) and not(tuple[:activation_key].nil?)
       end
       
-      # Creates a new pseudo-random activation key for a given account
-      def activation_key(mail)
-        actkey = (Kernel.rand(10000000).to_s + mail.to_s + Time.now.to_s + Kernel.rand(10000000).to_s)
-        actkey = Base64.encode64(actkey).gsub(/\s/, '')
-      end
-      
       # Removes any old password and send an activation mail to some user. The later
       # must exists! Returns the activation unique key.
       def activation_request(mail, removepass=true)
-        actkey = activation_key(mail)
+        actkey = generate_activation_key
         this_people(mail).update(:activation_key => actkey)
         this_people(mail).update(:password => nil) if removepass
         
@@ -174,6 +185,12 @@ module AcmScW
       
       # Subscribes a new user. Mail must not be already used (leads to database error)
       def subscribe(attrs)
+        # Set an id and encrypt the password
+        attrs = attrs.merge(
+          :id                => 1+(people.max(:id) || 0),
+          :password          => Digest::MD5.hexdigest(attrs[:password]),
+          :subscription_time => Time.now
+        )
         people.insert(attrs)
         activation_request(attrs[:mail], false)
       end

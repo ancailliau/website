@@ -9,7 +9,7 @@
   		<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
   			<div class="feedback"></div>
 
-  			<div><<+{account_fields.wbrick with people: people}</div>
+  			<div><<+{account-fields.wbrick with people: people, force_password: false}</div>
 
     		<p class="form-button">
     			<input type="submit" value="Modifier mon compte »"/>

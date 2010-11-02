@@ -7,6 +7,7 @@ messages['activation_request_ok'] = "<p>Un e-mail vous permettant de réactiver 
 messages['activation_required'] = "<p>Vous avez modifié votre adresse e-mail. Vous devez maintenant réactiver votre compte.<p>Un e-mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions s'y trouvant.</p>";
 messages['bad_newsletter'] = "L'inscription a la newsletter est invalide";
 messages['bad_password'] = "Votre mot de passe doit comporter entre 8 et 15 caractères";
+messages['bad_passwords'] = "Mot de passe invalide ou non confirmé correctement";
 messages['bad_rss_feed'] = "Votre flux RSS ne semble pas être une adresse web valide";
 messages['bad_user_or_password'] = "Utilisateur ou mot de passe invalide";
 messages['click_here_to_register'] = "Cliquez-ici pour vous inscrire à cet événement";
@@ -36,7 +37,6 @@ messages['olympiades_mandatory_fields'] = "Les champs des deux premières sectio
 messages['olympiades_orientation_missing'] = "Vous devez préciser votre orientation d'étude";
 messages['olympiades_orientation_other_missing'] = "Vous devez préciser votre orientation d'étude";
 messages['olympiades_registration_ok'] = "<p>Nous avons bien reçu toutes vos données, votre inscription vous sera confirmée par e-mail.</p><p>Si vous n'avez pas reçu cette confirmation endéans les 5 jours, veuillez nous contacter sur <a href='mailto:info@uclouvain.acm-sc.be'>info@uclouvain.acm-sc.be</a></p>";
-messages['passwords_dont_match'] = "Les mots de passe ne correspondent pas";
 messages['send_results_announce_mail_ok'] = "Les mails annoncant les résultats des olympiades ont bien été envoyés.";
 messages['server_error'] = "Une erreur est survenue. Veuillez réessayer plus tard";
 messages['should_not_fail'] = "La validation de ce formulaire n'aurait pas du échouer.<br/> si le problème persiste, veuillez prendre contact avec le webmaster";
@@ -51,7 +51,7 @@ messages['you_are_registered_to_this_event'] = "Vous êtes inscrit à cet évén
 function webserv_people_account_activation_request(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/account_activation_request", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -72,7 +72,7 @@ function webserv_people_account_activation_request(request_data, form) {
 function webserv_people_activate_account(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/activate_account", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -102,7 +102,7 @@ function webserv_people_activate_account(request_data, form) {
 function webserv_people_login(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/login", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -120,7 +120,7 @@ function webserv_people_login(request_data, form) {
 function webserv_people_logout(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/logout", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       location.reload(true);
@@ -131,7 +131,7 @@ function webserv_people_logout(request_data, form) {
 function webserv_people_newsletter_subscribe(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/newsletter_subscribe", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -151,7 +151,7 @@ function webserv_people_newsletter_subscribe(request_data, form) {
 function webserv_people_subscribe_account(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/subscribe_account", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -168,9 +168,6 @@ function webserv_people_subscribe_account(request_data, form) {
         if (data[1] == 'ok') {
           show_message('accounts/subscribe-ok')
         }
-      } else if (data[0] == 'error') {
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(messages[data[1][0]]);
       }
     }
   });
@@ -179,7 +176,7 @@ function webserv_people_subscribe_account(request_data, form) {
 function webserv_people_update_account(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/people/update_account", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -210,7 +207,7 @@ function webserv_people_update_account(request_data, form) {
 function webserv_event_create(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/create", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -235,7 +232,7 @@ function webserv_event_create(request_data, form) {
 function webserv_event_register_by_mail(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/register_by_mail", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'success') {
@@ -254,7 +251,7 @@ function webserv_event_register_by_mail(request_data, form) {
 function webserv_event_register_to_this_event(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/register_to_this_event", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       location.reload(true);
@@ -265,7 +262,7 @@ function webserv_event_register_to_this_event(request_data, form) {
 function webserv_event_unregister_to_this_event(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/unregister_to_this_event", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       location.reload(true);
@@ -276,7 +273,7 @@ function webserv_event_unregister_to_this_event(request_data, form) {
 function webserv_event_update(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/update", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
@@ -302,7 +299,7 @@ function webserv_event_update(request_data, form) {
 function webserv_olympiades_register(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/olympiades/register", data: request_data, dataType: "json",
     error: function(data) {
-      window.location = '/feedback?mkey=server_error';
+      window.location = '/500';
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {

@@ -151,9 +151,6 @@ wawaccess do
   
   ######################################################################## REWRITING RULES 
   
-  match 'activites' do
-    apply "activites/2009-2010"
-  end
   match 'securite-vie-privee' do
     apply "activites/2009-2010/conferences/securite-vie-privee"
   end

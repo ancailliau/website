@@ -12,7 +12,7 @@
   	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
   		<div class="feedback"></div>
 
-  		<<+{account_fields.wbrick with people:Hash.new}
+  		<<+{account-fields.wbrick with people: Hash.new, force_password: true}
 
   		<p class="form-button">
   			<input type="submit" value="Créer mon compte »"/>

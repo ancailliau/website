@@ -8,7 +8,11 @@ wawaccess do
     elsif request.params['jsrequest']
       folder = wawaccess.root.folder
       template = File.join(folder, "accounts/activate.form")
-      source   = WLang::file_instantiate(template, default_wlang_context.merge(:actkey => actkey, :people => people))
+      source   = WLang::file_instantiate(template, default_wlang_context.merge(
+        :actkey => actkey, 
+        :people => people,
+        :force_password => people[:password].nil?
+      ))
       [200, {'Content-Type' => 'text/html'}, [ source ]]
     else
       folder = wawaccess.root.folder
@@ -21,7 +25,8 @@ wawaccess do
                   :classes        => ["views"],
                   :body           => WLang::file_instantiate(File.join(folder, 'index.wtpl'), default_wlang_context),
                   :form           => "/accounts/activate/#{actkey}",
-                  :title          => "UCLouvain ACM Student Chapter"
+                  :title          => "UCLouvain ACM Student Chapter",
+                  :force_password => people[:password].nil?
                  }
       template = File.join(folder, "templates/layout.wtpl")
       source   = WLang::file_instantiate(template, default_wlang_context.merge(context))

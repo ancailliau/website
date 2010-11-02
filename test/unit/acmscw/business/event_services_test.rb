@@ -12,6 +12,7 @@ module AcmScW
       def setup
         @people = AcmScW::Business::PeopleServices.new
         @event = AcmScW::Business::EventServices.new
+        @event.unregister(TEST_USER, TEST_EVENT)
         @people.drop_people(TEST_USER)
         @people.create_default_profile(TEST_USER)
 
@@ -42,14 +43,23 @@ module AcmScW
           :start_time => Time.now,
           :end_time => Time.now,
           :location => '',
-          :formal_location => '',
-          :status => 'pending'
+          :formal_location => ''
         )
       end
       
-      def test_register
+      def teardown
+        @event = AcmScW::Business::EventServices.new
+        @people = AcmScW::Business::PeopleServices.new
+
+        @event.unregister(TEST_USER, TEST_EVENT)
+        @people.drop_people(TEST_USER)
+      end
+      
+      def test_register_then_unregister
         @event.register(TEST_USER, TEST_EVENT)
         assert @event.is_registered?(TEST_USER, TEST_EVENT)
+        @event.unregister(TEST_USER, TEST_EVENT)
+        assert !@event.is_registered?(TEST_USER, TEST_EVENT)
       end
       
     end

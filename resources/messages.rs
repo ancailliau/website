@@ -7,7 +7,7 @@ forbidden                   "Vous ne pouvez pas accéder à cette information ou
 # Validation messages
 invalid_email               "Adresse e-mail invalide"
 missing_activation_key      "Clé d'activation manquante"
-passwords_dont_match        "Les mots de passe ne correspondent pas"
+bad_passwords               "Mot de passe invalide ou non confirmé correctement"
 bad_newsletter              "L'inscription a la newsletter est invalide"
 bad_password                "Votre mot de passe doit comporter entre 8 et 15 caractères"
 bad_rss_feed                "Votre flux RSS ne semble pas être une adresse web valide"

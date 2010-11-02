@@ -1,5 +1,9 @@
 --- 
 logical: 
+  mig_activities: SELECT id, name, abstract, card_path FROM activities
+  mig_event_registrations: SELECT event, people FROM event_registrations;
+  mig_events: SELECT id, activity, name, abstract, card_path, start_time, end_time, cast(null as integer) as nb_places, location, formal_location, cast(null as varchar(255)) as form_url FROM events
+  mig_people: SELECT id, mail, md5(password) as password, cast(null as varchar(255)) as activation_key, adminlevel, first_name, last_name, occupation, newsletter, rss_feed, rss_status, current_timestamp as subscription_time FROM people
   LATEX_SUBSCRIPTIONS: 
     heading: 
       first_name: {domain: String, mandatory: false}

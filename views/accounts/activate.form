@@ -5,12 +5,17 @@
   ={controllers.people.activate_account as action}{
   	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
   		<div class="feedback"></div>
+
   		<input type="hidden" name="actkey" value="{actkey}"/>
-  		<<+{account_fields.wbrick with people:people}
+
+  		<<+{account-fields.wbrick with people:people, force_password: force_password}
+
   		<input type="submit" value="Activer mon compte"/>
+
   		+{action.ajax_form_preparer}
   	</form>
   }
+
   <script type="text/javascript">
   	$(document).ready(function() {
   		$("input#account_fields_mail").change(function() {
