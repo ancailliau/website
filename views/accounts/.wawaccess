@@ -4,7 +4,9 @@ wawaccess do
   match /activate(\/(.+))?$/ do |url, n, actkey|
     people = AcmScW.database[:people].filter(:activation_key => actkey).first
     if actkey.nil? or people.nil?
-      [301, {'Location' => '/accounts/activation-ko'}, []]
+      kernel.call(rack_env.merge(
+        'PATH_INFO' => '/accounts/activation-ko'
+      ))
     elsif request.params['jsrequest']
       folder = wawaccess.root.folder
       template = File.join(folder, "accounts/activate.form")
@@ -15,19 +17,17 @@ wawaccess do
       ))
       [200, {'Content-Type' => 'text/html'}, [ source ]]
     else
+      activate_form_file = File.join(self.folder, 'activate.form')
       folder = wawaccess.root.folder
-      context  = {
-                  :base           => Waw.config.web_base,
-                  :normalized_url => 'index',
-                  :page_name      => 'index',
-                  :stylesheets    => Dir[File.join(folder, "css", "*.css")].sort.collect{|file| file[folder.length..-1]},
-                  :scripts        => Dir[File.join(folder, "js", "*.js")].sort.collect{|file| file[folder.length..-1]},
-                  :classes        => ["views"],
-                  :body           => WLang::file_instantiate(File.join(folder, 'index.wtpl'), default_wlang_context),
-                  :form           => "/accounts/activate/#{actkey}",
-                  :title          => "UCLouvain ACM Student Chapter",
-                  :force_password => people[:password].nil?
-                 }
+      context = wlang_context(activate_form_file).merge(
+        :base           => Waw.config.web_base,
+        :title          => Waw.config.application_title,
+        :normalized_url => 'index',
+        :page_name      => 'index',
+        :body           => WLang::file_instantiate(File.join(folder, 'index.wtpl'), wlang_context(activate_form_file)),
+        :form           => "/accounts/activate/#{actkey}",
+        :force_password => people[:password].nil?
+      )
       template = File.join(folder, "templates/layout.wtpl")
       source   = WLang::file_instantiate(template, default_wlang_context.merge(context))
       [200, {'Content-Type' => 'text/html'}, [ source ]]

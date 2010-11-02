@@ -80,10 +80,10 @@ module AcmScW
         validation :actkey, mandatory, :missing_activation_key
       }
       routing {
-        upon 'error'         do feedback end
-        upon 'validation-ko' do form_validation_feedback end
-        upon 'success/ok'    do redirect(:url => '/accounts/activation-ok') end
-        upon 'success/activation_required' do message('accounts/activation-required') end
+        upon 'error'                       do feedback                                    end
+        upon 'validation-ko'               do form_validation_feedback                    end
+        upon 'success/ok'                  do message('accounts/activation-ok')           end
+        upon 'success/activation_required' do message('accounts/activation-required')     end
       }
       def activate_account(params)
         # Take the activation key

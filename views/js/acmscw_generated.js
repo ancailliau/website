@@ -87,7 +87,7 @@ function webserv_people_activate_account(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          window.location = "/accounts/activation-ok";
+          show_message('accounts/activation-ok')
         } else if (data[1] == 'activation_required') {
           show_message('accounts/activation-required')
         }
