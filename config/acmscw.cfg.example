@@ -22,6 +22,8 @@ database           :host     => 'localhost',
                    :password => 'acmscw',
                    :encoding => 'utf8'
 
+dba_dbname	   :devel
+
 # Information about the smtp server to use for sending mails
 smtp_config        :host => 'smtp.sgsi.ucl.ac.be',
                    :port => 25,
