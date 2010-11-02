@@ -1,0 +1,22 @@
+<h2>Soirées-conférences à thème</h2>
+
+<p>
+	Ces conférences à thème ont pour objectif de présenter différents
+	aspects de l'informatique au grand public. Celles-ci ont lieu à la fois
+	en semaine et en soirée afin de permettre au plus grand nombre possible
+	d'y assister. Elles comportent plusieurs présentations dont les
+	orateurs sont choisis pour leur capacité à faire partager leur passion
+	ou métier au grand public, cela afin d'assurer la qualité de la
+	conférence.
+</p>
+
+<p>Vous trouverez ci-dessous la liste des conférences organisées dernièrement:</p>
+
+<ul>
+*{model.events.filter(:activity => 'conferences').order(:start_time.desc) as e}{
+  <li>
+    <p><a href="{e[:card_path]}">${e[:name]}</a></p>
+    <p>${e[:abstract]}</p>
+  </li>
+}
+</ul>

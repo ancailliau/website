@@ -12,21 +12,10 @@
   </p>
   
   *{model.activities as a}{
-    ={model.events.filter(:activity => a[:id]).order(:start_time.desc) as events}
 
-    <h3>${a[:name]}</h3>
+    <h3><a href="{a[:id]}">${a[:name]}</a></h3>
   
-    <p>${a[:abstract]} 
-       ?{!events.empty?}{Voyez aussi les pages consacrées aux événements suivants:}
-    </p>
+    <p>${a[:abstract]}</p>
     
-    ?{!events.empty?}{
-      <ul style="padding-left: 20px">
-        *{events as e}{
-          <li><a href="{e[:card_path]}">${e[:name]}</a></li>
-        }
-      </ul>
-    }
-
   }
 </div>
