@@ -41,7 +41,7 @@ module AcmScW
       }
       routing {
         upon 'validation-ko' do form_validation_feedback     end
-        upon 'success/ok'    do message('events/create-ok')  end
+        upon 'success/ok'    do message('/events/create-ok')  end
       }
       def create(params)
         event_services.create_event(params.keep(*EVENT_COLUMNS))
@@ -53,7 +53,7 @@ module AcmScW
       }
       routing {
         upon 'validation-ko' do form_validation_feedback     end
-        upon 'success/ok'    do message('events/update-ok')  end
+        upon 'success/ok'    do message('/events/update-ok')  end
       }
       def update(params)
         event_services.update_event(params.keep(*EVENT_COLUMNS))

@@ -24,5 +24,8 @@ Waw.rack do
     map '/olympiades' do
       run ::AcmScW::Controllers::OlympiadesController.instance
     end
+    map '/admin' do
+      run ::AcmScW::Controllers::AdminController.instance
+    end
   end
 end

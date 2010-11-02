@@ -1,0 +1,7 @@
+wawaccess do 
+
+  match /\/urls$/ do
+    wlang 'urls.wtpl', {}
+  end
+  
+end

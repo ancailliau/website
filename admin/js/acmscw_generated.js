@@ -30,6 +30,8 @@ messages['invalid_event_places'] = "Le nombre de place doit être un entier stri
 messages['invalid_event_start_time'] = "La date/heure de début d'événement est invalide ou manquante";
 messages['invalid_first_name'] = "Le prénom est obligatoire";
 messages['invalid_last_name'] = "Le nom est obligatoire";
+messages['invalid_long_url'] = "L'URL longue est obligatoire";
+messages['invalid_short_url'] = "L'URL courte est obligatoire";
 messages['mail_already_in_use'] = "Cette adresse e-mail est déjà utilisée";
 messages['missing_activation_key'] = "Clé d'activation manquante";
 messages['missing_message'] = "Le contenu de votre message ne peut pas être vide";
@@ -207,6 +209,49 @@ function webserv_people_update_account(request_data, form) {
   });
   return false;
 }  
+/* Actions contributed by AcmScW::Controllers::AdminController, mapped to / */
+function webserv_admin_add_url_rewriting(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/admin/add_url_rewriting", data: request_data, dataType: "json",
+    error: function(data) {
+      window.location = '/500';
+    },
+    success: function(data) {
+      if (data[0] == 'validation-ko') {
+        str = '';
+        str += '<ul>';
+        for (var k in data[1]) {
+          str += '<li>' + messages[data[1][k]] + '</li>';
+        }
+        str += '</ul>';
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
+      } else if (data[0] == 'success') {
+        if (data[1] == 'ok') {
+          show_message('/admin/main/add-url-rewriting-ok')
+        }
+      }
+    }
+  });
+  return false;
+}  
+function webserv_admin_rm_url_rewriting(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/admin/rm_url_rewriting", data: request_data, dataType: "json",
+    error: function(data) {
+      window.location = '/500';
+    },
+    success: function(data) {
+      if (data[0] == 'validation-ko') {
+        show_message('/admin/main/rm-url-rewriting-ko')
+      } else if (data[0] == 'success') {
+        if (data[1] == 'ok') {
+          show_message('/admin/main/rm-url-rewriting-ok')
+        }
+      }
+    }
+  });
+  return false;
+}  
 /* Actions contributed by AcmScW::Controllers::EventController, mapped to / */
 function webserv_event_create(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/create", data: request_data, dataType: "json",
@@ -226,7 +271,7 @@ function webserv_event_create(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          show_message('events/create-ok')
+          show_message('/events/create-ok')
         }
       }
     }
@@ -311,7 +356,7 @@ function webserv_event_update(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          show_message('events/update-ok')
+          show_message('/events/update-ok')
         }
       }
     }

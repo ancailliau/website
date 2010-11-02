@@ -18,3 +18,4 @@ dba --repository=. --use=devel bulk:import --ruby --type-safe --input=./snapshot
 dba --repository=. --use=devel bulk:import --csv --type-safe --input=./snapshots/initial/events.csv events 
 dba --repository=. --use=devel bulk:import --csv --type-safe --input=./snapshots/initial/event_registrations.csv event_registrations 
 dba --repository=. --use=devel bulk:import --ruby --type-safe --update --input=snapshots/initial/events.rb events
+dba --repository=. --use=devel bulk:import --ruby --type-safe --input=snapshots/initial/url_rewriting.rb url_rewriting

@@ -70,6 +70,12 @@ logical:
       pk_event_responsabilities: {type: :primary_key, attributes: [event, people]}
       evtres_which_event:  {type: foreign_key, attributes: [ event ],  references: events}
       evtres_which_people: {type: foreign_key, attributes: [ people ], references: people}
+  url_rewriting:
+    heading:
+      short: {domain: String}
+      long: {domain: String}
+    constraints: 
+      pk_url_rewriting: {type: :primary_key, attributes: [short]}
 --- 
 physical: 
   indexes: {}

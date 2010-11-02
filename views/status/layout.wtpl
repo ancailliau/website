@@ -18,13 +18,22 @@
 	</head>
 	
 	<body class="status-page">
-		<<+{../templates/header.wtpl share all}
 
     <div class="status-center">
+
+      <div id="logo">
+      	<h1><a href="/"><span>UCLouvain ACM Student Chapter</span></a></h1>
+      	<p>Spread computer science, inform people&nbsp;</p>
+      </div>
+      
+      <div style="margin-bottom: 60px;"></div>
+
       <div class="message status-+{status}">
         <<+{+{status}.wtpl}
       </div>
+
     </div>
+
 
     <div id="hide"></div>
     <div id="popup"></div>

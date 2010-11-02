@@ -56,6 +56,10 @@ wawaccess do
     File.exists?(File.join(folder, "#{req_path}.wrss"))
   end
   
+  matcher :short_url do
+    not(Waw.resources.model.url_rewriting.filter(:short => req_path).empty?)
+  end
+  
   ######################################################################## SERVICE RULES 
   match status_page do
     apply "status/#{req_path}"
@@ -151,17 +155,8 @@ wawaccess do
   
   ######################################################################## REWRITING RULES 
   
-  match 'securite-vie-privee' do
-    apply "activites/2009-2010/conferences/securite-vie-privee"
-  end
-  match 'cgn_2010' do
-    apply "activites/2009-2010/tutoriels/computer-graphics-night"
-  end
-  match 'olympiades' do
-    apply "activites/2009-2010/olympiades"
-  end
-  match 'scienceinfuse' do
-    apply "activites/2009-2010/scienceinfuse"
+  match short_url do
+    apply Waw.resources.model.url_rewriting.filter(:short => req_path).first[:long]
   end
 
   ######################################################################## MATCH ALL RULES

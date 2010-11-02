@@ -37,6 +37,11 @@
       <div id="admin-left">
         <div id="admin-menu">
 
+          <h3><a href="#">Gestion du site web</a></h3>  
+          <div class="accordion-tab">
+            <<+{main/menu.wtpl}
+          </div>
+
           <h3><a href="#">Gestion des inscrits</a></h3>  
           <div class="accordion-tab">
             <ul>

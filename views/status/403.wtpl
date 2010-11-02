@@ -1,6 +1,6 @@
 <h2>Accès non autorisé !</h2>
 
-<p>Vous devez vous <a class="button" onclick="javascript:show_form('/login', 300)">authentifier</a> pour accéder aux informations / fonctionnalités
+<p>Vous devez vous authentifier pour accéder aux informations / fonctionnalités
    demandées...</p>
 
 ={controllers.people.login as action}{
