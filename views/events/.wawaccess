@@ -4,11 +4,10 @@ wawaccess do
   
   match /register\/(.*)$/ do |url, event|
     tuple = AcmScW::database[:webr_planned_events].filter(:id => event).first
-    people = {}
     if tuple.nil?
       apply "/404"
     else
-      wlang "register.form", wlang_context.merge(:event => tuple, :people => people)
+      wlang "register.form", wlang_context.merge(:event => tuple)
     end
   end
   

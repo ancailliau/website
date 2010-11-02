@@ -14,9 +14,16 @@ logical:
      WHERE current_timestamp > end_time 
      ORDER BY start_time DESC
   webr_planned_events:
-    SELECT * FROM events 
-     WHERE end_time > current_timestamp
-     ORDER BY start_time ASC
+    SELECT E.*,
+           (SELECT count(*) 
+              FROM event_registrations as R
+             WHERE R.event = E.id) as nb_participants,
+           (E.nb_places - (SELECT count(*) 
+                             FROM event_registrations
+                            WHERE event = E.id)) as remaining_places
+      FROM events as E
+     WHERE E.end_time > current_timestamp
+     ORDER BY E.start_time ASC
   webr_event_participants:
     SELECT r.event, p.id, p.mail, p.last_name, p.first_name, p.occupation
       FROM people as p 

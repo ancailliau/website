@@ -10,11 +10,14 @@ summarize lambda{|text,nb|
 
 event_subscription_link lambda{|event, text|
   tuple = AcmScW::database[:webr_planned_events].filter(:id => event).first
-  if tuple
-    <<-EOF
-      <a onclick="javascript:show_form('/events/register/#{event}', 460)">#{text}</a>
-    EOF
+  href = if tuple
+    if tuple[:remaining_places].nil? or (tuple[:remaining_places] > 0)
+      "javascript:show_form('/events/register/#{event}', 460)"
+    else
+      "javascript:show_message('/events/no-place-remaining')"
+    end
   else
-    ""
+    "javascript:show_message('/events/past-event')"
   end
+  "<a onclick=\"#{href}\">#{text}</a>"
 }

@@ -17,6 +17,11 @@ module Waw
    validator :event_not_exists, event_exists.not
    
    validator :valid_set_password, AcmScW::PasswordValidator.new
+   
+   validator :places_remaining_for_event, validator{|event| 
+     tuple = AcmScW::database[:webr_planned_events].filter(:id => event).first
+     tuple and (tuple[:remaining_places].nil? or (tuple[:remaining_places] > 0))
+   }
   
   end
 end

@@ -239,15 +239,18 @@ function webserv_event_register_logged(request_data, form) {
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
-        str = '';
-        str += '<ul>';
-        for (var k in data[1]) {
-          str += '<li>' + messages[data[1][k]] + '</li>';
+        if (data[1] == 'no_remaining_place') {
+          show_message('/events/no-place-remaining')
+        } else {
+         str = '';
+         str += '<ul>';
+         for (var k in data[1]) {
+           str += '<li>' + messages[data[1][k]] + '</li>';
+         }
+         str += '</ul>';
+         $(form + ' .feedback').show();
+         $(form + ' .feedback').html(str);
         }
-        str += '</ul>';
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(str);
-      
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           show_message('/events/registration-ok')
@@ -264,15 +267,18 @@ function webserv_event_register_notlogged(request_data, form) {
     },
     success: function(data) {
       if (data[0] == 'validation-ko') {
-        str = '';
-        str += '<ul>';
-        for (var k in data[1]) {
-          str += '<li>' + messages[data[1][k]] + '</li>';
+        if (data[1] == 'no_remaining_place') {
+          show_message('/events/no-place-remaining')
+        } else {
+         str = '';
+         str += '<ul>';
+         for (var k in data[1]) {
+           str += '<li>' + messages[data[1][k]] + '</li>';
+         }
+         str += '</ul>';
+         $(form + ' .feedback').show();
+         $(form + ' .feedback').html(str);
         }
-        str += '</ul>';
-        $(form + ' .feedback').show();
-        $(form + ' .feedback').html(str);
-      
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
           show_message('/events/registration-ok')
