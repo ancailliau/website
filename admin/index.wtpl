@@ -17,7 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="{css}" />
 		}
 
-		<script type="text/javascript" src="../js/2-acmscw.js"></script>
+		<script type="text/javascript" src="../js/3-acmscw.js"></script>
 		*{js_files as js}{
 		<script type="text/javascript" src="{js}"></script>
 		}

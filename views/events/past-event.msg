@@ -3,7 +3,5 @@
 		
 	<p>Cet événement est clôturé, il n'est plus possible de s'y inscrire.</p>
 	
-	<p>Excusez-nous du désagrément occasionné.</p>
-	
 	<a onclick="hide_popup()">Fermer</a>
 </div>

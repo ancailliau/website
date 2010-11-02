@@ -11,13 +11,17 @@
 
 <ul>
 	<li>
-		La première partie consiste en un <strong>cours
+		<p>La première partie consiste en un <strong>cours
 		théorique</strong> présentant les bases de LaTeX. Cette partie
 		présente en particulier ce qu'il est possible de réaliser avec
 		LaTeX, en particulier&nbsp: comment positionner et inclure des
 		images, comment écrire des formules mathématique, etc.<br />Vous
 		pouvez télécharger les transparents projetés <a
-		href="slides/formation-latex.pdf">ici</a>.
+		href="slides/formation-latex.pdf">ici</a>.</p>
+
+		<p class="important-info">Cette première partie aura lieu le 
+		<b>30 novembre 2009</b> de <b>14h à 16h</b> au <b>SUD11</b>.
+		+{utils.event_subscription_link['latex-2009', 'Inscrivez-vous maintenant!']}</p>
 	</li>
 	
 	<li>

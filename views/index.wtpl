@@ -14,7 +14,7 @@
       <h2>A ne pas rater prochainement!</h2>
       <ul>
         *{p_events as e}{
-          <li><a href="{e[:card_path]}">${e[:name]}</a></li>  
+          <li><a href="{e[:card_path]}">${e[:name]}</a> &mdash; +{utils.event_subscription_link[e[:id], 's\'inscrire']}</li>  
         }
       </ul>
     }
