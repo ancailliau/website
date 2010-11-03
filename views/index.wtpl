@@ -27,7 +27,7 @@
     }
 
     ?{!o_events.empty?}{
-    	<h2>Nos dernières activités</h2>
+    	<h2>Nos activités récentes</h2>
     	<ul>
         *{o_events as e}{
           <li><a href="{e[:card_path]}">${e[:name]}</a></li>  
