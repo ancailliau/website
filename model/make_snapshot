@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'time'
+require 'fileutils'
+
+here = File.dirname(__FILE__)
+snapshot_name = Time.now.strftime('%Y%m%d-%H%M')
+snapshot_dir  = File.expand_path(File.join(here, 'snapshots'))
+snapshot_file = File.join(snapshot_dir, "#{snapshot_name}.sql")
+`pg_dump -U acmscw --inserts --file=#{snapshot_file} acmscw`
