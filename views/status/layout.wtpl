@@ -15,6 +15,7 @@
 		*{scripts as js}{
 		<script type="text/javascript" src="{js}"></script>
 		}
+		<script type="text/javascript" src="/webservices.js"></script>
 	</head>
 	
 	<body class="status-page">
