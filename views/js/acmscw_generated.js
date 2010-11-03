@@ -252,6 +252,31 @@ function webserv_admin_rm_url_rewriting(request_data, form) {
   });
   return false;
 }  
+function webserv_admin_update_url_rewriting(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/admin/update_url_rewriting", data: request_data, dataType: "json",
+    error: function(data) {
+      window.location = '/500';
+    },
+    success: function(data) {
+      if (data[0] == 'validation-ko') {
+        str = '';
+        str += '<ul>';
+        for (var k in data[1]) {
+          str += '<li>' + messages[data[1][k]] + '</li>';
+        }
+        str += '</ul>';
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
+      } else if (data[0] == 'success') {
+        if (data[1] == 'ok') {
+          show_message('/admin/main/update-url-rewriting-ok')
+        }
+      }
+    }
+  });
+  return false;
+}  
 /* Actions contributed by AcmScW::Controllers::EventController, mapped to / */
 function webserv_event_create(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/event/create", data: request_data, dataType: "json",

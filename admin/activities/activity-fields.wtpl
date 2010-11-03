@@ -1,0 +1,15 @@
+<p class="span-4">
+	<label for="id">Identifiant ([a-z][a-z0-9-]+)</label>
+	?{update}{<input type="hidden" name="id" value="{activity[:id]}"/>}
+	<input type="text" name="id" value="{activity[:id]}" ?{update}{disabled="disabled"}/>  
+</p>
+
+<p class="span-4">
+	<label for="name">Titre</label>
+	<input type="text" name="name" value="{activity[:name]}"/>
+</p>
+
+<p class="span-4">
+	<label for="abstract">Description (un paragraphe en texte brut)</label>
+	<textarea name="abstract">+{activity[:abstract]}</textarea>
+</p>

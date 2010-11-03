@@ -9,5 +9,12 @@ wawaccess do
       :responsable_people => AcmScW.database[:activity_responsabilities].filter(:activity => actid)
     }
   end
+
+  match /update\/(.*)$/ do |url,actid|
+    wlang 'update.form', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first
+    }
+  end
+
   
 end

@@ -1,6 +1,11 @@
 <div>
   <h3>
     Description de l'activité
+    <span>
+      <a onclick="javascript:show_popup('/admin/activities/update/+{activity[:id]}', 460)">
+        <img src="images/famfamicons/application_form_edit.png"/>
+      </a>
+    </span>
   </h3>
   
   <table>

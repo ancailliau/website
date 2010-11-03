@@ -1,3 +1,11 @@
+<h4>Actions</h4>
+
+<ul>
+  <li><a onclick="javascript:show_popup('activities/create', 460)">Créer une activité</a></li>
+</ul>
+
+<h4>Activités connues</h4>
+
 <ul>
   *{model.activities as act}{
     <li>

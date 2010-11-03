@@ -1,0 +1,30 @@
+<div class="message logo-message">
+
+  <h3>Création d'une activité</h3>
+
+  <p>
+  	Veuillez remplir les champs suivants concernant l'activité.
+  </p>
+
+  ={controllers.activity.create as action}{
+  	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+  		<div class="feedback"></div>
+
+      <<+{activity-fields.wtpl with activity: Hash.new, update: false}
+
+  		<p class="form-button">
+  			<input type="submit" value="Créer cette activité »"/>
+  			<a class="button" onclick="hide_popup()">Fermer</a>
+  		</p>
+
+  		+{action.ajax_form_preparer}
+  	</form>
+  }
+
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+	  $("form input:submit, a.button").button();
+  });
+</script>
+
