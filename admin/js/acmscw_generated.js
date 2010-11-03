@@ -381,7 +381,7 @@ function webserv_event_update(request_data, form) {
       
       } else if (data[0] == 'success') {
         if (data[1] == 'ok') {
-          show_message('/events/update-ok')
+          show_message('/admin/events/update-ok')
         }
       }
     }
