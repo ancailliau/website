@@ -1,6 +1,8 @@
 require "acmscw/waw_ext/password_validator"
 module Waw
   module Validation
+    
+   validator :is_devel_mode,    validator{|*args| Waw.config.deploy_mode == 'devel'}
 
    validator :user_exists,      validator {|mail| Waw.resources.business.people.people_exists?(mail)}
    validator :user_not_exists,  user_exists.not
