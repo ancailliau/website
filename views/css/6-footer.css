@@ -7,8 +7,7 @@
 /*	margin-top: 40px; */
 }
 
-#footer p#social-links a {
-	width: 100px;
+#footer p#social-links a.link, #footer p#social-links img {
 	display: block;
 	float: left;
 	color: #005999;
@@ -17,10 +16,19 @@
 	font-size: 0.9em;
 }
 
+#footer p#social-links img {
+	vertical-align: bottom;
+}
+#footer p#social-links a.link {
+	width: 80px;
+	padding-top:2px;
+}
+
+#footer p#internal-links {
+  line-height: 1.4em;	
+  text-align: right;
+}
 #footer p#internal-links a {
-	float: right;
 	color: #999;
 	font-size: 0.9em;
-	text-align: right;
-	margin-left: 15px;
 }
