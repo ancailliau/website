@@ -16,6 +16,11 @@ module AcmScW
       def update_activity(tuple)
         AcmScW.database[:activities].filter(:id => tuple[:id]).update(tuple)
       end
+      
+      # Delete an activity
+      def delete_activity(tuple)
+        AcmScW.database[:activities].filter(:id => tuple[:id]).delete
+      end         
           
       # Checks if an activity exists?
       def has_activity?(id)

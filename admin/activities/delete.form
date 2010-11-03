@@ -1,0 +1,26 @@
+<div class="message logo-message">
+
+  <h3>Suppression d'une activité</h3>
+
+  ={controllers.activity.delete as action}{
+  	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+  		<div class="feedback"></div>
+
+      <input type="hidden" name="id" value="{activity[:id]}"/>
+
+      <p class="form-button">
+  			<input type="submit" value="Confirmer la suppression »"/>
+  			<a class="button" onclick="hide_popup()">Fermer</a>
+  		</p>
+
+  		+{action.ajax_form_preparer}
+  	</form>
+  }
+
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+	  $("form input:submit, a.button").button();
+  });
+</script>
+

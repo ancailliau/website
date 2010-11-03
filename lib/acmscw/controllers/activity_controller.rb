@@ -20,7 +20,7 @@ module AcmScW
       ######################################################################### Creation and update
     
       ActivityCommonSignature = Waw::Validation.signature {
-        validation :id, mandatory & /^[a-z][a-z0-9\-]+/,       :invalid_activity_id
+        validation :id, mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
         validation :name, mandatory, :invalid_activity_name
         validation :card_path, missing, :invalid_activity_card_path
         validation :abstract, mandatory, :invalid_activity_abstract
@@ -46,6 +46,19 @@ module AcmScW
       }
       def update(params)
         activity_services.update_activity(params.keep(*EVENT_COLUMNS))
+        :ok
+      end
+      
+      signature() {
+        validation :id, mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
+        validation :id, is_admin, :must_be_admin
+      }
+      routing {
+        upon 'validation-ko' do form_validation_feedback     end
+        upon 'success/ok'    do message('/admin/activities/delete-ok')  end
+      }
+      def delete(params)
+        activity_services.delete_activity(params.keep(*EVENT_COLUMNS))
         :ok
       end
       

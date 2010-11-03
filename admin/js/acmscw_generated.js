@@ -414,6 +414,31 @@ function webserv_activity_create(request_data, form) {
   });
   return false;
 }  
+function webserv_activity_delete(request_data, form) {
+  $.ajax({type: "POST", url: "/webserv/activity/delete", data: request_data, dataType: "json",
+    error: function(data) {
+      window.location = '/500';
+    },
+    success: function(data) {
+      if (data[0] == 'validation-ko') {
+        str = '';
+        str += '<ul>';
+        for (var k in data[1]) {
+          str += '<li>' + messages[data[1][k]] + '</li>';
+        }
+        str += '</ul>';
+        $(form + ' .feedback').show();
+        $(form + ' .feedback').html(str);
+      
+      } else if (data[0] == 'success') {
+        if (data[1] == 'ok') {
+          show_message('/admin/activities/delete-ok')
+        }
+      }
+    }
+  });
+  return false;
+}  
 function webserv_activity_update(request_data, form) {
   $.ajax({type: "POST", url: "/webserv/activity/update", data: request_data, dataType: "json",
     error: function(data) {

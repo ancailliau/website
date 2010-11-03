@@ -16,5 +16,10 @@ wawaccess do
     }
   end
 
-  
+  match /delete\/(.*)$/ do |url,actid|
+    wlang 'delete.form', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first
+    }
+  end
+
 end
