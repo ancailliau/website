@@ -1,16 +1,16 @@
 <div id="footer">
 	<p id="social-links">
-	  <a href="http://www.linkedin.com/groupInvitation?groupID=2257150&sharedKey=338B55712F39"><img src="/images/linkedin-32.png"/></a>
-		<a class="link" href="http://www.linkedin.com/groupInvitation?groupID=2257150&sharedKey=338B55712F39">Rejoignez-nous<br />sur LinkedIn</a>
+	  <a target="_blank" href="http://www.linkedin.com/groupInvitation?groupID=2257150&sharedKey=338B55712F39"><img src="/images/linkedin-32.png"/></a>
+		<a target="_blank" class="link" href="http://www.linkedin.com/groupInvitation?groupID=2257150&sharedKey=338B55712F39">Rejoignez-nous<br />sur LinkedIn</a>
 
-	  <a href="http://www.facebook.com/home.php#/group.php?gid=121511173853&ref=ts"><img src="/images/facebook-32.png"/></a>
-		<a class="link" href="http://www.facebook.com/home.php#/group.php?gid=121511173853&ref=ts">Ajoutez-nous<br />sur Facebook</a>
+	  <a target="_blank" href="http://www.facebook.com/home.php#/group.php?gid=121511173853&ref=ts"><img src="/images/facebook-32.png"/></a>
+		<a target="_blank" class="link" href="http://www.facebook.com/home.php#/group.php?gid=121511173853&ref=ts">Ajoutez-nous<br />sur Facebook</a>
 
-	  <a href="http://twitter.com/uclouvainacmsc"><img src="/images/twitter-32.png"/></a>
-		<a class="link" href="http://twitter.com/uclouvainacmsc">Suivez-nous<br />sur Twitter</a>
+	  <a target="_blank" href="http://twitter.com/uclouvainacmsc"><img src="/images/twitter-32.png"/></a>
+		<a target="_blank" class="link" href="http://twitter.com/uclouvainacmsc">Suivez-nous<br />sur Twitter</a>
 
-	  <a href="/rss"><img src="/images/rss-32.png"/></a>
-		<a class="link" href="/rss">Lisez notre<br />flux RSS</a>
+	  <a target="_blank" href="/rss"><img src="/images/rss-32.png"/></a>
+		<a target="_blank" class="link" href="/rss">Lisez notre<br />flux RSS</a>
 	</p>
 
 	<p id="internal-links">
