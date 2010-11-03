@@ -1,0 +1,42 @@
+--- 
+logical: 
+  olympiades_registrations: 
+    heading: 
+      id: {domain: Integer}
+      gender: {domain: String}
+      first_name: {domain: String}
+      last_name: {domain: String}
+      mail: {domain: String}
+      birthdate: {domain: String}
+      street: {domain: String}
+      postal_code: {domain: String}
+      city: {domain: String}
+      school_name: {domain: String}
+      school_city: {domain: String}
+      category: {domain: String}
+      study_level: {domain: String}
+      orientation: {domain: String, mandatory: false}
+      orientation_other: {domain: String, mandatory: false}
+      center: {domain: String}
+      knowshow: {domain: String, mandatory: false}
+      knowshow_other: {domain: String, mandatory: false}
+    constraints: 
+      pk: {type: :primary_key, attributes: [id]}
+  olympiades_results: 
+    heading: 
+      sheet_id: {domain: String}
+      prenom: {domain: String}
+      nom: {domain: String}
+      email: {domain: String}
+      etablissement: {domain: String}
+      type: {domain: String}
+      cat: {domain: String}
+      selectionne: {domain: SByC::TypeSystem::Ruby::Boolean}
+      points: {domain: Integer, mandatory: false}
+      sid: {domain: String}
+    constraints: 
+      pk: {type: :primary_key, attributes: [sheet_id]}
+      olympiades_results_sid_key: {type: :candidate_key, attributes: [sid]}
+--- 
+physical: 
+  indexes: {}

@@ -16,6 +16,12 @@ module AcmScW
         @layer.mail_agent.mailbox(TEST_USER_ALIAS).clear
       end
       
+      def teardown
+        @layer = AcmScW::Business::PeopleServices.new
+        @layer.drop_people(TEST_USER)
+        @layer.drop_people(TEST_USER_ALIAS)
+      end
+      
       # Asserts that a mail has been sent to someone
       def assert_mail_sent(who)
         assert_equal false, @layer.mail_agent.mailbox(who).empty?
@@ -67,8 +73,8 @@ module AcmScW
         assert_no_mail_sent(TEST_USER)
       end
       
-      def test_activation_key
-        assert_not_nil @layer.activation_key("blambeau@gmail.com")
+      def test_generate_activation_key
+        assert_not_nil @layer.generate_activation_key
       end
       
       def test_account_activation_sc1

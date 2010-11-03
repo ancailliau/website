@@ -1,0 +1,21 @@
+?{session.has_key?(:user)}{<<+{toolbar.wtpl}}
+<div id="header">
+  <div id="logo">
+  	<h1><a href="/"><span>UCLouvain ACM Student Chapter</span></a></h1>
+  	<p>Spread computer science, inform people&nbsp;</p>
+  </div>
+  <ul id="menu">
+    ?{!session.has_key?(:user)}{
+      <li class="subscribe"><a onclick="javascript:show_form('/accounts/subscribe', 460)"><span>Inscrivez-vous</span></a></li>
+    }
+  	<li ?{normalized_url =~ /activites/}{class="active"}>
+  	  <a href="/activites"><span>Activités</span></a>
+  	</li>
+  	<li ?{normalized_url == 'a-propos'}{class="active"}>
+  	  <a href="/a-propos"><span>À propos</span></a>
+  	</li>
+  	<li ?{normalized_url == 'contact'}{class="active"}>
+  	  <a href="/contact"><span>Contactez-nous</span></a>
+  	</li>
+  </ul>
+</div>

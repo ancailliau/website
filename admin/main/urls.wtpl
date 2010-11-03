@@ -1,0 +1,25 @@
+<h2>
+  Règles de réécriture
+  <a onclick="javascript:show_popup('/admin/main/add-url-rewriting', 460)">
+    <img src="images/famfamicons/application_form_add.png"/>
+  </a>
+</h2>
+
+<table>
+  *{model.url_rewriting.order(:short.asc) as r}{
+    <tr>
+      <td><a href="/${r[:short]}" target="_blank">${r[:short]}</a></td>
+      <td><a href="/${r[:long]}" target="_blank">${r[:long]}</a></td>
+      <td>
+        ={controllers.admin.rm_url_rewriting as action}{
+          <a onclick="{action.ajax_link(:short => r[:short])}">
+            <img src="images/famfamicons/application_form_delete.png"/>
+          </a>
+        }
+        <a onclick="javascript:show_popup('/admin/main/update-url-rewriting/${r[:short]}', 460)">
+          <img src="images/famfamicons/application_form_edit.png"/>
+        </a>
+      </td>
+    </tr>
+  }
+</table>

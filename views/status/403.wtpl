@@ -1,0 +1,25 @@
+<h2>Accès non autorisé !</h2>
+
+<p>Vous devez vous authentifier pour accéder aux informations / fonctionnalités
+   demandées...</p>
+
+={controllers.people.login as action}{
+	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="login" class="form-300">
+		<p class="feedback"></p>
+	
+		<p class="span-3">
+			<label for="mail">Mon e-mail&nbsp;:</label>
+			<input type="text" name="mail" value="" tabindex="100" />
+		</p>
+	
+		<p class="span-3">
+			<label for="mail">Mon mot de passe (<a onclick="javascript:show_form('/accounts/lost-password', 300)">perdu?</a>)&nbsp;:</label>
+			<input type="password" name="password" value="" tabindex="101"/>
+		</p>
+	
+		<p class="form-button">
+			<input type="submit" tabindex="102" value="Go »"/>
+		</p>
+		+{action.ajax_form_preparer(:form_id => 'login')}
+	</form>
+}

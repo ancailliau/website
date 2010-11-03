@@ -1,0 +1,77 @@
+#admin-main {
+  width: 1024px;
+  margin: auto;
+	margin-top: 20px;
+}
+#admin-left {
+	position: relative;
+	float: left;
+	width: 250px;
+}
+#admin-right {
+	margin-left: 20px;
+	position: relative;
+	float: left;
+	width: 750px;
+}
+
+#admin-menu {
+	margin-bottom: 20px;
+	height: 615px;
+}
+#admin-menu #logo {
+	height: 85px;
+}
+
+#admin-menu .ui-accordion-content {
+	padding-top: 5px;
+	padding-left: 10px;
+}
+#admin-menu .accordion-tab ul {
+	margin: 0px;
+	padding: 0px 5px 0px 25px;
+}
+#admin-menu .accordion-tab a {
+	color: blue;
+}
+#admin-menu .accordion-tab a:hover {
+	text-decoration: underline;
+}
+#admin-menu .accordion-tab ul li {
+	color: blue;
+	list-style: square;
+}
+#admin-menu .accordion-tab ul li img {
+	padding-left: 3px;
+}
+#admin-menu .accordion-tab h4 {
+	margin: 3px 0px;
+	padding: 0px;
+}
+
+#admin-tabs {
+	height: 700px;
+}
+#admin-tabs div {
+	height: 650px;
+	overflow: auto;
+}
+#admin-tabs div table {
+	width: 98%;
+	border-collapse: collapse;
+}
+#admin-tabs div table tr td {
+	border: 1px solid black;
+	padding: 3px;
+}
+#admin-tabs div table a {
+  color: blue;
+}
+#admin-tabs div table a:hover {
+	text-decoration: underline;
+}
+#admin-tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+#admin-tabs h3 img {
+	padding: 0px 5px;
+	vertical-align: middle;
+}

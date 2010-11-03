@@ -1,0 +1,22 @@
+--- 
+version: 0.0.1
+databases:
+  devel:
+    uri: postgres://acmscw@localhost/acmscw
+    announced_schema:
+      - announced/core.yaml
+      - announced/reports.yaml
+    effective_schema:
+      - devel/effective.yaml
+  old:
+    uri: postgres://acmscw@localhost/acmscw_old
+    announced_schema:
+      - old/core.yaml
+      - old/latex.yaml
+      - old/olympiades.yaml
+      - old/tutoriels.yaml
+      - old/oldies.yaml
+      - old/migration.yaml
+    effective_schema:
+      - old/effective.yaml
+current: old

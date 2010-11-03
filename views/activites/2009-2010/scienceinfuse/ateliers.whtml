@@ -1,0 +1,87 @@
+<h2>Weekend Festival Scienceinfuse &mdash; Ateliers</h2>
+
+<p>
+	Les ateliers ne sont pas accessibles aux adultes, ils sont réservés aux
+	élèves de primaire et de secondaire. Ces ateliers se déroulent en classes
+	de 15 élèves au maximum et durent 1h30. Les parents qui accompagnent leurs
+	enfants peuvent en profiter pour visiter nos différents <a
+	href="stands">stands</a>.
+</p>
+
+<p>
+	Ces ateliers sont réalisés sans ordinateur, mais illustrent le
+	fonctionnement et des concepts de l'informatique à l'aide de papiers et
+	crayons. La plupart de ces ateliers sont basés sur les activités proposées
+	sur <a href="http://www.csunplugged.org/">http://www.csunplugged.org/</a>.
+	Parmi les thèmes abordés, on retrouve le binaire, la représentation des
+	images, les algorithmes de tri, la sécurité informatique, la cryptographie
+	et l'intelligence artificielle.
+</p>
+
+<p>
+	Quatre ateliers différents sont organisés durant tout le weekend et
+	commencent à 14h et 15h45. Il y a à chaque fois deux classes qui se
+	déroulent en parallèle : l'une est pour les élèves de primaire et l'autre
+	pour ceux de secondaire. Afin de faciliter l'organisation de ces ateliers,
+	vous pouvez réserver votre place sur la page des <a
+	href="acces-inscription">inscriptions</a>.
+</p>
+
+<h3>Pour les primaires (de 6 à 11 ans)</h3>
+
+<dl>
+	<dt>14h00</dt>
+	<dd>
+		<p><strong>Comment l'ordinateur écrit-il les nombres, les lettres ?
+		Découverte du binaire et de la représentation d'images.</strong></p>
+		
+		<p>L'ordinateur ne maitrise que les 0 et les 1. Comment peut-il
+		manipuler d'autres nombres, des lettres et des images ?  À toi de jouer
+		au détective ! Au cours de cet atelier, tu apprendras à coder les
+		nombres en binaire et à représenter les lettres et les images sous
+		forme de chiffres.</p>
+	</dd>
+	
+	<dt>15h45</dt>
+	<dd>
+		<p><strong>Ce n'est pas dans l'ordre ... Trions comme un ordinateur,
+		avec méthode !</strong></p>
+		
+		<p>C'est pratique de ne pas fouiller dans tout le magasin après les
+		chaussures de la bonne pointure. C'est facile de trouver un mot dans le
+		dictionnaire. Ben oui, c'est trié dans le bon ordre ! Mais au fait,
+		comment trie-t-on ? Tu as déjà essayé d'expliquer à quelqu'un comment
+		tu t'y prends pour trier ?</p>
+	</dd>
+</dl>
+
+<h3>Pour les secondaires (à partir de 12 ans)</h3>
+
+<dl>
+	<dt>14h00</dt>
+	<dd>
+		<p><strong>Comment sécuriser les messages sur l'ordinateur
+		?</strong></p>
+		
+		<p>Comment communiquer par messages secrets ? On peut se mettre
+		d'accord en secret avec son interlocuteur sur un codage et être les
+		seuls à le connaitre ... Pas si facile car comment se mettre d'accord
+		en secret sur le codage ? C'est un peu &laquo; De la poule ou de
+		l'&oelig;uf, qui était-là le premier ? &raquo; ... Au cours de cet
+		atelier, après la découverte de méthodes &laquo; classiques &raquo;, tu
+		apprendras une autre méthode. Tu rends tout simplement public la
+		manière d'encoder les messages. Comment peux-tu alors garder un secret
+		si tout le monde sait comment il a été encodé ?</p>
+	</dd>
+	
+	<dt>15h45</dt>
+	<dd>
+		<p><strong>Eliza ... tu es un ordinateur ou un humain ?</strong></p>
+		
+		<p>Rien de plus bête qu'un ordinateur, il obéit aux ordres sans même
+		réfléchir. Pas simple de lui faire comprendre ce qu'on attend de lui.
+		Et pourtant, penses-tu qu'un ordinateur puisse paraitre aussi
+		intelligent qu'un humain ?  Peut-on faire la différence entre les
+		réponses d'un ordinateur et d'un humain ?</p>
+	</dd>
+</dl>

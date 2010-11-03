@@ -1,0 +1,22 @@
+={controllers.people.newsletter_subscribe as action}{
+	<form method="post" enctype="multipart/form-data" id="newsletter_form">
+		<label for="mail" class="feedback">Inscrivez-vous<br /> à la newsletter</label>
+		<input type="text" value="john.doe@mail.com" name="mail" id="mail" />
+		<input type="submit" value="Go »" />
+		+{action.ajax_form_preparer(:form_id => 'newsletter_form')}
+	</form>
+}
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		$('input[type=text]').focus(function(){ 
+			if($(this).val() == $(this).attr('defaultValue')){
+				$(this).val('');
+			}
+		});
+		$('input[type=text]').blur(function(){
+			if($(this).val() == ''){
+				$(this).val($(this).attr('defaultValue'));
+			} 
+		});
+	}); 
+</script>

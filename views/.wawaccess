@@ -1,0 +1,169 @@
+wawaccess do
+   
+  ######################################################################## MATCHERS 
+  
+  matcher :status_page do
+    req_path =~ /^(403|404|500|503)$/
+  end
+  
+  # Recognizes existing folders only
+  matcher :directory do
+    File.directory?(File.join(folder, req_path)) and (
+      File.exists?(File.join(folder, req_path, "index.whtml")) or
+      File.exists?(File.join(folder, req_path, "index.wtpl"))
+    )
+  end
+  
+  # Recognizes any downloadable file (extension match and file
+  # exists)
+  matcher :downloadable do
+    req_path =~ /\.(js|css|tar|gz|zip|jpg|gif|png|bmp|pdf)$/ and
+    File.exists?(File.join(folder, req_path))
+  end
+  
+  # Recognizes forms
+  matcher :jsform do
+    File.exists?(File.join(folder, "#{req_path}.form")) and 
+    request.params.include?('jsrequest')
+  end
+  
+  # Recognizes forms from non-js requester
+  matcher :nonjsform do
+    File.exists?(File.join(folder, "#{req_path}.form")) and 
+    not(request.params.include?('jsrequest'))
+  end
+  
+  # Recognizes messages from javascript requester
+  matcher :jsmessage do
+    File.exists?(File.join(folder, "#{req_path}.msg")) and 
+    request.params.include?('jsrequest')
+  end
+  
+  # Recognizes messages from non-js requester
+  matcher :nonjsmessage do
+    File.exists?(File.join(folder, "#{req_path}.msg")) and 
+    not(request.params.include?('jsrequest'))
+  end
+  
+  # Recognizes pages that can be composed
+  matcher :composable do
+    ['wtpl', 'whtml'].any?{|ext|
+      File.exists?(File.join(folder, "#{req_path}.#{ext}"))
+    }
+  end
+  
+  matcher :rss do 
+    File.exists?(File.join(folder, "#{req_path}.wrss"))
+  end
+  
+  matcher :short_url do
+    not(Waw.resources.model.url_rewriting.filter(:short => req_path).empty?)
+  end
+  
+  ######################################################################## SERVICE RULES 
+  match status_page do
+    apply "status/#{req_path}"
+  end
+  
+  # REWRITING: / => /index
+  # REWRITING: /folder_1/.../folder_n => /folder_1/.../folder_n/index
+  match directory do
+    apply "#{req_path}/index"
+  end
+  
+  # RULE: downloadable -> static service
+  match downloadable do
+    static
+  end
+  
+  # RULE: form -> static service
+  match jsform do
+    wlang "#{req_path}.form", wlang_context
+  end
+  
+  # RULE: non-js form -> special service
+  match nonjsform do
+    served  = File.join(folder, 'index')
+    context = wlang_context(served)
+    context = context.merge({
+      :base => Waw.config.web_base,
+      :body => WLang::file_instantiate("#{served}.wtpl", context),
+      :form => "/" + req_path
+    })
+    wlang "templates/layout.wtpl", context
+  end
+  
+  # RULE: message -> static service
+  match jsmessage do
+    [ 200, 
+      {'Content-Type' => 'text/html'},
+      File.readlines(File.join(folder, "#{req_path}.msg")) ]
+  end
+  
+  # RULE: non-js message -> special service
+  match nonjsmessage do
+    served  = File.join(folder, 'index')
+    context = wlang_context(served)
+    context = context.merge({
+      :base => config.web_base,
+      :body => WLang::file_instantiate("#{served}.wtpl", context),
+      :message => "/" + req_path
+    })
+    wlang "templates/layout.wtpl", context
+  end
+  
+  # RULE: composable -> composed
+  match composable do
+    # served file and folder
+    served_file = if File.exists?(File.join(folder, "#{req_path}.whtml"))
+      File.join(folder, "#{req_path}.whtml")
+    elsif File.exists?(File.join(folder, "#{req_path}.wtpl"))
+      File.join(folder, "#{req_path}.wtpl")
+    end
+    served_folder = File.basename(served_file)
+
+    # default wlang context first
+    context = wlang_context(served_file)
+    
+    # find side menu
+    if context[:side_file]
+      context[:side] = WLang::file_instantiate context[:side_file], wlang_context(served_file)
+    end
+    
+    # find the body
+    context[:body] = case File.extname(served_file)
+      when '.whtml'
+        File.read(served_file)
+      when '.wtpl'
+        WLang::file_instantiate served_file, wlang_context(served_file)
+      else 
+        ""
+    end
+    
+    # override title
+    if context[:body] =~ /^<h2>(.*?)<\/h2>/
+      context[:title] = CGI::unescapeHTML($1).gsub("&mdash;", "-").gsub("&nbsp;", " ")
+    end
+    
+    template = "templates/layout.wtpl"
+    wlang template, context
+  end
+  
+  match rss do
+    wlang "#{req_path}.wrss", default_wlang_context, 200, {'Content-Type' => "application/rss+xml"}
+  end
+  
+  ######################################################################## REWRITING RULES 
+  
+  match short_url do
+    apply Waw.resources.model.url_rewriting.filter(:short => req_path).first[:long]
+  end
+
+  ######################################################################## MATCH ALL RULES
+  
+  # RULE: true -> 404 error
+  match true do
+    apply "404", 404
+  end
+  
+end

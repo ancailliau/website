@@ -1,0 +1,26 @@
+/* ================================================================= footer */
+
+#footer {
+	clear: both;
+	padding-top: 20px;
+	font-size: 1.2em;
+/*	margin-top: 40px; */
+}
+
+#footer p#social-links a {
+	width: 100px;
+	display: block;
+	float: left;
+	color: #005999;
+	margin: 0 10px 0 0;
+	line-height: 1.4em;
+	font-size: 0.9em;
+}
+
+#footer p#internal-links a {
+	float: right;
+	color: #999;
+	font-size: 0.9em;
+	text-align: right;
+	margin-left: 15px;
+}

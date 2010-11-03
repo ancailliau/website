@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<title>${title}</title>
+
+		<meta http-equiv="Content-language" content="fr" />
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<base href="{base}"/>
+	
+		*{stylesheets as css}{
+		<link rel="stylesheet" type="text/css" href="{css}" />
+		}
+
+		*{scripts as js}{
+		<script type="text/javascript" src="{js}"></script>
+		}
+	</head>
+	
+	<body class="status-page">
+
+    <div class="status-center">
+
+      <div id="logo">
+      	<h1><a href="/"><span>UCLouvain ACM Student Chapter</span></a></h1>
+      	<p>Spread computer science, inform people&nbsp;</p>
+      </div>
+      
+      <div style="margin-bottom: 60px;"></div>
+
+      <div class="message status-+{status}">
+        <<+{+{status}.wtpl}
+      </div>
+
+    </div>
+
+
+    <div id="hide"></div>
+    <div id="popup"></div>
+	</body>
+	
+</html>

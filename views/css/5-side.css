@@ -1,0 +1,35 @@
+/* ================================================================= Side bar */
+
+#main .side {
+	margin-top: 2em;
+	padding: 10px 0 0 0;
+	float: right;
+	width: 220px;
+}
+
+#main .side img {
+	display: block;
+}
+
+#main .side p {
+	padding: 0;
+	font-size: 1.2em;
+	color: #999;
+}
+
+#main .side h3 {
+	margin: 1em 0;
+	padding: 0;
+	font-size: 1.2em;
+	color: #999;
+}
+
+#main .side .menu {
+	width: 200px;
+}
+
+#main .side .menu ul {
+	width: 200px;
+}
+
+

@@ -1,0 +1,60 @@
+/* ============================================================ HTML Elements */
+
+body, html {
+	margin: 0;
+	font-family: "Myriad Pro", "Arial", sans-serif;
+	font-size: 100%;
+}
+
+body {
+	/* With this font-size, we have that 100% = 10px which is a convenient
+	 * value to use */
+	font-size: 62.5%;
+	padding-bottom: 60px;
+	border-top: 2px solid black;
+}
+
+a {
+	color: #005c9c;
+	text-decoration: none;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+a img {
+	border: 0px none;
+}
+
+img.floating {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+#header,
+#main,
+#footer {
+	width: 700px;
+	margin: 0 auto;
+}
+
+#hide {
+	background-image: url(../images/hide.gif);
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+#popup {
+	font-size: 1.2em;
+	display: none;
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	background: #fff;
+	border: 5px solid #000;
+	padding: 20px;
+}

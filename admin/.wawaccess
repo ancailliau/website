@@ -1,0 +1,40 @@
+wawaccess do
+  
+  matcher :jsform do
+    File.exists?(File.join(folder, "#{req_path}.form")) and 
+    request.params.include?('jsrequest')
+  end
+  
+  # Recognizes messages from javascript requester
+  matcher :jsmessage do
+    File.exists?(File.join(folder, "#{req_path}.msg")) and 
+    request.params.include?('jsrequest')
+  end
+  
+  match root do
+    apply 'index'
+  end
+  
+  match /^index$/ do
+    wlang 'index.wtpl', {:dbschema => AcmScW::dba_database.schema}
+  end
+  
+  match jsform do
+    wlang "#{req_path}.form", wlang_context
+  end
+  
+  match jsmessage do
+    [ 200, 
+      {'Content-Type' => 'text/html'},
+      File.readlines(File.join(folder, "#{req_path}.msg")) ]
+  end
+  
+  match file do
+    static
+  end
+  
+  match true do
+    kernel.call(rack_env.dup.merge('PATH_INFO' => '/404'))
+  end
+  
+end

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>${config.application_title}</title>
+    <description>Spread computer science, inform people</description>
+    <lastBuildDate>!{Time.now.to_s}</lastBuildDate>
+    <link>${config.web_base}</link>
+    <category>Computer Science</category>
+    <ttl>${60 * 24 * 5}</ttl>
+    <image>
+      <url>${config.web_base}images/logo.png</url>
+      <title>${config.application_title}</title>
+      <link>${config.web_base}</link>
+    </image>
+    *{model.webr_planned_events as e}{
+      <item>
+          <title>${e[:name]}</title>
+          <description>${e[:abstract]}</description>
+          <pubDate>${Time.now.to_s}</pubDate>
+          <link>${e[:cardpath]}</link>
+      </item>
+    }
+  </channel>
+</rss>

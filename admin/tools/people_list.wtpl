@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>mail</td>
+      <td>last_name</td>
+      <td>first_name</td>
+      <td>occupation</td>
+    </tr>
+  </thead>
+  <tbody>
+    *{list as l}{
+    <tr>
+      <td>${l[:id]}</td>
+      <td>${l[:mail]}</td>
+      <td>${l[:last_name]}</td>
+      <td>${l[:first_name]}</td>
+      <td>${l[:occupation]}</td>
+    </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,11 @@
+<ul class="menu">
+	<li><a href="index">Programme</a></li>
+	<li><a href="orateurs">Orateurs</a></li>
+	<li><a href="sponsors">Sponsors</a></li>
+</ul>
+
+?{page_name == 'sponsors'}{}{
+<h3>Sponsorisé par</h3>
+<p><a href="http://www.steria.be/"><img src="images/steria-logo-small.jpg" alt="Steria Belgium" /></a></p>
+<p><a href="http://www.lsec.be/"><img src="images/lsec-logo-small.jpg" alt="LSEC" /></a></p>
+}

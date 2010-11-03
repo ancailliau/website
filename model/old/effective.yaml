@@ -1,0 +1,193 @@
+--- 
+logical: 
+  mig_activities: SELECT id, name, abstract, card_path FROM activities
+  mig_event_registrations: SELECT event, people FROM event_registrations;
+  mig_events: SELECT id, activity, name, abstract, card_path, start_time, end_time, cast(null as integer) as nb_places, location, formal_location, cast(null as varchar(255)) as form_url FROM events
+  mig_people: SELECT id, mail, md5(password) as password, cast(null as varchar(255)) as activation_key, adminlevel, first_name, last_name, occupation, newsletter, rss_feed, rss_status, current_timestamp as subscription_time FROM people
+  LATEX_SUBSCRIPTIONS: 
+    heading: 
+      first_name: {domain: String, mandatory: false}
+      formation: {domain: String, mandatory: false}
+      last_name: {domain: String, mandatory: false}
+      mail: {domain: String}
+      occupation: {domain: String, mandatory: false}
+    constraints: 
+      pk: {type: :primary_key, attributes: [mail]}
+  LATEX_SUBSCRIPTION_DATES: 
+    heading: 
+      date: {domain: String}
+      mail: {domain: String}
+    constraints: 
+      fk: {type: :foreign_key, attributes: [mail], references: LATEX_SUBSCRIPTIONS}
+      pk: {type: :primary_key, attributes: [mail, date]}
+  LATEX_SUBSCRIPTION_KNOWN_BY: 
+    heading: 
+      how: {domain: String}
+      mail: {domain: String}
+    constraints: 
+      fk: {type: :foreign_key, attributes: [mail], references: LATEX_SUBSCRIPTIONS}
+      pk: {type: :primary_key, attributes: [mail, how]}
+  NEWS_SUBSCRIPTIONS: 
+    heading: 
+      mail: {domain: String}
+    constraints: 
+      pk: {type: :primary_key, attributes: [mail]}
+  activities: 
+    heading: 
+      abstract: {domain: String}
+      card_path: {domain: String, mandatory: false}
+      id: {domain: String}
+      name: {domain: String}
+    constraints: 
+      pk: {type: :primary_key, attributes: [id]}
+  activity_responsabilities: 
+    heading: 
+      activity: {domain: String}
+      kind: {domain: String}
+      order: {domain: Integer}
+      people: {domain: Integer}
+    constraints: 
+      actres_which_people: {type: :foreign_key, attributes: [people], references: people}
+      astres_which_activity: {type: :foreign_key, attributes: [activity], references: activities}
+      pk: {type: :primary_key, attributes: [activity, people]}
+  event_registrations: 
+    heading: 
+      event: {domain: String}
+      people: {domain: Integer}
+    constraints: 
+      evtres_which_event: {type: :foreign_key, attributes: [event], references: events}
+      evtres_which_people: {type: :foreign_key, attributes: [people], references: people}
+      pk: {type: :primary_key, attributes: [people, event]}
+  event_responsabilities: 
+    heading: 
+      event: {domain: String}
+      kind: {domain: String}
+      order: {domain: Integer, default: 1}
+      people: {domain: Integer}
+    constraints: 
+      evtres_which_event: {type: :foreign_key, attributes: [event], references: events}
+      evtres_which_people: {type: :foreign_key, attributes: [people], references: people}
+      pk: {type: :primary_key, attributes: [event, people]}
+  events: 
+    heading: 
+      abstract: {domain: String}
+      activity: {domain: String}
+      card_path: {domain: String, mandatory: false}
+      end_time: {domain: Time}
+      formal_location: {domain: String, mandatory: false}
+      id: {domain: String}
+      location: {domain: String, mandatory: false}
+      name: {domain: String}
+      start_time: {domain: Time}
+      status: {domain: String}
+    constraints: 
+      event_which_activity: {type: :foreign_key, attributes: [activity], references: activities}
+      pk: {type: :primary_key, attributes: [id]}
+  olympiades_registrations: 
+    heading: 
+      birthdate: {domain: String}
+      category: {domain: String}
+      center: {domain: String}
+      city: {domain: String}
+      first_name: {domain: String}
+      gender: {domain: String}
+      id: {domain: Integer}
+      knowshow: {domain: String, mandatory: false}
+      knowshow_other: {domain: String, mandatory: false}
+      last_name: {domain: String}
+      mail: {domain: String}
+      orientation: {domain: String, mandatory: false}
+      orientation_other: {domain: String, mandatory: false}
+      postal_code: {domain: String}
+      school_city: {domain: String}
+      school_name: {domain: String}
+      street: {domain: String}
+      study_level: {domain: String}
+    constraints: 
+      pk: {type: :primary_key, attributes: [id]}
+  olympiades_results: 
+    heading: 
+      cat: {domain: String}
+      email: {domain: String}
+      etablissement: {domain: String}
+      nom: {domain: String}
+      points: {domain: Integer, mandatory: false}
+      prenom: {domain: String}
+      selectionne: {domain: SByC::TypeSystem::Ruby::Boolean}
+      sheet_id: {domain: String}
+      sid: {domain: String}
+      type: {domain: String}
+    constraints: 
+      olympiades_results_sid_key: {type: :candidate_key, attributes: [sid]}
+      pk: {type: :primary_key, attributes: [sheet_id]}
+  people: 
+    heading: 
+      activation_key: {domain: String, mandatory: false}
+      adminlevel: {domain: Integer, default: -1}
+      first_name: {domain: String, mandatory: false}
+      id: {domain: Integer}
+      last_name: {domain: String, mandatory: false}
+      mail: {domain: String}
+      newsletter: {domain: SByC::TypeSystem::Ruby::Boolean, mandatory: false}
+      occupation: {domain: String, mandatory: false}
+      password: {domain: String, mandatory: false}
+      rss_feed: {domain: String, mandatory: false}
+      rss_status: {domain: String, mandatory: false}
+    constraints: 
+      ak_people_mail: {type: :candidate_key, attributes: [mail]}
+      pk: {type: :primary_key, attributes: [id]}
+      uniq_people_activation: {type: :candidate_key, attributes: [activation_key]}
+  planned_tutorial: 
+    heading: 
+      event: {domain: String}
+      tutorial: {domain: Integer, mandatory: false}
+    constraints: 
+      pk: {type: :primary_key, attributes: [event]}
+      planned_tutorial_isa_event: {type: :foreign_key, attributes: [event], references: events}
+      planned_tutorial_which_tutorial: {type: :foreign_key, attributes: [tutorial], references: tutorials}
+  tutorial_pool: 
+    heading: 
+      comment: {domain: String}
+      id: {domain: String}
+    constraints: 
+      pk: {type: :primary_key, attributes: [id]}
+  tutorial_pool_candidates: 
+    heading: 
+      pool: {domain: String}
+      tutorial: {domain: Integer}
+    constraints: 
+      pk: {type: :primary_key, attributes: [pool, tutorial]}
+      tutorial_pool_candidate_for_pool: {type: :foreign_key, attributes: [pool], references: tutorial_pool}
+      tutorial_pool_candidate_for_tutorial: {type: :foreign_key, attributes: [tutorial], references: tutorials}
+  tutorial_pool_interest: 
+    heading: 
+      order: {domain: Integer}
+      people: {domain: Integer}
+      pool: {domain: String}
+      tutorial: {domain: Integer}
+    constraints: 
+      pk: {type: :primary_key, attributes: [pool, tutorial, people]}
+      tutorial_pool_interest_for_candidate: {type: :foreign_key, attributes: [pool, tutorial], references: tutorial_pool_candidates}
+      tutorial_pool_interest_from_people: {type: :foreign_key, attributes: [people], references: people}
+  tutorial_speakers: 
+    heading: 
+      main_contact: {domain: SByC::TypeSystem::Ruby::Boolean}
+      people: {domain: Integer}
+      tutorial: {domain: Integer}
+    constraints: 
+      pk: {type: :primary_key, attributes: [tutorial, people]}
+      tutorial_speaker_for_tutorial: {type: :foreign_key, attributes: [tutorial], references: tutorials}
+      tutorial_speaker_isa_people: {type: :foreign_key, attributes: [people], references: people}
+  tutorials: 
+    heading: 
+      abstract: {domain: String}
+      closed: {domain: SByC::TypeSystem::Ruby::Boolean, default: false}
+      id: {domain: Integer}
+      slides_path: {domain: String, mandatory: false}
+      title: {domain: String}
+    constraints: 
+      pk: {type: :primary_key, attributes: [id]}
+--- 
+physical: 
+  indexes: {}
+

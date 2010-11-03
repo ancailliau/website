@@ -1,0 +1,13 @@
+wawaccess do 
+
+  match /\/urls$/ do
+    wlang 'urls.wtpl', {}
+  end
+  
+  match /update-url-rewriting\/(.*)$/ do |url, short|
+    wlang "update-url-rewriting.form", {
+      :rule => AcmScW::database[:url_rewriting].filter(:short => short).first
+    }
+  end
+  
+end

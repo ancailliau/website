@@ -7,6 +7,16 @@ module AcmScW
         AcmScW.database[:events]
       end
       
+      # Creates an event
+      def create_event(tuple)
+        AcmScW.database[:events].insert(tuple)
+      end
+      
+      # Creates an event
+      def update_event(tuple)
+        AcmScW.database[:events].filter(:id => tuple[:id]).update(tuple)
+      end
+      
       # Returns people_services
       def people_services
         @people_services ||= Waw.resources.business.people
@@ -18,6 +28,12 @@ module AcmScW
         not(events.filter(:id => id).empty?)
       end
       alias :event_exists? :has_event?
+      
+      # Checks if an event has available places 
+      def may_still_register?(id)
+        tuple = AcmScW::database[:webr_planned_events].filter(:id => id).first
+        tuple and (tuple[:remaining_places].nil? or (tuple[:remaining_places] > 0))
+      end
       
       def is_registered?(people, event)
         args = {:event => event, :people => ps.people_id(people)}

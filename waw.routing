@@ -3,13 +3,18 @@ Waw.rack do
   use ::Rack::Session::Pool, :domain       => Waw.config.web_domain,
                              :expire_after => Waw.config.rack_session_expire
   map '/' do
-    run ::Waw::StaticController.new(:root => 'public')
+    run ::Waw::StaticController.new(:public => 'views')
+  end
+  map '/admin' do
+    use ::AcmScW::Controllers::EnsureAuth, :redirect_url => '/403'
+    run ::Waw::StaticController.new(:public => 'admin')
+  end
+  map '/dba' do
+    use ::AcmScW::Controllers::EnsureAuth, :redirect_url => '/403'
+    run ::DbAgile::Restful::Middleware::OneDatabase.new(::AcmScW::dba_database)
   end
   map '/webserv' do
     use ::Waw::JSONController
-    map '/main' do
-      run ::AcmScW::Controllers::MainController.instance
-    end
     map '/event' do
       run ::AcmScW::Controllers::EventController.instance
     end
@@ -18,6 +23,9 @@ Waw.rack do
     end
     map '/olympiades' do
       run ::AcmScW::Controllers::OlympiadesController.instance
+    end
+    map '/admin' do
+      run ::AcmScW::Controllers::AdminController.instance
     end
   end
 end

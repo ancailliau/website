@@ -1,0 +1,1 @@
+AcmScW.check_configuration

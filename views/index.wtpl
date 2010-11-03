@@ -1,0 +1,42 @@
+<div id="index_page">
+
+  <img src="images/384183109_6d916a11f2_b.jpg" />
+
+  <div class="grey-box">
+    <<+{newsletter.form}
+  </div>
+
+  <div>
+    ={model.webr_planned_events.order(:start_time.asc).limit(4) as p_events}
+    ={model.webr_past_events.order(:start_time.desc).limit(4 - p_events.count) as o_events}
+    
+    ?{!p_events.empty?}{
+      <h2>A ne pas rater prochainement!</h2>
+      <ul>
+        *{p_events as e}{
+          <li>
+            <a href="{e[:card_path]}">${e[:name]}</a> &mdash; 
+            ?{business.event.may_still_register?(e[:id])}{
+              +{utils.event_subscription_link[e[:id], 's\'inscrire']}  
+            }{
+              complet
+            }
+          </li>  
+        }
+      </ul>
+    }
+
+    ?{!o_events.empty?}{
+    	<h2>Nos dernières activités</h2>
+    	<ul>
+        *{o_events as e}{
+          <li><a href="{e[:card_path]}">${e[:name]}</a></li>  
+        }
+    	</ul>
+	  }
+
+  </div>
+  
+  <div class="clear"></div>
+
+</div>

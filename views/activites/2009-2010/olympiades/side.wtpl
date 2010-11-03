@@ -1,0 +1,59 @@
+<ul class="menu">
+	<li><a href="index">Présentation</a>
+		<ul>
+			<li><a href="calendrier">Calendrier</a></li>
+			<li><a href="questions">Exemples de questions</a></li>
+			<li><a href="reglement">Règlement du concours</a></li>
+			<li><a href="equipe">Comité OI2010</a></li>
+		</ul>
+	</li>
+	<li><a href="demi-finales">Demi-Finales</a>
+		<ul>
+			<!--<li><a href="centres-regionaux">Centres régionaux</a></li>-->
+			<li><a href="demi-finales-regles">Règlement de la demi-finale</a></li>
+			<li><a href="resultats-demi-finales">Résultats</a></li>
+		</ul>
+	</li>
+	<li><a href="finales">Finales</a>
+		<ul>
+			<li><a href="formation">Formation</a></li>
+			<li><a href="finales-regles">Règlement de la finale</a></li>
+			<li><a href="finales-conference">Conférences</a></li>
+			<li><a href="resultats-finales">Résultats</a></li>
+		</ul>
+	</li>
+	<li><a href="olympiades-internationales">Olympiades Internationales</a></li>
+	<li><a href="presse">Presse</a></li>
+	<li><a href="partenaires">Partenaires</a></li>
+</ul>
+
+<h3>Co-organisé avec</h3>
+
+<img src="images/fundp.png" alt="Facultés Universitaires Notre-Dame de la Paix Namur" />
+
+
+<h3>Sponsorisé par</h3>
+
+<p id="sponsors">
+  <a href="http://www.ores.net"><img src="images/ores-small-logo.png" alt="ORES" /></a>
+</p>
+
+<h3>Avec le soutien de la Communauté française</h3>
+
+<p id="sponsors">
+  <a href="http://www.cfwb.be"><img src="images/cfwb-logo-small.jpg" alt="Communauté française" /></a>
+</p>
+
+<h3>Prix offerts par</h3>
+
+<p id="sponsors">
+  <a href="http://www.technofuturtic.be/"><img src="images/technofutur-tic-logo-small.png" alt="TechnoFutur TIC" /></a>&nbsp;
+  <a href="http://www8.hp.com/be/fr/home.html"><img src="images/hp-logo-small.png" alt="HP Belgium" /></a>&nbsp;
+  <a href="http://www.dell.be/"><img src="images/dell-logo-small.jpg" alt="Dell Belgium" /></a>
+</p>
+
+<p id="sponsors">
+  <a href="http://www.editions-eyrolles.com/Theme/020000/informatique"><img src="images/eyrolles-logo-small.jpg" alt="Eyrolles" /></a>&nbsp;
+  <a href="http://www.irislink.com/"><img src="images/iris-small-logo.png" alt="I.R.I.S." /></a>&nbsp;&nbsp;
+  <a href="http://www.macline.be/"><img src="images/macline-small-logo.png" alt="MacLine" /></a>
+</p>

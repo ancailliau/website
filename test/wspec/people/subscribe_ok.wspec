@@ -1,10 +1,10 @@
 requirement "The web site should allow users to subscribe" do
 
   people_mail = "test-user@acmscw.be"
-  people = {:mail       => people_mail,
-            :password   => "mypassword", 
+  people = {:mail             => people_mail,
+            :password         => "mypassword", 
             :password_confirm => "mypassword",
-            :newsletter => "true"}
+            :newsletter       => "true"}
   business.people.drop_people(people_mail)
   mailbox  = business.mail_agent.mailbox(people_mail)
   mailbox.clear

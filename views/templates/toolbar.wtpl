@@ -1,0 +1,7 @@
+<div class="user-bar">
+	<div>
+		<p><a href="javascript:show_form('/accounts/update', 460)">Editer mon profil</a></p>
+		?{session.adminlevel > 0}{<p><a href="/admin">Admin</a></p>}
+		<p><a onclick="javascript:webserv_people_logout({}, '#webserv_people_logout')">Logout</a></p>
+	</div>
+</div>

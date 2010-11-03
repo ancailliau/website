@@ -1,0 +1,17 @@
+<div class="message logo-message">
+
+  <h3>${event[:name]} - Inscription</h3>	
+
+  <p>Le <b>${utils.date_of.call(event[:start_time])}</b>
+      à <b>${utils.time_of.call(event[:start_time])}</b>,
+      <b>${event[:location]}</b></p>
+
+  <p>${event[:abstract]}</p>
+  
+  ?{session.has_key?(:user)}{
+    <<+{register-logged.wbrick with event: event}
+  }{
+    <<+{register-notlogged.wbrick with event: event}
+  }
+
+</div>

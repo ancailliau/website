@@ -1,0 +1,39 @@
+<h2>Découvrez LaTeX &mdash; la composition de document par excellence</h2>
+
+<p>
+	LaTeX est un langage de balisage utilisé pour composer des documents à
+	l'allure professionelle. Ce système de composition de document est
+	principalement utilisé par les mathématiciens, les scientifiques, les
+	ingénieurs et ceux issus du monde académique ou industriel. Cette
+	formation est divisée en deux parties, vous permettant ainsi de
+	découvrir LaTeX progressivement.
+</p>
+
+<ul>
+	<li>
+		<p>La première partie consiste en un <strong>cours
+		théorique</strong> présentant les bases de LaTeX. Cette partie
+		présente en particulier ce qu'il est possible de réaliser avec
+		LaTeX, en particulier&nbsp: comment positionner et inclure des
+		images, comment écrire des formules mathématique, etc.</p>
+		
+		<p class="important-info">Cette première partie aura lieu le 
+		<b>lundi 15 novembre 2010</b> de <b>16h15 à 18h</b> au <b>SUD18</b>.
+		+{utils.event_subscription_link['latex-2010', 'Inscrivez-vous maintenant!']}</p>
+	</li>
+	
+	<li>
+		La seconde partie consiste en <strong>sessions pratiques</strong>
+		encadrées sur ordinateur.  Il vous sera alors demandé de réaliser
+		des documents à l'aide de LaTeX. Plusieurs sessions de différents
+		niveaux sont organisées&nbsp;: du plus débutant au plus avancé.
+	</li>
+</ul>
+
+<p>Les fichiers suivants sont disponibles</p>
+<ul>
+	<li><a href="slides/Introductory.zip">Introductory.zip</a></li>
+	<li><a href="slides/Advanced.zip">Advanced.zip</a></li>
+	<li><a href="slides/TikZ-PGF.zip">TikZ-PGF.zip</a></li>
+	<li><a href="slides/Beamer.zip">Beamer.zip</a></li>
+</ul>

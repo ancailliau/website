@@ -6,18 +6,21 @@ forbidden                   "Vous ne pouvez pas accéder à cette information ou
 
 # Validation messages
 invalid_email               "Adresse e-mail invalide"
+invalid_first_name          "Le prénom est obligatoire"
+invalid_last_name           "Le nom est obligatoire"
 missing_activation_key      "Clé d'activation manquante"
-passwords_dont_match        "Les mots de passe ne correspondent pas"
+bad_passwords               "Mot de passe invalide ou non confirmé correctement"
 bad_newsletter              "L'inscription a la newsletter est invalide"
 bad_password                "Votre mot de passe doit comporter entre 8 et 15 caractères"
 bad_rss_feed                "Votre flux RSS ne semble pas être une adresse web valide"
-bad_user_or_password        "Utilisateur ou mot de passe invalide (<a href='/people/lost_password'>perdu?</a>)"
+bad_user_or_password        "Utilisateur ou mot de passe invalide"
 mail_already_in_use         "Cette adresse e-mail est déjà utilisée"
 user_must_be_logged         "Vous devez être connecté pour accéder/modifier ces informations"
 unknown_user                "Cette adresse e-mail est inconnue dans notre base de données"
 unknown_event               "Cet événement n'est pas connu"
 missing_subject             "Le sujet de votre demande ne peut pas être vide"
 missing_message             "Le contenu de votre message ne peut pas être vide"
+must_be_admin               "Vous devez être administrateur pour utiliser cette fonction"
 
 # Ok feedback messages
 newsletter_subscribe_ok     "Vous êtes maintenant inscrit"
@@ -45,3 +48,21 @@ olympiades_registration_ok    "<p>Nous avons bien reçu toutes vos données, vot
                               "<p>Si vous n'avez pas reçu cette confirmation endéans les 5 jours, veuillez nous contacter sur "\
                               "<a href='mailto:info@uclouvain.acm-sc.be'>info@uclouvain.acm-sc.be</a></p>"
 send_results_announce_mail_ok "Les mails annoncant les résultats des olympiades ont bien été envoyés."
+
+
+# About events
+event_update_ok               "L'événement a été mis à jour"
+event_create_ok               "L'événement a été correctement créé"
+invalid_event_id              "Identifiant d'événement invalide (=~ /[a-z][a-z0-9-]+/) ou manquant"
+invalid_event_activity        "Activité inconnue"
+invalid_event_name            "Le nom de l'événement est obligatoire"
+invalid_event_places          "Le nombre de place doit être un entier strictement positif"
+invalid_event_start_time      "La date/heure de début d'événement est invalide ou manquante"
+invalid_event_end_time        "La date/heure de fin d'événement est invalide ou manquante"
+invalid_event_location        "Le lieu est obligatoire"
+invalid_event_abstract        "La description de l'événement est obligatoire"
+invalid_event_card_path       "Le lien vers la page explicative est obligatoire"
+
+# About URL rewriting
+invalid_short_url             "L'URL courte est obligatoire"
+invalid_long_url              "L'URL longue est obligatoire"
