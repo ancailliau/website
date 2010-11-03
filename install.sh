@@ -25,7 +25,7 @@ echo 'Installing required ruby gems'
 gem install --no-rdoc --no-ri vendor/fastercsv-1.5.1.gem
 gem install --no-rdoc --no-ri vendor/json-1.1.9.gem
 gem install --no-rdoc --no-ri vendor/pg-0.8.0.gem
-gem install --no-rdoc --no-ri vendor/rack-1.1.0.gem
+gem install --no-rdoc --no-ri vendor/rack-1.2.1.gem
 gem install --no-rdoc --no-ri vendor/rdoc-2.4.1.gem
 gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
 gem install --no-rdoc --no-ri vendor/wlang-0.9.0.gem
