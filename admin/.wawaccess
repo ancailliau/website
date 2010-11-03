@@ -10,6 +10,10 @@ wawaccess do
     File.exists?(File.join(folder, "#{req_path}.msg")) and 
     request.params.include?('jsrequest')
   end
+
+  matcher :composable do
+    File.exists?(File.join(folder, "#{req_path}.wtpl")) 
+  end 
   
   match root do
     apply 'index'
@@ -27,6 +31,10 @@ wawaccess do
     [ 200, 
       {'Content-Type' => 'text/html'},
       File.readlines(File.join(folder, "#{req_path}.msg")) ]
+  end
+
+  match composable do
+    wlang "#{req_path}.wtpl", wlang_context
   end
   
   match file do
