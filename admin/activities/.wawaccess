@@ -1,0 +1,13 @@
+wawaccess do
+  
+  inherits true
+  
+
+  match /details\/(.*)$/ do |url,actid|
+    wlang 'details.wtpl', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first,
+      :responsable_people => AcmScW.database[:activity_responsabilities].filter(:activity => actid)
+    }
+  end
+  
+end

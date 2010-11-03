@@ -1,0 +1,26 @@
+<div>
+  <h3>
+    Description de l'activité
+  </h3>
+  
+  <table>
+    <tr>
+      <td>Titre</td>
+      <td>+{activity[:name]}</td>
+    <tr>
+    <tr>
+      <td>Résumé</td>
+      <td>${activity[:abstract]}</td>
+    <tr>
+    <tr>
+      <td>Plus d'info sur</td>
+      <td><a target="_blank" href="{activity[:card_path]}">${activity[:card_path]}</a></td>
+    <tr>
+  </table>
+    
+  <h3>
+    Personnes responsables (${responsable_people.count})
+  </h3>
+  <<+{../tools/people_list.wtpl with list:responsable_people}
+
+</div>

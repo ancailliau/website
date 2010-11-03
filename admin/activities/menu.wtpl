@@ -1,0 +1,7 @@
+<ul>
+  *{model.activities as act}{
+    <li>
+      <a onclick="javascript:open_tab('activities/details/+{act[:id]}', '{act[:name]}')">${act[:id]}</a>
+    </li>
+  }
+</ul>
