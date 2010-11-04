@@ -11,7 +11,7 @@ version = File.read(lib)[/^\s*VERSION\s*=\s*(['"])(\d\.\d\.\d)\1/, 2]
 task :default => [:test]
 
 desc "Lauches all unit tests"
-Rake::TestTask.new(:unit_test) do |test|
+Rake::TestTask.new(:unit) do |test|
   test.libs       = [ "lib", "test/unit"]
   test.test_files = ['test/unit/test_all.rb']
   test.verbose    =  true
@@ -28,4 +28,4 @@ task :wspec do
   require('test/wspec/test_all.rb')
 end
 
-task :test => [:unit_test, :spec_test, :wspec]
+task :test => [:unit, :spec, :wspec]

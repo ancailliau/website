@@ -12,7 +12,7 @@
   
   *{model.activities as a}{
 
-    <h3><a href="{a[:id]}">${a[:name]}</a></h3>
+    <h3><a href="{a[:card_path]}">${a[:name]}</a></h3>
   
     <p>${a[:abstract]}</p>
     

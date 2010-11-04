@@ -46,6 +46,7 @@
           <h3><a href="#">Gestion des inscrits</a></h3>  
           <div class="accordion-tab">
             <ul>
+              +{admin.tab_and_csv.call('webr_responsibles', 'Responsables', 'Les responsables')}
               +{admin.tab_and_csv.call('webr_newsletter', 'Newsletter', 'Inscrits à la newletter')}
               +{admin.tab_and_csv.call('webr_allregistered', 'Inscrits', 'Tous les inscrits')}
             </ul>

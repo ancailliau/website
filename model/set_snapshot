@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+unless ARGV.size == 1
+  puts "Usage: set_snapshot FILE"
+  exit(-1)
+end
+
+`dropdb -U acmscw acmscw`
+`createdb -U acmscw --owner=acmscw --encoding=utf8 acmscw`
+`psql -U acmscw acmscw < #{ARGV[0]}`

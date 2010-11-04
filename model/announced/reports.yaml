@@ -9,6 +9,14 @@ logical:
     SELECT id, mail, last_name, first_name, occupation
       FROM people    
      ORDER BY id ASC
+  webr_responsibles:
+    SELECT p.id, p.mail, p.last_name, p.first_name, p.occupation
+      FROM people as p 
+     WHERE adminlevel > 0
+        OR EXISTS (SELECT * 
+                     FROM activity_responsabilities
+                    WHERE people = p.id)  
+     ORDER BY id ASC
   webr_past_events:
     SELECT * FROM events 
      WHERE current_timestamp > end_time 
