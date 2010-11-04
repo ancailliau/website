@@ -30,6 +30,12 @@ logical:
       JOIN event_registrations as r
         ON p.id = r.people
      ORDER BY id ASC
+  webr_activity_responsibles:
+    SELECT r.activity, p.id, p.mail, p.last_name, p.first_name, p.occupation
+      FROM people as p 
+      JOIN activity_responsabilities as r
+        ON p.id = r.people
+     ORDER BY id ASC
 ---
 physical: {}
   

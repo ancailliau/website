@@ -34,6 +34,27 @@
       </a>
     </span>
   </h3>
-  <<+{../tools/people_list.wtpl with list:responsable_people}
+  <table>
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>mail</td>
+        <td>last_name</td>
+        <td>first_name</td>
+      </tr>
+    </thead>
+    <tbody>
+      *{responsable_people as l}{
+      <tr>
+        <td>${l[:id]}</td>
+        <td>${l[:mail]}</td>
+        <td>${l[:last_name]}</td>
+        <td>${l[:first_name]}</td>
+        <td><a href="javascript:show_popup('/admin/activities/remove-responsibility/+{activity[:id]}/+{l[:id]}', 460)"><img src="images/famfamicons/delete.png" /></a></td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <p><a href="javascript:show_popup('/admin/activities/give-responsibility/+{activity[:id]}', 460)"><img src="images/famfamicons/add.png" /> Ajouter un responsable</a></p>
 
 </div>

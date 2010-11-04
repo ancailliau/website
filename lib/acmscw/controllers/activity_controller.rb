@@ -17,6 +17,12 @@ module AcmScW
         @activity_services  ||= Waw.resources.business.activity
       end
     
+      # Returns people_services
+      def people_services
+        @people_services ||= Waw.resources.business.people
+      end
+    
+    
       ######################################################################### Creation and update
     
       ActivityCommonSignature = Waw::Validation.signature {
@@ -26,7 +32,7 @@ module AcmScW
         validation :abstract, mandatory, :invalid_activity_abstract
       }
       signature(ActivityCommonSignature) {
-        validation :id, is_admin, :must_be_admin
+        validation [], is_admin, :must_be_admin
       }
       routing {
         upon 'validation-ko' do form_validation_feedback     end
@@ -59,6 +65,51 @@ module AcmScW
       }
       def delete(params)
         activity_services.delete_activity(params.keep(*EVENT_COLUMNS))
+        :ok
+      end
+
+      signature() {
+        validation :id, mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
+        validation :id, is_admin, :must_be_admin
+      }
+      routing {
+        upon 'validation-ko' do form_validation_feedback     end
+        upon 'success/ok'    do message('/admin/activities/add-responsability-ok')  end
+      }
+      def add_responsability(params)
+        :ok
+      end
+
+
+      ######################################################################### Responsabilities
+ 
+      ResponsibleCommonSignature = Waw::Validation.signature {
+        validation :id, mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
+        validation [], is_admin, :must_be_admin
+        validation :mail, mandatory & mail & user_exists, :unknown_user
+      }
+    
+      signature(ResponsibleCommonSignature) {
+      }
+      routing {
+        upon 'success/ok'    do message('/admin/activities/give-responsibility-ok') end
+        upon 'validation-ko' do form_validation_feedback           end
+      }
+      def give_responsibility(params)
+        mail = params[:mail]
+        activity_services.give_responsibility(mail, params[:id])
+        :ok
+      end
+
+      signature(ResponsibleCommonSignature) {
+      }
+      routing {
+        upon 'success/ok'    do message('/admin/activities/remove-responsibility-ok') end
+        upon 'validation-ko' do form_validation_feedback           end
+      }
+      def remove_responsibility(params)
+        mail = params[:mail]
+        activity_services.remove_responsibility(mail, params[:id])
         :ok
       end
       

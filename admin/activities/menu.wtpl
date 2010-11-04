@@ -7,7 +7,7 @@
 <h4>Activités connues</h4>
 
 <ul>
-  *{model.activities as act}{
+  *{model.activities.order(:id) as act}{
     <li>
       <a onclick="javascript:open_tab('activities/details/+{act[:id]}', '{act[:name]}')">${act[:id]}</a>
     </li>

@@ -2,6 +2,12 @@ module AcmScW
   module Business
     class ActivityServices < AcmScW::Business::AbstractServices
       
+      # Returns people_services
+      def people_services
+        @people_services ||= Waw.resources.business.people
+      end
+      alias :ps :people_services
+
       # Returns the activity relation
       def activities
         AcmScW.database[:activities]
@@ -27,6 +33,26 @@ module AcmScW
         not(activities.filter(:id => id).empty?)
       end
       alias :activity_exists? :has_activity?
+      
+      ########################################################################## Responsibilities
+
+      def has_responsibility?(people, activity)
+        args = {:activity => activity, :people => ps.people_id(people)}
+        not(AcmScW.database[:activity_responsabilities].filter(args).empty?)
+      end
+      
+      def give_responsibility(people, activity)
+        return if has_responsibility?(people, activity)
+        return if not ps.people_exists?(people)
+        args = {:activity => activity, :people => ps.people_id(people), :kind => "Responsable", :order => 0}
+        AcmScW.database[:activity_responsabilities].insert(args)
+      end
+
+      def remove_responsibility(people, activity)
+        args = {:activity => activity, :people => ps.people_id(people)}
+        AcmScW.database[:activity_responsabilities].filter(args).delete
+      end
+
       
     end # class ActivityServices
   end # module Business

@@ -6,7 +6,7 @@ wawaccess do
   match /details\/(.*)$/ do |url,actid|
     wlang 'details.wtpl', {
       :activity           => AcmScW.database[:activities].filter(:id => actid).first,
-      :responsable_people => AcmScW.database[:activity_responsabilities].filter(:activity => actid)
+      :responsable_people => AcmScW.database[:webr_activity_responsibles].filter(:activity => actid)
     }
   end
 
@@ -22,4 +22,16 @@ wawaccess do
     }
   end
 
+  match /give-responsibility\/(.*)$/ do |url,actid|
+    wlang 'give-responsibility.form', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first
+    }
+  end
+
+  match /remove-responsibility\/(.*)\/(.*)$/ do |url,actid,people_id|
+    wlang 'remove-responsibility.form', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first,
+      :people             => AcmScW.database[:people].filter(:id => people_id).first
+    }
+  end
 end

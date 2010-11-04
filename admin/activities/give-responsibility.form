@@ -1,0 +1,35 @@
+<div class="message logo-message">
+
+  <h3>Ajouter un responsable d'activité</h3>
+
+  ={controllers.activity.give_responsibility as action}{
+  	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+  		<div class="feedback"></div>
+
+      <input type="hidden" name="id" value="{activity[:id]}"/>
+
+      <p class="span-4">
+        <label for="mail">Personne à ajouter</label>
+        <select name="mail">
+          *{model.people.order(:mail) as p}{
+              <option value="{p[:mail]}">${p[:mail]}</option>
+            }
+        </select>
+      </p>
+
+  		<p class="form-button">
+  			<input type="submit" value="Ajouter »"/>
+  			<a class="button" onclick="hide_popup()">Fermer</a>
+  		</p>
+
+  		+{action.ajax_form_preparer}
+  	</form>
+  }
+
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+	  $("form input:submit, a.button").button();
+  });
+</script>
+
