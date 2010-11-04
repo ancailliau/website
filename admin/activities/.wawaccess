@@ -1,0 +1,37 @@
+wawaccess do
+  
+  inherits true
+  
+
+  match /details\/(.*)$/ do |url,actid|
+    wlang 'details.wtpl', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first,
+      :responsable_people => AcmScW.database[:webr_activity_responsibles].filter(:activity => actid)
+    }
+  end
+
+  match /update\/(.*)$/ do |url,actid|
+    wlang 'update.form', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first
+    }
+  end
+
+  match /delete\/(.*)$/ do |url,actid|
+    wlang 'delete.form', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first
+    }
+  end
+
+  match /give-responsibility\/(.*)$/ do |url,actid|
+    wlang 'give-responsibility.form', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first
+    }
+  end
+
+  match /remove-responsibility\/(.*)\/(.*)$/ do |url,actid,people_id|
+    wlang 'remove-responsibility.form', {
+      :activity           => AcmScW.database[:activities].filter(:id => actid).first,
+      :people             => AcmScW.database[:people].filter(:id => people_id).first
+    }
+  end
+end

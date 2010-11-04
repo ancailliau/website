@@ -1,0 +1,60 @@
+<div>
+  <h3>
+    Description de l'activité
+    <span>
+      <a onclick="javascript:show_popup('/admin/activities/update/+{activity[:id]}', 460)">
+        <img src="images/famfamicons/application_form_edit.png"/>
+      </a>
+      <a onclick="javascript:show_popup('/admin/activities/delete/+{activity[:id]}', 460)">
+        <img src="images/famfamicons/application_form_delete.png"/>
+      </a>
+    </span>
+  </h3>
+  
+  <table>
+    <tr>
+      <td>Titre</td>
+      <td>+{activity[:name]}</td>
+    <tr>
+    <tr>
+      <td>Résumé</td>
+      <td>${activity[:abstract]}</td>
+    <tr>
+    <tr>
+      <td>Plus d'info sur</td>
+      <td><a target="_blank" href="{activity[:card_path]}">${activity[:card_path]}</a></td>
+    <tr>
+  </table>
+    
+  <h3>
+    Personnes responsables (${responsable_people.count})
+    <span>
+      <a href="/dba/activity_responsabilities.csv?activity=${activity[:id]}" target="_blank">
+        <img src="images/csv_icon.gif"/>
+      </a>
+    </span>
+  </h3>
+  <table>
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>mail</td>
+        <td>last_name</td>
+        <td>first_name</td>
+      </tr>
+    </thead>
+    <tbody>
+      *{responsable_people as l}{
+      <tr>
+        <td>${l[:id]}</td>
+        <td>${l[:mail]}</td>
+        <td>${l[:last_name]}</td>
+        <td>${l[:first_name]}</td>
+        <td><a href="javascript:show_popup('/admin/activities/remove-responsibility/+{activity[:id]}/+{l[:id]}', 460)"><img src="images/famfamicons/delete.png" /></a></td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <p><a href="javascript:show_popup('/admin/activities/give-responsibility/+{activity[:id]}', 460)"><img src="images/famfamicons/add.png" /> Ajouter un responsable</a></p>
+
+</div>

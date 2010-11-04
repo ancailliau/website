@@ -1,6 +1,6 @@
 Waw.rack do
-  error_handler(Waw::Validation::is_devel_mode, Waw::ErrorHandler::Backtrace.new) 
-  error_handler {|k, ex| [301, {'Location' => '/500'}, ['']]}
+#  error_handler(Waw::Validation::is_devel_mode, Waw::ErrorHandler::Backtrace.new) 
+#  error_handler {|k, ex| [301, {'Location' => '/500'}, ['']]}
   use ::Rack::CommonLogger,  Waw.logger
   use ::Rack::Session::Pool, :domain       => Waw.config.web_domain,
                              :expire_after => Waw.config.rack_session_expire
@@ -20,6 +20,9 @@ Waw.rack do
   end
   map '/webservices' do
     use ::Waw::JSONController
+    map '/activity' do
+      run ::AcmScW::Controllers::ActivityController.instance
+    end
     map '/event' do
       run ::AcmScW::Controllers::EventController.instance
     end
