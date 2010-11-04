@@ -6,11 +6,15 @@
   	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
   		<div class="feedback"></div>
 
+      <p>
+        Êtes-vous sur de vouloir supprimer l'activité "${activity[:name]}" ?
+      </p>
+
       <input type="hidden" name="id" value="{activity[:id]}"/>
 
       <p class="form-button">
-  			<input type="submit" value="Confirmer la suppression »"/>
-  			<a class="button" onclick="hide_popup()">Fermer</a>
+  			<input type="submit" value="Oui, supprimer »"/>
+  			<a class="button" onclick="hide_popup()">Non, fermer</a>
   		</p>
 
   		+{action.ajax_form_preparer}
