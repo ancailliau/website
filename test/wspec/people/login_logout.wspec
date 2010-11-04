@@ -1,19 +1,23 @@
+require 'digest/md5'
 requirement "The website should provide a way for users to log in and log out" do
   
   people_mail = "test-user@acmscw.be"
   people = {:mail => people_mail, :password => "mypassword"}
   business.people.drop_people(people_mail)
-  model.people.insert(people.merge(:adminlevel => 0))
+  model.people.insert(people.merge(
+    :id => 1+model.people.max(:id), 
+    :password => Digest::MD5.hexdigest(people[:password]),
+    :adminlevel => 0
+  ))
   
   therefore("A connexion link should be accessible on the index page") {
     go     index_page
     i_see  "Connexion"
     i_dont_see "Editer mon profil"
-    i_see  form(:id => 'login', :action => controllers.people.login)
   }
   
   therefore("Submitting the login form with a correct user should work") {
-    result = i_submit form(:id => 'login', :action => controllers.people.login), with(people)
+    res = i_invoke controllers.people.login, with(people)
     i_see    "Editer mon profil"
   }
   
@@ -23,7 +27,6 @@ requirement "The website should provide a way for users to log in and log out" d
     i_dont_see  "Editer mon profil"
     i_dont_see  "Logout"
     i_see       "Connexion"
-    i_see       form(:id => 'login', :action => controllers.people.login)
   }
 
 end

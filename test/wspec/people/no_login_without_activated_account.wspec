@@ -10,28 +10,10 @@ requirement("User should not being able to log without an activated account") do
   mailbox.clear
   
   therefore("The login action fails just after subscribing") {
-    go          index_page + 'subscribe'
+    go          index_page
     i_invoke    controllers.people.subscribe_account, with(people)
     i_invoke    controllers.people.login, with(people)
-    i_dont_see  "My chapter"
-  }
-
-  therefore("Following the mail activation link should success") {
-    mail     = mailbox.read(0)
-    link     = link({:href => /activate_account/}, mail.body)
-    actkey   = $1 if link[:href] =~ /activate_account\?actkey=(.*)$/
-    i_follow   link
-    i_see    "Activation de votre compte"
-    i_submit form(:action => controllers.people.activate_account), with(people.merge(:actkey => actkey))
-    i_see    "Votre compte a été activé!"
-    i_invoke controllers.people.logout
-  }  
-  
-  therefore("The login action fails after lost password") {
-    go          index_page + 'people/lost_password'
-    i_invoke    controllers.people.account_activation_request, with(:mail => people_mail)
-    i_invoke    controllers.people.login, with(people)
-    i_dont_see  "My chapter"
+    i_dont_see  "Editer mon profil"
   }
 
 end

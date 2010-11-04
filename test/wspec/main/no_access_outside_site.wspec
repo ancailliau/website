@@ -1,7 +1,7 @@
 requirement "The website should be secure enough through wawaccess files" do
   
   therefore("The log file should not be reachable") {
-    i_may_not_reach index_page + '../logs/webapp.log'
+    i_dont_reach index_page + '../logs/webapp.log'
   }
   
 end

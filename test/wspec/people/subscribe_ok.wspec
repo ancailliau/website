@@ -2,6 +2,9 @@ requirement "The web site should allow users to subscribe" do
 
   people_mail = "test-user@acmscw.be"
   people = {:mail             => people_mail,
+            :first_name       => "Test",
+            :last_name        => "Test",
+            :set_password     => "true",
             :password         => "mypassword", 
             :password_confirm => "mypassword",
             :newsletter       => "true"}
@@ -14,33 +17,20 @@ requirement "The web site should allow users to subscribe" do
     i_see  "Inscrivez-vous"
   }
   
-  therefore("Following the link should reach the subscribe page") {
-    i_follow  link(:href => '/people/subscribe')
-    i_see "<!-- pages/people/subscribe.wtpl -->"
-  }
-  
   therefore("Submitting the subscription form should result to an activation mail") {
-    i_submit form(:action => controllers.people.subscribe_account), with(people)
-    i_see messages.subscribe_account_ok
-    
+    i_invoke    controllers.people.subscribe_account, with(people)
     mail = mailbox.read(0)
     assert_not_nil mail, "Mail has been correctly sent"
   }
   
   therefore("Following the mail activation link should success") {
     mail     = mailbox.read(0)
-    link     = link({:href => /activate_account/}, mail.body)
-    actkey   = $1 if link[:href] =~ /activate_account\?actkey=(.*)$/
-    i_follow   link
-    i_see    "Activation de votre compte"
-    i_submit form(:action => controllers.people.activate_account), with(people.merge(:actkey => actkey))
-    i_see    "Votre compte a été activé!"
+    link     = link({:href => /activate/}, mail.body)
+    actkey   = $1 if link[:href] =~ /accounts\/activate\/(.*)$/
+    i_follow link
+    i_invoke controllers.people.activate_account, with(people.merge(:actkey => actkey))
+    go index_page
+    i_see "Editer mon profil"
   }  
   
-  therefore("The user should be able to login") {
-    go index_page
-    i_submit form(:id => 'login', :action => controllers.people.login), with(people)
-    i_see "Editer mon profil"
-  }
-
 end

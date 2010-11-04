@@ -1,8 +1,0 @@
-requirement "Registration are closed" do
-  
-  therefore("It do not see the form") {
-    go index_page + 'olympiades/inscription'
-    i_dont_see    form(:action => controllers.main.send_message)
-  }
-
-end

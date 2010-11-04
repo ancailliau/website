@@ -2,7 +2,6 @@ requirement "The web site index page should have a correct layout" do
   
   therefore("js scripts and css stylesheet should be available") {
     go    index_page
-    i_see "<!-- pages/index.wtpl -->"
     all_tags('link', :rel => 'stylesheet').each do |stylesheet|
       i_could_reach stylesheet[:href]
     end
