@@ -6,7 +6,7 @@
 	
 	<ul>
 		<li>Pour modifier les informations vous concernant ou vos paramètres cliquez
-				<a href="javascript:show_form('/accounts/update', 460)">ici</a></li>
+				<a onclick="javascript:show_form('/accounts/update', 460)">ici</a></li>
 	</ul>
 
 	<a onclick="hide_popup()">Fermer</a>

@@ -1,6 +1,6 @@
 <div class="user-bar">
 	<div>
-		<p><a href="javascript:show_form('/accounts/update', 460)">Editer mon profil</a></p>
+		<p><a onclick="javascript:show_form('/accounts/update', 460)">Editer mon profil</a></p>
 		?{session.adminlevel > 0}{<p><a href="/admin">Admin</a></p>}
 		<p><a onclick="{controllers.people.logout.ajax_link}">Logout</a></p>
 	</div>
