@@ -44,7 +44,11 @@ module AcmScW
       def give_responsibility(people, activity)
         return if has_responsibility?(people, activity)
         return if not ps.people_exists?(people)
-        args = {:activity => activity, :people => ps.people_id(people), :kind => "Responsable", :order => 0}
+        max = AcmScW.database[:activity_responsabilities].filter(:activity => activity).max(:order) || 0
+        args = {:activity => activity, 
+                :people => ps.people_id(people), 
+                :kind => "responsable", 
+                :order => 1+max}
         AcmScW.database[:activity_responsabilities].insert(args)
       end
 

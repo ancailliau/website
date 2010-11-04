@@ -49,6 +49,11 @@ olympiades_registration_ok    "<p>Nous avons bien reçu toutes vos données, vot
                               "<a href='mailto:info@uclouvain.acm-sc.be'>info@uclouvain.acm-sc.be</a></p>"
 send_results_announce_mail_ok "Les mails annoncant les résultats des olympiades ont bien été envoyés."
 
+# About activities
+invalid_activity_id           "Identifiant d'activité invalide (=~ /[a-z][a-z0-9-]+/) ou manquant"
+invalid_activity_name         "Le titre de l'activité est obligatoire"
+invalid_activity_card_path    "Le lien vers la page explicative est obligatoire"
+invalid_activity_abstract     "La description de l'activité est obligatoire"
 
 # About events
 event_update_ok               "L'événement a été mis à jour"

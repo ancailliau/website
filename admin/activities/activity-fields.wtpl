@@ -10,6 +10,11 @@
 </p>
 
 <p class="span-4">
+	<label for="card_path">URL de la page explicative (en relatif au site)</label>
+	<input type="text" name="card_path" value="{activity[:card_path]}"/>
+</p>
+
+<p class="span-4">
 	<label for="abstract">Description (un paragraphe en texte brut)</label>
 	<textarea name="abstract">+{activity[:abstract]}</textarea>
 </p>

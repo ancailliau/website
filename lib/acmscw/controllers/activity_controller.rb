@@ -5,7 +5,7 @@ module AcmScW
     #
     class ActivityController < ::Waw::ActionController
     
-      EVENT_COLUMNS = [:id, :name, :abstract, :card_path]
+      ACTIVITY_COLUMNS = [:id, :name, :abstract, :card_path]
     
       # Encapsulate all actions through a database transaction
       def encapsulate(action, actual_params, &block)
@@ -26,11 +26,12 @@ module AcmScW
       ######################################################################### Creation and update
     
       ActivityCommonSignature = Waw::Validation.signature {
-        validation :id, mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
-        validation :name, mandatory, :invalid_activity_name
-        validation :card_path, missing, :invalid_activity_card_path
-        validation :abstract, mandatory, :invalid_activity_abstract
+        validation :id,        mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
+        validation :name,      mandatory,                       :invalid_activity_name
+        validation :card_path, mandatory,                       :invalid_activity_card_path
+        validation :abstract,  mandatory,                       :invalid_activity_abstract
       }
+      
       signature(ActivityCommonSignature) {
         validation [], is_admin, :must_be_admin
       }
@@ -39,44 +40,32 @@ module AcmScW
         upon 'success/ok'    do message('/admin/activities/create-ok')  end
       }
       def create(params)
-        activity_services.create_activity(params.keep(*EVENT_COLUMNS))
+        activity_services.create_activity(params.keep(*ACTIVITY_COLUMNS))
         :ok
       end
     
       signature(ActivityCommonSignature) {
-        validation :id, is_admin, :must_be_admin
+        validation [], is_admin, :must_be_admin
       }
       routing {
         upon 'validation-ko' do form_validation_feedback     end
         upon 'success/ok'    do message('/admin/activities/update-ok')  end
       }
       def update(params)
-        activity_services.update_activity(params.keep(*EVENT_COLUMNS))
+        activity_services.update_activity(params.keep(*ACTIVITY_COLUMNS))
         :ok
       end
       
       signature() {
+        validation [], is_admin, :must_be_admin
         validation :id, mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
-        validation :id, is_admin, :must_be_admin
       }
       routing {
         upon 'validation-ko' do form_validation_feedback     end
         upon 'success/ok'    do message('/admin/activities/delete-ok')  end
       }
       def delete(params)
-        activity_services.delete_activity(params.keep(*EVENT_COLUMNS))
-        :ok
-      end
-
-      signature() {
-        validation :id, mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
-        validation :id, is_admin, :must_be_admin
-      }
-      routing {
-        upon 'validation-ko' do form_validation_feedback     end
-        upon 'success/ok'    do message('/admin/activities/add-responsability-ok')  end
-      }
-      def add_responsability(params)
+        activity_services.delete_activity(params.keep(*ACTIVITY_COLUMNS))
         :ok
       end
 
@@ -84,16 +73,15 @@ module AcmScW
       ######################################################################### Responsabilities
  
       ResponsibleCommonSignature = Waw::Validation.signature {
-        validation :id, mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
         validation [], is_admin, :must_be_admin
+        validation :id, mandatory & /^[a-z][a-z0-9\-]+/, :invalid_activity_id
         validation :mail, mandatory & mail & user_exists, :unknown_user
       }
     
-      signature(ResponsibleCommonSignature) {
-      }
+      signature(ResponsibleCommonSignature) {}
       routing {
         upon 'success/ok'    do message('/admin/activities/give-responsibility-ok') end
-        upon 'validation-ko' do form_validation_feedback           end
+        upon 'validation-ko' do form_validation_feedback                            end
       }
       def give_responsibility(params)
         mail = params[:mail]
@@ -101,11 +89,10 @@ module AcmScW
         :ok
       end
 
-      signature(ResponsibleCommonSignature) {
-      }
+      signature(ResponsibleCommonSignature) {}
       routing {
         upon 'success/ok'    do message('/admin/activities/remove-responsibility-ok') end
-        upon 'validation-ko' do form_validation_feedback           end
+        upon 'validation-ko' do form_validation_feedback                              end
       }
       def remove_responsibility(params)
         mail = params[:mail]
