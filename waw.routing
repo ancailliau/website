@@ -15,7 +15,10 @@ Waw.rack do
     use ::AcmScW::Controllers::EnsureAuth, :redirect_url => '/403'
     run ::DbAgile::Restful::Middleware::OneDatabase.new(::AcmScW::dba_database)
   end
-  map '/webserv' do
+  map '/webservices.js' do
+    run ::Waw::ActionController::JSGeneration.new
+  end
+  map '/webservices' do
     use ::Waw::JSONController
     map '/activity' do
       run ::AcmScW::Controllers::ActivityController.instance

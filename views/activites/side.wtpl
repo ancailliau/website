@@ -6,10 +6,23 @@
 	  }
 	</ul>
 </ul>
+
+={model.webr_planned_events.order(:start_time.asc) as planned_events}
+?{!planned_events.empty?}{
+<ul class="menu" style="padding-top: 10px">
+	<li>Nos prochains événements</li>
+	<ul>
+	  *{model.webr_planned_events.order(:start_time.asc) as e}{
+	    <li><a href="{e[:card_path]}">${e[:name]}</a></li>
+	  }
+	</ul>
+</ul>
+}
+
 <ul class="menu" style="padding-top: 10px">
 	<li>Nos événements récents</li>
 	<ul>
-	  *{model.events.order(:start_time.desc) as e}{
+	  *{model.webr_past_events.order(:start_time.desc) as e}{
 	    <li><a href="{e[:card_path]}">${e[:name]}</a></li>
 	  }
 	</ul>

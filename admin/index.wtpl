@@ -21,6 +21,7 @@
 		*{js_files as js}{
 		<script type="text/javascript" src="{js}"></script>
 		}
+		<script type="text/javascript" src="/webservices.js"></script>
 	</head>
 	
 	<body>
@@ -28,7 +29,7 @@
     <div class="user-bar">
     	<div>
     		<p><a href="{Waw.config.web_base}">Retour au site</a></p>
-    		<p><a onclick="javascript:webserv_people_logout({}, '#webserv_people_logout')">Logout</a></p>
+    		<p><a onclick="{controllers.people.logout.ajax_link}">Logout</a></p>
     	</div>
     </div>
 
