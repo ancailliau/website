@@ -17,7 +17,7 @@
 
 #admin-menu {
 	margin-bottom: 20px;
-	height: 615px;
+	height: 515px;
 }
 #admin-menu #logo {
 	height: 85px;
@@ -50,10 +50,10 @@
 }
 
 #admin-tabs {
-	height: 700px;
+	height: 600px;
 }
 #admin-tabs div {
-	height: 650px;
+	height: 550px;
 	overflow: auto;
 }
 #admin-tabs div table {
@@ -74,4 +74,17 @@
 #admin-tabs h3 img {
 	padding: 0px 5px;
 	vertical-align: middle;
+}
+
+#admin-tab-about {
+	background-image: url(../images/cheatsheets/cheatsheet.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#admin-tab-about a {
+	color: blue;
+}
+#admin-tab-about a:hover {
+	text-decoration: underline;
 }

@@ -82,12 +82,11 @@
         
         <div id="admin-tabs">
           <ul>
-            <li><a href="#admin-tab-1">A propos</a></li>
+            <li><a href="#admin-tab-about">A propos</a></li>
           </ul>
-          <div id="admin-tab-1">
-            <p>Bienvenue dans l'application d'administration de l'ACM Student Chapter.</p>
-            <p>Vous pouvez utiliser le menu de gauche pour effectuer les opérations les plus
-               standard...</p>
+          <div id="admin-tab-about">
+            Get the latest redactor/developer cheatsheet: <a href="images/cheatsheets/cheatsheet.pdf" target="_blank">pdf</a>,
+                                                          <a href="images/cheatsheets/cheatsheet.png" target="_blank">png</a>
           </div>
         </div>
         
