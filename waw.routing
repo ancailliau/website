@@ -8,6 +8,27 @@ Waw.rack do
     rescue Exception => ex
       puts ex.message
       puts ex.backtrace.join("\n")
+    ensure 
+      nil
+    end
+  }
+  error_handler(Waw::Validation::is_production_mode){|k,ex|
+    begin
+      mail = ::Waw::Tools::MailAgent::Mail.new "ACM Student Chapter: server fatal error",
+                                               ex.message + "\n" + ex.backtrace.join("\n"),
+                                               "no-reply@acm-sc.be",
+                                               "team-web.uclouvain@acm-sc.be"
+      k.resources.business.mail_agent << mail
+    rescue Exception => ex
+      begin
+        k.logger.fatal(ex.message)
+        k.logger.fatal(ex.backtrace.join("\n"))
+      rescue Exception => ex
+        puts ex.message
+        puts ex.backtrace.join("\n")
+      end
+    ensure
+      nil
     end
   }
   error_handler(Waw::Validation::is_devel_mode, Waw::ErrorHandler::Backtrace.new) 
