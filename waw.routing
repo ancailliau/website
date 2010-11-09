@@ -1,9 +1,24 @@
 Waw.rack do
-#  error_handler(Waw::Validation::is_devel_mode, Waw::ErrorHandler::Backtrace.new) 
-#  error_handler {|k, ex| [301, {'Location' => '/500'}, ['']]}
+  
+  ## Error handling
+  error_handler {|k, ex|
+    begin
+      k.logger.fatal(ex.message)
+      k.logger.fatal(ex.backtrace.join("\n"))
+    rescue Exception => ex
+      puts ex.message
+      puts ex.backtrace.join("\n")
+    end
+  }
+  error_handler(Waw::Validation::is_devel_mode, Waw::ErrorHandler::Backtrace.new) 
+  error_handler {|k, ex| [301, {'Location' => '/500'}, ['']]}
+  
+  # Logging and sessions
   use ::Rack::CommonLogger,  Waw.logger
   use ::Rack::Session::Pool, :domain       => Waw.config.web_domain,
                              :expire_after => Waw.config.rack_session_expire
+                             
+  # Services
   map '/' do
     run ::Waw::StaticController.new(:public => 'views')
   end
