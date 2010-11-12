@@ -1,0 +1,18 @@
+<h2>Tutoriels</h2>
+
+<p>
+	Évènements sociaux divers comme des soirées projection de films, 
+  des visites d'entreprise, des participations groupées à des 
+  concours de programmation ...
+</p>
+
+<p>Vous trouverez ci-dessous la liste des évènements organisés dernièrement:</p>
+
+<ul>
+*{model.events.filter(:activity => 'socialevents').order(:start_time.desc) as e}{
+  <li>
+    <p><a href="{e[:card_path]}">${e[:name]}</a></p>
+    <p>${e[:abstract]}</p>
+  </li>
+}
+</ul>
