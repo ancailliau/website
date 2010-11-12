@@ -9,5 +9,5 @@
 
 <p class="important-info">La projection aura lieu le 
   <b>2 décembre 2010</b> de <b>20h à 23h</b> dans un lieu à définir.
-	+{utils.event_subscription_link['latex-2010', 'Inscrivez-vous maintenant!']}</p>
+	+{utils.event_subscription_link['projection-h2g2', 'Inscrivez-vous maintenant!']}</p>
 
