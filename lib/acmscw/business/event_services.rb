@@ -7,6 +7,11 @@ module AcmScW
         AcmScW.database[:events]
       end
       
+      # Returns a tuple for a given event
+      def this_event(id)
+        AcmScW.database[:events].filter(:id => id).first
+      end
+      
       # Creates an event
       def create_event(tuple)
         AcmScW.database[:events].insert(tuple)
@@ -41,11 +46,34 @@ module AcmScW
       end
       
       # Register someone to an event
-      def register(people, event)
-        return if is_registered?(people, event)
-        ps.create_default_profile(people) unless ps.people_exists?(people)
-        args = {:event => event, :people => ps.people_id(people)}
-        AcmScW.database[:event_registrations].insert(args)
+      def register(people, event, additional_params = {})
+        # create a default profile if people does not exist
+        unless ps.people_exists?(people)
+          ps.create_default_profile(people) 
+        end
+        people = ps.people_id(people)
+        
+        # insert in the registration table if not already the case
+        unless is_registered?(people, event)
+          args = {:event => event, :people => people}
+          AcmScW.database[:event_registrations].insert(args)
+        end
+        
+        # insert/update additional info if needed
+        event_tuple = this_event(event)
+        if (table_name = event_tuple[:form_table])
+          table_name = table_name.to_sym
+          table    = AcmScW.database[table_name]
+          columns  = AcmScW.database.schema(table_name).collect{|ary| ary[0]}
+
+          key   = {:event => event, :people => people}
+          tuple = additional_params.merge(key).keep(*columns)
+          if table.filter(key).empty?
+            table.insert(tuple)
+          else
+            table.filter(key).update(tuple)
+          end
+        end
       end
       
       # Unregister to some event

@@ -88,7 +88,7 @@ module AcmScW
             params.keep(:first_name, :last_name, :newsletter)
           )
         end
-        event_services.register(mail, params[:event])
+        event_services.register(mail, params[:event], params)
         :ok
       end
       
@@ -115,7 +115,7 @@ module AcmScW
             )
           end
         end
-        event_services.register(session.get(:user), params[:event])
+        event_services.register(session.get(:user), params[:event], params)
         :ok
       end
       
