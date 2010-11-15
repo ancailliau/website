@@ -58,6 +58,16 @@
 	<textarea name="abstract">+{event[:abstract]}</textarea>
 </p>
 
+<p class="span-2">
+	<label for="form_url">URL du formulaire additionnel</label>
+	<input type="text" name="form_url" value="{event[:form_url]}"/>
+</p>
+
+<p class="span-2">
+	<label for="form_url">Table associée</label>
+	<input type="text" name="form_table" value="{event[:form_table]}"/>
+</p>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("input.date").datepicker({ dateFormat: 'dd/mm/yy' });

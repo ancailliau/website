@@ -5,7 +5,8 @@ module AcmScW
     #
     class EventController < ::Waw::ActionController
     
-      EVENT_COLUMNS = [:id, :activity, :name, :nb_places, :start_time, :end_time, :location, :abstract, :card_path]
+      EVENT_COLUMNS = [:id, :activity, :name, :nb_places, :start_time, :end_time, :location, :abstract, :card_path,
+                       :form_url, :form_table]
     
       # Encapsulate all actions through a database transaction
       def encapsulate(action, actual_params, &block)
