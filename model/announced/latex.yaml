@@ -8,3 +8,9 @@ logical:
     constraints: 
       pk_latex_practical_registrations: {type: :primary_key, attributes: [people, event]}
       fk_latex_practical_registrations_refs_event_registration: {type: foreign_key, attributes: [ people, event ], references: event_registrations}
+  rpt_latex_practical_registrations:
+    SELECT w.*, l.time_slot
+      FROM webr_event_participants as w
+      JOIN latex_practical_registrations as l 
+        ON w.event = l.event and w.id = l.people
+     ORDER BY w.id ASC
