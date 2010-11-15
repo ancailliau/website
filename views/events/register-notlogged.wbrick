@@ -23,6 +23,10 @@
   		<label for="newsletter">Je souhaite m'abonner à la newsletter (au maximum un e-mail par mois)</label>
   	</p>
   	
+    ?{event[:form_url]}{
+      <<+{../+{event[:form_url]}}
+    }
+  
   	<p class="form-button">
   		<input type="submit" value="S'inscrire »"/>
   		<a href="#" onclick="hide_popup()">Fermer</a>

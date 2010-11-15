@@ -32,6 +32,10 @@
   	</p>
   	}
 
+    ?{event[:form_url]}{
+      <<+{../+{event[:form_url]}}
+    }
+
   	<p class="form-button">
   		<input type="submit" value="S'inscrire »"/>
   		<a class="button" href="#" onclick="hide_popup()">Fermer</a>

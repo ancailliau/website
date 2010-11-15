@@ -1,0 +1,10 @@
+<p class="span-4">
+	<label for="time_slot">Quelle session pratique?</label>
+	<select name="time_slot">
+	  <option value="22/11/2010 16:15-18h15">lundi 22 novembre 2010, de 16h15 à 18h15</option>
+	  <option value="23/11/2010 16:15-18h15">mardi 23 novembre 2010, de 16h15 à 18h15</option>
+	  <option value="24/11/2010 16:15-18h15">mercredi 24 novembre 2010, de 16h15 à 18h15</option>
+	  <option value="25/11/2010 16:15-18h15">jeudi 25 novembre 2010, de 16h15 à 18h15</option>
+	  <option value="26/11/2010 14:00-16h00">vendredi 26 novembre 2010, de 14h à 16h</option>
+  </select>
+</p> 
