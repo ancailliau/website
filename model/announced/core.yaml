@@ -49,6 +49,7 @@ logical:
       location: {domain: String, mandatory: false}
       formal_location: {domain: String, mandatory: false}
       form_url: {domain: String, mandatory: false}
+      form_table: {domain: String, mandatory: false}
     constraints: 
       pk_events: {type: :primary_key, attributes: [id]}
       event_which_activity: {type: foreign_key, attributes: [activity], references: activities}

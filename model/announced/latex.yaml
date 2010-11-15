@@ -1,0 +1,10 @@
+--- 
+logical: 
+  latex_practical_registrations:
+    heading: 
+      event:     {domain: String}
+      people:    {domain: Integer}
+      time_slot: {domain: String, mandatory: true}
+    constraints: 
+      pk_latex_practical_registrations: {type: :primary_key, attributes: [people, event]}
+      fk_latex_practical_registrations_refs_event_registration: {type: foreign_key, attributes: [ people, event ], references: event_registrations}
