@@ -23,7 +23,7 @@
   		<label for="newsletter">Je souhaite m'abonner à la newsletter (au maximum un e-mail par mois)</label>
   	</p>
   	
-    ?{event[:form_url]}{
+    ?{event[:form_url] and not(event[:form_url].strip.empty?)}{
       <<+{../+{event[:form_url]}}
     }
   

@@ -32,7 +32,7 @@
   	</p>
   	}
 
-    ?{event[:form_url]}{
+    ?{event[:form_url] and not(event[:form_url].strip.empty?)}{
       <<+{../+{event[:form_url]}}
     }
 
