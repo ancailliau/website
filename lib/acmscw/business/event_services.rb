@@ -61,7 +61,8 @@ module AcmScW
         
         # insert/update additional info if needed
         event_tuple = this_event(event)
-        if (table_name = event_tuple[:form_table])
+        table_name = event_tuple[:form_table]
+        if (table_name and not(table_name.strip.empty?))
           table_name = table_name.to_sym
           table    = AcmScW.database[table_name]
           columns  = AcmScW.database.schema(table_name).collect{|ary| ary[0]}
