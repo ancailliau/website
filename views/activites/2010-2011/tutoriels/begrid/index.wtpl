@@ -1,0 +1,32 @@
+<h2>BEGRID Workshop</h2>
+
+<p>
+	Le GRID est une infrastructure virtuelle formée d'un grand nombre machines 
+	sur lesquelles il est possible de faire tourner des calculs et applications 
+	distribuées. Nous vous proposons un atelier composé d'un cours théorique 
+	suivi d'exercices pratiques afin de vous apporter les premières bases au GRID.
+</p>
+
+<p>
+  Cette séance d'exercice s'effectuera sur l'infrastructure de calcul réparti 
+  de recherche maintenue par BELNET, BEGrid.
+</p>
+
+<ul>
+  <li>
+    Lors de la première moitié de cet après-midi, une courte introduction sera
+    donnée sur l'utilisation du BEGrid ainsi que les principes de base du MPI
+    pour effectuer des calculs répartis.
+  </li>
+  <li>
+    Lors de la deuxième moitié de cette après-midi, les participants vont
+    pouvoir utiliser le BEGrid et résoudre un petit problème de calculs
+    répartis.
+  </li>
+</ul>
+ 
+<p class="important-info">
+  Ce workshop est organisé le <strong>14 décembre de 14h à 18h</strong> dans la <strong>salle Intel</strong>. 
+  +{utils.event_subscription_link['begrid-2010', 'Inscrivez-vous maintenant!']}
+  et n'oubliez pas de vous <a href="preparation">préparer</a>.
+</p>

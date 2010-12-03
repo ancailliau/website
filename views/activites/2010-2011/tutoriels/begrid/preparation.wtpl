@@ -1,0 +1,51 @@
+<h2>BEGRID Workshop : Les choses à préparer</h2>
+
+<p>
+  In order to use the GRID, you need to be allowed to use resources available.
+  this, you first need a signed certificated that will be recognized worldwide
+  in GRID community. Then, you need to be granted to access to some resources.
+  You also need a user interface to launch jobs and retrieve results.
+</p>
+
+<p>
+  In short, you need:
+</p>
+<ul>
+  <li>a valid GRID certificate</li>
+  <li>a membership to some virtual organisation (VO)</li>
+  <li>an account to a user interface</li>
+</ul>
+
+<h3>Creating a GRID certificate</h3>
+<p>
+  To create a GRID certificate,
+<p>
+<ol>
+  <li>go to <a href="https://gridra.belnet.be/EE/">https://gridra.belnet.be/EE/</a></li>
+  <li>select Request a Certificate</li>
+  <li>select the profile corresponding to your institution (<em>1. User - UCL</em>)</li>
+  <li>ll the form and use a corporate email address</li>
+</ol>
+<p>
+  More informations are available in the Hands-On on how to export this
+  certificate.
+</p>
+
+<h3>Asking membership to <em>betest</em> virtual organization</h3>
+
+<p>
+  You will request a membership to <em>betest</em>. <em>betest</em> is used for education and test
+  purposes. Before asking membership, you need a valid signed certificate.
+  To request membership go to <a href="https://voms01.begrid.be:8443/voms/betest/</a">https://voms01.begrid.be:8443/voms/betest/</a>.
+</p>
+
+<h3>Requesting user interface account</h3>
+<p>
+  Send your SSH public key to <em>begrid@belnet.be</em> asking for a user account.
+</p>
+
+<h3>For the training</h3>
+<p>
+  For the training, please come with your public key / certificate already
+  installed on the user interface (<a href="http://ui.begrid.be">ui.begrid.be</a>).
+</p>
