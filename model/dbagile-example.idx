@@ -2,7 +2,7 @@
 version: 0.0.1
 databases:
   devel:
-    uri: postgres://acmscw@localhost/acmscw
+    uri: postgres://acmscw:acmscw@localhost/acmscw
     announced_schema:
       - announced/core.yaml
       - announced/reports.yaml
