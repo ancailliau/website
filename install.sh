@@ -68,4 +68,5 @@ dba --repository=model db:stage
 echo ''
 echo 'Hey hey everything fine :-), we lauch the webserver now'
 echo 'Have a look at http://127.0.0.1:9292/'
+mkdir logs
 waw-start
