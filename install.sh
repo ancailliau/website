@@ -10,6 +10,12 @@ set -e
 #
 # Meeting those requirements is behind the scope of this INSTALL file
 
+#
+# We force a sudo password prompt
+#
+echo "Please provide a sudo password for further commands:"
+sudo -v
+
 # Gems (see vendor folder)
 #   fastercsv >= 1.5.1  (sudo gem install fastercsv, for the latest version)
 #   json >= 1.1.9  (sudo gem install json, for the latest version)
@@ -23,15 +29,15 @@ set -e
 #
 # To install those gems, type the following commands
 echo 'Installing required ruby gems'
-gem install --no-rdoc --no-ri vendor/fastercsv-1.5.1.gem
-gem install --no-rdoc --no-ri vendor/json-1.1.9.gem
-gem install --no-rdoc --no-ri vendor/pg-0.8.0.gem
-gem install --no-rdoc --no-ri vendor/rack-1.2.1.gem
-gem install --no-rdoc --no-ri vendor/rdoc-2.4.1.gem
-gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
-gem install --no-rdoc --no-ri vendor/wlang-0.9.0.gem
-gem install --no-rdoc --no-ri vendor/waw-0.3.0.gem
-gem install --no-rdoc --no-ri vendor/dbagile-0.0.1.gem
+sudo gem install --no-rdoc --no-ri vendor/fastercsv-1.5.1.gem
+sudo gem install --no-rdoc --no-ri vendor/json-1.1.9.gem
+sudo gem install --no-rdoc --no-ri vendor/pg-0.8.0.gem
+sudo gem install --no-rdoc --no-ri vendor/rack-1.2.1.gem
+sudo gem install --no-rdoc --no-ri vendor/rdoc-2.4.1.gem
+sudo gem install --no-rdoc --no-ri vendor/sequel-3.8.0.gem
+sudo gem install --no-rdoc --no-ri vendor/wlang-0.9.0.gem
+sudo gem install --no-rdoc --no-ri vendor/waw-0.3.0.gem
+sudo gem install --no-rdoc --no-ri vendor/dbagile-0.0.1.gem
 
 #
 # The code expects an 'acmscw' postgresql database, accessible through an 
@@ -51,8 +57,13 @@ su postgres -c 'createuser --superuser --createdb --login --pwprompt acmscw'
 su postgres -c 'createdb --owner acmscw --encoding utf8 acmscw'
 su postgres -c 'psql -U acmscw acmscw < model/snapshots/20101210-0940.sql'
 
+cp model/dbagile-example.idx model/dbagile.idx
+mkdir model/devel
+dba --repository=model schema:dump announced > model/devel/effective.yaml
+dba --repository=model db:stage
+
 # You can now start the web application using the following command
 echo ''
 echo 'Hey hey everything fine :-), we lauch the webserver now'
 echo 'Have a look at http://127.0.0.1:9292/'
-./config.ru
+waw-start
