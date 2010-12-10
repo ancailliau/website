@@ -19,6 +19,7 @@ set -e
 #   sequel >= 3.8  (sudo gem install sequel, for the latest version)
 #   wlang >= 0.9.0 (or see http://github.com/blambeau/wlang for the latest version)
 #   waw >= 0.2.0 (or see http://github.com/blambeau/waw for the latest version)
+#   dbagile >= 0.0.1 (or see http://github.com/blambeau/dbagile for the latest version)
 #
 # To install those gems, type the following commands
 echo 'Installing required ruby gems'
@@ -34,8 +35,8 @@ gem install --no-rdoc --no-ri vendor/dbagile-0.0.1.gem
 
 #
 # The code expects an 'acmscw' postgresql database, accessible through an 
-# 'acmscw' user, already created as well. See config/yemana.cfg for changing
-# those parameters. 
+# 'acmscw' user, already created as well. See config/acmscw.cfg.example for 
+# changing these parameters. 
 #
 # To install the database from scratch, execute the following commands in your 
 # shell
@@ -48,7 +49,7 @@ echo 'the acmscw database user (see your config file)'
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 su postgres -c 'createuser --superuser --createdb --login --pwprompt acmscw'
 su postgres -c 'createdb --owner acmscw --encoding utf8 acmscw'
-ruby -Ilib lib/acmscw/state/migrate_v2.rb
+su postgres -c 'psql -U acmscw acmscw < model/snapshots/20101210-0940.sql'
 
 # You can now start the web application using the following command
 echo ''
