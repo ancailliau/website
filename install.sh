@@ -53,9 +53,9 @@ echo 'Installing postgresql database now...'
 echo 'If a password is prompted, it is the one used for'
 echo 'the acmscw database user (see your config file)'
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-su postgres -c 'createuser --superuser --createdb --login --pwprompt acmscw'
-su postgres -c 'createdb --owner acmscw --encoding utf8 acmscw'
-su postgres -c 'psql -U acmscw acmscw < model/snapshots/20101210-0940.sql'
+sudo su postgres -c 'createuser --superuser --createdb --login --pwprompt acmscw'
+sudo su postgres -c 'createdb --owner acmscw --encoding utf8 acmscw'
+sudo su postgres -c 'psql -U acmscw acmscw < model/snapshots/20101210-0940.sql'
 
 cp model/dbagile-example.idx model/dbagile.idx
 mkdir model/devel
