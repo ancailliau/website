@@ -9,4 +9,4 @@ databases:
       - announced/latex.yaml
     effective_schema:
       - devel/effective.yaml
-current: old
+current: devel

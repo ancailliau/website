@@ -1,4 +1,3 @@
-set -e
 # 
 # If you are an happy guy, executing this file will do the job, otherwise
 # read on!
@@ -53,6 +52,8 @@ echo 'Installing postgresql database now...'
 echo 'If a password is prompted, it is the one used for'
 echo 'the acmscw database user (see your config file)'
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+sudo su postgres -c 'dropdb acmscw'
+sudo su postgres -c 'dropuser acmscw'
 sudo su postgres -c 'createuser --superuser --createdb --login --pwprompt acmscw'
 sudo su postgres -c 'createdb --owner acmscw --encoding utf8 acmscw'
 sudo su postgres -c 'psql -U acmscw acmscw < model/snapshots/20101210-0940.sql'
@@ -60,6 +61,7 @@ sudo su postgres -c 'psql -U acmscw acmscw < model/snapshots/20101210-0940.sql'
 cp model/dbagile-example.idx model/dbagile.idx
 mkdir model/devel
 dba --repository=model schema:dump announced > model/devel/effective.yaml
+dba --repository=model db:use devel
 dba --repository=model db:stage
 
 # You can now start the web application using the following command
