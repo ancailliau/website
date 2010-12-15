@@ -71,5 +71,8 @@ Waw.rack do
     map '/admin' do
       run ::AcmScW::Controllers::AdminController.instance
     end
+    map '/order' do
+      run ::AcmScW::Controllers::OrderController.instance
+    end
   end
 end

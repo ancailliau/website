@@ -4,3 +4,4 @@ people       AcmScW::Business::PeopleServices.new
 activity     AcmScW::Business::ActivityServices.new
 olympiades   AcmScW::Business::OlympiadesServices.new
 event        AcmScW::Business::EventServices.new
+order        AcmScW::Business::OrderServices.new
