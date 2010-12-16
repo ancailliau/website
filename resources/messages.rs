@@ -72,6 +72,7 @@ invalid_event_card_path       "Le lien vers la page explicative est obligatoire"
 invalid_product_name          "Le nom du produit est obligatoire"
 invalid_product_price         "Le prix doit être un nombre positif"
 invalid_product_available_size "Une taille au moins doit être précisée"
+invalid_product_id            "L'id du produit est incorrecte"
 
 # About URL rewriting
 invalid_short_url             "L'URL courte est obligatoire"

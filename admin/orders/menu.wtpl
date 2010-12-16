@@ -6,6 +6,9 @@
 <h4>Gestion</h4>
 <ul>
   <li>
+    <a onclick="javascript:open_tab('orders/products', 'Gestion des produits')">Gestion des produits</a>
+  </li>
+  <li>
     <a onclick="javascript:open_tab('orders/payments', 'Gestion des paiements')">Gestion des paiements</a>
   </li>
   <li>

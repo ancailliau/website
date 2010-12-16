@@ -43,6 +43,30 @@ module AcmScW
         :ok
       end
       
+      signature(ProductCommonSignature) {
+        validation :id, (mandatory & integer & (is >= 0)), :invalid_product_id
+      }
+      routing {
+        upon 'validation-ko' do form_validation_feedback                   end
+        upon 'success/ok'    do message('/admin/orders/update-product-ok') end
+      }
+      def update_product(params)
+        order_services.update_product(params.keep(:id)[:id],params.keep(*PRODUCT_COLUMNS))
+        :ok
+      end
+      
+      signature {
+        validation :id, (mandatory & integer & (is >= 0)), :invalid_product_id
+      }
+      routing {
+        upon 'validation-ko' do message('/admin/orders/remove-product-ko')  end
+        upon 'success/ok'    do message('/admin/orders/remove-product-ok')  end
+      }
+      def remove_product(params)
+        order_services.remove_product(params.keep(:id)[:id])
+        :ok
+      end
+      
     end # class OrderController
   end # module Controllers
 end # module AcmScW

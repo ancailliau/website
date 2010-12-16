@@ -8,4 +8,17 @@ wawaccess do
     }
   end
   
+  match /products/ do |url|
+    wlang 'products.wtpl', {
+      :products => AcmScW.database[:products]
+    }
+  end
+  
+  match /update-product\/(.*)$/ do |url, product_id|
+    wlang "update-product.form", {
+      :p => AcmScW::database[:products].filter(:id => product_id).first
+    }
+  end
+
+  
 end

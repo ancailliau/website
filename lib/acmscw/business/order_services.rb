@@ -33,6 +33,16 @@ module AcmScW
         AcmScW.database[:products].insert(tuple)
       end
       
+      # Updates a product
+      def update_product(id, tuple)
+        AcmScW.database[:products].filter(:id => id).update(tuple)
+      end
+      
+      # Deletes a product
+      def remove_product(id)
+        AcmScW.database[:products].filter(:id => id).delete()
+      end
+      
     end # class OrderServices
   end # module Business
 end # module AcmScW
