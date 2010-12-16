@@ -7,6 +7,7 @@ databases:
       - announced/core.yaml
       - announced/reports.yaml
       - announced/latex.yaml
+      - announced/order.yaml
     effective_schema:
       - devel/effective.yaml
 current: devel
