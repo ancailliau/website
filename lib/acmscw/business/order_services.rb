@@ -3,14 +3,17 @@ require 'base64'
 module AcmScW
   module Business
     class OrderServices < AcmScW::Business::AbstractServices
+    
+      attr_reader :products
       
       # Creates a services layer instance
       def initialize
+        @products = AcmScW.database[:products]
       end
       
       # Returns the mail agent to use
       def mail_agent
-	return false
+        return false
         unless @mail_agent
           @mail_agent = get_mail_agent
           template = @mail_agent.add_template(:activation)
@@ -23,7 +26,12 @@ module AcmScW
         end
         @mail_agent
       end
-     
+      
+      # Creates a product
+      def create_product(tuple)
+        tuple[:id] = 1+(products.max(:id) || 0)
+        AcmScW.database[:products].insert(tuple)
+      end
       
     end # class OrderServices
   end # module Business

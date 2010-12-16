@@ -1,0 +1,43 @@
+<div class="message logo-message">
+
+  <h3>Création d'un produit</h3>
+
+  <p>
+  	Veuillez remplir les champs suivants concernant la commande.
+  </p>
+
+  ={controllers.order.create_product as action}{
+  	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+  		<div class="feedback"></div>
+
+      <p class="span-3">
+	      <label for="name">Nom</label>
+	      <input class="text" type="text" name="name"/>
+      </p>
+
+      <p class="span-1">
+	      <label for="price">Prix</label>
+	      <input class="text" type="text" name="price"/>
+      </p>
+
+      <p class="span-4">
+	      <label for="available_size">Tailles disponibles (taille1,taille2,...)</label>
+	      <input class="text" type="text" name="available_size"/>
+      </p>
+
+  		<p class="form-button">
+  			<input type="submit" value="Créer ce produit »"/>
+  			<a class="button" onclick="hide_popup()">Fermer</a>
+  		</p>
+
+  		+{action.ajax_form_preparer}
+  	</form>
+  }
+
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+	  $("form input:submit, a.button").button();
+  });
+</script>
+

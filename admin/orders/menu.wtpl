@@ -1,6 +1,6 @@
 <h4>Actions</h4>
 <ul>
-  <li><a onclick="javascript:show_popup('products/create', 460)">Créer un produit</a></li>
+  <li><a onclick="javascript:show_popup('orders/create-product', 460)">Créer un produit</a></li>
 </ul>
 
 <h4>Gestion</h4>
