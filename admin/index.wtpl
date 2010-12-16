@@ -61,6 +61,11 @@
           <div class="accordion-tab">
             <<+{events/menu.wtpl}
           </div>
+          
+          <h3><a href="#">Gestion des commandes</a></h3>  
+          <div class="accordion-tab">
+            <<+{orders/menu.wtpl}
+          </div>
 
           <h3><a href="#">Toute la db</a></h3>  
           <div class="accordion-tab">

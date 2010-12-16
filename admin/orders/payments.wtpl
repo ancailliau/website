@@ -1,0 +1,22 @@
+<div>
+  <h3>
+    Gestion du paiement des commandes
+  </h3>
+  
+  <table>
+    <tr>
+      <th>N°</th>
+      <th>Nom</th>
+      <th>Montant</th>
+      <th>Payée&nbsp;?</th>
+    <tr>
+    *{orders as o}{
+    <tr>
+      <td>${o[:id]}</td>
+      <td>${o[:last_name]} ${o[:first_name]}</td>
+      <td>${o[:price]}</td>
+      <td>${o[:status]}</td>
+    </tr>
+    }
+  </table>
+</div>

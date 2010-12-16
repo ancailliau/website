@@ -44,6 +44,13 @@ logical:
       JOIN activity_responsabilities as r
         ON p.id = r.people
      ORDER BY id ASC
+  webr_order_not_purchased:
+    SELECT o.id, p.last_name, p.first_name, o.price, o.status
+      FROM orders as o
+      JOIN people as p
+        ON o.people_id = p.id
+     WHERE o.purchase_id = NULL
+     ORDER BY p.last_name ASC
 ---
 physical: {}
   

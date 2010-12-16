@@ -1,0 +1,11 @@
+wawaccess do
+  
+  inherits true
+  
+  match /payments/ do |url|
+    wlang 'payments.wtpl', {
+      :orders => AcmScW.database[:webr_order_not_purchased]
+    }
+  end
+  
+end
