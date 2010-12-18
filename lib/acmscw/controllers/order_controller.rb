@@ -33,6 +33,7 @@ module AcmScW
       }
 
       signature(ProductCommonSignature) {
+        validation :name, is_admin, :must_be_admin
       }
       routing {
         upon 'validation-ko' do form_validation_feedback     end
@@ -44,6 +45,7 @@ module AcmScW
       end
       
       signature(ProductCommonSignature) {
+        validation :name, is_admin, :must_be_admin
         validation :id, (mandatory & integer & (is >= 0)), :invalid_product_id
       }
       routing {
@@ -56,6 +58,7 @@ module AcmScW
       end
       
       signature {
+        validation :name, is_admin, :must_be_admin
         validation :id, (mandatory & integer & (is >= 0)), :invalid_product_id
       }
       routing {
