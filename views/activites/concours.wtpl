@@ -1,0 +1,18 @@
+<h2>Concours</h2>
+
+<p>
+	L'ACM Student Chapter organise des concours d'algorithmique et de programmation
+	ludiques et ouverts aux étudiants et chercheurs. Venez tester vos connaissances
+	et vous mesurer à vos pairs sur des énoncés pas si simples...
+</p>
+
+<p>Vous trouverez ci-dessous la liste des concours organisés dernièrement:</p>
+
+<ul>
+*{model.events.filter(:activity => 'concours').order(:start_time.desc) as e}{
+  <li>
+    <p><a href="{e[:card_path]}">${e[:name]}</a></p>
+    <p>${e[:abstract]}</p>
+  </li>
+}
+</ul>
