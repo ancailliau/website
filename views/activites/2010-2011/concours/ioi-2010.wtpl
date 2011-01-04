@@ -1,0 +1,15 @@
+<p>Les Olympiades Internationales d'Informatique (IOI) sont une compétition internationale de programmation pour 
+jeunes en fin de secondaire qui a lieu une fois par an dans un pays différent du monde. Les problèmes proposés 
+sont intéressants, et loin d'être triviaux, mais les résultats sont souvent impressionnants, en particulier pour 
+ces adolescents sans réelle formation dans le domaine.</p>
+
+<p>L'idée de ce concours est de comparer votre niveau (en algorithmique, logique, et programmation) au leur, en 
+vous plaçant dans les mêmes conditions qu'eux. Bien que vos années d'expériences et votre formation universitaire 
+devraient vous aider, il y a fort à parier que ce ne seront pas des adversaires facile à battre ! Le concours est 
+ouvert à tous les étudiants en informatique, membres du chapter, ainsi qu'aux chercheurs du département 
+d'informatique. Il s'agit là d'une compétition intéressante, et d'une bonne occasion de faire des rencontres et de 
+passer un bon moment entre passionnés.</p>
+
+<p class="important-info">Le concours aura lieu le 02 février 2011 de 16h à 19h en <strong>salle Intel</strong>.
++{utils.event_subscription_link['ioi-2010', 'Inscrivez-vous maintenant!']}</p>
+
