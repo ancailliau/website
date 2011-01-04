@@ -1,14 +1,21 @@
 <h2>Olympiades belges d'Informatique</h2>
 
 <p>
-	Les Olympiades belges d'Informatique (OI) sont une compétition de programmation,
+	<!--Les Olympiades belges d'Informatique (OI) sont une compétition de programmation,
 	d'algorithmique et de logique, organisée en Communauté Française de
 	Belgique par l'UCLouvain ACM Student Chapter ASBL et les Facultés
 	Universitaires Notre-Dame de la Paix de Namur (FUNDP). Cette année aura
-	lieu la première édition de cet évènement.
+	lieu la première édition de cet évènement.-->
+	Les Olympiades belges d'Informatique (OI) sont une compétition de programmation, 
+	d'algorithmique et de logique composée de deux concours. Le premier est destiné 
+	aux élèves en secondaire et permettra d'identifier des candidats pour les 
+	Olympiades Internationales d'Informatique (IOI). Le second concours est 
+	destiné aux étudiants en première année d'études supérieures.
 </p>
 
-<p>
-  Découvrez tout sur <a href="2009-2010/olympiades">notre participation à 
-  l'édition 2010</a> des olympiades.
-</p>
+<ul>
+<li> Découvrez tout sur <a href="2009-2010/olympiades">notre participation à 
+	  l'édition 2010</a> des olympiades.</li>
+<li>En 2010-2011, les OI, bien que toujours coorganisées avec l'UCLouvain ACM Student Chapter, ont
+	maintenant un site web dédié: <a href="http://be-oi.be/">http://be-oi.be</a>.</li>
+</ul>
