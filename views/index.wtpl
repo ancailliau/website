@@ -8,7 +8,7 @@
 
   <div>
     ={model.webr_planned_events.order(:start_time.asc).limit(4) as p_events}
-    ={model.webr_past_events.order(:start_time.desc).limit(4 - p_events.count) as o_events}
+    ={model.webr_past_events.order(:start_time.desc).limit(5 - p_events.count) as o_events}
     
     ?{!p_events.empty?}{
       <h2>A ne pas rater prochainement!</h2>
