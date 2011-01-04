@@ -1,0 +1,49 @@
+<h2>Agile Campus Tour 2011</h2>
+
+<p>Nous avons tous, quel que soit notre activité, été confrontés à l'organisation seul ou en équipe d'un projet 
+informatique. L'agile campus tour est un évènement totalement gratuit qui a pour but de vous proposer une autre 
+manière d'analyser, planifier et exécuter un tel projet, et ce au travers de plusieurs sessions théoriques, mais 
+aussi des ateliers en groupe. L'Agile se focalise avant tout sur la livraison d'une application "qui marche", en 
+utilisant des itérations courtes et en mettant l'accent sur la collaboration entre les différents acteurs afin de 
+s'assurer que les fonctionnalités ayant le plus de valeur sont développées en premier. Nous aurons l'occasion 
+d'utiliser plusieurs techniques de gamestorming, notamment le poker planning, le planning par affinité, mais aussi 
+des techniques de développement telles que le pair programming (binômage), le développement piloté par le 
+comportement et bien d'autres choses encore. Il n'y a aucune obligation d'être présent a toutes les sessions 
+théoriques mais pour les personnes intéressées par les ateliers, il est plus que souhaitable d'y avoir assisté.</p>
+
+<p>Nous proposerons 4 session théoriques sur le temps de midi, <strong>les 10, 17 et 24 février 2011</strong>. 
+Deux ateliers sont prévus <strong>les 21 et 28 février</strong>. Le programme complet des différentes sessions 
+sera communiqué ultérieurement.</p>
+
+<h3>Session théoriques</h3>
+
+  <h4>Agile? C'est quoi ce truc?</h4>
+  <p class="indent">Nous passerons en revue les différents problèmes que l'on peut rencontrer dans un projet IT, présenterons le 
+  manifeste agile, en quoi il cherche a répondre à ces problèmes et expliquerons rapidement son histoire. Nous 
+  terminerons par le programme des autres sessions et quelques ressources pour ceux qui veulent aller plus loin.</p>
+
+  <h4>Estimer & Planifier</h4>
+  <p class="indent">On entre dans le vif du sujet avec plusieurs pratiques de planification et d'estimation. Nous analyserons plus 
+  en détail les concepts de planning de release et d'itération, et présenterons une manière de visualiser l'état 
+  d'avancement d'un projet avec de simples post-its.</p>
+
+  <h4>Développer oui, mais pas n'importe comment</h4>
+  <p class="indent">Les codes monkeys ont encore de beaux jours devant eux, mais durant cette session, nous tenterons de vous ouvrir 
+  sur d'autres manières de concevoir du code, de le modifier, et de le gérer. Nous montrerons des exemples concrets 
+  en Ruby.</p>
+
+  <h4>Retrospectives et conclusion</h4>
+  <p class="indent">Aucun processus n'est infaillible et il est nécessaire de le faire évoluer a intervale régulier. Le concept de 
+  rétrospective permet à l'équipe de remettre en cause certaines parties du processus, nous présenterons différents 
+  types et techniques de rétrospective. Nous clôturerons l'évènement par une séance interactive de feedback.</p>
+
+<h3>Sessions pratiques</h3>
+
+  <h4>Planification Workshop</h4>
+  <p class="indent">Mise en pratique des différentes techniques présentées durant la session théorique. A partir de cas concrets, 
+  chaque équipe analysera et planifiera les différentes fonctionnalités du projet. Attention, usage excessif de 
+  post-its et de collaboration games.</p>
+
+  <h4>Code</h4>
+  <p class="indent">Séance de développement en binôme. Initiation au développement piloté par le comportement et au refactoring de 
+  code. Préparez-vous a coder à deux sur la même machine et à bousculer votre manière habituelle de développer.</p>
