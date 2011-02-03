@@ -1,0 +1,8 @@
+<ul class="menu">
+	<li><a href="index">Home</a></li>
+	<ul>
+  	<li><a href="theorie">Sessions théoriques</a></li>
+  	<li><a href="pratique">Sessions pratiques</a></li>
+  	<li><a href="formateurs">Formateurs</a></li>
+  </ul>
+</ul>
