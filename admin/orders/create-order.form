@@ -30,7 +30,7 @@
 	            <option>XXL</option>
 	          </select>
 	        </td>
-          <td class="span-1-last">${p[:price]} &euros;</td>
+          <td class="span-1-last">${p[:price]} euros</td>
         </tr>
         }
       </table>
