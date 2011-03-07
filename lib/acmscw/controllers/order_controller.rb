@@ -70,24 +70,36 @@ module AcmScW
         :ok
       end
 
-      signature() {
+      signature {
       }
       routing {
-        upon 'validation-ko' do form_validation_feedback     end
+        upon 'validation-ko' do message('/admin/orders/create-order-ko')  end
         upon 'success/ok'    do message('/admin/orders/create-order-ok')  end
       }
       def create_order(params)
-        #ids,quantities,sizes  = params.keep([:id,:quantity,:size])
+        ids,quantities,sizes  = params[:id],params[:quantity],params[:size]
         
         # Validation
-        #quantities.each do |qty|
-        #  if qty < 0
-        #    raise ::Waw::Validation::KO
-        #  end 
-        #end
+        sum = 0
+        quantities.each do |qty|
+           if qty.to_i < 0
+             raise(Waw::Validation::KO, [])
+           end
+           sum += qty.to_i
+        end
+        if sum <= 0
+          raise(Waw::Validation::KO, [])
+        end
+        
+        # Get user id
+        people_id = Waw.session.current_user[:id]
         
         # Record in DB
-        #order_services.create_product(params.keep(*PRODUCT_COLUMNS))
+        (0..ids.size-1).each do |i|
+          if quantities[i].to_i > 0
+            order_services.create_order({:product_id=>ids[i],:people_id=>people_id,:size=>sizes[i],:quantity=>quantities[i]})
+          end
+        end
         :ok
       end
       

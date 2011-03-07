@@ -20,7 +20,7 @@ wawaccess do
     }
   end
   
-  match /create-order/ do |url|
+  match /create-order$/ do |url|
     wlang "create-order.form", {
       :products => AcmScW::database[:products]
     }

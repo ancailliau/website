@@ -4,11 +4,12 @@ module AcmScW
   module Business
     class OrderServices < AcmScW::Business::AbstractServices
     
-      attr_reader :products
+      attr_reader :products, :orders
       
       # Creates a services layer instance
       def initialize
         @products = AcmScW.database[:products]
+        @orders = AcmScW.database[:orders]
       end
       
       # Returns the mail agent to use
@@ -41,6 +42,12 @@ module AcmScW
       # Deletes a product
       def remove_product(id)
         AcmScW.database[:products].filter(:id => id).delete()
+      end
+      
+      # Creates an order
+      def create_order(tuple)
+        tuple[:id] = 1+(orders.max(:id) || 0)
+        AcmScW.database[:orders].insert(tuple)
       end
       
     end # class OrderServices

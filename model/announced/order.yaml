@@ -19,8 +19,8 @@ logical:
       delivered:              {domain: Integer, default: 0}
     constraints: 
       pk_ordered_products:    {type: :primary_key, attributes: [id]}
-      people_fkey:            {type: foreign_key, attributes: [ product_id ], references: products  }
-      product_fkey:           {type: foreign_key, attributes: [ people_id ],  references: people    }
+      product_fkey:           {type: foreign_key, attributes: [ product_id ], references: products  }
+      people_fkey:            {type: foreign_key, attributes: [ people_id ],  references: people    }
 --- 
 physical: 
   indexes: {}
