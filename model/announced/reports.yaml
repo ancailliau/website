@@ -44,6 +44,23 @@ logical:
       JOIN activity_responsabilities as r
         ON p.id = r.people
      ORDER BY id ASC
+  webr_unpaid_orders:
+    SELECT p.mail, p.last_name, p.first_name, products.name, orders.quantity, orders.size, orders.paid
+      FROM people as p
+      JOIN orders 
+           ON orders.people_id = p.id
+      JOIN products 
+           ON orders.product_id = products.id
+     ORDER BY p.mail ASC
+  webr_undelivered_orders:
+    SELECT p.mail, p.last_name, p.first_name, products.name, orders.quantity, orders.size, orders.delivered
+      FROM people as p
+      JOIN orders 
+           ON orders.people_id = p.id
+      JOIN products 
+           ON orders.product_id = products.id
+     WHERE orders.paid = 1
+     ORDER BY p.mail ASC
 ---
 physical: {}
   
