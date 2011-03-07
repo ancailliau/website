@@ -19,6 +19,12 @@ wawaccess do
       :p => AcmScW::database[:products].filter(:id => product_id).first
     }
   end
+  
+  match /create-order/ do |url|
+    wlang "create-order.form", {
+      :products => AcmScW::database[:products]
+    }
+  end
 
   
 end

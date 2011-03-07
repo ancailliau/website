@@ -23,11 +23,9 @@
           <td class="span-1"><input type="text" name="quantity_${p[:id]}" id="shirt_quantity" value="0" /></td>
 	        <td class="span-1">
             <select name="size_${p[:id]}" id="size">
-	            <option>S</option>
-	            <option>M</option>
-	            <option>L</option>
-	            <option>XL</option>
-	            <option>XXL</option>
+	            *{p[:available_size].split(',') as s}{
+	              <option value="${s}">${s}</option>
+	            }
 	          </select>
 	        </td>
           <td class="span-1-last">${p[:price]} euros</td>
