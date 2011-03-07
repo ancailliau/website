@@ -6,7 +6,7 @@
   	Veuillez remplir les champs suivants concernant la commande.
   </p>
 
-  ={controllers.event.create as action}{
+  ={controllers.order.create_order as action}{
   	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
   		<div class="feedback"></div>
 
@@ -19,10 +19,10 @@
         </tr>
         *{products as p}{ 
         <tr>
-          <td class="span-1">${p[:name]}</td>
-          <td class="span-1"><input type="text" name="quantity_${p[:id]}" id="shirt_quantity" value="0" /></td>
+          <td class="span-1">${p[:name]}<input type="hidden" name="id[]" id="id[]" value="${p[:id]}" /></td>
+          <td class="span-1"><input type="text" name="quantity[]" id="quantity[]" value="0" /></td>
 	        <td class="span-1">
-            <select name="size_${p[:id]}" id="size">
+            <select name="size[]" id="size[]">
 	            *{p[:available_size].split(',') as s}{
 	              <option value="${s}">${s}</option>
 	            }

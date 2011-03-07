@@ -69,6 +69,27 @@ module AcmScW
         order_services.remove_product(params.keep(:id)[:id])
         :ok
       end
+
+      signature() {
+      }
+      routing {
+        upon 'validation-ko' do form_validation_feedback     end
+        upon 'success/ok'    do message('/admin/orders/create-order-ok')  end
+      }
+      def create_order(params)
+        #ids,quantities,sizes  = params.keep([:id,:quantity,:size])
+        
+        # Validation
+        #quantities.each do |qty|
+        #  if qty < 0
+        #    raise ::Waw::Validation::KO
+        #  end 
+        #end
+        
+        # Record in DB
+        #order_services.create_product(params.keep(*PRODUCT_COLUMNS))
+        :ok
+      end
       
     end # class OrderController
   end # module Controllers
