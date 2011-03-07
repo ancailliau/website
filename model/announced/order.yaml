@@ -1,42 +1,25 @@
 --- 
 logical: 
-  orders: 
-    heading: 
-      id:           {domain: Integer}
-      people_id:    {domain: Integer}
-      purchase_id:  {domain: Integer, mandatory: false}
-      status:       {domain: String}
-      price:        {domain: Float}
-    constraints: 
-      pk_orders: {type: :primary_key, attributes: [id]}
-      order_which_people:    {type: foreign_key, attributes: [ people_id ],   references: people    }
-      order_which_purchase:  {type: foreign_key, attributes: [ purchase_id ], references: purchases }
   products: 
     heading: 
-      id:               {domain: Integer}
-      name:             {domain: String}
-      available_size:   {domain: String}
-      price:            {domain: Float}
+      id:                     {domain: Integer}
+      name:                   {domain: String}
+      available_size:         {domain: String}
+      price:                  {domain: Float}
     constraints: 
-      pk_products: {type: :primary_key, attributes: [id]}
-  purchases: 
+      pk_products:            {type: :primary_key, attributes: [id]}
+  orders: 
     heading: 
-      id:       {domain: Integer}
-      date:     {domain: Time}
-      price:    {domain: Float}
+      id:                     {domain: Integer}
+      people_id:              {domain: Integer}
+      product_id:             {domain: Integer}
+      size:                   {domain: String}
+      quantity:               {domain: Integer}
+      delivered:              {domain: Integer, default: 0}
     constraints: 
-      pk_purchases: {type: :primary_key, attributes: [id]}
-  ordered_products: 
-    heading: 
-      id:           {domain: Integer}
-      product_id:   {domain: Integer}
-      order_id:     {domain: Integer}
-      size:         {domain: String}
-      quantity:     {domain: Integer}
-    constraints: 
-      pk_ordered_products: {type: :primary_key, attributes: [id]}
-      ordprod_which_product:  {type: foreign_key, attributes: [ product_id ],   references: products  }
-      ordprod_which_order:    {type: foreign_key, attributes: [ order_id ],     references: orders    }
+      pk_ordered_products:    {type: :primary_key, attributes: [id]}
+      people_fkey:            {type: foreign_key, attributes: [ product_id ], references: products  }
+      product_fkey:           {type: foreign_key, attributes: [ people_id ],  references: people    }
 --- 
 physical: 
   indexes: {}
