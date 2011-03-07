@@ -41,5 +41,12 @@
   		+{action.ajax_form_preparer}
   	</form>
   }
+  
+  <p>Commandes déjà passées&nbsp;:</p>
+  <ul>
+    *{orders as o}{
+      <li>${o[:sum]} x ${o[:name]} ${o[:size]} ?{o[:paid] == 0}{}{(payée)}</li>
+    }
+  </ul>
 
 </div>

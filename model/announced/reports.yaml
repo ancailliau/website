@@ -45,7 +45,7 @@ logical:
         ON p.id = r.people
      ORDER BY id ASC
   webr_unpaid_orders:
-    SELECT p.last_name, p.first_name, 
+    SELECT p.last_name, p.first_name, p.id as people_id,
            products.name, 
            orders.quantity, orders.size, orders.id, orders.paid, 
            orders.quantity * products.price as price
@@ -55,7 +55,7 @@ logical:
       JOIN products 
            ON orders.product_id = products.id
      WHERE orders.delivered = 0
-     ORDER BY p.last_name ASC, p.first_name ASC
+     ORDER BY p.last_name ASC, p.first_name ASC, products.name, orders.size, orders.id
   webr_undelivered_orders:
     SELECT orders.id, p.last_name, p.first_name, products.name, orders.quantity, orders.size, orders.delivered
       FROM people as p
@@ -64,13 +64,18 @@ logical:
       JOIN products 
            ON orders.product_id = products.id
      WHERE orders.paid = 1
-     ORDER BY p.last_name ASC, p.first_name ASC
+     ORDER BY p.last_name ASC, p.first_name ASC, products.name, orders.size, orders.id
   webr_recap_orders:
     SELECT p.id, o.size, p.name, SUM(o.quantity) as sum
       FROM orders as o
       JOIN products as p
            ON p.id = o.product_id WHERE o.paid = 1 AND o.delivered = 0 GROUP BY p.id, o.size, p.name
-  
+  webr_personal_unpaid_orders:
+    SELECT o.people_id, p.name, o.size, SUM(o.quantity) as sum, o.paid
+      FROM orders AS o
+      JOIN products AS p ON o.product_id = p.id 
+     WHERE o.delivered = 0 GROUP BY o.product_id, o.size, o.people_id, p.name, o.paid
+     ORDER BY p.name, o.size
 ---
 physical: {}
 

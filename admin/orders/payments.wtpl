@@ -6,12 +6,14 @@
   <table>
     <tr>
       <th>Nom</th>
+      <th>Produits</th>
       <th>Montant</th>
       <th>Payée&nbsp;?</th>
     <tr>
     *{orders as o}{
     <tr>
       <td>${o[:last_name]} ${o[:first_name]}</td>
+      <td>${o[:quantity]} x ${o[:name]} ${o[:size]}</td>
       <td>${o[:price]} euros</td>
       <td>
         ?{o[:paid] == 0}{

@@ -29,7 +29,8 @@ wawaccess do
   
   match /create-order$/ do |url|
     wlang "create-order.form", {
-      :products => AcmScW::database[:products]
+      :products => AcmScW::database[:products],
+      :orders => AcmScW::database[:webr_personal_unpaid_orders].filter(:people_id => Waw.session.current_user[:id])
     }
   end
 
