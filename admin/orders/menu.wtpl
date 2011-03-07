@@ -12,6 +12,6 @@
     <a onclick="javascript:open_tab('orders/payments', 'Gestion des paiements')">Gestion des paiements</a>
   </li>
   <li>
-    <a onclick="javascript:open_tab('orders/purchases', 'Gestion des achats')">Gestion des achats</a>
+    <a onclick="javascript:open_tab('orders/deliveries', 'Gestion des livraisons')">Gestion des livraisons</a>
   </li>
 </ul>
