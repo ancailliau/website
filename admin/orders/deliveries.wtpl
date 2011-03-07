@@ -1,0 +1,39 @@
+<div>
+  <h3>
+    Gestion du paiement des livraisons
+  </h3>
+  
+  <table>
+    <tr>
+      <th>Nom</th>
+      <th>Produit</th>
+      <th>Taille</th>
+      <th>Quantité</th>
+      <th>Délivrée&nbsp;?</th>
+    <tr>
+    *{orders as o}{
+    <tr>
+      <td>${o[:last_name]} ${o[:first_name]}</td>
+      <td>${o[:name]}</td>
+      <td>${o[:size]}</td>
+      <td>${o[:quantity]}</td>
+      <td>
+        ?{o[:delivered] == 0}{
+          ={controllers.order.mark_order_as_delivered as action}{
+            <a onclick="{action.ajax_link(:id => o[:id])}">
+              <img src="images/famfamicons/tick.png"/>
+            </a>
+          }
+        }{
+          ={controllers.order.mark_order_as_undelivered as action}{
+            <a onclick="{action.ajax_link(:id => o[:id])}">
+              <img src="images/famfamicons/cross.png"/>
+            </a>
+          }
+        }
+      </td>
+    </tr>
+    }
+  </table>
+  
+</div>

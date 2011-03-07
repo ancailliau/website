@@ -55,6 +55,11 @@ module AcmScW
         AcmScW.database[:orders].filter(:id => id).update({:paid => paid})
       end
       
+      # Marks order as delivered
+      def mark_as_delivered(id, delivered)
+        AcmScW.database[:orders].filter(:id => id).update({:delivered => delivered})
+      end
+      
     end # class OrderServices
   end # module Business
 end # module AcmScW

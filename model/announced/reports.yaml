@@ -56,7 +56,7 @@ logical:
            ON orders.product_id = products.id
      ORDER BY p.last_name ASC, p.first_name ASC
   webr_undelivered_orders:
-    SELECT p.last_name, p.first_name, products.name, orders.quantity, orders.size, orders.delivered
+    SELECT p.id, p.last_name, p.first_name, products.name, orders.quantity, orders.size, orders.delivered
       FROM people as p
       JOIN orders 
            ON orders.people_id = p.id

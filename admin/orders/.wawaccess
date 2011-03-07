@@ -9,9 +9,15 @@ wawaccess do
     }
   end
   
-  match /products/ do |url|
+  match /products$/ do |url|
     wlang 'products.wtpl', {
       :products => AcmScW.database[:products]
+    }
+  end
+  
+  match /deliveries$/ do |url|
+    wlang 'deliveries.wtpl', {
+      :orders => AcmScW.database[:webr_undelivered_orders]
     }
   end
   
