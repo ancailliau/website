@@ -13,8 +13,8 @@
       <table class="orders">
         <tr>
           <th class="span-1">Intitulé</th>
-          <th class="span-1">Taille</th>
           <th class="span-1">Quantité</th>
+          <th class="span-1">Taille</th>
           <th class="span-1-last">Prix</th>
         </tr>
         *{products as p}{ 
