@@ -57,6 +57,7 @@ module AcmScW
       
       # Marks order as delivered
       def mark_as_delivered(id, delivered)
+        Waw.logger.debug(id)
         AcmScW.database[:orders].filter(:id => id).update({:delivered => delivered})
       end
       
