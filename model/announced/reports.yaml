@@ -65,10 +65,10 @@ logical:
      WHERE orders.paid = 1
      ORDER BY p.last_name ASC, p.first_name ASC
   webr_recap_orders:
-    SELECT p.id, o.size, p.name, SUM(o.quantity)
+    SELECT p.id, o.size, p.name, SUM(o.quantity) as sum
       FROM orders as o
       JOIN products as p
-           ON p.id = o.product_id GROUP BY p.id, o.size, p.name
+           ON p.id = o.product_id WHERE o.paid = 1 AND o.delivered = 0 GROUP BY p.id, o.size, p.name
   
 ---
 physical: {}
