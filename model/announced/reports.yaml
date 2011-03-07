@@ -64,6 +64,12 @@ logical:
            ON orders.product_id = products.id
      WHERE orders.paid = 1
      ORDER BY p.last_name ASC, p.first_name ASC
+  webr_recap_orders:
+    SELECT p.id, o.size, p.name, SUM(o.quantity)
+      FROM orders as o
+      JOIN products as p
+           ON p.id = o.product_id GROUP BY p.id, o.size, p.name
+  
 ---
 physical: {}
-  
+
