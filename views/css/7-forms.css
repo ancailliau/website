@@ -155,3 +155,7 @@ form.form-460 p.form-button input {
 	float: left;
 	margin: 0 10px 0 0;
 }
+
+table.orders {
+  width: 460px;
+}
