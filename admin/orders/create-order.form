@@ -11,13 +11,18 @@
   		<div class="feedback"></div>
 
       <table class="orders">
-        <tr><th>Intitulé</th><th>Taille</th><th>Quantité</th><th>Prix</th></tr>
         <tr>
-          <td>T-Shirt</td>
-          <td><input type="text" name="shirt_quantity" id="shirt_quantity" value="0" /></td>
-	        <td><input type="text" name="shirt_price" id="shirt_price" value="0 euros" disabled /></td>
-          <td>
-            <select name="sweat_size" id="size">
+          <th class="span-1">Intitulé</th>
+          <th class="span-1">Taille</th>
+          <th class="span-1">Quantité</th>
+          <th class="span-1-last">Prix</th>
+        </tr>
+        *{products as p}{ 
+        <tr>
+          <td class="span-1">${p[:name]}</td>
+          <td class="span-1"><input type="text" name="quantity_${p[:id]}" id="shirt_quantity" value="0" /></td>
+	        <td class="span-1">
+            <select name="size_${p[:id]}" id="size">
 	            <option>S</option>
 	            <option>M</option>
 	            <option>L</option>
@@ -25,8 +30,9 @@
 	            <option>XXL</option>
 	          </select>
 	        </td>
-	        <td>Temp</td>
-         </tr>
+          <td class="span-1-last">${p[:price]} &euros;</td>
+        </tr>
+        }
       </table>
 
   		<p class="form-button">

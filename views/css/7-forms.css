@@ -47,19 +47,19 @@ form legend {
 form.form-300 {
 	width: 300px;
 }
-form.form-300 p.span-3 {
+form.form-300 .span-3 {
 	width: 300px;
 	clear: left;
 }
-form.form-300 p.span-3 input {
+form.form-300 .span-3 input {
 	width: 296px;
 }
-form.form-300 p.form-button {
+form.form-300 .form-button {
 	padding-top: 20px;
 	width: 300px;
 	line-height: 22px;
 }
-form.form-300 p.form-button input {
+form.form-300 .form-button input {
 	width: auto;
 	float: left;
 	margin: 0 10px 0 0;
@@ -72,85 +72,85 @@ form.form-460 {
 form.form-460 fieldset {
 	width: 460px;
 }
-form.form-460 p.span-1 {
+form.form-460 .span-1 {
 	width: 105px;
 	float: left;
 	margin-right: 10px;
 }
-form.form-460 p.span-1-last {
+form.form-460 .span-1-last {
 	width: 115px;
 	float: left;
 }
-form.form-460 p.span-1 select,
-form.form-460 p.span-1 textarea,
-form.form-460 p.span-1 input {
+form.form-460 .span-1 select,
+form.form-460 .span-1 textarea,
+form.form-460 .span-1 input {
 	width: 101px;
 }
-form.form-460 p.span-1-last select,
-form.form-460 p.span-1-last textarea,
-form.form-460 p.span-1-last input {
+form.form-460 .span-1-last select,
+form.form-460 .span-1-last textarea,
+form.form-460 .span-1-last input {
 	width: 111px;
 }
-form.form-460 p.span-2 {
+form.form-460 .span-2 {
 	width: 220px;
 	float: left;
 	margin-right: 10px;
 }
-form.form-460 p.span-2-last {
+form.form-460 .span-2-last {
 	width: 230px;
 	float: left;
 	margin-right: 0px;
 }
-form.form-460 p.span-2 select,
-form.form-460 p.span-2 textarea,
-form.form-460 p.span-2 input {
+form.form-460 .span-2 select,
+form.form-460 .span-2 textarea,
+form.form-460 .span-2 input {
 	width: 216px;
 }
-form.form-460 p.span-2-last textarea,
-form.form-460 p.span-2-last input {
+form.form-460 .span-2-last textarea,
+form.form-460 .span-2-last input {
 	width: 226px;
 }
-form.form-460 p.span-3 {
+form.form-460 .span-3 {
 	width: 335px;
 	float: left;
 	margin-right: 10px;
 }
-form.form-460 p.span-3-last {
+form.form-460 .span-3-last {
 	width: 345px;
 	float: left;
 }
-form.form-460 p.span-3 select,
-form.form-460 p.span-3 textarea,
-form.form-460 p.span-3 input {
+form.form-460 .span-3 select,
+form.form-460 .span-3 textarea,
+form.form-460 .span-3 input {
 	width: 331px;
 }
-form.form-460 p.span-3-last textarea,
-form.form-460 p.span-3-last input {
+form.form-460 .span-3-last textarea,
+form.form-460 .span-3-last input {
 	width: 341px;
 }
-form.form-460 p.span-4 {
+form.form-460 .span-4 {
 	width: 460px;
 	clear: left;
 }
-form.form-460 p.span-4-checkbox {
+form.form-460 .span-4-checkbox {
 	width: 460px;
 	clear: left;
 }
-form.form-460 p.span-4-checkbox input,
-form.form-460 p.span-4-checkbox label {
+form.form-460 .span-4-checkbox input,
+form.form-460 .span-4-checkbox label {
 	display: inline;
 }
-form.form-460 p.span-4 select,
-form.form-460 p.span-4 textarea,
-form.form-460 p.span-4 input {
+form.form-460 .span-4 select,
+form.form-460 .span-4 textarea,
+form.form-460 .span-4 input {
 	width: 456px;
 }
-form.form-460 p.form-button {
+form.form-460 .form-button {
 	padding-top: 20px;
 	width: 460px;
 	line-height: 22px;
 }
-form.form-460 p.form-button input {
+form.form-460 .form-button input {
 	width: auto;
 	float: left;
 	margin: 0 10px 0 0;
@@ -158,4 +158,16 @@ form.form-460 p.form-button input {
 
 table.orders {
   width: 460px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table.orders th {
+  text-align: left;
+  font-size : 1em;
+}
+
+table.orders .span-1,
+table.orders .span-1-last {
+  float: none;
 }
