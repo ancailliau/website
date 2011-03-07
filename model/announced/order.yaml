@@ -15,6 +15,7 @@ logical:
       product_id:             {domain: Integer}
       size:                   {domain: String}
       quantity:               {domain: Integer}
+      paid:                   {domain: Integer, default: 0}
       delivered:              {domain: Integer, default: 0}
     constraints: 
       pk_ordered_products:    {type: :primary_key, attributes: [id]}
