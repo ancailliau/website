@@ -5,18 +5,39 @@
   
   <table>
     <tr>
-      <th>N°</th>
       <th>Nom</th>
       <th>Montant</th>
       <th>Payée&nbsp;?</th>
     <tr>
     *{orders as o}{
     <tr>
-      <td>${o[:id]}</td>
       <td>${o[:last_name]} ${o[:first_name]}</td>
-      <td>${o[:price]}</td>
-      <td>${o[:status]}</td>
+      <td>${o[:price]} euros</td>
+      <td>
+        ?{o[:paid] == 0}{
+          ={controllers.order.mark_order_as_paid as action}{
+            <a onclick="{action.ajax_link(:id => o[:id])}">
+              <img src="images/famfamicons/tick.png"/>
+            </a>
+          }
+        }{
+          ={controllers.order.mark_order_as_unpaid as action}{
+            <a onclick="{action.ajax_link(:id => o[:id])}">
+              <img src="images/famfamicons/cross.png"/>
+            </a>
+          }
+        }
+      </td>
     </tr>
     }
   </table>
+  
+  <h3>
+    Récapitulatif des commandes payées
+  </h3>
+  <ul>
+    *{summary as s}{
+      <li>${s[:sum]} x ${s[:name]} ${s[:size]}</li>
+    }
+  </ul>
 </div>

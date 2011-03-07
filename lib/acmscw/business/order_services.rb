@@ -50,6 +50,11 @@ module AcmScW
         AcmScW.database[:orders].insert(tuple)
       end
       
+      # Marks order as paid
+      def mark_as_paid(id, paid)
+        AcmScW.database[:orders].filter(:id => id).update({:paid => paid})
+      end
+      
     end # class OrderServices
   end # module Business
 end # module AcmScW

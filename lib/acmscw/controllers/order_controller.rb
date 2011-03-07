@@ -103,6 +103,28 @@ module AcmScW
         :ok
       end
       
+      signature {
+        validation :name, is_admin, :must_be_admin
+        validation :id, (mandatory & integer & (is >= 0)), :invalid_order_id
+      }
+      routing {
+      }
+      def mark_order_as_paid(params)
+        order_services.mark_as_paid(params.keep(:id)[:id], 1)
+        :ok
+      end
+      
+      signature {
+        validation :name, is_admin, :must_be_admin
+        validation :id, (mandatory & integer & (is >= 0)), :invalid_order_id
+      }
+      routing {
+      }
+      def mark_order_as_unpaid(params)
+        order_services.mark_as_paid(params.keep(:id)[:id], 0)
+        :ok
+      end
+      
     end # class OrderController
   end # module Controllers
 end # module AcmScW

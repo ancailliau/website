@@ -2,9 +2,10 @@ wawaccess do
   
   inherits true
   
-  match /payments/ do |url|
+  match /payments$/ do |url|
     wlang 'payments.wtpl', {
-      :orders => AcmScW.database[:webr_order_not_purchased]
+      :orders => AcmScW.database[:webr_unpaid_orders],
+      :summary  => AcmScW::database[:webr_recap_orders]
     }
   end
   
