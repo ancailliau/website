@@ -13,3 +13,7 @@ function open_tab(url, label) {
 		tabs.tabs('select', tabs.tabs('length')-1);
 	}
 }
+function reload_current_tab() {
+	tabs = $("#admin-tabs");
+  tabs.tabs('load', tabs.tabs('option', 'selected'));
+}

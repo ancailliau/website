@@ -20,13 +20,13 @@
       <td>
         ?{o[:delivered] == 0}{
           ={controllers.order.mark_order_as_delivered as action}{
-            <a onclick="{action.ajax_link(:id => o[:id])}">
+            <a onclick="{action.ajax_link(:id => o[:id])};reload_current_tab();">
               <img src="images/famfamicons/tick.png"/>
             </a>
           }
         }{
           ={controllers.order.mark_order_as_undelivered as action}{
-            <a onclick="{action.ajax_link(:id => o[:id])}">
+            <a onclick="{action.ajax_link(:id => o[:id])};reload_current_tab();">
               <img src="images/famfamicons/cross.png"/>
             </a>
           }
