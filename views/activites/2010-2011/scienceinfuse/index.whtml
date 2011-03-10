@@ -1,0 +1,25 @@
+<h2>Weekend Festival Scienceinfuse</h2>
+
+<div class="index">
+
+  <p>
+    Dans le cadre du <a href="http://www.printempsdessciences.be/">Printemps des Sciences 2011</a>, des 
+    activités de sensibilisation à l'informatique se dérouleront le weekend du 02 et 03 avril 2011 à 
+    Louvain-la-Neuve. Grands et petits pourront décrouvrir l'informatique sous plusieurs facettes.
+    Plusieurs type d'animations sont proposées :
+  </p>
+
+  <ul>
+  	<li><a href="ateliers">Ateliers</a> interactifs de 14h à 15h30 et 15h45 à 17h15</li>
+  	<li><a href="stands">Stands</a> interactifs de 14h à 17h</li>
+  	<li><a href="spectacle">Spectacle</a> scientifique de 17h30 à 18h30</li>
+  </ul>
+
+  <p>
+    Les ateliers sont réservés aux élèves de primaire et de secondaire tandis que les stands 
+    et le spectacle sont ouverts à tout public.
+  </p>
+	
+  <p><img src="images/Printemps-des-Sciences.png" alt="Printemps des Sciences" /></p>
+
+</div>

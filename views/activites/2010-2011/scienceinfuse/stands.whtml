@@ -1,0 +1,38 @@
+<h2>Weekend Festival Scienceinfuse &mdash; Stands interactifs</h2>
+
+<p>Durant tout le weekend, de 14h à 17h, des stands interactifs vous permettront de découvrir différents aspects de l'informatique. Ces stands sont accessibles à tout le monde et la durée d'une visite à un stand varie de 5 à 20 minutes. De plus, vous pourrez également visiter une mini exposition de pièces d'ordinateur, retraçant l'histoire de l'informatique.</p>
+
+<ul class="stands">
+	<li>
+	  <p><strong>Jeux vidéos d'hier et d'aujourd'hui: quelle évolution !</strong></p>
+	  <p>Quels jeux existaient quand vos parents avaient votre âge ? Venez et découvrez ceux qui ont fait l'histoire de l'informatique. Des plus vieux jeux comme Pong ou le très célèbre Pac-Man aux plus récents.</p>
+	</li>
+	<li>
+	  <p><strong>Ma première animation : on me donne le scénario, je programme l’animation.</strong></p>
+	  <p>Aujourd’hui, c’est très facile de créer une animation. Venez découvrir comment créer la votre sur ordinateur, rien qu’en utilisant la souris et Scratch. Nous vous fournissons un problème, vous programmez sa solution sur ordinateur et vous voyez directement le résultat.</p>
+	</li>
+	<li>
+	  <p><strong>Qu'y a-t-il dans cette boite ? Démontage de PC (neufs et anciens).</strong></p>
+	  <p>Vous vous êtes toujours demandé ce qu'il y avait à l'intérieur d'un ordinateur ? C'est le moment de venir découvrir les pièces qui le constituent et de comprendre leur rôle. Vous pourrez même démonter et remonter par vous-même un vieil ordinateur ! </p>
+	</li>
+	<li>
+	  <p><strong>Représentation binaire, boulier compteur et tri</strong></p>
+	  <p>Savez-vous comment les nombres sont représentés dans un ordinateur ? Savez-vous utiliser un boulier compteur pour faire des calculs ? Savez-vous comment l'ordinateur fait pour trier des chiffres de 1 à 6 par ordre croissant ? Dans ce stand, vous allez découvrir tout cela de manière active, en participant et jouant avec des nombres binaires, avec un boulier compteur géant et avec une table tournante de tri.</p>
+	</li>
+	<li>
+	  <p><strong>Sécuriser l'information ? Je réponds cryptographie !</strong></p>
+	  <p>Vous avez des choses à cacher ? Des informations à protéger ? Découvrez la cryptographie à l'aide de méthodes simples qu'il est possible de mettre en oeuvre avec un crayon et du papier. Vous aurez même l'occasion de jouer le méchant et de tenter de décrypter des messages chiffrés.</p>
+	</li>
+	<li>
+	  <p><strong>Des briques en plastique ... intelligentes !</strong></p>
+	  <p>Jouer aux légos, c'est une chose... Faire un bouger un robot légo grâce à l'informatique, c'en est une autre ! Venez vous frotter aux rudiments de la programmation : préparez un petit "programme informatique" qui amènera votre robot à destination.</p>
+	</li>
+	<li>
+	  <p><strong>Edubuntu : la version éducative de Ubuntu, le logiciel libre au service des jeunes et des parents.</strong></p>
+	  <p>Vous ne savez pas quoi faire sur votre ordinateur ? Venez découvrir Edubuntu qui propose une pléthore de programmes éducatifs dans le domaine des sciences, des mathématiques, des langues, etc. En particulier, apprenez l'espagnol, étudiez les atomes, observez les étoiles, etc.</p>
+	</li>
+	<li>
+	  <p><strong>Des programmes intelligents ? Est-ce possible ?</strong></p>
+	  <p>Akinator, le génie du web, qui peut trouver n'importe quelle personne à qui vous pensez! Comment fonctionne t-il? Venez découvrir cette petite introduction aux algorithmes d'apprentissage automatique, et à l'intelligence artificielle!</p>
+	</li>
+</ul>
