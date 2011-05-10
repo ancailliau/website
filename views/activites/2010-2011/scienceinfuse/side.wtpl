@@ -1,0 +1,11 @@
+<ul class="menu">
+	<li><a href="index">Programme</a></li>
+	<ul>
+  	<li><a href="ateliers">Ateliers</a></li>
+  	<li><a href="stands">Stands</a></li>
+  	<li><a href="spectacle">Spectacle</a></li>
+  	<li><a href="acces-inscription">Accès &amp; Inscriptions</a></li>
+  </ul>
+</ul>
+
+<a href="http://www.comex.be/"><img src="images/logo_comex_03.jpg" alt="Comex" width="200px" style="margin: 1em 10px 0" /></a>
