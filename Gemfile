@@ -1,0 +1,11 @@
+source "http://rubygems.org"
+gem "fastercsv", "~> 1.5.1"
+gem "json", "~> 1.1.9"
+gem "pg", "~> 0.8.0"
+gem "rack", "~> 1.2.1"
+gem "rdoc", "~> 2.4.1"
+gem "sequel", "~> 3.8.0"
+gem "wlang", "~> 0.9.0"
+gem "waw", "~> 0.3.0"
+gem "dbagile", "~> 0.0.1"
+
