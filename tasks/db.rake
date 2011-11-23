@@ -5,6 +5,7 @@ namespace :db do
     puts `sudo -v`
   end
 
+  desc "Installs the database using last available snapshot"
   task :install => :sudo do
     puts '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     puts 'Installing postgresql database now...'
@@ -29,10 +30,12 @@ namespace :db do
     puts `dba --repository=model db:use devel`
   end
 
+  desc "Stages the database"
   task :stage do
     puts `dba --repository=model db:stage`
   end
 
+  desc "Backups the database, creating a snapshot file"
   task :snapshot do
     require 'time'
     require 'fileutils'
