@@ -1,19 +1,5 @@
-begin
-  require 'waw'
-rescue LoadError => ex
-  require 'rubygems'
-  gem 'waw',   '>= 0.3.0'
-  require 'waw'
-end
-
-begin
-  require 'wlang'
-rescue LoadError => ex
-  require 'rubygems'
-  gem 'wlang', '< 1.0.0'
-  require 'wlang'
-end
-
+require 'waw'
+require 'wlang'
 require 'rubygems'
 require 'sequel'
 
@@ -25,7 +11,7 @@ module AcmScW
   WLang::FILE_EXTENSIONS['.form'] = 'wlang/xhtml'
   
   # Version number of ACM Student Chapter Website
-  VERSION = "0.0.4".freeze
+  VERSION = "1.1".freeze
   
   # Checks that all mandatory configuration properties are present
   def self.check_configuration
