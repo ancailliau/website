@@ -1,4 +1,6 @@
-<h2>BEGRID Workshop</h2>
+<div class="page-header">
+  <h2>BEGRID Workshop</h2>
+</div>
 
 <p>
 	Le GRID est une infrastructure virtuelle formée d'un grand nombre machines 
@@ -30,6 +32,7 @@
   sont à présent clôturées. Vous pouvez par contre downloader les documents
   utilisés lors de ce tutoriel:
   <ul>
+    <li><a href="preparation">Préparation</a></li>
     <li><a href="downloads/BEgrid_training-exer-2009v8.pdf">Hands-on BEgrid</a></li>
     <li><a href="downloads/running-mpi-job.pdf">GRID computing with MPI</a></li>
   </ul>

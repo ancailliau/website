@@ -1,0 +1,51 @@
+.site-header {
+    margin: 30px 0;
+}
+
+.site-header h1 {
+	background: url("../images/logo.png") no-repeat top left;
+	height: 50px;
+	width: 256px;
+	margin: 0 0 18px 0;
+	padding: 0;
+    text-indent: -999em;
+}
+
+.page-header {
+    border-bottom: 1px solid #eee;
+    margin: 0 0 30px 0;
+    overflow: auto;
+}
+
+.page-header h2 {
+	margin: 0 0 9px 0;
+}
+
+#newsletter_form {
+    text-align: center;
+}
+
+#newsletter_form input[type=text],
+#newsletter_form label {
+    margin-right: 10px;
+}
+
+.sidebar {
+    padding: 8px 0;
+}
+
+h3, h4 {
+    margin-bottom: 5px;
+}
+
+.container {
+    margin-bottom: 60px;
+}
+
+body {
+    padding-top: 50px;
+}
+
+strong {
+    line-height: 1.3;
+}

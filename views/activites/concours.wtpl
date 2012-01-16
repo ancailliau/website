@@ -6,13 +6,11 @@
 	et vous mesurer à vos pairs sur des énoncés pas si simples...
 </p>
 
+<h3>Nos concours passés</h3>
+
 <p>Vous trouverez ci-dessous la liste des concours organisés dernièrement:</p>
 
-<ul>
 *{model.events.filter(:activity => 'concours').order(:start_time.desc) as e}{
-  <li>
-    <p><a href="{e[:card_path]}">${e[:name]}</a></p>
-    <p>${e[:abstract]}</p>
-  </li>
+  <h4><a href="{e[:card_path]}">${e[:name]}</a></h4>
+  <p>${e[:abstract]}</p>
 }
-</ul>

@@ -1,10 +1,6 @@
-<ul class="menu">
-	<li><a href="index">Accueil</a></li>
-	<li><a href="sujets">Les sujets</a></li>
-</ul>
-
-?{page_name == 'sujets'}{
-  <img src="images/buddha.png" />
-}{
-  <img src="images/ray.png" />
-}
+<div class="well sidebar">
+  <ul class="nav list">
+  	<li><a href="index">Accueil</a></li>
+  	<li><a href="sujets">Les sujets</a></li>
+  </ul>
+</div>

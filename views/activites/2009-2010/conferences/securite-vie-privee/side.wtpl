@@ -1,8 +1,10 @@
-<ul class="menu">
-	<li><a href="index">Programme</a></li>
-	<li><a href="orateurs">Orateurs</a></li>
-	<li><a href="sponsors">Sponsors</a></li>
-</ul>
+<div class="well sidebar">
+  <ul class="nav list">
+  	<li><a href="index">Programme</a></li>
+  	<li><a href="orateurs">Orateurs</a></li>
+  	<li><a href="sponsors">Sponsors</a></li>
+  </ul>
+</div>
 
 ?{page_name == 'sponsors'}{}{
 <h3>Sponsorisé par</h3>

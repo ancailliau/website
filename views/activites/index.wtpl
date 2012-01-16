@@ -1,7 +1,7 @@
-<div id="activities-page">
-  
+<div class="page-header">
   <h2>Quels sont les activités organisées ?</h2>
-  
+</div>
+
   <p>
   	L'ASBL UCLouvain ACM Student Chapter organise tout au long de l'année
   	plusieurs activités en lien avec l'informatique. Cette page décrit les
@@ -13,8 +13,6 @@
   *{model.activities as a}{
 
     <h3><a href="{a[:card_path]}">${a[:name]}</a></h3>
-  
     <p>${a[:abstract]}</p>
     
   }
-</div>

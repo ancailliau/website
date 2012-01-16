@@ -1,29 +1,27 @@
-<ul class="menu">
-	<li>Nos grands thèmes d'activité</li>
-	<ul>
-	  *{model.activities as a}{
-	    <li><a href="{a[:card_path]}">${a[:name]}</a></li>
-	  }
-	</ul>
-</ul>
+={model.webr_planned_events.order(:start_time.asc).limit(10) as p_events}
 
-={model.webr_planned_events.order(:start_time.asc) as planned_events}
-?{!planned_events.empty?}{
-<ul class="menu" style="padding-top: 10px">
-	<li>Nos prochains événements</li>
-	<ul>
-	  *{model.webr_planned_events.order(:start_time.asc) as e}{
-	    <li><a href="{e[:card_path]}">${e[:name]}</a></li>
-	  }
-	</ul>
-</ul>
+?{!p_events.empty?}{
+  <div class="well sidebar">
+
+    <ul class="nav list">
+
+      ?{normalized_url =~ /activites/}{}{
+    	  <li class="nav-header">Nos grands thèmes d'activité</li>
+      	*{model.activities as a}{
+      	  <li><a href="{a[:card_path]}">${a[:name]}</a></li>
+      	}
+    	}
+	
+      	<li class="nav-header">Nos prochains événements</li>
+        *{p_events as e}{
+          <li><a href="{e[:card_path]}">${e[:name]}</a></li>
+        }
+
+    </ul>
+
+  </div>
+  
+  
 }
+<a href="/activites/toutes" class="btn primary" style="width: 280px; padding: 10px">Voir tous nos évènements&nbsp;&raquo;</a>
 
-<ul class="menu" style="padding-top: 10px">
-	<li>Nos événements récents</li>
-	<ul>
-	  *{model.webr_past_events.order(:start_time.desc) as e}{
-	    <li><a href="{e[:card_path]}">${e[:name]}</a></li>
-	  }
-	</ul>
-</ul>

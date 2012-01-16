@@ -1,4 +1,6 @@
-<h2>Sécurité et vie privée &mdash; Orateurs</h2>
+<div class="page-header">
+  <h2>Sécurité et vie privée &mdash; Orateurs</h2>
+</div>
 
 <p>
 	Deux orateurs seront présents durant cette soirée. Le premier, Gildas
@@ -9,12 +11,14 @@
 	des menaces présentent sur Internet et la cybercriminalité.
 </p>
 
-<p><strong>L'orateur Luc Beirens étant dans l'impossibilité de venir,
-il sera remplacé par Laurent Bounameau, son collègue à la FCCU.</strong></p>
+<p class="alert alert-info">
+L'orateur Luc Beirens étant dans l'impossibilité de venir,
+il a été remplacé par Laurent Bounameau, son collègue à la FCCU.
+</p>
 
 <h3>Gildas Avoine</h3>
 
-	<p><img src="images/gildas-avoine.jpg" class="floating" /><a
+	<p><img src="images/gildas-avoine.jpg" style="float: left; margin: 0 20px 20px 0;" /><a
 	href="http://www.avoine.net">Gildas Avoine</a> est professeur à
 	l'Université catholique de Louvain (UCL) en Belgique, dans le
 	département d'ingénierie informatique. Il a été recruté en 2007 afin de
@@ -49,7 +53,7 @@ il sera remplacé par Laurent Bounameau, son collègue à la FCCU.</strong></p>
 
 <h3>Laurent Bounameau</h3>
 
-	<p><img src="images/laurent-bounameau.jpg" class="floating"/>Laurent Bounameau 
+	<p><img src="images/laurent-bounameau.jpg" style="float: left; margin: 0 20px 20px 0;" />Laurent Bounameau 
 	est commissaire à la Federal Computer Crime Unit (FCCU), unité de la Police Fédérale depuis 2001.
 	Cette unité est engagée dans la lutte contre la criminalité informatique.
 	Après avoir été responsable de la section &laquo;&nbsp;enquêtes sur Internet&nbsp;&raquo;, il exerce

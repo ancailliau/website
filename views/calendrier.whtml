@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h2 class="pull-left">Calendrier</h2>
+  <div class="pull-right">
+  <p class="pull-left" style="margin-right: 10px; line-height: 28px">Récuperer le calendrier&nbsp;:</p>
+  <div class="btn-group pull-right">
+    <a href="https://www.google.com/calendar/ical/bjusvvoijtjkdsg6n0tcdjpsd8%40group.calendar.google.com/public/basic.ics" class="btn" >iCal</a>
+    <a href="https://www.google.com/calendar/embed?src=bjusvvoijtjkdsg6n0tcdjpsd8%40group.calendar.google.com&ctz=Europe/Paris" class="btn">HTML</a>
+    <a href="https://www.google.com/calendar/feeds/bjusvvoijtjkdsg6n0tcdjpsd8%40group.calendar.google.com/public/basic" class="btn">XML</a>
+  </div>
+  </div>
+</div>
+
+
+<iframe src="https://www.google.com/calendar/b/0/embed?showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=fr&amp;bgcolor=%23FFFFFF&amp;src=bjusvvoijtjkdsg6n0tcdjpsd8%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Europe%2FParis" style=" border-width:0 " width="940" height="600" frameborder="0" scrolling="no"></iframe>

@@ -1,4 +1,6 @@
-<h2>Découvrez LaTeX &mdash; la composition de document par excellence</h2>
+<div class="page-header">
+  <h2>Découvrez LaTeX &mdash; la composition de document par excellence</h2>
+</div>
 
 <p>
 	LaTeX est un langage de balisage utilisé pour composer des documents à
@@ -11,36 +13,24 @@
 
 <ul>
 	<li>
-		<p>La première partie consiste en un <strong>cours
-		théorique</strong> présentant les bases de LaTeX. Cette partie
+		La première partie consiste en un <strong>cours
+		théorique</strong> a présenté les bases de LaTeX. Cette partie
 		présente en particulier ce qu'il est possible de réaliser avec
 		LaTeX, en particulier&nbsp: comment positionner et inclure des
 		images, comment écrire des formules mathématique, etc.<br />Vous
 		pouvez télécharger les transparents projetés <a
-		href="slides/formation-latex.pdf">ici</a>.</p>
-
-		<p class="important-info">Cette première partie aura lieu le 
-		<b>30 novembre 2009</b> de <b>14h à 16h</b> au <b>SUD11</b>.
-		+{utils.event_subscription_link['latex-2009', 'Inscrivez-vous maintenant!']}</p>
+		href="slides/formation-latex.pdf">ici</a>.
 	</li>
 	
 	<li>
 		La seconde partie consiste en <strong>sessions pratiques</strong>
-		encadrées sur ordinateur.  Il vous sera alors demandé de réaliser
+		encadrées sur ordinateur.  Il a alors été demandé de réaliser
 		des documents à l'aide de LaTeX. Plusieurs sessions de différents
 		niveaux sont organisées&nbsp;: du plus débutant au plus avancé.
 	</li>
 </ul>
 
-<p>
-	Les formations pratiques auront lieu dans la salle DAO (<a
-	href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=104799927147349536591.000477cce98e89ae44699&ll=50.668083,4.622422&spn=0.002013,0.004823&t=h&z=18">plan</a>),
-	sauf la scéance de lundi entre 14h et 16h qui aura lieu en salle Candix
-	(<a
-	href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=104799927147349536591.000477cce98e89ae44699&ll=50.668083,4.622422&spn=0.002013,0.004823&t=h&z=18">plan</a>).
-</p>
-
-<p>Les fichiers suivants sont disponibles</p>
+<p>Les fichiers suivants sont disponibles&nbsp;:</p>
 <ul>
 	<li><a href="slides/Introductory.zip">Introductory.zip</a></li>
 	<li><a href="slides/Advanced.zip">Advanced.zip</a></li>

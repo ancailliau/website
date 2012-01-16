@@ -1,4 +1,6 @@
-<h2>Tutoriels</h2>
+<div class="page-header">
+  <h2>Tutoriels</h2>
+</div>
 
 <p>
 	L'ASBL UCLouvain ACM Student Chapter a pour but de promouvoir
@@ -10,13 +12,11 @@
 	l'informatique ou ses langages de programmation en vogue ou en devenir.
 </p>
 
+<h3>Nos tutoriels passés</h3>
+
 <p>Vous trouverez ci-dessous la liste des tutoriels organisés dernièrement:</p>
 
-<ul>
 *{model.events.filter(:activity => 'tutoriels').order(:start_time.desc) as e}{
-  <li>
-    <p><a href="{e[:card_path]}">${e[:name]}</a></p>
-    <p>${e[:abstract]}</p>
-  </li>
+  <h4><a href="{e[:card_path]}">${e[:name]}</a></h4>
+  <p>${e[:abstract]}</p>
 }
-</ul>
