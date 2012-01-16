@@ -1,4 +1,6 @@
-<h2>Olympiades belges d'Informatique</h2>
+<div class="page-header">
+  <h2>Olympiades belges d'Informatique</h2>
+</div>
 
 <p>
 	Les Olympiades belges d'Informatique (OI) sont une compétition de programmation,
@@ -16,6 +18,10 @@
 	aux étudiants en première année d'étude supérieure.
 </p>
 
+<p class="alert alert-info">
+En 2010-2011 et 2011-2012, l'OI, bien que toujours coorganisée avec l'UCLouvain ACM Student Chapter, a
+maintenant un site web dédié: <a href="http://be-oi.be/">http://be-oi.be</a>.
+</p>
 
 <h3>Résultat de l'équipe belge aux Olympiades Internationales</h3>
 
@@ -48,15 +54,7 @@
 	Des photos sont également disponibles ! Faute de mieux et pour des raisons pratiques, elles sont pour l'instant 
 	uniquement via la page suivante: <a href="http://www.facebook.com/album.php?aid=24181&id=147050741979498">http://www.facebook.com/album.php?aid=24181&id=147050741979498</a>.
 </p>
-	
-<h2>Olympiades belges d'Informatique 2011 !</h2>
 
-<p>
-	Nous travaillons dès à présent sur l'édition 2011 des Olympiades belges et internationales. Nous mettrons 
-	ce site à jour dès que les premières décisions seront prises. Quoi qu'il en soit, nous avons besoin
-	par dessus tout de soutien financier pour l'organisation de ces olympiades et l'envoi de participants
-	à l'étranger. Si vous pouvez nous aider, <a href="/contact">contactez-nous</a> ! 
-</p>		
 <h3>Avec le soutien de</h3>
 
 <p><img src="images/OI-2010-soutien.png" alt="Soutien OI 2010" /></p>

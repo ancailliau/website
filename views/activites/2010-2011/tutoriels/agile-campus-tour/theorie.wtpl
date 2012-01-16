@@ -1,8 +1,7 @@
-<h3 id="act2011-theory">Sessions théoriques</h3>
+<div class="page-header">
+  <h2>Les sessions théoriques</h2>
+</div>  
 
-	<p class="important-info">Les sessions théoriques auront lieu les <strong>les 10, 17 et 24 février et 3 mars 
-	2011 de 13h00 à 14h00 au BARB 94</strong>. +{utils.event_subscription_link['agile11-t1', 'Inscrivez-vous 
-	maintenant!']}</p>
 
   <h4>Agile? C'est quoi ce truc?</h4>
   <p class="indent">Nous passerons en revue les différents problèmes que l'on peut rencontrer dans un projet IT, présenterons le 

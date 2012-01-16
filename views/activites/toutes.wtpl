@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h2>Découvrez tous les évènements organisés</h2>
+</div>
+
+  ={model.webr_planned_events.order(:start_time.asc) as p_events}
+  ={model.webr_past_events.order(:start_time.desc) as o_events}
+
+  ?{!p_events.empty?}{
+  	<h3>Nos prochains événements</h3>
+  	<p>Découvrez tous les événements qui auront lieu prochainement.</p>
+  	<ul>
+    *{p_events as e}{
+      <li><a href="{e[:card_path]}">${e[:name]}</a></li>
+    }
+    </ul>
+  }
+
+  ?{!o_events.empty?}{
+  	<h3>Nos événements passés</h3>
+  	<p>Découvrez tous les événements que nous avons organisé les années précédentes.</p>
+    *{o_events as e}{
+      <li><a href="{e[:card_path]}">${e[:name]}</a></li>
+    }
+  }
+  

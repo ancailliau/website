@@ -1,4 +1,6 @@
-<h2>Découvrez LaTeX &mdash; la composition de document par excellence</h2>
+<div class="page-header">
+  <h2>Découvrez LaTeX &mdash; la composition de document par excellence</h2>
+</div>
 
 <p>
 	LaTeX est un langage de balisage utilisé pour composer des documents à
@@ -11,16 +13,13 @@
 
 <ul>
 	<li>
-		<p>La première partie consiste en un <strong>cours
+	  La première partie consiste en un <strong>cours
 		théorique</strong> présentant les bases de LaTeX. Cette partie
 		présente en particulier ce qu'il est possible de réaliser avec
 		LaTeX, en particulier&nbsp: comment positionner et inclure des
-		images, comment écrire des formules mathématique, etc.</p>
-		
-		<p class="important-info">Cette première partie a eu lieu le 
-		<b>lundi 15 novembre 2010</b> de <b>16h15 à 18h</b> au <b>SUD18</b>.
+		images, comment écrire des formules mathématique, etc.
 		Vous pouvez <a href="slides/formation-LaTeX-15.11.2010.pdf">downloader 
-		les transparent qui ont été projetés.</a></p>
+		les transparent qui ont été projetés.</a>
 	</li>
 	
 	<li>
@@ -29,14 +28,10 @@
 	  à l'aide de LaTeX. Plusieurs sessions identiques sont organisées durant 
 	  toute une semaine. Une session plus avancée sur Beamer aura lieu mardi, 
 	  en parallèle avec la session débutante.
-
-		<p class="important-info">Cette seconde partie aura lieu la semaine 
-		du 22 au 26 novembre 2010. 
-		+{utils.event_subscription_link['latex-practical-2010', 'Inscrivez-vous maintenant!']}</p>
 	</li>
 </ul>
 
-<p>Les fichiers suivants sont disponibles</p>
+<p>Les fichiers suivants sont disponibles&nbsp;:</p>
 <ul>
 	<li><a href="slides/Introductory.zip">Introductory.zip</a></li>
 	<li><a href="slides/Advanced.zip">Advanced.zip</a></li>

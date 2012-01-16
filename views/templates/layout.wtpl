@@ -8,34 +8,65 @@
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 		<base href="{base}"/>
 	
-		*{stylesheets as css}{
-		<link rel="stylesheet" type="text/css" href="{css}" />
-		}
-
-		*{scripts as js}{
-		<script type="text/javascript" src="{js}"></script>
-		}
+		<link rel="stylesheet/less" href="/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet/less" href="/css/base.css">
+    <script src="/bootstrap/less-1.2.0.min.js"></script>
+    
+    <script src="/js/jquery-1.7.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="/bootstrap/js/bootstrap-transition.js"></script>
+    <script src="/js/base.js"></script>
+    
+		<script type="text/javascript" src="/js/3-acmscw.js"></script>
 		<script type="text/javascript" src="/webservices.js"></script>
+    
 	</head>
 	
 	<body>
-		<<+{header.wtpl share all}
+	  
+	  <div class="navbar navbar-fixed">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav pull-left">
+              ?{!session.has_key?(:user)}{
+                <li><a href="/accounts/subscribe">Inscrivez-vous</a></li>
+              }{
+                <li><a href="/accounts/update" >Editer mon profil</a></li>
+            		<!-- <li><a href="/admin/orders/create-order" >Commander</a></li> -->
+            		?{session.adminlevel > 0}{<li><a href="/admin">Admin</a></li>}
+              }
+            </ul>
+            <ul class="nav pull-right">
+              ?{!session.has_key?(:user)}{
+                <li><a class="button" href="/login">Connexion</a></li>
+              }{
+                <li><a onclick="{controllers.people.logout.ajax_link}">Déconnexion</a></li>
+              }
+            </ul>
+          </div>
+        </div><!-- /navbar-inner -->
+      </div>
+	  
+	  <div class="container">
+  
+  	<<+{header.wtpl share all}
 
-		<div id="main">
-		  <div class="*{classes as c}{+{c}}{ }">
 		    ?{knows?(:side)}{
-    		  <div class="side">
+		      <div class="row">
+    		  <div class="span8">
+    		      +{body}
+    		  </div>
+    		  <div class="span4">
     		    +{side}
     		  </div>
+    		  </div>
+		    }{  
+    		      +{body}
 		    }
-    		+{body}
-    	</div>
-  	</div>
 
 		<<+{footer.wtpl share all}
-
-    <div id="hide"></div>
-    <div id="popup"></div>
+    
+	</div>
 
 		?{knows?(:message)}{
 		  <script type="text/javascript">

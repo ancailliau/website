@@ -1,28 +1,35 @@
-<p id="change_mail_explain" class="explain">Changer votre adresse e-mail vous obligera a réactiver
-	votre compte (un mail vous sera envoyé)</p>
+
+	<fieldset class="control-group">
+  	<label for="first_name">Prénom</label>
+  	<div class="controls">
+      <input type="text" name="first_name" value="{people[:first_name]}" class="span8"/>
+    </div>
+  </fieldset>
+
+  <fieldset class="control-group">
+  	<label for="last_name">Nom</label>
+  	<div class="controls">
+      <input type="text" name="last_name" value="{people[:last_name]}" class="span8"/>
+    </div>
+  </fieldset>
 		
-<p class="span-4">
-	<label for="mail">Adresse e-mail</label>
-	<input type="text" name="mail" value="{people[:mail]}" id="account_fields_mail"/>
-</p>
+  <fieldset class="control-group">
+	  <label for="mail">Adresse e-mail</label>
+    <div class="controls">
+  	  <input type="text" name="mail" value="{people[:mail]}" id="account_fields_mail" class="span8"/>
+    </div>
+  </fieldset>
 
-<p class="span-2">
-	<label for="first_name">Prénom</label>
-	<input type="text" name="first_name" value="{people[:first_name]}"/>
-</p>
-
-<p class="span-2-last">
-	<label for="last_name">Nom</label>
-	<input type="text" name="last_name" value="{people[:last_name]}"/>
-</p>
-
-?{force_password}{
+?{force_password}{  
 	<input type="hidden" name="set_password" value="true"/>
 }{
-	<p class="span-4-checkbox">
-		<input type="checkbox" id="set_password_field" name="set_password" value="true"/>
-		<label for="set_password" id="set_password_label">Cliquez pour changer votre mot de passe</label>
-	</p>
+	<fieldset class="control-group">
+		<div class="controls">
+    <label for="set_password" id="set_password_label">
+      <input type="checkbox" id="set_password_field" name="set_password" value="true"/>
+		  Cliquez pour changer votre mot de passe</label>
+		</div>
+	</fieldset>
   <script type="text/javascript">
   	$(document).ready(function() {
   	  $('#password_section').hide();
@@ -38,24 +45,33 @@
 }
 
 <div id="password_section">
-	<p class="span-2">
-		<label for="password">Mot de passe (8 à 15 caractères)</label>
-		<input type="password" name="password" value=""/>
+<fieldset class="control-group">
+  <label for="password">Mot de passe (8 à 15 caractères)</label>
+	<div class="controls">
+  	<input type="password" name="password" value="" class="span8"/>
 	</p>
+</fieldset>
 
-	<p class="span-2-last">
-		<label for="password_confirm">Mot de passe (confirmation)</label>
-		<input type="password" name="password_confirm" value=""/>
+<fieldset class="control-group">
+  <label for="password_confirm">Mot de passe (confirmation)</label>
+	<div class="controls">
+		<input type="password" name="password_confirm" value="" class="span8"/>
 	</p>
+</fieldset>
 </div>
 	
-<p class="span-4">
-	<label>Occupation/Profession (p.ex. Etudiant SINF21, Analyste programmeur, etc.)</label>
-	<input type="text" name="occupation" value="{people[:occupation]}"/>
-</p>
+<fieldset class="control-group">
+	<label>Occupation/Profession</label>
+	<div class="controls">
+	  <input type="text" name="occupation" value="{people[:occupation]}" class="span8"/>
+  </div>
+</fieldset>
 
-<p class="span-4-checkbox">
-	<input type="checkbox" name="newsletter" value="true" ?{people[:newsletter]}{checked="checked"}/>
-	<label for="newsletter">Je souhaite m'abonner à la newsletter (au maximum un e-mail par mois)</label>
+<fieldset class="control-group">
+  <div class="controls">
+	<label for="newsletter">
+	  <input type="checkbox" name="newsletter" value="true" ?{people[:newsletter]}{checked="checked"}/>
+	  Je souhaite m'abonner à la newsletter (au maximum un e-mail par mois)</label>
+	</div>
 </p>
 

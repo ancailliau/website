@@ -1,38 +1,54 @@
-<h2>Contactez-nous</h2>
+<div class="page-header">
+  <h2>Contactez-nous</h2>
+</div>
 
-<p>
+<div class="row">
+
+<p class="span4">
 	N'hésitez pas à nous faire part de vos suggestions, idées, remarques ou
 	questions à propos de notre association et de nos activités.
 </p>
 
-<p>
+<p class="span4">
 	Le meilleur moyen de nous contacter est sans aucun doute de façon
 	électronique via l'adresse e-mail 
 	<a href="mailto:info@uclouvain.acm-sc.be">info@uclouvain.acm-sc.be</a>.
 </p>
 
-<p>
-	Vous pouvez également nous contacter par courrier papier à l'adresse
-	suivante :
-</p>
-
-<blockquote>
-	UCLouvain ACM Student Chapter ASBL<br />
+<div class="span4">
+<address>
+	<strong>UCLouvain ACM Student Chapter ASBL</strong><br />
 	Place Sainte Barbe, 2<br />
-	1348 Louvain-la-Neuve<br />
-	Belgique
-</blockquote>
+	1348 Louvain-la-Neuve, Belgique
+</address>
+
+</div>
+
+</div>
+
+<hr />
+
+<div class="row">
+
+  <div class="span8">
 
 <h3>Dons et Sponsoring</h3>
-
-<p>
+<div class="row">
+<p class="span4">
 	Nous sommes en constante recherche de dons et de sponsors pour
 	l'organisation de chacune de nos activités et pour le fonctionnement de
-	l'association. Si vous désirez nous soutenir financièrement ou
-	matériellement, prenez contact avec le responsable sponsor, Claire
-	Delcourt, à l'adresse e-mail suivante : <a
+	l'association.
+</p>
+
+<p class="span4">
+  Si vous désirez nous soutenir financièrement ou
+	matériellement, prenez contact avec nous à l'adresse e-mail suivante : <a
 	href="mailto:sponsors@uclouvain.acm-sc.be">sponsors@uclouvain.acm-sc.be</a>.
 </p>
+</div>
+</div>
+
+<div class="span4">
 
 <h3>Site web</h3>
 
@@ -42,3 +58,7 @@
 	webmaster à l'adresse e-mail suivante : 
 	<a href="mailto:team-web.uclouvain@acm-sc.be">team-web.uclouvain@acm-sc.be</a>.
 </p>
+
+</div>
+
+</div>

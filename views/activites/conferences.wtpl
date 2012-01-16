@@ -1,4 +1,6 @@
-<h2>Soirées-conférences à thème</h2>
+<div class="page-header">
+  <h2>Soirées-conférences à thème</h2>
+</div>
 
 <p>
 	Ces conférences à thème ont pour objectif de présenter différents
@@ -10,13 +12,11 @@
 	conférence.
 </p>
 
-<p>Vous trouverez ci-dessous la liste des conférences organisées dernièrement:</p>
+<h3>Nos conférences passées</h3>
 
-<ul>
+<p>Vous trouverez ci-dessous la liste des conférences organisées dans le passé:</p>
+
 *{model.events.filter(:activity => 'conferences').order(:start_time.desc) as e}{
-  <li>
-    <p><a href="{e[:card_path]}">${e[:name]}</a></p>
-    <p>${e[:abstract]}</p>
-  </li>
+  <h4><a href="{e[:card_path]}">${e[:name]}</a></h4>
+  <p>${e[:abstract]}</p>
 }
-</ul>

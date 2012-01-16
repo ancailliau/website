@@ -24,8 +24,8 @@ module AcmScW
         validation [:mail, :password], user_may_log, :bad_user_or_password
       }
       routing {
-        upon 'validation-ko' do feedback end
-        upon 'success/ok'    do refresh  end
+        upon 'validation-ko' do feedback               end
+        upon 'success/ok'    do redirect(:url => '/')  end
       }
       def login(params)
         session_set(:user, params[:mail]) and :ok
@@ -70,7 +70,7 @@ module AcmScW
       }
       routing {
         upon 'validation-ko' do form_validation_feedback           end
-        upon 'success/ok'    do message("/accounts/subscribe-ok")  end
+        upon 'success/ok'    do redirect(:url => '/')              end
       }
       def subscribe_account(params)
         args = params.keep(:mail, :password, :newsletter, :first_name, :last_name, :occupation, :rss_feed)
@@ -125,8 +125,8 @@ module AcmScW
       routing {
         upon 'error' do feedback end
         upon 'validation-ko' do form_validation_feedback end
-        upon 'success/ok' do message('/accounts/update-ok') end
-        upon 'success/activation_required' do message('/accounts/activation-required') end
+        upon 'success/ok' do redirect(:url => '/') end
+        upon 'success/activation_required' do redirect(:url => '/') end
       }
       def update_account(params)
         # Compute the update arguments

@@ -1,14 +1,15 @@
+<div class="page-header">
+  <h2>Les sessions pratiques</h2>
+</div>  
+
 <h3 id="act2011-planification-workshop">Planification Workshop (session pratique)</h3>
 
 <p class="indent">Mise en pratique des différentes techniques présentées durant la session théorique. A partir de cas concrets, 
 chaque équipe analysera et planifiera les différentes fonctionnalités du projet. Attention, usage excessif de 
 post-its et de collaboration games.</p>
-<p class="important-info">Le workshop de planification aura lieu le <strong>21 février 2011 de 18h30 à 21h30
-  au BARB 06</strong>. +{utils.event_subscription_link['agile11-w1', 'Veuillez vous inscrire pour y participer']}</p>
 
 <h3 id="act2011-code-workshop">Code Workshop (session pratique)</h3>
 <p class="indent">Séance de développement en binôme. Initiation au développement piloté par le comportement et au refactoring de 
 code. Préparez-vous a coder à deux sur la même machine et à bousculer votre manière habituelle de développer.</p>
-<p class="important-info">Le workshop de codage aura lieu le <strong>28 février 2011 de 18h30 à 21h30
-au BARB 06</strong>. +{utils.event_subscription_link['agile11-w2', 'Veuillez vous inscrire pour y participer']}</p>
+
 

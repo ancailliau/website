@@ -1,4 +1,7 @@
-<ul class="menu">
-	<li><a href="latex">Formation «&nbsp;LaTeX&nbsp;»</a></li>
-	<li><a href="computer-graphics-night">Computer Graphics Night</a></li>
-</ul>
+<div class="well sidebar">
+  <ul class="nav list">
+    <li class="nav-header">Les tutoriels de l'années 2009-2010</li>
+    <li><a href="/activites/2009-2010/tutoriels/latex">Formation «&nbsp;LaTeX&nbsp;»</a></li>
+    <li><a href="/activites/2009-2010/tutoriels/computer-graphics-night">Computer Graphics Night</a></li>
+  </ul>
+</div>
