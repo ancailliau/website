@@ -1,36 +1,43 @@
 ={controllers.event.register_notlogged as action}{
-	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-460">
+	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-horizontal">
 		<div class="feedback"></div>
 		<input type="hidden" name="event" value="{event[:id]}"/>
-
-  	<p class="span-4">
-  		<label for="mail">Adresse e-mail</label>
-  		<input type="text" name="mail" value=""/>
-  	</p>
-
-  	<p class="span-2">
+    
+    <fieldset class="control-group">
   		<label for="first_name">Prénom</label>
-  		<input type="text" name="first_name" value=""/>
-  	</p>
+  		<div class="controls">
+  		  <input type="text" name="first_name" value="" class="span5"/>
+		  </div>
+  	</fieldset>
 
-  	<p class="span-2-last">
+    <fieldset class="control-group">
   		<label for="last_name">Nom</label>
-  		<input type="text" name="last_name" value=""/>
-  	</p>
+  		<div class="controls">
+  		  <input type="text" name="last_name" value="" class="span5"/>
+  		</div>
+  	</fieldset>
+  	
+    <fieldset class="control-group">
+  		<label for="mail">Adresse e-mail</label>
+  		<div class="controls">
+      	<input type="text" name="mail" value="" class="span5" />
+    	</div>
+  	</fieldset>
 
-  	<p class="span-4-checkbox">
-  		<input type="checkbox" name="newsletter" value="true"/>
-  		<label for="newsletter">Je souhaite m'abonner à la newsletter (au maximum un e-mail par mois)</label>
-  	</p>
+    <fieldset class="control-group">
+		  <div class="controls">
+  		  <label for="newsletter"><input type="checkbox" name="newsletter" value="true"/>
+  		  Je souhaite m'abonner à la newsletter</label>
+  		</div>
+  	</fieldset>
   	
     ?{event[:form_url] and not(event[:form_url].strip.empty?)}{
       <<+{../+{event[:form_url]}}
     }
   
-  	<p class="form-button">
-  		<input type="submit" value="S'inscrire »"/>
-  		<a href="#" onclick="hide_popup()">Fermer</a>
-  	</p>
+  	<fieldset class="form-actions">
+  		<input type="submit" value="S'inscrire »" class="btn primary"/>
+  	</fieldset>
 	
 		+{action.ajax_form_preparer}
   </form>
