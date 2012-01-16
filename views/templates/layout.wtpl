@@ -8,9 +8,8 @@
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 		<base href="{base}"/>
 	
-		<link rel="stylesheet/less" href="/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet/less" href="/css/base.css">
-    <script src="/bootstrap/less-1.2.0.min.js"></script>
+		<link rel="stylesheet/css" href="/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet/css" href="/css/base.css">
     
     <script src="/js/jquery-1.7.1.min.js"></script>
     <script src="/bootstrap/js/bootstrap-carousel.js"></script>
