@@ -17,6 +17,9 @@
     <script src="/bootstrap/js/bootstrap-transition.js"></script>
     <script src="/js/base.js"></script>
     
+		<script type="text/javascript" src="/js/3-acmscw.js"></script>
+		<script type="text/javascript" src="/webservices.js"></script>
+    
 	</head>
 	
 	<body>
@@ -27,12 +30,17 @@
             <ul class="nav pull-left">
               ?{!session.has_key?(:user)}{
                 <li><a href="/accounts/subscribe">Inscrivez-vous</a></li>
+              }{
+                <li><a href="/accounts/update" >Editer mon profil</a></li>
+            		<!-- <li><a href="/admin/orders/create-order" >Commander</a></li> -->
+            		?{session.adminlevel > 0}{<li><a href="/admin">Admin</a></li>}
               }
-              ?{!session.has_key?(:user)}{}
             </ul>
             <ul class="nav pull-right">
               ?{!session.has_key?(:user)}{
                 <li><a class="button" href="/login">Connexion</a></li>
+              }{
+                <li><a onclick="{controllers.people.logout.ajax_link}">Déconnexion</a></li>
               }
             </ul>
           </div>

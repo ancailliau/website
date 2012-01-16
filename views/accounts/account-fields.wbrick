@@ -23,10 +23,13 @@
 ?{force_password}{  
 	<input type="hidden" name="set_password" value="true"/>
 }{
-	<p class="span-4-checkbox">
-		<input type="checkbox" id="set_password_field" name="set_password" value="true"/>
-		<label for="set_password" id="set_password_label">Cliquez pour changer votre mot de passe</label>
-	</p>
+	<fieldset class="control-group">
+		<div class="controls">
+    <label for="set_password" id="set_password_label">
+      <input type="checkbox" id="set_password_field" name="set_password" value="true"/>
+		  Cliquez pour changer votre mot de passe</label>
+		</div>
+	</fieldset>
   <script type="text/javascript">
   	$(document).ready(function() {
   	  $('#password_section').hide();
@@ -41,6 +44,7 @@
   </script>
 }
 
+<div id="password_section">
 <fieldset class="control-group">
   <label for="password">Mot de passe (8 à 15 caractères)</label>
 	<div class="controls">
@@ -54,6 +58,7 @@
 		<input type="password" name="password_confirm" value="" class="span8"/>
 	</p>
 </fieldset>
+</div>
 	
 <fieldset class="control-group">
 	<label>Occupation/Profession</label>
