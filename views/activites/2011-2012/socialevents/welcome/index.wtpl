@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h2>Welcome Social Events</h2>
+</div>
+
+<p>
+	Venez prendre un verre et discuter avec les membres du chapter
+	des activités proposées ou à proposer durant le quadrimestre.
+</p>
+
+<p>
+  +{utils.event_subscription_link['welcome-2012', 'Inscrivez-vous maintenant!']}
+</p>
