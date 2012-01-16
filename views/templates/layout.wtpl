@@ -26,13 +26,13 @@
           <div class="container">
             <ul class="nav pull-left">
               ?{!session.has_key?(:user)}{
-                <li><a onclick="javascript:show_form('/accounts/subscribe', 460)">Inscrivez-vous</a></li>
+                <li><a href="/accounts/subscribe">Inscrivez-vous</a></li>
               }
               ?{!session.has_key?(:user)}{}
             </ul>
             <ul class="nav pull-right">
               ?{!session.has_key?(:user)}{
-                <li><a class="button" onclick="javascript:show_form('/login', 300)">Connexion</a></li>
+                <li><a class="button" href="/login">Connexion</a></li>
               }
             </ul>
           </div>
