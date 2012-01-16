@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h3>Inscrivez-vous sur notre site internet</h3>
+</div>
+
+  <p>
+  	Veuillez remplir les informations ci-dessous pour vous inscrire sur
+  	le site. Ceci vous donnera accès aux fonctionnalités avancées
+  	que nous vous proposons (suivi des inscriptions et de la newsletter).
+  </p>
+  
+  <hr />
+
+  ={controllers.people.subscribe_account as action}{
+  	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-horizontal">
+
+		  <p class="feedback alert alert-error" style="display: none"></p>
+
+  		<<+{account-fields.wbrick with people: Hash.new, force_password: true}
+
+  		<fieldset class="form-actions">
+  			<input type="submit" value="Créer mon compte »" class="btn primary"/>
+  		</fieldset>
+
+  		+{action.ajax_form_preparer}
+  	</form>
+  }
