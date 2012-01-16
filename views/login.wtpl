@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h3>Connectez-vous</h3>
+</div>
+
+  ={controllers.people.login as action}{
+  	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="login" class="form-horizontal">
+  		
+  		<p class="feedback alert alert-error" style="display: none"></p>
+  		
+  		<fieldset class="control-group">
+  			<label for="mail">Mon e-mail</label>
+  			<div class="controls">
+        <input type="text" name="mail" value="" tabindex="100" class="span6" />
+        </div>
+  		</fieldset>
+		
+  		<fieldset class="control-group">
+  			<label for="mail">Mon mot de passe</label>
+  			<div class="controls">
+          <input type="password" name="password" value="" tabindex="101" class="span6"/>
+          <a href="/accounts/lost-password">Mot de passe perdu&nbsp;?</a>
+        </div>
+  		</fieldset>
+		
+  		<fieldset class="form-actions">
+  			<input type="submit" tabindex="102" value="Se connecter »" class="btn primary"/>
+  			+{action.ajax_form_preparer(:form_id => 'login')}
+  		</fieldset>
+  	</form>
+  }
