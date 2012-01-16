@@ -2,41 +2,39 @@
 
   <div class="span8">
   
-    <div id="myCarousel" class="thumbnail carousel slide">
+    <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
           <img src="/images/home_banners/start.jpg" alt="http://www.flickr.com/photos/jakeandlindsay/5524669257/sizes/l/in/photostream/">
-          <div class="caption">
-            <h5>Welcome Social Event</h5>
+          <div class="carousel-caption">
+            <h4>Welcome Social Event</h4>
             <p>
-              Venez échanger et discuter des activités du chapter autours d'un verre. 
-              Ambiance décontractée assurée.
+              Venez échanger et discuter des activités du chapter autours d'un verre.
             </p>
           </div>
         </div>
         <div class="item">
           <img src="/images/home_banners/acm.jpg" alt="">
-          <div class="caption">
-            <h5>A quoi ça sert d'être membre de l'ACM&nbsp;?</h5>
+          <div class="carousel-caption">
+            <h4>A quoi ça sert d'être membre de l'ACM&nbsp;?</h4>
             <p>
-              Venez trouver réponse à vos questions. A quoi cela sert d'être membre
-              de l'ACM&nbsp;? Quels sont les avantages&nbsp;?
+              Venez trouver réponse à vos questions.
             </p>
           </div>
         </div>
         <div class="item">
           <img src="/images/home_banners/latex.jpg" alt="http://www.flickr.com/photos/navod_wije/4729771727/sizes/l/in/photostream/">
-          <div class="caption">
-            <h5>Tutorial LaTeX</h5>
+          <div class="carousel-caption">
+            <h4>Tutorial LaTeX</h4>
             <p>
               Pour la troisième année consécutive, venez apprendre comment utiliser
-              LaTeX. Devenez maître de vos documents et simplifiez-vous la rédaction !
+              LaTeX.
             </p>
           </div>
         </div>
       </div>
-      <a class="left nav" href="#myCarousel" data-slide="prev">«</a>
-      <a class="right nav" href="#myCarousel" data-slide="next">»</a>
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">«</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">»</a>
     </div>
   </div>
   
