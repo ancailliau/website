@@ -50,12 +50,7 @@
         <li class="nav-header">A ne pas rater prochainement!</li>
         *{p_events as e}{
           <li>
-            <a href="{e[:card_path]}">${e[:name]}</a> &mdash; 
-            ?{business.event.may_still_register?(e[:id])}{
-              +{utils.event_subscription_link[e[:id], 's\'inscrire']}  
-            }{
-              complet
-            }
+            <a href="{e[:card_path]}">${e[:name]}</a>
           </li>  
         }
       </ul>

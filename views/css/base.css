@@ -59,3 +59,12 @@ strong {
     padding: 0 0 0 160px;
     border-top: 0;
 }
+
+.form-subscribe {
+    margin-top: 20px;
+}
+
+.form-subscribe h3 {
+    margin: 0 0 20px 160px;
+    font-size: 1.1em;
+}
