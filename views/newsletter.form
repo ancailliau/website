@@ -4,7 +4,7 @@
 		<label for="mail">Inscrivez-vous à la newsletter&nbsp;:</label>
   	<input type="email" value="john.doe@mail.com" name="EMAIL" class="span3">
 		<input type="submit" value="Tenez-moi au courant »" class="btn success"  class="span1" />
-  </div>
+  </form>
 }
 <script type="text/javascript">
 	$(document).ready(function(){ 

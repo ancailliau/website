@@ -43,7 +43,6 @@
   
   	<<+{header.wtpl share all}
 
-		  <div class="*{classes as c}{+{c}}{ }">
 		    ?{knows?(:side)}{
 		      <div class="row">
     		  <div class="span8">
@@ -56,14 +55,10 @@
 		    }{  
     		      +{body}
 		    }
-    	</div>
 
 		<<+{footer.wtpl share all}
     
 	</div>
-	
-    <div id="hide"></div>
-    <div id="popup"></div>
 
 		?{knows?(:message)}{
 		  <script type="text/javascript">
