@@ -75,7 +75,7 @@ module AcmScW
         validation :event, places_remaining_for_event, :no_remaining_place
       }
       routing {
-        upon 'success/ok'    do message('/events/registration-ok') end
+        upon 'success/ok'    do redirect(:url => '/events/registration-ok/') end
         upon 'validation-ko' do form_validation_feedback           end
         upon 'validation-ko/not_a_planned_event' do message('/events/past-event')         end
         upon 'validation-ko/no_remaining_place'  do message('/events/no-place-remaining') end
@@ -99,7 +99,7 @@ module AcmScW
         validation :event, places_remaining_for_event, :no_remaining_place
       } 
       routing {
-        upon 'success/ok'    do message('/events/registration-ok') end
+        upon 'success/ok'    do redirect(:url => '/events/registration-ok') end
         upon 'validation-ko' do form_validation_feedback           end
         upon 'validation-ko/not_a_planned_event' do message('/events/past-event')         end
         upon 'validation-ko/no_remaining_place'  do message('/events/no-place-remaining') end

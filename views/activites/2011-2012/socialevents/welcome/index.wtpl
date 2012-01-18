@@ -6,12 +6,12 @@
 
 <p>${e[:abstract]}</p>
 
-<div class="well form-subscribe">
-<h3>N'oubliez pas de vous s'inscrire !</h3>
 ?{session.has_key?(:user)}{
   <<+{../../../../events/register-logged.wbrick with event: e}
 }{
+<h3>N'oubliez pas de vous s'inscrire !</h3>
+<div class="well form-subscribe">
   <<+{../../../../events/register-notlogged.wbrick with event: e}
-}
 </div>
+}
 

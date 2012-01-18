@@ -1,6 +1,7 @@
 ={controllers.event.register_notlogged as action}{
 	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-horizontal">
-		<div class="feedback"></div>
+	  <div class="feedback alert alert-error" style="display: none;"></div>
+
 		<input type="hidden" name="event" value="{event[:id]}"/>
     
     <fieldset class="control-group">
