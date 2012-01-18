@@ -1,6 +1,5 @@
 ={session.current_user as people}
-={resources.business.people.looks_complete?(people[:id]) as complete}
-={controllers.event.register_logged as action}{
+={controllers.event.toggle_registration_logged as action}{
 	<form action="{action.uri}" method="post" enctype="multipart/form-data" id="{action.id}" class="form-horizontal">
 		<div class="feedback alert alert-error" style="display: none;"></div>
 		
@@ -8,14 +7,21 @@
     
     <input type="hidden" name="first_name" value="{people[:first_name]}" />
     <input type="hidden" name="last_name" value="{people[:first_name]}" />
-    <input type="hidden" name="mail" value="{people[:first_name]}" />
+    <input type="hidden" name="mail" value="{people[:mail]}" />
     <input type="hidden" name="newsletter" value="{people[:newsletter]}"/>
     
     ?{event[:form_url] and not(event[:form_url].strip.empty?)}{
       <<+{../+{event[:form_url]}}
     }
 
-  	<input type="submit" value="S'inscrire »" class="btn primary"/>
+    ?{business.event.is_registered?(people[:mail],event[:id])}{
+      <p>
+        Vous êtes déjà inscrit(e) à cet événement.
+      </p>
+      <input type="submit" value="Se désinscrire »" class="btn primary"/>
+  	}{
+  	  <input type="submit" value="S'inscrire »" class="btn primary"/>
+    }
   	
 		+{action.ajax_form_preparer}
   </form>
