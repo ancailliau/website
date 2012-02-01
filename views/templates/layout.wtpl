@@ -1,14 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
+  <head>
 
-		<title>${title}</title>
+    <title>${title}</title>
 
-		<meta http-equiv="Content-language" content="fr" />
-		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-		<base href="{base}"/>
-	
-		<link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
+    <meta http-equiv="Content-language" content="fr" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <base href="{base}"/>
+  
+    <link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/base.css">
     
     <script src="/js/jquery-1.7.1.min.js"></script>
@@ -16,14 +16,14 @@
     <script src="/bootstrap/js/bootstrap-transition.js"></script>
     <script src="/js/base.js"></script>
     
-		<script type="text/javascript" src="/js/3-acmscw.js"></script>
-		<script type="text/javascript" src="/webservices.js"></script>
+    <script type="text/javascript" src="/js/3-acmscw.js"></script>
+    <script type="text/javascript" src="/webservices.js"></script>
     
-	</head>
-	
-	<body>
-	  
-	  <div class="navbar navbar-fixed">
+  </head>
+  
+  <body>
+    
+    <div class="navbar navbar-fixed">
         <div class="navbar-inner">
           <div class="container">
             <ul class="nav pull-left">
@@ -31,8 +31,8 @@
                 <li><a href="/accounts/subscribe">Inscrivez-vous</a></li>
               }{
                 <li><a href="/accounts/update" >Editer mon profil</a></li>
-            		<!-- <li><a href="/admin/orders/create-order" >Commander</a></li> -->
-            		?{session.adminlevel > 0}{<li><a href="/admin">Admin</a></li>}
+                <!-- <li><a href="/admin/orders/create-order" >Commander</a></li> -->
+                ?{session.adminlevel > 0}{<li><a href="/admin">Admin</a></li>}
               }
             </ul>
             <ul class="nav pull-right">
@@ -45,43 +45,43 @@
           </div>
         </div><!-- /navbar-inner -->
       </div>
-	  
-	  <div class="container">
-  
-  	<<+{header.wtpl share all}
-
-		    ?{knows?(:side)}{
-		      <div class="row">
-    		  <div class="span8">
-    		      +{body}
-    		  </div>
-    		  <div class="span4">
-    		    +{side}
-    		  </div>
-    		  </div>
-		    }{  
-    		      +{body}
-		    }
-
-		<<+{footer.wtpl share all}
     
-	</div>
+    <div class="container">
+  
+    <<+{header.wtpl share all}
 
-		?{knows?(:message)}{
-		  <script type="text/javascript">
-      	$(document).ready(function(){ 
-      	  show_message('{message}');
-      	}); 
+        ?{knows?(:side)}{
+          <div class="row">
+          <div class="span8">
+              +{body}
+          </div>
+          <div class="span4">
+            +{side}
+          </div>
+          </div>
+        }{  
+              +{body}
+        }
+
+    <<+{footer.wtpl share all}
+    
+  </div>
+
+    ?{knows?(:message)}{
+      <script type="text/javascript">
+        $(document).ready(function(){ 
+          show_message('{message}');
+        }); 
       </script>
-		}
-		?{knows?(:form)}{
-		  <script type="text/javascript">
-      	$(document).ready(function(){ 
-      	  show_form('{form}', 460);
-      	}); 
+    }
+    ?{knows?(:form)}{
+      <script type="text/javascript">
+        $(document).ready(function(){ 
+          show_form('{form}', 460);
+        }); 
       </script>
-		}
-		?{Waw.config.google_analytics}{<<{analytics.whtml}}
-	</body>
-	
+    }
+    ?{Waw.config.google_analytics}{<<{analytics.whtml}}
+  </body>
+  
 </html>
