@@ -17,6 +17,7 @@ module Waw
           # Create a first basic context
           context = {:base           => "#{config.web_base}#{req_path}",
                      :normalized_url => req_path,
+                     :referer        => request.referer,
                      :page_name      => File.basename(req_path),
                      :title          => config.application_title}
                      

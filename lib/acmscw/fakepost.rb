@@ -2,7 +2,9 @@ module AcmScW
   class Fakepost
 
     def call(env)
-      [301, {"Location" => "/"}, []]
+      request  = ::Rack::Request.new(env)
+      location = request.params['__referer__'] || '/'
+      [301, {"Location" => location}, []]
     end
 
   end # class Fakepost
