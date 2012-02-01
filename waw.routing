@@ -51,6 +51,9 @@ Waw.rack do
     use ::AcmScW::Controllers::EnsureAuth, :redirect_url => '/403'
     run ::DbAgile::Restful::Middleware::OneDatabase.new(::AcmScW::dba_database)
   end
+  map '/fakepost' do
+    run ::AcmScW::Fakepost.new
+  end
   map '/webservices.js' do
     run ::Waw::ActionController::JSGeneration.new
   end
