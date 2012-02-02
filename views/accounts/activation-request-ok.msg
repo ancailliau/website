@@ -1,8 +1,5 @@
-<div class="message ok-message">
-  <h3>Votre demande d'activation a été prise en compte</h3>
-
-  <p>Un e-mail vous permettant d'activer votre compte vous a été envoyé. Veuillez suivre les instructions 
-     s'y trouvant.</p>
-
-	<a onclick="hide_popup()">Fermer</a>
-</div>
+<p>
+  <strong>Votre demande d'activation a été prise en compte</strong>
+  Un e-mail vous permettant d'activer votre compte vous a été envoyé. 
+  Veuillez suivre les instructions s'y trouvant.
+</p>
