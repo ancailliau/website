@@ -68,7 +68,7 @@ module AcmScW
   end
       
 end
-
+require 'acmscw/fakepost'
 require 'acmscw/waw_ext/validations'
 require 'acmscw/waw_ext/session'
 require 'acmscw/waw_ext/routing'

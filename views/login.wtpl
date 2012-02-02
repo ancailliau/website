@@ -5,6 +5,7 @@
 ={controllers.people.login as action}{
   <form action="{action.uri}" method="post" enctype="multipart/form-data"
         id="login" class="form-horizontal">
+    <input type="hidden" name="__referer__" value="{referer}"/>
     
     <p class="feedback alert alert-error" style="display: none"></p>
     

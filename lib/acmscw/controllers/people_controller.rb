@@ -24,8 +24,8 @@ module AcmScW
         validation [:mail, :password], user_may_log, :bad_user_or_password
       }
       routing {
-        upon 'validation-ko' do feedback               end
-        upon 'success/ok'    do redirect(:url => '/')  end
+        upon 'validation-ko' do feedback end
+        upon 'success/ok'    do fakepost end
       }
       def login(params)
         session_set(:user, params[:mail]) and :ok
