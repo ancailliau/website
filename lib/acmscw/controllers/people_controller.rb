@@ -123,10 +123,10 @@ module AcmScW
         validation :mail, is_current_user | user_not_exists, :mail_already_in_use
       }
       routing {
-        upon 'error' do feedback end
-        upon 'validation-ko' do form_validation_feedback end
-        upon 'success/ok' do redirect(:url => '/') end
-        upon 'success/activation_required' do redirect(:url => '/') end
+        upon 'error'                       do feedback                                 end
+        upon 'validation-ko'               do form_validation_feedback                 end
+        upon 'success/ok'                  do message('/accounts/update-ok')           end
+        upon 'success/activation_required' do message('/accounts/activation-required') end
       }
       def update_account(params)
         # Compute the update arguments

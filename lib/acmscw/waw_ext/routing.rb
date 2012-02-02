@@ -14,7 +14,6 @@ module AcmScW
     end
     
   end # class Javascript
-
   class FakePost < Waw::Routing::RoutingRule
     
     def generate_js_code(result, align = 0)
@@ -27,7 +26,20 @@ module AcmScW
       buffer.gsub(/^\s*/m, " "*align)
     end
   end
+  class FormFeed < Waw::Routing::RoutingRule
 
+    def initialize(message)
+      @message = message
+    end
+
+    def generate_js_code(result, align=0)
+      buffer = <<-EOF
+        replace_form_content(form, #{@message.inspect});
+      EOF
+      buffer.gsub(/^\s*/m, " "*align)
+    end
+    
+  end # class Javascript
 end # module Waw
 
 module Waw
@@ -40,6 +52,10 @@ module Waw
 
       def fakepost
         AcmScW::FakePost.new
+      end
+
+      def formfeed(msg)
+        AcmScW::FormFeed.new(msg)
       end
       
     end

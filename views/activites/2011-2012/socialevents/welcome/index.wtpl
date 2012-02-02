@@ -1,12 +1,17 @@
+={model.webr_planned_events.where(:id => 'welcome-2012').first as e}
+
 <div class="page-header">
-  <h2>Welcome Social Events</h2>
+  <h2>${e[:name]}</h2>
 </div>
 
-<p>
-	Venez prendre un verre et discuter avec les membres du chapter
-	des activités proposées ou à proposer durant le quadrimestre.
-</p>
+<p>${e[:abstract]}</p>
 
-<p>
-  +{utils.event_subscription_link['welcome-2012', 'Inscrivez-vous maintenant!']}
-</p>
+?{session.has_key?(:user)}{
+  <<+{../../../../events/register-logged.wbrick with event: e}
+}{
+<h3>N'oubliez pas de vous s'inscrire !</h3>
+<div class="well form-subscribe">
+  <<+{../../../../events/register-notlogged.wbrick with event: e}
+</div>
+}
+
