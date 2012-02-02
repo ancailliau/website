@@ -130,16 +130,21 @@ module AcmScW
         validation :event, places_remaining_for_event, :no_remaining_place
       } 
       routing {
-        upon 'success/ok'    do redirect(:url => '/events/unregistration-ok') end
-        upon 'validation-ko' do form_validation_feedback           end
+        upon 'success/unregistered' do 
+          redirect(:url => '/events/unregistration-ok') 
+        end
+        upon 'success/ok' do 
+          redirect(:url => '/events/registration-ok') 
+        end
+        upon 'validation-ko' do form_validation_feedback end
         upon 'validation-ko/not_a_planned_event' do message('/events/past-event')         end
         upon 'validation-ko/no_remaining_place'  do message('/events/no-place-remaining') end
       }
       def toggle_registration_logged(params)
         people = session.get(:user)
-        if event_services.is_registered?(people[:mail], params[:event])
-          event_services.unregister(people[:mail], params[:event])
-          :ok
+        if event_services.is_registered?(people, params[:event])
+          event_services.unregister(people, params[:event])
+          :unregistered
         else
           register_logged(params)[1]
         end

@@ -42,7 +42,8 @@ module AcmScW
       
       def is_registered?(people, event)
         args = {:event => event, :people => ps.people_id(people)}
-        not(AcmScW.database[:event_registrations].filter(args).empty?)
+        query = AcmScW.database[:event_registrations].filter(args)
+        not(query.empty?)
       end
       
       # Register someone to an event
