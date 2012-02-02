@@ -68,7 +68,7 @@
     </div>
     
     <p>
-      <a href="#" class="btn large primary">Voir le calendrier &raquo;</a>
+      <a href="/calendrier" class="btn large primary">Voir le calendrier &raquo;</a>
     </p>
     
   </div>
