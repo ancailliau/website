@@ -28,3 +28,8 @@ function show_message(name) {
 	show_popup(name, 300);
 	return false;
 }
+function replace_form_content(form, msg) {
+	$.get(msg + "?jsrequest=true", function(data) { 
+    $(form).html(data);
+  });
+}
