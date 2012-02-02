@@ -21,3 +21,5 @@
 	  <a href="/a-propos"><span>À propos</span></a>
 	</li>
 </ul>
+
+<div class="alert" id="popup"></div>
