@@ -1,14 +1,6 @@
 function show_popup(url, width) {
 	$.get(url + "?jsrequest=true", function(data) { 
 		$('#popup').html(data); 
-	  $('#popup').width(width);
-		$('#popup').css("margin-left", "-" + (width/2) + "px");
-		$('#popup').css("top", "50px");
-		inside_height = $('#inside').height()+100;
-		window_height = $(window).height();
-		$('#hide').height(inside_height > window_height ? inside_height : window_height);
-		$('#hide').width($(window).width());
-	  $('#hide').show();
 		$('#popup').show();
     $('html, body').animate( { scrollTop: 0 }, 'fast' );
 	});

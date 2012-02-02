@@ -1,5 +1,4 @@
-<div class="message ko-message">
-	<h3>Erreur lors de l'activation!</h3>
+	<p><strong>Erreur lors de l'activation!</strong></p>
 		
 	<p>La clé d'activation fournie est manquante ou ne peut plus être utilisée
 		 pour une activation de compte. Veuillez réintroduire une demande d'activation
@@ -7,6 +6,3 @@
 
 	<p>Si le problème persiste, veuillez prendre contact avec le webmaster à l'adresse
 		 <a href="mailto:team-web.uclouvain@acm-sc.be">team-web.uclouvain@acm-sc.be</a>.</p>
-
-	<a onclick="hide_popup()">Fermer</a>
-</div>
