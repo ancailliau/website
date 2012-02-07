@@ -7,7 +7,7 @@
 <p>${e[:abstract]}</p>
 
 <table class="table-bordered table-striped">
-  <tr><td><strong>Date</strong></td><td>${e[:start_time].strftime("%m/%d/%Y à %H:%M")}</td></tr>
+  <tr><td><strong>Date</strong></td><td>${e[:start_time].strftime("%d/%m/%Y à %H:%M")}</td></tr>
   <tr><td><strong>Lieu</strong></td><td>${e[:location]}</td></tr>
 </table>
 
