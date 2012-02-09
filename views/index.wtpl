@@ -9,16 +9,8 @@
           <div class="carousel-caption">
             <h4>Welcome Social Event</h4>
             <p>
-              Venez échanger et discuter des activités du chapter autours d'un verre. <a href="activites/2011-2012/socialevents/welcome">En savoir plus &raquo;</a>
-            </p>
-          </div>
-        </div>
-        <div class="item">
-          <img src="/images/home_banners/acm.jpg" alt="">
-          <div class="carousel-caption">
-            <h4>A quoi ça sert d'être membre de l'ACM&nbsp;?</h4>
-            <p>
-              Venez trouver réponse à vos questions.
+              Venez échanger et discuter des activités du chapter autours d'un verre. 
+              <a href="activites/2011-2012/socialevents/welcome">En savoir plus &raquo;</a>
             </p>
           </div>
         </div>
@@ -28,7 +20,17 @@
             <h4>Tutorial LaTeX</h4>
             <p>
               Pour la troisième année consécutive, venez apprendre comment utiliser
-              LaTeX.
+              LaTeX. 
+              <a href="/activites/2011-2012/tutoriels/latex">En savoir plus &raquo;</a>
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="/images/home_banners/acm.jpg" alt="">
+          <div class="carousel-caption">
+            <h4>A quoi ça sert d'être membre de l'ACM&nbsp;?</h4>
+            <p>
+              Venez trouver réponse à vos questions.
             </p>
           </div>
         </div>
