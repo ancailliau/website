@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h2>Découvrez LaTeX &mdash; la composition de document par excellence</h2>
+</div>
+
+<p>
+	LaTeX est un langage de balisage utilisé pour composer des documents à
+	l'allure professionelle. Ce système de composition de document est
+	principalement utilisé par les mathématiciens, les scientifiques, les
+	ingénieurs et ceux issus du monde académique ou industriel. Cette
+	formation est divisée en deux parties, vous permettant ainsi de
+	découvrir LaTeX progressivement.
+</p>
+
+<p>
+  Le tutoriel consiste en un <strong>cours
+	théorique</strong> présentant les bases de LaTeX. Cette partie
+	présente en particulier ce qu'il est possible de réaliser avec
+	LaTeX, en particulier&nbsp: comment positionner et inclure des
+	images, comment écrire des formules mathématique, etc.
+</p>
+
+<p>Les fichiers suivants sont disponibles&nbsp;:</p>
+<ul>
+	<li><a href="slides/Introductory.zip">Introductory.zip</a></li>
+	<li><a href="slides/Advanced.zip">Advanced.zip</a></li>
+	<li><a href="slides/TikZ-PGF.zip">TikZ-PGF.zip</a></li>
+	<li><a href="slides/Beamer.zip">Beamer.zip</a></li>
+</ul>
