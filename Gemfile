@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 gem "fastercsv", "~> 1.5.1"
-gem "json", "~> 1.1.9"
+gem "json", "~> 1.5.5"
 gem "pg", "~> 0.8.0"
 gem "rdoc", "~> 2.4.1"
 gem "sequel", "~> 3.8"
