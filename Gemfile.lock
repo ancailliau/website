@@ -12,7 +12,7 @@ GEM
       sequel (>= 0.3.8)
     fastercsv (1.5.4)
     highline (1.6.11)
-    json (1.1.9)
+    json (2.3.0)
     pg (0.8.0)
     rack (1.2.5)
     rake (0.9.2.2)
@@ -28,7 +28,7 @@ PLATFORMS
 DEPENDENCIES
   dbagile (~> 0.0.1)
   fastercsv (~> 1.5.1)
-  json (~> 1.1.9)
+  json (~> 2.3.0)
   pg (~> 0.8.0)
   rake (~> 0.9.2)
   rdoc (~> 2.4.1)
